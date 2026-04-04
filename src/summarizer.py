@@ -8,9 +8,17 @@ import anthropic
 
 from .models import Article, Category
 from .config import Config
+from .utils.retry import retry_with_backoff
 
 
 logger = logging.getLogger(__name__)
+
+# 재시도할 API 예외 타입들
+RETRYABLE_API_EXCEPTIONS = (
+    anthropic.RateLimitError,
+    anthropic.APIConnectionError,
+    anthropic.InternalServerError,
+)
 
 
 CATEGORIES_STR = "\n".join([f"- {cat.value}" for cat in Category])
@@ -62,24 +70,17 @@ class Summarizer:
         )
 
         try:
-            response = self.client.messages.create(
-                model=self.model,
-                max_tokens=1024,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ],
-            )
+            response_text = self._call_api(prompt)
 
-            # 응답 파싱
-            response_text = response.content[0].text
-            result = self._parse_response(response_text)
+            if response_text:
+                result = self._parse_response(response_text)
 
-            if result:
-                article.summary = result.get("summary", "")
-                category_str = result.get("category", "")
-                article.category = Category.from_string(category_str)
+                if result:
+                    article.summary = result.get("summary", "")
+                    category_str = result.get("category", "")
+                    article.category = Category.from_string(category_str)
 
-            logger.info(f"Summarized: {article.title[:50]}... -> {article.category.value}")
+                logger.info(f"Summarized: {article.title[:50]}... -> {article.category.value}")
 
         except anthropic.APIError as e:
             logger.error(f"Claude API error for {article.title}: {e}")
@@ -87,6 +88,18 @@ class Summarizer:
             logger.error(f"Summarization failed for {article.title}: {e}")
 
         return article
+
+    @retry_with_backoff(max_retries=3, base_delay=2.0, exceptions=RETRYABLE_API_EXCEPTIONS)
+    def _call_api(self, prompt: str) -> Optional[str]:
+        """Claude API 호출 (재시도 포함)"""
+        response = self.client.messages.create(
+            model=self.model,
+            max_tokens=1024,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+        )
+        return response.content[0].text
 
     def summarize_batch(self, articles: list[Article]) -> list[Article]:
         """여러 기사 일괄 요약"""

@@ -92,9 +92,9 @@ python -m src.main --use-api          # 전체 파이프라인
 ## Phase 2: 안정화
 
 ### 2.1 에러 처리 강화
-- [ ] 수집 실패 시 재시도 로직
-- [ ] 요약 실패 시 폴백 처리
-- [ ] Slack 전송 실패 시 재시도
+- [x] 수집 실패 시 재시도 로직 (src/utils/retry.py, collectors/base.py)
+- [x] 요약 실패 시 폴백 처리 (summarizer.py - API 재시도 + 기존 폴백 유지)
+- [x] Slack 전송 실패 시 재시도 (slack_notifier.py)
 
 ### 2.2 로깅 개선
 - [ ] 구조화된 로깅 (JSON 형식)
@@ -172,3 +172,4 @@ email:
 | 2024-04-05 | 1.0 | 초기 개발 계획 문서 작성 |
 | 2026-04-05 | 1.5 | Claude Code 기반 전환 (Phase 1.5 추가) |
 | 2026-04-05 | 1.6 | 이메일 알림 기능 계획 추가 (Phase 3.3) |
+| 2026-04-05 | 2.1 | Phase 2.1 에러 처리 강화 완료 |

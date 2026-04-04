@@ -8,9 +8,13 @@ import requests
 from bs4 import BeautifulSoup
 
 from ..models import Article, Source
+from ..utils.retry import retry_with_backoff_return_none
 
 
 logger = logging.getLogger(__name__)
+
+# 재시도할 예외 타입들 (일시적 네트워크 오류)
+RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 
 
 class BaseCollector(ABC):
@@ -39,21 +43,35 @@ class BaseCollector(ABC):
         pass
 
     def _fetch_html(self, url: str) -> Optional[BeautifulSoup]:
-        """URL에서 HTML 가져오기"""
+        """URL에서 HTML 가져오기 (재시도 포함)"""
+        return self._fetch_html_with_retry(url)
+
+    @retry_with_backoff_return_none(max_retries=3, exceptions=RETRYABLE_EXCEPTIONS)
+    def _fetch_html_with_retry(self, url: str) -> Optional[BeautifulSoup]:
+        """실제 HTML 가져오기 (재시도 데코레이터 적용)"""
         try:
             response = self.session.get(url, timeout=self.timeout)
             response.raise_for_status()
             return BeautifulSoup(response.text, "lxml")
+        except RETRYABLE_EXCEPTIONS:
+            raise  # 재시도 가능한 예외는 다시 발생시켜 데코레이터에서 처리
         except requests.RequestException as e:
             logger.error(f"Failed to fetch {url}: {e}")
             return None
 
     def _fetch_text(self, url: str) -> Optional[str]:
-        """URL에서 텍스트 가져오기"""
+        """URL에서 텍스트 가져오기 (재시도 포함)"""
+        return self._fetch_text_with_retry(url)
+
+    @retry_with_backoff_return_none(max_retries=3, exceptions=RETRYABLE_EXCEPTIONS)
+    def _fetch_text_with_retry(self, url: str) -> Optional[str]:
+        """실제 텍스트 가져오기 (재시도 데코레이터 적용)"""
         try:
             response = self.session.get(url, timeout=self.timeout)
             response.raise_for_status()
             return response.text
+        except RETRYABLE_EXCEPTIONS:
+            raise  # 재시도 가능한 예외는 다시 발생시켜 데코레이터에서 처리
         except requests.RequestException as e:
             logger.error(f"Failed to fetch {url}: {e}")
             return None

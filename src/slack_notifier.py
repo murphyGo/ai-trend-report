@@ -8,9 +8,13 @@ import requests
 
 from .models import Article, Report, Category
 from .config import Config
+from .utils.retry import retry_with_backoff
 
 
 logger = logging.getLogger(__name__)
+
+# 재시도할 예외 타입들 (일시적 네트워크 오류)
+RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 
 
 class SlackNotifier:
@@ -30,18 +34,23 @@ class SlackNotifier:
         payload = {"blocks": blocks}
 
         try:
-            response = requests.post(
-                self.webhook_url,
-                json=payload,
-                timeout=30,
-            )
-            response.raise_for_status()
+            self._send_with_retry(payload)
             logger.info(f"Report sent successfully with {len(report.articles)} articles")
             return True
 
         except requests.RequestException as e:
             logger.error(f"Failed to send Slack message: {e}")
             return False
+
+    @retry_with_backoff(max_retries=3, exceptions=RETRYABLE_EXCEPTIONS)
+    def _send_with_retry(self, payload: dict) -> None:
+        """Slack 메시지 전송 (재시도 포함)"""
+        response = requests.post(
+            self.webhook_url,
+            json=payload,
+            timeout=30,
+        )
+        response.raise_for_status()
 
     def _build_message_blocks(self, report: Report) -> list[dict[str, Any]]:
         """Slack Block Kit 메시지 생성"""
@@ -172,12 +181,7 @@ class SlackNotifier:
         }
 
         try:
-            response = requests.post(
-                self.webhook_url,
-                json=payload,
-                timeout=30,
-            )
-            response.raise_for_status()
+            self._send_with_retry(payload)
             return True
         except requests.RequestException as e:
             logger.error(f"Failed to send error notification: {e}")
