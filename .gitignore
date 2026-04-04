@@ -47,3 +47,6 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Data files (keep .gitkeep)
+data/*.json

@@ -57,6 +57,37 @@ class Article:
         if isinstance(self.category, str):
             self.category = Category.from_string(self.category)
 
+    def to_dict(self) -> dict:
+        """JSON 직렬화용 딕셔너리 변환"""
+        return {
+            "id": self.id,
+            "title": self.title,
+            "url": self.url,
+            "source": self.source.value,
+            "content": self.content,
+            "published_at": self.published_at.isoformat() if self.published_at else None,
+            "summary": self.summary,
+            "category": self.category.value,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Article":
+        """딕셔너리에서 Article 복원"""
+        published_at = None
+        if data.get("published_at"):
+            published_at = datetime.fromisoformat(data["published_at"])
+
+        return cls(
+            id=data.get("id", str(uuid.uuid4())),
+            title=data["title"],
+            url=data["url"],
+            source=Source(data["source"]),
+            content=data.get("content", ""),
+            published_at=published_at,
+            summary=data.get("summary", ""),
+            category=Category.from_string(data.get("category", "기타")),
+        )
+
 
 @dataclass
 class Report:
@@ -73,3 +104,23 @@ class Report:
                 result[article.category] = []
             result[article.category].append(article)
         return result
+
+    def to_dict(self) -> dict:
+        """JSON 직렬화용 딕셔너리 변환"""
+        return {
+            "id": self.id,
+            "created_at": self.created_at.isoformat(),
+            "articles": [article.to_dict() for article in self.articles],
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Report":
+        """딕셔너리에서 Report 복원"""
+        articles = [Article.from_dict(a) for a in data.get("articles", [])]
+        created_at = datetime.fromisoformat(data["created_at"]) if data.get("created_at") else datetime.now()
+
+        return cls(
+            id=data.get("id", str(uuid.uuid4())),
+            created_at=created_at,
+            articles=articles,
+        )
