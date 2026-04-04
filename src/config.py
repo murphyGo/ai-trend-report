@@ -1,0 +1,109 @@
+"""설정 관리 모듈"""
+
+import os
+from pathlib import Path
+from dataclasses import dataclass, field
+from typing import Optional
+
+import yaml
+from dotenv import load_dotenv
+
+
+@dataclass
+class AnthropicConfig:
+    """Anthropic API 설정"""
+    api_key: str = ""
+    model: str = "claude-sonnet-4-20250514"
+
+
+@dataclass
+class SlackConfig:
+    """Slack 설정"""
+    webhook_url: str = ""
+
+
+@dataclass
+class CollectorConfig:
+    """수집기 설정"""
+    enabled: bool = True
+    categories: list[str] = field(default_factory=list)
+
+
+@dataclass
+class CollectorsConfig:
+    """전체 수집기 설정"""
+    arxiv: CollectorConfig = field(default_factory=lambda: CollectorConfig(
+        categories=["cs.AI", "cs.LG", "cs.CL"]
+    ))
+    google_blog: CollectorConfig = field(default_factory=CollectorConfig)
+    anthropic_blog: CollectorConfig = field(default_factory=CollectorConfig)
+
+
+@dataclass
+class Config:
+    """전체 설정"""
+    anthropic: AnthropicConfig = field(default_factory=AnthropicConfig)
+    slack: SlackConfig = field(default_factory=SlackConfig)
+    collectors: CollectorsConfig = field(default_factory=CollectorsConfig)
+
+    @classmethod
+    def load(cls, config_path: Optional[Path] = None) -> "Config":
+        """설정 파일 로드"""
+        load_dotenv()
+
+        config = cls()
+
+        # 환경 변수에서 로드
+        config.anthropic.api_key = os.getenv("ANTHROPIC_API_KEY", "")
+        config.slack.webhook_url = os.getenv("SLACK_WEBHOOK_URL", "")
+
+        # 설정 파일이 있으면 로드
+        if config_path is None:
+            config_path = Path(__file__).parent.parent / "config.yaml"
+
+        if config_path.exists():
+            with open(config_path, "r", encoding="utf-8") as f:
+                data = yaml.safe_load(f) or {}
+
+            # Anthropic 설정
+            if "anthropic" in data:
+                if "model" in data["anthropic"]:
+                    config.anthropic.model = data["anthropic"]["model"]
+                if "api_key" in data["anthropic"] and not config.anthropic.api_key:
+                    config.anthropic.api_key = cls._resolve_env(data["anthropic"]["api_key"])
+
+            # Slack 설정
+            if "slack" in data:
+                if "webhook_url" in data["slack"] and not config.slack.webhook_url:
+                    config.slack.webhook_url = cls._resolve_env(data["slack"]["webhook_url"])
+
+            # 수집기 설정
+            if "collectors" in data:
+                collectors_data = data["collectors"]
+                if "arxiv" in collectors_data:
+                    config.collectors.arxiv.enabled = collectors_data["arxiv"].get("enabled", True)
+                    if "categories" in collectors_data["arxiv"]:
+                        config.collectors.arxiv.categories = collectors_data["arxiv"]["categories"]
+                if "google_blog" in collectors_data:
+                    config.collectors.google_blog.enabled = collectors_data["google_blog"].get("enabled", True)
+                if "anthropic_blog" in collectors_data:
+                    config.collectors.anthropic_blog.enabled = collectors_data["anthropic_blog"].get("enabled", True)
+
+        return config
+
+    @staticmethod
+    def _resolve_env(value: str) -> str:
+        """${ENV_VAR} 형식의 환경 변수 치환"""
+        if value.startswith("${") and value.endswith("}"):
+            env_var = value[2:-1]
+            return os.getenv(env_var, "")
+        return value
+
+    def validate(self) -> list[str]:
+        """설정 유효성 검사"""
+        errors = []
+        if not self.anthropic.api_key:
+            errors.append("ANTHROPIC_API_KEY가 설정되지 않았습니다.")
+        if not self.slack.webhook_url:
+            errors.append("SLACK_WEBHOOK_URL이 설정되지 않았습니다.")
+        return errors

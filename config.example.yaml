@@ -1,0 +1,36 @@
+# AI Report Automation Service - 설정 파일 예시
+# 이 파일을 config.yaml로 복사하여 사용하세요.
+
+# Anthropic (Claude) API 설정
+anthropic:
+  # 환경 변수에서 읽기: ${ANTHROPIC_API_KEY}
+  # 또는 직접 입력 (권장하지 않음)
+  api_key: ${ANTHROPIC_API_KEY}
+
+  # 사용할 모델
+  model: claude-sonnet-4-20250514
+
+# Slack 설정
+slack:
+  # Incoming Webhook URL
+  # Slack App 설정에서 생성: https://api.slack.com/messaging/webhooks
+  webhook_url: ${SLACK_WEBHOOK_URL}
+
+# 수집기 설정
+collectors:
+  # arXiv 논문 수집
+  arxiv:
+    enabled: true
+    # 수집할 카테고리 (https://arxiv.org/category_taxonomy)
+    categories:
+      - cs.AI   # Artificial Intelligence
+      - cs.LG   # Machine Learning
+      - cs.CL   # Computation and Language
+
+  # Google AI 블로그 수집
+  google_blog:
+    enabled: true
+
+  # Anthropic 블로그 수집
+  anthropic_blog:
+    enabled: true

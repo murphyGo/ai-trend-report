@@ -1,0 +1,19 @@
+# AI Report Automation Service Dependencies
+
+# Web scraping
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Claude API
+anthropic>=0.40.0
+
+# Slack integration
+slack-sdk>=3.27.0
+
+# Configuration
+PyYAML>=6.0.0
+python-dotenv>=1.0.0
+
+# Date/Time handling
+python-dateutil>=2.8.0
