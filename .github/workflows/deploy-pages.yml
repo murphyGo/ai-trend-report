@@ -9,6 +9,10 @@ on:
   # 수동 실행
   workflow_dispatch:
 
+# Node.js 24 사용 (deprecation 경고 해결)
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 # GitHub Pages 배포 권한
 permissions:
   contents: read
@@ -29,6 +33,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # daily-report가 커밋한 최신 데이터 포함
+          ref: ${{ github.event.workflow_run.head_branch || 'main' }}
+          fetch-depth: 0
+
+      - name: Pull latest changes
+        run: git pull origin main || true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -41,27 +52,39 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 최신 리포트 아티팩트 다운로드
-      - name: Download latest report artifact
-        uses: dawidd6/action-download-artifact@v3
-        with:
-          workflow: daily-report.yml
-          name: ai-report-*
-          path: data/
-          search_artifacts: true
-          if_no_artifact_found: warn
-
-      # 기존 data/ 폴더의 리포트도 포함
       - name: List available reports
         run: |
           echo "Available reports:"
           ls -la data/ || echo "No data directory"
 
-      # 정적 사이트 생성
       - name: Generate static site
-        run: python -m src.main --generate-static --static-output _site
+        run: |
+          if ls data/report_*.json 1> /dev/null 2>&1; then
+            python -m src.main --generate-static --static-output _site
+          else
+            echo "No reports found, creating placeholder page"
+            mkdir -p _site
+            cat > _site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="ko">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>AI Report</title>
+            <style>
+              body { font-family: sans-serif; text-align: center; padding: 50px; }
+              h1 { color: #2563eb; }
+            </style>
+          </head>
+          <body>
+            <h1>AI Report</h1>
+            <p>아직 생성된 리포트가 없습니다.</p>
+            <p>Daily Report 워크플로우가 실행되면 자동으로 업데이트됩니다.</p>
+          </body>
+          </html>
+          EOF
+          fi
 
-      # GitHub Pages 아티팩트 업로드
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

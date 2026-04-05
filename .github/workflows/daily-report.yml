@@ -35,6 +35,8 @@ on:
 env:
   # 기본값: Claude Code CLI 모드 (스케줄 실행 시)
   USE_API: ${{ github.event.inputs.use_api || 'false' }}
+  # Node.js 24 사용 (deprecation 경고 해결)
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: write  # 리포트 데이터 커밋용
