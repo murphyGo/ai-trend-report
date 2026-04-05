@@ -13,8 +13,9 @@
 | CLI | ✅ Complete | main.py (다중 모드 지원) |
 | Claude Code 스킬 | ✅ Complete | /ai-report 스킬 |
 | 데이터 I/O | ✅ Complete | JSON 직렬화/역직렬화 |
-| 테스트 | ✅ Complete | pytest 100개 테스트, 63% 커버리지 |
-| 문서화 | 🔄 In Progress | docs/ 구축 중 |
+| 테스트 | ✅ Complete | pytest 188개 테스트 |
+| 문서화 | ✅ Complete | docs/ 완성 |
+| GitHub Actions | ✅ Complete | Daily report + CI/CD |
 
 ---
 
@@ -150,7 +151,41 @@ email:
 ### 3.4 기타 확장
 - [x] Discord Webhook 알림 (discord_notifier.py, --discord 플래그)
 - [x] 웹 대시보드 (FastAPI + Jinja2, --serve 플래그)
-- [ ] 기사 저장 (DB)
+- [ ] 기사 저장 (DB) — *deferred*
+
+---
+
+## Phase 4: 자동화 (완료)
+
+### 4.1 GitHub Actions 스케줄러
+- [x] 워크플로우 파일 생성 (`.github/workflows/daily-report.yml`)
+- [x] 스케줄 설정 (매일 오전 9시 KST = UTC 00:00)
+- [x] Secrets 설정 가이드
+- [x] 리포트 아티팩트 자동 저장 (30일 보관)
+- [x] 실패 시 Slack 알림
+
+### 4.2 CI/CD 파이프라인
+- [x] PR 시 테스트 자동 실행 (`.github/workflows/ci.yml`)
+- [x] 린트/타입 체크 (flake8, mypy)
+- [x] 테스트 커버리지 리포트 (Codecov 연동)
+- [x] Python 3.9-3.12 매트릭스 테스트
+
+### GitHub Secrets 설정 가이드
+
+Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 설정하세요:
+
+| Secret 이름 | 필수 | 설명 |
+|------------|------|------|
+| `ANTHROPIC_API_KEY` | ✅ | Claude API 키 |
+| `SLACK_WEBHOOK_URL` | ✅ | Slack Incoming Webhook URL |
+| `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
+| `CODECOV_TOKEN` | ❌ | Codecov 토큰 (커버리지 리포트용) |
+
+### 워크플로우 수동 실행
+
+GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
+- `dry_run`: true로 설정 시 Slack 전송 없이 테스트
+- `limit`: 처리할 기사 수 제한
 
 ---
 
@@ -180,3 +215,4 @@ email:
 | 2026-04-05 | 3.3 | Phase 3.3 이메일 알림 기능 완료 (SMTP, HTML 템플릿) |
 | 2026-04-05 | 3.4 | Phase 3.4 Discord Webhook 알림 기능 완료 |
 | 2026-04-06 | 3.4 | Phase 3.4 웹 대시보드 기능 완료 (FastAPI + Jinja2) |
+| 2026-04-06 | 4.0 | Phase 4 자동화 완료 (GitHub Actions 스케줄러, CI/CD) |
