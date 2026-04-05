@@ -9,7 +9,7 @@
 | Collectors | ✅ Complete | arXiv, Google, Anthropic |
 | Summarizer | ✅ Complete | Claude API 연동 (--use-api) |
 | Slack Notifier | ✅ Complete | Webhook 연동 |
-| Email Notifier | 📋 Planned | Phase 3.3 예정 |
+| Email Notifier | ✅ Complete | SMTP 기반 이메일 전송 |
 | CLI | ✅ Complete | main.py (다중 모드 지원) |
 | Claude Code 스킬 | ✅ Complete | /ai-report 스킬 |
 | 데이터 I/O | ✅ Complete | JSON 직렬화/역직렬화 |
@@ -102,7 +102,7 @@ python -m src.main --use-api          # 전체 파이프라인
 - [x] 로그 파일 출력
 
 ### 2.3 테스트 코드 추가
-- [x] 단위 테스트 (pytest) - 122개 테스트 통과
+- [x] 단위 테스트 (pytest) - 142개 테스트 통과
 - [x] Collector 모킹 테스트 - responses 라이브러리 사용
 - [x] Summarizer 모킹 테스트 - API 모킹
 - [x] 통합 테스트 - 데이터 파이프라인 및 E2E
@@ -130,11 +130,11 @@ python -m src.main --use-api          # 전체 파이프라인
 - [x] CLI 옵션 추가 (--parallel, --no-cache, --cache-days)
 
 ### 3.3 이메일 알림 기능
-- [ ] EmailNotifier 클래스 구현 (SMTP)
-- [ ] HTML 이메일 템플릿 (카테고리별 섹션)
-- [ ] 다중 수신자 지원
-- [ ] CLI 플래그 추가 (`--email`, `--email-to`)
-- [ ] 설정 추가 (config.yaml: smtp 섹션)
+- [x] EmailNotifier 클래스 구현 (SMTP)
+- [x] HTML 이메일 템플릿 (카테고리별 섹션)
+- [x] 다중 수신자 지원
+- [x] CLI 플래그 추가 (`--email`, `--email-to`)
+- [x] 설정 추가 (config.yaml: email 섹션)
 
 ```yaml
 # config.yaml 예시
@@ -177,3 +177,4 @@ email:
 | 2026-04-05 | 2.3 | Phase 2.3 테스트 코드 추가 완료 (100개 테스트) |
 | 2026-04-05 | 3.1 | Phase 3.1 새 소스 추가 완료 (OpenAI, HuggingFace, 한국 AI뉴스) |
 | 2026-04-05 | 3.2 | Phase 3.2 성능 최적화 완료 (병렬 수집, 캐시) |
+| 2026-04-05 | 3.3 | Phase 3.3 이메일 알림 기능 완료 (SMTP, HTML 템플릿) |

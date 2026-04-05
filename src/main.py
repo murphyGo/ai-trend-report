@@ -20,6 +20,7 @@ from .collectors import (
 )
 from .summarizer import Summarizer
 from .slack_notifier import SlackNotifier
+from .email_notifier import EmailNotifier
 from .data_io import save_articles, load_articles, save_report, load_report, get_latest_file
 from .cache import ArticleCache
 from .utils.logging import setup_logging
@@ -262,8 +263,25 @@ def run_collect_only(
     return True
 
 
-def run_send_only(config: Config, input_json: Path = None, dry_run: bool = False) -> bool:
-    """전송 전용 파이프라인 - JSON에서 로드하여 Slack 전송"""
+def run_send_only(
+    config: Config,
+    input_json: Path = None,
+    dry_run: bool = False,
+    send_email: bool = False,
+    email_recipients: list[str] = None,
+) -> bool:
+    """전송 전용 파이프라인 - JSON에서 로드하여 Slack/이메일 전송
+
+    Args:
+        config: 설정 객체
+        input_json: 입력 JSON 파일 경로
+        dry_run: 실제 전송 없이 미리보기
+        send_email: 이메일 전송 여부
+        email_recipients: 이메일 수신자 목록 (None이면 설정 기본값)
+
+    Returns:
+        성공 여부
+    """
     logger.info("=" * 50)
     logger.info("AI Report - Send Only Mode")
     logger.info("=" * 50)
@@ -288,9 +306,9 @@ def run_send_only(config: Config, input_json: Path = None, dry_run: bool = False
 
     logger.info(f"Loaded report with {len(report.articles)} articles")
 
-    # 3. Slack 전송
+    # 3. 전송
     if dry_run:
-        logger.info("[2/2] Dry run mode - skipping Slack notification")
+        logger.info("[2/2] Dry run mode - skipping notifications")
         by_category = report.articles_by_category()
         for cat, cat_articles in by_category.items():
             logger.info(f"  [{cat.value}] {len(cat_articles)} articles")
@@ -298,14 +316,30 @@ def run_send_only(config: Config, input_json: Path = None, dry_run: bool = False
                 logger.info(f"    - {article.title[:50]}...")
         return True
 
-    logger.info("[2/2] Sending report to Slack...")
-    notifier = SlackNotifier(config)
-    success = notifier.send_report(report)
+    success = True
 
-    if success:
-        logger.info("Report sent successfully!")
-    else:
-        logger.error("Failed to send Slack notification")
+    # Slack 전송 (이메일만 요청한 경우가 아니면)
+    if not send_email or config.slack.webhook_url:
+        if config.slack.webhook_url and not send_email:
+            logger.info("[2/2] Sending report to Slack...")
+            slack_notifier = SlackNotifier(config)
+            slack_success = slack_notifier.send_report(report)
+            if slack_success:
+                logger.info("Slack notification sent successfully!")
+            else:
+                logger.error("Failed to send Slack notification")
+                success = False
+
+    # 이메일 전송
+    if send_email:
+        logger.info("[2/2] Sending report via email...")
+        email_notifier = EmailNotifier(config, recipients=email_recipients)
+        email_success = email_notifier.send_report(report)
+        if email_success:
+            logger.info("Email sent successfully!")
+        else:
+            logger.error("Failed to send email")
+            success = False
 
     return success
 
@@ -331,6 +365,10 @@ Examples:
   python -m src.main --collect-only         # 수집만 (명시적)
   python -m src.main --send-only            # Slack 전송만
   python -m src.main --send-only --input-json data/report_2024-01-01.json
+
+  # 이메일 전송
+  python -m src.main --send-only --email    # 이메일로 전송
+  python -m src.main --send-only --email --email-to user@example.com  # 특정 수신자
         """
     )
 
@@ -399,6 +437,17 @@ Examples:
         default=7,
         help="캐시 유효 기간 일수 (기본: 7일)",
     )
+    parser.add_argument(
+        "--email",
+        action="store_true",
+        help="이메일로 리포트 전송 (SMTP 설정 필요)",
+    )
+    parser.add_argument(
+        "--email-to",
+        type=str,
+        nargs="+",
+        help="이메일 수신자 (기본: 설정 파일의 recipients)",
+    )
 
     args = parser.parse_args()
 
@@ -438,7 +487,13 @@ Examples:
     elif args.send_only:
         # 전송 전용 모드: JSON 파일에서 로드
         try:
-            success = run_send_only(config, args.input_json, args.dry_run)
+            success = run_send_only(
+                config,
+                input_json=args.input_json,
+                dry_run=args.dry_run,
+                send_email=args.email,
+                email_recipients=args.email_to,
+            )
             sys.exit(0 if success else 1)
         except Exception as e:
             logger.exception(f"Send failed: {e}")

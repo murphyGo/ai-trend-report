@@ -47,12 +47,29 @@ class LoggingConfig:
 
 
 @dataclass
+class EmailConfig:
+    """이메일 설정"""
+    enabled: bool = False
+    smtp_host: str = "smtp.gmail.com"
+    smtp_port: int = 587
+    use_tls: bool = True
+    username: str = ""  # SMTP 사용자 (보통 이메일 주소)
+    password: str = ""  # SMTP 비밀번호 또는 앱 비밀번호
+    sender: str = ""    # 발신자 이메일
+    recipients: list[str] = field(default_factory=lambda: [
+        "chk8072@naver.com",
+        "murphy9333@gmail.com"
+    ])
+
+
+@dataclass
 class Config:
     """전체 설정"""
     anthropic: AnthropicConfig = field(default_factory=AnthropicConfig)
     slack: SlackConfig = field(default_factory=SlackConfig)
     collectors: CollectorsConfig = field(default_factory=CollectorsConfig)
     logging: LoggingConfig = field(default_factory=LoggingConfig)
+    email: EmailConfig = field(default_factory=EmailConfig)
 
     @classmethod
     def load(cls, config_path: Optional[Path] = None) -> "Config":
@@ -104,6 +121,34 @@ class Config:
                     config.logging.level = log_data["level"]
                 if "log_file" in log_data:
                     config.logging.log_file = log_data["log_file"]
+
+            # 이메일 설정
+            if "email" in data:
+                email_data = data["email"]
+                if "enabled" in email_data:
+                    config.email.enabled = email_data["enabled"]
+                if "smtp_host" in email_data:
+                    config.email.smtp_host = email_data["smtp_host"]
+                if "smtp_port" in email_data:
+                    config.email.smtp_port = email_data["smtp_port"]
+                if "use_tls" in email_data:
+                    config.email.use_tls = email_data["use_tls"]
+                if "username" in email_data:
+                    config.email.username = cls._resolve_env(email_data["username"])
+                if "password" in email_data:
+                    config.email.password = cls._resolve_env(email_data["password"])
+                if "sender" in email_data:
+                    config.email.sender = email_data["sender"]
+                if "recipients" in email_data:
+                    config.email.recipients = email_data["recipients"]
+
+        # 이메일 환경 변수 (YAML보다 우선)
+        email_username = os.getenv("EMAIL_USERNAME")
+        if email_username:
+            config.email.username = email_username
+        email_password = os.getenv("EMAIL_PASSWORD")
+        if email_password:
+            config.email.password = email_password
 
         return config
 

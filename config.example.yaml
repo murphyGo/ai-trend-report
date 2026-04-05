@@ -44,3 +44,26 @@ logging:
   # 파일 출력 시 JSON 형식으로 저장됨
   log_file: null
   # log_file: logs/ai-report.log
+
+# 이메일 설정
+email:
+  # 이메일 알림 활성화 (기본: false)
+  enabled: false
+
+  # SMTP 서버 설정
+  smtp_host: smtp.gmail.com
+  smtp_port: 587
+  use_tls: true
+
+  # SMTP 인증
+  # Gmail의 경우 2FA 활성화 후 앱 비밀번호 사용 권장
+  username: ${EMAIL_USERNAME}
+  password: ${EMAIL_PASSWORD}
+
+  # 발신자 이메일 주소
+  sender: ai-report@example.com
+
+  # 수신자 목록
+  recipients:
+    - chk8072@naver.com
+    - murphy9333@gmail.com
