@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}AI Report Dashboard - Home{% endblock %}
+
+{% block content %}
+<div class="search-box">
+    <form class="search-form" action="/" method="get">
+        <input type="text" name="q" placeholder="Search articles..." value="{{ query or '' }}">
+        <select name="category">
+            <option value="">All Categories</option>
+            {% for cat in categories %}
+            <option value="{{ cat.name }}" {% if category == cat.name %}selected{% endif %}>{{ cat.value }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+{% if search_results is defined %}
+<div class="card">
+    <div class="card-header">
+        <h2>Search Results for "{{ query }}"</h2>
+        <small>{{ search_results|length }} articles found</small>
+    </div>
+    <div class="card-body">
+        {% if search_results %}
+        <ul class="article-list">
+            {% for article in search_results %}
+            <li class="article-item">
+                <a href="{{ article.url }}" target="_blank" class="article-title">{{ article.title }}</a>
+                <div class="article-meta">
+                    <span class="badge badge-primary">{{ article.source }}</span>
+                    <span class="badge badge-purple">{{ article.category }}</span>
+                    <span>{{ article.report_date }}</span>
+                </div>
+                {% if article.summary %}
+                <p class="article-summary">{{ article.summary[:200] }}{% if article.summary|length > 200 %}...{% endif %}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="empty-state">
+            <p>No articles found matching your search.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<h2 style="margin-bottom: 20px;">Recent Reports</h2>
+
+{% if reports %}
+<div class="stats">
+    <div class="stat-card">
+        <div class="number">{{ reports|length }}</div>
+        <div class="label">Total Reports</div>
+    </div>
+    <div class="stat-card">
+        <div class="number">{{ total_articles }}</div>
+        <div class="label">Total Articles</div>
+    </div>
+</div>
+
+{% for report in reports %}
+<div class="card">
+    <div class="card-header">
+        <h3>
+            <a href="/reports/{{ report.id }}" style="color: #333; text-decoration: none;">
+                {{ report.date }}
+            </a>
+        </h3>
+    </div>
+    <div class="card-body">
+        <p>
+            <span class="badge badge-info">{{ report.article_count }} articles</span>
+        </p>
+        <p style="margin-top: 10px;">
+            <a href="/reports/{{ report.id }}" style="color: #667eea;">View Report &rarr;</a>
+        </p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="card">
+    <div class="card-body empty-state">
+        <p>No reports available yet.</p>
+        <p style="margin-top: 10px;">Run <code>python -m src.main</code> to collect articles.</p>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+{% endblock %}

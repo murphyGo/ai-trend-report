@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Report - {{ report_date }} | AI Report Dashboard{% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 20px;">
+    <a href="/" style="color: #667eea; text-decoration: none;">&larr; Back to Reports</a>
+</div>
+
+<h2 style="margin-bottom: 20px;">Report: {{ report_date }}</h2>
+
+<div class="stats">
+    <div class="stat-card">
+        <div class="number">{{ stats.total }}</div>
+        <div class="label">Total Articles</div>
+    </div>
+    <div class="stat-card">
+        <div class="number">{{ stats.by_category|length }}</div>
+        <div class="label">Categories</div>
+    </div>
+    <div class="stat-card">
+        <div class="number">{{ stats.by_source|length }}</div>
+        <div class="label">Sources</div>
+    </div>
+</div>
+
+{% for category, articles in articles_by_category.items() %}
+<div class="card">
+    <div class="card-header">
+        <h3>{{ category.value }}</h3>
+        <span class="badge badge-info">{{ articles|length }} articles</span>
+    </div>
+    <div class="card-body">
+        <ul class="article-list">
+            {% for article in articles %}
+            <li class="article-item">
+                <a href="{{ article.url }}" target="_blank" class="article-title">{{ article.title }}</a>
+                <div class="article-meta">
+                    <span class="badge
+                        {% if article.source.value == 'arxiv' %}badge-primary
+                        {% elif article.source.value == 'google' %}badge-success
+                        {% elif article.source.value == 'anthropic' %}badge-warning
+                        {% elif article.source.value == 'openai' %}badge-success
+                        {% elif article.source.value == 'huggingface' %}badge-purple
+                        {% else %}badge-gray{% endif %}
+                    ">{{ article.source.value }}</span>
+                    {% if article.published_at %}
+                    <span>Published: {{ article.published_at.strftime('%Y-%m-%d') }}</span>
+                    {% endif %}
+                </div>
+                {% if article.summary %}
+                <p class="article-summary">{{ article.summary }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endfor %}
+
+{% if not articles_by_category %}
+<div class="card">
+    <div class="card-body empty-state">
+        <p>No articles in this report.</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

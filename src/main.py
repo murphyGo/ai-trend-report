@@ -389,6 +389,10 @@ Examples:
   # Discord 전송
   python -m src.main --send-only --discord  # Discord로 전송
   python -m src.main --send-only --discord --discord-url https://discord.com/api/webhooks/...
+
+  # 웹 대시보드
+  python -m src.main --serve               # 대시보드 서버 시작 (http://localhost:8000)
+  python -m src.main --serve --port 8080   # 포트 지정
         """
     )
 
@@ -479,6 +483,17 @@ Examples:
         default=None,
         help="Discord Webhook URL (기본: 설정 파일의 webhook_url)",
     )
+    parser.add_argument(
+        "--serve",
+        action="store_true",
+        help="웹 대시보드 서버 시작",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8000,
+        help="웹 서버 포트 (기본: 8000)",
+    )
 
     args = parser.parse_args()
 
@@ -499,7 +514,21 @@ Examples:
     )
 
     # 모드 결정
-    if args.collect_only:
+    if args.serve:
+        # 웹 대시보드 서버 모드
+        logger.info(f"Starting web dashboard server on port {args.port}...")
+        try:
+            from .web.app import run_server
+            run_server(host="0.0.0.0", port=args.port)
+        except ImportError as e:
+            logger.error(f"Failed to import web module: {e}")
+            logger.error("Install web dependencies: pip install fastapi uvicorn jinja2")
+            sys.exit(1)
+        except Exception as e:
+            logger.exception(f"Server failed: {e}")
+            sys.exit(1)
+
+    elif args.collect_only:
         # 수집 전용 모드: API 키 불필요
         try:
             success = run_collect_only(

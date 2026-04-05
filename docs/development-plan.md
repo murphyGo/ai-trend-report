@@ -149,7 +149,7 @@ email:
 
 ### 3.4 기타 확장
 - [x] Discord Webhook 알림 (discord_notifier.py, --discord 플래그)
-- [ ] 웹 대시보드
+- [x] 웹 대시보드 (FastAPI + Jinja2, --serve 플래그)
 - [ ] 기사 저장 (DB)
 
 ---
@@ -179,3 +179,4 @@ email:
 | 2026-04-05 | 3.2 | Phase 3.2 성능 최적화 완료 (병렬 수집, 캐시) |
 | 2026-04-05 | 3.3 | Phase 3.3 이메일 알림 기능 완료 (SMTP, HTML 템플릿) |
 | 2026-04-05 | 3.4 | Phase 3.4 Discord Webhook 알림 기능 완료 |
+| 2026-04-06 | 3.4 | Phase 3.4 웹 대시보드 기능 완료 (FastAPI + Jinja2) |
