@@ -178,13 +178,22 @@ jobs:
           echo "Running: $CMD"
           $CMD
 
-      # Step 3: Slack/Discord 전송 (CLI 모드 전용)
+      # Step 3: Slack/Discord/Email 전송 (CLI 모드 전용)
       - name: Send notifications
         if: env.USE_API != 'true' && github.event.inputs.dry_run != 'true'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python -m src.main --send-only
+          EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
+        run: |
+          CMD="python -m src.main --send-only"
+          # 이메일 설정이 있으면 이메일도 전송
+          if [ -n "$EMAIL_USERNAME" ] && [ -n "$EMAIL_PASSWORD" ]; then
+            CMD="$CMD --email"
+          fi
+          $CMD
 
       - name: Upload report artifact
         if: always()

@@ -180,9 +180,14 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 | `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (세션 키 없을 때 폴백) |
 | `SLACK_WEBHOOK_URL` | ✅ | Slack Incoming Webhook URL |
 | `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
+| `EMAIL_USERNAME` | ❌ | SMTP 사용자명 (Gmail 주소) |
+| `EMAIL_PASSWORD` | ❌ | SMTP 앱 비밀번호 ([생성 방법](https://myaccount.google.com/apppasswords)) |
+| `EMAIL_RECIPIENTS` | ❌ | 이메일 수신자 (쉼표 구분: `a@x.com,b@x.com`) |
 | `CODECOV_TOKEN` | ❌ | Codecov 토큰 (커버리지 리포트용) |
 
-> ⭐ `CLAUDE_SESSION_KEY` 또는 `ANTHROPIC_API_KEY` 중 하나 필수. 세션 키 우선 사용 (Pro/Max 구독 비용 무료).
+> ⭐ `CLAUDE_SESSION_KEY` 또는 `ANTHROPIC_API_KEY` 중 하나 필수.
+>
+> 📧 이메일: `EMAIL_USERNAME` + `EMAIL_PASSWORD` 설정 시 자동 활성화.
 
 ### 4.3 Claude Code CLI 지원
 - [x] GitHub Actions 워크플로우에 Claude Code CLI 모드 추가
