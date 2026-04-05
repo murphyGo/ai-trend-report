@@ -12,14 +12,9 @@ from .collectors import ArxivCollector, GoogleBlogCollector, AnthropicBlogCollec
 from .summarizer import Summarizer
 from .slack_notifier import SlackNotifier
 from .data_io import save_articles, load_articles, save_report, load_report, get_latest_file
+from .utils.logging import setup_logging
 
 
-# 로깅 설정
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-)
 logger = logging.getLogger(__name__)
 
 
@@ -261,16 +256,21 @@ Examples:
 
     args = parser.parse_args()
 
-    # 로그 레벨 설정
-    if args.verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
-
     # 설정 로드
     try:
         config = Config.load(args.config)
     except Exception as e:
-        logger.error(f"Failed to load config: {e}")
+        # 설정 로드 실패 시 기본 로깅으로 에러 출력
+        logging.basicConfig(level=logging.ERROR)
+        logging.error(f"Failed to load config: {e}")
         sys.exit(1)
+
+    # 로깅 설정 (config 로드 후, verbose 플래그가 config보다 우선)
+    setup_logging(
+        level=config.logging.level,
+        log_file=Path(config.logging.log_file) if config.logging.log_file else None,
+        verbose=args.verbose,
+    )
 
     # 모드 결정
     if args.collect_only:

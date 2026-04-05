@@ -40,11 +40,19 @@ class CollectorsConfig:
 
 
 @dataclass
+class LoggingConfig:
+    """로깅 설정"""
+    level: str = "INFO"  # DEBUG, INFO, WARNING, ERROR
+    log_file: Optional[str] = None  # 로그 파일 경로 또는 None
+
+
+@dataclass
 class Config:
     """전체 설정"""
     anthropic: AnthropicConfig = field(default_factory=AnthropicConfig)
     slack: SlackConfig = field(default_factory=SlackConfig)
     collectors: CollectorsConfig = field(default_factory=CollectorsConfig)
+    logging: LoggingConfig = field(default_factory=LoggingConfig)
 
     @classmethod
     def load(cls, config_path: Optional[Path] = None) -> "Config":
@@ -88,6 +96,14 @@ class Config:
                     config.collectors.google_blog.enabled = collectors_data["google_blog"].get("enabled", True)
                 if "anthropic_blog" in collectors_data:
                     config.collectors.anthropic_blog.enabled = collectors_data["anthropic_blog"].get("enabled", True)
+
+            # 로깅 설정
+            if "logging" in data:
+                log_data = data["logging"]
+                if "level" in log_data:
+                    config.logging.level = log_data["level"]
+                if "log_file" in log_data:
+                    config.logging.log_file = log_data["log_file"]
 
         return config
 

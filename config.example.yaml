@@ -34,3 +34,13 @@ collectors:
   # Anthropic 블로그 수집
   anthropic_blog:
     enabled: true
+
+# 로깅 설정
+logging:
+  # 로그 레벨: DEBUG, INFO, WARNING, ERROR
+  level: INFO
+
+  # 로그 파일 경로 (null이면 파일 출력 안 함)
+  # 파일 출력 시 JSON 형식으로 저장됨
+  log_file: null
+  # log_file: logs/ai-report.log
