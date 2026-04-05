@@ -56,10 +56,7 @@ class EmailConfig:
     username: str = ""  # SMTP 사용자 (보통 이메일 주소)
     password: str = ""  # SMTP 비밀번호 또는 앱 비밀번호
     sender: str = ""    # 발신자 이메일
-    recipients: list[str] = field(default_factory=lambda: [
-        "chk8072@naver.com",
-        "murphy9333@gmail.com"
-    ])
+    recipients: list[str] = field(default_factory=list)  # 환경 변수 EMAIL_RECIPIENTS에서 로드
 
 
 @dataclass
@@ -149,6 +146,9 @@ class Config:
         email_password = os.getenv("EMAIL_PASSWORD")
         if email_password:
             config.email.password = email_password
+        email_recipients = os.getenv("EMAIL_RECIPIENTS")
+        if email_recipients:
+            config.email.recipients = [r.strip() for r in email_recipients.split(",")]
 
         return config
 

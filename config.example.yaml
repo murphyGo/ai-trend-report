@@ -63,7 +63,7 @@ email:
   # 발신자 이메일 주소
   sender: ai-report@example.com
 
-  # 수신자 목록
+  # 수신자 목록 (또는 환경 변수 EMAIL_RECIPIENTS 사용)
   recipients:
-    - chk8072@naver.com
-    - murphy9333@gmail.com
+    - user1@example.com
+    - user2@example.com

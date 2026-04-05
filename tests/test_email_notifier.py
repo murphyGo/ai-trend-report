@@ -280,8 +280,7 @@ class TestEmailConfig:
         assert config.username == ""
         assert config.password == ""
         assert config.sender == ""
-        assert "chk8072@naver.com" in config.recipients
-        assert "murphy9333@gmail.com" in config.recipients
+        assert config.recipients == []  # 기본값은 빈 리스트 (환경 변수에서 로드)
 
     def test_email_config_custom_values(self):
         """커스텀 값 테스트"""
@@ -309,8 +308,12 @@ class TestEmailConfig:
 class TestConfigEmailLoading:
     """Config의 이메일 설정 로딩 테스트"""
 
-    def test_config_email_from_yaml(self, tmp_path):
+    def test_config_email_from_yaml(self, tmp_path, monkeypatch):
         """YAML에서 이메일 설정 로드"""
+        # 환경 변수 클리어 (YAML 값 테스트를 위해)
+        # setenv("")로 빈 문자열 설정 - load_dotenv 이후에도 적용됨
+        monkeypatch.setenv("EMAIL_RECIPIENTS", "")
+
         config_file = tmp_path / "config.yaml"
         config_file.write_text("""
 email:
@@ -365,3 +368,17 @@ email:
 
         assert config.email.username == "resolved_user"
         assert config.email.password == "resolved_pass"
+
+    def test_config_email_recipients_from_env(self, tmp_path, monkeypatch):
+        """EMAIL_RECIPIENTS 환경 변수에서 수신자 로드"""
+        config_file = tmp_path / "config.yaml"
+        config_file.write_text("")  # 빈 설정 파일
+
+        monkeypatch.setenv("EMAIL_RECIPIENTS", "user1@test.com, user2@test.com, user3@test.com")
+
+        config = Config.load(config_file)
+
+        assert len(config.email.recipients) == 3
+        assert "user1@test.com" in config.email.recipients
+        assert "user2@test.com" in config.email.recipients
+        assert "user3@test.com" in config.email.recipients
