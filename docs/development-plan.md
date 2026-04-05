@@ -176,7 +176,7 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 
 | Secret 이름 | 필수 | 설명 |
 |------------|------|------|
-| `CLAUDE_SESSION_KEY` | ⭐ | Pro/Max 구독 세션 키 (`~/.claude/.credentials.json`에서 추출) |
+| `CLAUDE_CODE_OAUTH_TOKEN` | ⭐ | Pro/Max 구독 OAuth 토큰 (`~/.claude/.credentials.json`에서 추출) |
 | `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (세션 키 없을 때 폴백) |
 | `SLACK_WEBHOOK_URL` | ✅ | Slack Incoming Webhook URL |
 | `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
@@ -195,8 +195,8 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 - [x] 모델 선택 옵션 (sonnet/haiku/opus)
 - [x] `use_api` 옵션으로 API/CLI 모드 선택 가능
 
-### 4.4 세션 키 인증 (Pro/Max 구독)
-- [x] `CLAUDE_SESSION_KEY` 환경 변수 지원
+### 4.4 OAuth 토큰 인증 (Pro/Max 구독)
+- [x] `CLAUDE_CODE_OAUTH_TOKEN` 환경 변수 지원
 - [x] Pro/Max 구독 기반 무료 인증
 - [x] API 키 폴백 유지
 

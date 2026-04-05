@@ -80,8 +80,8 @@ jobs:
       - name: Summarize with Claude Code CLI
         if: env.USE_API != 'true'
         env:
-          # 세션 키 인증 (Pro/Max 구독 사용) - 우선순위 1
-          CLAUDE_SESSION_KEY: ${{ secrets.CLAUDE_SESSION_KEY }}
+          # OAuth 토큰 인증 (Pro/Max 구독 사용) - 우선순위 1
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           # API 키 폴백 (유료 API) - 우선순위 2
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -103,8 +103,8 @@ jobs:
           echo "Using model: $MODEL"
 
           # 인증 방식 확인
-          if [ -n "$CLAUDE_SESSION_KEY" ]; then
-            echo "🔐 Using session key authentication (Pro/Max subscription)"
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "🔐 Using OAuth token authentication (Pro/Max subscription)"
           elif [ -n "$ANTHROPIC_API_KEY" ]; then
             echo "🔑 Using API key authentication (pay-per-use)"
           else
