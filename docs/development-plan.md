@@ -148,7 +148,7 @@ email:
 ```
 
 ### 3.4 기타 확장
-- [ ] Discord Webhook 알림
+- [x] Discord Webhook 알림 (discord_notifier.py, --discord 플래그)
 - [ ] 웹 대시보드
 - [ ] 기사 저장 (DB)
 
@@ -178,3 +178,4 @@ email:
 | 2026-04-05 | 3.1 | Phase 3.1 새 소스 추가 완료 (OpenAI, HuggingFace, 한국 AI뉴스) |
 | 2026-04-05 | 3.2 | Phase 3.2 성능 최적화 완료 (병렬 수집, 캐시) |
 | 2026-04-05 | 3.3 | Phase 3.3 이메일 알림 기능 완료 (SMTP, HTML 템플릿) |
+| 2026-04-05 | 3.4 | Phase 3.4 Discord Webhook 알림 기능 완료 |

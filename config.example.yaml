@@ -16,6 +16,12 @@ slack:
   # Slack App 설정에서 생성: https://api.slack.com/messaging/webhooks
   webhook_url: ${SLACK_WEBHOOK_URL}
 
+# Discord 설정
+discord:
+  # Discord Webhook URL
+  # 서버 설정 > 연동 > 웹훅에서 생성
+  webhook_url: ${DISCORD_WEBHOOK_URL}
+
 # 수집기 설정
 collectors:
   # arXiv 논문 수집

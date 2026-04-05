@@ -20,6 +20,7 @@ from .collectors import (
 )
 from .summarizer import Summarizer
 from .slack_notifier import SlackNotifier
+from .discord_notifier import DiscordNotifier
 from .email_notifier import EmailNotifier
 from .data_io import save_articles, load_articles, save_report, load_report, get_latest_file
 from .cache import ArticleCache
@@ -269,8 +270,10 @@ def run_send_only(
     dry_run: bool = False,
     send_email: bool = False,
     email_recipients: list[str] = None,
+    send_discord: bool = False,
+    discord_url: str = None,
 ) -> bool:
-    """전송 전용 파이프라인 - JSON에서 로드하여 Slack/이메일 전송
+    """전송 전용 파이프라인 - JSON에서 로드하여 Slack/Discord/이메일 전송
 
     Args:
         config: 설정 객체
@@ -278,6 +281,8 @@ def run_send_only(
         dry_run: 실제 전송 없이 미리보기
         send_email: 이메일 전송 여부
         email_recipients: 이메일 수신자 목록 (None이면 설정 기본값)
+        send_discord: Discord 전송 여부
+        discord_url: Discord Webhook URL (None이면 설정 기본값)
 
     Returns:
         성공 여부
@@ -318,9 +323,9 @@ def run_send_only(
 
     success = True
 
-    # Slack 전송 (이메일만 요청한 경우가 아니면)
-    if not send_email or config.slack.webhook_url:
-        if config.slack.webhook_url and not send_email:
+    # Slack 전송 (다른 채널이 명시적으로 요청된 경우가 아니면)
+    if not send_email and not send_discord:
+        if config.slack.webhook_url:
             logger.info("[2/2] Sending report to Slack...")
             slack_notifier = SlackNotifier(config)
             slack_success = slack_notifier.send_report(report)
@@ -329,6 +334,17 @@ def run_send_only(
             else:
                 logger.error("Failed to send Slack notification")
                 success = False
+
+    # Discord 전송
+    if send_discord:
+        logger.info("[2/2] Sending report to Discord...")
+        discord_notifier = DiscordNotifier(config, webhook_url=discord_url)
+        discord_success = discord_notifier.send_report(report)
+        if discord_success:
+            logger.info("Discord notification sent successfully!")
+        else:
+            logger.error("Failed to send Discord notification")
+            success = False
 
     # 이메일 전송
     if send_email:
@@ -369,6 +385,10 @@ Examples:
   # 이메일 전송
   python -m src.main --send-only --email    # 이메일로 전송
   python -m src.main --send-only --email --email-to user@example.com  # 특정 수신자
+
+  # Discord 전송
+  python -m src.main --send-only --discord  # Discord로 전송
+  python -m src.main --send-only --discord --discord-url https://discord.com/api/webhooks/...
         """
     )
 
@@ -448,6 +468,17 @@ Examples:
         nargs="+",
         help="이메일 수신자 (기본: 설정 파일의 recipients)",
     )
+    parser.add_argument(
+        "--discord",
+        action="store_true",
+        help="Discord로 리포트 전송",
+    )
+    parser.add_argument(
+        "--discord-url",
+        type=str,
+        default=None,
+        help="Discord Webhook URL (기본: 설정 파일의 webhook_url)",
+    )
 
     args = parser.parse_args()
 
@@ -493,6 +524,8 @@ Examples:
                 dry_run=args.dry_run,
                 send_email=args.email,
                 email_recipients=args.email_to,
+                send_discord=args.discord,
+                discord_url=args.discord_url,
             )
             sys.exit(0 if success else 1)
         except Exception as e:

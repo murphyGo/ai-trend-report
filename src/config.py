@@ -23,6 +23,12 @@ class SlackConfig:
 
 
 @dataclass
+class DiscordConfig:
+    """Discord 설정"""
+    webhook_url: str = ""  # DISCORD_WEBHOOK_URL 환경 변수
+
+
+@dataclass
 class CollectorConfig:
     """수집기 설정"""
     enabled: bool = True
@@ -64,6 +70,7 @@ class Config:
     """전체 설정"""
     anthropic: AnthropicConfig = field(default_factory=AnthropicConfig)
     slack: SlackConfig = field(default_factory=SlackConfig)
+    discord: DiscordConfig = field(default_factory=DiscordConfig)
     collectors: CollectorsConfig = field(default_factory=CollectorsConfig)
     logging: LoggingConfig = field(default_factory=LoggingConfig)
     email: EmailConfig = field(default_factory=EmailConfig)
@@ -78,6 +85,7 @@ class Config:
         # 환경 변수에서 로드
         config.anthropic.api_key = os.getenv("ANTHROPIC_API_KEY", "")
         config.slack.webhook_url = os.getenv("SLACK_WEBHOOK_URL", "")
+        config.discord.webhook_url = os.getenv("DISCORD_WEBHOOK_URL", "")
 
         # 설정 파일이 있으면 로드
         if config_path is None:
@@ -98,6 +106,11 @@ class Config:
             if "slack" in data:
                 if "webhook_url" in data["slack"] and not config.slack.webhook_url:
                     config.slack.webhook_url = cls._resolve_env(data["slack"]["webhook_url"])
+
+            # Discord 설정
+            if "discord" in data:
+                if "webhook_url" in data["discord"] and not config.discord.webhook_url:
+                    config.discord.webhook_url = cls._resolve_env(data["discord"]["webhook_url"])
 
             # 수집기 설정
             if "collectors" in data:
