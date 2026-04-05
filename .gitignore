@@ -43,6 +43,7 @@ logs/
 # Cache
 .cache/
 *.cache
+.article_cache.json
 
 # OS
 .DS_Store

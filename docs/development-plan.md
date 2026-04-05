@@ -102,7 +102,7 @@ python -m src.main --use-api          # 전체 파이프라인
 - [x] 로그 파일 출력
 
 ### 2.3 테스트 코드 추가
-- [x] 단위 테스트 (pytest) - 100개 테스트 통과
+- [x] 단위 테스트 (pytest) - 122개 테스트 통과
 - [x] Collector 모킹 테스트 - responses 라이브러리 사용
 - [x] Summarizer 모킹 테스트 - API 모킹
 - [x] 통합 테스트 - 데이터 파이프라인 및 E2E
@@ -125,9 +125,9 @@ python -m src.main --use-api          # 전체 파이프라인
 - [x] 한국 AI 뉴스 수집기 (korean_news.py - AI타임스)
 
 ### 3.2 성능 최적화
-- [ ] 비동기 수집 (aiohttp)
-- [ ] 기사 캐싱 (중복 제거)
-- [ ] 배치 요약 (API 호출 최소화)
+- [x] 병렬 수집 (ThreadPoolExecutor) - src/main.py
+- [x] 기사 캐싱 (중복 제거) - src/cache.py
+- [x] CLI 옵션 추가 (--parallel, --no-cache, --cache-days)
 
 ### 3.3 이메일 알림 기능
 - [ ] EmailNotifier 클래스 구현 (SMTP)
@@ -176,3 +176,4 @@ email:
 | 2026-04-05 | 2.2 | Phase 2.2 로깅 개선 완료 |
 | 2026-04-05 | 2.3 | Phase 2.3 테스트 코드 추가 완료 (100개 테스트) |
 | 2026-04-05 | 3.1 | Phase 3.1 새 소스 추가 완료 (OpenAI, HuggingFace, 한국 AI뉴스) |
+| 2026-04-05 | 3.2 | Phase 3.2 성능 최적화 완료 (병렬 수집, 캐시) |

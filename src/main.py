@@ -3,25 +3,33 @@
 import argparse
 import logging
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 from .config import Config
 from .models import Article, Report
-from .collectors import ArxivCollector, GoogleBlogCollector, AnthropicBlogCollector
+from .collectors import (
+    ArxivCollector,
+    GoogleBlogCollector,
+    AnthropicBlogCollector,
+    OpenAIBlogCollector,
+    HuggingFaceBlogCollector,
+    KoreanNewsCollector,
+)
 from .summarizer import Summarizer
 from .slack_notifier import SlackNotifier
 from .data_io import save_articles, load_articles, save_report, load_report, get_latest_file
+from .cache import ArticleCache
 from .utils.logging import setup_logging
 
 
 logger = logging.getLogger(__name__)
 
 
-def collect_articles(config: Config) -> list:
-    """모든 소스에서 기사 수집"""
-    articles = []
-
+def get_enabled_collectors(config: Config) -> list:
+    """활성화된 수집기 목록 반환"""
     collectors = []
 
     if config.collectors.arxiv.enabled:
@@ -35,6 +43,41 @@ def collect_articles(config: Config) -> list:
     if config.collectors.anthropic_blog.enabled:
         collectors.append(AnthropicBlogCollector())
 
+    # 새로 추가된 수집기들 (기본 활성화)
+    collectors.append(OpenAIBlogCollector())
+    collectors.append(HuggingFaceBlogCollector())
+    collectors.append(KoreanNewsCollector())
+
+    return collectors
+
+
+def collect_articles(config: Config, parallel: bool = False, max_workers: int = 3) -> list:
+    """모든 소스에서 기사 수집
+
+    Args:
+        config: 설정 객체
+        parallel: 병렬 수집 여부 (기본: False)
+        max_workers: 병렬 작업자 수 (기본: 3)
+
+    Returns:
+        수집된 기사 목록
+    """
+    collectors = get_enabled_collectors(config)
+
+    if not collectors:
+        logger.warning("No collectors enabled")
+        return []
+
+    if parallel:
+        return collect_articles_parallel(collectors, max_workers)
+    else:
+        return collect_articles_sequential(collectors)
+
+
+def collect_articles_sequential(collectors: list) -> list:
+    """순차적으로 기사 수집"""
+    articles = []
+
     for collector in collectors:
         try:
             logger.info(f"Collecting from {collector.source.value}...")
@@ -45,6 +88,41 @@ def collect_articles(config: Config) -> list:
             logger.error(f"Failed to collect from {collector.source.value}: {e}")
             continue
 
+    return articles
+
+
+def collect_articles_parallel(collectors: list, max_workers: int = 3) -> list:
+    """병렬로 기사 수집 (ThreadPoolExecutor 사용)
+
+    Args:
+        collectors: 수집기 목록
+        max_workers: 최대 동시 작업 수
+
+    Returns:
+        수집된 기사 목록
+    """
+    articles = []
+
+    logger.info(f"Starting parallel collection with {max_workers} workers...")
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # 각 수집기에 대한 Future 생성
+        future_to_collector = {
+            executor.submit(collector.collect): collector
+            for collector in collectors
+        }
+
+        # 완료된 순서대로 결과 수집
+        for future in as_completed(future_to_collector):
+            collector = future_to_collector[future]
+            try:
+                collected = future.result()
+                articles.extend(collected)
+                logger.info(f"Collected {len(collected)} articles from {collector.source.value}")
+            except Exception as e:
+                logger.error(f"Failed to collect from {collector.source.value}: {e}")
+
+    logger.info(f"Parallel collection complete: {len(articles)} total articles")
     return articles
 
 
@@ -105,15 +183,44 @@ def run_pipeline(config: Config, dry_run: bool = False, limit: int = 0) -> bool:
     return success
 
 
-def run_collect_only(config: Config, output_dir: Path, limit: int = 0) -> bool:
-    """수집 전용 파이프라인 - JSON 저장만"""
+def run_collect_only(
+    config: Config,
+    output_dir: Path,
+    limit: int = 0,
+    parallel: bool = False,
+    use_cache: bool = True,
+    cache_days: int = 7,
+) -> bool:
+    """수집 전용 파이프라인 - JSON 저장만
+
+    Args:
+        config: 설정 객체
+        output_dir: 출력 디렉토리
+        limit: 기사 수 제한 (0 = 무제한)
+        parallel: 병렬 수집 여부
+        use_cache: 캐시 사용 여부
+        cache_days: 캐시 유효 기간 (일)
+
+    Returns:
+        성공 여부
+    """
     logger.info("=" * 50)
     logger.info("AI Report - Collect Only Mode")
+    if parallel:
+        logger.info("(Parallel collection enabled)")
+    if use_cache:
+        logger.info(f"(Cache enabled, {cache_days} days)")
     logger.info("=" * 50)
 
+    # 캐시 초기화
+    cache = None
+    if use_cache:
+        cache = ArticleCache(cache_dir=output_dir, max_age_days=cache_days)
+        logger.info(f"Loaded cache with {len(cache)} URLs")
+
     # 1. 기사 수집
-    logger.info("[1/2] Collecting articles...")
-    articles = collect_articles(config)
+    logger.info("[1/3] Collecting articles...")
+    articles = collect_articles(config, parallel=parallel)
 
     if not articles:
         logger.warning("No articles collected.")
@@ -121,15 +228,36 @@ def run_collect_only(config: Config, output_dir: Path, limit: int = 0) -> bool:
 
     logger.info(f"Total articles collected: {len(articles)}")
 
+    # 2. 캐시 필터링 (중복 제거)
+    if cache:
+        logger.info("[2/3] Filtering cached articles...")
+        original_count = len(articles)
+        articles = cache.filter_new(articles)
+        skipped = original_count - len(articles)
+        if skipped > 0:
+            logger.info(f"Skipped {skipped} cached articles")
+
+        if not articles:
+            logger.info("All articles are already cached. Nothing new to save.")
+            return True
+    else:
+        logger.info("[2/3] Cache disabled, skipping filter...")
+
     # 기사 수 제한
     if limit > 0:
         articles = articles[:limit]
         logger.info(f"Limited to {limit} articles")
 
-    # 2. JSON 저장
-    logger.info("[2/2] Saving articles to JSON...")
+    # 3. JSON 저장
+    logger.info("[3/3] Saving articles to JSON...")
     filepath = save_articles(articles, output_dir)
     logger.info(f"Articles saved to: {filepath}")
+
+    # 캐시 업데이트
+    if cache:
+        cache.add_articles(articles)
+        cache.save()
+        logger.info(f"Cache updated: {len(cache)} total URLs")
 
     return True
 
@@ -192,6 +320,8 @@ Examples:
   # 기본 모드 (수집만, Claude Code에서 요약)
   python -m src.main                        # 수집 → JSON 저장
   python -m src.main --limit 5              # 5개 기사만 수집
+  python -m src.main --parallel             # 병렬 수집 (빠름)
+  python -m src.main --no-cache             # 캐시 무시 (전체 수집)
 
   # API 모드 (기존 방식, Anthropic API 사용)
   python -m src.main --use-api              # 전체 파이프라인
@@ -253,6 +383,22 @@ Examples:
         default=Path("data"),
         help="출력 디렉토리 (기본: data/)",
     )
+    parser.add_argument(
+        "--parallel",
+        action="store_true",
+        help="병렬 수집 활성화 (ThreadPoolExecutor)",
+    )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="캐시 사용 안 함 (항상 전체 수집)",
+    )
+    parser.add_argument(
+        "--cache-days",
+        type=int,
+        default=7,
+        help="캐시 유효 기간 일수 (기본: 7일)",
+    )
 
     args = parser.parse_args()
 
@@ -276,7 +422,14 @@ Examples:
     if args.collect_only:
         # 수집 전용 모드: API 키 불필요
         try:
-            success = run_collect_only(config, args.output_dir, args.limit)
+            success = run_collect_only(
+                config,
+                args.output_dir,
+                limit=args.limit,
+                parallel=args.parallel,
+                use_cache=not args.no_cache,
+                cache_days=args.cache_days,
+            )
             sys.exit(0 if success else 1)
         except Exception as e:
             logger.exception(f"Collection failed: {e}")
@@ -322,7 +475,14 @@ Examples:
         # 기본 모드: collect-only와 동일 (Claude Code에서 요약)
         logger.info("Default mode: collecting articles only (use --use-api for full pipeline)")
         try:
-            success = run_collect_only(config, args.output_dir, args.limit)
+            success = run_collect_only(
+                config,
+                args.output_dir,
+                limit=args.limit,
+                parallel=args.parallel,
+                use_cache=not args.no_cache,
+                cache_days=args.cache_days,
+            )
             sys.exit(0 if success else 1)
         except Exception as e:
             logger.exception(f"Collection failed: {e}")
