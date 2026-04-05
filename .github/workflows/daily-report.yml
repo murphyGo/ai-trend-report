@@ -17,11 +17,29 @@ on:
         required: false
         default: ''
         type: string
+      use_api:
+        description: 'Use Anthropic API directly (instead of Claude Code CLI)'
+        required: false
+        default: 'false'
+        type: boolean
+      model:
+        description: 'Claude model to use (for CLI mode)'
+        required: false
+        default: 'sonnet'
+        type: choice
+        options:
+          - sonnet
+          - haiku
+          - opus
+
+env:
+  # 기본값: Claude Code CLI 모드 (스케줄 실행 시)
+  USE_API: ${{ github.event.inputs.use_api || 'false' }}
 
 jobs:
   generate-report:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -33,32 +51,128 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate AI Report
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      - name: Set up Node.js (for Claude Code CLI)
+        if: env.USE_API != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        if: env.USE_API != 'true'
+        run: npm install -g @anthropic-ai/claude-code
+
+      # Step 1: 기사 수집
+      - name: Collect articles
         run: |
-          # Build command with options
-          CMD="python -m src.main --use-api"
-
-          # Add dry-run if requested
-          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
-            CMD="$CMD --dry-run"
-          fi
-
-          # Add limit if specified
+          CMD="python -m src.main --collect-only"
           if [ -n "${{ github.event.inputs.limit }}" ]; then
             CMD="$CMD --limit ${{ github.event.inputs.limit }}"
           fi
-
           echo "Running: $CMD"
           $CMD
+
+      # Step 2a: Claude Code CLI로 요약 (기본 모드)
+      - name: Summarize with Claude Code CLI
+        if: env.USE_API != 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -e
+
+          # 오늘 날짜
+          TODAY=$(date +%Y-%m-%d)
+
+          # 최신 articles 파일 찾기
+          ARTICLES_FILE=$(ls -t data/articles_*.json 2>/dev/null | head -1)
+          if [ -z "$ARTICLES_FILE" ]; then
+            echo "Error: No articles file found"
+            exit 1
+          fi
+          echo "Processing: $ARTICLES_FILE"
+
+          # 모델 선택
+          MODEL="${{ github.event.inputs.model || 'sonnet' }}"
+          echo "Using model: $MODEL"
+
+          # Claude Code CLI 실행 (bare 모드 = CI/headless 환경용)
+          # --bare: OAuth 및 keychain 읽기 스킵
+          # -p: print 모드 (non-interactive)
+          # --allowedTools: 허용할 도구 제한
+          # --model: 사용할 모델
+          claude --bare --model "$MODEL" -p "
+          You are an AI news summarizer for a Korean tech newsletter.
+
+          ## Task
+          1. Read articles from: $ARTICLES_FILE
+          2. For EACH article, create a Korean summary (3-5 sentences) covering:
+             - 핵심 기술/발견
+             - 기술적 의의
+             - 실용적 영향
+          3. Assign a category to each article from this list:
+             LLM, AI_AGENT, VISION, VIDEO_GEN, ROBOTICS, AI_SAFETY, RL, ML_INFRA, MEDICAL, FINANCE, INDUSTRY, OTHER
+          4. Save the summarized report to: data/report_${TODAY}.json
+
+          ## Implementation
+          Use Python with the project's existing modules:
+          - src.data_io: load_articles(), save_report()
+          - src.models: Article, Report, Category
+
+          Example code structure:
+          \`\`\`python
+          from src.data_io import load_articles, save_report
+          from src.models import Report, Category
+
+          articles = load_articles('$ARTICLES_FILE')
+          for article in articles:
+              # Add summary and category
+              article.summary = '...'  # Your Korean summary
+              article.category = Category.LLM  # Appropriate category
+
+          report = Report(articles=articles)
+          save_report(report)
+          \`\`\`
+
+          Execute this task now.
+          " --allowedTools "Bash,Read,Write,Edit"
+
+          # 결과 확인
+          if [ -f "data/report_${TODAY}.json" ]; then
+            echo "✅ Report generated: data/report_${TODAY}.json"
+            ARTICLE_COUNT=$(python -c "import json; print(len(json.load(open('data/report_${TODAY}.json'))['articles']))")
+            echo "📊 Articles summarized: $ARTICLE_COUNT"
+          else
+            echo "❌ Report file not found"
+            exit 1
+          fi
+
+      # Step 2b: Anthropic API로 요약 (대안 모드)
+      - name: Summarize with Anthropic API
+        if: env.USE_API == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          CMD="python -m src.main --use-api"
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            CMD="$CMD --dry-run"
+          fi
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            CMD="$CMD --limit ${{ github.event.inputs.limit }}"
+          fi
+          echo "Running: $CMD"
+          $CMD
+
+      # Step 3: Slack/Discord 전송 (CLI 모드 전용)
+      - name: Send notifications
+        if: env.USE_API != 'true' && github.event.inputs.dry_run != 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python -m src.main --send-only
 
       - name: Upload report artifact
         if: always()
@@ -75,21 +189,22 @@ jobs:
 
     steps:
       - name: Send failure notification to Slack
-        if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data '{
-              "text": "⚠️ AI Report 생성 실패",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "⚠️ *AI Report 생성 실패*\n\n워크플로우 실행 중 오류가 발생했습니다.\n\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|GitHub Actions에서 확인>"
+          if [ -n "$SLACK_WEBHOOK_URL" ]; then
+            curl -X POST -H 'Content-type: application/json' \
+              --data '{
+                "text": "⚠️ AI Report 생성 실패",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "⚠️ *AI Report 생성 실패*\n\n워크플로우 실행 중 오류가 발생했습니다.\n\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|GitHub Actions에서 확인>"
+                    }
                   }
-                }
-              ]
-            }' \
-            "$SLACK_WEBHOOK_URL"
+                ]
+              }' \
+              "$SLACK_WEBHOOK_URL"
+          fi

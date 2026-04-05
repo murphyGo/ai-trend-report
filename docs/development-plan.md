@@ -181,11 +181,30 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 | `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
 | `CODECOV_TOKEN` | ❌ | Codecov 토큰 (커버리지 리포트용) |
 
-### 워크플로우 수동 실행
+### 4.3 Claude Code CLI 지원
+- [x] GitHub Actions 워크플로우에 Claude Code CLI 모드 추가
+- [x] `--bare` 플래그로 CI/headless 환경 지원
+- [x] `-p` 플래그로 non-interactive 실행
+- [x] 모델 선택 옵션 (sonnet/haiku/opus)
+- [x] `use_api` 옵션으로 API/CLI 모드 선택 가능
+
+### 워크플로우 실행 옵션
 
 GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
-- `dry_run`: true로 설정 시 Slack 전송 없이 테스트
-- `limit`: 처리할 기사 수 제한
+
+| 옵션 | 설명 | 기본값 |
+|------|------|--------|
+| `dry_run` | Slack 전송 없이 테스트 | false |
+| `limit` | 처리할 기사 수 제한 | 전체 |
+| `use_api` | Anthropic API 직접 사용 | false (CLI 모드) |
+| `model` | Claude 모델 선택 | sonnet |
+
+### 실행 모드 비교
+
+| 모드 | 설명 | 사용 시점 |
+|------|------|----------|
+| **CLI 모드** (기본) | Claude Code CLI + `--bare` | 일반적인 자동화 |
+| **API 모드** | Anthropic API 직접 호출 | 더 세밀한 제어 필요 시 |
 
 ---
 
@@ -216,3 +235,4 @@ GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
 | 2026-04-05 | 3.4 | Phase 3.4 Discord Webhook 알림 기능 완료 |
 | 2026-04-06 | 3.4 | Phase 3.4 웹 대시보드 기능 완료 (FastAPI + Jinja2) |
 | 2026-04-06 | 4.0 | Phase 4 자동화 완료 (GitHub Actions 스케줄러, CI/CD) |
+| 2026-04-06 | 4.3 | Phase 4.3 Claude Code CLI 지원 추가 |
