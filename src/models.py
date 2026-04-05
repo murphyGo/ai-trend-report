@@ -37,6 +37,9 @@ class Source(Enum):
     ARXIV = "arxiv"
     GOOGLE_BLOG = "google"
     ANTHROPIC_BLOG = "anthropic"
+    OPENAI_BLOG = "openai"
+    HUGGINGFACE_BLOG = "huggingface"
+    KOREAN_NEWS = "korean"
 
 
 @dataclass

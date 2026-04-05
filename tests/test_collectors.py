@@ -4,7 +4,14 @@ import pytest
 import responses
 from requests.exceptions import ConnectionError, Timeout
 
-from src.collectors import ArxivCollector, GoogleBlogCollector, AnthropicBlogCollector
+from src.collectors import (
+    ArxivCollector,
+    GoogleBlogCollector,
+    AnthropicBlogCollector,
+    OpenAIBlogCollector,
+    HuggingFaceBlogCollector,
+    KoreanNewsCollector,
+)
 from src.collectors.base import BaseCollector
 from src.models import Source
 
@@ -299,6 +306,214 @@ class TestAnthropicBlogCollector:
         assert articles == []
 
 
+class TestOpenAIBlogCollector:
+    """OpenAIBlogCollector 테스트"""
+
+    @pytest.fixture
+    def openai_html(self):
+        """OpenAI 뉴스 HTML 샘플"""
+        return """<!DOCTYPE html>
+<html>
+<head><title>OpenAI News</title></head>
+<body>
+<a href="/index/gpt-5-announcement">
+    <h3>GPT-5 Announcement</h3>
+</a>
+<a href="/index/safety-research">
+    <h3>Safety Research Update</h3>
+</a>
+<a href="/about">About Us</a>
+</body>
+</html>"""
+
+    @responses.activate
+    def test_openai_collector_fetch_articles(self, openai_html):
+        """OpenAI 뉴스 수집"""
+        responses.add(
+            responses.GET,
+            "https://openai.com/news/",
+            body=openai_html,
+            status=200,
+        )
+
+        collector = OpenAIBlogCollector()
+        articles = collector.fetch_articles()
+
+        assert len(articles) >= 1
+        assert articles[0].source == Source.OPENAI_BLOG
+
+    @responses.activate
+    def test_openai_collector_filters_links(self, openai_html):
+        """링크 필터링 확인"""
+        responses.add(
+            responses.GET,
+            "https://openai.com/news/",
+            body=openai_html,
+            status=200,
+        )
+
+        collector = OpenAIBlogCollector()
+        articles = collector.fetch_articles()
+
+        # About 페이지는 제외
+        urls = [a.url for a in articles]
+        assert not any("/about" in url for url in urls)
+
+    @responses.activate
+    def test_openai_collector_http_error(self):
+        """HTTP 에러 처리"""
+        responses.add(
+            responses.GET,
+            "https://openai.com/news/",
+            status=500,
+        )
+
+        collector = OpenAIBlogCollector()
+        articles = collector.fetch_articles()
+
+        assert articles == []
+
+
+class TestHuggingFaceBlogCollector:
+    """HuggingFaceBlogCollector 테스트"""
+
+    @pytest.fixture
+    def huggingface_html(self):
+        """Hugging Face 블로그 HTML 샘플"""
+        return """<!DOCTYPE html>
+<html>
+<head><title>Hugging Face Blog</title></head>
+<body>
+<a href="/blog/transformers-v5">
+    <h3>Transformers v5 Release</h3>
+</a>
+<a href="/blog/diffusers-update">
+    <h3>Diffusers Library Update</h3>
+</a>
+<a href="/models">Models</a>
+</body>
+</html>"""
+
+    @responses.activate
+    def test_huggingface_collector_fetch_articles(self, huggingface_html):
+        """Hugging Face 블로그 수집"""
+        responses.add(
+            responses.GET,
+            "https://huggingface.co/blog",
+            body=huggingface_html,
+            status=200,
+        )
+
+        collector = HuggingFaceBlogCollector()
+        articles = collector.fetch_articles()
+
+        assert len(articles) >= 1
+        assert articles[0].source == Source.HUGGINGFACE_BLOG
+
+    @responses.activate
+    def test_huggingface_collector_filters_links(self, huggingface_html):
+        """링크 필터링 확인"""
+        responses.add(
+            responses.GET,
+            "https://huggingface.co/blog",
+            body=huggingface_html,
+            status=200,
+        )
+
+        collector = HuggingFaceBlogCollector()
+        articles = collector.fetch_articles()
+
+        # /models 페이지는 제외
+        urls = [a.url for a in articles]
+        assert all("/blog/" in url for url in urls)
+
+    @responses.activate
+    def test_huggingface_collector_http_error(self):
+        """HTTP 에러 처리"""
+        responses.add(
+            responses.GET,
+            "https://huggingface.co/blog",
+            status=500,
+        )
+
+        collector = HuggingFaceBlogCollector()
+        articles = collector.fetch_articles()
+
+        assert articles == []
+
+
+class TestKoreanNewsCollector:
+    """KoreanNewsCollector 테스트"""
+
+    @pytest.fixture
+    def korean_news_html(self):
+        """한국 AI 뉴스 HTML 샘플"""
+        return """<!DOCTYPE html>
+<html>
+<head><title>AI타임스</title></head>
+<body>
+<div class="list-block">
+    <a href="/news/articleView.html?idxno=12345">
+        <h3 class="titles">삼성전자, AI 반도체 신제품 발표</h3>
+    </a>
+    <em class="date">2024.04.05</em>
+</div>
+<div class="list-block">
+    <a href="/news/articleView.html?idxno=12346">
+        <h3 class="titles">네이버, 하이퍼클로바X 업데이트</h3>
+    </a>
+    <em class="date">2024.04.04</em>
+</div>
+</body>
+</html>"""
+
+    @responses.activate
+    def test_korean_news_collector_fetch_articles(self, korean_news_html):
+        """한국 AI 뉴스 수집"""
+        responses.add(
+            responses.GET,
+            "https://www.aitimes.kr/news/articleList.html?sc_section_code=S1N1",
+            body=korean_news_html,
+            status=200,
+        )
+
+        collector = KoreanNewsCollector()
+        articles = collector.fetch_articles()
+
+        assert len(articles) >= 1
+        assert articles[0].source == Source.KOREAN_NEWS
+
+    @responses.activate
+    def test_korean_news_collector_korean_title(self, korean_news_html):
+        """한글 제목 처리"""
+        responses.add(
+            responses.GET,
+            "https://www.aitimes.kr/news/articleList.html?sc_section_code=S1N1",
+            body=korean_news_html,
+            status=200,
+        )
+
+        collector = KoreanNewsCollector()
+        articles = collector.fetch_articles()
+
+        # 한글 제목이 정상적으로 추출됨
+        assert any("삼성" in a.title or "네이버" in a.title for a in articles)
+
+    @responses.activate
+    def test_korean_news_collector_http_error(self):
+        """HTTP 에러 처리"""
+        responses.add(
+            responses.GET,
+            "https://www.aitimes.kr/news/articleList.html?sc_section_code=S1N1",
+            status=500,
+        )
+
+        collector = KoreanNewsCollector()
+        articles = collector.fetch_articles()
+
+        assert articles == []
+
+
 class TestCollectorIntegration:
     """수집기 통합 테스트"""
 
@@ -307,13 +522,22 @@ class TestCollectorIntegration:
         arxiv = ArxivCollector()
         google = GoogleBlogCollector()
         anthropic = AnthropicBlogCollector()
+        openai = OpenAIBlogCollector()
+        huggingface = HuggingFaceBlogCollector()
+        korean = KoreanNewsCollector()
 
         assert arxiv.source == Source.ARXIV
         assert google.source == Source.GOOGLE_BLOG
         assert anthropic.source == Source.ANTHROPIC_BLOG
+        assert openai.source == Source.OPENAI_BLOG
+        assert huggingface.source == Source.HUGGINGFACE_BLOG
+        assert korean.source == Source.KOREAN_NEWS
 
     def test_all_collectors_inherit_base(self):
         """모든 수집기가 BaseCollector 상속"""
         assert issubclass(ArxivCollector, BaseCollector)
         assert issubclass(GoogleBlogCollector, BaseCollector)
         assert issubclass(AnthropicBlogCollector, BaseCollector)
+        assert issubclass(OpenAIBlogCollector, BaseCollector)
+        assert issubclass(HuggingFaceBlogCollector, BaseCollector)
+        assert issubclass(KoreanNewsCollector, BaseCollector)

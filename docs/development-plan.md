@@ -13,7 +13,7 @@
 | CLI | ✅ Complete | main.py (다중 모드 지원) |
 | Claude Code 스킬 | ✅ Complete | /ai-report 스킬 |
 | 데이터 I/O | ✅ Complete | JSON 직렬화/역직렬화 |
-| 테스트 | ❌ Missing | 테스트 코드 없음 |
+| 테스트 | ✅ Complete | pytest 100개 테스트, 63% 커버리지 |
 | 문서화 | 🔄 In Progress | docs/ 구축 중 |
 
 ---
@@ -102,10 +102,10 @@ python -m src.main --use-api          # 전체 파이프라인
 - [x] 로그 파일 출력
 
 ### 2.3 테스트 코드 추가
-- [ ] 단위 테스트 (pytest)
-- [ ] Collector 모킹 테스트
-- [ ] Summarizer 모킹 테스트
-- [ ] 통합 테스트
+- [x] 단위 테스트 (pytest) - 100개 테스트 통과
+- [x] Collector 모킹 테스트 - responses 라이브러리 사용
+- [x] Summarizer 모킹 테스트 - API 모킹
+- [x] 통합 테스트 - 데이터 파이프라인 및 E2E
 
 ### 2.4 문서화
 - [x] README.md
@@ -120,9 +120,9 @@ python -m src.main --use-api          # 전체 파이프라인
 ## Phase 3: 확장
 
 ### 3.1 새 소스 추가
-- [ ] OpenAI 블로그 수집기
-- [ ] Hugging Face 블로그 수집기
-- [ ] 한국 AI 뉴스 수집기
+- [x] OpenAI 블로그 수집기 (openai_blog.py)
+- [x] Hugging Face 블로그 수집기 (huggingface_blog.py)
+- [x] 한국 AI 뉴스 수집기 (korean_news.py - AI타임스)
 
 ### 3.2 성능 최적화
 - [ ] 비동기 수집 (aiohttp)
@@ -174,3 +174,5 @@ email:
 | 2026-04-05 | 1.6 | 이메일 알림 기능 계획 추가 (Phase 3.3) |
 | 2026-04-05 | 2.1 | Phase 2.1 에러 처리 강화 완료 |
 | 2026-04-05 | 2.2 | Phase 2.2 로깅 개선 완료 |
+| 2026-04-05 | 2.3 | Phase 2.3 테스트 코드 추가 완료 (100개 테스트) |
+| 2026-04-05 | 3.1 | Phase 3.1 새 소스 추가 완료 (OpenAI, HuggingFace, 한국 AI뉴스) |
