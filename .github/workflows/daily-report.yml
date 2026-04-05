@@ -36,6 +36,9 @@ env:
   # 기본값: Claude Code CLI 모드 (스케줄 실행 시)
   USE_API: ${{ github.event.inputs.use_api || 'false' }}
 
+permissions:
+  contents: write  # 리포트 데이터 커밋용
+
 jobs:
   generate-report:
     runs-on: ubuntu-latest
@@ -194,6 +197,16 @@ jobs:
             CMD="$CMD --email"
           fi
           $CMD
+
+      # Step 4: 리포트 데이터 커밋 (GitHub Pages용)
+      - name: Commit report data
+        if: env.USE_API != 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/report_*.json data/articles_*.json || true
+          git diff --staged --quiet || git commit -m "chore: add daily report $(date +%Y-%m-%d)"
+          git push || echo "Nothing to push"
 
       - name: Upload report artifact
         if: always()

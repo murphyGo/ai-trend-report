@@ -494,6 +494,17 @@ Examples:
         default=8000,
         help="웹 서버 포트 (기본: 8000)",
     )
+    parser.add_argument(
+        "--generate-static",
+        action="store_true",
+        help="정적 사이트 생성 (GitHub Pages용)",
+    )
+    parser.add_argument(
+        "--static-output",
+        type=str,
+        default="_site",
+        help="정적 사이트 출력 디렉토리 (기본: _site)",
+    )
 
     args = parser.parse_args()
 
@@ -514,7 +525,19 @@ Examples:
     )
 
     # 모드 결정
-    if args.serve:
+    if args.generate_static:
+        # 정적 사이트 생성 모드
+        logger.info(f"Generating static site to {args.static_output}...")
+        try:
+            from .static_generator import generate_static_site
+            data_dir = Path(args.output_dir) if args.output_dir else Path("data")
+            output_dir = Path(args.static_output)
+            generate_static_site(data_dir=data_dir, output_dir=output_dir)
+            logger.info(f"Static site generated: {output_dir}")
+        except Exception as e:
+            logger.exception(f"Static site generation failed: {e}")
+            sys.exit(1)
+    elif args.serve:
         # 웹 대시보드 서버 모드
         logger.info(f"Starting web dashboard server on port {args.port}...")
         try:

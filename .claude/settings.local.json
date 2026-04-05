@@ -6,7 +6,9 @@
       "mcp__slack__list_my_channels",
       "WebFetch(domain:google.github.io)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:grafana.com)"
+      "WebFetch(domain:grafana.com)",
+      "Skill(ai-report)",
+      "WebFetch(domain:gist.github.com)"
     ]
   },
   "enabledMcpjsonServers": [

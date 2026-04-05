@@ -133,3 +133,19 @@ def get_latest_file(
 
     files = sorted(data_dir.glob(f"{prefix}_*.json"), reverse=True)
     return files[0] if files else None
+
+
+def list_report_files(data_dir: Optional[Path] = None) -> list[Path]:
+    """모든 리포트 파일 목록 반환 (최신순)
+
+    Args:
+        data_dir: 데이터 디렉토리
+
+    Returns:
+        리포트 파일 경로 목록 (최신순 정렬)
+    """
+    data_dir = data_dir or DEFAULT_DATA_DIR
+    if not data_dir.exists():
+        return []
+
+    return sorted(data_dir.glob("report_*.json"), reverse=True)

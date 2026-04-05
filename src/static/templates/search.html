@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}AI Report - Search{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+{% endblock %}
+
+{% block content %}
+<header class="search-header">
+    <h1>Search Articles</h1>
+</header>
+
+<section class="search-box">
+    <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="Search articles..." autofocus>
+        <button id="search-btn">Search</button>
+    </div>
+
+    <div class="filter-row">
+        <label for="category-filter">Category:</label>
+        <select id="category-filter">
+            <option value="">All Categories</option>
+            {% for cat in categories %}
+            <option value="{{ cat.value }}">{{ cat|category_label }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</section>
+
+<section class="search-results">
+    <div id="results-info"></div>
+    <div id="results-list"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/search.js"></script>
+{% endblock %}

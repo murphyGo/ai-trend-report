@@ -16,6 +16,7 @@
 | 테스트 | ✅ Complete | pytest 188개 테스트 |
 | 문서화 | ✅ Complete | docs/ 완성 |
 | GitHub Actions | ✅ Complete | Daily report + CI/CD |
+| GitHub Pages | ✅ Complete | 정적 사이트 + 검색 기능 |
 
 ---
 
@@ -227,6 +228,63 @@ GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
 
 ---
 
+## Phase 5: GitHub Pages 배포 (완료)
+
+### 5.1 정적 사이트 생성기
+- [x] `src/static_generator.py` - 정적 HTML 생성 모듈
+- [x] Jinja2 템플릿 기반 HTML 생성
+- [x] 리포트별 개별 페이지 생성
+
+### 5.2 정적 사이트 템플릿
+- [x] `src/static/templates/index.html` - 메인 페이지 (최신 리포트)
+- [x] `src/static/templates/report.html` - 개별 리포트 페이지
+- [x] `src/static/templates/search.html` - 검색 페이지
+- [x] 반응형 CSS 스타일 (`src/static/css/style.css`)
+
+### 5.3 검색 기능
+- [x] `search-index.json` 생성 (전체 기사 메타데이터)
+- [x] Fuse.js 기반 클라이언트 사이드 검색 (`src/static/js/search.js`)
+- [x] 카테고리 필터링
+
+### 5.4 GitHub Actions 배포
+- [x] GitHub Pages 자동 배포 (`.github/workflows/deploy-pages.yml`)
+- [x] 일일 리포트 생성 후 정적 사이트 업데이트
+- [x] daily-report 워크플로우와 연동
+
+### CLI 명령
+```bash
+# 정적 사이트 생성
+python -m src.main --generate-static --static-output _site
+
+# 로컬 테스트
+cd _site && python -m http.server 8000
+```
+
+### GitHub Pages 설정 가이드
+1. Repository Settings > Pages
+2. Source: "GitHub Actions" 선택
+3. 워크플로우 실행 후 자동 배포
+
+### 정적 사이트 구조
+
+```
+gh-pages/
+├── index.html              # 최신 리포트 + 목록
+├── search.html             # 검색 페이지
+├── reports/
+│   ├── 2026-04-05.html    # 개별 리포트
+│   └── 2026-04-06.html
+├── data/
+│   ├── reports.json        # 리포트 목록
+│   └── search-index.json   # 검색 인덱스
+├── css/
+│   └── style.css
+└── js/
+    └── search.js           # Fuse.js 검색
+```
+
+---
+
 ## 우선순위 가이드
 
 | 우선순위 | 설명 | 예시 |
@@ -256,3 +314,4 @@ GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
 | 2026-04-06 | 4.0 | Phase 4 자동화 완료 (GitHub Actions 스케줄러, CI/CD) |
 | 2026-04-06 | 4.3 | Phase 4.3 Claude Code CLI 지원 추가 |
 | 2026-04-06 | 4.4 | Phase 4.4 세션 키 인증 추가 (Pro/Max 구독) |
+| 2026-04-06 | 5.0 | Phase 5 GitHub Pages 배포 완료 (정적 사이트 생성기, 검색 기능) |

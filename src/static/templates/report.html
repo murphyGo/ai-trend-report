@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}AI Report - {{ report.created_at.strftime('%Y-%m-%d') }}{% endblock %}
+
+{% block content %}
+<header class="report-header">
+    <nav class="breadcrumb">
+        <a href="/">Home</a> &gt; <span>{{ report.created_at.strftime('%Y-%m-%d') }}</span>
+    </nav>
+
+    <h1>AI Report</h1>
+    <p class="date">{{ report.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+
+    <div class="report-nav">
+        {% if prev_report %}
+        <a href="/reports/{{ prev_report.created_at.strftime('%Y-%m-%d') }}.html" class="nav-prev">
+            &larr; {{ prev_report.created_at.strftime('%Y-%m-%d') }}
+        </a>
+        {% else %}
+        <span class="nav-prev disabled">&larr; Previous</span>
+        {% endif %}
+
+        {% if next_report %}
+        <a href="/reports/{{ next_report.created_at.strftime('%Y-%m-%d') }}.html" class="nav-next">
+            {{ next_report.created_at.strftime('%Y-%m-%d') }} &rarr;
+        </a>
+        {% else %}
+        <span class="nav-next disabled">Next &rarr;</span>
+        {% endif %}
+    </div>
+</header>
+
+<section class="stats">
+    <div class="stat-card">
+        <span class="stat-number">{{ report.articles|length }}</span>
+        <span class="stat-label">Articles</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ articles_by_category|length }}</span>
+        <span class="stat-label">Categories</span>
+    </div>
+</section>
+
+<section class="articles">
+    {% for category, articles in articles_by_category.items() %}
+    <div class="category-section">
+        <h2 class="category-title" style="border-left: 4px solid {{ category|category_color }};">
+            {{ category|category_label }}
+            <span class="count">({{ articles|length }})</span>
+        </h2>
+
+        <div class="article-list">
+            {% for article in articles %}
+            <article class="article-card">
+                <h3>
+                    <a href="{{ article.url }}" target="_blank" rel="noopener">
+                        {{ article.title }}
+                    </a>
+                </h3>
+                <div class="article-meta">
+                    <span class="source">{{ article.source.value if article.source else 'Unknown' }}</span>
+                    {% if article.published_at %}
+                    <span class="published">{{ article.published_at.strftime('%Y-%m-%d') }}</span>
+                    {% endif %}
+                </div>
+                {% if article.summary %}
+                <p class="summary">{{ article.summary }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<div class="report-nav bottom">
+    {% if prev_report %}
+    <a href="/reports/{{ prev_report.created_at.strftime('%Y-%m-%d') }}.html" class="nav-prev">
+        &larr; {{ prev_report.created_at.strftime('%Y-%m-%d') }}
+    </a>
+    {% else %}
+    <span class="nav-prev disabled">&larr; Previous</span>
+    {% endif %}
+
+    <a href="/" class="nav-home">Home</a>
+
+    {% if next_report %}
+    <a href="/reports/{{ next_report.created_at.strftime('%Y-%m-%d') }}.html" class="nav-next">
+        {{ next_report.created_at.strftime('%Y-%m-%d') }} &rarr;
+    </a>
+    {% else %}
+    <span class="nav-next disabled">Next &rarr;</span>
+    {% endif %}
+</div>
+{% endblock %}

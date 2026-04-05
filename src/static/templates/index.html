@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}AI Report - Daily AI News{% endblock %}
+
+{% block content %}
+<header class="hero">
+    <h1>AI Report</h1>
+    <p>Daily AI News & Research Summary</p>
+    {% if latest_report %}
+    <p class="date">{{ latest_report.created_at.strftime('%Y-%m-%d') }}</p>
+    {% endif %}
+</header>
+
+{% if latest_report %}
+<section class="stats">
+    <div class="stat-card">
+        <span class="stat-number">{{ latest_report.articles|length }}</span>
+        <span class="stat-label">Articles</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ articles_by_category|length }}</span>
+        <span class="stat-label">Categories</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ total_reports }}</span>
+        <span class="stat-label">Total Reports</span>
+    </div>
+</section>
+
+<section class="articles">
+    <h2>Latest Report</h2>
+
+    {% for category, articles in articles_by_category.items() %}
+    <div class="category-section">
+        <h3 class="category-title" style="border-left: 4px solid {{ category|category_color }};">
+            {{ category|category_label }}
+            <span class="count">({{ articles|length }})</span>
+        </h3>
+
+        <div class="article-list">
+            {% for article in articles %}
+            <article class="article-card">
+                <h4>
+                    <a href="{{ article.url }}" target="_blank" rel="noopener">
+                        {{ article.title }}
+                    </a>
+                </h4>
+                <div class="article-meta">
+                    <span class="source">{{ article.source.value if article.source else 'Unknown' }}</span>
+                </div>
+                {% if article.summary %}
+                <p class="summary">{{ article.summary }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% else %}
+<section class="empty">
+    <p>No reports available yet.</p>
+</section>
+{% endif %}
+
+<section class="archive">
+    <h2>Recent Reports</h2>
+    <ul class="report-list">
+        {% for report in reports %}
+        <li>
+            <a href="/reports/{{ report.created_at.strftime('%Y-%m-%d') }}.html">
+                {{ report.created_at.strftime('%Y-%m-%d') }}
+            </a>
+            <span class="article-count">{{ report.articles|length }} articles</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
