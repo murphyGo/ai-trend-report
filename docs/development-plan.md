@@ -176,10 +176,13 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 
 | Secret 이름 | 필수 | 설명 |
 |------------|------|------|
-| `ANTHROPIC_API_KEY` | ✅ | Claude API 키 |
+| `CLAUDE_CODE_OAUTH_TOKEN` | ⭐ | Claude OAuth 토큰 (`claude setup-token`으로 생성, 1년 유효) |
+| `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (OAuth 토큰 없을 때 사용) |
 | `SLACK_WEBHOOK_URL` | ✅ | Slack Incoming Webhook URL |
 | `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
 | `CODECOV_TOKEN` | ❌ | Codecov 토큰 (커버리지 리포트용) |
+
+> ⭐ `CLAUDE_CODE_OAUTH_TOKEN` 또는 `ANTHROPIC_API_KEY` 중 하나 필수. OAuth 토큰 우선 사용.
 
 ### 4.3 Claude Code CLI 지원
 - [x] GitHub Actions 워크플로우에 Claude Code CLI 모드 추가

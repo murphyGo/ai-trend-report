@@ -80,6 +80,8 @@ jobs:
       - name: Summarize with Claude Code CLI
         if: env.USE_API != 'true'
         env:
+          # OAuth 토큰 우선, 없으면 API 키 사용
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           set -e
