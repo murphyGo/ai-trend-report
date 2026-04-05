@@ -176,20 +176,24 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 
 | Secret 이름 | 필수 | 설명 |
 |------------|------|------|
-| `CLAUDE_CODE_OAUTH_TOKEN` | ⭐ | Claude OAuth 토큰 (`claude setup-token`으로 생성, 1년 유효) |
-| `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (OAuth 토큰 없을 때 사용) |
+| `CLAUDE_SESSION_KEY` | ⭐ | Pro/Max 구독 세션 키 (`~/.claude/.credentials.json`에서 추출) |
+| `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (세션 키 없을 때 폴백) |
 | `SLACK_WEBHOOK_URL` | ✅ | Slack Incoming Webhook URL |
 | `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
 | `CODECOV_TOKEN` | ❌ | Codecov 토큰 (커버리지 리포트용) |
 
-> ⭐ `CLAUDE_CODE_OAUTH_TOKEN` 또는 `ANTHROPIC_API_KEY` 중 하나 필수. OAuth 토큰 우선 사용.
+> ⭐ `CLAUDE_SESSION_KEY` 또는 `ANTHROPIC_API_KEY` 중 하나 필수. 세션 키 우선 사용 (Pro/Max 구독 비용 무료).
 
 ### 4.3 Claude Code CLI 지원
 - [x] GitHub Actions 워크플로우에 Claude Code CLI 모드 추가
-- [x] `--bare` 플래그로 CI/headless 환경 지원
 - [x] `-p` 플래그로 non-interactive 실행
 - [x] 모델 선택 옵션 (sonnet/haiku/opus)
 - [x] `use_api` 옵션으로 API/CLI 모드 선택 가능
+
+### 4.4 세션 키 인증 (Pro/Max 구독)
+- [x] `CLAUDE_SESSION_KEY` 환경 변수 지원
+- [x] Pro/Max 구독 기반 무료 인증
+- [x] API 키 폴백 유지
 
 ### 워크플로우 실행 옵션
 
@@ -202,12 +206,19 @@ GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
 | `use_api` | Anthropic API 직접 사용 | false (CLI 모드) |
 | `model` | Claude 모델 선택 | sonnet |
 
+### 인증 방식 비교
+
+| 방식 | 환경 변수 | 비용 | 추출 방법 |
+|------|----------|------|----------|
+| **세션 키** (권장) | `CLAUDE_SESSION_KEY` | Pro/Max 구독 포함 | `~/.claude/.credentials.json` |
+| **API 키** | `ANTHROPIC_API_KEY` | 토큰당 과금 | console.anthropic.com |
+
 ### 실행 모드 비교
 
 | 모드 | 설명 | 사용 시점 |
 |------|------|----------|
-| **CLI 모드** (기본) | Claude Code CLI + `--bare` | 일반적인 자동화 |
-| **API 모드** | Anthropic API 직접 호출 | 더 세밀한 제어 필요 시 |
+| **CLI 모드** (기본) | Claude Code CLI + 세션 키 | Pro/Max 구독자 |
+| **API 모드** | Anthropic API 직접 호출 | API 키만 있을 때 |
 
 ---
 
@@ -239,3 +250,4 @@ GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
 | 2026-04-06 | 3.4 | Phase 3.4 웹 대시보드 기능 완료 (FastAPI + Jinja2) |
 | 2026-04-06 | 4.0 | Phase 4 자동화 완료 (GitHub Actions 스케줄러, CI/CD) |
 | 2026-04-06 | 4.3 | Phase 4.3 Claude Code CLI 지원 추가 |
+| 2026-04-06 | 4.4 | Phase 4.4 세션 키 인증 추가 (Pro/Max 구독) |
