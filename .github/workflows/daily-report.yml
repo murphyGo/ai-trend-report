@@ -122,35 +122,65 @@ jobs:
           # -p: print 모드 (non-interactive)
           # --allowedTools: 허용할 도구 제한
           claude --model "$MODEL" -p "
-          You are an AI news summarizer for a Korean tech newsletter.
+          You are an expert AI news curator and Korean tech editor for a daily AI newsletter.
 
-          ## Task
-          1. Read articles from: $ARTICLES_FILE
-          2. For EACH article, create a Korean summary (3-5 sentences) covering:
-             - 핵심 기술/발견
-             - 기술적 의의
-             - 실용적 영향
-          3. Assign a category to each article from this list:
-             LLM, AI_AGENT, VISION, VIDEO_GEN, ROBOTICS, AI_SAFETY, RL, ML_INFRA, MEDICAL, FINANCE, INDUSTRY, OTHER
-          4. Save the summarized report to: data/report_${TODAY}.json
+          ## Input
+          Read articles from: $ARTICLES_FILE
+
+          ## Task — Two stages: RANK then SUMMARIZE
+
+          ### Stage 1: Rank and select the top 20 most important articles
+
+          Evaluate EVERY article and select the 20 most important based on these criteria
+          (in rough priority order):
+
+          1. **Technical novelty** — new models, benchmarks, techniques, notable research findings
+          2. **Impact** — frontier labs (OpenAI, Anthropic, Google DeepMind, Meta AI), major
+             model releases, real-world product launches, widely applicable tools
+          3. **Source credibility** — frontier lab blogs > curated sources (HF Papers, MarkTechPost,
+             BAIR, Stanford AI) > general tech news (TechCrunch, VentureBeat)
+          4. **Category diversity** — avoid concentration; aim for balance across LLM, agents,
+             vision, video, robotics, safety, infra, etc. Do not fill the 20 slots with arxiv papers only.
+          5. **Korean relevance bonus** — modest priority boost for content touching Korean
+             companies (Naver, Kakao, LG, Samsung) or the Korean AI ecosystem.
+
+          Skim titles, sources, and content snippets to judge. If there are fewer than 20
+          articles total, select all of them. Skip articles that are clearly off-topic,
+          broken, or duplicates.
+
+          ### Stage 2: Summarize ONLY the selected 20
+
+          For each SELECTED article (not the full pool), create:
+          - Korean summary (3-5 sentences) covering 핵심 기술/발견, 기술적 의의, 실용적 영향
+          - A category from this enum: LLM, AGENT, VISION, VIDEO, ROBOTICS, SAFETY, RL, INFRA,
+            MEDICAL, FINANCE, INDUSTRY, OTHER
+
+          ## Output
+
+          Save a Report containing ONLY the 20 selected (and summarized) articles to:
+            data/report_${TODAY}.json
 
           ## Implementation
-          Use Python with the project's existing modules:
-          - src.data_io: load_articles(), save_report()
-          - src.models: Article, Report, Category
 
-          Example code structure:
+          Use the project's Python modules directly:
+
           \`\`\`python
           from src.data_io import load_articles, save_report
           from src.models import Report, Category
 
-          articles = load_articles('$ARTICLES_FILE')
-          for article in articles:
-              # Add summary and category
-              article.summary = '...'  # Your Korean summary
-              article.category = Category.LLM  # Appropriate category
+          all_articles = load_articles('$ARTICLES_FILE')
 
-          report = Report(articles=articles)
+          # Stage 1: pick the top 20 most important using the criteria above
+          # (your judgment, not a heuristic — consider title + source + content)
+          selected = [...]  # list of 20 Article objects from all_articles
+
+          # Stage 2: summarize + categorize only the selected ones
+          for article in selected:
+              article.summary = '...'  # 3-5 문장 한국어 요약
+              article.category = Category.LLM  # 적절한 카테고리
+
+          # Save ONLY the selected 20 as the report
+          report = Report(articles=selected)
           save_report(report)
           \`\`\`
 

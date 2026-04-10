@@ -20,9 +20,15 @@ class ArxivCollector(BaseCollector):
     base_url = "https://arxiv.org"
     rss_url = "https://rss.arxiv.org/rss"
 
-    def __init__(self, categories: Optional[list[str]] = None, **kwargs):
+    def __init__(
+        self,
+        categories: Optional[list[str]] = None,
+        max_per_category: int = 20,
+        **kwargs,
+    ):
         super().__init__(**kwargs)
         self.categories = categories or ["cs.AI", "cs.LG", "cs.CL"]
+        self.max_per_category = max_per_category
 
     def fetch_articles(self) -> list[Article]:
         """RSS 피드에서 최신 논문 수집"""
@@ -44,7 +50,7 @@ class ArxivCollector(BaseCollector):
         return unique_articles
 
     def _fetch_rss(self, category: str) -> list[Article]:
-        """특정 카테고리의 RSS 피드 파싱"""
+        """특정 카테고리의 RSS 피드 파싱 (max_per_category 상한 적용)"""
         url = f"{self.rss_url}/{category}"
         xml_content = self._fetch_text(url)
 
@@ -61,7 +67,8 @@ class ArxivCollector(BaseCollector):
                 "arxiv": "http://arxiv.org/schemas/atom",
             }
 
-            for item in root.findall(".//item"):
+            # 카테고리당 상한 적용 (arXiv RSS는 최신순이라 앞에서부터 자름)
+            for item in root.findall(".//item")[: self.max_per_category]:
                 title_elem = item.find("title")
                 link_elem = item.find("link")
                 description_elem = item.find("description")
