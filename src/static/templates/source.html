@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}AI Report - {{ category|category_label }}{% endblock %}
+{% block title %}AI Report - {{ source|source_label }}{% endblock %}
 
 {% block content %}
-<header class="category-header" style="--cat-color: {{ category|category_color }};">
+<header class="source-header" style="--src-color: {{ source|source_color }};">
     <nav class="breadcrumb">
         <a href="{{ base_url }}/">Home</a> &gt;
-        <a href="{{ base_url }}/categories/">Categories</a> &gt;
-        <span>{{ category|category_label }}</span>
+        <a href="{{ base_url }}/sources/">Sources</a> &gt;
+        <span>{{ source|source_label }}</span>
     </nav>
 
-    <h1>{{ category.value }}</h1>
+    <h1>{{ source|source_label }}</h1>
+    <p class="tier">{{ source|source_tier }}</p>
     <span class="count-badge">{{ article_count }} articles</span>
 </header>
 
@@ -25,9 +26,9 @@
                 </a>
             </h3>
             <div class="article-meta">
-                {% if article.source %}
-                <a href="{{ base_url }}/sources/{{ article.source.name }}.html" class="source-link">
-                    {{ article.source|source_label }}
+                {% if article.category %}
+                <a href="{{ base_url }}/categories/{{ article.category.name }}.html" class="category-link">
+                    {{ article.category|category_label }}
                 </a>
                 {% endif %}
                 <a href="{{ base_url }}/reports/{{ date_str }}.html" class="date-link">{{ date_str }}</a>
@@ -40,8 +41,8 @@
     </div>
     {% else %}
     <div class="empty">
-        <p>이 카테고리에 아직 기사가 없습니다.</p>
-        <p><a href="{{ base_url }}/categories/">← 카테고리 목록으로</a></p>
+        <p>이 소스에서 아직 수집된 기사가 없습니다.</p>
+        <p><a href="{{ base_url }}/sources/">← 소스 목록으로</a></p>
     </div>
     {% endif %}
 </section>

@@ -12,13 +12,94 @@ from typing import Optional
 
 from jinja2 import Environment, FileSystemLoader
 
-from .models import Report, Category
+from .models import Report, Category, Source
 from .data_io import load_report, list_report_files
 
 
 # 기본 경로
 STATIC_DIR = Path(__file__).parent / "static"
 TEMPLATES_DIR = STATIC_DIR / "templates"
+
+
+# 소스 티어 분류 (색상 그룹핑용)
+SOURCE_TIER_MAP: dict[Source, str] = {
+    # Frontier Labs
+    Source.ANTHROPIC_BLOG: "Frontier Lab",
+    Source.OPENAI_BLOG: "Frontier Lab",
+    Source.GOOGLE_BLOG: "Frontier Lab",
+    Source.HUGGINGFACE_BLOG: "Frontier Lab",
+    # Research (논문 + 기업/학계 리서치)
+    Source.ARXIV: "Research",
+    Source.HF_PAPERS: "Research",
+    Source.MICROSOFT_RESEARCH: "Research",
+    Source.NVIDIA_BLOG: "Research",
+    Source.BAIR_BLOG: "Research",
+    Source.STANFORD_AI: "Research",
+    # Media
+    Source.MARKTECHPOST: "Media",
+    Source.TECHCRUNCH_AI: "Media",
+    Source.VENTUREBEAT_AI: "Media",
+    Source.MIT_TECH_REVIEW: "Media",
+    # Korean
+    Source.KOREAN_NEWS: "Korean",
+    Source.NAVER_D2: "Korean",
+    Source.KAKAO_TECH: "Korean",
+    # Inactive (코드 존재, 사이트 정책으로 미사용)
+    Source.META_AI_BLOG: "Inactive",
+    Source.LG_AI_RESEARCH: "Inactive",
+}
+
+# 티어 → 색상 (모두 흰 글씨 대비 충분)
+TIER_COLORS: dict[str, str] = {
+    "Frontier Lab": "#2563eb",  # blue
+    "Research": "#7c3aed",      # purple
+    "Media": "#ea580c",         # orange
+    "Korean": "#db2777",        # pink
+    "Inactive": "#64748b",      # muted grey
+}
+
+# 소스 display label (Source enum의 raw value 대신 사용자용 이름)
+SOURCE_LABELS: dict[Source, str] = {
+    Source.ARXIV: "arXiv",
+    Source.GOOGLE_BLOG: "Google AI",
+    Source.ANTHROPIC_BLOG: "Anthropic",
+    Source.OPENAI_BLOG: "OpenAI",
+    Source.HUGGINGFACE_BLOG: "Hugging Face",
+    Source.KOREAN_NEWS: "AI타임스",
+    Source.MICROSOFT_RESEARCH: "Microsoft Research",
+    Source.NVIDIA_BLOG: "NVIDIA Developer",
+    Source.MARKTECHPOST: "MarkTechPost",
+    Source.BAIR_BLOG: "BAIR (Berkeley)",
+    Source.STANFORD_AI: "Stanford AI Lab",
+    Source.TECHCRUNCH_AI: "TechCrunch AI",
+    Source.VENTUREBEAT_AI: "VentureBeat AI",
+    Source.HF_PAPERS: "HF Daily Papers",
+    Source.META_AI_BLOG: "Meta AI",
+    Source.MIT_TECH_REVIEW: "MIT Tech Review",
+    Source.NAVER_D2: "Naver D2",
+    Source.KAKAO_TECH: "Kakao Tech",
+    Source.LG_AI_RESEARCH: "LG AI Research",
+}
+
+
+def get_source_label(source: Source) -> str:
+    """소스 display 이름"""
+    if not source:
+        return "Unknown"
+    return SOURCE_LABELS.get(source, source.value)
+
+
+def get_source_tier(source: Source) -> str:
+    """소스 티어 이름"""
+    if not source:
+        return ""
+    return SOURCE_TIER_MAP.get(source, "Other")
+
+
+def get_source_color(source: Source) -> str:
+    """소스 색상 (티어 기반)"""
+    tier = get_source_tier(source)
+    return TIER_COLORS.get(tier, "#64748b")
 
 
 def get_category_color(category: Category) -> str:
@@ -89,6 +170,9 @@ class StaticSiteGenerator:
         # 커스텀 필터 등록
         self.env.filters["category_color"] = get_category_color
         self.env.filters["category_label"] = get_category_label
+        self.env.filters["source_label"] = get_source_label
+        self.env.filters["source_color"] = get_source_color
+        self.env.filters["source_tier"] = get_source_tier
 
     def generate(self) -> None:
         """전체 정적 사이트 생성"""
@@ -109,6 +193,7 @@ class StaticSiteGenerator:
         self._generate_index(reports)
         self._generate_report_pages(reports)
         self._generate_category_pages(reports)
+        self._generate_source_pages(reports)
         self._generate_search_page(reports)
 
         # 데이터 파일 생성
@@ -120,7 +205,7 @@ class StaticSiteGenerator:
     def _prepare_output_dir(self) -> None:
         """출력 디렉토리 준비"""
         # 기존 파일 삭제
-        for subdir in ["reports", "categories", "data", "css", "js"]:
+        for subdir in ["reports", "categories", "sources", "data", "css", "js"]:
             subpath = self.output_dir / subdir
             if subpath.exists():
                 shutil.rmtree(subpath)
@@ -128,6 +213,7 @@ class StaticSiteGenerator:
         # 디렉토리 생성
         (self.output_dir / "reports").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "categories").mkdir(parents=True, exist_ok=True)
+        (self.output_dir / "sources").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "data").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "css").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "js").mkdir(parents=True, exist_ok=True)
@@ -267,6 +353,57 @@ class StaticSiteGenerator:
             Category=Category,
         )
         (self.output_dir / "categories" / "index.html").write_text(
+            html, encoding="utf-8"
+        )
+
+    def _generate_source_pages(self, reports: list[Report]) -> None:
+        """소스별 페이지 생성
+
+        모든 리포트의 기사를 Source별로 집계해:
+        1. 소스 인덱스 (sources/index.html) - 소스 카드 그리드
+        2. 개별 소스 페이지 (sources/{NAME}.html) - 해당 소스의 전 기사
+        """
+        # 소스별 기사 집계 (reports가 이미 최신순이므로 자연 최신순)
+        source_articles: dict[Source, list[tuple]] = {}
+        for report in reports:
+            date_str = report.created_at.strftime("%Y-%m-%d")
+            for article in report.articles:
+                src = article.source
+                if src is None:
+                    continue
+                if src not in source_articles:
+                    source_articles[src] = []
+                source_articles[src].append((article, date_str))
+
+        # 개별 소스 페이지
+        source_template = self.env.get_template("source.html")
+        for source in Source:
+            articles = source_articles.get(source, [])
+            html = source_template.render(
+                source=source,
+                articles=articles,
+                article_count=len(articles),
+                base_url=self.base_url,
+                Source=Source,
+            )
+            (self.output_dir / "sources" / f"{source.name}.html").write_text(
+                html, encoding="utf-8"
+            )
+
+        # 인덱스 페이지 (모든 소스, 기사 수 많은 순)
+        index_template = self.env.get_template("sources_index.html")
+        source_counts = [
+            (src, len(source_articles.get(src, []))) for src in Source
+        ]
+        source_counts.sort(key=lambda x: (-x[1], x[0].name))
+
+        html = index_template.render(
+            source_counts=source_counts,
+            total_articles=sum(c for _, c in source_counts),
+            base_url=self.base_url,
+            Source=Source,
+        )
+        (self.output_dir / "sources" / "index.html").write_text(
             html, encoding="utf-8"
         )
 

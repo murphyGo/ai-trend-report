@@ -46,7 +46,13 @@
                     </a>
                 </h4>
                 <div class="article-meta">
-                    <span class="source">{{ article.source.value if article.source else 'Unknown' }}</span>
+                    {% if article.source %}
+                    <a href="{{ base_url }}/sources/{{ article.source.name }}.html" class="source-link">
+                        {{ article.source|source_label }}
+                    </a>
+                    {% else %}
+                    <span class="source">Unknown</span>
+                    {% endif %}
                 </div>
                 {% if article.summary %}
                 <p class="summary">{{ article.summary }}</p>

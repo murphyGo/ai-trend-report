@@ -58,7 +58,11 @@
                     </a>
                 </h3>
                 <div class="article-meta">
-                    <span class="source">{{ article.source.value if article.source else 'Unknown' }}</span>
+                    {% if article.source %}
+                    <a href="{{ base_url }}/sources/{{ article.source.name }}.html" class="source-link">
+                        {{ article.source|source_label }}
+                    </a>
+                    {% endif %}
                     {% if article.published_at %}
                     <span class="published">{{ article.published_at.strftime('%Y-%m-%d') }}</span>
                     {% endif %}

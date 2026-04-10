@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}AI Report - Sources{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1>Sources</h1>
+    <p class="subtitle">{{ total_articles }}개 기사를 {{ source_counts|length }}개 소스에서 수집</p>
+</header>
+
+<section class="source-grid">
+    {% for source, count in source_counts %}
+        {% if count > 0 %}
+        <a href="{{ base_url }}/sources/{{ source.name }}.html"
+           class="source-card"
+           style="--src-color: {{ source|source_color }};">
+            <h3>{{ source|source_label }}</h3>
+            <p class="tier">{{ source|source_tier }}</p>
+            <span class="count">{{ count }} articles</span>
+        </a>
+        {% else %}
+        <div class="source-card empty"
+             style="--src-color: {{ source|source_color }};"
+             aria-disabled="true">
+            <h3>{{ source|source_label }}</h3>
+            <p class="tier">{{ source|source_tier }}</p>
+            <span class="count">0</span>
+        </div>
+        {% endif %}
+    {% endfor %}
+</section>
+{% endblock %}

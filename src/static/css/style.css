@@ -393,21 +393,25 @@ a:hover {
     font-size: 1rem;
 }
 
-.category-grid {
+/* Browse grids (Categories, Sources) share the same responsive layout */
+.category-grid,
+.source-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
     margin-bottom: 3rem;
 }
 
-/* Category card — accent bar on the left, pill count badge at bottom */
-.category-card {
+/* Browse cards (Categories, Sources) — accent bar on left, pill count at bottom */
+.category-card,
+.source-card {
     --cat-color: var(--primary);
+    --src-color: var(--primary);
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.75rem;
     min-height: 120px;
     padding: 1.25rem 1.5rem 1.25rem 1.75rem;
     background: var(--bg-card);
@@ -420,24 +424,29 @@ a:hover {
     transition: transform 0.18s ease, box-shadow 0.22s ease;
 }
 
-.category-card::before {
+.category-card::before,
+.source-card::before {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     width: 5px;
-    background: var(--cat-color);
 }
 
-.category-card:hover {
+.category-card::before { background: var(--cat-color); }
+.source-card::before   { background: var(--src-color); }
+
+.category-card:hover,
+.source-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(15, 23, 42, 0.06),
                 0 12px 24px rgba(15, 23, 42, 0.08);
     text-decoration: none;
 }
 
-.category-card h3 {
+.category-card h3,
+.source-card h3 {
     font-size: 1.05rem;
     font-weight: 600;
     line-height: 1.35;
@@ -445,12 +454,22 @@ a:hover {
     margin: 0;
 }
 
-.category-card .count {
+/* Source tier sublabel (e.g. "Frontier Lab", "Research") */
+.source-card .tier {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0.15rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.category-card .count,
+.source-card .count {
     display: inline-flex;
     align-items: center;
     align-self: flex-start;
     padding: 0.3rem 0.75rem;
-    background: var(--cat-color);
     color: #fff;
     border-radius: 999px;
     font-size: 0.78rem;
@@ -460,33 +479,42 @@ a:hover {
     white-space: nowrap;
 }
 
-/* Empty (zero-count) category — greyed out, non-interactive */
-.category-card.empty {
+.category-card .count { background: var(--cat-color); }
+.source-card .count   { background: var(--src-color); }
+
+/* Empty (zero-count) state — greyed out, non-interactive */
+.category-card.empty,
+.source-card.empty {
     background: var(--bg);
     box-shadow: none;
     cursor: default;
     pointer-events: none;
 }
 
-.category-card.empty::before {
+.category-card.empty::before,
+.source-card.empty::before {
     opacity: 0.35;
 }
 
-.category-card.empty h3 {
+.category-card.empty h3,
+.source-card.empty h3 {
     color: var(--text-muted);
     font-weight: 500;
 }
 
-.category-card.empty .count {
+.category-card.empty .count,
+.source-card.empty .count {
     background: transparent;
     color: var(--text-muted);
     padding: 0.2rem 0;
     font-weight: 500;
 }
 
-/* ---------- Per-Category Page Header ---------- */
-.category-header {
+/* ---------- Per-Category / Per-Source Page Header ---------- */
+.category-header,
+.source-header {
     --cat-color: var(--primary);
+    --src-color: var(--primary);
     position: relative;
     padding: 1.5rem 2rem 1.5rem 2.25rem;
     margin-bottom: 2rem;
@@ -496,32 +524,46 @@ a:hover {
     overflow: hidden;
 }
 
-.category-header::before {
+.category-header::before,
+.source-header::before {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     width: 6px;
-    background: var(--cat-color);
 }
 
-.category-header .breadcrumb {
+.category-header::before { background: var(--cat-color); }
+.source-header::before   { background: var(--src-color); }
+
+.category-header .breadcrumb,
+.source-header .breadcrumb {
     margin-bottom: 0.85rem;
 }
 
-.category-header h1 {
+.category-header h1,
+.source-header h1 {
     font-size: 1.75rem;
     font-weight: 700;
     margin: 0 0 0.85rem;
     letter-spacing: -0.01em;
 }
 
-.category-header .count-badge {
+.source-header .tier {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin: -0.5rem 0 0.85rem;
+}
+
+.category-header .count-badge,
+.source-header .count-badge {
     display: inline-flex;
     align-items: center;
     padding: 0.35rem 0.85rem;
-    background: var(--cat-color);
     color: #fff;
     border-radius: 999px;
     font-size: 0.8rem;
@@ -530,11 +572,19 @@ a:hover {
     line-height: 1;
 }
 
-.article-meta .date-link {
+.category-header .count-badge { background: var(--cat-color); }
+.source-header .count-badge   { background: var(--src-color); }
+
+/* Clickable metadata pills on article cards */
+.article-meta .date-link,
+.article-meta .source-link,
+.article-meta .category-link {
     color: var(--text-muted);
 }
 
-.article-meta .date-link:hover {
+.article-meta .date-link:hover,
+.article-meta .source-link:hover,
+.article-meta .category-link:hover {
     color: var(--primary);
 }
 
