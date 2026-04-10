@@ -5,17 +5,27 @@
 {% block content %}
 <header class="page-header">
     <h1>Sources</h1>
-    <p class="subtitle">{{ total_articles }}개 기사를 {{ source_counts|length }}개 소스에서 수집</p>
+    <p class="subtitle">{{ total_articles }}개 기사를 {{ source_entries|length }}개 소스에서 수집</p>
 </header>
 
+{% include "audience_filter.html" %}
+
 <section class="source-grid">
-    {% for source, count in source_counts %}
+    {% for entry in source_entries %}
+        {% set source = entry.source %}
+        {% set count = entry.count %}
+        {% set aud = entry.audience_counts %}
         {% if count > 0 %}
         <a href="{{ base_url }}/sources/{{ source.name }}.html"
            class="source-card"
            style="--src-color: {{ source|source_color }};">
             <h3>{{ source|source_label }}</h3>
             <p class="tier">{{ source|source_tier }}</p>
+            <div class="audience-mini">
+                {% if aud.GENERAL %}<span class="aud-mini general">일반 {{ aud.GENERAL }}</span>{% endif %}
+                {% if aud.DEVELOPER %}<span class="aud-mini developer">개발 {{ aud.DEVELOPER }}</span>{% endif %}
+                {% if aud.ML_EXPERT %}<span class="aud-mini ml-expert">ML {{ aud.ML_EXPERT }}</span>{% endif %}
+            </div>
             <span class="count">{{ count }} articles</span>
         </a>
         {% else %}

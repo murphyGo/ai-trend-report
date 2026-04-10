@@ -12,7 +12,7 @@ from typing import Optional
 
 from jinja2 import Environment, FileSystemLoader
 
-from .models import Report, Category, Source
+from .models import Report, Article, Category, Source, Audience
 from .data_io import load_report, list_report_files
 
 
@@ -102,6 +102,100 @@ def get_source_color(source: Source) -> str:
     return TIER_COLORS.get(tier, "#64748b")
 
 
+# =============================================================================
+# Audience (독자 레벨) — FR-036~040
+# =============================================================================
+
+# 소스 기반 기본 audience 매핑. Claude가 article.audience를 설정하지 않은 경우
+# (레거시 리포트 등) 폴백으로 사용. 각 소스를 읽을 만한 독자층 1~3 레벨.
+SOURCE_AUDIENCE: dict[Source, list[Audience]] = {
+    # 연구/논문
+    Source.ARXIV:              [Audience.ML_EXPERT],
+    Source.HF_PAPERS:          [Audience.ML_EXPERT, Audience.DEVELOPER],
+    # Frontier Lab
+    Source.ANTHROPIC_BLOG:     [Audience.GENERAL, Audience.DEVELOPER],
+    Source.OPENAI_BLOG:        [Audience.GENERAL, Audience.DEVELOPER],
+    Source.GOOGLE_BLOG:        [Audience.GENERAL, Audience.DEVELOPER],
+    Source.HUGGINGFACE_BLOG:   [Audience.DEVELOPER, Audience.ML_EXPERT],
+    # 기업/학계 리서치
+    Source.MICROSOFT_RESEARCH: [Audience.ML_EXPERT, Audience.DEVELOPER],
+    Source.NVIDIA_BLOG:        [Audience.DEVELOPER, Audience.ML_EXPERT],
+    Source.BAIR_BLOG:          [Audience.ML_EXPERT],
+    Source.STANFORD_AI:        [Audience.ML_EXPERT],
+    # 미디어/큐레이션
+    Source.MARKTECHPOST:       [Audience.DEVELOPER, Audience.ML_EXPERT],
+    Source.TECHCRUNCH_AI:      [Audience.GENERAL],
+    Source.VENTUREBEAT_AI:     [Audience.GENERAL, Audience.DEVELOPER],
+    Source.MIT_TECH_REVIEW:    [Audience.GENERAL],
+    # 한국
+    Source.KOREAN_NEWS:        [Audience.GENERAL],
+    Source.NAVER_D2:           [Audience.DEVELOPER],
+    Source.KAKAO_TECH:         [Audience.DEVELOPER],
+    # 비활성이지만 매핑은 유지
+    Source.META_AI_BLOG:       [Audience.GENERAL, Audience.DEVELOPER],
+    Source.LG_AI_RESEARCH:     [Audience.DEVELOPER, Audience.ML_EXPERT],
+}
+
+# audience 칩 라벨 (짧은 한국어 form)
+AUDIENCE_LABELS: dict[Audience, str] = {
+    Audience.GENERAL: "일반인",
+    Audience.DEVELOPER: "개발자",
+    Audience.ML_EXPERT: "ML 전문가",
+}
+
+# 카드 미니 배지용 초단축 form
+AUDIENCE_SHORT: dict[Audience, str] = {
+    Audience.GENERAL: "일반",
+    Audience.DEVELOPER: "개발",
+    Audience.ML_EXPERT: "ML",
+}
+
+
+def get_article_audience(article: Article) -> list[Audience]:
+    """기사의 effective audience 반환.
+
+    우선순위:
+    1. `article.audience`가 비어있지 않으면 그대로 사용 (Claude가 태깅함)
+    2. article.source가 있으면 `SOURCE_AUDIENCE` 매핑 fallback
+    3. 그 외엔 전 레벨(전체 표시)
+
+    빈 리스트를 반환하지 않도록 보장 — 필터링 시 "어느 레벨에도 속하지 않음" 상태를
+    피하기 위해.
+    """
+    if article.audience:
+        return list(article.audience)
+    if article.source and article.source in SOURCE_AUDIENCE:
+        return list(SOURCE_AUDIENCE[article.source])
+    return list(Audience)
+
+
+def get_audience_data_attr(article: Article) -> str:
+    """HTML `data-audience` 속성용 콤마 구분 enum name 문자열.
+
+    예: "GENERAL,DEVELOPER"
+    """
+    return ",".join(a.name for a in get_article_audience(article))
+
+
+def get_audience_labels(article: Article) -> list[str]:
+    """표시용 한국어 라벨 리스트."""
+    return [AUDIENCE_LABELS[a] for a in get_article_audience(article)]
+
+
+def count_audience(articles: list[Article]) -> dict[str, int]:
+    """기사 리스트의 audience 분포를 집계.
+
+    반환 형식: {"GENERAL": 5, "DEVELOPER": 8, "ML_EXPERT": 12}
+    템플릿에서 `counts.GENERAL` 같은 형태로 사용하기 위해 enum name을 key로 사용.
+    Multi-tag이므로 합계가 len(articles)를 넘을 수 있음.
+    """
+    counts: dict[str, int] = {a.name: 0 for a in Audience}
+    for article in articles:
+        for aud in get_article_audience(article):
+            counts[aud.name] += 1
+    return counts
+
+
 def get_category_color(category: Category) -> str:
     """카테고리별 색상 반환"""
     colors = {
@@ -173,6 +267,8 @@ class StaticSiteGenerator:
         self.env.filters["source_label"] = get_source_label
         self.env.filters["source_color"] = get_source_color
         self.env.filters["source_tier"] = get_source_tier
+        self.env.filters["audience_data"] = get_audience_data_attr
+        self.env.filters["audience_labels"] = get_audience_labels
 
     def generate(self) -> None:
         """전체 정적 사이트 생성"""
@@ -370,17 +466,23 @@ class StaticSiteGenerator:
                 html, encoding="utf-8"
             )
 
-        # 카테고리 인덱스 페이지 (모든 카테고리 그리드, 기사가 있는 것만)
+        # 카테고리 인덱스 페이지 — 카드당 audience 미니 통계 포함 (Phase 7.4)
         index_template = self.env.get_template("categories_index.html")
-        category_counts = [
-            (cat, len(category_articles.get(cat, []))) for cat in Category
-        ]
+        category_entries = []
+        for cat in Category:
+            entries = category_articles.get(cat, [])
+            aud_counts = count_audience([art for art, _ in entries])
+            category_entries.append({
+                "category": cat,
+                "count": len(entries),
+                "audience_counts": aud_counts,
+            })
         # 기사 수 많은 순으로 정렬 (0개는 뒤로)
-        category_counts.sort(key=lambda x: (-x[1], x[0].name))
+        category_entries.sort(key=lambda e: (-e["count"], e["category"].name))
 
         html = index_template.render(
-            category_counts=category_counts,
-            total_articles=sum(c for _, c in category_counts),
+            category_entries=category_entries,
+            total_articles=sum(e["count"] for e in category_entries),
             base_url=self.base_url,
             Category=Category,
         )
@@ -422,16 +524,22 @@ class StaticSiteGenerator:
                 html, encoding="utf-8"
             )
 
-        # 인덱스 페이지 (모든 소스, 기사 수 많은 순)
+        # 소스 인덱스 페이지 — 카드당 audience 미니 통계 포함 (Phase 7.4)
         index_template = self.env.get_template("sources_index.html")
-        source_counts = [
-            (src, len(source_articles.get(src, []))) for src in Source
-        ]
-        source_counts.sort(key=lambda x: (-x[1], x[0].name))
+        source_entries = []
+        for src in Source:
+            entries = source_articles.get(src, [])
+            aud_counts = count_audience([art for art, _ in entries])
+            source_entries.append({
+                "source": src,
+                "count": len(entries),
+                "audience_counts": aud_counts,
+            })
+        source_entries.sort(key=lambda e: (-e["count"], e["source"].name))
 
         html = index_template.render(
-            source_counts=source_counts,
-            total_articles=sum(c for _, c in source_counts),
+            source_entries=source_entries,
+            total_articles=sum(e["count"] for e in source_entries),
             base_url=self.base_url,
             Source=Source,
         )

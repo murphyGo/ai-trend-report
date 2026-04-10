@@ -8,7 +8,8 @@
 | 데이터 모델 | ✅ Complete | Article, Category, Source (19종) + 직렬화 |
 | Collectors | ✅ Complete | **17개 활성** (arXiv, Frontier Lab 4, 리서치 4, 미디어 4, 한국 3) + 2개 비활성 |
 | RSSCollector 공통 베이스 | ✅ Complete | feedparser 기반, 신규 RSS 소스 5줄로 추가 |
-| Claude 랭킹 (상위 20) | ✅ Complete | daily-report.yml 2단계 프롬프트 (rank → summarize) |
+| Claude 랭킹 (상위 20) | ✅ Complete | daily-report.yml 2단계 프롬프트 (rank → summarize + audience 태깅) |
+| 독자 레벨 필터 | ✅ Complete | Phase 7 — GENERAL/DEVELOPER/ML_EXPERT, 하이브리드 태깅, 전역 필터 바 |
 | Summarizer | ✅ Complete | Claude Code CLI (기본) + Anthropic API (`--use-api`) |
 | Slack / Discord / Email Notifier | ✅ Complete | 3채널 모두 구현 |
 | CLI | ✅ Complete | main.py — 수집/요약/전송/대시보드/정적사이트 모드 |
@@ -391,7 +392,7 @@ Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 
 - [x] `_generate_index`에서 카테고리/소스 카운트 집계해 상위 8개 전달
 - [x] CSS: `.hero-cta` (흰 pill 버튼 + hover elevation), `.dashboard-section`, `.section-header`
 
-### 6.7 문서 정합성 (이 작업)
+### 6.7 문서 정합성
 
 - [x] CLAUDE.md 전면 갱신 — Features/Tech Stack/Project Structure/Usage/Environment Variables
 - [x] README.md 재작성
@@ -399,6 +400,76 @@ Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 
 - [x] docs/development-plan.md 갱신 — Phase 6 신설, 상태 테이블, 변경 이력
 - [x] docs/system-architecture.md 갱신 — 모듈 트리, 컴포넌트, 의존성, 배포 구조
 - [x] docs/TECH-DEBT.md 갱신 — DEBT-001~005 공식 등록
+
+---
+
+## Phase 7: 독자 레벨별 필터 (완료)
+
+카테고리/소스 외에 "누가 읽기 위한 글인가"라는 직교 축을 추가. 사용자가 자기
+레벨에 맞는 기사만 볼 수 있도록 전역 필터를 제공.
+
+**설계 결정 (확정)**:
+- 3단계 스킴: `GENERAL` (일반인) / `DEVELOPER` (개발자) / `ML_EXPERT` (ML 전문가)
+- Multi-tag 허용 — 기사 1개가 여러 레벨에 속할 수 있음
+- 하이브리드 태깅 — Claude 판단(경로 B) + 소스 기반 fallback(경로 A) → 경로 C
+- 필터 UX — 히어로/페이지 헤더 바로 아래 필터 바, `localStorage`로 전역 지속
+- 카테고리/소스 카드에 audience 미니 통계 포함
+
+### 7.1 데이터 레이어
+- [x] `Audience` Enum 추가 (`src/models.py`) — GENERAL / DEVELOPER / ML_EXPERT
+- [x] `Article.audience: list[Audience]` 필드 + `to_dict`/`from_dict` 직렬화
+- [x] `Audience.from_string` classmethod (관대한 파싱, None-safe)
+- [x] `__post_init__`에서 문자열 리스트 → Enum 정규화, 중복 제거
+- [x] 단위 테스트 (`tests/test_audience.py`) — 40개 테스트 전부 통과
+
+### 7.2 태깅 (하이브리드)
+- [x] `static_generator.py`에 `SOURCE_AUDIENCE` 매핑 (19 소스 × 1~3 audience)
+- [x] `get_article_audience()` 헬퍼 — Claude 태그 있으면 사용, 없으면 source fallback, 둘 다 없으면 전체
+- [x] `get_audience_data_attr()` — data-audience 속성용 콤마 구분 문자열
+- [x] `get_audience_labels()` — 한국어 라벨 리스트
+- [x] `count_audience()` — 카드 미니 통계용 집계
+- [x] Jinja 필터 등록: `audience_data`, `audience_labels`
+- [x] `daily-report.yml` Stage 2 프롬프트에 audience 태깅 지시 추가
+  - GENERAL/DEVELOPER/ML_EXPERT 각각의 판단 기준 명시
+  - Python 예시 코드에 `article.audience = [Audience.GENERAL, ...]` 라인 추가
+  - Multi-tag 허용 + inclusive 태깅 방향 지침
+
+### 7.3 UI 필터
+- [x] `src/static/templates/audience_filter.html` 파셜 신설 — 필터 바 HTML
+- [x] `src/static/js/audience-filter.js` 신설 — localStorage 기반 client-side 필터
+  - `[data-audience]` 선택자로 카드 숨김/표시
+  - 칩 active 상태 + `aria-pressed` 토글
+  - 빈 카테고리 섹션 자동 숨김
+  - 빈 결과 `audience-empty-state` 동적 삽입
+  - graceful degradation (JS 실패 시 모든 기사 노출)
+- [x] `base.html`에 `<script src="{{ base_url }}/js/audience-filter.js">` 로드
+- [x] 모든 페이지 템플릿에 `{% include "audience_filter.html" %}` 삽입:
+  - `index.html` (히어로 아래)
+  - `report.html` (report-header 아래)
+  - `category.html` (category-header 아래)
+  - `source.html` (source-header 아래)
+  - `categories_index.html` (page-header 아래)
+  - `sources_index.html` (page-header 아래)
+  - `search.html` (search-header 아래)
+- [x] article-card 렌더 지점에 `data-audience="..."` 속성 추가
+  - `report.html` / `category.html` / `source.html`
+- [x] article-meta에 `audience-tag` 배지 추가 (각 기사의 audience 라벨 노출)
+- [x] CSS — `.audience-filter`, `.audience-chip`, `.audience-chip.active`, `.audience-empty-state`, `.audience-tag`
+
+### 7.4 카테고리/소스 카드 미니 통계
+- [x] `_generate_category_pages`에서 `category_entries` 리스트 구성 — 각 entry에 `audience_counts` 포함
+- [x] `_generate_source_pages`에서 `source_entries` 리스트 구성 — 각 entry에 `audience_counts` 포함
+- [x] `categories_index.html` / `sources_index.html` 카드에 `.audience-mini` 배지 3개
+  - 예: `일반 12 · 개발 8 · ML 15` (0인 계층은 생략)
+- [x] CSS — `.audience-mini`, `.aud-mini` 스타일 (general/developer/ml-expert 각 컬러)
+
+### 7.5 문서 업데이트
+- [x] `docs/requirements.md` — FR-036~040, NFR-016 추가
+- [x] `docs/system-architecture.md` — Audience 섹션 추가
+- [x] `CLAUDE.md` — Features에 Audience 필터 추가
+- [x] `README.md` — 주요 기능에 Audience 필터 추가
+- [x] `docs/development-plan.md` — 상태 테이블, 변경 이력
+- [x] `docs/TECH-DEBT.md` — 신규 항목 없음 (구현 중 발견된 이슈 없음)
 
 ---
 
@@ -439,3 +510,4 @@ Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 
 | 2026-04-10 | 6.5 | Phase 6.5 소스별 브라우징 완료 (티어 색상, 카테고리 ↔ 소스 크로스 네비) |
 | 2026-04-11 | 6.6 | Phase 6.6 홈 대시보드 재설계 (기사 월 제거, 탐색 허브 구조) |
 | 2026-04-11 | 6.7 | Phase 6.7 문서 정합성 갱신 (CLAUDE/README/docs 4종/TECH-DEBT) |
+| 2026-04-11 | 7.0 | Phase 7 독자 레벨 필터 완료 — Audience enum + 하이브리드 태깅 + 전역 필터 바 + 카드 미니 통계 + 40개 테스트 추가 |

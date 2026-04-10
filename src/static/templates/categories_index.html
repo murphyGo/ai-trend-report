@@ -8,13 +8,23 @@
     <p class="subtitle">{{ total_articles }}개 기사를 12개 카테고리로 분류</p>
 </header>
 
+{% include "audience_filter.html" %}
+
 <section class="category-grid">
-    {% for category, count in category_counts %}
+    {% for entry in category_entries %}
+        {% set category = entry.category %}
+        {% set count = entry.count %}
+        {% set aud = entry.audience_counts %}
         {% if count > 0 %}
         <a href="{{ base_url }}/categories/{{ category.name }}.html"
            class="category-card"
            style="--cat-color: {{ category|category_color }};">
             <h3>{{ category.value }}</h3>
+            <div class="audience-mini">
+                {% if aud.GENERAL %}<span class="aud-mini general">일반 {{ aud.GENERAL }}</span>{% endif %}
+                {% if aud.DEVELOPER %}<span class="aud-mini developer">개발 {{ aud.DEVELOPER }}</span>{% endif %}
+                {% if aud.ML_EXPERT %}<span class="aud-mini ml-expert">ML {{ aud.ML_EXPERT }}</span>{% endif %}
+            </div>
             <span class="count">{{ count }} articles</span>
         </a>
         {% else %}

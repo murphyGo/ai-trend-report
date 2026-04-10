@@ -308,6 +308,43 @@ Jinja2 환경에 커스텀 필터 등록:
 
 풀 기사 목록은 `/reports/{date}.html` 에만 렌더.
 
+### 5.7 Audience 필터 (Phase 7)
+
+카테고리 · 소스 외에 "누가 읽기 위한 글인가"라는 직교 3rd 축. 동일 기사가
+여러 레벨에 속할 수 있도록 **multi-tag**.
+
+```python
+class Audience(Enum):
+    GENERAL = "일반인"      # 제품/산업 뉴스, 정책·윤리, AI 활용
+    DEVELOPER = "개발자"    # API, 튜토리얼, 엔지니어링 practice
+    ML_EXPERT = "ML 전문가" # 논문, 벤치마크, 학습 방법론
+```
+
+**하이브리드 태깅** (우선순위):
+1. Claude가 `daily-report.yml` Stage 2에서 `article.audience`를 설정하면 그대로 사용
+2. 없으면 `SOURCE_AUDIENCE` 매핑으로 fallback (소스 기반 기본값)
+3. 둘 다 없으면 모든 레벨 (필터 영향 없음)
+
+```python
+def get_article_audience(article: Article) -> list[Audience]:
+    if article.audience:
+        return article.audience
+    if article.source in SOURCE_AUDIENCE:
+        return SOURCE_AUDIENCE[article.source]
+    return list(Audience)
+```
+
+**UI**:
+- `audience_filter.html` 파셜 — 네 칩 (`모두 / 일반인 / 개발자 / ML 전문가`)
+- 모든 페이지 템플릿에 히어로/헤더 바로 아래 `{% include %}`
+- `audience-filter.js` — localStorage + client-side DOM 필터
+- article-card에 `data-audience="GENERAL,DEVELOPER"` 속성 부착
+- 빈 카테고리 섹션 자동 숨김, 빈 결과 empty state 동적 삽입
+- Graceful degradation: JS 실패 시 모든 기사 노출
+
+**카드 미니 통계** (Phase 7.4): 카테고리 / 소스 인덱스 카드에 audience 분포
+배지 (`일반 3 · 개발 23 · ML 350`). 0인 레벨은 생략.
+
 ---
 
 ## 6. 외부 의존성
@@ -486,3 +523,4 @@ logging:
 |------|------|---------|
 | 2024-04-05 | 1.0 | 초기 아키텍처 문서 작성 |
 | 2026-04-11 | 2.0 | Phase 6 반영 — 17 소스 / RSSCollector / Claude 상위 20 랭킹 / 카테고리·소스 브라우징 / 홈 대시보드 / GitHub Actions + Pages 배포 구조 |
+| 2026-04-11 | 2.1 | Phase 7 반영 — Audience enum, 하이브리드 태깅, 전역 필터 바, 카드 미니 통계 (Section 5.7 신설) |

@@ -12,8 +12,9 @@
 - **Claude가 중요도 기준 상위 20개 선별** — 기술 신규성, 영향력, 소스 신뢰도, 카테고리 다양성, 한국 관련성
 - **Claude Code CLI 기본 지원** — Pro/Max OAuth 토큰 사용, `ANTHROPIC_API_KEY` 불필요
 - **12개 카테고리** 자동 분류 + 카테고리별 브라우징 페이지
+- **독자 레벨 필터** — 일반인 / 개발자 / ML 전문가 중 하나를 선택해 전 페이지에서 실시간 필터링 (localStorage 지속)
 - **다채널 알림**: Slack Webhook, Discord Webhook, 이메일(SMTP)
-- **GitHub Pages 정적 사이트** 자동 배포 (홈 / 리포트 아카이브 / 카테고리 / 검색)
+- **GitHub Pages 정적 사이트** 자동 배포 (홈 / 리포트 아카이브 / 카테고리 / 소스 / 검색)
 - **GitHub Actions 스케줄** (매일 KST 09:00) + 수동 trigger
 - 병렬 수집, 캐시 기반 중복 제거, dry-run 모드, 로컬 FastAPI 대시보드
 

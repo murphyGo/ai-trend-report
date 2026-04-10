@@ -154,6 +154,22 @@ jobs:
           - Korean summary (3-5 sentences) covering 핵심 기술/발견, 기술적 의의, 실용적 영향
           - A category from this enum: LLM, AGENT, VISION, VIDEO, ROBOTICS, SAFETY, RL, INFRA,
             MEDICAL, FINANCE, INDUSTRY, OTHER
+          - **Audience tags** from: GENERAL, DEVELOPER, ML_EXPERT (multi-select, at least 1)
+
+          #### Audience tagging criteria
+
+          Judge which reader levels would find this article useful. Multiple tags allowed —
+          a flagship model release may be tagged all three. Err on the side of inclusive
+          tagging; too narrow hides content from users who would want it.
+
+          - **GENERAL (일반인)**: Product/industry news, policy, ethics, business impact,
+            'how AI changes X' explainers, AI usage tips. No technical prerequisites.
+          - **DEVELOPER (개발자)**: API updates, library releases, coding tutorials, system
+            architecture, framework comparisons, AI-assisted dev tools (Cursor, Copilot, etc.),
+            integration guides. Assumes programming background but not ML expertise.
+          - **ML_EXPERT (ML 전문가)**: Research papers, novel model architectures, training
+            methodology, benchmarks, mathematical/statistical heavy content, model release
+            technical details (parameters, datasets, scaling laws). Assumes ML background.
 
           ## Output
 
@@ -166,7 +182,7 @@ jobs:
 
           \`\`\`python
           from src.data_io import load_articles, save_report
-          from src.models import Report, Category
+          from src.models import Report, Category, Audience
 
           all_articles = load_articles('$ARTICLES_FILE')
 
@@ -174,10 +190,14 @@ jobs:
           # (your judgment, not a heuristic — consider title + source + content)
           selected = [...]  # list of 20 Article objects from all_articles
 
-          # Stage 2: summarize + categorize only the selected ones
+          # Stage 2: summarize + categorize + audience tag the selected ones
           for article in selected:
-              article.summary = '...'  # 3-5 문장 한국어 요약
-              article.category = Category.LLM  # 적절한 카테고리
+              article.summary = '...'            # 3-5 문장 한국어 요약
+              article.category = Category.LLM    # 적절한 카테고리
+              article.audience = [               # 독자 레벨 (1~3개, multi-tag)
+                  Audience.GENERAL,
+                  Audience.DEVELOPER,
+              ]
 
           # Save ONLY the selected 20 as the report
           report = Report(articles=selected)

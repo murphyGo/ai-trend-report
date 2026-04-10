@@ -58,6 +58,47 @@ class Source(Enum):
     LG_AI_RESEARCH = "lg_ai_research"
 
 
+class Audience(Enum):
+    """독자 레벨 (FR-036)
+
+    기사가 어떤 독자층에게 유용한지 표현. Multi-tag 허용 — 하나의 기사가
+    여러 레벨에 속할 수 있음 (예: "OpenAI GPT-5 발표"는 일반인/개발자/ML 전문가
+    모두에게 관련됨).
+
+    UI의 필터 칩은 이 enum의 `name`을 사용하고 (`GENERAL`, `DEVELOPER`,
+    `ML_EXPERT`), 사용자 노출용 라벨은 `value` 또는 별도 label 맵 사용.
+    """
+    GENERAL = "일반인"
+    DEVELOPER = "개발자"
+    ML_EXPERT = "ML 전문가"
+
+    @classmethod
+    def from_string(cls, value: str) -> Optional["Audience"]:
+        """관대한 파싱 — enum name, value, 한영 약칭 모두 허용.
+
+        None을 반환하는 경우 호출자가 기본값을 결정.
+        """
+        if not value:
+            return None
+        v = value.strip().lower().replace(" ", "").replace("-", "_")
+        aliases = {
+            "general": cls.GENERAL,
+            "일반인": cls.GENERAL,
+            "일반": cls.GENERAL,
+            "developer": cls.DEVELOPER,
+            "dev": cls.DEVELOPER,
+            "개발자": cls.DEVELOPER,
+            "개발": cls.DEVELOPER,
+            "ml_expert": cls.ML_EXPERT,
+            "mlexpert": cls.ML_EXPERT,
+            "expert": cls.ML_EXPERT,
+            "ml전문가": cls.ML_EXPERT,
+            "ml": cls.ML_EXPERT,
+            "전문가": cls.ML_EXPERT,
+        }
+        return aliases.get(v)
+
+
 @dataclass
 class Article:
     """기사 데이터 모델"""
@@ -68,6 +109,7 @@ class Article:
     published_at: Optional[datetime] = None
     summary: str = ""
     category: Category = Category.OTHER
+    audience: list[Audience] = field(default_factory=list)  # FR-036: 독자 레벨 (multi-tag)
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
 
     def __post_init__(self):
@@ -75,6 +117,18 @@ class Article:
             self.source = Source(self.source)
         if isinstance(self.category, str):
             self.category = Category.from_string(self.category)
+        # audience가 문자열 리스트로 들어올 수 있음 (JSON 역직렬화 직후)
+        normalized: list[Audience] = []
+        for item in self.audience:
+            if isinstance(item, Audience):
+                normalized.append(item)
+            elif isinstance(item, str):
+                parsed = Audience.from_string(item)
+                if parsed is not None:
+                    normalized.append(parsed)
+        # 중복 제거하되 순서 유지
+        seen: set[Audience] = set()
+        self.audience = [a for a in normalized if not (a in seen or seen.add(a))]
 
     def to_dict(self) -> dict:
         """JSON 직렬화용 딕셔너리 변환"""
@@ -87,6 +141,7 @@ class Article:
             "published_at": self.published_at.isoformat() if self.published_at else None,
             "summary": self.summary,
             "category": self.category.value,
+            "audience": [a.name for a in self.audience],
         }
 
     @classmethod
@@ -95,6 +150,10 @@ class Article:
         published_at = None
         if data.get("published_at"):
             published_at = datetime.fromisoformat(data["published_at"])
+
+        # audience 필드는 Phase 7 이전 리포트에는 없음 — 빈 리스트로 복원되어
+        # 이후 static_generator의 fallback (source 기반)이 적용됨.
+        raw_audience = data.get("audience", []) or []
 
         return cls(
             id=data.get("id", str(uuid.uuid4())),
@@ -105,6 +164,7 @@ class Article:
             published_at=published_at,
             summary=data.get("summary", ""),
             category=Category.from_string(data.get("category", "기타")),
+            audience=list(raw_audience),
         )
 
 

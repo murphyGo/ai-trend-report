@@ -15,11 +15,13 @@
     <span class="count-badge">{{ article_count }} articles</span>
 </header>
 
+{% include "audience_filter.html" %}
+
 <section class="articles">
     {% if articles %}
     <div class="article-list">
         {% for article, date_str in articles %}
-        <article class="article-card">
+        <article class="article-card" data-audience="{{ article|audience_data }}">
             <h3>
                 <a href="{{ article.url }}" target="_blank" rel="noopener">
                     {{ article.title }}
@@ -32,6 +34,9 @@
                 </a>
                 {% endif %}
                 <a href="{{ base_url }}/reports/{{ date_str }}.html" class="date-link">{{ date_str }}</a>
+                {% for label in article|audience_labels %}
+                <span class="audience-tag">{{ label }}</span>
+                {% endfor %}
             </div>
             {% if article.summary %}
             <p class="summary">{{ article.summary }}</p>

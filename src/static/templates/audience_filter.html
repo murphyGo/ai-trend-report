@@ -1,0 +1,18 @@
+{#
+  Audience filter bar — Phase 7.3
+
+  히어로/페이지 헤더 바로 아래 삽입해 독자 레벨별로 기사를 필터링.
+  칩 클릭 시 audience-filter.js가 localStorage에 값을 저장하고 모든
+  [data-audience] 카드의 표시/숨김을 토글.
+
+  JS가 비활성화되어도 모든 기사가 그대로 노출됨 (graceful degradation).
+#}
+<section class="audience-filter" aria-label="독자 레벨 필터">
+    <span class="audience-filter-label">읽는 사람</span>
+    <div class="audience-chips" role="group">
+        <button type="button" class="audience-chip" data-audience="ALL">모두</button>
+        <button type="button" class="audience-chip" data-audience="GENERAL">일반인</button>
+        <button type="button" class="audience-chip" data-audience="DEVELOPER">개발자</button>
+        <button type="button" class="audience-chip" data-audience="ML_EXPERT">ML 전문가</button>
+    </div>
+</section>
