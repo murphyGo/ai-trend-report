@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}AI Report - {{ category|category_label }}{% endblock %}
+
+{% block content %}
+<header class="category-header">
+    <nav class="breadcrumb">
+        <a href="{{ base_url }}/">Home</a> &gt;
+        <a href="{{ base_url }}/categories/">Categories</a> &gt;
+        <span>{{ category|category_label }}</span>
+    </nav>
+
+    <h1 style="border-left: 6px solid {{ category|category_color }}; padding-left: 1rem;">
+        {{ category|category_label }}
+    </h1>
+    <p class="category-desc">{{ category.value }}</p>
+    <p class="count-badge">{{ article_count }} articles</p>
+</header>
+
+<section class="articles">
+    {% if articles %}
+    <div class="article-list">
+        {% for article, date_str in articles %}
+        <article class="article-card">
+            <h3>
+                <a href="{{ article.url }}" target="_blank" rel="noopener">
+                    {{ article.title }}
+                </a>
+            </h3>
+            <div class="article-meta">
+                <span class="source">{{ article.source.value if article.source else 'Unknown' }}</span>
+                <a href="{{ base_url }}/reports/{{ date_str }}.html" class="date-link">{{ date_str }}</a>
+            </div>
+            {% if article.summary %}
+            <p class="summary">{{ article.summary }}</p>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">
+        <p>이 카테고리에 아직 기사가 없습니다.</p>
+        <p><a href="{{ base_url }}/categories/">← 카테고리 목록으로</a></p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

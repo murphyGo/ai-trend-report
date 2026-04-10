@@ -45,7 +45,7 @@
     {% for category, articles in articles_by_category.items() %}
     <div class="category-section">
         <h2 class="category-title" style="border-left: 4px solid {{ category|category_color }};">
-            {{ category|category_label }}
+            <a href="{{ base_url }}/categories/{{ category.name }}.html">{{ category|category_label }}</a>
             <span class="count">({{ articles|length }})</span>
         </h2>
 

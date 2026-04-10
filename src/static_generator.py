@@ -108,6 +108,7 @@ class StaticSiteGenerator:
         # 페이지 생성
         self._generate_index(reports)
         self._generate_report_pages(reports)
+        self._generate_category_pages(reports)
         self._generate_search_page(reports)
 
         # 데이터 파일 생성
@@ -118,14 +119,15 @@ class StaticSiteGenerator:
 
     def _prepare_output_dir(self) -> None:
         """출력 디렉토리 준비"""
-        # 기존 파일 삭제 (reports/, data/ 만)
-        for subdir in ["reports", "data", "css", "js"]:
+        # 기존 파일 삭제
+        for subdir in ["reports", "categories", "data", "css", "js"]:
             subpath = self.output_dir / subdir
             if subpath.exists():
                 shutil.rmtree(subpath)
 
         # 디렉토리 생성
         (self.output_dir / "reports").mkdir(parents=True, exist_ok=True)
+        (self.output_dir / "categories").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "data").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "css").mkdir(parents=True, exist_ok=True)
         (self.output_dir / "js").mkdir(parents=True, exist_ok=True)
@@ -217,6 +219,56 @@ class StaticSiteGenerator:
             (self.output_dir / "reports" / f"{date_str}.html").write_text(
                 html, encoding="utf-8"
             )
+
+    def _generate_category_pages(self, reports: list[Report]) -> None:
+        """카테고리별 페이지 생성
+
+        모든 리포트의 기사를 카테고리별로 집계해서:
+        1. 카테고리 인덱스 페이지 (categories/index.html) - 12개 카테고리 그리드
+        2. 개별 카테고리 페이지 (categories/{NAME}.html) - 해당 카테고리의 전 기사
+        """
+        # 카테고리별 기사 집계 (reports가 이미 최신순 정렬이라 자연스럽게 최신순)
+        category_articles: dict[Category, list[tuple]] = {}
+        for report in reports:
+            date_str = report.created_at.strftime("%Y-%m-%d")
+            for article in report.articles:
+                cat = article.category or Category.OTHER
+                if cat not in category_articles:
+                    category_articles[cat] = []
+                category_articles[cat].append((article, date_str))
+
+        # 개별 카테고리 페이지
+        category_template = self.env.get_template("category.html")
+        for category in Category:
+            articles = category_articles.get(category, [])
+            html = category_template.render(
+                category=category,
+                articles=articles,  # list of (article, date_str) tuples
+                article_count=len(articles),
+                base_url=self.base_url,
+                Category=Category,
+            )
+            (self.output_dir / "categories" / f"{category.name}.html").write_text(
+                html, encoding="utf-8"
+            )
+
+        # 카테고리 인덱스 페이지 (모든 카테고리 그리드, 기사가 있는 것만)
+        index_template = self.env.get_template("categories_index.html")
+        category_counts = [
+            (cat, len(category_articles.get(cat, []))) for cat in Category
+        ]
+        # 기사 수 많은 순으로 정렬 (0개는 뒤로)
+        category_counts.sort(key=lambda x: (-x[1], x[0].name))
+
+        html = index_template.render(
+            category_counts=category_counts,
+            total_articles=sum(c for _, c in category_counts),
+            base_url=self.base_url,
+            Category=Category,
+        )
+        (self.output_dir / "categories" / "index.html").write_text(
+            html, encoding="utf-8"
+        )
 
     def _generate_search_page(self, reports: list[Report]) -> None:
         """검색 페이지 생성"""
