@@ -10,31 +10,21 @@
 
 <section class="category-grid">
     {% for category, count in category_counts %}
-    {% if count > 0 %}
-    <a href="{{ base_url }}/categories/{{ category.name }}.html"
-       class="category-card"
-       style="border-top: 4px solid {{ category|category_color }};">
-        <h3>{{ category|category_label }}</h3>
-        <p class="category-desc">{{ category.value }}</p>
-        <span class="count">{{ count }} articles</span>
-    </a>
-    {% endif %}
+        {% if count > 0 %}
+        <a href="{{ base_url }}/categories/{{ category.name }}.html"
+           class="category-card"
+           style="--cat-color: {{ category|category_color }};">
+            <h3>{{ category.value }}</h3>
+            <span class="count">{{ count }} articles</span>
+        </a>
+        {% else %}
+        <div class="category-card empty"
+             style="--cat-color: {{ category|category_color }};"
+             aria-disabled="true">
+            <h3>{{ category.value }}</h3>
+            <span class="count">0</span>
+        </div>
+        {% endif %}
     {% endfor %}
 </section>
-
-{# 기사가 없는 카테고리는 별도 섹션으로 #}
-{% set empty_cats = category_counts | selectattr("1", "equalto", 0) | list %}
-{% if empty_cats %}
-<section class="category-grid empty-categories">
-    <h2 class="empty-heading">Empty Categories</h2>
-    {% for category, count in empty_cats %}
-    <div class="category-card disabled"
-         style="border-top: 4px solid {{ category|category_color }};">
-        <h3>{{ category|category_label }}</h3>
-        <p class="category-desc">{{ category.value }}</p>
-        <span class="count">0 articles</span>
-    </div>
-    {% endfor %}
-</section>
-{% endif %}
 {% endblock %}
