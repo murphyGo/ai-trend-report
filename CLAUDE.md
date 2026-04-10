@@ -31,12 +31,40 @@
  - 기타
 
 ## Sources
- - https://arxiv.org (cs.AI, cs.LG, cs.CL 카테고리)
- - https://blog.google/innovation-and-ai/models-and-research/google-deepmind/
- - https://blog.google/innovation-and-ai/models-and-research/google-research/
- - https://blog.google/innovation-and-ai/models-and-research/google-labs/
- - https://blog.google/innovation-and-ai/models-and-research/gemini-models/
- - https://www.anthropic.com/news
+
+### 연구/논문
+ - **arXiv** — https://arxiv.org (cs.AI, cs.LG, cs.CL 카테고리)
+ - **Hugging Face Daily Papers** — https://papers.takara.ai/api/feed (비공식 RSS, 큐레이션)
+
+### Frontier Lab 블로그
+ - **Anthropic** — https://www.anthropic.com/news
+ - **OpenAI** — https://openai.com/news/
+ - **Google** — blog.google (DeepMind, Research, Labs, Gemini 카테고리)
+ - **Meta AI** — https://ai.meta.com/blog/
+ - **Hugging Face** — https://huggingface.co/blog
+
+### 기업/학계 리서치
+ - **Microsoft Research** — https://www.microsoft.com/en-us/research/blog/feed/ (RSS)
+ - **NVIDIA Developer** — https://developer.nvidia.com/blog/feed (RSS)
+ - **BAIR (Berkeley)** — https://bair.berkeley.edu/blog/feed.xml (RSS)
+ - **Stanford AI Lab** — https://ai.stanford.edu/blog/feed.xml (RSS)
+
+### 미디어/큐레이션
+ - **MarkTechPost** — https://www.marktechpost.com/feed/ (RSS)
+ - **TechCrunch AI** — https://techcrunch.com/category/artificial-intelligence/feed/ (RSS)
+ - **VentureBeat AI** — https://venturebeat.com/category/ai/feed/ (RSS)
+ - **MIT Technology Review (AI)** — https://www.technologyreview.com/topic/artificial-intelligence/
+
+### 한국 소스
+ - **AI타임스** — https://www.aitimes.kr
+ - **네이버 D2** — https://d2.naver.com/d2.atom (Atom)
+ - **카카오 기술 블로그** — https://tech.kakao.com/feed/ (RSS)
+
+### 비활성 (코드는 존재, 사이트 정책으로 미사용)
+ - **Meta AI Blog** — `ai.meta.com/blog/`가 일반 HTTP 클라이언트에 400 응답. 헤드리스 브라우저 필요.
+ - **LG AI Research** — Nuxt.js SPA로 SSR HTML에 데이터 없음. 공개 API 미발견.
+
+   향후 우회법을 찾으면 `src/main.py:get_enabled_collectors`에서 주석을 해제하세요.
 
 ## Tech Stack
 - Python 3.9+

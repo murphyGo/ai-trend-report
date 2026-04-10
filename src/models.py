@@ -40,6 +40,22 @@ class Source(Enum):
     OPENAI_BLOG = "openai"
     HUGGINGFACE_BLOG = "huggingface"
     KOREAN_NEWS = "korean"
+    # Tier 1: 공식 RSS 소스
+    MICROSOFT_RESEARCH = "microsoft_research"
+    NVIDIA_BLOG = "nvidia"
+    MARKTECHPOST = "marktechpost"
+    BAIR_BLOG = "bair"
+    STANFORD_AI = "stanford_ai"
+    TECHCRUNCH_AI = "techcrunch"
+    VENTUREBEAT_AI = "venturebeat"
+    # Tier 2: 비공식 RSS / HTML 스크래핑
+    HF_PAPERS = "hf_papers"
+    META_AI_BLOG = "meta_ai"
+    MIT_TECH_REVIEW = "mit_tech_review"
+    # Tier 3: 한국 소스
+    NAVER_D2 = "naver_d2"
+    KAKAO_TECH = "kakao_tech"
+    LG_AI_RESEARCH = "lg_ai_research"
 
 
 @dataclass

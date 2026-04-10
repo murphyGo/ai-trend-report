@@ -17,6 +17,22 @@ from .collectors import (
     OpenAIBlogCollector,
     HuggingFaceBlogCollector,
     KoreanNewsCollector,
+    # Tier 1: 공식 RSS
+    MicrosoftResearchCollector,
+    NvidiaDeveloperBlogCollector,
+    MarkTechPostCollector,
+    BAIRBlogCollector,
+    StanfordAILabCollector,
+    TechCrunchAICollector,
+    VentureBeatAICollector,
+    # Tier 2: HF Papers + HTML
+    HFPapersCollector,
+    MetaAIBlogCollector,
+    MITTechReviewCollector,
+    # Tier 3: 한국
+    NaverD2Collector,
+    KakaoTechCollector,
+    LGAIResearchCollector,
 )
 from .summarizer import Summarizer
 from .slack_notifier import SlackNotifier
@@ -45,10 +61,33 @@ def get_enabled_collectors(config: Config) -> list:
     if config.collectors.anthropic_blog.enabled:
         collectors.append(AnthropicBlogCollector())
 
-    # 새로 추가된 수집기들 (기본 활성화)
+    # 기존 추가 수집기들 (기본 활성화)
     collectors.append(OpenAIBlogCollector())
     collectors.append(HuggingFaceBlogCollector())
     collectors.append(KoreanNewsCollector())
+
+    # Tier 1: 공식 RSS 소스 (안정적)
+    collectors.append(MicrosoftResearchCollector())
+    collectors.append(NvidiaDeveloperBlogCollector())
+    collectors.append(MarkTechPostCollector())
+    collectors.append(BAIRBlogCollector())
+    collectors.append(StanfordAILabCollector())
+    collectors.append(TechCrunchAICollector())
+    collectors.append(VentureBeatAICollector())
+
+    # Tier 2: HF Papers + HTML 스크래핑
+    collectors.append(HFPapersCollector())
+    collectors.append(MITTechReviewCollector())
+    # Meta AI Blog: ai.meta.com이 일반 HTTP 클라이언트에 400 응답 (강력 봇 차단).
+    # 헤드리스 브라우저(Playwright 등) 없이는 접근 불가능. 향후 우회법 발견 시 활성화.
+    # collectors.append(MetaAIBlogCollector())
+
+    # Tier 3: 한국 소스
+    collectors.append(NaverD2Collector())
+    collectors.append(KakaoTechCollector())
+    # LG AI Research: Nuxt.js SPA로 SSR HTML에 블로그 데이터 없음.
+    # 공개 API 엔드포인트 미발견. 헤드리스 브라우저 필요. 향후 활성화.
+    # collectors.append(LGAIResearchCollector())
 
     return collectors
 

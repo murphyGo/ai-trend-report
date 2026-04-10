@@ -26,10 +26,15 @@ class BaseCollector(ABC):
     def __init__(self, timeout: int = 30):
         self.timeout = timeout
         self.session = requests.Session()
+        # 일반 브라우저와 유사한 헤더. Accept-Encoding은 requests가 자동 처리하도록 미지정
+        # (br 압축이 포함되면 brotli 패키지 없이는 디코딩 실패).
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                           "AppleWebKit/537.36 (KHTML, like Gecko) "
-                          "Chrome/120.0.0.0 Safari/537.36"
+                          "Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                      "application/rss+xml,application/atom+xml,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9,ko;q=0.8",
         })
 
     @abstractmethod
