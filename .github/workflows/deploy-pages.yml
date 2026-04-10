@@ -58,6 +58,10 @@ jobs:
           ls -la data/ || echo "No data directory"
 
       - name: Generate static site
+        env:
+          # GitHub Pages 프로젝트 사이트는 /{repo_name} 서브패스에 배포됨.
+          # 모든 내부 링크와 css/js 경로에 이 prefix가 붙어야 함.
+          SITE_BASE_URL: /${{ github.event.repository.name }}
         run: |
           if ls data/report_*.json 1> /dev/null 2>&1; then
             python -m src.main --generate-static --static-output _site

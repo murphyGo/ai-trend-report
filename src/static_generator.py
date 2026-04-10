@@ -4,6 +4,7 @@ GitHub Pages 배포를 위한 정적 HTML 파일 생성
 """
 
 import json
+import os
 import shutil
 from datetime import datetime
 from pathlib import Path
@@ -61,14 +62,23 @@ def get_category_label(category: Category) -> str:
 class StaticSiteGenerator:
     """정적 사이트 생성기"""
 
-    def __init__(self, data_dir: Path, output_dir: Path):
+    def __init__(self, data_dir: Path, output_dir: Path, base_url: Optional[str] = None):
         """
         Args:
             data_dir: 리포트 JSON 파일이 있는 디렉토리
             output_dir: 정적 사이트 출력 디렉토리
+            base_url: 사이트 URL prefix (예: "/ai-trend-report").
+                      None이면 SITE_BASE_URL 환경변수 사용, 없으면 빈 문자열.
+                      GitHub Pages 프로젝트 사이트처럼 서브패스에 배포 시 필요.
         """
         self.data_dir = Path(data_dir)
         self.output_dir = Path(output_dir)
+
+        # base_url 결정: 인자 > 환경변수 > 빈 문자열
+        if base_url is None:
+            base_url = os.getenv("SITE_BASE_URL", "")
+        # 일관성을 위해 트레일링 슬래시 제거 (템플릿에서 {{ base_url }}/... 로 사용)
+        self.base_url = base_url.rstrip("/")
 
         # Jinja2 환경 설정
         self.env = Environment(
@@ -171,6 +181,7 @@ class StaticSiteGenerator:
             total_reports=len(reports),
             generated_at=datetime.now().isoformat(),
             Category=Category,
+            base_url=self.base_url,
         )
 
         (self.output_dir / "index.html").write_text(html, encoding="utf-8")
@@ -198,6 +209,7 @@ class StaticSiteGenerator:
                 prev_report=prev_report,
                 next_report=next_report,
                 Category=Category,
+                base_url=self.base_url,
             )
 
             # 날짜 기반 파일명
@@ -213,6 +225,7 @@ class StaticSiteGenerator:
         html = template.render(
             categories=list(Category),
             Category=Category,
+            base_url=self.base_url,
         )
 
         (self.output_dir / "search.html").write_text(html, encoding="utf-8")
@@ -226,7 +239,7 @@ class StaticSiteGenerator:
                 "id": report.id,
                 "date": date_str,
                 "article_count": len(report.articles),
-                "url": f"/reports/{date_str}.html",
+                "url": f"{self.base_url}/reports/{date_str}.html",
             })
 
         (self.output_dir / "data" / "reports.json").write_text(
@@ -248,7 +261,7 @@ class StaticSiteGenerator:
                     "source": article.source.value if article.source else "",
                     "url": article.url,
                     "date": date_str,
-                    "report_url": f"/reports/{date_str}.html",
+                    "report_url": f"{self.base_url}/reports/{date_str}.html",
                 })
 
         (self.output_dir / "data" / "search-index.json").write_text(
@@ -260,6 +273,7 @@ class StaticSiteGenerator:
 def generate_static_site(
     data_dir: Optional[Path] = None,
     output_dir: Optional[Path] = None,
+    base_url: Optional[str] = None,
 ) -> None:
     """정적 사이트 생성 헬퍼 함수"""
     if data_dir is None:
@@ -267,7 +281,7 @@ def generate_static_site(
     if output_dir is None:
         output_dir = Path("_site")
 
-    generator = StaticSiteGenerator(data_dir, output_dir)
+    generator = StaticSiteGenerator(data_dir, output_dir, base_url=base_url)
     generator.generate()
 
 

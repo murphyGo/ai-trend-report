@@ -544,6 +544,13 @@ Examples:
         default="_site",
         help="정적 사이트 출력 디렉토리 (기본: _site)",
     )
+    parser.add_argument(
+        "--base-url",
+        type=str,
+        default=None,
+        help="정적 사이트 URL prefix (예: /ai-trend-report). "
+             "미지정 시 SITE_BASE_URL 환경변수 사용. GitHub Pages 프로젝트 사이트에 필요.",
+    )
 
     args = parser.parse_args()
 
@@ -571,7 +578,11 @@ Examples:
             from .static_generator import generate_static_site
             data_dir = Path(args.output_dir) if args.output_dir else Path("data")
             output_dir = Path(args.static_output)
-            generate_static_site(data_dir=data_dir, output_dir=output_dir)
+            generate_static_site(
+                data_dir=data_dir,
+                output_dir=output_dir,
+                base_url=args.base_url,
+            )
             logger.info(f"Static site generated: {output_dir}")
         except Exception as e:
             logger.exception(f"Static site generation failed: {e}")

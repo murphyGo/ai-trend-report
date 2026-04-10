@@ -33,10 +33,14 @@ const categoryColors = {
     'OTHER': '#9E9E9E'
 };
 
+// Base URL for fetching site-local resources (set in base.html).
+// Empty string falls back to root-relative paths (works on localhost).
+const SITE_BASE_URL = window.SITE_BASE_URL || '';
+
 // Load search index
 async function loadSearchIndex() {
     try {
-        const response = await fetch('/data/search-index.json');
+        const response = await fetch(`${SITE_BASE_URL}/data/search-index.json`);
         searchIndex = await response.json();
 
         // Initialize Fuse.js
@@ -84,10 +88,10 @@ function performSearch() {
 
     // Limit results
     const maxResults = 100;
-    const displayResults = results.slice(0, maxResults);
+    const limitedResults = results.slice(0, maxResults);
 
     // Display results
-    displayResults(displayResults, results.length);
+    displayResults(limitedResults, results.length);
 }
 
 // Display results
