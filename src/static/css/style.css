@@ -91,9 +91,69 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.hero .tagline {
+    font-size: 1.05rem;
+    opacity: 0.95;
+    max-width: 520px;
+    margin: 0.25rem auto 0.5rem;
+}
+
 .hero .date {
-    font-size: 1.25rem;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    opacity: 0.92;
+    margin-top: 0.5rem;
+}
+
+.hero-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.85rem 1.9rem;
+    background: #fff;
+    color: var(--primary);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    transition: transform 0.15s ease, box-shadow 0.22s ease;
+}
+
+.hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+/* Dashboard sections on home (category/source previews) */
+.dashboard-section {
+    margin-bottom: 3rem;
+}
+
+.dashboard-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-section .section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.dashboard-section .section-link {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dashboard-section .section-link:hover {
+    color: var(--primary);
+    text-decoration: none;
 }
 
 /* Stats */

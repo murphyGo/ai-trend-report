@@ -5,21 +5,28 @@
 {% block content %}
 <header class="hero">
     <h1>AI Report</h1>
-    <p>Daily AI News & Research Summary</p>
+    <p class="tagline">17개 소스에서 수집한 AI 뉴스를 Claude가 매일 선별·요약</p>
     {% if latest_report %}
-    <p class="date">{{ latest_report.created_at.strftime('%Y-%m-%d') }}</p>
+    <p class="date">{{ latest_date }} · {{ total_articles }}개 기사</p>
+    <a href="{{ base_url }}/reports/{{ latest_date }}.html" class="hero-cta">
+        오늘의 리포트 보기 →
+    </a>
     {% endif %}
 </header>
 
 {% if latest_report %}
 <section class="stats">
     <div class="stat-card">
-        <span class="stat-number">{{ latest_report.articles|length }}</span>
-        <span class="stat-label">Articles</span>
+        <span class="stat-number">{{ total_articles }}</span>
+        <span class="stat-label">Articles (Today)</span>
     </div>
     <div class="stat-card">
-        <span class="stat-number">{{ articles_by_category|length }}</span>
+        <span class="stat-number">{{ total_categories }}</span>
         <span class="stat-label">Categories</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">{{ total_sources }}</span>
+        <span class="stat-label">Sources</span>
     </div>
     <div class="stat-card">
         <span class="stat-number">{{ total_reports }}</span>
@@ -27,42 +34,44 @@
     </div>
 </section>
 
-<section class="articles">
-    <h2>Latest Report</h2>
-
-    {% for category, articles in articles_by_category.items() %}
-    <div class="category-section">
-        <h3 class="category-title" style="border-left: 4px solid {{ category|category_color }};">
-            <a href="{{ base_url }}/categories/{{ category.name }}.html">{{ category|category_label }}</a>
-            <span class="count">({{ articles|length }})</span>
-        </h3>
-
-        <div class="article-list">
-            {% for article in articles %}
-            <article class="article-card">
-                <h4>
-                    <a href="{{ article.url }}" target="_blank" rel="noopener">
-                        {{ article.title }}
-                    </a>
-                </h4>
-                <div class="article-meta">
-                    {% if article.source %}
-                    <a href="{{ base_url }}/sources/{{ article.source.name }}.html" class="source-link">
-                        {{ article.source|source_label }}
-                    </a>
-                    {% else %}
-                    <span class="source">Unknown</span>
-                    {% endif %}
-                </div>
-                {% if article.summary %}
-                <p class="summary">{{ article.summary }}</p>
-                {% endif %}
-            </article>
-            {% endfor %}
-        </div>
+{% if top_categories %}
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2>Today's Categories</h2>
+        <a href="{{ base_url }}/categories/" class="section-link">모두 보기 →</a>
     </div>
-    {% endfor %}
+    <div class="category-grid">
+        {% for category, count in top_categories %}
+        <a href="{{ base_url }}/categories/{{ category.name }}.html"
+           class="category-card"
+           style="--cat-color: {{ category|category_color }};">
+            <h3>{{ category.value }}</h3>
+            <span class="count">{{ count }} articles</span>
+        </a>
+        {% endfor %}
+    </div>
 </section>
+{% endif %}
+
+{% if top_sources %}
+<section class="dashboard-section">
+    <div class="section-header">
+        <h2>Today's Sources</h2>
+        <a href="{{ base_url }}/sources/" class="section-link">모두 보기 →</a>
+    </div>
+    <div class="source-grid">
+        {% for source, count in top_sources %}
+        <a href="{{ base_url }}/sources/{{ source.name }}.html"
+           class="source-card"
+           style="--src-color: {{ source|source_color }};">
+            <h3>{{ source|source_label }}</h3>
+            <p class="tier">{{ source|source_tier }}</p>
+            <span class="count">{{ count }} articles</span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
 
 {% else %}
 <section class="empty">

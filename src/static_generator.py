@@ -248,27 +248,59 @@ class StaticSiteGenerator:
                 shutil.copy(f, self.output_dir / "js" / f.name)
 
     def _generate_index(self, reports: list[Report]) -> None:
-        """메인 페이지 생성"""
+        """메인 페이지 생성 (대시보드 스타일)
+
+        홈은 기사 목록 대신 "탐색 허브" 역할:
+        - 히어로 + 오늘의 리포트로 가는 CTA 버튼
+        - 통계 카드 4개 (Articles / Categories / Sources / Total Reports)
+        - 오늘의 카테고리 미리보기 그리드 (상위 8개)
+        - 오늘의 소스 미리보기 그리드 (상위 8개)
+        - 최근 리포트 아카이브
+
+        실제 기사 목록은 /reports/{date}.html 에서만 렌더링.
+        """
         template = self.env.get_template("index.html")
 
         latest_report = reports[0] if reports else None
 
-        # 카테고리별 그룹핑
-        articles_by_category = {}
+        # 최신 리포트 기준 카테고리/소스 카운트 집계
+        today_category_counts: dict[Category, int] = {}
+        today_source_counts: dict[Source, int] = {}
+        latest_date = ""
+
         if latest_report:
+            latest_date = latest_report.created_at.strftime("%Y-%m-%d")
             for article in latest_report.articles:
                 cat = article.category or Category.OTHER
-                if cat not in articles_by_category:
-                    articles_by_category[cat] = []
-                articles_by_category[cat].append(article)
+                today_category_counts[cat] = today_category_counts.get(cat, 0) + 1
+                if article.source:
+                    today_source_counts[article.source] = (
+                        today_source_counts.get(article.source, 0) + 1
+                    )
+
+        # 카운트 내림차순 정렬 후 상위 8개 (이름으로 tie-breaking)
+        top_categories = sorted(
+            today_category_counts.items(),
+            key=lambda x: (-x[1], x[0].name),
+        )[:8]
+        top_sources = sorted(
+            today_source_counts.items(),
+            key=lambda x: (-x[1], x[0].name),
+        )[:8]
 
         html = template.render(
             latest_report=latest_report,
-            articles_by_category=articles_by_category,
-            reports=reports[:10],  # 최근 10개
+            latest_date=latest_date,
+            total_articles=len(latest_report.articles) if latest_report else 0,
+            total_categories=len(today_category_counts),
+            total_sources=len(today_source_counts),
             total_reports=len(reports),
+            top_categories=top_categories,
+            top_sources=top_sources,
+            reports=reports[:10],
             generated_at=datetime.now().isoformat(),
             Category=Category,
+            Source=Source,
             base_url=self.base_url,
         )
 
