@@ -5,18 +5,20 @@
 | 컴포넌트 | 상태 | 비고 |
 |---------|------|------|
 | 프로젝트 구조 | ✅ Complete | src/ 구조 완성 |
-| 데이터 모델 | ✅ Complete | Article, Category, Source + 직렬화 |
-| Collectors | ✅ Complete | arXiv, Google, Anthropic |
-| Summarizer | ✅ Complete | Claude API 연동 (--use-api) |
-| Slack Notifier | ✅ Complete | Webhook 연동 |
-| Email Notifier | ✅ Complete | SMTP 기반 이메일 전송 |
-| CLI | ✅ Complete | main.py (다중 모드 지원) |
-| Claude Code 스킬 | ✅ Complete | /ai-report 스킬 |
-| 데이터 I/O | ✅ Complete | JSON 직렬화/역직렬화 |
+| 데이터 모델 | ✅ Complete | Article, Category, Source (19종) + 직렬화 |
+| Collectors | ✅ Complete | **17개 활성** (arXiv, Frontier Lab 4, 리서치 4, 미디어 4, 한국 3) + 2개 비활성 |
+| RSSCollector 공통 베이스 | ✅ Complete | feedparser 기반, 신규 RSS 소스 5줄로 추가 |
+| Claude 랭킹 (상위 20) | ✅ Complete | daily-report.yml 2단계 프롬프트 (rank → summarize) |
+| Summarizer | ✅ Complete | Claude Code CLI (기본) + Anthropic API (`--use-api`) |
+| Slack / Discord / Email Notifier | ✅ Complete | 3채널 모두 구현 |
+| CLI | ✅ Complete | main.py — 수집/요약/전송/대시보드/정적사이트 모드 |
+| 데이터 I/O | ✅ Complete | JSON 직렬화, report 파일만 git 추적 |
+| 캐시 / 병렬 수집 | ✅ Complete | cache.py + ThreadPoolExecutor |
 | 테스트 | ✅ Complete | pytest 188개 테스트 |
-| 문서화 | ✅ Complete | docs/ 완성 |
-| GitHub Actions | ✅ Complete | Daily report + CI/CD |
-| GitHub Pages | ✅ Complete | 정적 사이트 + 검색 기능 |
+| GitHub Actions | ✅ Complete | daily-report + deploy-pages + ci |
+| GitHub Pages 정적 사이트 | ✅ Complete | 홈 대시보드 + 리포트 + 카테고리 브라우징 + 소스 브라우징 + 검색 |
+| 서브패스 배포 지원 | ✅ Complete | `SITE_BASE_URL` 자동 주입 |
+| 문서화 | ✅ Complete | CLAUDE.md, README.md, docs/ 4종 |
 
 ---
 
@@ -121,7 +123,7 @@ python -m src.main --use-api          # 전체 파이프라인
 
 ## Phase 3: 확장
 
-### 3.1 새 소스 추가
+### 3.1 새 소스 추가 (초기 3개 — Phase 6.1에서 13개 추가로 확장)
 - [x] OpenAI 블로그 수집기 (openai_blog.py)
 - [x] Hugging Face 블로그 수집기 (huggingface_blog.py)
 - [x] 한국 AI 뉴스 수집기 (korean_news.py - AI타임스)
@@ -265,23 +267,138 @@ cd _site && python -m http.server 8000
 2. Source: "GitHub Actions" 선택
 3. 워크플로우 실행 후 자동 배포
 
-### 정적 사이트 구조
+### 정적 사이트 구조 (Phase 6 완료 후)
 
 ```
-gh-pages/
-├── index.html              # 최신 리포트 + 목록
-├── search.html             # 검색 페이지
+_site/
+├── index.html              # 홈 대시보드 (Phase 6.6)
+├── search.html             # Fuse.js 검색 페이지
 ├── reports/
-│   ├── 2026-04-05.html    # 개별 리포트
-│   └── 2026-04-06.html
+│   ├── 2026-04-05.html    # 개별 리포트 (카테고리별 그룹 + 풀 요약)
+│   └── 2026-04-10.html
+├── categories/             # Phase 6.3
+│   ├── index.html          # 12개 카테고리 카드 그리드
+│   ├── LLM.html
+│   ├── AGENT.html
+│   └── ...
+├── sources/                # Phase 6.5
+│   ├── index.html          # 19개 소스 카드 그리드 (티어 색상)
+│   ├── ARXIV.html
+│   ├── ANTHROPIC_BLOG.html
+│   └── ...
 ├── data/
-│   ├── reports.json        # 리포트 목록
-│   └── search-index.json   # 검색 인덱스
-├── css/
-│   └── style.css
-└── js/
-    └── search.js           # Fuse.js 검색
+│   ├── reports.json
+│   └── search-index.json
+├── css/style.css
+└── js/search.js
 ```
+
+---
+
+## Phase 6: 소스 확장 + 정적 사이트 고도화 (완료)
+
+Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 소스를 17개로 늘리고,
+브라우징 UX를 재설계하며, Claude 판단을 파이프라인에 통합.
+
+### 6.1 Tier 1~3 소스 확장 (13개 추가)
+
+**목표**: arXiv / Google / Anthropic / OpenAI / HuggingFace / 한국뉴스 6개 기반에서
+17개로 확장. 공통 RSS 수집기 베이스로 신규 추가 비용 최소화.
+
+- [x] `RSSCollector` 공통 베이스 클래스 — `feedparser` 기반 (rss_base.py)
+- [x] **Tier 1 (공식 RSS 7개)**: Microsoft Research, NVIDIA Developer, MarkTechPost,
+  BAIR (Berkeley), Stanford AI Lab, TechCrunch AI, VentureBeat AI
+- [x] **Tier 2 (3개)**: HF Daily Papers (Takara 비공식 RSS), Meta AI Blog (HTML,
+  *비활성* — DEBT-001), MIT Tech Review (RSS + AI 키워드 필터)
+- [x] **Tier 3 한국 (3개)**: Naver D2 (Atom), Kakao Tech (RSS), LG AI Research
+  (HTML, *비활성* — DEBT-002)
+- [x] `feedparser` 의존성 추가
+- [x] MarkTechPost용 Feedly UA 오버라이드 (Cloudflare 우회)
+- [x] `BaseCollector` HTTP 헤더 보강 (Accept, Accept-Language)
+
+### 6.2 GitHub Pages 서브패스 배포 버그 수정
+
+**증상**: 배포는 성공하지만 CSS가 적용되지 않고 리포트 링크가 404. 원인은 템플릿이
+`/css/style.css`, `/reports/...` 같은 루트 절대경로를 사용하는데 GitHub Pages는
+`/{repo_name}/` 서브패스에 배포됨.
+
+- [x] `StaticSiteGenerator`에 `base_url` 파라미터 추가 (`SITE_BASE_URL` env var)
+- [x] 모든 템플릿의 내부 URL에 `{{ base_url }}` prefix 적용
+- [x] `reports.json` / `search-index.json`의 URL 필드도 prefix 반영
+- [x] `base.html`에서 `window.SITE_BASE_URL` 주입 — `search.js`가 활용
+- [x] `deploy-pages.yml`에서 `SITE_BASE_URL=/${{ github.event.repository.name }}` 자동 설정
+- [x] `main.py`에 `--base-url` CLI 인자 추가
+- [x] 부수 버그 수정: `search.js`의 `displayResults` const/함수 이름 섀도잉
+- [x] `.gitignore` 수정 — `report_*.json`은 추적, `articles_*.json`은 ignore
+
+### 6.3 카테고리별 브라우징
+
+**목표**: 카테고리마다 전 리포트의 기사 누적 아카이브 페이지 제공.
+
+- [x] `_generate_category_pages()` 메서드 — 카테고리 × 기사 집계 후 HTML 렌더
+- [x] `/categories/index.html` — 12개 카테고리 카드 그리드 (기사 수 많은 순)
+- [x] `/categories/{NAME}.html` × 12 — 해당 카테고리의 전 기사 (최신순)
+- [x] `base.html` nav에 "Categories" 링크
+- [x] 홈/리포트 페이지의 카테고리 제목을 전용 페이지로 링크
+- [x] 초기 CSS (`.category-grid`, `.category-card`, `.category-header`)
+- [x] **UI 재설계** — 초기 "상단 4px 띠 + box-shadow" 조합이 조잡해 보여 다음과 같이 정돈:
+  - 왼쪽 5px accent bar (`::before` pseudo-element)
+  - 타이틀을 `category.value` 단독으로 단순화
+  - count를 솔리드 카테고리색 pill badge (rounded-full)
+  - 빈 카테고리는 단일 그리드 뒤쪽에 `.empty` 상태로 배치
+  - 카테고리 페이지 헤더도 동일한 카드 컨테이너 스타일로 통일
+  - 모든 카테고리 색은 `--cat-color` CSS 커스텀 프로퍼티로만 inline 주입
+
+### 6.4 Claude 상위 20 랭킹 (rank-then-summarize)
+
+**배경**: 2026-04-10 리포트 분석 결과 824개 기사 수집 (arXiv 680/83%). 중복은 없으나
+전체 요약은 노이즈 과다 + 기사별 Claude 호출이 비용·시간 부담.
+
+- [x] `ArxivCollector`에 `max_per_category=20` 상한 추가 → arXiv 680 → 60
+- [x] `daily-report.yml`의 Claude Code CLI 프롬프트를 2단계 구조로 재설계
+  - **Stage 1**: 전 기사를 중요도 기준으로 평가 후 상위 20 선별
+    - 기술 신규성, 영향력, 소스 신뢰도, 카테고리 다양성, 한국 관련성
+  - **Stage 2**: 선택된 20개만 한국어 요약 + 카테고리 분류
+- [x] 저장되는 report는 선별된 20개만 포함
+- [x] 카테고리 enum 이름을 models.py와 일치시킴 (AI_AGENT→AGENT 등)
+- [x] 효과: 수집 824→~200, Claude 호출 824→21, 리포트 20개 핵심으로 집중
+
+### 6.5 소스별 브라우징
+
+**목표**: 카테고리와 동일한 패턴으로 소스(출처)별 아카이브 제공.
+
+- [x] `get_source_label` / `get_source_color` / `get_source_tier` 헬퍼 + Jinja 필터
+- [x] **티어 기반 색상 (4+1)**: Frontier Lab (#2563eb), Research (#7c3aed), Media (#ea580c), Korean (#db2777), Inactive (#64748b)
+- [x] `_generate_source_pages()` 메서드
+- [x] `/sources/index.html` — 19개 소스 카드 그리드
+- [x] `/sources/{NAME}.html` × 19 — 해당 소스의 전 기사
+- [x] `source.html` 은 역으로 category-link 노출해 카테고리 ↔ 소스 상호 이동
+- [x] `base.html` nav에 "Sources" 링크
+- [x] 홈/리포트/카테고리 페이지의 article-meta source 텍스트를 클릭 가능한 링크로 변경 (display label 사용)
+- [x] CSS: `.category-card` / `.source-card` 콤마 셀렉터로 공유, `::before` 배경만 각자의 `--cat-color` / `--src-color` 변수 사용
+
+### 6.6 홈 대시보드 재설계
+
+**증상**: 홈이 최신 리포트의 전체 기사를 풀 요약 카드로 렌더해 스크롤이 15~20 뷰포트에 달함.
+
+- [x] 홈을 탐색 허브로 전면 재설계:
+  - **Hero**: tagline + date + "오늘의 리포트 보기" CTA pill 버튼
+  - **Stats**: 4 카드 (Articles / Categories / Sources / Total Reports)
+  - **Today's Categories**: 상위 8개 카테고리 카드 그리드 + "모두 보기" 링크
+  - **Today's Sources**: 상위 8개 소스 카드 그리드 + "모두 보기" 링크
+  - **Recent Reports**: 기존 아카이브 리스트 유지
+- [x] 기존 "Latest Report" 기사 월 블록 제거 — 풀 기사는 `/reports/{date}.html`에서만
+- [x] `_generate_index`에서 카테고리/소스 카운트 집계해 상위 8개 전달
+- [x] CSS: `.hero-cta` (흰 pill 버튼 + hover elevation), `.dashboard-section`, `.section-header`
+
+### 6.7 문서 정합성 (이 작업)
+
+- [x] CLAUDE.md 전면 갱신 — Features/Tech Stack/Project Structure/Usage/Environment Variables
+- [x] README.md 재작성
+- [x] docs/requirements.md 갱신 — FR-011~035, NFR-011~015, 17개 소스 테이블, 환경 변수 테이블
+- [x] docs/development-plan.md 갱신 — Phase 6 신설, 상태 테이블, 변경 이력
+- [x] docs/system-architecture.md 갱신 — 모듈 트리, 컴포넌트, 의존성, 배포 구조
+- [x] docs/TECH-DEBT.md 갱신 — DEBT-001~005 공식 등록
 
 ---
 
@@ -315,3 +432,10 @@ gh-pages/
 | 2026-04-06 | 4.3 | Phase 4.3 Claude Code CLI 지원 추가 |
 | 2026-04-06 | 4.4 | Phase 4.4 세션 키 인증 추가 (Pro/Max 구독) |
 | 2026-04-06 | 5.0 | Phase 5 GitHub Pages 배포 완료 (정적 사이트 생성기, 검색 기능) |
+| 2026-04-10 | 6.1 | Phase 6.1 소스 확장 완료 (Tier 1-3 13개 추가, RSSCollector 공통 베이스) |
+| 2026-04-10 | 6.2 | Phase 6.2 GitHub Pages 서브패스 배포 버그 수정 (SITE_BASE_URL, search.js 버그) |
+| 2026-04-10 | 6.3 | Phase 6.3 카테고리별 브라우징 추가 + UI 재설계 |
+| 2026-04-10 | 6.4 | Phase 6.4 Claude 상위 20 랭킹 완료 (arXiv 상한, rank-then-summarize 프롬프트) |
+| 2026-04-10 | 6.5 | Phase 6.5 소스별 브라우징 완료 (티어 색상, 카테고리 ↔ 소스 크로스 네비) |
+| 2026-04-11 | 6.6 | Phase 6.6 홈 대시보드 재설계 (기사 월 제거, 탐색 허브 구조) |
+| 2026-04-11 | 6.7 | Phase 6.7 문서 정합성 갱신 (CLAUDE/README/docs 4종/TECH-DEBT) |
