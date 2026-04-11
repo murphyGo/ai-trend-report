@@ -1,9 +1,15 @@
 {#
-  Audience filter bar — Phase 7.3
+  Audience filter bar — Phase 7.3 (+ 7.6 hotfix)
 
   히어로/페이지 헤더 바로 아래 삽입해 독자 레벨별로 기사를 필터링.
   칩 클릭 시 audience-filter.js가 localStorage에 값을 저장하고 모든
-  [data-audience] 카드의 표시/숨김을 토글.
+  [data-audience]:not(.audience-chip) 카드의 표시/숨김을 토글.
+
+  ⚠️ 각 칩 자체도 클릭 라우팅용으로 data-audience 속성을 보유한다.
+     audience-filter.js는 반드시 `.audience-chip`을 필터 selector에서
+     제외해야 한다. 그렇지 않으면 사용자가 한 레벨을 선택한 순간 다른
+     칩들이 매칭 실패로 숨겨져 다른 레벨로 전환할 수 없게 된다.
+     관련 회귀 테스트: tests/test_audience_filter_js.py
 
   JS가 비활성화되어도 모든 기사가 그대로 노출됨 (graceful degradation).
 #}

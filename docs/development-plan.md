@@ -471,6 +471,25 @@ Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 
 - [x] `docs/development-plan.md` — 상태 테이블, 변경 이력
 - [x] `docs/TECH-DEBT.md` — 신규 항목 없음 (구현 중 발견된 이슈 없음)
 
+### 7.6 Hotfix — 필터 칩 클릭 후 다른 레벨 전환 불가 수정
+
+**증상**: 필터 바에서 특정 레벨(예: "개발자")을 클릭하면 나머지 세 칩("모두",
+"일반인", "ML 전문가")이 사라져 다른 레벨로 전환할 수 없음. 페이지 새로고침도
+localStorage의 값이 재적용돼 동일 상태 복귀. 사용자는 사실상 첫 선택에 잠김.
+
+**원인**: `audience-filter.js`의 `applyFilter`가 `querySelectorAll('[data-audience]')`
+로 필터 대상을 선택. 이 선택자는 article-card뿐 아니라 **필터 칩 자체**도 매치함
+(칩은 클릭 라우팅용으로 `data-audience="GENERAL"` 등 속성 보유). 선택한 레벨과
+매치되지 않는 칩도 `hidden`이 되어 사라짐.
+
+**수정**:
+- [x] `applyFilter` 내 selector를 `[data-audience]:not(.audience-chip)`로 변경
+- [x] `.category-section` 및 `.article-list` 내부 visible 탐색도 동일하게 exclude 적용 (방어적)
+- [x] 파일 상단 주석 갱신 — 칩이 `data-audience`를 필터 타깃이 아닌 클릭 라우팅용으로 쓴다고 명시
+- [x] `audience_filter.html`에 동일 주의 사항 주석 추가
+- [x] 회귀 방지 테스트 추가 (`tests/test_audience_filter_js.py`) — JS 파일 내용에 exclusion 셀렉터가 유지되는지 검증
+- [x] 세션 로그 추가 (`docs/sessions/2026-04-11-phase-7.6-filter-chip-fix.md`)
+
 ---
 
 ## 우선순위 가이드
@@ -511,3 +530,4 @@ Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 
 | 2026-04-11 | 6.6 | Phase 6.6 홈 대시보드 재설계 (기사 월 제거, 탐색 허브 구조) |
 | 2026-04-11 | 6.7 | Phase 6.7 문서 정합성 갱신 (CLAUDE/README/docs 4종/TECH-DEBT) |
 | 2026-04-11 | 7.0 | Phase 7 독자 레벨 필터 완료 — Audience enum + 하이브리드 태깅 + 전역 필터 바 + 카드 미니 통계 + 40개 테스트 추가 |
+| 2026-04-11 | 7.6 | Phase 7.6 Hotfix — 필터 선택자가 칩 자체도 숨기던 버그 수정 (selector에 :not(.audience-chip) 추가) |
