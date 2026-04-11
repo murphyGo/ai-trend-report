@@ -83,7 +83,7 @@ class TestEmailNotifier:
 
     @patch('smtplib.SMTP')
     def test_send_report_custom_recipients(self, mock_smtp, email_config, sample_report):
-        """커스텀 수신자 지정"""
+        """커스텀 수신자 지정 — Phase 8.6: Bcc로 전송되어 To에는 sender, Bcc에 수신자"""
         mock_server = MagicMock()
         mock_smtp.return_value.__enter__.return_value = mock_server
 
@@ -93,9 +93,13 @@ class TestEmailNotifier:
         result = notifier.send_report(sample_report)
 
         assert result is True
-        # 전송된 메시지의 To 헤더 확인
+        # Phase 8.6 — 수신자는 프라이버시 위해 Bcc로 숨김
         sent_message = mock_server.send_message.call_args[0][0]
-        assert sent_message['To'] == "custom@test.com"
+        assert sent_message['To'] == "sender@test.com"  # self-addressed
+        assert sent_message['Bcc'] == "custom@test.com"
+        # envelope recipients가 실제 수신자를 포함해야 함 (send_message의 to_addrs kwarg)
+        kwargs = mock_server.send_message.call_args[1]
+        assert kwargs.get("to_addrs") == custom_recipients
 
     @patch('smtplib.SMTP')
     def test_send_error_notification(self, mock_smtp, notifier):

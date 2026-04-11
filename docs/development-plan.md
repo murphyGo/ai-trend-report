@@ -531,6 +531,82 @@ GitHub Actions 매 실행마다 `.article_cache.json`이 비어서 캐시가 의
 
 ---
 
+### 8.6 Hotfix — 보안 (XSS) + 이메일 신뢰성 (완료)
+
+Phase 8 완료 후 전체 코드 리뷰에서 발견된 6건의 High priority 이슈를 즉시 처리.
+나머지 16건은 Phase 9로 연기.
+
+**H1 — search.js XSS 차단**
+- [x] `escapeHtml` 을 모든 사용자 입력 필드(title, summary, source, date, url)에 적용
+- [x] `safeUrl()` 신설 — http/https만 허용, `javascript:` / `data:` 등 차단
+- [x] href 속성에 `escapeHtml(safeUrl(...))` 이중 처리
+
+**H2 — email_notifier HTML escape**
+- [x] `_esc()` 헬퍼 신설 (`html.escape(value, quote=True)`)
+- [x] `_format_article_html`의 title/summary/url/source 전부 escape
+- [x] `send_error_notification`의 error_message escape
+- [x] `_is_safe_url()` 로 URL 프로토콜 검증 후 href 설정
+
+**H3 — 이메일 수신자 프라이버시**
+- [x] `To` 헤더를 sender 자신으로 설정 (self-addressed)
+- [x] 실제 수신자는 `Bcc` 헤더로 (SMTP envelope에만 노출, RFC상 수신자에게 숨김)
+- [x] `send_message(..., from_addr=..., to_addrs=...)` 명시적 전달
+
+**H4 — MIMEMultipart('alternative') plain 대안**
+- [x] `_build_plain_message()` 신설 — 카테고리별 평문 렌더
+- [x] `msg.attach(MIMEText(plain, 'plain', 'utf-8'))` 를 html 앞에 추가
+- [x] 에러 알림도 plain 대안 포함
+
+**H5 — sender 빈 값 fallback**
+- [x] `_effective_sender()` 메서드 — `sender or username`
+- [x] From 헤더, from_addr 모두 fallback 값 사용
+
+**H6 — search.js와 audience 필터 통합**
+- [x] `_generate_search_index`가 각 엔트리에 `audience: [...]` 필드 추가
+- [x] `search.js`가 `data-audience="..."` 속성을 카드에 부착
+- [x] `audience-filter.js`에 `window.AudienceFilter.{apply,applyCurrent,getCurrent}` public API 노출
+- [x] `search.js`의 `displayResults`가 렌더 후 `AudienceFilter.applyCurrent()` 호출 → 현재 필터가 검색 결과에도 즉시 적용
+
+**회귀 방지 테스트**:
+- [x] `tests/test_phase_8_6_security.py` — 21개 신규 테스트 (search.js 정적 분석 7 +
+  email escape/bcc/plain/sender fallback 14)
+- [x] 기존 `test_send_report_custom_recipients` 업데이트 (Bcc 동작 반영)
+- [x] 전체 suite: 249 passed (기존 228 + 21)
+
+---
+
+## Phase 9: 코드 품질 / 리팩터 / 운영성 (계획)
+
+Phase 8 전수 리뷰에서 발견된 나머지 16건을 주제별로 4개 sub-phase로 묶어 정리.
+
+### 9.1 Notifier 리팩터 (중복 제거)
+- [ ] `BaseNotifier` 추상 클래스 신설 — 공통 인터페이스와 quiet-day 처리 일원화
+- [ ] `QUIET_DAY_THRESHOLD`를 `src/constants.py`로 이동 (M6)
+- [ ] 카테고리 순서 상수 공유 (Slack/Discord/Email 현재 중복)
+- [ ] `slack_notifier`/`discord_notifier`/`email_notifier` 공통 로직 추출 (M7)
+
+### 9.2 Config 확장 (사용자 제어권)
+- [ ] `CollectorsConfig`를 17개 소스 모두 지원하도록 재설계 (M5)
+- [ ] `validate()`의 모드 인지 (`--use-api` 전용으로 명확화, M4)
+- [ ] Slack 필수 요구 완화 — 다채널 중 최소 1개만 검증 (L2)
+
+### 9.3 코드 품질 정리
+- [ ] `static_generator.py`의 `print()` → `logger` 교체 (M1)
+- [ ] `web/service.py`의 검색 O(N*M) → lru_cache 또는 인메모리 인덱스 (M2)
+- [ ] `web/service.py` 미사용 `datetime` import 제거 (M3)
+- [ ] `deploy-pages.yml`에 `notify-on-failure` job 추가 (M8)
+- [ ] `filter_by_recency` 로그 메시지 명료화 (M9)
+- [ ] `rss_base.py` timestamp 변환 명시적 UTC 처리 (L1)
+- [ ] `config.py` 기본 모델 최신화 (L4)
+- [ ] `test_web.py` 복구 또는 정식 제거 (L6)
+
+### 9.4 기존 DEBT 해소
+- [ ] DEBT-001 Meta AI Blog — Playwright 도입 또는 대체 소스 (L5)
+- [ ] DEBT-002 LG AI Research — 동일 (L5)
+- [ ] DEBT-004 HF Papers URL — Takara TLDR → HF/arxiv 변환 (L5)
+
+---
+
 ### 7.6 Hotfix — 필터 칩 클릭 후 다른 레벨 전환 불가 수정
 
 **증상**: 필터 바에서 특정 레벨(예: "개발자")을 클릭하면 나머지 세 칩("모두",
@@ -592,3 +668,4 @@ localStorage의 값이 재적용돼 동일 상태 복귀. 사용자는 사실상
 | 2026-04-11 | 7.0 | Phase 7 독자 레벨 필터 완료 — Audience enum + 하이브리드 태깅 + 전역 필터 바 + 카드 미니 통계 + 40개 테스트 추가 |
 | 2026-04-11 | 7.6 | Phase 7.6 Hotfix — 필터 선택자가 칩 자체도 숨기던 버그 수정 (selector에 :not(.audience-chip) 추가) |
 | 2026-04-12 | 8.0 | Phase 8 완료 — Recency 필터(2일), 크로스 리포트 dedup(7개 리포트), arxiv pubDate 파싱, ArticleCache 제거, Quiet-day 알림, 레거시 리포트 삭제 |
+| 2026-04-12 | 8.6 | Phase 8.6 Hotfix — search.js XSS 차단, email html escape/Bcc/plain/sender fallback, search 결과에 audience 필터 통합. Phase 9 계획 등록 |

@@ -1,4 +1,10 @@
 // AI Report Search functionality using Fuse.js
+//
+// Phase 8.6 Hotfix:
+//   - 모든 사용자 입력 필드를 innerHTML에 삽입하기 전에 escapeHtml 적용
+//   - URL은 safeUrl()로 프로토콜(http/https)만 허용, javascript:/data: 등 차단
+//   - 렌더된 카드에 data-audience 속성을 포함해 audience 필터와 통합
+//   - window.AudienceFilter.applyCurrent() 호출로 현재 레벨 필터 재적용
 
 let searchIndex = [];
 let fuse = null;
@@ -34,8 +40,32 @@ const categoryColors = {
 };
 
 // Base URL for fetching site-local resources (set in base.html).
-// Empty string falls back to root-relative paths (works on localhost).
 const SITE_BASE_URL = window.SITE_BASE_URL || '';
+
+// HTML escape to prevent XSS when inserting user-controlled text.
+function escapeHtml(text) {
+    if (text == null) return '';
+    const div = document.createElement('div');
+    div.textContent = String(text);
+    return div.innerHTML;
+}
+
+// Validate URL protocol. Returns '#' for anything other than http/https/relative.
+// Blocks javascript:, data:, vbscript:, etc. (XSS vectors).
+function safeUrl(url) {
+    if (!url || typeof url !== 'string') return '#';
+    try {
+        // Relative URLs start with / and resolve against current origin — allow.
+        if (url.startsWith('/')) return url;
+        const parsed = new URL(url);
+        if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+            return url;
+        }
+        return '#';
+    } catch (e) {
+        return '#';
+    }
+}
 
 // Load search index
 async function loadSearchIndex() {
@@ -58,7 +88,8 @@ async function loadSearchIndex() {
         console.log(`Loaded ${searchIndex.length} articles for search`);
     } catch (error) {
         console.error('Failed to load search index:', error);
-        document.getElementById('results-info').textContent = 'Failed to load search data';
+        const info = document.getElementById('results-info');
+        if (info) info.textContent = 'Failed to load search data';
     }
 }
 
@@ -69,32 +100,27 @@ function performSearch() {
 
     let results = [];
 
-    if (query) {
-        // Use Fuse.js for fuzzy search
+    if (query && fuse) {
         const fuseResults = fuse.search(query);
         results = fuseResults.map(r => r.item);
     } else {
-        // No query, show all (or filtered)
         results = [...searchIndex];
     }
 
-    // Apply category filter
     if (categoryFilter) {
         results = results.filter(item => item.category === categoryFilter);
     }
 
     // Sort by date (newest first)
-    results.sort((a, b) => b.date.localeCompare(a.date));
+    results.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
-    // Limit results
     const maxResults = 100;
     const limitedResults = results.slice(0, maxResults);
 
-    // Display results
     displayResults(limitedResults, results.length);
 }
 
-// Display results
+// Render results
 function displayResults(results, totalCount) {
     const infoEl = document.getElementById('results-info');
     const listEl = document.getElementById('results-list');
@@ -107,31 +133,40 @@ function displayResults(results, totalCount) {
 
     infoEl.textContent = `Found ${totalCount} articles${totalCount > 100 ? ' (showing first 100)' : ''}`;
 
-    listEl.innerHTML = results.map(article => `
-        <article class="article-card">
+    listEl.innerHTML = results.map(article => {
+        const catKey = article.category || 'OTHER';
+        const catLabel = categoryLabels[catKey] || catKey;
+        const catColor = categoryColors[catKey] || '#9E9E9E';
+        const sourceLabel = article.source_label || article.source || '';
+        const audienceAttr = Array.isArray(article.audience)
+            ? article.audience.join(',')
+            : '';
+
+        return `
+        <article class="article-card" data-audience="${escapeHtml(audienceAttr)}">
             <h4>
-                <a href="${article.url}" target="_blank" rel="noopener">
+                <a href="${escapeHtml(safeUrl(article.url))}" target="_blank" rel="noopener">
                     ${escapeHtml(article.title)}
                 </a>
             </h4>
             <div class="article-meta">
-                <span class="category-badge" style="background: ${categoryColors[article.category] || '#9E9E9E'}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">
-                    ${categoryLabels[article.category] || article.category}
+                <span class="category-badge" style="background: ${escapeHtml(catColor)}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">
+                    ${escapeHtml(catLabel)}
                 </span>
-                <span class="source">${article.source}</span>
-                <span class="date">${article.date}</span>
-                <a href="${article.report_url}" class="report-link">View Report</a>
+                <span class="source">${escapeHtml(sourceLabel)}</span>
+                <span class="date">${escapeHtml(article.date)}</span>
+                <a href="${escapeHtml(safeUrl(article.report_url))}" class="report-link">View Report</a>
             </div>
             ${article.summary ? `<p class="summary">${escapeHtml(article.summary)}</p>` : ''}
         </article>
-    `).join('');
-}
+        `;
+    }).join('');
 
-// Escape HTML to prevent XSS
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+    // Phase 8.6 — 동적으로 렌더한 카드에 현재 audience 필터를 재적용.
+    // audience-filter.js가 노출한 public API 사용.
+    if (window.AudienceFilter && typeof window.AudienceFilter.applyCurrent === 'function') {
+        window.AudienceFilter.applyCurrent();
+    }
 }
 
 // Event listeners
@@ -142,23 +177,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
     const categoryFilter = document.getElementById('category-filter');
 
-    // Search on button click
-    searchBtn.addEventListener('click', performSearch);
+    if (searchBtn) searchBtn.addEventListener('click', performSearch);
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
 
-    // Search on Enter key
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-
-    // Filter on category change
-    categoryFilter.addEventListener('change', performSearch);
-
-    // Debounced search on input
-    let debounceTimer;
-    searchInput.addEventListener('input', () => {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(performSearch, 300);
-    });
+        // Debounced search on input
+        let debounceTimer;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(performSearch, 300);
+        });
+    }
+    if (categoryFilter) categoryFilter.addEventListener('change', performSearch);
 });

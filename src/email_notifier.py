@@ -1,5 +1,6 @@
 """이메일을 통한 리포트 전송"""
 
+import html
 import logging
 import smtplib
 from datetime import datetime
@@ -26,6 +27,26 @@ RETRYABLE_EXCEPTIONS = (
 QUIET_DAY_THRESHOLD = 3
 
 
+def _esc(value: Optional[str]) -> str:
+    """HTML 본문 삽입용 이스케이프. None-safe.
+
+    Phase 8.6 — 이메일 HTML이 f-string으로 조립되기 때문에 기사 제목/요약에
+    포함된 `<`, `>`, `"`, `'`, `&`가 그대로 태그로 해석되어 XSS / 구조 훼손
+    가능. 모든 사용자 입력 필드는 이 함수로 감싸야 함.
+    """
+    if value is None:
+        return ""
+    return html.escape(str(value), quote=True)
+
+
+def _is_safe_url(url: Optional[str]) -> bool:
+    """http/https/빈값만 허용. javascript:, data: 등 XSS 벡터 차단."""
+    if not url:
+        return False
+    url_lower = url.strip().lower()
+    return url_lower.startswith("http://") or url_lower.startswith("https://")
+
+
 class EmailNotifier:
     """SMTP 이메일 알림 전송기"""
 
@@ -40,10 +61,19 @@ class EmailNotifier:
         self.email_config = config.email
         self.recipients = recipients or self.email_config.recipients
 
+    def _effective_sender(self) -> str:
+        """발신자 주소 결정.
+
+        Phase 8.6 — `sender`가 비어 있으면 SMTP `username`으로 fallback.
+        Gmail 등 대부분의 SMTP 서버가 빈 From 헤더를 거부하기 때문.
+        """
+        return self.email_config.sender or self.email_config.username
+
     def send_report(self, report: Report) -> bool:
         """리포트를 이메일로 전송
 
         Phase 8.5: 빈/저조한 리포트도 quiet-day 배너 포함해 발송.
+        Phase 8.6: html escape, Bcc 수신자, plain text 대안, sender fallback.
 
         Args:
             report: 전송할 리포트
@@ -57,9 +87,10 @@ class EmailNotifier:
 
         subject = self._build_subject(report)
         html_content = self._build_html_message(report)
+        plain_content = self._build_plain_message(report)
 
         try:
-            self._send_with_retry(subject, html_content)
+            self._send_with_retry(subject, html_content, plain_content)
             logger.info(f"Email sent successfully to {len(self.recipients)} recipients")
             return True
 
@@ -68,14 +99,31 @@ class EmailNotifier:
             return False
 
     @retry_with_backoff(max_retries=3, exceptions=RETRYABLE_EXCEPTIONS)
-    def _send_with_retry(self, subject: str, html_content: str) -> None:
-        """이메일 전송 (재시도 포함)"""
+    def _send_with_retry(
+        self,
+        subject: str,
+        html_content: str,
+        plain_content: Optional[str] = None,
+    ) -> None:
+        """이메일 전송 (재시도 포함).
+
+        Phase 8.6 변경점:
+        - 수신자는 Bcc 헤더로 감춤 (프라이버시). `To` 헤더는 발신자 자신으로 설정.
+        - `multipart/alternative`에 plain text 대안 포함 (RFC 준수 + 스팸 필터).
+        - `From`은 `_effective_sender()` 결과 사용 (빈 sender면 username fallback).
+        """
+        sender = self._effective_sender()
+
         msg = MIMEMultipart('alternative')
         msg['Subject'] = subject
-        msg['From'] = self.email_config.sender
-        msg['To'] = ', '.join(self.recipients)
+        msg['From'] = sender
+        # 프라이버시 — 수신자 주소 서로 노출 방지. To는 발신자 자신으로 self-addressed.
+        msg['To'] = sender or 'undisclosed-recipients:;'
+        msg['Bcc'] = ', '.join(self.recipients)
 
-        # HTML 본문 첨부
+        # multipart/alternative는 먼저 첨부된 것이 "덜 선호"되므로 plain 먼저, html 나중
+        if plain_content:
+            msg.attach(MIMEText(plain_content, 'plain', 'utf-8'))
         msg.attach(MIMEText(html_content, 'html', 'utf-8'))
 
         # SMTP 연결 및 전송
@@ -84,13 +132,69 @@ class EmailNotifier:
                 server.starttls()
             if self.email_config.username and self.email_config.password:
                 server.login(self.email_config.username, self.email_config.password)
-            server.send_message(msg)
+            # send_message는 To/Cc/Bcc 헤더 모두를 envelope recipient로 사용.
+            # Bcc는 RFC 5322에 의해 실제 전송 시 헤더에서 제거됨 (수신자에게 안 보임).
+            server.send_message(
+                msg,
+                from_addr=sender,
+                to_addrs=self.recipients,
+            )
 
     def _build_subject(self, report: Report) -> str:
         """이메일 제목 생성"""
         date_str = report.created_at.strftime("%Y년 %m월 %d일")
         prefix = "🔕 [조용한 날] " if len(report.articles) < QUIET_DAY_THRESHOLD else "[AI Report] "
         return f"{prefix}{date_str} AI 데일리 리포트 ({len(report.articles)}개 기사)"
+
+    def _build_plain_message(self, report: Report) -> str:
+        """Plain text 대안 본문 생성 (Phase 8.6).
+
+        MIMEMultipart('alternative') 규격상 HTML과 함께 plain 버전도 제공해야
+        RFC 준수 + 스팸 필터 통과율 향상.
+        """
+        lines: list[str] = []
+        date_str = report.created_at.strftime("%Y년 %m월 %d일")
+        lines.append(f"AI 데일리 리포트 — {date_str}")
+        lines.append("=" * 50)
+        lines.append("")
+
+        count = len(report.articles)
+        if count < QUIET_DAY_THRESHOLD:
+            if count == 0:
+                lines.append("🔕 조용한 날 — 오늘은 신규 AI 기사가 없습니다.")
+            else:
+                lines.append(f"🔕 조용한 날 — 오늘은 필터 통과 기사가 {count}개뿐입니다.")
+            lines.append("(Recency 필터 2일 + 최근 7개 리포트 중복 제거)")
+            lines.append("")
+
+        articles_by_category = report.articles_by_category()
+        category_order = [
+            Category.LLM, Category.AGENT, Category.VISION, Category.VIDEO,
+            Category.ROBOTICS, Category.SAFETY, Category.RL, Category.INFRA,
+            Category.MEDICAL, Category.FINANCE, Category.INDUSTRY, Category.OTHER,
+        ]
+
+        for category in category_order:
+            if category not in articles_by_category:
+                continue
+            lines.append(f"[{category.value}]")
+            lines.append("-" * 50)
+            for article in articles_by_category[category]:
+                lines.append(f"• {article.title}")
+                if article.summary:
+                    summary = article.summary.strip()
+                    if len(summary) > 400:
+                        summary = summary[:400] + "..."
+                    lines.append(f"  {summary}")
+                lines.append(f"  출처: {article.source.value if article.source else 'Unknown'}")
+                lines.append(f"  링크: {article.url}")
+                lines.append("")
+            lines.append("")
+
+        lines.append("—")
+        lines.append(f"총 {count}개 기사 | 생성: {report.created_at.strftime('%H:%M')}")
+        lines.append("AI Report Automation Service")
+        return "\n".join(lines)
 
     def _build_html_message(self, report: Report) -> str:
         """HTML 이메일 본문 생성"""
@@ -284,14 +388,19 @@ class EmailNotifier:
         return html
 
     def _format_article_html(self, article: Article) -> str:
-        """개별 기사 HTML 포맷팅"""
+        """개별 기사 HTML 포맷팅
+
+        Phase 8.6 — 모든 사용자 입력 필드를 `_esc()`로 이스케이프해 XSS 차단.
+        url은 http/https만 허용, 그 외엔 '#'으로 대체.
+        """
         # 요약 처리
         summary = article.summary or "(요약 없음)"
         if len(summary) > 500:
             summary = summary[:500] + "..."
 
-        # 소스 배지 스타일
-        source_class = f"source-{article.source.value}"
+        # 소스 배지 — source.value는 enum 고정값이라 escape 불필요하지만 일관성을 위해 처리
+        source_value = article.source.value if article.source else ""
+        source_class = f"source-{source_value}"
         source_name = {
             "arxiv": "arXiv",
             "google": "Google",
@@ -299,16 +408,19 @@ class EmailNotifier:
             "openai": "OpenAI",
             "huggingface": "HuggingFace",
             "korean": "한국 뉴스",
-        }.get(article.source.value, article.source.value)
+        }.get(source_value, source_value)
+
+        # URL safety — http/https만 허용
+        safe_url = article.url if _is_safe_url(article.url) else "#"
 
         return f'''
         <div class="article">
             <div class="article-title">
-                <a href="{article.url}" target="_blank">{article.title}</a>
+                <a href="{_esc(safe_url)}" target="_blank">{_esc(article.title)}</a>
             </div>
-            <div class="article-summary">{summary}</div>
+            <div class="article-summary">{_esc(summary)}</div>
             <div class="article-meta">
-                <span class="source-badge {source_class}">{source_name}</span>
+                <span class="source-badge {_esc(source_class)}">{_esc(source_name)}</span>
             </div>
         </div>
         '''
@@ -327,6 +439,7 @@ class EmailNotifier:
             return False
 
         subject = "[AI Report] 오류 발생"
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         html_content = f'''<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -365,14 +478,20 @@ class EmailNotifier:
 <body>
     <div class="error-box">
         <div class="error-title">AI Report 오류 발생</div>
-        <div class="error-message">{error_message}</div>
-        <div class="timestamp">발생 시각: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</div>
+        <div class="error-message">{_esc(error_message)}</div>
+        <div class="timestamp">발생 시각: {_esc(timestamp)}</div>
     </div>
 </body>
 </html>'''
+        plain_content = (
+            f"AI Report 오류 발생\n"
+            f"{'=' * 50}\n\n"
+            f"{error_message}\n\n"
+            f"발생 시각: {timestamp}\n"
+        )
 
         try:
-            self._send_with_retry(subject, html_content)
+            self._send_with_retry(subject, html_content, plain_content)
             return True
         except Exception as e:
             logger.error(f"Failed to send error notification: {e}")

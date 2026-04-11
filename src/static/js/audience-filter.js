@@ -110,6 +110,24 @@
         });
     }
 
+    // Phase 8.6 — Public API. 동적으로 카드를 추가하는 다른 스크립트(search.js 등)가
+    // 렌더 후 현재 필터를 재적용할 수 있도록 전역에 노출.
+    //
+    // 사용 예:
+    //   listEl.innerHTML = renderedCards;
+    //   window.AudienceFilter.applyCurrent();
+    window.AudienceFilter = {
+        apply: function (value) {
+            if (VALID.indexOf(value) < 0) value = DEFAULT;
+            setSaved(value);
+            applyFilter(value);
+        },
+        applyCurrent: function () {
+            applyFilter(getSaved());
+        },
+        getCurrent: getSaved,
+    };
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

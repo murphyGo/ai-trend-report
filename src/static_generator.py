@@ -577,20 +577,29 @@ class StaticSiteGenerator:
         )
 
     def _generate_search_index(self, reports: list[Report]) -> None:
-        """검색 인덱스 JSON 생성"""
+        """검색 인덱스 JSON 생성
+
+        Phase 8.6: 각 엔트리에 `audience` 필드 추가 — 클라이언트 audience 필터가
+        동적으로 렌더된 검색 결과 카드에도 적용될 수 있도록 `data-audience`로
+        노출하기 위함.
+        """
         index = []
         for report in reports:
             date_str = report.created_at.strftime("%Y-%m-%d")
             for article in report.articles:
+                audience_list = [a.name for a in get_article_audience(article)]
                 index.append({
                     "id": article.id,
                     "title": article.title,
                     "summary": article.summary or "",
-                    "category": article.category.value if article.category else "OTHER",
-                    "source": article.source.value if article.source else "",
+                    "category": article.category.name if article.category else "OTHER",
+                    "category_label": article.category.value if article.category else "",
+                    "source": article.source.name if article.source else "",
+                    "source_label": get_source_label(article.source) if article.source else "",
                     "url": article.url,
                     "date": date_str,
                     "report_url": f"{self.base_url}/reports/{date_str}.html",
+                    "audience": audience_list,
                 })
 
         (self.output_dir / "data" / "search-index.json").write_text(
