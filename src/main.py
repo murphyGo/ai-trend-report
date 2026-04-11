@@ -38,8 +38,15 @@ from .summarizer import Summarizer
 from .slack_notifier import SlackNotifier
 from .discord_notifier import DiscordNotifier
 from .email_notifier import EmailNotifier
-from .data_io import save_articles, load_articles, save_report, load_report, get_latest_file
-from .cache import ArticleCache
+from .data_io import (
+    save_articles,
+    load_articles,
+    save_report,
+    load_report,
+    get_latest_file,
+    load_recent_report_urls,
+)
+from .filters import filter_by_recency, filter_already_seen
 from .utils.logging import setup_logging
 
 
@@ -229,18 +236,18 @@ def run_collect_only(
     output_dir: Path,
     limit: int = 0,
     parallel: bool = False,
-    use_cache: bool = True,
-    cache_days: int = 7,
+    days: int = 2,
+    dedup_days: int = 7,
 ) -> bool:
-    """수집 전용 파이프라인 - JSON 저장만
+    """수집 전용 파이프라인 — Phase 8에서 ArticleCache 대신 recency + 리포트 기반 dedup
 
     Args:
         config: 설정 객체
         output_dir: 출력 디렉토리
         limit: 기사 수 제한 (0 = 무제한)
         parallel: 병렬 수집 여부
-        use_cache: 캐시 사용 여부
-        cache_days: 캐시 유효 기간 (일)
+        days: recency 필터 — 지난 N일 이내 발행된 기사만 유지 (0 = 비활성화)
+        dedup_days: 크로스 리포트 dedup — 최근 N개 리포트의 URL 제외 (0 = 비활성화)
 
     Returns:
         성공 여부
@@ -249,18 +256,13 @@ def run_collect_only(
     logger.info("AI Report - Collect Only Mode")
     if parallel:
         logger.info("(Parallel collection enabled)")
-    if use_cache:
-        logger.info(f"(Cache enabled, {cache_days} days)")
+    logger.info(
+        f"(Recency filter: {days} days, Cross-report dedup: last {dedup_days} reports)"
+    )
     logger.info("=" * 50)
 
-    # 캐시 초기화
-    cache = None
-    if use_cache:
-        cache = ArticleCache(cache_dir=output_dir, max_age_days=cache_days)
-        logger.info(f"Loaded cache with {len(cache)} URLs")
-
     # 1. 기사 수집
-    logger.info("[1/3] Collecting articles...")
+    logger.info("[1/4] Collecting articles...")
     articles = collect_articles(config, parallel=parallel)
 
     if not articles:
@@ -269,36 +271,41 @@ def run_collect_only(
 
     logger.info(f"Total articles collected: {len(articles)}")
 
-    # 2. 캐시 필터링 (중복 제거)
-    if cache:
-        logger.info("[2/3] Filtering cached articles...")
-        original_count = len(articles)
-        articles = cache.filter_new(articles)
-        skipped = original_count - len(articles)
-        if skipped > 0:
-            logger.info(f"Skipped {skipped} cached articles")
+    # 2. Recency 필터 (Phase 8.2)
+    logger.info(f"[2/4] Applying recency filter ({days} days)...")
+    articles, dropped_old, unknown_kept = filter_by_recency(articles, days)
+    logger.info(
+        f"Recency: kept {len(articles)} "
+        f"(dropped {dropped_old} old, kept {unknown_kept} with unknown date)"
+    )
 
-        if not articles:
-            logger.info("All articles are already cached. Nothing new to save.")
-            return True
-    else:
-        logger.info("[2/3] Cache disabled, skipping filter...")
+    # 3. 크로스 리포트 중복 제거 (Phase 8.3)
+    logger.info(f"[3/4] Loading last {dedup_days} reports for cross-report dedup...")
+    seen_urls = load_recent_report_urls(output_dir, n=dedup_days)
+    articles, dedup_removed = filter_already_seen(articles, seen_urls)
+    logger.info(f"Dedup: removed {dedup_removed} already-seen URLs, {len(articles)} remain")
+
+    # Quiet-day 경고 (Phase 8.5)
+    if len(articles) == 0:
+        logger.warning(
+            "🔕 QUIET DAY: recency + dedup filters left 0 articles. "
+            "Saving empty articles file; downstream notifier should show quiet-day banner."
+        )
+    elif len(articles) < 3:
+        logger.warning(
+            f"🔕 QUIET DAY: only {len(articles)} articles passed filters "
+            f"(threshold: 3). Downstream notifier will show quiet-day banner."
+        )
 
     # 기사 수 제한
     if limit > 0:
         articles = articles[:limit]
         logger.info(f"Limited to {limit} articles")
 
-    # 3. JSON 저장
-    logger.info("[3/3] Saving articles to JSON...")
+    # 4. JSON 저장 (비어 있어도 저장)
+    logger.info("[4/4] Saving articles to JSON...")
     filepath = save_articles(articles, output_dir)
     logger.info(f"Articles saved to: {filepath}")
-
-    # 캐시 업데이트
-    if cache:
-        cache.add_articles(articles)
-        cache.save()
-        logger.info(f"Cache updated: {len(cache)} total URLs")
 
     return True
 
@@ -490,15 +497,28 @@ Examples:
         help="병렬 수집 활성화 (ThreadPoolExecutor)",
     )
     parser.add_argument(
+        "--days",
+        type=int,
+        default=2,
+        help="Recency 필터: 지난 N일 이내 발행된 기사만 유지 (기본: 2, 0=비활성화)",
+    )
+    parser.add_argument(
+        "--dedup-days",
+        type=int,
+        default=7,
+        help="크로스 리포트 dedup: 최근 N개 리포트의 URL 제외 (기본: 7, 0=비활성화)",
+    )
+    # Deprecated (Phase 8에서 ArticleCache 제거됨) — 호환성 유지용 no-op
+    parser.add_argument(
         "--no-cache",
         action="store_true",
-        help="캐시 사용 안 함 (항상 전체 수집)",
+        help="(deprecated, no-op) ArticleCache는 Phase 8에서 제거됨",
     )
     parser.add_argument(
         "--cache-days",
         type=int,
-        default=7,
-        help="캐시 유효 기간 일수 (기본: 7일)",
+        default=None,
+        help="(deprecated, no-op) --dedup-days 사용 권장",
     )
     parser.add_argument(
         "--email",
@@ -553,6 +573,13 @@ Examples:
     )
 
     args = parser.parse_args()
+
+    # Deprecated 플래그 경고 (Phase 8)
+    if args.no_cache or args.cache_days is not None:
+        logging.warning(
+            "--no-cache / --cache-days are deprecated no-ops since Phase 8. "
+            "Use --days (recency) and --dedup-days (cross-report dedup) instead."
+        )
 
     # 설정 로드
     try:
@@ -609,8 +636,8 @@ Examples:
                 args.output_dir,
                 limit=args.limit,
                 parallel=args.parallel,
-                use_cache=not args.no_cache,
-                cache_days=args.cache_days,
+                days=args.days,
+                dedup_days=args.dedup_days,
             )
             sys.exit(0 if success else 1)
         except Exception as e:
@@ -670,8 +697,8 @@ Examples:
                 args.output_dir,
                 limit=args.limit,
                 parallel=args.parallel,
-                use_cache=not args.no_cache,
-                cache_days=args.cache_days,
+                days=args.days,
+                dedup_days=args.dedup_days,
             )
             sys.exit(0 if success else 1)
         except Exception as e:

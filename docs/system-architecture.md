@@ -96,19 +96,29 @@ articles_*.json  (~200개)
 
 ## 3. 데이터 흐름
 
-### 전체 파이프라인 (프로덕션)
+### 전체 파이프라인 (프로덕션, Phase 8 반영)
 
 ```
-1. Collect          2. Persist            3. Rank+Summarize     4. Distribute         5. Publish
-┌──────────┐       ┌──────────┐          ┌──────────────┐      ┌──────────┐         ┌──────────┐
-│ Fetch    │──────▶│ Save     │─────────▶│ Claude Code  │─────▶│ Notify   │────────▶│ Deploy   │
-│ 17 src   │       │ articles │          │ CLI (2-stage)│      │ channels │         │ GH Pages │
-└──────────┘       └──────────┘          └──────────────┘      └──────────┘         └──────────┘
-     │                  │                       │                    │                   │
-     ▼                  ▼                       ▼                    ▼                   ▼
- RSS/HTML         articles_*.json        report_*.json        Slack/Discord/       _site/ →
- fetch            (gitignore)            (git 추적)            Email 전송           GH Pages
+1. Collect    2. Filter           3. Persist     4. Rank+Summarize   5. Distribute    6. Publish
+┌────────┐   ┌──────────────┐   ┌──────────┐   ┌──────────────┐   ┌──────────┐    ┌──────────┐
+│ Fetch  │──▶│ Recency +    │──▶│ Save     │──▶│ Claude Code  │──▶│ Notify   │───▶│ Deploy   │
+│ 17 src │   │ Dedup        │   │ articles │   │ CLI (2-stage)│   │ channels │    │ GH Pages │
+└────────┘   └──────────────┘   └──────────┘   └──────────────┘   └──────────┘    └──────────┘
+    │              │                  │               │                │                │
+    ▼              ▼                  ▼               ▼                ▼                ▼
+RSS/HTML      2일 이내 +          articles_*.json  report_*.json    Slack/Discord/   _site/ →
+fetch         최근 7 리포트        (gitignore)      (git 추적)       Email 전송       GH Pages
+              중복 아닌 것                                           + quiet-day
+              만 통과                                                배너 (선택)
 ```
+
+**Phase 8 필터 단계 상세**:
+1. `filter_by_recency(articles, days=2)` — `published_at`이 지난 2일 이내인 기사만 유지.
+   `published_at=None`은 보수적으로 keep (일부 HTML 스크래퍼가 날짜 없음).
+2. `load_recent_report_urls(data_dir, n=7)` — `report_*.json` 7개의 URL 집합 구축.
+   별도 캐시 파일 없이 git-tracked 리포트가 진실 공급원.
+3. `filter_already_seen(articles, seen_urls)` — URL 기준 제거.
+4. `len(articles) < 3`이면 quiet-day 로그 경고, downstream notifier가 배너 표시.
 
 ### 단계별 설명
 
@@ -524,3 +534,4 @@ logging:
 | 2024-04-05 | 1.0 | 초기 아키텍처 문서 작성 |
 | 2026-04-11 | 2.0 | Phase 6 반영 — 17 소스 / RSSCollector / Claude 상위 20 랭킹 / 카테고리·소스 브라우징 / 홈 대시보드 / GitHub Actions + Pages 배포 구조 |
 | 2026-04-11 | 2.1 | Phase 7 반영 — Audience enum, 하이브리드 태깅, 전역 필터 바, 카드 미니 통계 (Section 5.7 신설) |
+| 2026-04-12 | 2.2 | Phase 8 반영 — 데이터 흐름 다이어그램에 Recency + Dedup 단계 추가, DEBT-003 resolved |

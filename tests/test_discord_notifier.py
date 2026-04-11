@@ -42,15 +42,20 @@ class TestDiscordNotifier:
         assert len(responses.calls) >= 1
 
     @responses.activate
-    def test_send_report_empty(self, notifier):
-        """빈 리포트 처리"""
+    def test_send_report_empty_quiet_day(self, notifier):
+        """빈 리포트 처리 — Phase 8.5에서 quiet-day 배너 포함해 전송하도록 변경"""
+        responses.add(
+            responses.POST,
+            "https://discord.com/api/webhooks/test/webhook",
+            status=204,
+        )
         empty_report = Report(articles=[])
 
         result = notifier.send_report(empty_report)
 
-        # 빈 리포트는 전송하지 않음
-        assert result is False
-        assert len(responses.calls) == 0
+        # 빈 리포트도 quiet-day embed와 함께 성공 전송
+        assert result is True
+        assert len(responses.calls) >= 1
 
     @responses.activate
     def test_send_report_http_error(self, notifier, sample_report):

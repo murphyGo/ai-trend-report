@@ -3,6 +3,7 @@
 import re
 import logging
 from datetime import datetime, timedelta
+from email.utils import parsedate_to_datetime
 from typing import Optional
 import xml.etree.ElementTree as ET
 
@@ -11,6 +12,32 @@ from ..models import Article, Source
 
 
 logger = logging.getLogger(__name__)
+
+
+def _parse_arxiv_date(value: Optional[str]) -> Optional[datetime]:
+    """arXiv RSS의 pubDate / dc:date 문자열을 datetime으로 변환.
+
+    지원 형식:
+    - RFC 822: 'Thu, 10 Apr 2026 00:00:00 +0000' (pubDate)
+    - ISO 8601: '2026-04-10T00:00:00Z' 또는 '2026-04-10' (dc:date)
+    """
+    if not value:
+        return None
+    value = value.strip()
+
+    # 1. RFC 822 (pubDate) — email.utils
+    try:
+        return parsedate_to_datetime(value)
+    except (TypeError, ValueError):
+        pass
+
+    # 2. ISO 8601 (dc:date)
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        pass
+
+    return None
 
 
 class ArxivCollector(BaseCollector):
@@ -92,11 +119,23 @@ class ArxivCollector(BaseCollector):
                     description = re.sub(r"<[^>]+>", "", description_elem.text)
                     description = description.strip()
 
+                # 발행 일시 추출 — Phase 8.1 (DEBT-003 해소)
+                # 1) pubDate (RFC 822) 우선, 2) dc:date (ISO 8601) fallback
+                pub_elem = item.find("pubDate")
+                published_at = _parse_arxiv_date(
+                    pub_elem.text if pub_elem is not None else None
+                )
+                if published_at is None:
+                    dc_elem = item.find("dc:date", ns)
+                    if dc_elem is not None:
+                        published_at = _parse_arxiv_date(dc_elem.text)
+
                 articles.append(Article(
                     title=title,
                     url=link,
                     source=self.source,
                     content=description,  # RSS의 description을 초기 content로 사용
+                    published_at=published_at,
                 ))
 
         except ET.ParseError as e:

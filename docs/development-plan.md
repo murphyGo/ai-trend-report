@@ -10,6 +10,7 @@
 | RSSCollector 공통 베이스 | ✅ Complete | feedparser 기반, 신규 RSS 소스 5줄로 추가 |
 | Claude 랭킹 (상위 20) | ✅ Complete | daily-report.yml 2단계 프롬프트 (rank → summarize + audience 태깅) |
 | 독자 레벨 필터 | ✅ Complete | Phase 7 — GENERAL/DEVELOPER/ML_EXPERT, 하이브리드 태깅, 전역 필터 바 |
+| Recency + 크로스 리포트 Dedup | ✅ Complete | Phase 8 — 2일 시간창 + 7개 리포트 URL 차단, arxiv pubDate 파싱, Quiet-day 알림 |
 | Summarizer | ✅ Complete | Claude Code CLI (기본) + Anthropic API (`--use-api`) |
 | Slack / Discord / Email Notifier | ✅ Complete | 3채널 모두 구현 |
 | CLI | ✅ Complete | main.py — 수집/요약/전송/대시보드/정적사이트 모드 |
@@ -471,6 +472,65 @@ Phase 5 GitHub Pages 기본 배포 이후 이루어진 대규모 확장. 수집 
 - [x] `docs/development-plan.md` — 상태 테이블, 변경 이력
 - [x] `docs/TECH-DEBT.md` — 신규 항목 없음 (구현 중 발견된 이슈 없음)
 
+## Phase 8: Recency 필터 + 크로스 리포트 중복 제거 (완료)
+
+RSS 수집은 "최신 N개"만 반환하지 지정된 기간 내 발행을 보장하지 않음. 또한
+GitHub Actions 매 실행마다 `.article_cache.json`이 비어서 캐시가 의미 없음.
+결과적으로 2026-04-11 리포트의 20개 중 18개가 2026-04-10과 URL 중복되는
+심각한 노이즈 발생.
+
+**설계 결정 (사용자 승인)**:
+- 추천 조합 8.1~8.5 전체 한 번에
+- Recency 창: 2일 (`--days 2`)
+- Dedup 창: 7일 (`--dedup-days 7` — 최근 7개 리포트)
+- `.article_cache.json` + `src/cache.py` 완전 제거 (리포트 기반 dedup이 대체)
+- 빈 후보 풀 처리: Slack/Discord/Email 알림에 "조용한 날" 배너 추가
+- 4월 11일 이전 레거시 리포트 삭제 (2026-04-05, 2026-04-10)
+
+### 8.1 arxiv `published_at` 파싱 (DEBT-003 해소)
+- [x] `src/collectors/arxiv.py:_fetch_rss`에서 `<pubDate>` / `<dc:date>` 추출
+- [x] `email.utils.parsedate_to_datetime` + `datetime.fromisoformat` fallback
+- [x] 단위 테스트 (`TestArxivDateParser` 7개) — fixture XML로 published_at 채워짐 검증
+- [x] `docs/TECH-DEBT.md` DEBT-003 resolved로 이동
+
+### 8.2 Recency 필터
+- [x] `src/filters.py` 신설 — `filter_by_recency(articles, days, now=None)` 순수 함수
+- [x] timezone-aware 비교 (tz naive published_at은 UTC 간주, `_ensure_aware` helper)
+- [x] `published_at = None`이면 keep (conservative fallback)
+- [x] `main.py`에 `--days N` 플래그 (기본 2)
+- [x] `run_collect_only`에서 수집 직후 적용
+- [x] 단위 테스트 9개 (`TestFilterByRecency`) — tz aware/naive/None/boundary 경로 검증
+
+### 8.3 크로스 리포트 dedup
+- [x] `src/data_io.py`에 `load_recent_report_urls(data_dir, n=7) -> set[str]` 추가
+- [x] `src/filters.py`에 `filter_already_seen(articles, seen_urls)` 순수 함수
+- [x] `main.py`에 `--dedup-days N` 플래그 (기본 7)
+- [x] `run_collect_only`에서 recency 직후 적용
+- [x] 단위 테스트 8개 (`TestFilterAlreadySeen` + `TestDataIOLoadRecentReportUrls`)
+
+### 8.4 ArticleCache 제거
+- [x] 레거시 리포트 2개 삭제 (`data/report_2026-04-05.json`, `data/report_2026-04-10.json`)
+- [x] `src/cache.py` 삭제
+- [x] `tests/test_cache.py` 삭제
+- [x] `main.py`에서 `ArticleCache` import / 사용 제거
+- [x] `--no-cache` / `--cache-days` 플래그는 deprecation 경고 후 no-op
+- [x] `.gitignore`의 `.article_cache.json` 라인은 유지 (안전 gutter)
+
+### 8.5 Quiet-day 알림 + 문서 + 테스트
+- [x] Slack/Discord/Email 알림에 `len(articles) < threshold` 시 "조용한 날" 배너 prepend
+- [x] 임계값 상수 (`QUIET_DAY_THRESHOLD = 3`)
+- [x] 빈 리포트도 전송 (이전엔 `False` 반환 후 skip) — 동작 변경
+- [x] 기존 notifier 테스트 4개 업데이트 (quiet-day 동작 반영)
+- [x] Email subject에 "🔕 [조용한 날]" prefix, `test_build_subject_normal`/`_quiet_day` 분리
+- [x] `daily-report.yml`에 `--days 2 --dedup-days 7` 명시
+- [x] `docs/requirements.md` — FR-041~045, NFR-017~018 추가
+- [x] `docs/system-architecture.md` — 데이터 흐름 다이어그램에 recency + dedup 단계
+- [x] `CLAUDE.md`, `README.md` Features에 갱신
+- [x] `docs/TECH-DEBT.md` — DEBT-003 resolved, DEBT-005 resolved (레거시 리포트 삭제)
+- [x] 세션 로그 `docs/sessions/2026-04-12-phase-8-recency-dedup.md`
+
+---
+
 ### 7.6 Hotfix — 필터 칩 클릭 후 다른 레벨 전환 불가 수정
 
 **증상**: 필터 바에서 특정 레벨(예: "개발자")을 클릭하면 나머지 세 칩("모두",
@@ -531,3 +591,4 @@ localStorage의 값이 재적용돼 동일 상태 복귀. 사용자는 사실상
 | 2026-04-11 | 6.7 | Phase 6.7 문서 정합성 갱신 (CLAUDE/README/docs 4종/TECH-DEBT) |
 | 2026-04-11 | 7.0 | Phase 7 독자 레벨 필터 완료 — Audience enum + 하이브리드 태깅 + 전역 필터 바 + 카드 미니 통계 + 40개 테스트 추가 |
 | 2026-04-11 | 7.6 | Phase 7.6 Hotfix — 필터 선택자가 칩 자체도 숨기던 버그 수정 (selector에 :not(.audience-chip) 추가) |
+| 2026-04-12 | 8.0 | Phase 8 완료 — Recency 필터(2일), 크로스 리포트 dedup(7개 리포트), arxiv pubDate 파싱, ArticleCache 제거, Quiet-day 알림, 레거시 리포트 삭제 |

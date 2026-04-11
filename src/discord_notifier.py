@@ -19,6 +19,10 @@ RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 # Discord embed 색상 (decimal)
 EMBED_COLOR_DEFAULT = 5814783  # #58ACFF (파란색)
 EMBED_COLOR_ERROR = 15158332   # #E74C3C (빨간색)
+EMBED_COLOR_QUIET = 15844367   # #F1C40F (노란색, quiet-day 배너)
+
+# Phase 8.5 — Quiet-day 임계값
+QUIET_DAY_THRESHOLD = 3
 
 # 카테고리별 색상
 CATEGORY_COLORS = {
@@ -52,6 +56,8 @@ class DiscordNotifier:
     def send_report(self, report: Report) -> bool:
         """리포트를 Discord로 전송
 
+        Phase 8.5: 빈 리포트도 "조용한 날" 배너 embed로 전송.
+
         Args:
             report: 전송할 리포트
 
@@ -62,11 +68,27 @@ class DiscordNotifier:
             logger.warning("Discord webhook URL not configured")
             return False
 
-        if not report.articles:
-            logger.warning("No articles to send")
-            return False
-
         embeds = self._build_embeds(report)
+
+        # Quiet-day 배너 embed prepend
+        if len(report.articles) < QUIET_DAY_THRESHOLD:
+            count = len(report.articles)
+            if count == 0:
+                desc = (
+                    "오늘은 신규로 올라온 AI 기사가 없습니다.\n"
+                    "Recency 필터(2일) + 최근 7개 리포트 중복 제거 결과 후보가 0개."
+                )
+            else:
+                desc = (
+                    f"오늘은 필터 통과 기사가 **{count}개**뿐입니다.\n"
+                    "Recency 필터(2일) + 최근 7개 리포트 중복 제거로 대부분의 후보가 제외됨."
+                )
+            quiet_embed = {
+                "title": "🔕 조용한 날",
+                "description": desc,
+                "color": EMBED_COLOR_QUIET,
+            }
+            embeds.insert(0, quiet_embed)
 
         # Discord는 한 번에 최대 10개 embed만 전송 가능
         # 여러 번 나눠서 전송

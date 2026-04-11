@@ -149,3 +149,41 @@ def list_report_files(data_dir: Optional[Path] = None) -> list[Path]:
         return []
 
     return sorted(data_dir.glob("report_*.json"), reverse=True)
+
+
+def load_recent_report_urls(
+    data_dir: Optional[Path] = None,
+    n: int = 7,
+) -> set[str]:
+    """최근 N개 리포트의 모든 기사 URL 집합 반환 (Phase 8.3)
+
+    크로스 리포트 중복 제거용. 수집한 기사가 최근 7개 리포트 중 하나라도
+    등장했으면 이미 사용자에게 보여준 것이므로 새 리포트에서 제외.
+
+    별도 캐시 파일 대신 리포트 파일 자체를 진실 공급원으로 사용 — 리포트는
+    이미 git 추적되므로 GitHub Actions 재실행 시에도 상태가 영속된다.
+
+    Args:
+        data_dir: 데이터 디렉토리
+        n: 조회할 리포트 개수 (기본 7)
+
+    Returns:
+        URL 집합. 파일 로드 실패는 조용히 무시 (경고 로그만).
+    """
+    urls: set[str] = set()
+    report_files = list_report_files(data_dir)[:n]
+
+    for filepath in report_files:
+        try:
+            report = load_report(filepath)
+        except Exception as e:
+            logger.warning(f"Failed to load {filepath} for dedup: {e}")
+            continue
+
+        for article in report.articles:
+            urls.add(article.url)
+
+    logger.info(
+        f"Loaded {len(urls)} URLs from {len(report_files)} recent reports for dedup"
+    )
+    return urls

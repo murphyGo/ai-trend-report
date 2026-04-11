@@ -71,10 +71,10 @@ jobs:
         if: env.USE_API != 'true'
         run: npm install -g @anthropic-ai/claude-code
 
-      # Step 1: 기사 수집
+      # Step 1: 기사 수집 (Phase 8 recency + dedup 적용)
       - name: Collect articles
         run: |
-          CMD="python -m src.main --collect-only"
+          CMD="python -m src.main --collect-only --days 2 --dedup-days 7"
           if [ -n "${{ github.event.inputs.limit }}" ]; then
             CMD="$CMD --limit ${{ github.event.inputs.limit }}"
           fi

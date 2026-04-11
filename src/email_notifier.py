@@ -22,6 +22,9 @@ RETRYABLE_EXCEPTIONS = (
     ConnectionError,
 )
 
+# Phase 8.5 — Quiet-day 임계값
+QUIET_DAY_THRESHOLD = 3
+
 
 class EmailNotifier:
     """SMTP 이메일 알림 전송기"""
@@ -40,16 +43,14 @@ class EmailNotifier:
     def send_report(self, report: Report) -> bool:
         """리포트를 이메일로 전송
 
+        Phase 8.5: 빈/저조한 리포트도 quiet-day 배너 포함해 발송.
+
         Args:
             report: 전송할 리포트
 
         Returns:
             성공 여부
         """
-        if not report.articles:
-            logger.warning("No articles to send")
-            return False
-
         if not self.recipients:
             logger.error("No email recipients configured")
             return False
@@ -88,7 +89,8 @@ class EmailNotifier:
     def _build_subject(self, report: Report) -> str:
         """이메일 제목 생성"""
         date_str = report.created_at.strftime("%Y년 %m월 %d일")
-        return f"[AI Report] {date_str} AI 데일리 리포트 ({len(report.articles)}개 기사)"
+        prefix = "🔕 [조용한 날] " if len(report.articles) < QUIET_DAY_THRESHOLD else "[AI Report] "
+        return f"{prefix}{date_str} AI 데일리 리포트 ({len(report.articles)}개 기사)"
 
     def _build_html_message(self, report: Report) -> str:
         """HTML 이메일 본문 생성"""
@@ -113,6 +115,29 @@ class EmailNotifier:
             Category.INDUSTRY,
             Category.OTHER,
         ]
+
+        # Phase 8.5 — Quiet-day 배너
+        quiet_banner = ""
+        count = len(report.articles)
+        if count < QUIET_DAY_THRESHOLD:
+            if count == 0:
+                quiet_banner = (
+                    '<div style="background:#fff8e1;border-left:4px solid #f1c40f;'
+                    'padding:15px;margin:20px 0;border-radius:4px;">'
+                    '<strong>🔕 조용한 날</strong><br>'
+                    '오늘은 신규로 올라온 AI 기사가 없습니다. '
+                    'Recency 필터(2일) + 최근 7개 리포트 중복 제거 결과 후보가 0개입니다.'
+                    '</div>'
+                )
+            else:
+                quiet_banner = (
+                    f'<div style="background:#fff8e1;border-left:4px solid #f1c40f;'
+                    f'padding:15px;margin:20px 0;border-radius:4px;">'
+                    f'<strong>🔕 조용한 날</strong><br>'
+                    f'오늘은 필터 통과 기사가 <strong>{count}개</strong>뿐입니다. '
+                    f'Recency 필터(2일) + 최근 7개 리포트 중복 제거로 대부분 후보가 제외됨.'
+                    f'</div>'
+                )
 
         # 카테고리별 HTML 섹션 생성
         category_sections = []
@@ -245,6 +270,7 @@ class EmailNotifier:
             <div class="date">{date_str}</div>
         </div>
         <div class="content">
+            {quiet_banner}
             {categories_html}
         </div>
         <div class="footer">

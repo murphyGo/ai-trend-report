@@ -14,11 +14,12 @@ GitHub Pages 정적 사이트로 공개합니다.
 
 ## Features
  - **17개 소스** 자동 수집 (arXiv, 주요 AI 랩 블로그, 미디어, 한국 소스)
+ - **Recency + 크로스 리포트 중복 제거** (Phase 8) — 2일 시간창, 최근 7개 리포트 URL 차단
  - **Claude가 중요도 기준 상위 20개 선별** — 기술 신규성·영향력·소스 신뢰도·카테고리 다양성·한국 관련성
  - **Claude Code CLI 기본 지원** (Pro/Max 구독 사용, `ANTHROPIC_API_KEY` 불필요)
  - 12개 카테고리 자동 분류 + 카테고리별 브라우징 페이지
  - **독자 레벨 필터** (Phase 7) — GENERAL / DEVELOPER / ML_EXPERT, 전역 필터 바로 실시간 토글
- - 다채널 알림: **Slack + Discord + 이메일(SMTP)**
+ - 다채널 알림: **Slack + Discord + 이메일(SMTP)** + Quiet-day 배너
  - **GitHub Pages 정적 사이트** 자동 배포 (홈, 리포트 아카이브, 카테고리, 소스, 검색)
  - **GitHub Actions 스케줄** (매일 KST 09:00) + 수동 trigger
  - 병렬 수집, 캐시 기반 중복 제거, dry-run 모드, 로컬 FastAPI 대시보드

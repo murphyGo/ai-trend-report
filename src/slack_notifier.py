@@ -16,6 +16,9 @@ logger = logging.getLogger(__name__)
 # 재시도할 예외 타입들 (일시적 네트워크 오류)
 RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 
+# Phase 8.5 — Quiet-day 임계값. 이 수보다 적으면 알림 상단에 배너 표시.
+QUIET_DAY_THRESHOLD = 3
+
 
 class SlackNotifier:
     """Slack Incoming Webhook 알림 전송기"""
@@ -25,11 +28,10 @@ class SlackNotifier:
         self.webhook_url = config.slack.webhook_url
 
     def send_report(self, report: Report) -> bool:
-        """리포트를 슬랙으로 전송"""
-        if not report.articles:
-            logger.warning("No articles to send")
-            return False
+        """리포트를 슬랙으로 전송.
 
+        Phase 8.5: 빈 리포트도 "조용한 날" 배너로 전송 (예전처럼 False 반환 안 함).
+        """
         blocks = self._build_message_blocks(report)
         payload = {"blocks": blocks}
 
@@ -66,6 +68,24 @@ class SlackNotifier:
                 "emoji": True,
             }
         })
+
+        # Phase 8.5 — Quiet-day 배너
+        article_count = len(report.articles)
+        if article_count < QUIET_DAY_THRESHOLD:
+            if article_count == 0:
+                banner_text = (
+                    "🔕 *조용한 날* — 오늘은 신규로 올라온 AI 기사가 없습니다.\n"
+                    "Recency 필터(2일) + 최근 7개 리포트 중복 제거 결과 후보가 0개."
+                )
+            else:
+                banner_text = (
+                    f"🔕 *조용한 날* — 오늘은 필터 통과 기사가 {article_count}개뿐입니다.\n"
+                    "Recency 필터(2일) + 최근 7개 리포트 중복 제거로 대부분의 후보가 제외됨."
+                )
+            blocks.append({
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": banner_text},
+            })
 
         blocks.append({"type": "divider"})
 

@@ -48,15 +48,18 @@ class TestEmailNotifier:
         mock_server.send_message.assert_called_once()
 
     @patch('smtplib.SMTP')
-    def test_send_report_empty(self, mock_smtp, notifier):
-        """빈 리포트 처리"""
-        empty_report = Report(articles=[])
+    def test_send_report_empty_quiet_day(self, mock_smtp, notifier):
+        """빈 리포트 처리 — Phase 8.5에서 quiet-day 배너 포함해 전송하도록 변경"""
+        mock_server = MagicMock()
+        mock_smtp.return_value.__enter__.return_value = mock_server
 
+        empty_report = Report(articles=[])
         result = notifier.send_report(empty_report)
 
-        # 빈 리포트는 전송하지 않음
-        assert result is False
-        mock_smtp.assert_not_called()
+        # 빈 리포트도 quiet-day 배너와 함께 성공 전송
+        assert result is True
+        mock_smtp.assert_called_once()
+        mock_server.send_message.assert_called_once()
 
     @patch('smtplib.SMTP')
     def test_send_report_smtp_error(self, mock_smtp, notifier, sample_report):
@@ -257,13 +260,28 @@ class TestBuildSubject:
         )
         return EmailNotifier(config)
 
-    def test_build_subject(self, notifier, sample_report):
-        """제목 형식"""
+    def test_build_subject_quiet_day(self, notifier, sample_report):
+        """기사 수 < 3인 경우 quiet-day prefix (sample_report는 2개)"""
         subject = notifier._build_subject(sample_report)
 
-        assert "[AI Report]" in subject
+        # Phase 8.5: 2개 기사 → quiet-day prefix
+        assert "조용한 날" in subject
         assert "AI 데일리 리포트" in subject
         assert f"{len(sample_report.articles)}개 기사" in subject
+
+    def test_build_subject_normal(self, notifier):
+        """기사 수 >= 3인 경우 일반 prefix"""
+        from src.models import Article, Report, Source, Category
+        articles = [
+            Article(title=f"t{i}", url=f"https://x.com/{i}", source=Source.ARXIV)
+            for i in range(5)
+        ]
+        report = Report(articles=articles)
+        subject = notifier._build_subject(report)
+
+        assert "[AI Report]" in subject
+        assert "조용한 날" not in subject
+        assert "5개 기사" in subject
 
 
 class TestEmailConfig:
