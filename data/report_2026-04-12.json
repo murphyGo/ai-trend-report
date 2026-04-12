@@ -1,0 +1,89 @@
+{
+  "id": "be58fadf-0c8b-4c75-8864-40071dfe2918",
+  "created_at": "2026-04-12T02:34:10.263251",
+  "articles": [
+    {
+      "id": "220aa33a-7677-40f4-b46a-e28f95baf8ba",
+      "title": "Using OCR models with llama.cpp",
+      "url": "https://huggingface.co/blog/ggml-org/using-ocr-models-with-llama-cpp",
+      "source": "huggingface",
+      "content": "",
+      "published_at": "2026-04-10T15:46:43",
+      "summary": "HuggingFace 블로그에서 llama.cpp와 함께 OCR(광학 문자 인식) 모델을 활용하는 방법을 상세히 안내합니다. llama.cpp는 경량화된 로컬 추론 엔진으로, 최근 비전-언어 모델 지원이 추가되어 문서 이미지에서 텍스트를 추출하는 OCR 파이프라인 구축이 가능해졌습니다. 이 가이드는 서버 없이 로컬 환경에서 OCR 모델을 실행하고자 하는 개발자들에게 실용적인 구현 경로를 제시하며, 엣지 디바이스 및 프라이버시 중시 환경에서의 활용 가능성을 높입니다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f8605707-24a3-42dd-a0b8-d8bf7b1b698d",
+      "title": "아크로즈 테크놀로지, 산업용 고정밀 AI 비전 플랫폼 ‘AIDI’ 생태계 공개",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=39513",
+      "source": "korean",
+      "content": "산업용 AI 비전 솔루션 전문 기업 아크로즈 테크놀로지(Aqrose Technology)가 오는 5월 6일(수)부터 8일(금)까지 3일간 서울 삼성동 코엑스 1층 A홀 전관에서 단일 인공지능 행사로 아시아 최대 규모로 개최되는 '제9회 국제인공지능대전(AI EXPO KOREA 2026)’에 참가한다.\n\n아크로즈 테크놀로지는 이번 전시에서 자체 지식재산권(IP)을 보유한 고정밀 AI 비전 알고리즘 플랫폼 ‘AIDI’를 주력으로 선보인다. AIDI는 Segmentation, Detection, OCR 등 다양한 알고리즘 모듈을 제공하며, 3D 검사와 라인스캔 기반 대형 이미지 처리를 지원하는 전문화된 비전 플랫폼이다.\n\nAIDI의 가장 큰 경쟁력은 압도적인 연산 속도와 정밀도에 있다. Segmentation 기준 단일 이미지 추론 시간이 20ms 미만으로 오픈소스 대비 약 5배 빠르며, 업계 평균인 6픽셀보다 정밀한 3픽셀 수준의 미세 결함까지 검출해낸다. 특히 결함 유형당 20~30장의 소량 샘플만으로도 고성능 모델 학습이 가능하다.\n\n데이터 부족 문제를 해결하기 위한 결함 이미지 생성 도구 ‘AIDG(AI Defect Generator)’도 함께 소개된다. AIDG는 실제 샘플을 기반으로 고현실감 결함 이미지를 대량 생성하는 솔루션이다. 이를 통해 데이터 획득에 드는 비용과 시간을 혁신적으로 단축하며, 학습 데이터 부족으로 인한 모델 검증의 어려움을 근본적으로 해결한다.\n\nAIDG에서 생성된 고해상도 이미지는 AIDI 플랫폼으로 즉시 임포트하여 모델 학습에 활용할 수 있다. 화장품 결함, 이물질, 조립 오류, 문자 이상 등 제조 현장의 다양한 외관 결함 시나리오에 즉각적인 대응이 가능하다는 점이 핵심 강점이다.\n\n아크로즈 테크놀로지는 이러한 AI 모델들을 실제 공정에 신속히 적용할 수 있도록 돕는 통합 비전 시스템 개발 플랫폼 ‘AQVision’을 이번 전시에서 공개한다. AQVision은 모듈형 설계를 통해 비전 시스템 통합 및 개발을 위한 포괄적이고 직관적인 환경을 제공한다.\n\nAQVision은 AIDI에서 개발된 AI 모델의 호출과 관리, 공정 구성, 레시피 관리, UI 설계 등을 통합 지원한다. 그동안 산업계의 과제로 지적되어 온 비표준적 애플리케이션의 긴 개발 주기와 AI 모델과 전통적 알고리즘 간의 통합 격차를 해소하는 데 초점을 맞췄다.\n\n아크로즈 테크놀로지는 이번 참가를 계기로 고정밀 비전 기술과 시스템 통합 역량을 결합해 산업 현장의 디지털 전환을 가속화한다는 방침이다. 아크로즈 테크놀로지는 고도화된 AI 비전 생태계를 통해 제조 기업들이 초기 도입 장벽을 낮추고 실질적인 생산성 향상을 달성할 수 있도록 기술적 지원을 지속적으로 확대해 나갈 전망이다.",
+      "published_at": null,
+      "summary": "한국 기업 아크로즈 테크놀로지가 산업용 고정밀 AI 비전 플랫폼 'AIDI'를 2026 국제인공지능대전(AI EXPO KOREA)에서 공개한다고 밝혔습니다. AIDI는 Segmentation·Detection·OCR 등 다양한 알고리즘 모듈을 통합한 플랫폼으로, 단일 이미지 추론 속도가 20ms 미만(오픈소스 대비 5배 빠름)이며 3픽셀 수준의 미세 결함까지 검출합니다. 결함 유형당 20~30장의 소량 데이터로 학습 가능하다는 점이 강점으로, 제조업 품질 검사 자동화 수요에 대응하는 한국 산업 AI 생태계 확장 사례로 주목됩니다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0833380b-a8f8-49f4-bf83-633f2c31e9b3",
+      "title": "MiniMax M2.7 Advances Scalable Agentic Workflows on NVIDIA Platforms for Complex AI Applications",
+      "url": "https://developer.nvidia.com/blog/minimax-m2-7-advances-scalable-agentic-workflows-on-nvidia-platforms-for-complex-ai-applications/",
+      "source": "nvidia",
+      "content": "The release of&nbsp;MiniMax M2.7&nbsp;adds enhancements to the popular&nbsp;MiniMax&nbsp;M2.5 model,&nbsp;built for agentic harnesses,...The release of MiniMax M2.7 adds enhancements to the popular MiniMax M2.5 model, built for agentic harnesses, and other complex use cases in fields such as reasoning, ML research workflows, software, engineering, and office work. The open weights release of MiniMax M2.7 is now available through NVIDIA and across the open source inference ecosystem. The MiniMax M2 series is a sparse mixture-of… Source",
+      "published_at": "2026-04-12T01:02:44",
+      "summary": "MiniMax가 에이전트 워크플로우에 특화된 오픈 웨이트 모델 MiniMax M2.7을 출시하고 NVIDIA 플랫폼 및 오픈소스 추론 생태계를 통해 배포를 시작했습니다. M2.7은 전작 M2.5 대비 추론, ML 리서치 워크플로우, 소프트웨어 엔지니어링, 오피스 업무 등 복잡한 작업에서 성능이 향상되었습니다. NVIDIA 인프라 최적화와 함께 오픈 웨이트로 공개되어 에이전트 시스템 구축에 유연하게 활용 가능하며, 대규모 멀티스텝 태스크 처리 능력이 핵심 강점입니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "dbbefa2b-8452-4a11-bd3a-bf5e5e46fe99",
+      "title": "Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home",
+      "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
+      "source": "techcrunch",
+      "content": "The OpenAI CEO's new blog post responds to both an apparent attack on his home and an in-depth New Yorker profile raising questions about his trustworthiness.",
+      "published_at": "2026-04-11T17:18:22",
+      "summary": "OpenAI CEO 샘 알트만이 뉴요커의 심층 프로필 기사와 자택 공격 사건에 동시에 대응하는 블로그 포스트를 게재했습니다. 뉴요커 기사는 알트만의 신뢰성에 의문을 제기하는 내용을 담고 있으며, 알트만은 이를 '선동적'이라고 규정하며 공개적으로 반박했습니다. 이번 사건은 AI 산업 최대 기업 수장을 둘러싼 미디어 및 사회적 긴장이 고조되고 있음을 보여주며, OpenAI의 조직 문화와 리더십 투명성에 대한 외부의 관심이 계속되고 있음을 시사합니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "98d6c98a-255c-4730-9e16-819c4128a000",
+      "title": "Anthropic temporarily banned OpenClaw’s creator from accessing Claude",
+      "url": "https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/",
+      "source": "techcrunch",
+      "content": "This ban took place after Claude's pricing changed for OpenClaw users last week.",
+      "published_at": "2026-04-10T20:27:52",
+      "summary": "Anthropic이 Claude API를 활용한 서드파티 클라이언트 'OpenClaw' 개발자를 일시적으로 Claude 접근에서 차단했다는 사실이 알려졌습니다. 이번 조치는 OpenClaw 사용자에 대한 Claude 요금 정책이 변경된 직후 발생했습니다. 이는 Anthropic이 API 이용 약관 및 요금 정책 준수를 엄격하게 적용하고 있음을 보여주는 사례로, 제3자 Claude 클라이언트 생태계에 대한 규제 방향과 오픈 AI 툴링의 허용 범위에 대한 논의를 촉발합니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d3b99369-4545-455b-a150-53e75d4b58f2",
+      "title": "The Download: an exclusive Jeff VanderMeer story and AI models too scary to release",
+      "url": "https://www.technologyreview.com/2026/04/10/1135618/the-download-jeff-vandermeer-short-story-and-ai-models-too-danger-to-release/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Constellations&nbsp; —Constellations is a short story by Jeff VanderMeer, the author of the critically acclaimed, bestselling Southern Reach series. &nbsp; A spacecraft has crash-landed on a hostile planet. The only survivors are three members of the exploration team and the ship’s AI mind. &nbsp; Little exists on the planet except deserts of snow. But alien artifacts lie nearby, in the form of 13 domes, spread across the terrain. Linked by cables threaded through metal posts, the domes form a series of paths—the only hope for life support.&nbsp; As the team treks across the frozen hellscape, they discover the remains of countless astronauts from unknown species who followed the same route before them. Is their trail a path to salvation, or a cosmic trap? Read the rest of this short story in full. This story is from the next issue of our print magazine, packed with stories all about nature.&nbsp;Subscribe now&nbsp;to read the full thing when it lands on Wednesday, April 22.&nbsp; The must-reads I’ve&nbsp;combed&nbsp;the&nbsp;internet&nbsp;to&nbsp;find&nbsp;you&nbsp;today’s&nbsp;most&nbsp;fun/important/scary/fascinating&nbsp;stories&nbsp;about&nbsp;technology.&nbsp; 1 OpenAI has joined Anthropic in curbing an AI release over security fears Only select partners will get its new cybersecurity tool. (Axios) + Anthropic said only yesterday that its new AI is too dangerous for the public. (NBC News) + Top models may not be so public going forward. (Bloomberg $) + The US has summoned bank CEOs to discuss the risks. (FT $) 2 Florida is investigating OpenAI over an alleged role in a shooting ChatGPT may have helped someone plan a mass shooting in Florida. (WSJ $) + OpenAI has backed a bill that would limit AI liability for deaths. (Wired $) + The family of a victim plans to sue the company. (Guardian) + AI’s role in delusions is dividing opinion. (MIT Technology Review) 3 Volkswagen is ditching EV production for more gasoline models The carmaker will stop making its top electric vehicle in the US. (NYT $) + Instead, it will concentrate on developing a new SUV. (Ars Technica) + Western carmakers are retreating from electric vehicles. (Guardian) 4 Elon Musk&#8217;s xAI has sued Colorado over an AI anti-discrimination law It’s the first state bill of its kind. (Bloomberg $) + xAI says it will force the firm to “promote the state’s ideological views.” (FT $) 5 A fifth of US employees say AI now does parts of their job The survey found half of US adults used AI in the past week. (NBC News) + Missing data could shed light on AI’s job impact. (MIT Technology Review) 6 Google DeepMind’s CEO wants to automate drug design He hopes to develop AI capable of curing all diseases. (The Economist) + A scientist is using AI to hunt for antibiotics. (MIT Technology Review) 7 China&#8217;s Unitree is launching a viral robot on the international marketR1, its cheapest humanoid, will go on sale outside China next week. (SCMP)+ Gig workers are training humanoids at home. (MIT Technology Review) 8 An experiment on Artemis II astronauts could reshape space medicineChips containing their cells will model spaceflight&#8217;s effects. (WP $)9 A pro-Iran meme machine is trolling Trump with AI Lego cartoonsThe videos have racked up millions of views. (Wired $) + You can learn to love AI slop. (MIT Technology Review) 10 Short breaks could erase 10 years of social media brain damage Studies show that a two-week detox could have a dramatic benefit. (WP $) Quote of the day “AI should advance mankind, not destroy it. We&#8217;re demanding answers on OpenAI&#8217;s activities that have hurt kids, endangered Americans, and facilitated the recent FSU mass shooting.” —Florida Attorney General James Uthmeier explains on X why he’s probing OpenAI. One More Thing TOM HUMBERSTONE It’s&nbsp;time&nbsp;to&nbsp;retire&nbsp;the&nbsp;term&nbsp;“user”&nbsp; People have been called “users” for a long time. Often, it’s the right word to describe people who use software. But “users” is also unspecific enough to refer to just about everyone. It can accommodate almost any big idea or long-term vision.&nbsp;We use—and are used by—computers and platforms and companies. The label &#8220;user&#8221; suggests these interactions are deeply transactional, but they’re frequently quite personal. Is it time for a more human vocabulary?&nbsp;Read the full story.&nbsp; —Taylor Majewski We can still have nice things A place&nbsp;for&nbsp;comfort,&nbsp;fun&nbsp;and&nbsp;distraction&nbsp;to&nbsp;brighten&nbsp;up&nbsp;your&nbsp;day. (Got&nbsp;any&nbsp;ideas?&nbsp;Drop me a line.)&nbsp; + This flawless levitation trick will leave you questioning the laws of physics.+ The World Press Photo winners expose the beauty (and brutality) of our planet.+ Over 3 million pink flamingos gathered to create a stunning pink horizon.+ Behold the galaxy&#8217;s enormity in this comparison of its largest known star to Earth",
+      "published_at": "2026-04-10T12:10:00",
+      "summary": "MIT 테크놀로지 리뷰가 공개되기에 너무 위험하다고 판단되어 출시가 보류된 AI 모델들에 대한 논의를 조명합니다. 일부 AI 연구기관들은 보안·안전성 우려로 특정 모델의 공개를 자제하고 있으며, 이는 AI 능력 향상과 책임 있는 공개 사이의 균형 문제를 다시금 부각시킵니다. 또한 이번 에디션에는 SF 작가 제프 반더미어의 단편소설 '별자리(Constellations)'가 포함되어 AI와 인간 생존에 대한 문학적 탐구도 함께 제공됩니다. 프론티어 AI 모델의 공개 기준과 위험성 평가 방법론이 AI 거버넌스의 핵심 화두로 부상하고 있습니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
