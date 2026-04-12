@@ -8,6 +8,8 @@ import requests
 
 from .models import Article, Report, Category
 from .config import Config
+from .constants import QUIET_DAY_THRESHOLD, CATEGORY_ORDER
+from .notifier_base import BaseNotifier
 from .utils.retry import retry_with_backoff
 
 
@@ -16,11 +18,8 @@ logger = logging.getLogger(__name__)
 # 재시도할 예외 타입들 (일시적 네트워크 오류)
 RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 
-# Phase 8.5 — Quiet-day 임계값. 이 수보다 적으면 알림 상단에 배너 표시.
-QUIET_DAY_THRESHOLD = 3
 
-
-class SlackNotifier:
+class SlackNotifier(BaseNotifier):
     """Slack Incoming Webhook 알림 전송기"""
 
     def __init__(self, config: Config):
@@ -71,7 +70,7 @@ class SlackNotifier:
 
         # Phase 8.5 — Quiet-day 배너
         article_count = len(report.articles)
-        if article_count < QUIET_DAY_THRESHOLD:
+        if self.is_quiet_day(report):
             if article_count == 0:
                 banner_text = (
                     "🔕 *조용한 날* — 오늘은 신규로 올라온 AI 기사가 없습니다.\n"
@@ -92,23 +91,7 @@ class SlackNotifier:
         # 카테고리별 기사
         articles_by_category = report.articles_by_category()
 
-        # 카테고리 순서 정의
-        category_order = [
-            Category.LLM,
-            Category.AGENT,
-            Category.VISION,
-            Category.VIDEO,
-            Category.ROBOTICS,
-            Category.SAFETY,
-            Category.RL,
-            Category.INFRA,
-            Category.MEDICAL,
-            Category.FINANCE,
-            Category.INDUSTRY,
-            Category.OTHER,
-        ]
-
-        for category in category_order:
+        for category in CATEGORY_ORDER:
             if category not in articles_by_category:
                 continue
 

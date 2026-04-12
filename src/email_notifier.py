@@ -10,6 +10,8 @@ from typing import Optional
 
 from .models import Article, Report, Category
 from .config import Config
+from .constants import QUIET_DAY_THRESHOLD, CATEGORY_ORDER
+from .notifier_base import BaseNotifier
 from .utils.retry import retry_with_backoff
 
 
@@ -22,9 +24,6 @@ RETRYABLE_EXCEPTIONS = (
     TimeoutError,
     ConnectionError,
 )
-
-# Phase 8.5 — Quiet-day 임계값
-QUIET_DAY_THRESHOLD = 3
 
 
 def _esc(value: Optional[str]) -> str:
@@ -47,7 +46,7 @@ def _is_safe_url(url: Optional[str]) -> bool:
     return url_lower.startswith("http://") or url_lower.startswith("https://")
 
 
-class EmailNotifier:
+class EmailNotifier(BaseNotifier):
     """SMTP 이메일 알림 전송기"""
 
     def __init__(self, config: Config, recipients: Optional[list[str]] = None):
@@ -143,7 +142,7 @@ class EmailNotifier:
     def _build_subject(self, report: Report) -> str:
         """이메일 제목 생성"""
         date_str = report.created_at.strftime("%Y년 %m월 %d일")
-        prefix = "🔕 [조용한 날] " if len(report.articles) < QUIET_DAY_THRESHOLD else "[AI Report] "
+        prefix = "🔕 [조용한 날] " if self.is_quiet_day(report) else "[AI Report] "
         return f"{prefix}{date_str} AI 데일리 리포트 ({len(report.articles)}개 기사)"
 
     def _build_plain_message(self, report: Report) -> str:
@@ -204,26 +203,12 @@ class EmailNotifier:
         # 카테고리별 기사 그룹화
         articles_by_category = report.articles_by_category()
 
-        # 카테고리 순서 정의
-        category_order = [
-            Category.LLM,
-            Category.AGENT,
-            Category.VISION,
-            Category.VIDEO,
-            Category.ROBOTICS,
-            Category.SAFETY,
-            Category.RL,
-            Category.INFRA,
-            Category.MEDICAL,
-            Category.FINANCE,
-            Category.INDUSTRY,
-            Category.OTHER,
-        ]
+        category_order = CATEGORY_ORDER
 
         # Phase 8.5 — Quiet-day 배너
         quiet_banner = ""
         count = len(report.articles)
-        if count < QUIET_DAY_THRESHOLD:
+        if self.is_quiet_day(report):
             if count == 0:
                 quiet_banner = (
                     '<div style="background:#fff8e1;border-left:4px solid #f1c40f;'

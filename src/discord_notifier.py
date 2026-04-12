@@ -8,6 +8,8 @@ import requests
 
 from .models import Article, Report, Category
 from .config import Config
+from .constants import QUIET_DAY_THRESHOLD
+from .notifier_base import BaseNotifier
 from .utils.retry import retry_with_backoff
 
 
@@ -20,9 +22,6 @@ RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 EMBED_COLOR_DEFAULT = 5814783  # #58ACFF (파란색)
 EMBED_COLOR_ERROR = 15158332   # #E74C3C (빨간색)
 EMBED_COLOR_QUIET = 15844367   # #F1C40F (노란색, quiet-day 배너)
-
-# Phase 8.5 — Quiet-day 임계값
-QUIET_DAY_THRESHOLD = 3
 
 # 카테고리별 색상
 CATEGORY_COLORS = {
@@ -41,7 +40,7 @@ CATEGORY_COLORS = {
 }
 
 
-class DiscordNotifier:
+class DiscordNotifier(BaseNotifier):
     """Discord Webhook 알림 전송기"""
 
     def __init__(self, config: Config, webhook_url: str = None):
@@ -71,7 +70,7 @@ class DiscordNotifier:
         embeds = self._build_embeds(report)
 
         # Quiet-day 배너 embed prepend
-        if len(report.articles) < QUIET_DAY_THRESHOLD:
+        if self.is_quiet_day(report):
             count = len(report.articles)
             if count == 0:
                 desc = (
