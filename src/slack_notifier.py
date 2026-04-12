@@ -19,12 +19,23 @@ logger = logging.getLogger(__name__)
 RETRYABLE_EXCEPTIONS = (requests.Timeout, requests.ConnectionError)
 
 
+def _validate_webhook_url(url: str, expected_domain: str) -> str:
+    """Webhook URL 스킴·도메인 검증. 유효하지 않으면 ValueError."""
+    from urllib.parse import urlparse
+    parsed = urlparse(url)
+    if parsed.scheme != "https":
+        raise ValueError(f"Webhook URL must use HTTPS, got {parsed.scheme}")
+    if expected_domain and expected_domain not in parsed.netloc:
+        logger.warning("Webhook URL domain '%s' does not contain '%s'", parsed.netloc, expected_domain)
+    return url
+
+
 class SlackNotifier(BaseNotifier):
     """Slack Incoming Webhook 알림 전송기"""
 
     def __init__(self, config: Config):
         self.config = config
-        self.webhook_url = config.slack.webhook_url
+        self.webhook_url = _validate_webhook_url(config.slack.webhook_url, "hooks.slack.com")
 
     def send_report(self, report: Report) -> bool:
         """리포트를 슬랙으로 전송.

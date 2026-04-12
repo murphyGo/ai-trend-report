@@ -7,12 +7,26 @@ from typing import Optional
 from fastapi import FastAPI, Request, Query, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
+from starlette.middleware.base import BaseHTTPMiddleware
 
 from . import service
 from ..data_io import DEFAULT_DATA_DIR
 
 
 logger = logging.getLogger(__name__)
+
+
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Content-Security-Policy"] = (
+            "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+        )
+        return response
+
 
 # FastAPI 앱 생성
 app = FastAPI(
@@ -21,9 +35,12 @@ app = FastAPI(
     version="1.0.0",
 )
 
+app.add_middleware(SecurityHeadersMiddleware)
+
 # 템플릿 디렉토리 설정
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+templates.env.autoescape = True
 
 
 # ============================================================================

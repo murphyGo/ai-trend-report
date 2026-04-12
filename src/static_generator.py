@@ -238,6 +238,16 @@ def get_category_label(category: Category) -> str:
     return labels.get(category, "기타")
 
 
+def _safe_url_filter(url: str) -> str:
+    """http/https만 허용, 그 외(javascript:, data: 등)는 '#' 반환."""
+    if not url or not isinstance(url, str):
+        return "#"
+    stripped = url.strip().lower()
+    if stripped.startswith("http://") or stripped.startswith("https://"):
+        return url
+    return "#"
+
+
 class StaticSiteGenerator:
     """정적 사이트 생성기"""
 
@@ -273,6 +283,7 @@ class StaticSiteGenerator:
         self.env.filters["source_tier"] = get_source_tier
         self.env.filters["audience_data"] = get_audience_data_attr
         self.env.filters["audience_labels"] = get_audience_labels
+        self.env.filters["safe_url"] = _safe_url_filter
 
     def generate(self) -> None:
         """전체 정적 사이트 생성"""

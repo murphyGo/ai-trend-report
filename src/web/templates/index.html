@@ -27,7 +27,7 @@
         <ul class="article-list">
             {% for article in search_results %}
             <li class="article-item">
-                <a href="{{ article.url }}" target="_blank" class="article-title">{{ article.title }}</a>
+                <a href="{{ article.url }}" target="_blank" rel="noopener" class="article-title">{{ article.title }}</a>
                 <div class="article-meta">
                     <span class="badge badge-primary">{{ article.source }}</span>
                     <span class="badge badge-purple">{{ article.category }}</span>

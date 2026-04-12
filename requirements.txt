@@ -1,33 +1,33 @@
 # AI Report Automation Service Dependencies
 
 # Web scraping
-requests>=2.31.0
-beautifulsoup4>=4.12.0
-lxml>=5.0.0
-feedparser>=6.0.10  # RSS/Atom feed parsing
+requests>=2.31.0,<3
+beautifulsoup4>=4.12.0,<5
+lxml>=5.0.0,<6
+feedparser>=6.0.10,<7
 
 # Claude API
-anthropic>=0.40.0
+anthropic>=0.40.0,<1
 
 # Slack integration
-slack-sdk>=3.27.0
+slack-sdk>=3.27.0,<4
 
 # Configuration
-PyYAML>=6.0.0
-python-dotenv>=1.0.0
+PyYAML>=6.0.0,<7
+python-dotenv>=1.0.0,<2
 
 # Date/Time handling
-python-dateutil>=2.8.0
+python-dateutil>=2.8.0,<3
 
 # Testing
-pytest>=7.0.0
-pytest-mock>=3.10.0
-pytest-cov>=4.0.0
-responses>=0.23.0
-httpx>=0.26.0
+pytest>=7.0.0,<9
+pytest-mock>=3.10.0,<4
+pytest-cov>=4.0.0,<6
+responses>=0.23.0,<1
+httpx>=0.26.0,<1
 
 # Web dashboard
-fastapi>=0.109.0
-uvicorn[standard]>=0.27.0
-jinja2>=3.1.0
-python-multipart>=0.0.6
+fastapi>=0.109.0,<1
+uvicorn[standard]>=0.27.0,<1
+jinja2>=3.1.0,<4
+python-multipart>=0.0.6,<1

@@ -1,6 +1,7 @@
 """웹 대시보드 서비스 레이어"""
 
 import logging
+import re
 from pathlib import Path
 from typing import Optional
 
@@ -93,7 +94,12 @@ def get_report_by_date(date_str: str, data_dir: Optional[Path] = None) -> Option
         리포트 객체 또는 None
     """
     data_dir = data_dir or DEFAULT_DATA_DIR
-    filepath = data_dir / f"report_{date_str}.json"
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_str):
+        return None
+
+    filepath = (data_dir / f"report_{date_str}.json").resolve()
+    if not str(filepath).startswith(str(data_dir.resolve())):
+        return None
 
     if not filepath.exists():
         return None

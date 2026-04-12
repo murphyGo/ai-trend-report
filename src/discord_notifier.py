@@ -50,7 +50,18 @@ class DiscordNotifier(BaseNotifier):
             webhook_url: Webhook URL (None이면 설정에서 로드)
         """
         self.config = config
-        self.webhook_url = webhook_url or config.discord.webhook_url
+        raw_url = webhook_url or config.discord.webhook_url
+        self.webhook_url = self._validate_url(raw_url) if raw_url else None
+
+    @staticmethod
+    def _validate_url(url: str) -> str:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        if parsed.scheme != "https":
+            raise ValueError(f"Webhook URL must use HTTPS, got {parsed.scheme}")
+        if "discord.com" not in parsed.netloc and "discordapp.com" not in parsed.netloc:
+            logger.warning("Webhook URL domain '%s' is not a known Discord domain", parsed.netloc)
+        return url
 
     def send_report(self, report: Report) -> bool:
         """리포트를 Discord로 전송

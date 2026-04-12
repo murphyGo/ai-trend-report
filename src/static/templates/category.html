@@ -22,7 +22,7 @@
         {% for article, date_str in articles %}
         <article class="article-card" data-audience="{{ article|audience_data }}">
             <h3>
-                <a href="{{ article.url }}" target="_blank" rel="noopener">
+                <a href="{{ article.url|safe_url }}" target="_blank" rel="noopener">
                     {{ article.title }}
                 </a>
             </h3>

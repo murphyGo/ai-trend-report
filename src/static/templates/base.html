@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}AI Report{% endblock %}</title>
     <link rel="stylesheet" href="{{ base_url }}/css/style.css">
-    <script>window.SITE_BASE_URL = "{{ base_url }}";</script>
+    <script>window.SITE_BASE_URL = {{ base_url | tojson }};</script>
     {% block head %}{% endblock %}
 </head>
 <body>
