@@ -17,7 +17,7 @@
 - **다채널 알림**: Slack Webhook, Discord Webhook, 이메일(SMTP) — 기사가 적은 날엔 "조용한 날" 배너
 - **GitHub Pages 정적 사이트** 자동 배포 (홈 / 리포트 아카이브 / 카테고리 / 소스 / 검색)
 - **GitHub Actions 스케줄** (매일 KST 09:00) + 수동 trigger
-- 병렬 수집, 캐시 기반 중복 제거, dry-run 모드, 로컬 FastAPI 대시보드
+- 병렬 수집, dry-run 모드, 로컬 FastAPI 대시보드
 
 ## 카테고리
 
@@ -117,7 +117,7 @@ export SITE_BASE_URL="/ai-trend-report"     # 정적 사이트 서브패스
 # 수집만 (기본 모드, API 키 불필요)
 python -m src.main                       # data/articles_YYYY-MM-DD.json 저장
 python -m src.main --parallel            # 병렬 수집
-python -m src.main --no-cache --limit 5  # 캐시 무시 + 5개만
+python -m src.main --limit 5             # 5개만 테스트
 
 # --use-api 모드 (전체 파이프라인, ANTHROPIC_API_KEY 필요)
 python -m src.main --use-api
@@ -144,10 +144,12 @@ ai-report/
 ├── src/
 │   ├── main.py             # CLI 진입점
 │   ├── config.py           # 설정 로더
-│   ├── models.py           # Article / Report / Category / Source
+│   ├── models.py           # Article / Report / Category / Source / Audience
 │   ├── data_io.py          # JSON I/O
-│   ├── cache.py            # 기사 중복 캐시
+│   ├── filters.py          # Recency + 크로스 리포트 중복 제거
+│   ├── constants.py        # 공유 상수
 │   ├── summarizer.py       # Anthropic API 요약 (--use-api)
+│   ├── notifier_base.py    # BaseNotifier ABC
 │   ├── slack_notifier.py   # Slack 알림
 │   ├── discord_notifier.py # Discord 알림
 │   ├── email_notifier.py   # 이메일 알림

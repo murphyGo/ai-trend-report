@@ -140,11 +140,13 @@ src/
 ├── __init__.py
 ├── main.py                   # CLI 진입점 (수집/요약/전송/대시보드/정적 사이트)
 ├── config.py                 # 설정 로더 (YAML + 환경 변수 + .env)
-├── models.py                 # Article / Report / Category (12) / Source (19)
+├── models.py                 # Article / Report / Category (12) / Source (19) / Audience (3)
 ├── data_io.py                # JSON 읽기/쓰기, 파일명 규칙
-├── cache.py                  # 기사 중복 캐시 (.article_cache.json, URL 해시)
+├── filters.py                # Recency + 크로스 리포트 중복 제거 (Phase 8)
+├── constants.py              # 공유 상수 (Phase 9.1)
 ├── summarizer.py             # Anthropic API 요약 (--use-api 경로)
 │
+├── notifier_base.py          # BaseNotifier ABC (Phase 9.1)
 ├── slack_notifier.py         # Slack Block Kit 메시지
 ├── discord_notifier.py       # Discord Webhook
 ├── email_notifier.py         # SMTP 이메일 (HTML 템플릿)
@@ -159,6 +161,7 @@ src/
 ├── static/
 │   ├── css/style.css         # 단일 스타일시트
 │   ├── js/search.js          # Fuse.js 검색 (window.SITE_BASE_URL 사용)
+│   ├── js/audience-filter.js # 독자 레벨 실시간 필터 (Phase 7)
 │   └── templates/
 │       ├── base.html         # 공통 레이아웃 + 네비 (Home/Categories/Sources/Search)
 │       ├── index.html        # 홈 대시보드
@@ -167,7 +170,8 @@ src/
 │       ├── category.html     # /categories/{NAME}.html
 │       ├── sources_index.html     # /sources/ 그리드 인덱스
 │       ├── source.html       # /sources/{NAME}.html
-│       └── search.html       # 검색 페이지
+│       ├── search.html       # 검색 페이지
+│       └── audience_filter.html   # 독자 레벨 필터 바 파셜 (Phase 7)
 │
 ├── utils/                    # retry, logging 헬퍼
 │   ├── retry.py
@@ -211,7 +215,7 @@ data/
 main.py
    │
    ├── config.py
-   ├── cache.py
+   ├── filters.py
    ├── data_io.py ──▶ models.py
    │
    ├── collectors/
@@ -279,14 +283,16 @@ class Summarizer:
 프로덕션 경로는 Claude Code CLI가 `daily-report.yml` 프롬프트 안에서 처리하며
 이 모듈을 호출하지 않음.
 
-### 5.4 Notifiers
+### 5.4 Notifiers (Phase 9.1 리팩터)
 
 ```python
+class BaseNotifier(ABC):   # 공통 인터페이스 + is_quiet_day() 헬퍼
 class SlackNotifier:       # Block Kit 리치 메시지
 class DiscordNotifier:     # Webhook + Embed
 class EmailNotifier:       # SMTP + HTML 템플릿, 다중 수신자
 ```
 
+`BaseNotifier`를 상속하며, 공유 상수는 `constants.py`에 분리.
 셋 다 `Config`에서 웹훅/SMTP 정보 로드. 설정된 채널만 활성화.
 
 ### 5.5 StaticSiteGenerator
@@ -397,7 +403,7 @@ def get_article_audience(article: Article) -> list[Audience]:
 
 ```yaml
 anthropic:
-  model: claude-sonnet-4-20250514  # --use-api 전용
+  model: claude-sonnet-4-6  # --use-api 전용
 
 collectors:
   arxiv:
@@ -407,6 +413,7 @@ collectors:
     enabled: true
   anthropic_blog:
     enabled: true
+  disabled_sources: []  # Source enum 이름으로 비활성화 (Phase 9.2)
 
 slack:
   webhook_url: ${SLACK_WEBHOOK_URL}
@@ -464,7 +471,7 @@ logging:
 
 ### 새 알림 채널
 
-1. `BaseNotifier` 패턴은 아직 추상화되지 않음. 신규 notifier 파일 생성
+1. `BaseNotifier(ABC)`를 상속하는 신규 notifier 파일 생성 (`src/notifier_base.py` 참고)
 2. `Config`에 섹션 추가, `main.py:run_send_only()`에 분기
 3. GitHub Actions env 주입
 
@@ -535,3 +542,4 @@ logging:
 | 2026-04-11 | 2.0 | Phase 6 반영 — 17 소스 / RSSCollector / Claude 상위 20 랭킹 / 카테고리·소스 브라우징 / 홈 대시보드 / GitHub Actions + Pages 배포 구조 |
 | 2026-04-11 | 2.1 | Phase 7 반영 — Audience enum, 하이브리드 태깅, 전역 필터 바, 카드 미니 통계 (Section 5.7 신설) |
 | 2026-04-12 | 2.2 | Phase 8 반영 — 데이터 흐름 다이어그램에 Recency + Dedup 단계 추가, DEBT-003 resolved |
+| 2026-04-12 | 2.3 | Phase 9 반영 — BaseNotifier ABC + constants.py (9.1), Config disabled_sources + validate 분리 (9.2), 코드 품질 정리 (9.3), HF Papers URL 변환 (9.4). cache.py→filters.py 정정, audience_filter.html/audience-filter.js 반영 |
