@@ -35,6 +35,8 @@ env/
 # Config (contains secrets)
 config.yaml
 .env
+.envrc
+SECRETS.local.md
 
 # Logs
 *.log
