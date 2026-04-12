@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Optional
 
 from .config import Config
-from .models import Article, Report
+from .models import Article, Report, Source
 from .collectors import (
     ArxivCollector,
     GoogleBlogCollector,
@@ -53,49 +53,74 @@ from .utils.logging import setup_logging
 logger = logging.getLogger(__name__)
 
 
+# Phase 9.2 — 수집기 레지스트리. Source enum → (CollectorClass, kwargs) 매핑.
+# get_enabled_collectors()에서 disabled_sources와 비교해 활성화 여부 결정.
+# 새 수집기 추가 시 여기에 한 줄만 추가하면 config.yaml 제어가 자동 적용됨.
+_COLLECTOR_REGISTRY: list[tuple] = [
+    # (Source enum, CollectorClass, extra_kwargs_factory)
+    # extra_kwargs_factory: lambda config → dict (config-dependent kwargs가 필요한 경우)
+    (Source.ARXIV, ArxivCollector, lambda c: {"categories": c.collectors.arxiv.categories}),
+    (Source.GOOGLE_BLOG, GoogleBlogCollector, None),
+    (Source.ANTHROPIC_BLOG, AnthropicBlogCollector, None),
+    (Source.OPENAI_BLOG, OpenAIBlogCollector, None),
+    (Source.HUGGINGFACE_BLOG, HuggingFaceBlogCollector, None),
+    (Source.KOREAN_NEWS, KoreanNewsCollector, None),
+    (Source.MICROSOFT_RESEARCH, MicrosoftResearchCollector, None),
+    (Source.NVIDIA_BLOG, NvidiaDeveloperBlogCollector, None),
+    (Source.MARKTECHPOST, MarkTechPostCollector, None),
+    (Source.BAIR_BLOG, BAIRBlogCollector, None),
+    (Source.STANFORD_AI, StanfordAILabCollector, None),
+    (Source.TECHCRUNCH_AI, TechCrunchAICollector, None),
+    (Source.VENTUREBEAT_AI, VentureBeatAICollector, None),
+    (Source.HF_PAPERS, HFPapersCollector, None),
+    (Source.MIT_TECH_REVIEW, MITTechReviewCollector, None),
+    # Meta AI / LG AI Research: 사이트 정책상 미사용 (DEBT-001/002).
+    # disabled_sources에 넣지 않아도 레지스트리에 포함돼 있으면
+    # config.yaml에서 disabled_sources 목록에서 빼면 자동 활성화.
+    # 단, 현재 코드상으로 접속이 안 되므로 기본 비활성 처리.
+    (Source.META_AI_BLOG, MetaAIBlogCollector, None),
+    (Source.LG_AI_RESEARCH, LGAIResearchCollector, None),
+    (Source.NAVER_D2, NaverD2Collector, None),
+    (Source.KAKAO_TECH, KakaoTechCollector, None),
+]
+
+# 기본 비활성 소스 — DEBT-001/002에 해당. config.yaml에서 별도 설정 없으면 이 값 적용.
+_DEFAULT_DISABLED = {"meta_ai", "lg_ai_research"}
+
+
 def get_enabled_collectors(config: Config) -> list:
-    """활성화된 수집기 목록 반환"""
+    """활성화된 수집기 목록 반환 (Phase 9.2 레지스트리 기반)
+
+    비활성화 판단 순서:
+    1. `config.collectors.disabled_sources` 리스트 (사용자 명시)
+    2. 기존 `config.collectors.{arxiv,google_blog,anthropic_blog}.enabled` 플래그 (하위 호환)
+    3. `_DEFAULT_DISABLED` (DEBT-001/002 기본 비활성)
+    """
+    # 1. 명시적 disabled_sources
+    disabled: set[str] = set(config.collectors.disabled_sources)
+
+    # 2. 하위 호환: 기존 per-source enabled 플래그 (False면 disabled에 추가)
+    if not config.collectors.arxiv.enabled:
+        disabled.add(Source.ARXIV.value)
+    if not config.collectors.google_blog.enabled:
+        disabled.add(Source.GOOGLE_BLOG.value)
+    if not config.collectors.anthropic_blog.enabled:
+        disabled.add(Source.ANTHROPIC_BLOG.value)
+
+    # 3. 기본 비활성 (disabled_sources에 이미 등록된 것은 제외하고 default만 추가)
+    # 사용자가 config.yaml에서 disabled_sources를 명시하지 않으면 default 적용
+    if not config.collectors.disabled_sources:
+        disabled |= _DEFAULT_DISABLED
+
     collectors = []
+    for source, cls, kwargs_factory in _COLLECTOR_REGISTRY:
+        if source.value in disabled:
+            logger.debug(f"Skipping disabled source: {source.value}")
+            continue
+        kwargs = kwargs_factory(config) if kwargs_factory else {}
+        collectors.append(cls(**kwargs))
 
-    if config.collectors.arxiv.enabled:
-        collectors.append(ArxivCollector(
-            categories=config.collectors.arxiv.categories
-        ))
-
-    if config.collectors.google_blog.enabled:
-        collectors.append(GoogleBlogCollector())
-
-    if config.collectors.anthropic_blog.enabled:
-        collectors.append(AnthropicBlogCollector())
-
-    # 기존 추가 수집기들 (기본 활성화)
-    collectors.append(OpenAIBlogCollector())
-    collectors.append(HuggingFaceBlogCollector())
-    collectors.append(KoreanNewsCollector())
-
-    # Tier 1: 공식 RSS 소스 (안정적)
-    collectors.append(MicrosoftResearchCollector())
-    collectors.append(NvidiaDeveloperBlogCollector())
-    collectors.append(MarkTechPostCollector())
-    collectors.append(BAIRBlogCollector())
-    collectors.append(StanfordAILabCollector())
-    collectors.append(TechCrunchAICollector())
-    collectors.append(VentureBeatAICollector())
-
-    # Tier 2: HF Papers + HTML 스크래핑
-    collectors.append(HFPapersCollector())
-    collectors.append(MITTechReviewCollector())
-    # Meta AI Blog: ai.meta.com이 일반 HTTP 클라이언트에 400 응답 (강력 봇 차단).
-    # 헤드리스 브라우저(Playwright 등) 없이는 접근 불가능. 향후 우회법 발견 시 활성화.
-    # collectors.append(MetaAIBlogCollector())
-
-    # Tier 3: 한국 소스
-    collectors.append(NaverD2Collector())
-    collectors.append(KakaoTechCollector())
-    # LG AI Research: Nuxt.js SPA로 SSR HTML에 블로그 데이터 없음.
-    # 공개 API 엔드포인트 미발견. 헤드리스 브라우저 필요. 향후 활성화.
-    # collectors.append(LGAIResearchCollector())
-
+    logger.info(f"Enabled collectors: {len(collectors)} / {len(_COLLECTOR_REGISTRY)}")
     return collectors
 
 
@@ -665,7 +690,7 @@ Examples:
         # API 모드: 기존 전체 파이프라인
         # 설정 검증 (API 키 필요)
         if not args.dry_run:
-            errors = config.validate()
+            errors = config.validate_api_mode()
             if errors:
                 for error in errors:
                     logger.error(error)

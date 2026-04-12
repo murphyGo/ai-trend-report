@@ -41,6 +41,19 @@ collectors:
   anthropic_blog:
     enabled: true
 
+  # 소스 비활성화 (Phase 9.2)
+  # Source enum value를 나열하면 해당 수집기가 꺼집니다.
+  # 빈 리스트면 기본값(meta_ai, lg_ai_research)만 비활성화.
+  # 모든 Source enum value: arxiv, google, anthropic, openai, huggingface,
+  #   korean, microsoft_research, nvidia, marktechpost, bair, stanford_ai,
+  #   techcrunch, venturebeat, hf_papers, meta_ai, mit_tech_review,
+  #   naver_d2, kakao_tech, lg_ai_research
+  # disabled_sources:
+  #   - techcrunch
+  #   - venturebeat
+  #   - meta_ai
+  #   - lg_ai_research
+
 # 로깅 설정
 logging:
   # 로그 레벨: DEBUG, INFO, WARNING, ERROR

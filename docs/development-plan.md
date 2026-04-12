@@ -586,10 +586,14 @@ Phase 8 전수 리뷰에서 발견된 나머지 16건을 주제별로 4개 sub-p
 - [x] 3개 notifier가 `BaseNotifier` 상속, `is_quiet_day()` 호출로 통일 (M7)
 - [x] 단위 테스트 15개 (`tests/test_notifier_base.py`) — 상수 검증, ABC, 상속, 로컬 상수 미존재 회귀
 
-### 9.2 Config 확장 (사용자 제어권)
-- [ ] `CollectorsConfig`를 17개 소스 모두 지원하도록 재설계 (M5)
-- [ ] `validate()`의 모드 인지 (`--use-api` 전용으로 명확화, M4)
-- [ ] Slack 필수 요구 완화 — 다채널 중 최소 1개만 검증 (L2)
+### 9.2 Config 확장 (사용자 제어권) — 완료
+- [x] `CollectorsConfig.disabled_sources: list[str]` 필드 추가 + `_COLLECTOR_REGISTRY` 기반 `get_enabled_collectors` 재작성 (M5)
+- [x] `validate()` → `validate_api_mode()` 리팩터 (API 키만 검증, Slack 의존 제거) (M4)
+- [x] `validate_notifications()` 신설 — Slack/Discord/Email 중 최소 1개 검증 (L2)
+- [x] 기존 `arxiv.enabled` / `google_blog.enabled` / `anthropic_blog.enabled` 하위 호환 유지
+- [x] `_DEFAULT_DISABLED = {"meta_ai", "lg_ai_research"}` — DEBT-001/002 기본 비활성
+- [x] `config.example.yaml`에 `disabled_sources` 예시 + 전체 Source enum value 목록 주석
+- [x] 테스트: `validate_api_mode`/`validate_notifications` 5개 + `disabled_sources` 기본값 1개
 
 ### 9.3 코드 품질 정리
 - [ ] `static_generator.py`의 `print()` → `logger` 교체 (M1)
@@ -671,3 +675,4 @@ localStorage의 값이 재적용돼 동일 상태 복귀. 사용자는 사실상
 | 2026-04-12 | 8.0 | Phase 8 완료 — Recency 필터(2일), 크로스 리포트 dedup(7개 리포트), arxiv pubDate 파싱, ArticleCache 제거, Quiet-day 알림, 레거시 리포트 삭제 |
 | 2026-04-12 | 8.6 | Phase 8.6 Hotfix — search.js XSS 차단, email html escape/Bcc/plain/sender fallback, search 결과에 audience 필터 통합. Phase 9 계획 등록 |
 | 2026-04-12 | 9.1 | Phase 9.1 Notifier 리팩터 완료 — BaseNotifier ABC + constants.py (QUIET_DAY_THRESHOLD, CATEGORY_ORDER) + 15 테스트 |
+| 2026-04-12 | 9.2 | Phase 9.2 Config 확장 완료 — disabled_sources + _COLLECTOR_REGISTRY + validate_api_mode/validate_notifications + 6 테스트 |

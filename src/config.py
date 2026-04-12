@@ -37,12 +37,19 @@ class CollectorConfig:
 
 @dataclass
 class CollectorsConfig:
-    """전체 수집기 설정"""
+    """전체 수집기 설정
+
+    Phase 9.2: `disabled_sources` 필드 추가 — Source enum value(예: "techcrunch",
+    "venturebeat")를 나열하면 해당 수집기가 비활성화됨.
+    기존 `arxiv.enabled` / `google_blog.enabled` / `anthropic_blog.enabled` 도
+    하위 호환으로 유지.
+    """
     arxiv: CollectorConfig = field(default_factory=lambda: CollectorConfig(
         categories=["cs.AI", "cs.LG", "cs.CL"]
     ))
     google_blog: CollectorConfig = field(default_factory=CollectorConfig)
     anthropic_blog: CollectorConfig = field(default_factory=CollectorConfig)
+    disabled_sources: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -123,6 +130,9 @@ class Config:
                     config.collectors.google_blog.enabled = collectors_data["google_blog"].get("enabled", True)
                 if "anthropic_blog" in collectors_data:
                     config.collectors.anthropic_blog.enabled = collectors_data["anthropic_blog"].get("enabled", True)
+                # Phase 9.2 — 소스 비활성화 리스트 (Source enum value 기준)
+                if "disabled_sources" in collectors_data:
+                    config.collectors.disabled_sources = collectors_data["disabled_sources"] or []
 
             # 로깅 설정
             if "logging" in data:
@@ -173,11 +183,41 @@ class Config:
             return os.getenv(env_var, "")
         return value
 
-    def validate(self) -> list[str]:
-        """설정 유효성 검사"""
+    def validate_api_mode(self) -> list[str]:
+        """--use-api 모드 전용 유효성 검사 (Phase 9.2)
+
+        Claude Code CLI 모드(기본)에서는 API 키가 불필요하므로
+        이 메서드는 `--use-api` 경로에서만 호출해야 함.
+        """
         errors = []
         if not self.anthropic.api_key:
             errors.append("ANTHROPIC_API_KEY가 설정되지 않았습니다.")
-        if not self.slack.webhook_url:
-            errors.append("SLACK_WEBHOOK_URL이 설정되지 않았습니다.")
         return errors
+
+    def validate_notifications(self) -> list[str]:
+        """알림 채널 유효성 검사 — 최소 1개 채널 설정 필요 (Phase 9.2)
+
+        Slack/Discord/Email 중 하나라도 설정돼 있으면 통과.
+        이전엔 Slack을 필수로 요구했으나, 다채널 알림 지원(Phase 3.3~3.4)
+        이후 어느 채널이든 1개면 충분.
+        """
+        has_slack = bool(self.slack.webhook_url)
+        has_discord = bool(self.discord.webhook_url)
+        has_email = bool(
+            self.email.username and self.email.password and self.email.recipients
+        )
+        if not (has_slack or has_discord or has_email):
+            return [
+                "알림 채널이 설정되지 않았습니다. "
+                "Slack(SLACK_WEBHOOK_URL), Discord(DISCORD_WEBHOOK_URL), "
+                "또는 Email(EMAIL_USERNAME + EMAIL_PASSWORD + EMAIL_RECIPIENTS) 중 "
+                "최소 1개를 설정해주세요."
+            ]
+        return []
+
+    def validate(self) -> list[str]:
+        """하위 호환용 — validate_api_mode의 alias.
+
+        이전엔 API 키 + Slack 모두 필수 검증. Phase 9.2에서 Slack 필수 요구 제거.
+        """
+        return self.validate_api_mode()

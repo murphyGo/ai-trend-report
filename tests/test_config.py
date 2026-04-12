@@ -54,21 +54,56 @@ class TestConfig:
         errors = config.validate()
         assert any("ANTHROPIC_API_KEY" in e for e in errors)
 
-    def test_config_validate_missing_webhook(self):
-        """Webhook URL 누락 검증"""
+    def test_config_validate_api_mode_no_slack_check(self):
+        """Phase 9.2: validate_api_mode는 Slack 설정을 검사하지 않음"""
         config = Config()
         config.anthropic.api_key = "test-key"
         config.slack.webhook_url = ""
-        errors = config.validate()
-        assert any("SLACK_WEBHOOK_URL" in e for e in errors)
+        errors = config.validate_api_mode()
+        assert len(errors) == 0  # API 키만 있으면 통과
 
     def test_config_validate_all_valid(self):
         """모든 설정 유효"""
         config = Config()
         config.anthropic.api_key = "test-key"
         config.slack.webhook_url = "https://hooks.slack.com/test"
-        errors = config.validate()
+        errors = config.validate_api_mode()
         assert len(errors) == 0
+
+    def test_config_validate_notifications_slack_only(self):
+        """Slack만 설정해도 알림 검증 통과"""
+        config = Config()
+        config.slack.webhook_url = "https://hooks.slack.com/test"
+        errors = config.validate_notifications()
+        assert len(errors) == 0
+
+    def test_config_validate_notifications_discord_only(self):
+        """Discord만 설정해도 알림 검증 통과"""
+        config = Config()
+        config.discord.webhook_url = "https://discord.com/api/webhooks/test"
+        errors = config.validate_notifications()
+        assert len(errors) == 0
+
+    def test_config_validate_notifications_email_only(self):
+        """Email만 설정해도 알림 검증 통과"""
+        config = Config()
+        config.email.username = "user@test.com"
+        config.email.password = "pass"
+        config.email.recipients = ["a@test.com"]
+        errors = config.validate_notifications()
+        assert len(errors) == 0
+
+    def test_config_validate_notifications_none_fails(self):
+        """아무 채널도 없으면 검증 실패"""
+        config = Config()
+        errors = config.validate_notifications()
+        assert len(errors) == 1
+        assert "최소 1개" in errors[0]
+
+    def test_config_disabled_sources(self):
+        """disabled_sources 필드 기본값은 빈 리스트"""
+        config = Config()
+        assert config.collectors.disabled_sources == []
 
     def test_config_load_with_env_vars(self, tmp_path, monkeypatch):
         """환경 변수에서 설정 로드"""
