@@ -595,15 +595,15 @@ Phase 8 전수 리뷰에서 발견된 나머지 16건을 주제별로 4개 sub-p
 - [x] `config.example.yaml`에 `disabled_sources` 예시 + 전체 Source enum value 목록 주석
 - [x] 테스트: `validate_api_mode`/`validate_notifications` 5개 + `disabled_sources` 기본값 1개
 
-### 9.3 코드 품질 정리
-- [ ] `static_generator.py`의 `print()` → `logger` 교체 (M1)
-- [ ] `web/service.py`의 검색 O(N*M) → lru_cache 또는 인메모리 인덱스 (M2)
-- [ ] `web/service.py` 미사용 `datetime` import 제거 (M3)
-- [ ] `deploy-pages.yml`에 `notify-on-failure` job 추가 (M8)
-- [ ] `filter_by_recency` 로그 메시지 명료화 (M9)
-- [ ] `rss_base.py` timestamp 변환 명시적 UTC 처리 (L1)
-- [ ] `config.py` 기본 모델 최신화 (L4)
-- [ ] `test_web.py` 복구 또는 정식 제거 (L6)
+### 9.3 코드 품질 정리 — 완료
+- [x] `static_generator.py`의 `print()` 3건 → `logger.info/warning` 교체 (M1)
+- [x] `web/service.py`의 검색 → `_cached_load_report` 인메모리 캐시 (M2)
+- [x] `web/service.py` 미사용 `datetime`, `Article` import 제거 (M3)
+- [x] `deploy-pages.yml`에 `notify-on-failure` job 추가 (M8)
+- [x] `main.py` `filter_by_recency` 로그 메시지 명료화 (M9)
+- [x] `rss_base.py` `mktime+fromtimestamp` → `datetime(*parsed[:6], tzinfo=utc)` 명시적 UTC (L1)
+- [x] `config.py` 기본 모델 `claude-sonnet-4-20250514` → `claude-sonnet-4-6` (L4)
+- [x] `test_web.py` 23개 테스트 all passing 확인 → `--ignore` 없이 전체 suite 포함 (L6)
 
 ### 9.4 기존 DEBT 해소
 - [ ] DEBT-001 Meta AI Blog — Playwright 도입 또는 대체 소스 (L5)
@@ -676,3 +676,4 @@ localStorage의 값이 재적용돼 동일 상태 복귀. 사용자는 사실상
 | 2026-04-12 | 8.6 | Phase 8.6 Hotfix — search.js XSS 차단, email html escape/Bcc/plain/sender fallback, search 결과에 audience 필터 통합. Phase 9 계획 등록 |
 | 2026-04-12 | 9.1 | Phase 9.1 Notifier 리팩터 완료 — BaseNotifier ABC + constants.py (QUIET_DAY_THRESHOLD, CATEGORY_ORDER) + 15 테스트 |
 | 2026-04-12 | 9.2 | Phase 9.2 Config 확장 완료 — disabled_sources + _COLLECTOR_REGISTRY + validate_api_mode/validate_notifications + 6 테스트 |
+| 2026-04-12 | 9.3 | Phase 9.3 코드 품질 정리 완료 — print→logger, 캐시, UTC 명시, 모델 최신화, deploy notify, test_web 복구. 8건 일괄 |

@@ -1,15 +1,26 @@
 """웹 대시보드 서비스 레이어"""
 
 import logging
-from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from ..models import Report, Article, Category
+from ..models import Report, Category
 from ..data_io import load_report, DEFAULT_DATA_DIR
 
 
 logger = logging.getLogger(__name__)
+
+# Phase 9.3 (M2) — 리포트 인메모리 캐시. 로컬 대시보드는 단일 프로세스라
+# 디스크 반복 읽기 대신 메모리에 캐시해 검색 O(N*M) 문제를 완화.
+_report_cache: dict[str, Report] = {}
+
+
+def _cached_load_report(filepath: Path) -> Report:
+    """load_report의 캐싱 래퍼. 같은 파일은 한 번만 파싱."""
+    key = str(filepath)
+    if key not in _report_cache:
+        _report_cache[key] = load_report(filepath)
+    return _report_cache[key]
 
 
 def list_reports(data_dir: Optional[Path] = None) -> list[dict]:
@@ -28,7 +39,7 @@ def list_reports(data_dir: Optional[Path] = None) -> list[dict]:
     reports = []
     for filepath in sorted(data_dir.glob("report_*.json"), reverse=True):
         try:
-            report = load_report(filepath)
+            report = _cached_load_report(filepath)
             # 파일명에서 날짜 추출 (report_YYYY-MM-DD.json)
             date_str = filepath.stem.replace("report_", "")
             reports.append({
@@ -61,7 +72,7 @@ def get_report(report_id: str, data_dir: Optional[Path] = None) -> Optional[Repo
 
     for filepath in data_dir.glob("report_*.json"):
         try:
-            report = load_report(filepath)
+            report = _cached_load_report(filepath)
             if report.id == report_id:
                 return report
         except Exception as e:
@@ -88,7 +99,7 @@ def get_report_by_date(date_str: str, data_dir: Optional[Path] = None) -> Option
         return None
 
     try:
-        return load_report(filepath)
+        return _cached_load_report(filepath)
     except Exception as e:
         logger.warning(f"Failed to load report {filepath}: {e}")
         return None
@@ -126,7 +137,7 @@ def search_articles(
 
     for filepath in sorted(data_dir.glob("report_*.json"), reverse=True):
         try:
-            report = load_report(filepath)
+            report = _cached_load_report(filepath)
             date_str = filepath.stem.replace("report_", "")
 
             for article in report.articles:

@@ -300,8 +300,9 @@ def run_collect_only(
     logger.info(f"[2/4] Applying recency filter ({days} days)...")
     articles, dropped_old, unknown_kept = filter_by_recency(articles, days)
     logger.info(
-        f"Recency: kept {len(articles)} "
-        f"(dropped {dropped_old} old, kept {unknown_kept} with unknown date)"
+        f"Recency: {len(articles)} passed "
+        f"(dropped {dropped_old} older than {days}d"
+        f"{f', {unknown_kept} without date included as fallback' if unknown_kept else ''})"
     )
 
     # 3. 크로스 리포트 중복 제거 (Phase 8.3)

@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 class AnthropicConfig:
     """Anthropic API 설정"""
     api_key: str = ""
-    model: str = "claude-sonnet-4-20250514"
+    model: str = "claude-sonnet-4-6"
 
 
 @dataclass

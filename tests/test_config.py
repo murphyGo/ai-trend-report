@@ -13,7 +13,7 @@ class TestConfig:
     def test_config_default_values(self):
         """기본 설정값 확인"""
         config = Config()
-        assert config.anthropic.model == "claude-sonnet-4-20250514"
+        assert config.anthropic.model == "claude-sonnet-4-6"
         assert config.anthropic.api_key == ""
         assert config.slack.webhook_url == ""
         assert config.logging.level == "INFO"
@@ -155,7 +155,7 @@ logging:
         config = Config.load(config_file)
 
         # 기본값 확인
-        assert config.anthropic.model == "claude-sonnet-4-20250514"
+        assert config.anthropic.model == "claude-sonnet-4-6"
         assert config.logging.level == "INFO"
 
 

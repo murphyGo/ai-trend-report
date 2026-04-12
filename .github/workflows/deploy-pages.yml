@@ -106,3 +106,31 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Phase 9.3 (M8) — 배포 실패 시 Slack 알림
+  notify-on-failure:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    if: failure()
+
+    steps:
+      - name: Send failure notification to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK_URL" ]; then
+            curl -X POST -H 'Content-type: application/json' \
+              --data '{
+                "text": "⚠️ GitHub Pages 배포 실패",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "⚠️ *GitHub Pages 배포 실패*\n\n정적 사이트 빌드 또는 배포 중 오류가 발생했습니다.\n\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|GitHub Actions에서 확인>"
+                    }
+                  }
+                ]
+              }' \
+              "$SLACK_WEBHOOK_URL"
+          fi

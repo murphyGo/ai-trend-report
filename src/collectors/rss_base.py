@@ -6,8 +6,7 @@ feedparser를 사용하여 표준 RSS 2.0 / Atom 피드를 파싱합니다.
 
 import logging
 import re
-from datetime import datetime
-from time import mktime
+from datetime import datetime, timezone
 from typing import Optional
 
 import feedparser
@@ -125,13 +124,19 @@ class RSSCollector(BaseCollector):
 
     @staticmethod
     def _extract_date(entry) -> Optional[datetime]:
-        """feedparser entry에서 발행 일시 추출"""
-        # feedparser가 파싱해둔 struct_time 우선 사용
+        """feedparser entry에서 발행 일시 추출
+
+        Phase 9.3 (L1): feedparser의 `published_parsed`는 UTC struct_time.
+        이전엔 `mktime` + `fromtimestamp` 이중 변환으로 "우연히" 올바른 값이
+        나왔지만 가독성이 매우 낮았음. `datetime(*fields, tzinfo=utc)`로
+        명시적 UTC 처리로 변경.
+        """
+        # feedparser가 파싱해둔 struct_time 우선 사용 (UTC로 정규화됨)
         for attr in ("published_parsed", "updated_parsed", "created_parsed"):
             parsed = getattr(entry, attr, None)
             if parsed:
                 try:
-                    return datetime.fromtimestamp(mktime(parsed))
+                    return datetime(*parsed[:6], tzinfo=timezone.utc)
                 except (TypeError, ValueError, OverflowError):
                     continue
 

@@ -4,6 +4,7 @@ GitHub Pages 배포를 위한 정적 HTML 파일 생성
 """
 
 import json
+import logging
 import os
 import shutil
 from datetime import datetime
@@ -14,6 +15,9 @@ from jinja2 import Environment, FileSystemLoader
 
 from .models import Report, Article, Category, Source, Audience
 from .data_io import load_report, list_report_files
+
+
+logger = logging.getLogger(__name__)
 
 
 # 기본 경로
@@ -279,7 +283,7 @@ class StaticSiteGenerator:
         reports = self._load_all_reports()
 
         if not reports:
-            print("No reports found")
+            logger.warning("No reports found in %s", self.data_dir)
             return
 
         # 정적 파일 복사
@@ -296,7 +300,7 @@ class StaticSiteGenerator:
         self._generate_reports_json(reports)
         self._generate_search_index(reports)
 
-        print(f"Static site generated: {self.output_dir}")
+        logger.info("Static site generated: %s", self.output_dir)
 
     def _prepare_output_dir(self) -> None:
         """출력 디렉토리 준비"""
@@ -323,7 +327,7 @@ class StaticSiteGenerator:
                 if report:
                     reports.append(report)
             except Exception as e:
-                print(f"Failed to load {filepath}: {e}")
+                logger.warning("Failed to load %s: %s", filepath, e)
 
         # 최신순 정렬
         reports.sort(key=lambda r: r.created_at, reverse=True)
