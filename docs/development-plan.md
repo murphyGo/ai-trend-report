@@ -605,10 +605,10 @@ Phase 8 전수 리뷰에서 발견된 나머지 16건을 주제별로 4개 sub-p
 - [x] `config.py` 기본 모델 `claude-sonnet-4-20250514` → `claude-sonnet-4-6` (L4)
 - [x] `test_web.py` 23개 테스트 all passing 확인 → `--ignore` 없이 전체 suite 포함 (L6)
 
-### 9.4 기존 DEBT 해소
-- [ ] DEBT-001 Meta AI Blog — Playwright 도입 또는 대체 소스 (L5)
-- [ ] DEBT-002 LG AI Research — 동일 (L5)
-- [ ] DEBT-004 HF Papers URL — Takara TLDR → HF/arxiv 변환 (L5)
+### 9.4 기존 DEBT 해소 — 부분 완료
+- [x] DEBT-004 HF Papers URL — `_normalize_hf_url()` 추���, `tldr.takara.ai/p/{id}` → `huggingface.co/papers/{id}` 변환
+- [ ] DEBT-001 Meta AI Blog — Playwright 도입 또는 대체 소스 — *deferred (헤드리스 브라우저 의존성 의사결정 필요)*
+- [ ] DEBT-002 LG AI Research — 동일 — *deferred*
 
 ---
 
@@ -677,3 +677,4 @@ localStorage의 값이 재적용돼 동일 상태 복귀. 사용자는 사실상
 | 2026-04-12 | 9.1 | Phase 9.1 Notifier 리팩터 완료 — BaseNotifier ABC + constants.py (QUIET_DAY_THRESHOLD, CATEGORY_ORDER) + 15 테스트 |
 | 2026-04-12 | 9.2 | Phase 9.2 Config 확장 완료 — disabled_sources + _COLLECTOR_REGISTRY + validate_api_mode/validate_notifications + 6 테스트 |
 | 2026-04-12 | 9.3 | Phase 9.3 코드 품질 정리 완료 — print→logger, 캐시, UTC 명시, 모델 최신화, deploy notify, test_web 복구. 8건 일괄 |
+| 2026-04-12 | 9.4 | Phase 9.4 DEBT-004 해소 (HF Papers URL 변환). DEBT-001/002는 Playwright 필요해 deferred |
