@@ -1,0 +1,279 @@
+{
+  "id": "8de54ff1-8100-46c9-999b-3c8e66a99bff",
+  "created_at": "2026-04-22T02:35:28.522166",
+  "articles": [
+    {
+      "id": "ace994e6-365b-4ed1-b0c2-a21aa3d593a0",
+      "title": "ChatGPT’s new Images 2.0 model is surprisingly good at generating text",
+      "url": "https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/",
+      "source": "techcrunch",
+      "content": "ChatGPT Images 2.0, the newest image-generation model from OpenAI, shows just how much AI capabilities have evolved over the last few years.",
+      "published_at": "2026-04-21T19:00:00+00:00",
+      "summary": "OpenAI가 ChatGPT에 새로운 이미지 생성 모델인 Images 2.0을 출시했다. 기존 모델 대비 텍스트 렌더링 능력이 크게 향상되어 포스터·슬라이드·도표 등 텍스트가 포함된 이미지를 훨씬 정확하게 생성한다. 멀티모달 창작 도구로서의 완성도가 높아졌으며, 디자이너와 콘텐츠 제작자의 워크플로우를 실질적으로 변화시킬 것으로 평가된다. ChatGPT 유료 및 무료 사용자 모두에게 순차적으로 제공될 예정이다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0864c5e4-dce5-4fab-8813-a78dde20d06b",
+      "title": "SpaceX is working with Cursor and has an option to buy the startup for $60B",
+      "url": "https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/",
+      "source": "techcrunch",
+      "content": "The move could shore up weaknesses at each company, but it also reveals them. Neither Cursor nor xAI has proprietary models that can match the leading offerings from Anthropic and OpenAI — the same companies now competing directly with Cursor for the developer market.",
+      "published_at": "2026-04-21T22:58:22+00:00",
+      "summary": "SpaceX가 AI 코딩 도구 스타트업 Cursor와 전략적 협력을 맺고 600억 달러(약 82조 원) 규모의 인수 옵션 계약을 체결한 것으로 알려졌다. Cursor는 AI 기반 코드 편집기 시장에서 빠르게 성장하고 있으나, Anthropic·OpenAI 같은 프론티어 모델을 자체 보유하지 못한 약점이 있다. SpaceX와 일론 머스크의 xAI 생태계가 결합될 경우 AI 개발 도구 시장에 새로운 경쟁 구도가 형성될 수 있다. 이번 딜은 AI 스타트업 밸류에이션 고공행진과 빅테크의 개발자 도구 시장 장악 경쟁을 상징적으로 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c044f005-9271-4dcb-bd65-e350dff96efa",
+      "title": "Unauthorized group has gained access to Anthropic’s exclusive cyber tool Mythos, report claims",
+      "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/",
+      "source": "techcrunch",
+      "content": "Anthropic told TechCrunch it is investigating the claims, but maintains that there is no evidence that its systems have been impacted.",
+      "published_at": "2026-04-21T23:26:45+00:00",
+      "summary": "Anthropic의 사이버보안 특화 AI 모델 Mythos에 대한 무단 접근이 발생했다는 보고가 나왔다. 앤트로픽은 시스템 침해 증거는 없다고 밝혔으나 현재 조사 중이라고 확인했다. Mythos는 주요 정부·방산 기관에만 제한 배포되는 사이버 위협 분석 특화 모델로, 미승인 집단의 접근은 AI 보안 인프라에 대한 심각한 위협 신호다. 이번 사건은 고위험 AI 시스템의 접근 통제와 공급망 보안 중요성을 다시 한번 부각시킨다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c908e603-bdc7-47df-841b-c3873c69736f",
+      "title": "Sam Altman throws shade at Anthropic’s cyber model, Mythos: ‘fear-based marketing’",
+      "url": "https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/",
+      "source": "techcrunch",
+      "content": "This week, during a podcast appearance, OpenAI CEO Sam Altman called out his competitor's new cybersecurity model, noting that the company was using fear to make its product sound more impressive than it actually is.",
+      "published_at": "2026-04-21T18:51:52+00:00",
+      "summary": "OpenAI CEO 샘 알트먼이 팟캐스트 출연에서 앤트로픽의 사이버보안 모델 Mythos를 \"공포 기반 마케팅\"이라고 직접 비판했다. 알트먼은 Mythos의 실제 기술력보다 위험성 부각에 초점을 맞춘 마케팅 전략이 업계를 오도할 수 있다고 주장했다. 이는 OpenAI와 Anthropic 간 AI 거버넌스·안전성 담론을 둘러싼 공개 신경전으로, 사이버보안 AI 시장 주도권 경쟁을 반영한다. 두 회사의 설전은 AI 안전성 서사가 상업 경쟁의 도구로 활용되는 현실을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "7012f1d4-9dd9-4d4b-8f7b-a7a7448cc49c",
+      "title": "Meta will record employees’ keystrokes and use it to train its AI models",
+      "url": "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/",
+      "source": "techcrunch",
+      "content": "Meta says that it has a new internal tool that is converting mouse movements and button clicks into data that can train its AI models.",
+      "published_at": "2026-04-21T23:45:21+00:00",
+      "summary": "메타가 직원들의 키스트로크와 마우스 클릭을 AI 모델 훈련 데이터로 수집하는 내부 도구를 도입했다. 이 시스템은 사람이 소프트웨어와 상호작용하는 방식을 모델링해 더 자연스러운 AI 행동 패턴을 학습시키는 것을 목표로 한다. 직원 동의 및 데이터 활용 범위에 대한 투명성 문제가 AI 윤리 및 노동 권리 관점에서 논란이 될 수 있다. 기업 내부 행동 데이터를 AI 훈련에 활용하는 트렌드는 AI 모델 품질 향상과 프라이버시 침해 사이의 긴장을 심화시킨다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "041f67a5-ae45-40eb-b1f3-5adf8b9d2c2c",
+      "title": "YouTube expands its AI likeness detection technology to celebrities",
+      "url": "https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/",
+      "source": "techcrunch",
+      "content": "YouTube is expanding its AI likeness detection tool to celebrities, giving talent and their reps a way to find and remove deepfakes.",
+      "published_at": "2026-04-21T15:02:06+00:00",
+      "summary": "유튜브가 AI 초상권 감지 기술을 일반인에서 셀러브리티까지 확대 적용한다고 발표했다. 연예인과 소속사는 이 도구를 통해 딥페이크 영상을 자동으로 탐지하고 삭제 요청을 할 수 있게 된다. 이는 생성형 AI로 인한 허위 영상 범람에 대응하는 플랫폼 차원의 기술적 조치로, 개인 이미지 보호와 콘텐츠 모더레이션의 새로운 기준을 제시한다. 향후 일반 크리에이터에게도 확대 적용될 가능성이 있으며, AI 생성 미디어 규제 논의에 중요한 선례가 될 전망이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "0d032072-4382-463d-9d4b-2b29bfc2c2b5",
+      "title": "Clarifai deletes 3 million photos that OkCupid provided to train facial recognition AI, report says",
+      "url": "https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/",
+      "source": "techcrunch",
+      "content": "The photo deletion comes after an FTC settlement with Clarifai. The company had asked OkCupid — whose executives had invested in Clarifai — to share data in 2014, according to court documents.",
+      "published_at": "2026-04-21T17:11:01+00:00",
+      "summary": "AI 기업 Clarifai가 FTC 합의 후 OkCupid로부터 받은 300만 장의 사진을 삭제했다. 2014년 OkCupid 경영진이 투자한 Clarifai에 안면인식 AI 훈련용으로 사용자 데이터를 공유한 사실이 법원 문서를 통해 드러났다. 이 사건은 사용자 동의 없는 데이터 공유와 AI 훈련 데이터의 윤리적 출처 문제를 다시 부각시키며, FTC의 AI 데이터 규제 강화 의지를 보여준다. 기업들은 AI 훈련 데이터 수집 및 활용에 있어 더 엄격한 법적 책임을 지게 될 것으로 예상된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "99ff5768-01d5-43d1-ac64-1713695f934b",
+      "title": "Hugging Face Releases ml-intern: An Open-Source AI Agent that Automates the LLM Post-Training Workflow",
+      "url": "https://www.marktechpost.com/2026/04/21/hugging-face-releases-ml-intern-an-open-source-ai-agent-that-automates-the-llm-post-training-workflow/",
+      "source": "marktechpost",
+      "content": "Hugging Face has released ml-intern, an open-source AI agent designed to automate end-to-end post-training workflows for large language models (LLMs). Built on the company&#8217;s smolagents framework, the tool can autonomously perform literature review, dataset discovery, training script execution, and iterative evaluation — tasks that typically require significant manual effort from ML researchers and engineers. What ml-intern Does The agent operates as a continuous loop that mirrors the workflow of an ML researcher. It begins by browsing arXiv and Hugging Face Papers, reading methodology sections and traversing citation graphs to identify relevant datasets and techniques. It then searches the Hugging Face Hub for referenced datasets, inspects their quality, and reformats them for training. When local compute is unavailable, the agent can launch jobs via Hugging Face Jobs. After each training run, it reads evaluation outputs, diagnoses failures — such as reward collapse in RLHF pipelines — and retrains until benchmark performance improves. The entire monitoring stack relies on Trackio, a Hub-native experiment tracker positioned as an open-source alternative to Weights &amp; Biases. Performance on PostTrainBench ml-intern was evaluated against PostTrainBench, a benchmark introduced by researchers at the University of Tübingen and the Max Planck Institute. The benchmark tests an agent&#8217;s ability to post-train a base model within a strict 10-hour window on a single H100 GPU. In the official launch demo, ml-intern took the Qwen3-1.7B base model—which scores a baseline of roughly 10% on GPQA—and pushed it to 32% in under 10 hours. The agent’s progress was remarkably fast, crossing the 27.5% mark in just over 3 hours. This result is particularly significant when compared to the existing SOTA. Hugging Face’s data shows the agent outperforming Claude Code, which currently sits at a 22.99% benchmark on the same task. While the broader PostTrainBench paper recorded a high of 33% using the larger Gemma-3-4B, ml-intern’s ability to extract 32% from the tiny 1.7B Qwen model demonstrates a level of &#8220;data-efficiency&#8221; that manual researchers often struggle to replicate in such a short timeframe. https://x.com/akseljoonas/status/2046543093856412100 Technical Approaches: Synthetic Data and GRPO Two technical strategies that ml-intern demonstrated in published demos are worth highlighting for practitioners. Synthetic data generation: In a healthcare-domain test, the agent assessed available medical datasets, determined their quality was insufficient for reliable fine-tuning, and wrote a script to generate synthetic training examples focused on edge cases including medical hedging language and multilingual emergency response scenarios. It then upsampled this data to augment the training distribution before evaluating on HealthBench. Autonomous RLHF via GRPO: In a math-domain test, the agent implemented a Group Relative Policy Optimization (GRPO) training script — a technique that performs reinforcement learning from human feedback with lower memory overhead than standard PPO. The agent launched training on A100 GPUs, monitored reward curves, and ran ablations to isolate effective components before finalizing the checkpoint. Key Takeaways Autonomous Research Loop: The agent replicates the full machine learning workflow, from performing literature reviews on arXiv and traversing citation graphs to autonomously executing training runs and diagnosing failures. Significant Reasoning Gains: In less than 10 hours, the agent pushed a Qwen3-1.7B model&#8217;s scientific reasoning score on the GPQA benchmark from 8.5% to 32%, outperforming the specific GPQA results of Claude Code (22.99%). Advanced Training Strategies: Beyond simple fine-tuning, ml-intern can generate high-quality synthetic data for edge cases and implement complex techniques like Group Relative Policy Optimization (GRPO) to optimize math performance. Native Ecosystem Integration: Built on the smolagents framework, the tool natively integrates with Hugging Face Jobs for compute and uses Trackio for open-source experiment tracking. Introducing ml-intern, the agent that just automated the post-training team @huggingfaceIt's an open-source implementation of the real research loop that our ML researchers do every day. You give it a prompt, it researches papers, goes through citations, implements ideas in GPU… pic.twitter.com/USLWv6lKz9&mdash; Aksel (@akseljoonas) April 21, 2026 Check out the App, and CLI. Also, feel free to follow us on Twitter and don’t forget to join our 130k+ ML SubReddit and Subscribe to our Newsletter. Wait! are you on telegram? now you can join us on telegram as well. Need to partner with us for promoting your GitHub Repo OR Hugging Face Page OR Product Release OR Webinar etc.?&nbsp;Connect with us The post Hugging Face Releases ml-intern: An Open-Source AI Agent that Automates the LLM Post-Training Workflow appeared first on MarkTechPost.",
+      "published_at": "2026-04-22T00:43:53+00:00",
+      "summary": "Hugging Face가 LLM 사후 훈련(post-training) 워크플로우 전체를 자동화하는 오픈소스 AI 에이전트 ml-intern을 공개했다. smolagents 프레임워크 기반으로 구축된 이 도구는 문헌 조사, 데이터셋 탐색, 훈련 스크립트 실행, 반복 평가를 자율적으로 수행한다. 기존에 ML 연구자가 수동으로 처리하던 고반복 작업을 에이전트가 대신하면서 연구 사이클을 대폭 단축할 수 있다. 오픈소스 공개로 소규모 팀에서도 대형 LLM 수준의 모델 개발 파이프라인을 구축하기 쉬워질 전망이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e99628e6-044e-48b2-aa1d-082189f630ac",
+      "title": "Google Introduces Simula: A Reasoning-First Framework for Generating Controllable, Scalable Synthetic Datasets Across Specialized AI Domains",
+      "url": "https://www.marktechpost.com/2026/04/21/google-introduces-simula-a-reasoning-first-framework-for-generating-controllable-scalable-synthetic-datasets-across-specialized-ai-domains/",
+      "source": "marktechpost",
+      "content": "Training powerful AI models depends on one resource that is quietly running out: specialized data. While the internet provided a seemingly infinite supply of text and images to train today&#8217;s generalist models, the next wave of AI breakthroughs — in cybersecurity, legal reasoning, healthcare, and other niche domains — requires data that simply doesn&#8217;t exist in sufficient volume, or can&#8217;t be accessed due to privacy concerns. A team of researchers from Google and EPFL introduce Simula, a reasoning-driven framework for synthetic data generation and evaluation that prioritizes transparency, fine-grained control, and scalability. Unlike conventional approaches, Simula doesn&#8217;t rely on seed data from the target distribution, hand-crafted prompts, or evolutionary algorithms — it constructs each dataset from first principles, treating data generation as a problem of mechanism design. Why Synthetic Data Generation is Harder Than It Looks If you&#8217;ve worked with fine-tuning pipelines or domain-specific model training, you&#8217;ve likely run into the &#8216;not enough data&#8217; wall. Manually collecting and annotating specialized datasets is expensive, time-consuming, and error-prone. But the obvious workaround — just prompt a large language model (LLM) to generate training data — runs into its own set of problems. Most existing synthetic data methods optimize for only a subset of what the researchers define as the three axes of &#8216;good&#8217; data: quality, diversity, and complexity. Quality refers to whether a data point meets specific semantic and syntactic requirements. Diversity covers both global coverage (do you have examples from across the entire concept space?) and local variation (do you have multiple distinct takes on each concept?). Complexity captures how confusing, uncommon, or elaborate a given example is. Simultaneously controlling all three, at scale, with explainability, is the unsolved challenge that Simula directly targets. How Simula Works: Taxonomies, Meta-Prompts, and Dual Critics Simula breaks down the generation process into four distinct, controllable steps, each targeting a specific data property. The first step addresses global diversity using hierarchical taxonomies. Given a dataset description — say, &#8216;a dataset of cybersecurity threat intelligence questions&#8217; — a multi-modal model (referred to as M3) is prompted to identify the prime factors of variation for that domain (e.g., attack type, threat actor, vulnerability class). Each factor is then expanded breadth-first into a hierarchical taxonomy tree. To reduce the risk of missing important subcategories, the system uses a Best-of-N proposal strategy combined with a critic refinement step, where the model proposes N candidate child nodes and then critiques them for completeness, soundness, and specificity. The resulting taxonomies function as structured sampling scaffolds — ensuring that when you draw 512,000 training examples, they genuinely cover the long tail of the domain rather than clustering around common modes. https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles/ The second step handles local diversity. Sampled combinations of taxonomy nodes — called &#8216;mixes&#8217; — are passed to an M3 to generate &#8216;meta prompts.&#8217; For example, a mix of {house cat, poem, travel enthusiast} becomes &#8216;Compose an exciting haiku about a house cat who goes on an adventure.&#8217; To prevent mode collapse when many meta prompts are generated from the same node-set, Simula generates multiple meta prompts simultaneously and sub-samples the required fraction, ensuring distinct instantiations rather than identical repetitions. The third step is complexification. A user-configurable fraction, c, of meta prompts is passed through a complexification step, which prompts the M3 to increase the complexity of the generated meta prompts and outputs while maintaining all other requirements. This separates complexity control from coverage control — you can raise the difficulty ceiling without sacrificing breadth. The fourth step enhances quality through a &#8216;dual-critic&#8217; approach. Rather than asking the model once whether a generated answer is correct, Simula independently queries the model for whether the answer is correct and whether it is incorrect. This dual-verification design mitigates sycophancy bias — the tendency of LLMs to agree with plausible-sounding outputs — and is particularly important for tasks with a defined notion of correctness, such as multiple-choice questions or math problems. https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles/ What the Experiments Show The research team tested Simula using Gemini 2.5 Flash (non-thinking) as the teacher model and Gemma 3 4B as the student model, running 10 iterations of LoRA fine-tuning with different seeds per configuration and reporting mean accuracy with 95% confidence intervals. They generated datasets of up to 512K data points across five domains: CTI-MCQ, a multiple-choice question dataset for assessing understanding of CTI standards, threats, and mitigation; CTI-RCM, an open-ended generation task requiring the model to produce a Common Weakness Enumeration (CWE) category from a Common Vulnerabilities and Exposures (CVE) description; LEXam, covering Swiss, EU, and international law examinations in English and German; GSM8k (grade-school math); and Global MMLU (Math, Computer Science, and Physics in English, Korean, and Nepali). Across all datasets and data sizes, the full Simula system — combining global diversification, local diversification, complexification, and critiquing — consistently outperformed simpler baseline configurations. Notably, combining both Global and Local diversification was critical; either in isolation produced suboptimal results depending on dataset and scale. The complexity results were particularly instructive. On GSM8k, the High Complexity split yielded a 10% accuracy gain over the Low Complexity split at 64K data items. But on LEXam, where the teacher model achieved only 57% accuracy, higher complexity data actually hurt performance — demonstrating that complex data is only beneficial when the teacher model is strong enough to generate reliable labels for it. The critic rejection rate for LEXam reached 61%, compared to just 2% for CTI-MCQ, 9% for CTI-RCM, and 9% for GSM8k, directly reflecting the teacher model&#8217;s weakness on that domain. A separate and practically important finding is what the research team call the Student-Teacher Gap effect on scaling laws. For CTI-RCM, student model performance saturated at around 128K data points, after bridging approximately 83% of the gap between the student&#8217;s starting accuracy (40%) and the teacher model&#8217;s performance (70%). GSM8k, by contrast, showed no such saturation because the student model&#8217;s peak performance (75%) remained sufficiently far from the teacher&#8217;s (88%). Intrinsic Evaluation Gets a Rethink Beyond generation, the research team introduces two new evaluation approaches. Taxonomic Coverage measures what fraction of taxonomy nodes at each level are represented in a dataset — a structured alternative to coarse embedding-based cosine distance metrics that fail to provide actionable insights. Calibrated Complexity Scoring assigns Elo ratings to individual data points by running batch-wise pairwise comparisons, a method the research team call &#8216;calibrated attribute scoring,&#8217; which proved to align well with human-annotated complexity labels on the MATH dataset. One finding stands out: on a taxonomic coverage basis, real-world reference datasets almost always cover less of the target domain than Simula-generated variants, even when embedding-based diversity metrics tell the opposite story. This underscores the limitation of relying on cosine distance alone as a proxy for dataset quality. Key Takeaways Simula&#8217;s reasoning-first, seedless framework controls quality, diversity, and complexity as independent axes — enabling fine-grained synthetic dataset design without relying on manual prompts, evolutionary algorithms, or seed data from the target distribution. Combining Global and Local diversification is critical: either component in isolation produces suboptimal results, but together they consistently improve downstream model performance across all tested datasets and data sizes. Data complexity helps model performance in most domains, but can hurt when the teacher model is weak — on LEXam, where Gemini 2.5 Flash (non-thinking) achieved only 57% accuracy, the Low Complexity split outperformed the High Complexity split. Real-world reference datasets almost always cover less of the target domain than Simula-generated variants on a taxonomic coverage basis, even when standard embedding-based cosine distance metrics suggest otherwise. Data scaling laws are driven by data properties, not size alone — the full Simula system reached higher downstream performance with fewer samples compared to baseline approaches, making it more cost-effective across the full data lifecycle despite requiring up to 5x more inference calls per data point. Check out the Paper and Technical details. Also, feel free to follow us on Twitter and don’t forget to join our 130k+ ML SubReddit and Subscribe to our Newsletter. Wait! are you on telegram? now you can join us on telegram as well. Need to partner with us for promoting your GitHub Repo OR Hugging Face Page OR Product Release OR Webinar etc.?&nbsp;Connect with us The post Google Introduces Simula: A Reasoning-First Framework for Generating Controllable, Scalable Synthetic Datasets Across Specialized AI Domains appeared first on MarkTechPost.",
+      "published_at": "2026-04-21T16:46:21+00:00",
+      "summary": "구글이 사이버보안, 법률, 의료 등 전문 도메인을 위한 제어 가능하고 확장 가능한 합성 데이터셋을 생성하는 추론 우선(reasoning-first) 프레임워크 Simula를 공개했다. 인터넷에 충분한 전문 데이터가 존재하지 않는 분야에서 고품질 훈련 데이터를 합성하는 것이 핵심 목표다. 추론 기반으로 데이터를 생성함으로써 단순 텍스트 증강보다 훨씬 복잡하고 다양한 시나리오를 커버할 수 있다. 전문 AI 모델의 데이터 병목 문제를 해결하는 중요한 접근으로, 의료·법률·보안 AI 개발에 실질적 영향을 줄 것으로 기대된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "16d4bb11-4e9a-4771-9e00-5b066e78c5fb",
+      "title": "AI research lab NeoCognition lands $40M seed to build agents that learn like humans",
+      "url": "https://techcrunch.com/2026/04/21/ai-research-lab-neocognition-lands-40m-seed-to-build-agents-that-learn-like-humans/",
+      "source": "techcrunch",
+      "content": "Founded by an OSU researcher, the startup is developing AI agents that can become experts in any domain.",
+      "published_at": "2026-04-21T19:11:29+00:00",
+      "summary": "AI 에이전트 스타트업 NeoCognition이 인간처럼 학습하는 AI 에이전트 개발을 목표로 4,000만 달러 시드 투자를 유치했다. 오하이오 주립대 연구자가 창업한 이 회사는 어떤 도메인에서도 전문가 수준으로 성장할 수 있는 적응형 에이전트 기술을 연구한다. 정적 모델이 아닌 지속적으로 학습·진화하는 에이전트는 장기적으로 기업 자동화와 연구 보조 분야에서 큰 잠재력을 지닌다. 시드 라운드로는 이례적으로 큰 규모로, 다음 세대 에이전트 AI에 대한 투자자들의 높은 기대를 반영한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f97de4a1-66cc-4418-af0e-77035da24b93",
+      "title": "Agentic Frameworks for Reasoning Tasks: An Empirical Study",
+      "url": "https://arxiv.org/abs/2604.16646",
+      "source": "arxiv",
+      "content": "arXiv:2604.16646v1 Announce Type: new \nAbstract: Recent advances in agentic frameworks have enabled AI agents to perform complex reasoning and decision-making. However, evidence comparing their reasoning performance, efficiency, and practical suitability remains limited. To address this gap, we empirically evaluate 22 widely used agentic frameworks across three reasoning benchmarks: BBH, GSM8K, and ARC. The frameworks were selected from 1,200 GitHub repositories collected between January 2023 and July 2025 and organized into a taxonomy based on architectural design. We evaluated them under a unified setting, measuring reasoning accuracy, execution time, computational cost, and cross-benchmark consistency.\n  Our results show that 19 of the 22 frameworks completed all three benchmarks. Among these, 12 showed stable performance, with mean accuracy of 74.6-75.9%, execution time of 4-6 seconds per task, and cost of 0.14-0.18 cents per task. Poorer results were mainly caused by orchestration problems rather than reasoning limits. For example, Camel failed to complete BBH after 11 days because of uncontrolled context growth, while Upsonic consumed USD 1,434 in one day because repeated extraction failures triggered costly retries. AutoGen and Mastra also exhausted API quotas through iterative interactions that increased prompt length without improving results.\n  We also found a sharp drop in mathematical reasoning. Mean accuracy on GSM8K was 44.35%, compared with 89.80% on BBH and 89.56% on ARC. Overall, this study provides the first large-scale empirical comparison of agentic frameworks for reasoning-intensive software engineering tasks and shows that framework selection should prioritize orchestration quality, especially memory control, failure handling, and cost management.",
+      "published_at": "2026-04-21T00:00:00-04:00",
+      "summary": "22개의 주요 AI 에이전트 프레임워크를 BBH, GSM8K 등 세 가지 추론 벤치마크에서 실증적으로 비교한 연구가 발표됐다. 프레임워크마다 추론 성능, 효율성, 실용적 적합성에서 큰 차이가 있으며, 모든 상황에 최적인 단일 프레임워크는 존재하지 않는다는 결론이 도출됐다. 이 연구는 개발자가 태스크 특성에 맞는 에이전트 프레임워크를 선택하는 데 실질적인 가이드라인을 제공한다. 에이전트 프레임워크 선택이 최종 성능에 미치는 영향이 크므로, 실무에서의 프레임워크 평가 기준 수립이 중요해지고 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3803cdee-d137-4ebc-a0ec-7007d839a739",
+      "title": "Debate as Reward: A Multi-Agent Reward System for Scientific Ideation via RL Post-Training",
+      "url": "https://arxiv.org/abs/2604.16723",
+      "source": "arxiv",
+      "content": "arXiv:2604.16723v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have demonstrated potential in automating scientific ideation, yet current approaches relying on iterative prompting or complex multi-agent architectures often suffer from hallucination or computational inefficiency. A critical bottleneck in applying Reinforcement Learning (RL) to this open-ended domain is reward hacking -- where models exploit imperfect evaluation proxies to maximize scores without producing genuine scientific innovation. To address these limitations, we propose an RL framework explicitly tailored for high-quality scientific idea generation. We propose the first multi-agent reward function designed to serve as a judge, decoupling methodological validation from implementation details while providing strict binary rewards that are robust to reward hacking. To effectively optimize against this sparse signal, we utilize an unbiased variant of Group Relative Policy Optimization to mitigate artificial length bias. We grounded our training in ICLR-320, a curated dataset of problem-solution pairs extracted from ICLR 2024 proceedings. Experiments demonstrate that our framework significantly outperforms state-of-the-art baselines across expert-evaluated metrics of novelty, feasibility, and effectiveness.",
+      "published_at": "2026-04-21T00:00:00-04:00",
+      "summary": "다중 에이전트 토론을 강화학습의 보상 신호로 활용해 LLM의 과학적 아이디어 생성 능력을 향상시키는 새로운 방법론이 제안됐다. 기존 접근법의 환각 및 계산 비효율 문제를 해결하기 위해, 에이전트 간 토론 결과를 RL 사후훈련의 보상으로 사용한다. 검증 가능한 정답이 없는 과학적 창의성 영역에서 신뢰할 수 있는 보상 신호를 만드는 핵심 문제를 창의적으로 해결했다. 이 방법은 AI를 활용한 과학 연구 자동화와 신약·신소재 아이디어 생성에 응용될 가능성이 높다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "461a00cc-370e-4025-9d3e-f21041e2333c",
+      "title": "Beyond Verifiable Rewards: Rubric-Based GRM for Reinforced Fine-Tuning SWE Agents",
+      "url": "https://arxiv.org/abs/2604.16335",
+      "source": "arxiv",
+      "content": "arXiv:2604.16335v1 Announce Type: new \nAbstract: Despite recent progress in Large Language Model (LLM) Agents for Software Engineering (SWE) tasks, end-to-end fine-tuning typically relies on verifiable terminal rewards such as whether all unit tests pass. While these binary signals reflect whether the final solution is correct, they provide little guidance for shaping intermediate behaviors during multi-step interactions, thereby limiting improvements in the overall quality of the resolution process. To address this, we introduce a rubric-based Generative Reward Model (GRM) that provides richer learning signals. The GRM is equipped with human-designed rubrics that indicate criteria for encouraging or discouraging specific behavioral patterns, and we leverage this feedback for high-quality training data collection via trajectory filtration. When used for Reinforced Fine-Tuning (RFT) on SWE Tasks, our approach outperforms terminal-score-only rejection sampling: it more effectively suppresses undesirable patterns while promoting beneficial ones, as confirmed by case analyses, and it ultimately improves final test accuracy.",
+      "published_at": "2026-04-21T00:00:00-04:00",
+      "summary": "소프트웨어 엔지니어링(SWE) 에이전트의 강화학습에서 이진 테스트 통과 여부 대신 루브릭 기반의 세밀한 보상 신호를 사용하는 방법론이 제안됐다. 기존 이진 보상은 최종 정답 여부만 반영하지만, 루브릭 보상은 코드 품질·설계·중간 과정까지 평가해 더 풍부한 학습 신호를 제공한다. 실험 결과 루브릭 기반 접근이 기존 방법 대비 SWE 벤치마크에서 유의미한 성능 향상을 보였다. AI 코딩 에이전트의 실용적 품질을 높이는 핵심 방법론으로, 프로그래밍 AI 개발에 직접 적용할 수 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "b72ea7ee-350a-4016-8f3e-b3e383e8c77f",
+      "title": "Sampling for Quality: Training-Free Reward-Guided LLM Decoding via Sequential Monte Carlo",
+      "url": "https://arxiv.org/abs/2604.16453",
+      "source": "arxiv",
+      "content": "arXiv:2604.16453v1 Announce Type: new \nAbstract: We introduce a principled probabilistic framework for reward-guided decoding in large language models, addressing the limitations of standard decoding methods that optimize token-level likelihood rather than sequence-level quality. Our method defines a reward-augmented target distribution over complete sequences by combining model transition probabilities with prefix-dependent reward potentials. Importantly, the approach is training-free: it leaves model weights unchanged and instead modifies the inference distribution via reward potentials, with all gains arising purely from inference-time sampling. To sample from this distribution, we develop Sequential Monte Carlo algorithms, including a computationally efficient prefix-only variant and a lookahead variant whose intermediate targets match the exact marginals of the full sequence distribution. The framework also integrates resample-move updates with Metropolis-Hastings rejuvenation and supports block-wise generation, subsuming common decoding strategies such as temperature sampling and power-tempered objectives. Empirical results across three 7B models show significant gains. On code generation (HumanEval), our method improves base performance by up to 54.9% and surpasses the strongest sampling baselines by 9.1%-15.3%. On mathematical reasoning (MATH500), it achieves gains of up to 8.8%. Notably, it reaches 87.8% on HumanEval and 78.4% on MATH500 with Qwen2.5-7B, consistently outperforming the reinforcement learning method GRPO.",
+      "published_at": "2026-04-21T00:00:00-04:00",
+      "summary": "순차적 몬테카를로(SMC) 기법을 활용해 학습 없이도 보상 신호로 LLM 디코딩을 유도하는 확률론적 프레임워크가 제안됐다. 기존 디코딩 방식이 토큰 수준의 가능도만 최적화하는 것과 달리, 이 방법은 전체 시퀀스의 품질을 직접 최적화하는 보상 증강 목표 분포를 정의한다. 별도의 파인튜닝 없이 외부 보상 함수만으로 출력 품질을 제어할 수 있어 다양한 LLM에 즉시 적용 가능하다. 안전성 제약, 형식 준수, 전문 도메인 출력 등 특정 요구사항이 있는 LLM 응용에서 실질적 가치가 크다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c6c0a459-58ae-4121-8e7d-5499b2b82a5b",
+      "title": "Data Mixing for Large Language Models Pretraining: A Survey and Outlook",
+      "url": "https://arxiv.org/abs/2604.16380",
+      "source": "arxiv",
+      "content": "arXiv:2604.16380v1 Announce Type: new \nAbstract: Large language models (LLMs) rely on pretraining on massive and heterogeneous corpora, where training data composition has a decisive impact on training efficiency and downstream generalization under realistic compute and data budget constraints. Unlike sample-level data selection, data mixing optimizes domain-level sampling weights to allocate limited budgets more effectively. In recent years, a growing body of work has proposed principled data mixing methods for LLM pretraining; however, the literature remains fragmented and lacks a dedicated, systematic survey. This paper provides a comprehensive review of data mixing for LLM pretraining. We first formalize data mixture optimization as a bilevel problem on the probability simplex and clarify the role of data mixing in the pretraining pipeline, and briefly explain how existing methods make this formulation tractable in practice. We then introduce a fine-grained taxonomy that organizes existing methods along two dimensions: static versus dynamic mixing. Static mixing is further categorized into rule-based and learning-based methods, while dynamic mixing is grouped into adaptive and externally guided families. For each class, we summarize representative approaches and analyze their strengths and limitations from a performance-cost trade-off perspective. Building on this analysis, we highlight challenges that cut across methods, including limited transferability across data domains, optimization objectives, models, and validation sets, as well as unstandardized evaluation protocols and benchmarks, and the inherent tension between performance gains and cost control in learning-based methods. Finally, we outline several exploratory directions, including finer-grained domain partitioning and inverse data mixing, as well as pipeline-aware designs, aiming to provide conceptual and methodological insights for future research.",
+      "published_at": "2026-04-21T00:00:00-04:00",
+      "summary": "LLM 사전훈련에서 데이터 혼합(data mixing) 전략을 종합적으로 정리한 서베이 논문이 발표됐다. 데이터 혼합은 샘플 수준 데이터 선택과 달리 여러 소스의 비율을 최적화하며, 훈련 효율과 하위 태스크 일반화에 결정적 영향을 미친다. 기존 연구 흐름, 주요 알고리즘, 실무 적용 가이드라인을 체계적으로 정리해 연구자와 실무자 모두에게 유용한 참고 자료다. 데이터 혼합 전략은 동일한 컴퓨팅 예산에서 모델 성능을 크게 좌우하므로, LLM 개발의 핵심 최적화 영역으로 부상하고 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "079c6693-fc97-4773-be10-e901c2a9f55d",
+      "title": "When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias",
+      "url": "https://huggingface.co/papers/2604.17768",
+      "source": "hf_papers",
+      "content": "The reliability of VLM-as-a-Judge is critical for the automatic evaluation of vision-language models (VLMs). Despite recent progress, our analysis reveals that VLM-as-a-Judge often pays limited attention to the image when making decisions. Instead, they often blindly favor the more informative answer, even when they can recognize it conflicts with the image content. We call this problem informativeness bias, which significantly undermines judge reliability. To address it, we propose BIRCH (Balanced Informativeness and CoRrectness with a Truthful AnCHor), a judging paradigm that first corrects inconsistencies with the image content in candidate answers, and then compares the answers against this corrected version. This shifts the judge's focus from informativeness to image-grounded correctness. Experiments on multiple models and benchmarks show that BIRCH reduces informativeness bias by up to 17%, resulting in performance gains of up to 9.8%. Our work reveals an overlooked but fundamental flaw in current VLM-as-a-Judge systems and highlights the need for more principled designs.",
+      "published_at": "2026-04-20T03:46:22+00:00",
+      "summary": "비전-언어 모델(VLM)을 자동 평가자(Judge)로 사용할 때 이미지를 실제로 보지 않고도 더 \"정보량이 많은\" 답변을 선호하는 편향이 있음이 실험적으로 밝혀졌다. VLM-as-a-Judge는 이미지 내용과 관계없이 더 길고 상세한 답변에 높은 점수를 주는 경향이 있어 자동 평가 결과의 신뢰성을 크게 훼손한다. 이는 멀티모달 모델의 벤치마크 결과가 실제 시각 이해 능력을 과대평가할 수 있음을 시사한다. VLM 연구 및 평가 파이프라인 설계 시 이미지 의존도 검증이 필수적임을 강조하는 중요한 발견이다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "80dfff54-7021-4d79-992f-547d7cfed777",
+      "title": "Sessa: Selective State Space Attention",
+      "url": "https://huggingface.co/papers/2604.18580",
+      "source": "hf_papers",
+      "content": "Modern sequence models are dominated by Transformers, where self-attention mixes information from the visible context in an input-dependent way. However, when retrieval is not sharp and attention remains diffuse over an effective support $S_{\\mathrm{eff}}(t)$, the influence of any individual token is diluted, typically scaling as $O(1/S_{\\mathrm{eff}}(t))$ and reaching $O(1/\\ell)$ for old tokens in full-prefix settings. Structured state-space models process sequences recurrently through an explicit feedback path; selective variants such as Mamba make this feedback input-dependent, yet when freeze time cannot be sustained over long intervals, their long-range sensitivity decays exponentially with lag. Existing architectures therefore either retrieve from the past in a single read or propagate information through a single feedback chain. We introduce Sessa, a decoder that places attention inside a feedback path, enabling recurrent many-path aggregation within a layer. Under stated assumptions, Sessa admits regimes with a power-law memory tail in lag $\\ell$ of order $O(\\ell^{-β})$ for $0<β<1$, which is asymptotically slower than $1/\\ell$; moreover, this rate is tight in an explicit diffuse uniform-routing setting where the influence is $Θ(\\ell^{-β})$. Under the same conditions, only Sessa among the compared model classes realizes flexible selective retrieval, including non-decaying profiles. Empirically, under matched architectures and training budgets, Sessa achieves the strongest performance on our long-context benchmarks while remaining competitive with Transformer and Mamba style baselines on short-context language modeling.",
+      "published_at": "2026-04-20T17:59:08+00:00",
+      "summary": "트랜스포머의 어텐션과 상태 공간 모델(SSM)의 장점을 결합한 새로운 시퀀스 모델 아키텍처 Sessa(Selective State Space Attention)가 제안됐다. 어텐션이 분산되어 개별 토큰의 영향이 희석될 때 SSM의 선택적 상태 업데이트가 이를 보완하는 하이브리드 접근이 핵심이다. 긴 시퀀스에서의 정밀한 정보 검색이 필요한 태스크에서 기존 트랜스포머 대비 성능 향상을 보였다. 차세대 효율적 시퀀스 모델 아키텍처 연구의 중요한 기여로, 장문 컨텍스트 처리와 추론 효율화에 응용 가능하다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "61b3f46a-c151-4a9e-9d39-ce4d0be3d077",
+      "title": "Roundtables: Unveiling The 10 Things That Matter in AI Right Now",
+      "url": "https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/",
+      "source": "mit_tech_review",
+      "content": "Listen to the session or watch below Watch a special edition of Roundtables simulcast live from EmTech AI, MIT Technology Review’s signature conference for AI leadership. Subscribers got an exclusive first look at a new list capturing 10 key technologies, emerging trends, bold ideas, and powerful movements in AI that you need to know about in 2026. Speakers: Grace Huckins, AI reporter, hosted this session as Amy Nordrum and Niall Firth, executive editors, unveiled the list onstage. Recorded on April 21, 2026 Related Stories: 10 things that matter in AI right now How LLMs could supercharge mass surveillance in the US The era of AI malaise",
+      "published_at": "2026-04-21T22:09:25+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 2026년 AI에서 중요한 10가지 핵심 기술·트렌드·아이디어를 EmTech AI 컨퍼런스에서 공개했다. 구독자 대상 독점 공개 후 일반에 공개된 이 리스트는 AI 리더십이 주목해야 할 새로운 연구 방향과 비즈니스 임플리케이션을 포함한다. AI 에이전트, 멀티모달 AI, 거버넌스, 안전성 등 핵심 의제들이 2026년 AI 생태계를 형성하는 주요 동인으로 꼽혔다. AI 산업의 현재를 조망하는 권위 있는 시각으로, 기술 전략 수립과 투자 의사결정에 유용한 참고가 될 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "82827f35-3f3e-4711-8d4f-ef306a8b2d4a",
+      "title": "삼성SDS, AI 활용 차세대 금융 로드맵 제시...금융 고객 초청 '인더스트리 데이' 개최",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=39686",
+      "source": "korean",
+      "content": "삼성SDS는 22일, 금융 기업 고객을 대상으로 '삼성SDS 인더스트리 데이' 세미나를 열고, 생성형 AI를 중심으로 한 금융 혁신 전략과 실행 방향을 소개했다. 인더스트리 데이는 금융, 공공, 제조·유통, 국방 등 주요 산업 고객을 초청해 삼성SDS의 핵심 솔루션과 서비스, 실제 적용 사례를 공유하는 행사다.\n\n이번 세미나는 금융 산업의 AI 전환이 빨라지는 흐름에 맞춰, 생성형 AI와 AI 에이전트를 활용한 업무 혁신과 IT 시스템 개선 방안을 제시하기 위해 마련됐다. 삼성SDS는 최근 우리은행 'AI 에이전트 뱅킹', '중장기 IT인프라 최적화' 사업 등 금융권 주요 사업을 잇따라 수주하며 금융 분야 디지털 전환을 적극 추진하고 있다.\n\n이날 행사에는 은행, 보험, 증권 등 금융권 IT 담당자와 의사결정자 약 150명이 참석했다. 기조연설에 나선 삼성SDS 이지환 금융컨설팅팀장(상무)은 금융 산업 전반에 적용 가능한 AI 기술 역량과 실제 혁신 사례를 소개하고, 금융업 환경에 맞는 디지털 전환 전략과 AI 기반 금융의 발전 방향을 제시했다.\n\n이어진 발표에서는 삼성SDS 차세대 보험 시스템 구축 솔루션 'NFC(NexFinance Core) 2.0', AI 코드 에이전트를 활용한 개발 자동화, AI 에이전트 기반 '금융 코드 현대화' 사례, AI 활용을 위한 데이터 플랫폼 구축, 글로벌 개발센터(GDC; Global Development Center) 협업 사례 등 다양한 금융 IT 혁신 방안이 소개됐다.\n\n특히 금융 코드 현대화는 AI 에이전트를 통해 기존 C언어 기반 시스템을 Java 코드로 전환한 국내 증권사의 사례를 소개하며, 높은 전환 비용과 전문 인력 부족으로 지연돼 온 금융 시스템 현대화 과제를 해결한 사례로 주목받았다.\n\n삼성SDS는 자사 AI 에이전트 플랫폼 '패브릭스(FabriX)'의 코드 전환 에이전트를 통해 기존 시스템을 신규 프로그래밍 언어 기반으로 자동 전환할 수 있는 방안을 제시했다. 이를 통해 금융 기관은 시스템 현대화를 보다 효율적으로 추진할 수 있다.\n\n또한 GDC(Global Development Center) 협업 모델을 소개하며 금융권 IT 인력 부족 문제 해소와 AX 전환 속도 제고 가능성을 제시했다. 삼성SDS는 현재 중국, 베트남, 인도 3개국에서 약 5,000명의 전문 인력을 기반으로 GDC를 운영하고 있다.\n\n삼성SDS는 지난 3월 공공 업종 세미나에 이어 제조, 유통·서비스 등 다양한 산업별 고객을 대상으로 세미나를 지속 확대하고, 생성형 AI와 업종 특화 솔루션을 기반으로 고객 업무 혁신과 생산성 향상을 적극 지원할 계획이다.\n\n삼성SDS 황수영 금융담당(부사장)은 \"이번 세미나는 금융 산업 전반에 적용 가능한 AI 기반 혁신 방향과 실행 사례를 공유하는 자리\"라며, \"앞으로도 삼성SDS의 기술력과 경험을 바탕으로 금융 산업의 AX 전환을 지속 지원해 나가겠다\"고 밝혔다.",
+      "published_at": null,
+      "summary": "삼성SDS가 금융권 고객을 대상으로 생성형 AI와 AI 에이전트를 활용한 차세대 금융 혁신 전략을 발표했다. 우리은행 AI 에이전트 뱅킹, 중장기 IT 인프라 최적화 등 최근 금융 주요 프로젝트 수주 성과를 공유하며 실제 적용 사례를 제시했다. 은행·보험·증권 등 금융 전 분야에 걸쳐 AI 기반 업무 자동화와 시스템 현대화 로드맵을 구체적으로 소개했다. 국내 대형 IT 기업이 금융 AI 전환을 선도하는 사례로, 한국 금융 산업의 디지털 전환 방향을 가늠할 수 있다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0ed3460e-2148-4ce3-a536-58fb5d20e962",
+      "title": "카나나 스칼라 1회 세미나 현장 스케치",
+      "url": "https://tech.kakao.com/posts/819",
+      "source": "kakao_tech",
+      "content": "대한민국 AI 생태계를 이끌어갈 지식의 융합, 그 첫걸음을 시작합니다. 4월 15일(수) 이른 아침인 오전 7시부터 9시까지, 삼성역 인근 카카오의 거점 오피스인 '카카오 캠프 강남(KAKAO KAMP 강남)'에서 매우 특별한 행사가 열렸습니다. 바로 카카오와 학계 전문가들의 AI 협력 프로그램인 '카나나 스칼라’ 1회 세미나인데요. 이날 행사에는 국내 주요 대학의 AI 및 컴퓨팅 분야 최고 권위자인 7명의 석학(KAIST 신진우·이주호·김승룡 교수,...",
+      "published_at": "2026-04-21T15:00:00+00:00",
+      "summary": "카카오가 학계 최고 전문가들과 협력하는 AI 연구 프로그램 \"카나나 스칼라\"의 1회 세미나를 개최했다. KAIST 신진우·이주호·김승룡 교수 등 국내 주요 대학의 AI 석학 7명이 참여해 산학 협력 AI 연구의 첫 걸음을 내딛었다. 카카오는 자사 AI 모델 카나나의 고도화를 위해 산학협력 채널을 체계화하고 있으며, 이 프로그램이 그 핵심 플랫폼으로 기능할 전망이다. 국내 AI 생태계 강화를 위한 산업-학계 협력 모델로, 한국 AI 연구 역량 결집의 새로운 시도로 주목된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
