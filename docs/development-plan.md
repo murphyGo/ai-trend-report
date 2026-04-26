@@ -182,7 +182,7 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 | Secret 이름 | 필수 | 설명 |
 |------------|------|------|
 | `CLAUDE_CODE_OAUTH_TOKEN` | ⭐ | Pro/Max 구독 OAuth 토큰 (`~/.claude/.credentials.json`에서 추출) |
-| `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (세션 키 없을 때 폴백) |
+| `ANTHROPIC_API_KEY` | ⭐ | Claude API 키 (OAuth 토큰 없을 때 폴백) |
 | `SLACK_WEBHOOK_URL` | ✅ | Slack Incoming Webhook URL |
 | `DISCORD_WEBHOOK_URL` | ❌ | Discord Webhook URL (선택) |
 | `EMAIL_USERNAME` | ❌ | SMTP 사용자명 (Gmail 주소) |
@@ -190,7 +190,7 @@ Repository Settings > Secrets and variables > Actions에서 다음 시크릿을 
 | `EMAIL_RECIPIENTS` | ❌ | 이메일 수신자 (쉼표 구분: `a@x.com,b@x.com`) |
 | `CODECOV_TOKEN` | ❌ | Codecov 토큰 (커버리지 리포트용) |
 
-> ⭐ `CLAUDE_SESSION_KEY` 또는 `ANTHROPIC_API_KEY` 중 하나 필수.
+> ⭐ `CLAUDE_CODE_OAUTH_TOKEN` 또는 `ANTHROPIC_API_KEY` 중 하나 필수.
 >
 > 📧 이메일: `EMAIL_USERNAME` + `EMAIL_PASSWORD` 설정 시 자동 활성화.
 
@@ -220,14 +220,14 @@ GitHub Actions 탭에서 "Run workflow" 버튼으로 수동 실행 가능:
 
 | 방식 | 환경 변수 | 비용 | 추출 방법 |
 |------|----------|------|----------|
-| **세션 키** (권장) | `CLAUDE_SESSION_KEY` | Pro/Max 구독 포함 | `~/.claude/.credentials.json` |
+| **OAuth 토큰** (권장) | `CLAUDE_CODE_OAUTH_TOKEN` | Pro/Max 구독 포함 | `claude setup-token` |
 | **API 키** | `ANTHROPIC_API_KEY` | 토큰당 과금 | console.anthropic.com |
 
 ### 실행 모드 비교
 
 | 모드 | 설명 | 사용 시점 |
 |------|------|----------|
-| **CLI 모드** (기본) | Claude Code CLI + 세션 키 | Pro/Max 구독자 |
+| **CLI 모드** (기본) | Claude Code CLI + OAuth 토큰 | Pro/Max 구독자 |
 | **API 모드** | Anthropic API 직접 호출 | API 키만 있을 때 |
 
 ---
