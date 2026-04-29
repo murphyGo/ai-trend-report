@@ -1,0 +1,277 @@
+{
+  "id": "ac9aff9d-742e-4bba-a924-6ed7094bd84c",
+  "created_at": "2026-04-29T02:52:57.901192",
+  "articles": [
+    {
+      "id": "957b2ae4-cc04-4e19-b253-208fc91e6795",
+      "title": "Amazon is already offering new OpenAI products on AWS",
+      "url": "https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/",
+      "source": "techcrunch",
+      "content": "A day after OpenAI got Microsoft to agree to end exclusive rights, AWS announced a slate of OpenAI model offerings, including a new agent service.",
+      "published_at": "2026-04-28T19:48:02+00:00",
+      "summary": "아마존 웹 서비스(AWS)가 OpenAI의 신규 모델과 에이전트 서비스를 AWS 플랫폼에서 제공한다고 발표했다. 이는 OpenAI가 마이크로소프트의 독점 계약을 종료하기로 합의한 다음 날 이루어진 움직임으로, OpenAI의 클라우드 파트너십 다각화 전략을 보여준다. AWS에서는 신규 OpenAI 모델뿐 아니라 에이전트 서비스도 함께 제공될 예정이다. 이는 클라우드 AI 시장에서 AWS와 Azure, GCP 간 경쟁이 한층 격화됨을 의미한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7120dd52-e336-49d1-a533-920fb59b79d9",
+      "title": "Google expands Pentagon’s access to its AI after Anthropic’s refusal",
+      "url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+      "source": "techcrunch",
+      "content": "After Anthropic refused to allow the DoD to use its AI for domestic mass surveillance and autonomous weapons, Google has signed a new contract with the department.",
+      "published_at": "2026-04-28T18:15:00+00:00",
+      "summary": "Anthropic이 미국 국방부(DoD)의 국내 대규모 감시 및 자율 무기 목적 AI 사용 요청을 거부한 이후, Google이 국방부와 새로운 AI 계약을 체결하며 접근권을 확대했다. 이 사건은 AI 안전성과 군사적 AI 활용에 대한 프런티어 랩들의 입장 차이를 극명하게 드러낸다. Anthropic의 거부는 기업 AI 안전 정책의 실질적 효력을 보여주는 사례로 주목받고 있다. 동시에 Google의 계약 체결은 AI 군사화에 대한 산업계 내 갈등을 심화시키고 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5d765440-15c2-4fc7-a3ca-158a7a596c47",
+      "title": "NVIDIA Nemotron 3 Nano Omni Powers Multimodal Agent Reasoning in a Single Efficient Open Model",
+      "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/",
+      "source": "nvidia",
+      "content": "Agentic systems often reason across screens, documents, audio, video, and text within a single perception‑to‑action loop. However, they still rely on...Agentic systems often reason across screens, documents, audio, video, and text within a single perception‑to‑action loop. However, they still rely on fragmented model chains—separate stacks for vision, audio, and text. This increases inference hops and orchestration complexity, driving up inference costs while weakening cross-modal context consistency. NVIDIA Nemotron 3 Nano Omni… Source",
+      "published_at": "2026-04-28T16:01:12+00:00",
+      "summary": "NVIDIA가 단일 모델로 화면, 문서, 오디오, 비디오, 텍스트를 모두 처리하는 멀티모달 에이전트 추론 모델 'Nemotron 3 Nano Omni'를 공개했다. 이 오픈 모델은 에지 및 온디바이스 환경에서도 동작할 수 있는 경량화 설계가 특징으로, 에이전트 시스템에 실용적인 멀티모달 인식-행동 루프를 제공한다. 기존에는 여러 특화 모델이 필요했던 복잡한 에이전트 파이프라인을 단일 모델로 대체할 수 있는 가능성을 보여준다. 오픈 웨이트 공개로 연구자와 개발자 모두 활용 가능하다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "091f74a8-7aeb-4ff7-aef5-afc5454ab16e",
+      "title": "KARL: Mitigating Hallucinations in LLMs via Knowledge-Boundary-Aware Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2604.22779",
+      "source": "arxiv",
+      "content": "arXiv:2604.22779v1 Announce Type: new \nAbstract: Enabling large language models (LLMs) to appropriately abstain from answering questions beyond their knowledge is crucial for mitigating hallucinations. While existing reinforcement learning methods foster autonomous abstention, they often compromise answer accuracy because their static reward mechanisms, agnostic to models' knowledge boundaries, drive models toward excessive caution. In this work, we propose KARL, a novel framework that continuously aligns an LLM's abstention behavior with its evolving knowledge boundary. KARL introduces two core innovations: a Knowledge-Boundary-Aware Reward that performs online knowledge boundary estimation using within-group response statistics, dynamically rewarding correct answers or guided abstention; and a Two-Stage RL Training Strategy that first explores the knowledge boundary and bypasses the \"abstention trap\", and subsequently converts incorrect answers beyond the knowledge boundary into abstentions without sacrificing accuracy. Extensive experiments on multiple benchmarks demonstrate that KARL achieves a superior accuracy-hallucination trade-off, effectively suppressing hallucinations while maintaining high accuracy across both in-distribution and out-of-distribution scenarios.",
+      "published_at": "2026-04-28T00:00:00-04:00",
+      "summary": "KARL은 LLM이 자신의 지식 경계를 인식하고 모르는 질문에 적절히 답변을 회피하도록 강화학습 기반으로 훈련하는 새로운 프레임워크다. 기존 RLHF 방식이 과신(overconfidence)을 조장할 수 있는 것과 달리, KARL은 지식 경계 인식을 명시적 보상 신호로 활용해 환각(hallucination)을 줄인다. 실험 결과 다양한 지식 기반 QA 벤치마크에서 환각 감소 및 정확도 개선 효과를 확인했다. 실용적으로는 의료, 법률 등 고신뢰성이 요구되는 영역에서 LLM 신뢰성 향상에 직접 기여할 수 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "702febcd-f165-45cf-ba6e-1e3137f0fe45",
+      "title": "Tuna-2: Pixel Embeddings Beat Vision Encoders for Multimodal Understanding and Generation",
+      "url": "https://huggingface.co/papers/2604.24763",
+      "source": "hf_papers",
+      "content": "Unified multimodal models typically rely on pretrained vision encoders and use separate visual representations for understanding and generation, creating misalignment between the two tasks and preventing fully end-to-end optimization from raw pixels. We introduce Tuna-2, a native unified multimodal model that performs visual understanding and generation directly based on pixel embeddings. Tuna-2 drastically simplifies the model architecture by employing simple patch embedding layers to encode visual input, completely discarding the modular vision encoder designs such as the VAE or the representation encoder. Experiments show that Tuna-2 achieves state-of-the-art performance in multimodal benchmarks, demonstrating that unified pixel-space modelling can fully compete with latent-space approaches for high-quality image generation. Moreover, while the encoder-based variant converges faster in early pretraining, Tuna-2's encoder-free design achieves stronger multimodal understanding at scale, particularly on tasks requiring fine-grained visual perception. These results show that pretrained vision encoders are not necessary for multimodal modelling, and end-to-end pixel-space learning offers a scalable path toward stronger visual representations for both generation and perception.",
+      "published_at": "2026-04-27T17:59:56+00:00",
+      "summary": "Tuna-2는 기존 멀티모달 모델이 사전학습된 비전 인코더에 의존하는 방식을 탈피해, 픽셀 임베딩 방식이 비전 이해와 생성 모두에서 뛰어난 성능을 발휘함을 보여준 연구다. 비전 인코더 없이 통합된 시각 표현을 사용함으로써 이해-생성 태스크 간 불일치를 해소했다. 실험에서 멀티모달 이해와 이미지 생성 두 영역 모두에서 경쟁력 있는 성능을 달성했다. 이 접근법은 향후 멀티모달 아키텍처 설계의 새로운 방향을 제시한다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "cc651c9b-8ae5-4f60-a2ba-b3b54f311062",
+      "title": "DepthKV: Layer-Dependent KV Cache Pruning for Long-Context LLM Inference",
+      "url": "https://huggingface.co/papers/2604.24647",
+      "source": "hf_papers",
+      "content": "Long-context reasoning is a critical capability of large language models (LLMs), enabling applications such as long-document understanding, summarization, and code generation. However, efficient autoregressive inference relies on the key-value (KV) cache, whose memory footprint grows linearly with sequence length, leading to a major memory bottleneck. To mitigate this overhead, KV cache pruning methods discard cached tokens with low attention scores during inference. Most existing methods apply a uniform pruning ratio across layers, implicitly assuming that all layers contribute equally to overall model performance. We show that this assumption is suboptimal, as layers differ significantly in their sensitivity to pruning. We propose DepthKV, a layer-dependent pruning framework that allocates a fixed global KV budget across layers based on their sensitivity, rather than using a uniform allocation. Across multiple models and tasks, DepthKV consistently outperforms uniform pruning at the same global pruning ratio, demonstrating more effective utilization of the KV cache budget through layer-dependent allocation.",
+      "published_at": "2026-04-27T16:15:37+00:00",
+      "summary": "DepthKV는 LLM의 각 레이어가 장문 컨텍스트 처리에서 서로 다른 역할을 한다는 관찰에 기반해, 레이어별로 차등적 KV 캐시 프루닝을 적용하는 방법론이다. 기존 균일 프루닝 대비 메모리 효율과 추론 속도를 동시에 개선하면서도 성능 손실을 최소화한다. 장문 문서 이해, 요약, 코드 생성 등 긴 컨텍스트 기반 애플리케이션의 서빙 비용 절감에 직접 적용 가능하다. 점점 길어지는 컨텍스트 윈도우 추세에서 실용적 중요성이 높은 연구다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "43330b14-5561-43b3-a18b-aeb61f3dbcb8",
+      "title": "CF-VLA: Efficient Coarse-to-Fine Action Generation for Vision-Language-Action Policies",
+      "url": "https://huggingface.co/papers/2604.24622",
+      "source": "hf_papers",
+      "content": "Flow-based vision-language-action (VLA) policies offer strong expressivity for action generation, but suffer from a fundamental inefficiency: multi-step inference is required to recover action structure from uninformative Gaussian noise, leading to a poor efficiency-quality trade-off under real-time constraints. We address this issue by rethinking the role of the starting point in generative action modeling. Instead of shortening the sampling trajectory, we propose CF-VLA, a coarse-to-fine two-stage formulation that restructures action generation into a coarse initialization step that constructs an action-aware starting point, followed by a single-step local refinement that corrects residual errors. Concretely, the coarse stage learns a conditional posterior over endpoint velocity to transform Gaussian noise into a structured initialization, while the fine stage performs a fixed-time refinement from this initialization. To stabilize training, we introduce a stepwise strategy that first learns a controlled coarse predictor and then performs joint optimization. Experiments on CALVIN and LIBERO show that our method establishes a strong efficiency-performance frontier under low-NFE (Number of Function Evaluations) regimes: it consistently outperforms existing NFE=2 methods, matches or surpasses the NFE=10 $π_{0.5}$ baseline on several metrics, reduces action sampling latency by 75.4\\%, and achieves the best average real-robot success rate of 83.0\\%, outperforming MIP by 19.5 points and $π_{0.5}$ by 4.0 points. These results suggest that structured, coarse-to-fine generation enables both strong performance and efficient inference. Our code is available at https://github.com/EmbodiedAI-RoboTron/CF-VLA.",
+      "published_at": "2026-04-27T15:51:40+00:00",
+      "summary": "CF-VLA(Coarse-to-Fine Vision-Language-Action)는 플로우 기반 VLA 정책의 핵심 비효율인 다단계 추론 문제를 해결하는 로보틱스 연구다. 행동 구조를 거친 단계에서 세밀한 단계로 점진적으로 복원함으로써, 정확도를 유지하면서 추론 단계 수를 크게 줄인다. 다양한 로봇 조작 태스크에서 기존 플로우 기반 VLA 정책 대비 추론 효율성을 획기적으로 개선했다. 실시간 로봇 제어에 LLM 기반 정책을 실용화하는 데 중요한 기여를 한다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "30d5b40d-8ba4-4f2f-b166-16e93780e5f1",
+      "title": "Scaling Biomolecular Modeling Using Context Parallelism in NVIDIA BioNeMo",
+      "url": "https://developer.nvidia.com/blog/scaling-biomolecular-modeling-using-context-parallelism-in-nvidia-bionemo/",
+      "source": "nvidia",
+      "content": "For decades, computational biology has operated under a reductionist compromise. To fit complex biological systems into the limited memory of a single GPU,...For decades, computational biology has operated under a reductionist compromise. To fit complex biological systems into the limited memory of a single GPU, researchers have had to deconstruct them into isolated fragments—single proteins or small domains. This created a context gap, where larger proteins or complexes could not be folded zero-shot due to GPU hardware memory constraints. Now… Source",
+      "published_at": "2026-04-28T19:00:00+00:00",
+      "summary": "NVIDIA가 BioNeMo 플랫폼에 컨텍스트 병렬화(Context Parallelism)를 도입해 단일 GPU 메모리 한계를 넘는 대규모 생체분자 시퀀스 모델링을 가능하게 했다. 기존에는 긴 단백질/유전자 시퀀스를 단일 GPU에 올릴 수 없어 분자 단위로 분할해야 했으나, 이제 수십억 염기쌍 규모의 전장 게놈 컨텍스트를 유지하며 모델링할 수 있다. 이는 신약 개발, 유전자 기능 예측, 단백질 설계 등 생명과학 AI 연구의 스케일을 새로운 수준으로 끌어올린다. 컴퓨테이셔널 바이올로지 분야의 실질적 병목을 해소하는 인프라 혁신이다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6a2283d6-8f96-4430-be6c-0384b1dbb95d",
+      "title": "Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines",
+      "url": "https://arxiv.org/abs/2604.23178",
+      "source": "arxiv",
+      "content": "arXiv:2604.23178v1 Announce Type: new \nAbstract: LLM-as-a-Judge has become the dominant paradigm for evaluating language model outputs, yet LLM judges exhibit systematic biases that compromise evaluation reliability. We present a comprehensive empirical study comparing nine debiasing strategies across five judge models from four provider families (Google, Anthropic, OpenAI, Meta), three benchmarks (MT-Bench n=400, LLMBar n=200, custom n=225), and four bias types. Our key findings: (1) Style bias is the dominant bias (0.76-0.92 across all models), far exceeding position bias (<= 0.04), yet has received minimal research attention. (2) All models show a conciseness preference on expansion pairs, but truncation controls confirm they correctly distinguish quality from length (0.92-1.00 accuracy), suggesting quality-sensitive evaluation rather than a simple length bias. (3) Debiasing is beneficial but model-dependent: the combined budget strategy significantly improves Claude Sonnet 4 by +11.2 pp (p < 0.0001), with directionally positive trends for other models. Only 2 of 20 non-baseline configurations show decreased agreement. We release our evaluation framework, controlled dataset, and all experimental artifacts at https://github.com/sksoumik/llm-as-judge.",
+      "published_at": "2026-04-28T00:00:00-04:00",
+      "summary": "LLM-as-a-Judge 평가 패러다임에서 LLM 심사위원이 보이는 체계적 편향(자기 선호, 위치 편향 등)을 측정하고, 다양한 편향 완화 전략의 효과를 종합적으로 평가한 연구다. 다양한 심사 모델과 완화 전략 조합을 체계적으로 실험한 결과, 현재의 완화 기법들이 편향을 완전히 제거하지 못함을 밝혔다. LLM 평가 시스템의 신뢰성에 직접적인 함의를 가지며, 모델 정렬 및 리더보드 구성에 종사하는 연구자들에게 필독 연구다. LLM 평가 인프라의 객관성 확보를 위한 추가 연구 방향도 제시한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e8e29e0b-d4b2-4609-8200-e56bcb8198ac",
+      "title": "The missing step between hype and profit",
+      "url": "https://www.technologyreview.com/2026/04/27/1136456/the-missing-step-between-hype-and-profit/",
+      "source": "mit_tech_review",
+      "content": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. In February, I picked up a flyer at an anti-AI march in London. I can’t say for sure whether or not its writers meant to riff on South Park’s underpants gnomes. But if they did, they nailed it: “Step 1: Grow a digital super mind,” it read. “Step 2: ? Step 3: ?” Produced by Pause AI, an international activist group that co-organized the protest, it ended with this plea to the reader: “Pause AI until we know what the hell Step 2 is.”&nbsp; In the South Park episode “Gnomes,” which first aired in 1998, Kenny, Kyle, Cartman, and Stan discover a community of gnomes that sneak out at night to steal underpants from dressers. Why? The gnomes present their pitch deck. “Phase 1: Collect underpants. Phase 2: ? Phase 3: Profit.” The gnomes’ business plan has since become one of the greats among internet memes, used to satirize everything from startup strategies to policy proposals. Memelord in chief Elon Musk once invoked it in a talk about how he planned to fund a mission to Mars. Right now, it captures the state of AI. Companies have built the tech (Step 1) and promised transformation (Step 3). How they get there is still a big question mark. As far as Pause AI is concerned, Step 2 must involve some kind of regulation. But exactly what it will call for and who will enforce it are up for debate. AI boosters, on the other hand, are convinced that Step 3 is salvation and tend to glaze over the middle bit. They see us racing toward sunny uplands on the back of an “economically transformative technology,” as OpenAI’s chief scientist, Jakub Pachocki, put it to me a few weeks ago. They know where they want to go—more or less: It’s hazy up there and still some way off. But everyone’s taking a different route. Will they all make it? Will anyone? For every big claim about the future, there is a more sober assessment of how the rubber meets the road—one that quells the hype. Consider two recent studies. One, from Anthropic, predicted what types of jobs are going to be most affected by LLMs. (A takeaway: Managers, architects, and people in the media should prepare for change; groundskeepers, construction workers, and those in hospitality, not so much.) But their predictions are really just guesses, based on what kinds of tasks LLMs seem to be good at rather than how they really perform in the workplace.&nbsp;&nbsp;&nbsp; Another study, put out in February by researchers at Mercor, an AI hiring startup, tested several AI agents powered by top-tier models from OpenAI, Anthropic, and Google DeepMind on 480 workplace tasks frequently carried out by human bankers, consultants, and lawyers. Every agent they tested failed to complete most of its duties.&nbsp;&nbsp;&nbsp; Why is there such wide disagreement? There are a number of factors. For a start, it’s crucial to consider who is making the claims (and why). Anthropic has skin in the game. What’s more, most of the people telling us that something big is about to happen have reached that conclusion largely on the basis of how fast AI coding tools are getting. But not all tasks can be hacked with coding. Other studies have found that LLMs are bad at making strategic judgment calls, for example. What’s more, when they’re deployed, the tools aren’t just dropped into a cleanroom. They need to work in places contaminated with people and existing workflows. And sometimes adding AI will make things worse. Sure, maybe those workflows need to be torn up and refashioned around the new technology for it to achieve transformative status, but that will take time (and guts).&nbsp;&nbsp; That big hole? It’s right where Step 2 should be. The lack of agreement on exactly what’s about to happen—and how—creates an information vacuum that gets filled by the latest wild claim of the week, evidence be damned. We’re so unmoored from any real understanding of what’s coming and how it will be deployed that a single social media post can (and does) shake markets. We need fewer guesses and more evidence. But that’s going to require transparency from the model makers, coordination between researchers and businesses, and new ways to evaluate this technology that tell us what really happens when it’s rolled out in the real world. The tech industry (and with it the world’s economy) rests on the held-out promise that AI really will be transformative. But that is not yet a sure bet. Next time you hear bold claims about the future, remember that most businesses are still figuring out what to do with their underpants.",
+      "published_at": "2026-04-27T16:13:41+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 AI 붐과 실제 기업 수익화 사이의 간극을 분석한 심층 기사를 발행했다. 많은 기업이 AI 투자를 단행하고 있지만, 실질적인 ROI로 이어지는 데 핵심 중간 단계가 빠져 있음을 지적한다. 데이터 품질, 조직 역량, 프로세스 재설계 없이는 AI 도입이 기대한 수익 개선으로 이어지지 않는다는 사례들을 제시한다. 기술 과대선전과 실질적 가치 창출 사이의 간극을 메우기 위한 실용적 접근법을 논의한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "95895475-4e8c-41fa-9c48-f9c60f271233",
+      "title": "Rebuilding the data stack for AI",
+      "url": "https://www.technologyreview.com/2026/04/27/1136322/rebuilding-the-data-stack-for-ai/",
+      "source": "mit_tech_review",
+      "content": "Artificial intelligence may be dominating boardroom agendas, but many enterprises are discovering that the biggest obstacle to meaningful adoption is the state of their data. While consumer-facing AI tools have dazzled users with speed and ease, enterprise leaders are discovering that deploying AI at scale requires something far less glamorous but far more consequential: data infrastructure that is unified, governed, and fit for purpose. That gap between AI ambition and enterprise readiness is becoming one of the defining challenges of this next phase of digital transformation. As Bavesh Patel, senior vice president of Databricks, puts it, “the quality of that AI and how effective that AI is, is really dependent on information in your organization.” Yet in many companies, that information remains fragmented across legacy systems, siloed applications, and disconnected formats, making it nearly impossible for AI systems to generate trustworthy, context-rich outputs. “Really, the big competitive differentiator for most organizations is their own data and then their third-party data that they can add to it,” says Patel. For enterprise AI to deliver value, data must be consolidated into open formats, governed with precision, and made accessible across functions. Without that foundation, businesses risk “terrible AI,” as Patel bluntly describes it. That means moving beyond siloed SaaS platforms and disconnected dashboards toward a unified, open data architecture capable of combining structured and unstructured data, preserving real-time context, and enforcing rigorous access controls. When the groundwork is laid correctly, organizations can move toward measurable outcomes, unlocking efficiencies, automating complex workflows, and even launching entirely new lines of business. That value focus is critical, says Rajan Padmanabhan, unit technology officer at Infosys, especially as enterprises seek precision in the outputs driving business decisions. Rather than treating AI initiatives as isolated innovation projects, leading companies are tying AI deployment directly to business metrics, using governance frameworks to determine what delivers results and what should be abandoned quickly. “We see this big opportunity just with AI literacy with business users, where they&#8217;re very eager to understand how they should be thinking about AI,” adds Patel. “What does AI mean when you peel the covers? What are the pieces and the building blocks that you need to put in place, both from a technology and a training and an enablement standpoint?” The possibilities ahead are substantial. As AI agents evolve from copilots into autonomous operators capable of managing workflows and transactions, the organizations that win will be those that build the right foundation now. “What we are seeing as a new way of thinking is moving from a system of execution or a system of engagement to a system of action,” notes&nbsp; Padmanabhan. “That is the new way we see the road ahead.” The future of AI in the enterprise will be determined by whether businesses can turn fragmented information into a strategic asset capable of powering both smarter decisions and entirely new ways of operating. This episode of Business Lab is produced in partnership with Infosys Topaz. Full Transcript: Megan Tatum: From MIT Technology Review, I&#8217;m Megan Tatum, and this is Business Lab, the show that helps business leaders make sense of new technologies coming out of the lab and into the marketplace. This episode is produced in partnership with Infosys Topaz.Now, recent advancements in AI may have unlocked some compelling new industrial applications, but a reliance on inadequate data models means that many enterprises are hitting a brick wall. AI and agentic AI in particular place a whole new set of demands on data. The technology requires greater access, context, and guardrails to operate effectively. Existing data models often fall short. They&#8217;re too fragmented or siloed. Data itself often lacks quality. To bridge the gap, they require an AI-ready upgrade. Two words for you: data reconfigured.My guest today, are Bavesh Patel, senior vice president for Go-to-Market at Databricks, and Rajan Padmanabhan, unit technology officer for data analytics and AI at Infosys. Welcome, Bavesh and Rajan. Rajan Padmanabhan: Thank you. Thanks for having us. Bavesh Patel: Thanks for having us. Megan: Fantastic. Thank you both so much for joining us today. Bavesh, if I could come to you first, when we talk about AI-ready data, what exactly do we mean? What new demands does AI place on data, and how does this impact the way it needs to be structured and used? Bavesh: Yeah. Great question. Appreciate you hosting us today. I think that obviously the whole world is enamored with AI because of all of the power that we can all see as users. AI is now democratized across hundreds of millions of users. And when we think about enterprises and businesses using AI, the quality of that AI and how effective that AI is really dependent on information in your organization, and that&#8217;s data. And what we found is that most enterprises, their data is kind of locked away in these different applications and different systems. And it&#8217;s very difficult to get a good view of, what is all my data? How trustworthy is it? How recent and fresh is it? And all of that is being injected into the AI. Unless you have a proper understanding of your data, the ability to ensure that it&#8217;s data that&#8217;s accurate and that can be used so that the AI can take advantage of it, you&#8217;re actually going to end up having terrible AI. We see a lot of customers spend time on cleansing their data, organizing their data, making sure it&#8217;s access controlled correctly, and that tends to be the fuel of good AI. Megan: Yeah. It&#8217;s such a foundational thing, isn&#8217;t it? But it can be missed, I think, quite easily. Rajan, what difference can having AI-ready data really make for enterprises as they unlock that full potential of AI and its applications? Rajan: First and foremost, thanks for having us. It&#8217;s a pleasure. I think in continuation of what Bavesh talked about, see, data and AI is pretty synonymous. And similarly, the consumer AI and enterprise AI and enterprise agentic AI are different because first and foremost, the business needs to have the context. That context from your enterprise information, which is not only structured, both structured and unstructured and user-generated contents and all forms of data is going to be very, very critical to really get the context right, and really get any model that you pick. That&#8217;s where the platforms like Databricks really help with the plethora of models or whether you want to build your own models or whether you want to ground the model based on your data. That is going to be very, very critical. That is where getting the data for AI is going to be very, very critical. The third critical part, and this actually will be one of the roadblocks for adoption of AI. That&#8217;s why if you see the AI adoption on the consumer side is skyrocketing, but on the enterprise side, the enterprises are struggling is primarily around the precision of their output, because you are taking a business decisions where you are taking a buy decision, you are taking a sell decision, or you are trying to recommend something, recommend the content. It could be 20 different use cases. For that, the precision is going to be very critical. We are seeing our customers, the successful customers, definitely for the precision to be more than 92% is not aspiration, that is a must-have. If you have that, definitely being that AI data is going to be the entrepreneur right now for that. Megan: And I suppose if we&#8217;ve outlined there how critical this is, where should enterprises start then, professional perhaps, the level, what are the foundations when it comes to building an AI-ready data model? Bavesh: Yeah. And I think Rajan hit the nail on the head. I mean, enterprises are grappling with a different set of problems than consumer AI. The first thing is that you&#8217;ve got to get a handle on your data. As I mentioned, a lot of the data is locked in. Ensuring that you have ability to put your data in a place where you can understand the holistic view of as much of your data as possible. That kind of starts with putting your data in open formats. A lot of the valuable data today in an organization is locked away in some proprietary SaaS app or some system, and all the datasets aren&#8217;t connected together to form that context. The first step is to really do an analysis of what is your data estate? What are the critical pieces of data that need to be put into a place where you can start to understand them and how they&#8217;re connected to one another? Thinking about how do you set up your data catalog, thinking about how do the relationships between the data assets work, putting data governance around it, that seems to be the first step. And if you think about how ChatGPT was built, it took all the data on the internet and then aggregated it, synthesized it, and then built these transformer models, while enterprises, they don&#8217;t really have a handle of all their data within the organization. That&#8217;s the first foundation that you really want to think about. The second thing is that you don&#8217;t want to just go ad hoc, go and do random AI projects. You really need to be thinking about business value. A lot of our customers are looking at AI much more strategically in that they want to be able to get projects on the board with wins and then generate business value. Building an AI value roadmap, which is connected to how well your data is organized, those two things seem to be foundational to how do you launch AI successfully in your organization. Megan: That value piece is so important, isn&#8217;t it? And as I understand it, Infosys and Databri",
+      "published_at": "2026-04-27T13:00:00+00:00",
+      "summary": "기업들이 AI를 본격 도입하면서 가장 큰 장애물이 AI 모델 자체가 아니라 데이터 인프라의 상태임이 드러나고 있다는 MIT 테크놀로지 리뷰의 분석이다. AI 시대에 맞게 데이터 수집, 저장, 처리, 거버넌스 전반을 재설계해야 한다는 주장을 담고 있다. 특히 레거시 데이터 사일로, 비표준 데이터 형식, 데이터 품질 문제가 AI 프로젝트 실패의 주요 원인으로 지목된다. 엔터프라이즈 AI 도입을 준비하는 기업과 개발자에게 실질적인 인사이트를 제공하는 글이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7575d328-3531-4578-aa2f-f54f7cde6025",
+      "title": "비개발자의 AI 협업 도전기 — 생산성 측정하려다 서버까지 띄운 9일",
+      "url": "https://d2.naver.com/helloworld/2017402",
+      "source": "naver_d2",
+      "content": "\"조직이 잘하고 있는지 어떻게 알 수 있을까?\" 이 질문에서 출발해 사내 가이드 문서와 AI를 붙들고 직접 측정 도구를 완성하기까지 9일이 걸렸습니다. 그 과정을 기록으로 남깁니다. 사내 생산성 측정에 관한 고민 기술 PM으로 일하면서 조직과 프로젝트의 생산성을 어떻게 측정할지는 늘 풀리지 않는 과제였습니다. 스프린트를 원활하게 진행하는 것 같아도 막상 이를 수치로 보여달라고 하면 난감했습니다. 속도가 빨라지는지, 병목이 어디서 발생하는지, 지난 분기보다 나아지고 있는지 감각적으로는 알 수 있었지만 데이터로 명확히 설명하기는 어려웠습니다. 사내에는 이미 'DevOps board'라는 시스템이 있어 배포 빈도와 리드타임을 포함한 DORA 지표를 제공하고 있습니다. 소프트웨어 딜리버리 흐름을 측정한다는 점에서 제가 찾던 도구에 가까웠습니다. 다만 저는 분석 지표와 상황에 맞추어 조금 더 세분화된 데이터를 들여다보고 싶었습니다. 그래서 먼저 Jira 대시보드를 만들어 리치 필터(rich filter)로 데이터를 추출해 보았습니다. 이슈 완료 수, 스프린트 완료율, 컴포넌트별 작업량 등 여러 수치가 모였지만, 수집한 숫자만으로는 조직의 작업 속도를 한눈에 파악하기 어려웠습니다. 작업이 어디서 얼마나 걸리는지도 보이지 않았습니다. Jira는 업무를 관리하는 도구일 뿐 소프트웨어 딜리버리 흐름 전체를 측정하는 도구는 아니기 때문입니다. 결국 특정 컴포넌트 기준의 분류, 팀 고유의 이슈 타입 정의, 팀 내 업무 흐름을 세밀하게 들여다볼 수 있는 맞춤형 도구가 필요했습니다. 기존 DevOps board를 대체하려는 것이 아니라, 팀의 상황에 맞추어 데이터를 직접 구성해 보고 싶었습니다. 문제는 제가 이를 직접 구현할 기술적 역량이 부족하다는 점이었습니다. 개발자에게 부탁하기에는 작업 규모가 작았고, 백로그에 등록하더라도 언제 진행될지 기약할 수 없었습니다. 그래서 AI의 도움을 받아 직접 만들어 보기로 했습니다. 1단계: HTML 파일 하나로 가설 검증 처음에는 배포, 서버, 인증 과정을 모두 생략하고 HTML 파일 하나로 가볍게 시작했습니다. 브라우저에서 Jira 변경 기록(changelog) CSV 파일을 파싱해 바로 시각화하는 구조였습니다. AI에게 전달한 첫 프롬프트에는 현재 상황과 맥락을 최대한 자세히 담았습니다. Jira 이슈별 changelog CSV에는 'Issue Key', 'Status', 'Created' 칼럼이 있어. 각 이슈가 'In Progress'로 처음 전환된 시각과 'Done'으로 전환된 시각의 차이를 일(day) 단위로 계산하고 싶어. 팀별, 이슈 타입별로 집계해서 주차별 트렌드를 보여주는 웹 대시보드를 만들고 싶은데, 구조는 이해하지만 직접 구현은 못 해. 이 프롬프트에는 데이터 형식, 원하는 결과물, 그리고 저의 기술적 한계가 모두 들어가 있습니다. AI는 곧바로 코드를 작성하는 대신 발생할 수 있는 예외 상황(edge case)을 먼저 짚어 주었습니다. 이슈가 In Progress → Backlog → In Progress로 다시 이동했다가 Done이 되는 경우, 리드타임 기산점을 첫 번째 In Progress로 할지 마지막으로 할지 정의가 필요해요. Done 이후 재오픈 케이스는요? 이 질문을 받기 전까지는 저 역시 이러한 예외 상황을 생각하지 못했습니다. 실제로 확인해 보니 데이터에 해당 사례가 적지 않게 포함되어 있었습니다. 결국 AI와 대화하는 과정 자체가 요구사항 정의 세션이 된 셈입니다. 물론 초기에는 버그도 있었습니다. Jira CSV의 타임스탬프가 UTC 기준이라 KST로 변환해 날짜를 계산해야 했고, 내보내기 설정에 따라 이슈 타입 필드명이 달라지는 문제도 있었습니다. 이럴 때는 문제를 말로 설명하기보다 실제 CSV 헤더와 샘플 데이터 일부를 AI에게 그대로 보여주는 편이 훨씬 효과적이었습니다. 이렇게 해서 대시보드 화면에 리드타임 수치가 나타났습니다. 하지만 그 숫자를 보면서 새로운 의문이 생겼습니다. 이 수치가 좋은 편인지 나쁜 편인지는 어떻게 알 수 있을까요? 2단계: DORA 지표를 통한 기준 마련 리드타임을 측정하는 것과 그 수치의 의미를 파악하는 것은 별개의 문제였습니다. 그래서 소프트웨어 딜리버리 성과를 측정하는 프레임워크인 DORA 지표를 참고했습니다. DORA 지표는 수많은 팀과 프로젝트의 데이터를 분석해 도출한 네 가지 핵심 지표로 구성됩니다. 배포 빈도 변경 리드타임 변경 실패율 서비스 복구 시간 여러 연구를 통해 이 네 가지 지표가 팀의 딜리버리 역량을 가장 잘 설명한다는 사실이 검증되었습니다. 제가 측정한 Jira 리드타임은 이 중 '변경 리드타임'에 해당했습니다. 작업 시작부터 실제 배포까지 걸리는 시간입니다. 나머지 지표를 확인하려면 추가 데이터가 필요했습니다. 배포 빈도는 배포 이벤트 로그에서, 변경 실패율과 복구 시간은 PR(Pull Request) 및 이슈 데이터에서 얻을 수 있었습니다. 결국 Jira 데이터만으로는 전체 딜리버리 흐름의 절반만 볼 수 있었습니다. 나머지 절반을 채우려면 사내 GitHub 데이터를 연동해야 했습니다. 3단계: AI를 활용한 서버 구축과 가이드 문서 GitHub API를 주기적으로 호출하고 이를 Jira 데이터와 결합하려면 단순한 브라우저용 HTML 환경으로는 부족했습니다. 별도의 서버가 필요해진 것입니다. 사실 이 시점에서 진행을 포기할까 고민도 했습니다. Dockerfile을 한 번도 작성해 본 적 없는 비개발자가 컨테이너 기반 배포를 직접 해낼 수 있을지 확신이 서지 않았기 때문입니다. 일단 사내 공통 컨테이너 플랫폼인 'N3R'의 가이드 문서부터 찾아보았습니다. 하지만 낯선 용어가 많아 문서 첫 페이지부터 막막했습니다. 그래서 접근 방식을 바꿨습니다. 가이드 문서를 혼자 끙끙대며 읽는 대신, 그 내용을 AI에게 전달하고 함께 해석해 나가기 시작한 것입니다. 이 가이드에 이렇게 나와 있는데, 파이썬 FastAPI 앱에 적용하면 Dockerfile을 어떻게 써야 해? [가이드 해당 섹션 붙여넣기] 가이드 문서에는 사내 환경과 표준 규칙이 담겨 있습니다. AI는 그 내용을 제 상황에 맞게 구체화해 주었습니다. 둘 중 어느 한쪽만으로는 해결이 어려웠지만, 가이드 문서와 AI를 교차로 활용함으로써 무사히 서버를 띄울 수 있었습니다. 4단계: 스케줄러 설정과 데이터 누락 문제 해결 서버를 구축했다고 해서 데이터가 저절로 모이는 것은 아닙니다. Jira와 GitHub API를 주기적으로 호출해 줄 스케줄러가 필요했습니다. 다행히 사내에는 이미 Self-Hosted Runner 환경과 관련 설정 가이드 문서가 마련되어 있었습니다. 돌이켜보면 9일 중 가장 많은 시간을 이 구간에서 소요했습니다. Runner 환경 변수 설정, 인증 토큰 발급, API 페이지네이션(pagination) 처리 등 예상치 못한 문제가 꼬리를 물고 나타났기 때문입니다. 그중에서도 가장 애를 먹었던 부분은 API 페이지네이션이었습니다. 조회할 이슈가 1,000개를 넘어가면 API 응답이 중간에 잘리는데, 초기에 AI가 작성한 코드에는 이 예외 처리가 누락되어 있었습니다. 오류 메시지조차 없이 데이터만 조용히 누락되고 있었고, 나중에 직접 숫자를 대조하며 검증하다가 우연히 발견했습니다. 이 과정을 거치며 제가 AI에게 질문하는 방식도 달라졌습니다. 초반에는 \"이거 어떻게 해요?\"에 가까웠다면, 나중에는 가이드 내용, 현재 설정 파일, 오류 메시지를 함께 붙여 \"이 값을 내 상황에 어떻게 적용하면 돼?\"라고 물었습니다. 상황과 맥락을 자세히 전달할수록 AI의 답변은 훨씬 정확해졌습니다. 5단계: 사내 스토리지 연동과 사람의 역할 수집한 데이터를 저장하고 필요할 때 화면에 제공하려면 스토리지가 필요했습니다. 사내에서 제공하는 Redis 기반 스토리지인 nBase-ARC를 활용하기로 하고 관련 가이드 문서를 참고했습니다. AI는 보편적인 Redis 사용법은 훌륭하게 알려 주었습니다. 하지만 사내의 특수한 네트워크 정책, 고유한 TTL 설정 방식, 접근 권한 신청 프로세스 같은 내부 정보는 알지 못했습니다. 이런 부분에서는 사내 가이드 문서와 사내 AI 기반 문의 채널 ASK가 도움이 되었습니다. 널리 공개된 기술 스택을 다룰 때 AI는 탁월한 조력자입니다. 하지만 사내 특화 환경, 내부 정책, 조직 고유의 관행은 AI가 파악할 수 없는 영역입니다. 이 영역은 결국 사람이, 문서가, 동료가 채워야 합니다. 완성된 대시보드의 효과 이제 Jira와 GitHub 데이터는 매일 자동으로 수집됩니다. 대시보드에 접속하면 조직과 프로젝트의 전반적인 딜리버리 흐름을 한눈에 확인하고 다음과 같은 것들을 쉽게 파악할 수 있습니다. 리드타임이 유독 길어지는 구간 특정 이슈 타입에서 반복되는 병목 현상 스프린트 후반부에 배포 이벤트가 몰리는 패턴 '요즘 왠지 개발 속도가 느려진 것 같다'는 막연한 느낌을 이제는 데이터를 근거로 설명할 수 있게 되었습니다. 물론 이 대시보드가 완벽한 측정 도구는 아닙니다. DORA 지표를 온전히 구현한 것도 아닙니다. 하지만 측정 도구가 아예 없었을 때와 비교하면 확실한 차이가 있습니다. 가장 큰 변화는 조직 회고 시간의 논의 수준이 달라졌다는 점입니다. 막연한 감이 아니라 실제 데이터를 보면서 이야기하게 되었습니다. 프로젝트를 진행하며 배운 점 기획의 재발견: AI는 마법사가 아니라 정밀한 조각가다 AI는 사용자가 원하는 바를 구현하는 데 탁월한 능력을 보여줍니다. 하지만 그 전제는 사용자 스스로 '무엇을 원하는지'를 명확히 알고 있어야 한다는 것입니다. 작업을 하면서 특히 효과적이라고 느낀 소통 방식은 다음 세 가지였습니다. 실제 데이터를 예시로 보여주기 발생 가능한 예외 상황을 미리 정의하기 기대한 결과와 실제 결과의 차이를 명확히 짚어 주기 이 세 가지 요건이 충족될 때 AI는 가장 정확한 결과물을 내놓았습니다. 결국 기획이란 필요한 기능을 나열하는 작업이 아니라, AI가 올바르게 이해하고 작업할 수 있도록 꼼꼼한 설계도를 그리는 과정이었습니다. 얼마나 명확하고 구체적으로 지시하느냐가 최종 결과물의 품질을 결정했습니다. 인프라의 벽: 가이드와 AI, 둘 다 필요했다 서버를 구축하는 과정에서는 사내 가이드 문서와 AI를 함께 활용해야 했습니다. 가이드 문서는 사내 환경을 정확히 설명해 주었지만 제 프로젝트 상황에 딱 맞는 답을 주지는 못했습니다. 반대로 AI는 기술적 원리를 잘 설명해 주었지만 사내 환경의 특수성은 알지 못했습니다. 따라서 이 둘을 교차해서 쓰는 것이 가장 효율적이었습니다. 가이드 문서의 내용을 AI에게 알려 주고 그 의미를 함께 해석하는 방식입니다. 가이드 문서가 '무엇을' 해야 하는지 알려주면, AI가 '어떻게' 해야 하는지 구체화했습니다. 새로운 아이디어의 실현은 도구의 발전에서 비롯되지만, 그것이 지속 가능하게 유지하는 힘은 안정적인 인프라에서 나옵니다. 그리고 비개발자조차 그 인프라에 접근해 활용할 수 있도록 길을 열어 주는 것은 결국 잘 작성된 가이드 문서입니다. 토큰의 무게: AI는 공짜가 아니다 AI를 활용하면서 토큰(비용)이 유독 많이 소모되는 구간이 있었습니다. 대체로 다음과 같은 상황이었습니다. AI가 매번 코드 전체를 새로 읽게 했던 초반 대화 맥락을 정리하지 않고 질문을 무분별하게 이어 갔던 중반 분석 탭에서 AI API를 3번 순차 호출하던 구조 해법은 '역할 분리'였습니다. 데이터 파싱이나 집계 같은 단순 계산은 JavaScript 코드가 직접 처리하도록 하고, AI에게는 최종적으로 요약된 수치만 전달해 의미 해석을 맡기는 구조로 바꿨습니다. 그러자 토큰 사용량이 눈에 띄게 줄었고 응답 속도도 훨씬 빨라졌습니다. 어떤 기능을 구현하기 전에는 \"이 작업을 반드시 AI가 처리해야 하는가?\"를 먼저 자문해 볼 필요가 있습니다. 명확한 규칙으로 처리할 수 있는 작업은 코드로 해결하고, AI는 문맥 판단이나 해석이 필요한 영역에만 제한적으로 활용하는 편이 효율적입니다. AI의 한계: 오류가 없다고 올바른 것은 아니다 가장 많은 시간을 낭비하게 만든 것은 역설적이게도 AI가 확신에 차서 작성해 준 코드였습니다. 앞서 언급한 API 페이지네이션 코드는 겉보기에는 아무런 오류 없이 매끄럽게 동작했습니다. 하지만 이슈가 1,000개를 넘어가는 순간부터 데이터가 시스템 내부에서 조용히 누락되고 있었습니다. 출력된 수치를 꼼꼼히 검증해 보지 않았다면 끝까지 몰랐을 문제였습니다. 따라서 AI가 만들어 준 코드는 오류 없이 실행되는지 확인하는 선에서 그쳐서는 안 됩니다. 도출된 결과가 실제로 정확한지 정합성을 검증하는 단계가 반드시 필요합니다. 샘플 데이터로 직접 계산한 값과 AI의 결과물을 대조해 보는 과정은 번거롭지만 생략할 수 없습니다. 생태계의 제언: '데이터 민주주의'를 위한 조건 비개발자인 제가 이 프로젝트를 무사히 마칠 수 있었던 것은 AI의 능력 덕분만은 아니었습니다. 든든한 사내 가이드 문서가 뒷받침되었기에 가능한 일이었습니다. 가이드 문서가 없었다면 아무리 훌륭한 AI라도 사내 환경에 맞는 결과물을 만들어내기 어려웠을 것입니다. 회사에는 방대한 데이터와 훌륭한 인프라가 있습니다. 하지만 권한은 열려 있어도 이를 실제로 활용할 수 있는 사람은 극소수인, 이른바 '접근은 가능하지만 접근할 수 있는 사람은 없는' 상태에 머무는 경우가 많습니다. API 사용 가이드를 조금 더 체계적으로 다듬고, 자주 쓰이는 템플릿 코드를 사내에 공유하고, 보안 가이드라인을 명확히 제시해 주는 것만으로도 수많은 사내 맞춤형 도구가 새롭게 만들어질 수 있습니다. 비개발자가 AI와 협업해 가치 있는 무언가를 만들어 내는 진정한 전제 조건은 결국 '친절하고 정확한 가이드 문서'입니다. AI는 사용자가 그 가이드를 조금 더 쉽게 소화하고 자기 상황에 적용할 수 있도록 돕는 훌륭한 조력자일 뿐입니다. 마치며 불과 9일 전의 저는 스스로 서버를 구축할 수 있을 거라고는 생각도 못 했습니다. 그런데 결국 Dockerfile을 작성하고, 컨테이너를 빌드해 배포하고, API를 주기적으로 호출하는 스케줄러를 구성했으며, Redis에 데이터를 읽고 쓰는 경험까지 했습니다. 코드는 대부분 AI가 작성해 주었지만, '무엇을 만들 것인지', '어떤 구조로 설계할 것인지', '최종 결과물이 올바른지'를 판단하는 몫은 온전히 제게 있었습니다. 대시보드의 숫자를 보며 종종 생각합니다. '우리 조직과 프로젝트는 잘 나아가고 있나?' 예전에는 막연했던 그 질문에, 이제는 데이터를 근거로 조금은 명확한 답을 할 수 있게 되었습니다. 동료에게서 \"이거 어떻게 만드셨어요?\"라는 질문을 받을 때마다 저는 이렇게 답하곤 합니다. \"AI한테 말로 시켰어요. 그런데 뭘 시킬지는 제가 알아야 했어요.\" 이 글을 통해 전하고 싶은 메시지는 단 하나입니다. AI를 잘 활용하는 조직은 성능 좋은 AI 도구를 선별하는 데 그치지 않고, AI가 역량을 제대로 발휘할 수 있는 밑바탕 환경을 먼저 탄탄하게 갖춘 조직입니다. 데이터를 같은 기준으로 관리하려는 조직적 합의 누구나 안전하게 접근하여 실험할 수 있는 열린 인프라 비개발자도 천천히 따라갈 수 있도록 작성된 가이드 문서 이 세 가지가 바로 AI 시대에 필요한 인프라입니다.",
+      "published_at": "2026-04-29T10:56:02+00:00",
+      "summary": "네이버 D2에서 비개발자 기술 PM이 AI 도구들을 활용해 조직 생산성 측정 시스템을 9일 만에 직접 구축한 경험을 공유한 글이다. 코딩 경험 없이 AI의 도움으로 가이드 문서 분석부터 실제 서버 구동까지 완성한 과정을 상세히 기록했다. 이 사례는 AI 코딩 어시스턴트가 비개발자의 기술적 장벽을 실질적으로 낮출 수 있음을 보여주는 생생한 국내 사례다. 한국 기업 현장에서의 AI 협업 가능성과 한계를 솔직하게 다루고 있어 실용적 참고가 된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "8b7521b7-182f-48bf-b237-e4692e635b42",
+      "title": "셰프에서 AI 리더로…젠슨 황 CEO 딸 '매디슨 황', “비선형 커리어가 경쟁력” 서울대서 AI 리더십 제시",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=39815",
+      "source": "korean",
+      "content": "엔비디아가 지난 28일,서울대학교에서 차세대 인공지능(AI) 인재를 대상으로 자율형 AI 에이전트 구축 실습 프로그램 ‘빌드 어 클로(Build-a-Claw)’를 개최했다.\n\n이번 행사는 엔비디아(NVIDIA)가 글로벌 개발자 행사에서 시작된 체험형 프로그램을 대학 교육 현장으로 확장한 사례로, 미래 인재들이 AI 에이전트 기반 워크플로우를 직접 설계하고 구현할 수 있도록 마련됐다.\n\n이날 행사에서 가장 주목을 받은 인물은 단연 매디슨 황(Madison Huang)이었다. 엔비디아 피지컬 AI 플랫폼 제품·기술 마케팅 시니어 디렉터인 그는 이번 행사에서 단순 연사를 넘어, AI 시대를 살아갈 학생들에게 방향성을 제시하는 핵심 메시지 전달자로 나섰다.\n\n특히 그녀는 엔비디아 CEO 젠슨 황의 딸이라는 배경을 넘어, 자신만의 독특한 커리어 전환 경험을 바탕으로 학생들과 깊이 있는 공감을 이끌어냈다.\n\n“커리어는 직선이 아니다”...비선형 경로의 가치 강조\n\n매디슨 황은 이날 ‘AI 시대의 리더십: 여성들의 목소리(Leadership for the Age of AI: Women’s Voices)’ 포럼에서 자신의 이력을 솔직하게 공유했다. 그는 요리사와 소믈리에로 커리어를 시작해 럭셔리 산업을 거쳐 AI 기업으로 전환한 ‘비선형 경로’를 걸어왔다.\n\n그는 이러한 경험을 바탕으로 “성공은 전공이나 경력의 일관성에서 오는 것이 아니라, 장인 정신과 디테일, 그리고 끊임없는 자기 재발명에서 비롯된다”고 강조했다. 이는 빠르게 변화하는 AI 시대에 기존의 정형화된 커리어 패스가 더 이상 절대적인 기준이 아님을 시사하는 메시지로 해석된다.\n\n“AI는 과업을 대신하지만, 목적은 인간의 영역”\n\n강연의 핵심은 AI에 대한 명확한 역할 정의였다. 매디슨 황은 “AI는 코딩과 같은 ‘과업(task)’을 대신할 수 있지만, 문제를 정의하고 해결 방향을 설정하는 ‘목적(purpose)’은 여전히 인간의 몫”이라고 강조했다.\n\n그는 학생들에게 AI를 경쟁자가 아닌 ‘역량 증폭 도구’로 활용할 것을 조언하며, 이를 통해 더 높은 수준의 문제 해결에 도전해야 한다고 밝혔다. 이는 최근 확산되고 있는 에이전틱 AI(agentic AI) 시대에서 인간과 AI의 역할 분담을 명확히 짚은 발언으로 평가된다.\n\n매디슨 황은 새로운 분야에 도전할 때 마주하는 두려움에 대해서도 현실적인 조언을 내놓았다. 그는 “모르는 것을 인정하고 질문하는 것이 성장의 출발점”이라며, 학습 과정에서의 적극적인 태도의 중요성을 강조했다.\n\n또한 학생들에게 “학교라는 안전한 환경에서 최대한 많은 실험을 시도하라”며, 실패를 두려워하기보다 다양한 경험을 통해 자신만의 전문성을 구축할 것을 당부했다.\n\n학생들과 직접 소통…실질적 커리어 인사이트 제공\n\n이날 포럼 이후 이어진 질의응답 세션에서도 매디슨 황은 학생들과 적극적으로 소통하며 구체적인 커리어 조언을 제공했다. 참가자들은 AI 산업 진입 전략, 직무 선택, 글로벌 기업에서의 성장 방식 등 다양한 질문을 던졌고, 그는 자신의 경험을 바탕으로 현실적인 답변을 이어갔다.\n\n이러한 소통은 단순한 강연을 넘어, AI 시대를 준비하는 학생들에게 실질적인 방향성을 제시하는 자리로 이어졌다.\n\n이날 행사에서 매디슨 황이 전달한 메시지는 단순한 기술 교육을 넘어, AI 시대에 요구되는 인간 중심 리더십에 대한 통찰로 요약된다. 특히 ‘비선형 커리어’, ‘AI와 인간의 역할 구분’, ‘지속적인 자기 혁신’이라는 세 가지 키워드는 향후 AI 인재가 갖춰야 할 핵심 역량으로 제시됐다.\n\n한편, 이날 행사에는 약 200명의 재학생과 연구원이 참여했으며, 참가자들은 오픈클로(OpenClaw) 기반의 장시간 실행 가능한 AI 에이전트를 직접 구축하는 실습을 진행했다. 이와 함께 개인용 AI 슈퍼컴퓨터인 엔비디아 DGX 스파크(DGX Spark)를 활용해 외부 연결 없이도 AI 에이전트의 강력한 성능과 보안성을 직접 체험할 수 있는 기회를 제공했다.",
+      "published_at": null,
+      "summary": "엔비디아가 서울대학교에서 차세대 AI 인재를 위한 자율형 AI 에이전트 구축 실습 프로그램 'Build-a-Claw'를 개최했다. 젠슨 황 CEO의 딸 매디슨 황이 비선형 커리어를 통한 AI 리더십의 중요성을 강조하며 국내 학생들과 교류했다. 이번 행사는 엔비디아가 글로벌 개발자 행사에서 시작된 체험형 프로그램을 대학 교육 현장으로 확장한 사례다. 한국 AI 생태계에 대한 글로벌 기업들의 관심과 투자가 이어지고 있음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "9b168cad-e598-4506-b623-bdabf9b24f33",
+      "title": "Discovering Agentic Safety Specifications from 1-Bit Danger Signals",
+      "url": "https://arxiv.org/abs/2604.23210",
+      "source": "arxiv",
+      "content": "arXiv:2604.23210v1 Announce Type: new \nAbstract: Can large language model agents discover hidden safety objectives through experience alone? We introduce EPO-Safe (Experiential Prompt Optimization for Safe Agents), a framework where an LLM iteratively generates action plans, receives sparse binary danger warnings, and evolves a natural language behavioral specification through reflection. Unlike standard LLM reflection methods that rely on rich textual feedback (e.g., compiler errors or detailed environment responses), EPO-Safe demonstrates that LLMs can perform safety reasoning from a strictly impoverished signal in structured, low-dimensional environments: the agent never observes the hidden performance function $R^*$, only a single bit per timestep indicating that an action was unsafe. We evaluate on five AI Safety Gridworlds (Leike et al., 2017) and five text-based scenario analogs where visible reward $R$ may diverge from $R^*$. EPO-Safe discovers safe behavior within 1-2 rounds (5-15 episodes), producing human-readable specifications with correct explanatory hypotheses about hazards (e.g., \"X cells are directionally hazardous: entering from the north is dangerous\"). Critically, we show that standard reward-driven reflection actively degrades safety: agents reflecting on reward alone use the loop to justify and accelerate reward hacking, proving that reflection must be paired with a dedicated safety channel to discover hidden constraints. We further evaluate robustness to noisy oracles: even when 50% of non-dangerous steps produce spurious warnings, mean safety performance degrades by only 15% on average, though sensitivity is environment-dependent, as cross-episode reflection naturally filters inconsistent signals. Each evolved specification functions as an auditable set of grounded behavioral rules discovered autonomously through interaction, rather than authored by humans as in Constitutional AI (Bai et al., 2022).",
+      "published_at": "2026-04-28T00:00:00-04:00",
+      "summary": "LLM 에이전트가 최소한의 이진(1-bit) 위험 신호만을 이용해 숨겨진 안전 목표를 스스로 발견하고 명세화할 수 있는지 탐구하는 연구다. EPO-Safe(Experiential Prompt Optimization for Safety)라는 프레임워크를 제안하며, 에이전트가 경험을 통해 안전 제약을 역설계하는 능력을 실험으로 검증했다. 기존에 사람이 수동으로 작성하던 안전 명세를 자동화할 수 있는 가능성을 보여준다. 에이전트 AI 시스템의 안전성을 확장 가능한 방식으로 확보하려는 연구에 중요한 기여를 한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "aaad3f46-1248-42c1-ad66-eed81e997c5e",
+      "title": "AgenticCache: Cache-Driven Asynchronous Planning for Embodied AI Agents",
+      "url": "https://huggingface.co/papers/2604.24039",
+      "source": "hf_papers",
+      "content": "Embodied AI agents increasingly rely on large language models (LLMs) for planning, yet per-step LLM calls impose severe latency and cost. In this paper, we show that embodied tasks exhibit strong plan locality, where the next plan is largely predictable from the current one. Building on this, we introduce AgenticCache, a planning framework that reuses cached plans to avoid per-step LLM calls. In AgenticCache, each agent queries a runtime cache of frequent plan transitions, while a background Cache Updater asynchronously calls the LLM to validate and refine cached entries. Across four multi-agent embodied benchmarks, AgenticCache improves task success rate by 22% on average across 12 configurations (4 benchmarks x 3 models), reduces simulation latency by 65%, and lowers token usage by 50%. Cache-based plan reuse thus offers a practical path to low-latency, low-cost embodied agents. Code is available at https://github.com/hojoonleokim/MLSys26_AgenticCache.",
+      "published_at": "2026-04-27T04:51:15+00:00",
+      "summary": "AgenticCache는 구현된 AI 에이전트(Embodied AI Agent)가 LLM을 매 단계마다 호출하는 비효율을 해결하기 위해 KV 캐시 기반 비동기 계획 실행 방법을 제안한다. 구현된 태스크들이 강한 계획 재사용 패턴을 보인다는 관찰에서 출발해, 캐시를 활용해 LLM 호출 횟수와 지연 시간을 대폭 줄인다. 다양한 구현 에이전트 벤치마크에서 성능을 유지하면서도 추론 속도와 비용을 크게 개선했다. 실시간 로봇 제어나 물리적 AI 에이전트 실용화에 직접 기여하는 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f1591deb-bd8e-4705-93c3-3a4d323652c7",
+      "title": "MEMCoder: Multi-dimensional Evolving Memory for Private-Library-Oriented Code Generation",
+      "url": "https://huggingface.co/papers/2604.24222",
+      "source": "hf_papers",
+      "content": "Large Language Models (LLMs) excel at general code generation, but their performance drops sharply in enterprise settings that rely on internal private libraries absent from public pre-training corpora. While Retrieval-Augmented Generation (RAG) offers a training-free alternative by providing static API documentation, we find that such documentation typically provides only isolated definitions, leaving a fundamental knowledge gap. Specifically, LLMs struggle with a task-level lack of coordination patterns between APIs and an API-level misunderstanding of parameter constraints and boundary conditions. To address this, we propose MEMCoder, a novel framework that enables LLMs to autonomously accumulate and evolve Usage Guidelines across these two dimensions. MEMCoder introduces a Multi-dimensional Evolving Memory that captures distilled lessons from the model's own problem-solving trajectories. During inference, MEMCoder employs a dual-source retrieval mechanism to inject both static documentation and relevant historical guidelines into the context. The framework operates in an automated closed loop by using objective execution feedback to reflect on successes and failures, resolve knowledge conflicts, and dynamically update memory. Extensive evaluations on the NdonnxEval and NumbaEval benchmarks demonstrate that MEMCoder substantially enhances existing RAG systems, yielding an average absolute pass@1 gain of 16.31%. Furthermore, MEMCoder exhibits vastly superior domain-specific adaptation compared to existing memory-based continual learning methods.",
+      "published_at": "2026-04-27T09:27:59+00:00",
+      "summary": "MEMCoder는 기업 내부 전용 라이브러리처럼 공개 사전학습 데이터에 없는 비공개 코드베이스에 대한 LLM 코드 생성 성능을 개선하는 연구다. 다차원 진화 메모리 시스템을 통해 에이전트가 새 라이브러리 API와 사용 패턴을 점진적으로 학습하고 축적할 수 있도록 설계했다. 기존 RAG 기반 접근법 대비 복잡한 사내 라이브러리 코드 생성 정확도를 크게 향상시켰다. 실제 엔터프라이즈 개발 환경에서 AI 코딩 어시스턴트의 실용성을 높이는 핵심 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "fbd71d6f-a0cf-4450-bc32-10db6dcf2fd0",
+      "title": "Mixture of Heterogeneous Grouped Experts for Language Modeling",
+      "url": "https://arxiv.org/abs/2604.23108",
+      "source": "arxiv",
+      "content": "arXiv:2604.23108v2 Announce Type: new \nAbstract: Large Language Models (LLMs) based on Mixture-of-Experts (MoE) are pivotal in industrial applications for their ability to scale performance efficiently. However, standard MoEs enforce uniform expert sizes,creating a rigidity that fails to align computational costs with varying token-level complexity. While heterogeneous expert architectures attempt to address this by diversifying expert sizes, they often suffer from significant system-level challenges, specifically unbalanced GPU utilization and inefficient parameter utilization, which hinder practical deployment. To bridge the gap between theoretical heterogeneity and robust industrial application, we propose Mixture of Heterogeneous Grouped Experts (MoHGE) which introduces a two-level routing mechanism to enable flexible, resource-aware expert combinations. To optimize inference efficiency, we propose a Group-Wise Auxiliary Loss, which dynamically steers tokens to the most parameter-efficient expert groups based on task difficulty. To address the critical deployment challenge of GPU load balancing, we introduce an All-size Group-decoupling Allocation strategy coupled with an Intra-Group Experts Auxiliary Loss. These mechanisms collectively ensure uniform computation distribution across GPUs. Extensive evaluations demonstrate that MoHGE matches the performance of MoE architectures while reducing the total parameters by approximately 20% and maintaining balanced GPU utilization. Our work establishes a scalable paradigm for resource-efficient MoE design, offering a practical solution for optimizing inference costs in real-world scenarios. The code is publicly available at https://github.com/UnicomAI/MoHGE.",
+      "published_at": "2026-04-28T00:00:00-04:00",
+      "summary": "MoE(Mixture of Experts) 언어 모델의 성능 확장성을 개선하기 위해 이질적(heterogeneous) 전문가 그룹을 혼합하는 새로운 아키텍처를 제안한다. 동일한 파라미터 수에서 균일한 전문가 구성 대비 더 높은 언어 모델링 성능을 달성했다. 이질적 전문가 설계가 다양한 언어 패턴과 지식 유형을 더 효율적으로 분리·학습할 수 있음을 보여준다. 대규모 MoE 모델 설계에 새로운 아키텍처적 방향을 제시하는 연구로, 차세대 LLM 개발에 영향을 줄 수 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "095e33d1-0073-40c3-b992-4f7c9e7c710f",
+      "title": "Parameter Efficiency Is Not Memory Efficiency: Rethinking Fine-Tuning for On-Device LLM Adaptation",
+      "url": "https://arxiv.org/abs/2604.22783",
+      "source": "arxiv",
+      "content": "arXiv:2604.22783v1 Announce Type: new \nAbstract: Parameter-Efficient Fine-Tuning (PEFT) has become the standard for adapting large language models (LLMs). In this work we challenge the wide-spread assumption that parameter efficiency equates memory efficiency and on-device adaptability. We show that this is not true - while methods like LoRA and IA3 significantly reduce trainable parameters, they remain bound by intermediate tensors that scale linearly with sequence length, often triggering out-of-memory errors on-device. In this work, we introduce LARS (Low-memory Activation-Rank Subspace), a novel adaptation framework that decouples memory consumption from sequence length. While prior PEFT methods apply low-rank constraints to model parameters, LARS instead constrains the activation subspace used during training, directly targeting the dominant source of memory consumption and fundamentally flattening the memory growth rate. LARS reduces the memory footprint by an average of 33.54% on GPUs and 51.95% on CPUs in comparison to LoRA across reasoning, understanding and long-context datasets using different models while maintaining competitive accuracy and throughput. Besides GPUs, we deploy on Raspberry Pi and consumer-grade CPUs to demonstrate that LARS provides a scalable path for sophisticated LLM personalization on resource-constrained hardware and edge devices.",
+      "published_at": "2026-04-28T00:00:00-04:00",
+      "summary": "파라미터 효율적 파인튜닝(PEFT)이 메모리 효율성도 보장한다는 광범위한 가정이 온디바이스 LLM 적응 환경에서는 성립하지 않는다는 것을 실험으로 반박한 연구다. LoRA 등 PEFT 방법들이 파라미터 수는 줄이지만, 그래디언트와 옵티마이저 상태 저장으로 인해 실제 메모리 사용량은 여전히 높을 수 있음을 밝혔다. 엣지 디바이스에서 LLM을 파인튜닝할 때 실제 메모리 병목을 정확히 이해하고 최적화 전략을 재설계해야 한다는 중요한 인사이트를 제공한다. 온디바이스 AI 연구자와 모바일 ML 엔지니어에게 필수적인 참고 연구다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "343e8d89-7491-42c8-a9a8-51b839e15cc4",
+      "title": "Lovable launches its vibe-coding app on iOS and Android",
+      "url": "https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/",
+      "source": "techcrunch",
+      "content": "The app allows developers to vibe code web apps and websites on the go.",
+      "published_at": "2026-04-28T16:09:30+00:00",
+      "summary": "AI 기반 바이브 코딩 플랫폼 Lovable이 iOS와 Android 앱을 출시하며 모바일에서도 웹 앱과 웹사이트를 생성할 수 있게 됐다. 자연어로 웹 앱을 만드는 바이브 코딩 경험을 스마트폰으로 확장함으로써, 개발자가 이동 중에도 프로토타입을 빠르게 제작할 수 있게 된다. AI 코딩 도구의 모바일 진출은 개발 워크플로우의 패러다임 변화를 예고한다. 비개발자도 간단한 웹 애플리케이션을 직접 만들 수 있는 접근성이 더욱 높아졌다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "eea1e2c3-4829-45f6-8151-defbcb469372",
+      "title": "At his OpenAI trial, Musk relitigates an old friendship",
+      "url": "https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/",
+      "source": "techcrunch",
+      "content": "It's a story Musk has told before -- in interviews and to author Walter Isaacson for his bestselling biography of Musk -- but Tuesday was the first time he said it under oath.",
+      "published_at": "2026-04-29T00:40:16+00:00",
+      "summary": "일론 머스크가 OpenAI를 상대로 한 소송의 재판에서 OpenAI 창립 당시의 비영리 원칙 훼손을 주장하며 법정 증언을 했다. 머스크는 OpenAI가 영리 전환을 통해 당초 약속했던 공익적 목적에서 이탈했다고 주장했으며, 이번 증언에서 그 내용을 처음으로 선서하에 진술했다. 이 소송은 OpenAI의 기업 구조 및 AI 안전에 대한 책임 문제를 산업계 전반에 다시 상기시키고 있다. 재판 결과에 따라 AI 기업의 비영리-영리 전환 방식과 거버넌스에 선례가 될 수 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
