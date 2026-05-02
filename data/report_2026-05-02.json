@@ -1,0 +1,285 @@
+{
+  "id": "7b623596-d5cb-4003-844b-462d804eb681",
+  "created_at": "2026-05-02T02:43:49.587429",
+  "articles": [
+    {
+      "id": "44ac9213-425c-45b5-8121-60f02c8ff146",
+      "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
+      "url": "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
+      "source": "mit_tech_review",
+      "content": "In the first week of the landmark trial between Elon Musk and OpenAI, Musk took the stand in a crisp black suit and tie and argued that OpenAI CEO Sam Altman and president Greg Brockman had deceived him into bankrolling the company. Along the way, he warned&nbsp;that AI could destroy us all and sat through revelations that he had poached OpenAI employees for his own companies. He even confessed, to some audible gasps in the courtroom, that his own AI company, xAI, which makes the chatbot Grok, uses OpenAI’s models to train its own.&nbsp; The federal courthouse in Oakland, California, was packed with armies of lawyers carrying boxes of exhibits, journalists typing away at their laptops, and a handful of concerned OpenAI employees. Outside, protesters lined the streets, carrying signs urging people to quit ChatGPT, boycott Tesla, or both. Musk looked calm and comfortable, slipping in the occasional quip in his distinct South African accent. But he also was full of remorse.&nbsp; “I was a fool who provided them free funding to create a startup,” Musk told the jury. He said when he cofounded OpenAI in 2015 with Altman and Brockman, he was donating to a nonprofit developing AI for the benefit of humanity, not to make the executives rich. “I gave them $38 million of essentially free funding, which they then used to create what would become an $800 billion company,” he said. Musk is asking the court to remove Altman and Brockman from their roles and to unwind the restructuring that allowed OpenAI to operate a for-profit subsidiary. The outcome of the trial could upend OpenAI’s race toward an IPO at a valuation approaching $1 trillion. Meanwhile, xAI is expected to go public as a part of Musk’s rocket company SpaceX as early as June, at a target valuation of $1.75 trillion. This week’s testimony revolved around a central question of the trial: why Musk is suing OpenAI. Musk argued he was trying to save OpenAI’s mission to develop AI safely by restoring the company to its original nonprofit structure. OpenAI’s lawyer, William Savitt, who once represented Musk and his electric-car company Tesla, countered that Musk was “never committed to OpenAI being a nonprofit” and instead was suing to undermine his competitor.&nbsp; Who is the steward of AI safety? During his direct examination early in the week, Musk painted himself as a longtime advocate of AI safety. He said he cofounded OpenAI to create a “counterbalance to Google,” which was leading the AI race at the time. He said that when he asked Google cofounder Larry Page what happens if AI tries to wipe out humanity, Page told him, “That will be fine as long as artificial intelligence survives.”&nbsp; “The worst-case scenario is a Terminator situation where AI kills us all,” Musk later told the jury. Savitt stood at the lectern and argued that Musk was not a “paladin of safety and regulation.” As he cross-examined Musk in his sharp, surgical cadence, Savitt pointed out that xAI sued the state of Colorado in April over an AI law designed to prevent algorithmic discrimination.&nbsp; Musk’s lawyer, Steven Molo, sprang to his feet to object. He asked the judge if he, too, could weigh in on ChatGPT’s safety record.&nbsp; The lawyers then entered a heated debate about who was the true guardian of AI safety.&nbsp; The sparring continued the next morning. “We all could die as a result of artificial intelligence!” said Molo, suggesting that OpenAI could not be trusted to build AI safely. “Despite these risks, your client is creating a company that’s in the exact space,” Judge Yvonne Gonzalez Rogers said sternly, referring to xAI. “I suspect there’s plenty of people who don’t want to put the future of humanity in Mr. Musk’s hands.” When the lawyers began talking over each other, the judge snapped. “This is not a trial on whether or not artificial intelligence has damaged humanity,” she said.&nbsp; When did Musk think he was being duped? As Savitt continued to cross-examine Musk, he pressed on the idea that Musk had never been committed to keeping OpenAI a nonprofit. He also claimed that Musk waited too long to sue OpenAI, filing after the statute of limitations ran out.&nbsp; Musk explained why he sued in 2024 rather than earlier, describing “three phases” in his views of OpenAI. In phase one, he was “enthusiastically supportive” of the company.” In phase two, “I started to lose confidence that they were telling me the truth,” he said. In phase three, “I’m sure they’re looting the nonprofit.”&nbsp; In 2017, Musk and other OpenAI cofounders discussed creating a for-profit subsidiary to raise enough capital to build artificial general intelligence—powerful AI that can compete with humans on most cognitive tasks. Musk wanted a majority interest in the subsidiary and the right to choose a majority of the board members. He also pitched having Tesla acquire OpenAI. (He left OpenAI in 2018.) “I was not opposed to there being a small for-profit that provides funding to the nonprofit,” he told the jury, “as long as the tail didn’t wag the dog.”&nbsp; But it was only in late 2022, Musk testified, that he “lost trust in Altman” and his commitment to keeping the company a nonprofit. The key moment came, he said, when he learned that Microsoft would invest $10 billion in OpenAI.&nbsp; “I texted Sam Altman, ‘What the hell is going on? This is a bait and switch,’” he told the jury. Microsoft would give $10 billion only if it expected “a very big financial return,” he said. Is Musk just trying to kill competition? But Savitt argued that Musk was really suing to undermine OpenAI as a competitor to his empire of tech companies. While he was on the board of OpenAI, Musk was also running Tesla and his brain-implant company, Neuralink. He founded xAI in 2023. Savitt pulled up an email that Musk had sent to a Tesla vice president in 2017 after hiring Andrej Karpathy, a founding member of OpenAI, to work at Tesla.“The OpenAI guys are gonna want to kill me. But it had to be done,” he wrote. When asked about it, Musk was flustered. He claimed Karpathy had already decided to leave OpenAI when he recruited him to work at Tesla. “I believe it’s a free world,” he said.Savitt pulled up another email that Musk sent to a cofounder at Neuralink in 2017. He wrote that they could “hire independently or directly from OpenAI.” When pressed about it, he sounded frazzled. “It’s a free country,” he said. “I can’t restrict their ability to hire people from other companies.”&nbsp; Savitt also pointed out that Tesla, SpaceX, Neuralink, and X were socially beneficial for-profit companies, like OpenAI. He stressed that xAI was also a closed-source, for-profit company. But Musk claimed that xAI was not a real competitor to OpenAI. “We’re not currently tracking to reach AGI first,” he told the jury.&nbsp; In fact, Musk admitted that xAI uses OpenAI’s technology. In response to Savitt’s relentless questioning, he said xAI “partly” distills OpenAI’s models. Some people in the courtroom gasped.&nbsp; Distillation is a technique where a smaller AI model is trained to mimic the behavior of larger, more capable models, so it can run faster and more cheaply while performing nearly as well. But OpenAI and other AI companies have pushed back against the practice. In February, OpenAI accused the Chinese AI company DeepSeek of distilling its AI models. In August 2025, Wired reported that Anthropic had blocked OpenAI’s access to Claude for violating the company’s terms of service, which prohibit, among other things, reverse-engineering its services and building competing products.&nbsp; “It is standard practice to use other AIs to validate your AI,” argued Musk.Next week, Stuart Russell, a computer scientist at UC Berkeley, will testify about AI safety. Brockman, who has been taking notes during Musk’s testimony, will also testify. This story is part of MIT Technology Review’s ongoing coverage of the Musk v. Altman trial. Follow @techreview or @michelletomkim on X for up-to-the-minute reporting.",
+      "published_at": "2026-05-01T22:08:19+00:00",
+      "summary": "머스크-알트만 소송 첫 주, 일론 머스크가 직접 증인석에 서서 OpenAI 공동창업자들이 자신을 속여 투자하게 했다고 주장했다. 재판 과정에서 xAI가 OpenAI 모델을 증류(distillation)했다는 사실이 드러났으며, 머스크는 AI가 인류를 멸망시킬 수 있다고 경고했다. OpenAI 직원 영입 의혹, 내부 이메일 및 트윗 등이 증거로 제출되며 AI 산업 전반에 파문이 일고 있다. 이번 재판은 OpenAI의 비영리→영리 전환 적법성과 초기 투자자 약속 이행 여부를 법적으로 다루는 역사적 사건으로 평가된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3158721b-ab45-45cd-bfcc-62bf0e735d6f",
+      "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+      "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
+      "source": "techcrunch",
+      "content": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+      "published_at": "2026-05-01T22:13:27+00:00",
+      "summary": "메타(Meta)가 휴머노이드 로봇 스타트업 Assured Robot Intelligence를 인수해 로봇용 AI 모델 역량을 강화한다. 메타는 이번 인수를 통해 물리 세계에서 작동하는 AI 에이전트 개발에 본격적으로 뛰어들 계획이다. 인수 금액은 공개되지 않았으나, 빅테크의 로봇공학 분야 투자가 빠르게 늘고 있는 추세를 반영한다. 구글, 아마존, 애플에 이어 메타도 휴머노이드 로봇 경쟁에 합류하면서 AI-로봇 융합 생태계 경쟁이 더욱 치열해질 전망이다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "aab5b810-10e4-4c8f-ace5-39f9ebeae8c2",
+      "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
+      "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+      "source": "techcrunch",
+      "content": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
+      "published_at": "2026-05-01T16:02:36+00:00",
+      "summary": "미국 국방부(DoD)가 Nvidia, Microsoft, AWS와 기밀 네트워크에 AI를 배포하기 위한 계약을 체결했다. 이번 계약은 DoD가 특정 AI 벤더 의존도를 줄이고 다양한 공급자 포트폴리오를 구성하려는 전략의 일환이다. 앤스로픽과의 사용 약관 분쟁 이후 DoD가 벤더 다각화에 더욱 적극적으로 나서고 있음을 보여준다. 군사 및 국가안보 분야에서의 AI 도입이 가속화되면서 방위산업과 AI 산업의 교차점이 새로운 전략 지형으로 부상하고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "8b74443e-93dc-46e3-91e8-82b89ebd8019",
+      "title": "Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell",
+      "url": "https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/",
+      "source": "techcrunch",
+      "content": "At TechCrunch's sold-out StrictlyVC event in San Francisco on Thursday night, we covered a lot of ground in a short time, beginning with the question everyone in the industry is asking right now: in a world where rival Cursor is reportedly in talks to be acquired by SpaceX for $60 billion, is Replit also bound to sell?",
+      "published_at": "2026-05-01T23:06:50+00:00",
+      "summary": "Replit CEO 아므자드 마사드(Amjad Masad)가 경쟁사 Cursor가 SpaceX에 600억 달러에 인수 협상 중이라는 보도에 대해 공개 발언했다. 마사드는 Replit을 매각할 의향이 없다고 밝히며, AI 코딩 도구 시장에서 독립 회사로서의 성장 전략을 고수하겠다고 했다. 또한 Apple 앱스토어 정책과의 갈등 등 AI 개발 플랫폼이 직면한 규제 및 유통 장벽에 대해서도 언급했다. AI 코딩 어시스턴트 시장이 수십억 달러 규모로 급성장하면서 빅테크의 M&A 타깃이 되고 있는 상황을 잘 보여주는 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c93cf66d-4120-4517-8785-eafa49e8c754",
+      "title": "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction",
+      "url": "https://arxiv.org/abs/2604.27393",
+      "source": "arxiv",
+      "content": "arXiv:2604.27393v1 Announce Type: new \nAbstract: Recent progress in multimodal large language models (MLLMs) has brought AI capabilities from static offline data processing to real-time streaming interaction, yet they still remain far from human-level multimodal interaction. The key bottlenecks are no longer modality coverage or latency alone, but the interaction paradigm itself. First, perception and response are still separated into alternating phases, preventing models from incorporating new inputs for timely adjustment during generation. Second, most current models remain reactive, responding only to explicit user requests instead of acting proactively in the evolving multimodal environment. We present MiniCPM-o 4.5, our latest effort towards human-like multimodal interaction, which mitigates these gaps by real-time full-duplex omni-modal interaction. It can see, listen, and speak simultaneously in real-time, while also exhibiting proactive behaviors such as issuing reminders or comments based on its continuous understanding of the live scene. The key technique behind MiniCPM-o 4.5 is Omni-Flow, a unified streaming framework that aligns omni-modal inputs and outputs along a shared temporal axis. This formulation converts conventional turn-based interaction into a full-duplex, time-aligned process, enabling simultaneous perception and response and allowing proactive behavior to arise within the same framework. With a total of 9B parameters, MiniCPM-o 4.5 approaches Gemini 2.5 Flash in vision-language capabilities, delivering state-of-the-art open-source performance at its scale. It also surpasses Qwen3-Omni-30B-A3B in omni-modal understanding and delivers better speech generation, with significantly higher computation efficiency. Driven by its efficient architecture design and inference optimization, the model can perform real-time full-duplex omni-modal interaction on edge devices with less than 12GB RAM cost.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "MiniCPM-o 4.5는 오디오·비전·텍스트를 실시간으로 동시 처리하는 전이중(full-duplex) 옴니모달 상호작용 모델이다. 기존 멀티모달 LLM이 정적 오프라인 처리에 머물렀던 것과 달리, 스트리밍 입력에 즉각 응답하는 인간 수준의 대화 상호작용을 목표로 한다. 모델 크기 대비 높은 성능을 달성해 엣지 디바이스 및 실시간 애플리케이션에 적합한 경량 옴니모달 AI의 가능성을 보여준다. 음성 대화, 화상 상담, 실시간 멀티모달 에이전트 등 다양한 실용적 응용 분야에서 활용이 기대된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "38bf1194-271d-46c5-b849-015e3f6fecdf",
+      "title": "Path-Lock Expert: Separating Reasoning Mode in Hybrid Thinking via Architecture-Level Separation",
+      "url": "https://arxiv.org/abs/2604.27201",
+      "source": "arxiv",
+      "content": "arXiv:2604.27201v1 Announce Type: new \nAbstract: Hybrid-thinking language models expose explicit think and no-think modes, but current designs do not separate them cleanly. Even in no-think mode, models often emit long and self-reflective responses, causing reasoning leakage. Existing work reduces this issue through better data curation and multi-stage training, yet leakage remains because both modes are still encoded in the same feed-forward parameters. We propose Path-Lock Expert (PLE), an architecture-level solution that replaces the single MLP in each decoder layer with two semantically locked experts, one for think and one for no-think, while keeping attention, embeddings, normalization, and the language-model head shared. A deterministic control-token router selects exactly one expert path for the entire sequence, so inference preserves the dense model's per-token computation pattern and each expert receives mode-pure updates during supervised fine-tuning. Across math and science reasoning benchmarks, PLE maintains strong think performance while producing a substantially stronger no-think mode that is more accurate, more concise, and far less prone to reasoning leakage. On Qwen3-4B, for example, PLE reduces no-think reflective tokens on AIME24 from 2.54 to 0.39 and improves no-think accuracy from 20.67% to 40.00%, all while preserving think-mode performance. These results suggest that controllable hybrid thinking is fundamentally an architectural problem, and separating mode-specific feed-forward pathways is a simple and effective solution.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "Path-Lock Expert는 하이브리드 사고 언어 모델(thinking/no-thinking 모드 전환 지원)에서 추론 누출(reasoning leakage) 문제를 아키텍처 수준에서 해결하는 기법이다. no-think 모드에서도 모델이 불필요하게 긴 자기 성찰 응답을 생성하는 문제를 경로 잠금 전문가 구조로 차단한다. 기존의 데이터 큐레이션·다단계 학습 방식보다 근본적으로 두 모드를 분리해 추론 비용과 레이턴시를 크게 줄인다. DeepSeek-R1, Qwen 시리즈 같은 하이브리드 사고 모델의 실용성을 높이는 데 직접 기여할 수 있는 연구다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "2c59620c-af61-4551-82c0-1d3acdbc260b",
+      "title": "Physical Foundation Models: Fixed hardware implementations of large-scale neural networks",
+      "url": "https://huggingface.co/papers/2604.27911",
+      "source": "hf_papers",
+      "content": "Foundation models are deep neural networks (such as GPT-5, Gemini~3, and Opus~4) trained on large datasets that can perform diverse downstream tasks -- text and code generation, question answering, summarization, image classification, and so on. The philosophy of foundation models is to put effort into a single, large (${\\sim}10^{12}$-parameter) general-purpose model that can be adapted to many downstream tasks with no or minimal additional training. We argue that the rise of foundation models presents an opportunity for hardware engineers: in contrast to when different models were used for different tasks, it now makes sense to build special-purpose, fixed hardware implementations of neural networks, manufactured and released at the roughly 1-year cadence of major new foundation-model versions. Beyond conventional digital-electronic inference hardware with read-only weight memory, we advocate a more radical re-thinking: hardware in which the neural network is realized directly at the level of the physical design and operates via the hardware's natural physical dynamics -- \\textit{Physical Foundation Models} (PFMs). PFMs could enable orders-of-magnitude advantages in energy efficiency, speed, and parameter density. For ${\\sim}10^{12}$-parameter models, this would both reduce the high energy burden of AI in datacenters and enable AI in edge devices that today are power-constrained to far smaller models. PFMs could also enable inference hardware for models much larger than current ones: $10^{15}$- or even $10^{18}$-parameter PFMs seem plausible by some measures. We present back-of-the-envelope calculations illustrating PFM scaling using an optical example -- a 3D nanostructured glass medium -- and discuss prospects in nanoelectronics and other physical platforms. We conclude with the major research challenges that must be resolved for trillion-parameter PFMs and beyond to become reality.",
+      "published_at": "2026-04-30T14:18:56+00:00",
+      "summary": "Physical Foundation Models는 GPT-5, Gemini 3, Opus 4 같은 대규모 파운데이션 모델을 전용 고정 하드웨어(VLSI 칩)로 직접 구현하는 새로운 패러다임을 제안한다. 소프트웨어 가중치를 칩 회로 자체에 인코딩하여 추론 시 불필요한 메모리 접근을 없애고 에너지 효율을 수십 배 향상시킬 수 있다. 이 접근법은 데이터센터의 전력 소비 문제를 근본적으로 해결할 잠재력을 가지며, AI 인프라의 패러다임 전환을 예고한다. 하드웨어-소프트웨어 공동 설계(co-design)의 극단적 형태로, AI 가속기 연구의 새로운 방향을 제시한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3f0eebd2-0683-482d-a24d-0575565ef53a",
+      "title": "Learning Rate Transfer in Normalized Transformers",
+      "url": "https://arxiv.org/abs/2604.27077",
+      "source": "arxiv",
+      "content": "arXiv:2604.27077v1 Announce Type: new \nAbstract: The Normalized Transformer, or nGPT (arXiv:2410.01131) achieves impressive training speedups and does not require weight decay or learning rate warmup. However, despite having hyperparameters that explicitly scale with model size, we observe that nGPT does not exhibit learning rate transfer across model dimension and token horizon. To rectify this, we combine numerical experiments with a principled use of alignment exponents (arXiv:2407.05872) to revisit and modify the $\\mu$P approach to hyperparameter transfer (arXiv:2011.14522). The result is a novel nGPT parameterization we call $\\nu$GPT. Through extensive empirical validation, we find $\\nu$GPT exhibits learning rate transfer across width, depth, and token horizon.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "정규화 트랜스포머(nGPT)는 학습 속도 향상과 하이퍼파라미터 단순화라는 장점에도 불구하고 모델 크기 간 학습률 전이가 되지 않는 문제가 있음을 발견했다. 본 연구는 nGPT에서 학습률이 모델 차원(d)과 토큰 수에 따라 어떻게 스케일링돼야 하는지 이론적 규칙을 도출했다. 이를 통해 소형 모델에서 최적화된 학습률을 대형 모델로 안전하게 전이할 수 있어 하이퍼파라미터 탐색 비용을 대폭 절감한다. 뮤P(μP) 스케일링 규칙과 유사한 맥락에서 nGPT의 실용적 적용 가능성을 크게 높이는 기여다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c7846028-b1e8-4beb-b2d6-f40de48a303e",
+      "title": "Step-level Optimization for Efficient Computer-use Agents",
+      "url": "https://arxiv.org/abs/2604.27151",
+      "source": "arxiv",
+      "content": "arXiv:2604.27151v1 Announce Type: new \nAbstract: Computer-use agents provide a promising path toward general software automation because they can interact directly with arbitrary graphical user interfaces instead of relying on brittle, application-specific integrations. Despite recent advances in benchmark performance, strong computer-use agents remain expensive and slow in practice, since most systems invoke large multimodal models at nearly every interaction step. We argue that this uniform allocation of compute is fundamentally inefficient for long-horizon GUI tasks. Such trajectories are highly heterogeneous: many steps are routine and can be handled reliably by smaller, cheaper policies, while errors tend to concentrate at a relatively small number of high-risk moments. Across computer-use benchmarks, these failures repeatedly take two forms: progress stalls, where the agent loops, repeats ineffective actions, or fails to make meaningful progress, and silent semantic drift, where the agent continues taking locally plausible actions after already deviating from the user's true goal. To address this inefficiency, we propose an event-driven, step-level cascade for computer-use agents that runs a small policy by default and escalates to a stronger model only when lightweight learned monitors detect elevated risk. Our framework combines two complementary signals: a Stuck Monitor that detects degraded progress from recent reasoning-action history and triggers recovery, and a Milestone Monitor that identifies semantically meaningful checkpoints where sparse verification is most informative for catching drift. This design turns always-on frontier-model inference into adaptive, on-demand compute allocation over the course of an evolving interaction. The framework is modular and deployment-oriented: it can be layered on top of existing computer-use agents without changing the underlying agent architecture or retraining the large model.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "컴퓨터 사용 에이전트(Computer-use Agent)에서 모든 단계에 동일한 강력한 모델을 사용하는 비효율을 해결하기 위한 스텝 수준 최적화 방법을 제안한다. 중요도가 높은 단계와 낮은 단계를 구분하여 적절한 모델을 선택함으로써 비용과 지연 시간을 크게 줄인다. 이 접근법은 GUI 상호작용 에이전트의 실용성을 높여 실제 소프트웨어 자동화 배포를 앞당기는 데 기여한다. Claude Computer Use, OpenAI Operator 같은 범용 GUI 에이전트의 추론 효율화 연구로 연결된다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "dfe33efc-d8e6-49e4-bda7-8b1d6deb409e",
+      "title": "Reinforced Agent: Inference-Time Feedback for Tool-Calling Agents",
+      "url": "https://arxiv.org/abs/2604.27233",
+      "source": "arxiv",
+      "content": "arXiv:2604.27233v1 Announce Type: new \nAbstract: Tool-calling agents are evaluated on tool selection, parameter accuracy, and scope recognition, yet LLM trajectory assessments remain inherently post-hoc. Disconnected from the active execution loop, such assessments identify errors that are usually addressed through prompt-tuning or retraining, and fundamentally cannot course-correct the agent in real time. To close this gap, we move evaluation into the execution loop at inference time: a specialized reviewer agent evaluates provisional tool calls prior to execution, shifting the paradigm from post-hoc recovery to proactive evaluation and error mitigation.\n  In practice, this architecture establishes a clear separation of concerns between the primary execution agent and a secondary review agent. As with any multi-agent system, the reviewer can introduce new errors while correcting others, yet no prior work to our knowledge has systematically measured this tradeoff. To quantify this tradeoff, we introduce Helpfulness-Harmfulness metrics: helpfulness measures the percentage of base agent errors that feedback corrects; harmfulness measures the percentage of correct responses that feedback degrades. These metrics directly inform reviewer design by revealing whether a given model or prompt provides net positive value.\n  We evaluate our approach on BFCL (single-turn) and Tau2-Bench (multi-turn stateful scenarios), achieving +5.5% on irrelevance detection and +7.1% on multi-turn tasks. Our metrics reveal that reviewer model choice is critical: the reasoning model o3-mini achieves a 3:1 benefit-to-risk ratio versus 2.1:1 for GPT-4o. Automated prompt optimization via GEPA provides an additional +1.5-2.8%. Together, these results demonstrate a core advantage of separating execution and review: the reviewer can be systematically improved through model selection and prompt optimization, without retraining the base agent.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "툴 호출 에이전트에 추론 시간(inference-time) 피드백을 적용하는 Reinforced Agent 프레임워크를 제안한다. 기존 방식은 에이전트 실행이 끝난 후 사후 평가를 통해 개선하지만, 이 접근법은 실행 루프 내에서 실시간으로 오류를 감지하고 수정한다. 툴 선택, 파라미터 정확성, 범위 인식 등 다양한 평가 축에서 기존 LLM 에이전트 대비 성능을 향상시킨다. ReAct, ToolBench 같은 기존 툴 사용 에이전트 프레임워크의 한계를 보완하는 실용적인 개선책이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a7b1a784-e412-4d7f-9df9-dae3cb139cd9",
+      "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+      "url": "https://arxiv.org/abs/2604.27096",
+      "source": "arxiv",
+      "content": "arXiv:2604.27096v1 Announce Type: new \nAbstract: The purpose of our paper is to develop a unified multi-agent architecture that automates end-to-end machine learning (ML) pipeline generation from datasets and natural-language (NL) goals, improving efficiency, robustness and explainability. A five-agent system is proposed to handle profiling, intent parsing, microservice recommendation, Directed Acyclic Graph (DAG) construction and execution. It integrates code-grounded Retrieval-Augmented Generation (RAG) for microservice understanding, an explainable hybrid recommender combining multiple criteria, a self-healing mechanism using Large Language Model (LLM)-based error interpretation and adaptive learning from execution history. The approach is evaluated on 150 ML tasks across diverse scenarios. The system achieves an 84.7% end-to-end pipeline success rate, outperforming baseline methods. It demonstrates improved robustness through self-healing and reduces workflow development time compared to manual construction. The study introduces a novel integration of code-grounded RAG, explainable recommendation, self-healing execution and adaptive learning within a single architecture, showing that tightly coupled intelligent components can outperform isolated solutions.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "자연어 목표와 데이터셋만으로 엔드-투-엔드 ML 파이프라인을 자동 생성하는 5-에이전트 멀티에이전트 시스템 '쓰인크-런-잇(Think it, Run it)'을 제안한다. 프로파일링, 의도 파악, 마이크로서비스 추천, DAG 오케스트레이션, 자가 치유 에이전트가 협력하여 파이프라인을 구성하고 오류를 자동 수정한다. ML 파이프라인 구축에 필요한 전문 지식 장벽을 낮추고 데이터 과학자의 생산성을 획기적으로 향상시킬 수 있다. AutoML 분야를 넘어 전체 ML 개발 수명주기를 자동화하는 에이전트 시스템의 새로운 방향을 제시한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a31ce806-8346-442f-8278-2dc13c45be52",
+      "title": "Dynamic Adversarial Fine-Tuning Reorganizes Refusal Geometry",
+      "url": "https://arxiv.org/abs/2604.27019",
+      "source": "arxiv",
+      "content": "arXiv:2604.27019v1 Announce Type: new \nAbstract: Safety-aligned language models must refuse harmful requests without collapsing into broad over-refusal, but the training-time mechanisms behind this tradeoff remain unclear. Prior work characterizes refusal directions and jailbreak robustness, yet does not explain how dynamic adversarial fine-tuning changes refusal carriers across training. We present a measurement-driven mechanism study, not a new defense, on one 7B backbone under supervised fine-tuning (SFT) and R2D2-style dynamic adversarial fine-tuning. Our protocol aligns fixed-source HarmBench, StrongREJECT, and XSTest with a five-anchor refusal-geometry suite and causal interventions. R2D2 drives fixed-source HarmBench ASR to 0.000 at steps 50 and 100, then partially reopens to 0.035 at step 250 and 0.250 at step 500; SFT remains less robust, with ASR between 0.505 and 0.588 at the same anchors. On XSTest, R2D2 any-refusal is 1.000 early, then falls to 0.664 and 0.228. Geometrically, R2D2 preserves a late-layer admissible carrier through step 100 before relocating to an early-layer carrier, while effective rank remains near 1.23--1.27. Causal interventions indicate low-dimensional but utility-coupled control. These results support a reorganization account rather than a drift-only account, with evidence limited to one backbone and fixed-source attacks.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "동적 적대적 파인튜닝(Dynamic Adversarial Fine-Tuning)이 안전 정렬 LLM의 거절(refusal) 기하학적 구조를 재조직한다는 사실을 발견했다. 훈련 과정에서 거절 방향이 어떻게 변화하는지 메커니즘적으로 분석하여, 과도한 거절 없이 유해 요청을 차단하는 훈련-시간 균형 메커니즘을 밝혔다. 이 연구는 안전 정렬 모델의 내부 표현 공간을 이해하고 젤브레이크 내성을 높이는 데 중요한 통찰을 제공한다. RLHF, DPO 등 안전 정렬 방법론의 이론적 기반을 강화하는 기초 연구로서 의미가 크다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "bd7e63fe-6596-4657-9851-645c3550b0d7",
+      "title": "Models Recall What They Violate: Constraint Adherence in Multi-Turn LLM Ideation",
+      "url": "https://huggingface.co/papers/2604.28031",
+      "source": "hf_papers",
+      "content": "When researchers iteratively refine ideas with large language models, do the models preserve fidelity to the original objective? We introduce DriftBench, a benchmark for evaluating constraint adherence in multi-turn LLM-assisted scientific ideation. Across 2,146 scored benchmark runs spanning seven models from five providers (including two open-weight), four interaction conditions, and 38 research briefs from 24 scientific domains, we find that iterative pressure reliably increases structural complexity and often reduces adherence to original constraints. A restatement probe reveals a dissociation between declarative recall and behavioral adherence, as models accurately restate constraints they simultaneously violate. The knows-but-violates (KBV) rate, measuring constraint non-compliance despite preserved recall, ranges from 8% to 99% across models. Structured checkpointing partially reduces KBV rates but does not close the dissociation, and complexity inflation persists. Human validation against blind raters confirms that the LLM judge under-detects constraint violations, making reported constraint adherence scores conservative. Sensitivity analyses confirm the findings are robust to temperature (0.7 vs.\\ 1.0) and pressure type (novelty vs.\\ rigor). We release all briefs, prompts, rubrics, transcripts, and scores as an open benchmark.",
+      "published_at": "2026-04-30T15:46:33+00:00",
+      "summary": "멀티턴 LLM 아이디에이션에서 모델이 원래 목표 제약 조건을 얼마나 준수하는지 평가하는 DriftBench 벤치마크를 새롭게 제안한다. 7개 모델, 5개 제공업체, 38개 연구 주제에 걸쳐 2,146번의 실험을 수행한 결과, 모델이 위반한 제약을 오히려 기억하는 역설적 패턴이 발견됐다. 반복적인 대화 과정에서 LLM이 초기 연구 목표에서 벗어나는 '표류(drift)' 현상은 AI 보조 연구 도구의 신뢰성에 실질적 위협이 된다. 특히 과학적 아이디에이션, 창의적 협업 등 장기 멀티턴 작업에서 제약 준수 평가의 중요성을 부각시킨다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ee58559f-58f3-4ead-9310-7720e5923b0c",
+      "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too",
+      "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
+      "source": "techcrunch",
+      "content": "OpenAI will begin rolling out its cybersecurity testing tool, GPT-5.5 Cyber only \"to critical cyber defenders\" at first.",
+      "published_at": "2026-04-30T19:27:41+00:00",
+      "summary": "OpenAI가 사이버보안 테스트 전용 AI 모델 GPT-5.5 Cyber의 접근을 '핵심 사이버 방어자'에게만 제한적으로 제공하겠다고 발표했다. 이는 앤스로픽이 Mythos 모델 접근을 제한했을 때 OpenAI가 이를 비판했던 것과 정반대 행보로, 이중 잣대 논란이 일고 있다. 강력한 사이버 공격 도구가 될 수 있는 AI 모델의 접근을 제한하는 것은 AI 안전 정책의 핵심 딜레마를 잘 보여준다. OpenAI, 앤스로픽 등 주요 AI 기업의 이중 용도(dual-use) 모델 배포 정책 논쟁이 본격화되고 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "bfb21533-046a-4558-a496-052f6df35c86",
+      "title": "AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism",
+      "url": "https://arxiv.org/abs/2604.27089",
+      "source": "arxiv",
+      "content": "arXiv:2604.27089v1 Announce Type: new \nAbstract: Large-language-models (LLMs) demonstrate enormous utility in long-context tasks which require processing prompts that consist of tens to hundreds of thousands of tokens. However, existing LLM training libraries do not provide easy to use abstractions to optimize for long-context training, instead focusing on optimizations for models with large parameter counts through ZeRO-3/FSDP, Tensor and Pipeline parallelism. This forces users to rewrite LLM training libraries to incorporate compositions of various complex long-context optimizations, such as sequence-parallelism, to training pipelines; a process that requires in-depth expertise, reducing developer productivity. To tackle these challenges, we introduce AutoSP: the first automated solution to automatically optimize LLM training for longer-contexts. AutoSP compiles models and applies a targeted set of optimizations: automated sequence parallelism, and long-context aware activation-checkpointing, to drastically enhance LLM trainability at negligible cost to throughput. Our evaluation demonstrates AutoSP's capability on both NVIDIA and AMD hardware, increasing training contexts by upto 2.7$\\times$ and 2.5$\\times$ respectively over competitive hand-written baseline at negligible cost to runtime performance.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "AutoSP는 컴파일러 기반의 자동 시퀀스 병렬화로 수십만 토큰의 장문 컨텍스트 LLM 학습을 효율화하는 프레임워크다. 기존 학습 라이브러리가 대형 파라미터 최적화에 집중하는 반면, AutoSP는 긴 시퀀스 처리의 메모리·통신 병목을 컴파일러 수준에서 자동 해결한다. 개발자가 수동으로 시퀀스 병렬화 전략을 설계하지 않아도 최적 구성을 자동으로 도출해 엔지니어링 부담을 크게 줄인다. RAG, 긴 문서 이해, 멀티턴 대화 등 장문 컨텍스트가 필수적인 응용 분야의 모델 학습 비용 절감에 직접 기여한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "470a98ae-016e-403b-a1c8-e97d3c0285d0",
+      "title": "Strait: Perceiving Priority and Interference in ML Inference Serving",
+      "url": "https://huggingface.co/papers/2604.28175",
+      "source": "hf_papers",
+      "content": "Machine learning (ML) inference serving systems host deep neural network (DNN) models and schedule incoming inference requests across deployed GPUs. However, limited support for task prioritization and insufficient latency estimation under concurrent execution may restrict their applicability in on-premises scenarios. We present \\emph{Strait}, a serving system designed to enhance deadline satisfaction for dual-priority inference traffic under high GPU utilization. To improve latency estimation, Strait models potential contention during data transfer and accounts for kernel execution interference through an adaptive prediction model. By drawing on these predictions, it performs priority-aware scheduling to deliver differentiated handling. Evaluation results under intense workloads suggest that Strait reduces deadline violations for high-priority tasks by 1.02 to 11.18 percentage points while incurring acceptable costs on low-priority tasks. Compared to software-defined preemption approaches, Strait also exhibits more equitable performance.",
+      "published_at": "2026-04-30T17:55:28+00:00",
+      "summary": "Strait는 ML 추론 서빙 시스템에서 태스크 우선순위와 동시 실행 간섭을 인식하여 마감 기한(SLO)을 만족시키는 스케줄링 시스템이다. GPU에서 여러 모델이 동시 실행될 때 발생하는 레이턴시 추정 오류와 우선순위 처리 미흡 문제를 해결한다. 온프레미스 환경에서 AI 추론 서비스의 QoS(서비스 품질)를 보장하여 프로덕션 배포 적합성을 높인다. 클라우드 ML 서빙 인프라뿐 아니라 엣지·온프레미스 환경에서도 안정적인 추론 서비스를 가능하게 하는 실용적 연구다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ded8f16c-55b3-4732-89a2-6c85171974be",
+      "title": "Judge, Then Drive: A Critic-Centric Vision Language Action Framework for Autonomous Driving",
+      "url": "https://huggingface.co/papers/2604.27366",
+      "source": "hf_papers",
+      "content": "Recent advances in vision language action (VLA) models have shown remarkable potential for autonomous driving by directly mapping multimodal inputs to control signals. However, previous VLA-based methods have not explicitly exploited the critic capability of VLAs to refine driving decisions, even though such capability has been well demonstrated in other LLM-based domains, thereby limiting their performance in complex closed-loop scenarios. In this work, we present a theoretically inspired two-stage framework, CriticVLA, which extends the role of VLAs from acting to judging. CriticVLA first generates a rough trajectory and then refines it through multimodal evaluation and single-step optimization guided by a VLA-based critic, yielding higher-quality driving behaviors. To support this process, we construct a large-scale synthetic dataset of 12.9 million annotated trajectories covering diverse driving scenarios, which enhances the critic's reasoning and refinement abilities. Extensive closed-loop experiments on the Bench2Drive benchmark show that CriticVLA significantly surpasses state-of-the-art baselines, achieving a 73.33% total success rate and delivering about 30% improvement in challenging scenarios.",
+      "published_at": "2026-04-30T03:26:05+00:00",
+      "summary": "Judge-Then-Drive는 자율주행을 위한 비전-언어-행동(VLA) 모델에 명시적 비평가(critic) 기능을 통합한 프레임워크다. 기존 VLA 기반 자율주행 방법은 멀티모달 입력을 제어 신호로 직접 매핑하면서 비평 능력을 활용하지 못했으나, 이 연구는 이를 주행 결정 정제에 명시적으로 적용한다. 비평-행동 루프를 통해 엣지 케이스에서의 판단력을 향상시키고 자율주행 안전성을 높인다. LLM 에이전트에서 검증된 비평-생성(critic-generator) 패러다임을 자율주행 도메인에 성공적으로 적용한 사례다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a46af409-8008-4bd7-a42f-a4c9cfc9fb7c",
+      "title": "Automating GPU Kernel Translation with AI Agents: cuTile Python to cuTile.jl",
+      "url": "https://developer.nvidia.com/blog/automating-gpu-kernel-translation-with-ai-agents-cutile-python-to-cutile-jl/",
+      "source": "nvidia",
+      "content": "NVIDIA CUDA Tile (cuTile) is a tile-based programming model that enables developers to write GPU kernels in terms of tile-level operations—loads, stores, and...NVIDIA CUDA Tile (cuTile) is a tile-based programming model that enables developers to write GPU kernels in terms of tile-level operations—loads, stores, and matrix multiply-accumulate—rather than manually coordinating threads, warps, and shared memory. cuTile.jl brings the same tile-based approach to the dynamic programming language Julia. Users can write custom GPU kernels without dropping… Source",
+      "published_at": "2026-04-30T15:54:38+00:00",
+      "summary": "NVIDIA가 AI 에이전트를 활용해 cuTile Python으로 작성된 GPU 커널을 cuTile.jl(Julia)로 자동 번역하는 파이프라인을 개발했다. CUDA Tile(cuTile)은 타일 수준 연산으로 GPU 커널을 작성하는 새로운 프로그래밍 모델로, AI가 크로스 언어 이식을 자동화한다. GPU 커널 개발의 언어 장벽을 AI로 제거함으로써 고성능 컴퓨팅 생태계의 이식성과 접근성을 높인다. Julia, Python 등 여러 언어에서 동일한 GPU 커널 성능을 달성할 수 있게 되어 과학 컴퓨팅 및 ML 인프라 개발 생산성이 향상될 전망이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "d177133a-d75a-433b-b7f0-ebb40c0117a2",
+      "title": "People-Centred Medical Image Analysis",
+      "url": "https://arxiv.org/abs/2604.26991",
+      "source": "arxiv",
+      "content": "arXiv:2604.26991v1 Announce Type: new \nAbstract: Recent advances in data-centric medical AI have produced highly accurate diagnostic systems, but the emphasis on data curation and performance metrics has not translated into widespread clinical adoption. We conjecture that this limited uptake stems from insufficient attention dedicated to the optimisation of fair performance across diverse patient populations and to workflow integration: performance biases can create regulatory barriers, and poorly integrated automation can disrupt clinical routines, degrade the quality of human-AI collaboration, and reduce clinicians' willingness to adopt AI tools. Prior work on workflow integration (e.g., Learning to Defer (L2D) and Learning to Complement (L2C)) and AI fairness has typically examined these challenges in isolation, overlooking their natural interdependence and the practical constraints of clinical environments, such as restricted clinician availability. We propose People-Centred Medical Image Analysis (PecMan), a human-AI framework that jointly optimises fairness, diagnostic accuracy, and workflow effectiveness through a dynamic gating mechanism that assigns cases to AI, clinicians, or both under clinician workload constraints. We also introduce the Fairness and Human-Centred AI (FairHAI) benchmark for evaluating trade-offs between accuracy, fairness, and clinician workload. Experiments using this benchmark show that PecMan consistently outperforms existing methods, paving the way for more trustworthy and clinically viable AI systems. Code will be available upon paper acceptance.",
+      "published_at": "2026-05-01T00:00:00-04:00",
+      "summary": "고성능 의료 AI 진단 시스템이 실제 임상 현장에서 도입되지 않는 근본 원인을 분석한 연구다. 데이터 품질과 성능 지표에만 집중한 데이터 중심(data-centric) 접근이 다양한 환자군에 대한 공정한 성능 최적화를 간과했다는 점을 지적한다. 공정성·다양성·임상의-환자 중심 설계를 통합한 '사람 중심 의료 이미지 분석' 방법론을 새롭게 제안한다. 의료 AI의 실용화 격차를 좁히기 위해 기술적 성능을 넘어 사회적·윤리적 설계 원칙이 얼마나 중요한지를 강조한다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "48817c3b-6c4f-4f44-ae45-52b3f43c73a9",
+      "title": "Legal AI startup Legora hits $5.6B valuation and its battle with Harvey just got hotter",
+      "url": "https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/",
+      "source": "techcrunch",
+      "content": "The two wildly fast-growing rivals have raised massive sums, pushed into each other's home turf, and now have dueling ad campaigns.",
+      "published_at": "2026-04-30T20:14:47+00:00",
+      "summary": "법률 AI 스타트업 Legora가 56억 달러(약 7조 7천억 원)의 기업 가치를 달성하며 법률 AI 시장의 급성장을 실증했다. 경쟁사 Harvey와는 서로의 본거지에 진출하고 광고 캠페인까지 벌이는 치열한 경쟁이 펼쳐지고 있다. 두 회사 모두 막대한 투자를 유치하며 빠른 속도로 성장하고 있어 법률 AI가 전문직 AI의 핵심 분야로 자리 잡고 있음을 보여준다. 계약 검토, 소송 지원, 법률 조사 자동화 등에서 AI가 실질적인 업무 효율화를 가져오면서 법조 시장의 AI 도입이 가속화되고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
