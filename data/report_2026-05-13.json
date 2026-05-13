@@ -1,0 +1,282 @@
+{
+  "id": "4317abe1-1262-4c94-a5cf-c767ac544ab0",
+  "created_at": "2026-05-13T03:03:56.590387",
+  "articles": [
+    {
+      "id": "4592d53a-907f-4682-9d64-018e2db6a471",
+      "title": "Everything Google announced at its Android Show, from Googlebooks to vibe-coded widgets",
+      "url": "https://techcrunch.com/2026/05/12/everything-google-announced-at-its-android-show-from-googlebooks-to-vibe-coded-widgets/",
+      "source": "techcrunch",
+      "content": "Google unveiled its new AI-first Googlebooks laptops, more agentic Gemini features, vibe-coded Android widgets, Gemini in Chrome, refreshed Android Auto, and more ahead of I/O.",
+      "published_at": "2026-05-12T17:01:00+00:00",
+      "summary": "구글이 Android Show 2026에서 Gemini Intelligence를 중심으로 한 대규모 안드로이드 AI 업데이트를 발표했다. 에이전트형 Gemini, 바이브 코딩으로 만드는 맞춤형 위젯, Chrome 내 Gemini 통합, Android Auto 개선 등 다양한 AI 기능이 공개됐다. Googlebooks라는 새 노트북 라인업도 소개됐으며, Gemini 기반 Gboard 받아쓰기 기능은 삼성 갤럭시·구글 픽셀 기기에 먼저 출시될 예정이다. 이번 발표는 구글 I/O를 앞두고 안드로이드 생태계 전반에 AI를 녹여내려는 구글의 전략을 뚜렷이 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "e489886b-55b0-46ee-ba59-b6c90c630fad",
+      "title": "Research",
+      "url": "https://openai.com/index/what-parameter-golf-taught-us/",
+      "source": "openai",
+      "content": "May 12, 2026\n\nLessons from 1,000+ participants, 2,000+ submissions, and an open machine learning challenge shaped by coding agents.\n\nWe launched Parameter Golf to engage and support the machine learning research community in exploring a new, tightly constrained machine learning problem. We wanted the challenge to be interesting enough to reward real technical creativity, while remaining conceptually simple and easy to verify.\n\nParticipants had to minimize held-out loss on a fixed FineWeb dataset while staying within a 16 MB artifact limit, including both model weights and training code, and a 10-minute training budget on 8×H100s. We provided a baseline, dataset, and evaluation scripts so participants could fork the repo, improve the model, and submit their results through GitHub.\n\nOver the course of eight weeks, we received more than 2,000 submissions from over 1,000 participants. We were impressed by the technical breadth, creativity, and rule-bending across the submissions, from careful optimizer tuning and quantization work to new modeling ideas and test-time training.\n\nOne of the most exciting parts of the challenge was seeing how widely participants used AI coding agents. Agents helped lower the cost of experimentation, made it easier for more people to participate, and changed the pace of the competition. They also created new challenges for submission review, attribution, and scoring.\n\nThe challenge also became a meaningful talent discovery surface for us. That was one of our goals for Parameter Golf, and it was a useful signal that open-ended technical challenges can reveal exceptional machine learning taste and persistence.\n\nIn this post, we highlight some of the submissions we found surprising and interesting, and share what we learned from running a coding contest in the age of powerful AI agents.\n\nWe judged and independently reproduced each submission on the record-track leaderboard, and verified that each submission was record-breaking at the time it was submitted. Several themes stood out.\n\nTraining optimization\n\nSome of the strongest results came from careful tuning of existing components.\n\nQuantization\n\nSeveral submissions pushed hard on compression and export.\n\nTest-time and evaluation strategies\n\nSome submissions pushed the boundary between model improvement and evaluation strategy. These approaches were valid under the rules, but they required careful review from us as organizers.\n\nNew modeling and data ideas\n\nA few submissions introduced modeling or data ideas that were especially creative.\n\nWe chose to highlight these nine submissions because they represent the range of results we hoped the challenge would surface. Some participants found wins through careful tuning. Others pushed quantization and low-rank techniques. Some explored edges of the evaluation rules. And several introduced modeling or data ideas, from the literature or from scratch, that produced unexpected gains.\n\nThe nonrecord track was home to many creative submissions. We highlighted 15 favorites, including approaches ranging from non-autoregressive text modeling to dynamic tokenization.\n\nBecause this track was more experimental, we focused less on raw performance and more about whether the approach was technically interesting. Three submissions stood out in particular:\n\nThese were our favorite three nonrecord submissions, even though they were not necessarily the top three by performance.\n\nThat said, the nonrecord track was still competitive. Half of nonrecord leaderboard entries beat the naive baseline of 1.22 BPB, and the top-ranked entry reached 1.12 BPB.\n\nWe found this encouraging. Even against strong transformer baselines, alternative approaches could sometimes hold their own against the dominant architecture.\n\nWe also think that this track benefits especially from the availability of strong coding agents. Agents made it much cheaper to prototype speculative ideas, including approaches that may previously have felt too time-consuming or uncertain to try in a short competition.\n\nA major difference between Parameter Golf and earlier competitions like it was the widespread use of coding agents. The vast majority of submitters mentioned using agents as part of their work.\n\nThat lowered the barrier to entry. Participants could set up experiments faster, inspect unfamiliar code, and test ideas with less friction. RunPod’s sponsorship of $1,000,000 in compute also played a major role in making the challenge accessible to more people.\n\nAt the same time, agent use created new issues for submission and scoring. Many submissions were small changes to existing top scorers, rather than fundamentally new approaches. This was often useful: strong ideas spread quickly and were refined by others. But it also created noise. When submissions that fell outside the competition guidelines produced unusually strong scores, other agents sometimes copied those ideas and continued down the same invalid path.\n\nThe volume of submissions also changed how we had to run the competition. We could not manually inspect every submission and still keep the leaderboard moving. During the challenge, we developed an internal Codex-based triage bot to monitor new submissions and flag them for human review. This became especially important during periods when we received hundreds of submissions a day.\n\nAI agents also became part of the community around the challenge. For much of the competition, @notapplica and their coding agent ran a “Live Updates” bulletin, tracking major events, explaining leaderboard approaches, and helping other participants follow the competition. Community review tools also appeared to help less experienced participants check whether their submissions were within the rules and avoid common invalid approaches.\n\nOur primary goal was to launch a challenge thateligible participants⁠(opens in a new window)could take part in and experience machine learning research. Parameter Golf brought in a wide range of technically strong and creative submissions, and it gave us a clearer view of how open research competitions may change as AI agents become more capable and widely used.\n\nWe are thinking about launching more challenges like this in the future. If you’re interested, please fill out thechallenge participant form⁠(opens in a new window).\n\nResearchApr 22, 2026\n\nResearchApr 16, 2026\n\nResearchMar 25, 2026",
+      "published_at": "2026-05-12T00:00:00",
+      "summary": "오픈AI가 Parameter Golf라는 오픈 ML 챌린지를 통해 1,000명 이상의 참가자로부터 2,000개 이상의 제출물을 받으며 코딩 에이전트 활용 사례를 탐구했다. 이 챌린지는 극도로 제한된 파라미터 수로 특정 성능 목표를 달성하는 문제로, 연구 커뮤니티가 새로운 ML 최적화 방향을 탐색하는 공간이 됐다. 결과 분석을 통해 오픈AI는 코딩 에이전트가 실제 ML 연구 과제에 어떻게 적용되는지에 대한 인사이트를 얻었다. 이번 이니셔티브는 오픈AI가 외부 연구 커뮤니티와 협력하는 새로운 방식의 실험이라는 점에서 주목된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "02d2c4d5-bd5c-4c11-ba66-f45e8ffea33f",
+      "title": "Advancing AI for materials with MatterSim: experimental synthesis, faster simulation, and multi-task models",
+      "url": "https://www.microsoft.com/en-us/research/blog/advancing-ai-for-materials-with-mattersim-experimental-synthesis-faster-simulation-and-multi-task-models/",
+      "source": "microsoft_research",
+      "content": "At a glance Experimental validation: Using high-throughput screening with MatterSim-v1, we previously identified tetragonal tantalum phosphorus (TaP) as a potential high-performance thermal conductor. Now we have experimentally synthesized it and measured its thermal conductivity (152 W/m/K) to be close to the thermal conductivity of silicon. Faster simulation: We have accelerated MatterSim-v1 model inference by 3-5x and integrated it with the LAMMPS software package, enabling large-scale simulations across multiple GPUs. New model release: We are introducing MatterSim-MT, a multi-task foundation model for in silico materials characterization that enables the simulation of complex, multi-property phenomena beyond what potential energy surfaces alone can capture. Materials design underpins a wide range of technological advances, from nanoelectronics to semiconductor design and energy storage. Yet development cycles for novel materials remain slow and costly. Universal machine learning interatomic potentials aim to accelerate the materials design process by providing accurate stability and property predictions for a wide range of materials. These models are orders of magnitude faster than traditional first-principles simulations, turning previously impractical problems into routine computations that can be completed in a few hours. Since we launched our MatterSim-v1 model, it has gained popularity in the materials science community for its ability to accurately simulate materials under realistic conditions, including finite temperature and pressure. Today, we have several exciting MatterSim updates to share. These include experimental validation of MatterSim predictions for thermal conductors, performance improvements for faster simulation, and the introduction of a new multi-task foundation model for materials characterization. Experimental validation Figure 1: Based on MatterSim’s computational predictions, we have synthesized a potential high thermal conductor. Left: MatterSim predictions of thermal conductivity compared to ground-truth simulation and experiment (with ±50% error band shown for reference). Right: Different views of the experimentally synthesized tetragonal tantalum phosphorus (TaP) sample with measured thermal conductivity of 152 W/m/K. Materials with high thermal conductivity play a critical role in heat management, preventing overheating and improving energy efficiency. For example, established high thermal conductors like diamond, copper and silicon are widely used across a broad range of cooling applications. Designing next-generation thermal conductors may enable advances in computing, power electronics, and aerospace technologies. However, doing so requires accurate predictions of thermal conductivity values for candidate materials. In solids, heat is carried in two main ways: by vibrating atoms (phonons) and by moving electrons. The phonon contribution can be estimated using machine-learning interatomic potentials to enable screening of thousands of candidates, narrowing the search space to the most promising materials before expensive experimental validation. “MatterSim has generated by far the largest database of computational thermal conductivities. This opens the door to exploring a far broader materials space than before […].” – Prof. Bing Lv, University of Texas Dallas In collaboration with the University of Texas Dallas (UT Dallas), University of Illinois Urbana-Champaign, and University of California Davis (UC Davis), we have used MatterSim-v1 to screen over 240,000 candidate materials for high thermal conductors. As shown in Fig. 1 (left), MatterSim’s predictions have good agreement with first-principles simulations. Prof. Davide Donadio from UC Davis: &#8220;I was amazed by how the MatterSim model combined accuracy and computational efficiency to predict such a sensitive property as thermal conductivity. That was the key that unlocked screening at this scale, hundreds of thousands of crystals, that would have been completely out of reach with conventional methods.&#8221; Prof. Bing Lv from UT Dallas adds: “MatterSim has generated by far the largest database of computational thermal conductivities. This opens the door to exploring a far broader materials space than before, enabling the community to uncover a broader set of viable materials even after imposing practical requirements.” “For the first time, we can test conventional understanding of what controls thermal conductivity at scale […]” – Prof. David Cahill, University of Illinois Urbana-Champaign Based on these predictions, we have identified tetragonal tantalum phosphorus (TaP) as a potential high thermal conductor. We have experimentally synthesized tetragonal tantalum phosphorus (TaP) at UT Dallas and measured its thermal conductivity at University of Illinois Urbana-Champaign (152 W/m/K for our best samples), close to the thermal conductivity of silicon. While we are not the first to synthesize tetragonal TaP, the material has not been considered as a thermal conductor before. These results demonstrate how MatterSim can enable the identification of functional materials: &#8220;For the first time, we can test conventional understanding of what controls thermal conductivity at scale, while enabling the discovery of new functional materials that balance it with other important constraints such as mass density, elemental abundance, and environmental stability&#8221;, says Prof. David Cahill from University of Illinois Urbana-Champaign. Azure AI Foundry Labs Get a glimpse of potential future directions for AI, with these experimental technologies from Microsoft Research. Azure AI Foundry Opens in a new tab Performance improvements We are making MatterSim-v1 significantly faster by releasing several open-source performance and usability improvements. First, we speed up model inference through a combination of faster graph construction, ahead-of-time compilation and reduced conversion between atomic representations, resulting in a 3x speed-up of MatterSim-v1.0.0-5M and a 5x speed-up of MatterSim-v1.0.0-1M (see Fig. 2). To make MatterSim-v1 easier to use, we have integrated it into the widely used LAMMPS simulation software, allowing users to easily scale model inference across multiple GPUs in their existing workflows. Figure 2: 3x inference speed-up of MatterSim-v1.0.0-5M and 5x inference speedup of MatterSim-v1.0.0-1M (python). New model release Building on the success of MatterSim-v1, today we extend the MatterSim model family by announcing MatterSim-MT: a multi-task (MT) foundation model for in silico materials simulation and property characterization. The model natively predicts energies, forces, stress and several important materials properties. MatterSim-MT is pretrained on over 35 million first-principles-labelled structures covering 89 elements, temperatures up to 5000 K and pressures up to 1000 GPa. It is further fine-tuned on various properties including Bader charges, magnetic moments, Born effective charges, and dielectric matrices. Out of the box, MatterSim-MT serves as a foundation model for predicting material structure, dynamics and thermodynamics. Its multi-task architecture also enables a wide range of complex simulations that cannot be captured by potential energy surfaces alone. The ability to accurately simulate these phenomena is crucial for applications such as catalysis and energy storage. Here, we illustrate these multi-task capabilities through three case studies: vibrational spectroscopy, ferroelectric switching, and electrochemical redox. Each example requires a distinct combination of property predictions. In the full manuscript, we also show that MatterSim-MT scales well with more data and parameters, can be efficiently fine-tuned to higher levels of theory, and can be systematically extended to new systems via active learning. Figure 3: MatterSim‑MT’s multi-task prediction ability enables simulating complex material phenomena. (a) Illustration of the multi-task inference capabilities of MatterSim-MT, including predictions of energy (E), forces (F), stress (S), magnetic moments (μ), Born effective charges (Z∗), and dielectric matrices (ε∞) from atomic structures. (b) Pressure-dependent phonon spectrum of silicon carbide (SiC) up to 100 GPa, with inset comparing MatterSim’s predicted longitudinal optical (LO) and transverse optical (TO) splitting against experimental measurements. (c) Predicted hysteresis curve of polarization density as a function of the electrical field along the z direction in the ferroelectric tetragonal BaTiO3 material. (d) Evolution of oxygen Bader charge distributions in Li1.2 – xMn0.8O2 during delithiation, with arrows indicating the formation of an O2 molecule. First, we focus on vibrational spectroscopy, a technique that identifies substances by measuring how their atomic bonds naturally vibrate. We demonstrate how predictions of Born effective charges and dielectric properties enable the computation of phonon spectra in polar crystals. In these materials, oppositely charged ions vibrate against each other. Depending on the direction of vibration, this can lead to a buildup of charge that creates a macroscopic electric field, splitting the optical phonon modes into higher-frequency longitudinal (LO) and lower-frequency transverse (TO) branches. As a case study, we simulated this behavior in 3c-silicon carbide (3c-SiC), a material used in high-power electronics, under extreme pressures. As shown in Fig. 3(b), MatterSim-MT predicts a Born effective charge in close agreement with both theoretical and experimental values. The resulting LO-TO splitting of 5.26 THz deviates by only 0.06 THz from ab initio calculations and 0.03 THz from experimental measurements. The predicted Born effective charges also allow us to simulate how systems respond to an external electric field. In ferroelectric materials, ions adopt an asymmetric arrangement that gives the crystal a net elect",
+      "published_at": "2026-05-12T13:00:00+00:00",
+      "summary": "마이크로소프트 리서치가 AI 기반 소재 시뮬레이션 모델 MatterSim을 활용해 새로운 열전도성 소재(TaP, 152 W/m/K)를 실험적으로 합성·검증하는 데 성공했다. MatterSim-v1의 고처리량 스크리닝으로 후보 물질을 식별한 뒤 실제 실험실에서 합성함으로써 AI 예측과 실험 결과 간 격차를 좁혔다. 이번 연구는 배터리·반도체·에너지 소재 발견을 위한 AI 가속 과학의 실질적 성과를 입증한다. 더 빠른 시뮬레이션과 멀티태스크 모델 개선도 함께 공개돼 소재 AI 분야의 발전을 이끌 것으로 기대된다.",
+      "category": "기타",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "92c51047-50c2-4e5e-887b-35e078e04a93",
+      "title": "How to Eliminate Pipeline Friction in AI Model Serving",
+      "url": "https://developer.nvidia.com/blog/how-to-eliminate-pipeline-friction-in-ai-model-serving/",
+      "source": "nvidia",
+      "content": "The path from a trained AI model to production should be smooth, but rarely is. Many teams invest weeks fine-tuning models, only to discover that exporting to a...The path from a trained AI model to production should be smooth, but rarely is. Many teams invest weeks fine-tuning models, only to discover that exporting to a deployment format breaks layers, input shapes cause runtime failures, or version mismatches silently degrade performance. These issues are collectively known as pipeline friction, and they cost organizations time, money… Source",
+      "published_at": "2026-05-12T18:00:00+00:00",
+      "summary": "NVIDIA 개발자 블로그에서 AI 모델 서빙 파이프라인의 마찰 요소를 제거하는 실전 가이드를 공개했다. 학습 완료 후 프로덕션까지 수 주가 걸리는 현실적 문제를 다루며, 모델 내보내기·최적화·배포 각 단계별 병목을 해소하는 방법론을 제시한다. TensorRT, Triton Inference Server 등 도구를 조합해 지연시간과 처리량을 개선하는 접근법이 소개됐다. MLOps 실무자들이 모델 서빙 인프라를 재정비할 때 참고할 수 있는 실용적 내용이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "b9e91278-a5d2-456a-8ccf-d99b5fd16feb",
+      "title": "사람 대신 AI가 농사짓는 시대로…대동, 국내 첫 ‘AI트랙터’ 고객 인도",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40009",
+      "source": "korean",
+      "content": "대동이 AI트랙터를 앞세워 국내 농업 현장에 ‘농업 피지컬 AI(Physical AI)’ 시대를 본격적으로 열었다. 비전 AI 기반의 무인 자율작업 기술을 적용한 AI트랙터를 실제 농가에 처음 공급하며 상용화 단계에 진입했다는 평가다.\n\n미래농업 리딩 기업 대동(공동대표 김준식·원유현)은 비전 AI 기반 자율작업 기술을 적용한 AI트랙터를 전남 신안의 대규모 농가에 공급하고 제품 인도식을 진행했다고 13일 밝혔다. 이번 공급은 AI트랙터가 국내 농업 현장에 실제 고객용으로 도입된 첫 사례다.\n\n1호 고객인 박상범 씨는 전남 신안에서 대파와 양파를 재배하고 있으며, 총 5헥타르(ha·약 1만5000평) 규모의 농지를 운영하고 있다. 박 씨는 기존 저마력 트랙터를 직접 조작해 로터리 작업을 수행하면서 하루 이상 작업 시간이 소요됐고, 장시간 작업에 따른 피로 누적과 안전 부담, 작업기 탈부착의 불편, 작업 품질 편차 등의 어려움을 겪어왔다고 설명했다.\n\n그는 지난 3월 진행된 농민 대상 AI트랙터 시연 행사에서 실제 작업 성능을 확인한 뒤 제품 도입을 결정했다.\n\n박 씨는 인도식에서 “기존 자율작업 키트 사용 시 약 10% 정도 작업 시간 단축 효과를 체감했는데, 대동 AI트랙터 시연을 직접 본 뒤 작업 효율이 훨씬 더 높아질 수 있겠다고 판단했다”며 “기존 자율작업에서 느꼈던 안전 부담까지 해소할 수 있을 것으로 기대하고 있다”고 말했다.\n\n대동은 이번 AI트랙터를 ‘농업 필드로봇(Field Robot)’으로 정의하며, 농업 피지컬 AI 기술이 적용된 대표 사례라고 설명했다. AI트랙터는 주변 환경을 스스로 인지하고 판단해 자율적으로 농작업을 수행할 수 있도록 설계됐다.\n\n특히 6개의 카메라를 기반으로 한 비전 인공지능이 주변 환경을 360도로 분석해 경작지 경계와 장애물을 인식하며, 장착된 작업기의 종류까지 자동으로 파악한다. 이를 바탕으로 작업 상황에 맞는 최적의 작업 방식을 판단해 자율적으로 작업을 수행한다. 또한 머신러닝 운영(MLOps) 기술을 적용해 현장 데이터가 축적될수록 자율작업 성능과 정밀도가 지속적으로 향상되는 것도 특징이다.\n\n대동은 AI트랙터가 작업자 탑승 없이도 정밀 자율제어 기반으로 안정적인 작업 품질을 구현할 수 있다고 강조했다. 특히 양파·마늘·고추·오이 등 채소류 재배에서는 씨앗과 묘종을 심기 위한 두둑과 고랑을 얼마나 반듯하게 만드는지가 생산성과 직결되는데, AI트랙터는 일정한 간격과 직진성을 유지해 작업 정밀도를 높일 수 있다는 설명이다.\n\n이를 통해 불필요한 재작업과 작업 시간 낭비를 줄이고, 균일한 품질의 경작 환경 조성이 가능하다고 회사 측은 밝혔다.\n\n최형우 대동 국내사업본부장은 “이번 공급은 AI트랙터가 실제 농업 현장에 상용화 단계로 진입했다는 점에서 의미가 크다”며 “앞으로도 현장 데이터를 기반으로 자율작업 성능과 작업 완성도를 지속적으로 고도화해 국내 농업 환경에 최적화된 농업 필드로봇 시장을 선도해 나가겠다”고 말했다.\n\n한편, 대동은 올해 상반기 AI트랙터 구매 고객을 대상으로 정밀농업 서비스 체험 기회도 제공하고 있다.",
+      "published_at": null,
+      "summary": "국내 농기계 기업 대동이 비전 AI 기반 자율작업 기술을 탑재한 'AI트랙터'를 전남 신안 농가에 처음 인도하며 국내 농업 Physical AI 상용화 시대를 열었다. 이 트랙터는 무인 자율작업이 가능한 비전 AI를 적용해 고령화·인력난으로 어려움을 겪는 국내 농업 현장에 즉각적인 도움을 줄 수 있다. 대동은 이를 '농업 피지컬 AI(Physical AI)' 전략의 첫 상용화 사례로 규정하며, 향후 다양한 농기계로 AI 자율화 범위를 확대할 계획이다. 한국에서 로보틱스·Physical AI가 실제 산업 현장에 도입된 주목할 만한 사례로 평가된다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "5a702503-46c2-4d7d-95bc-5c6b17d47180",
+      "title": "World Models: 10 Things That Matter in AI Right Now",
+      "url": "https://www.technologyreview.com/2026/05/12/1137134/world-models-10-things-that-matter-in-ai-right-now/",
+      "source": "mit_tech_review",
+      "content": "World models recently made our list of 10 Things That Matter in AI Right Now. Watch executive editor Niall Firth explain why this emerging area of AI is gaining so much attention. Join MIT Technology Review editors and reporters for a subscriber-only Roundtables discussion, &#8220;Can AI Learn to Understand the World?&#8221; exploring how AI may evolve to better reason about the real world and what this could mean for the future of AI systems. Register now Related Stories: How Pokémon Go is giving delivery robots an inch-perfect view of the world 10 Things That Matter in AI Right Now:&nbsp;World&nbsp;Models Yann LeCun has a bold new vision for the future of AI Speakers: Mat HonanEditor in Chief Will Douglas HeavenSenior Editor, AI Grace HuckinsAI Reporter",
+      "published_at": "2026-05-12T16:22:15+00:00",
+      "summary": "MIT Technology Review가 'AI에서 지금 가장 중요한 10가지' 중 하나로 월드 모델(World Models)을 선정하고, 이 분야가 주목받는 이유를 심층 분석했다. 월드 모델은 AI가 물리 세계의 동작 원리를 내부적으로 시뮬레이션할 수 있는 능력으로, 자율주행·로보틱스·게임 AI 등 다양한 분야에 핵심 기술로 부상하고 있다. 단순 패턴 매칭을 넘어 세계를 이해하고 미래를 예측하는 AI 구현에 필요한 기술로, 현재 학계와 산업계 모두에서 활발히 연구되고 있다. 이 분야의 발전이 AGI 달성에 핵심적 역할을 할 것이라는 기대가 커지고 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a8647ff5-a992-4300-bf75-128854661eed",
+      "title": "The AI legal services industry is heating up — Anthropic is getting in on the action",
+      "url": "https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/",
+      "source": "techcrunch",
+      "content": "Anthropic's new tools are designed to help law firms automate specific clerical functions — things like document search and review, case law resources, deposition prep, document drafting, and other related areas.",
+      "published_at": "2026-05-12T17:00:00+00:00",
+      "summary": "Anthropic이 법률 서비스 분야에 진출하며 로펌이 문서 검색·검토, 판례 조사, 증언 준비, 문서 초안 작성 등 사무적 기능을 자동화할 수 있는 도구를 출시했다. 법률 AI 시장은 Harvey, Clio 등 스타트업이 선점하고 있었으나, Anthropic의 참여로 경쟁이 한층 치열해질 전망이다. Claude의 긴 컨텍스트 처리 능력과 높은 정확성이 복잡한 법률 문서 분석에 강점으로 작용할 것으로 기대된다. AI 법률 서비스 시장이 급성장하는 가운데 Anthropic이 B2B 엔터프라이즈 시장 확장에 속도를 내고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "e915a8b3-cca8-4680-9f8f-11fbf1f40146",
+      "title": "AI voice startup Vapi hits $500M valuation after winning Amazon Ring over 40 rivals",
+      "url": "https://techcrunch.com/2026/05/12/vapi-hits-500m-valuation-as-amazon-ring-chose-its-ai-platform-over-40-rivals/",
+      "source": "techcrunch",
+      "content": "Vapi says its enterprise business has grown tenfold since early 2025 as companies shift customer support and sales calls to AI agents.",
+      "published_at": "2026-05-12T11:30:00+00:00",
+      "summary": "AI 음성 에이전트 플랫폼 스타트업 Vapi가 아마존 Ring을 포함해 40개 경쟁사를 제치고 파트너십을 획득하며 기업가치 5억 달러를 달성했다. 2025년 초 이후 기업 고객 매출이 10배 성장했으며, 기업들이 고객 지원·영업 전화를 AI 에이전트로 전환하는 트렌드가 가속화되고 있음을 보여준다. Vapi의 플랫폼은 개발자가 쉽게 음성 AI 에이전트를 구축·배포할 수 있는 API를 제공하며, 실시간 대화 AI 인프라 시장에서 빠르게 성장 중이다. 음성 AI 에이전트가 콜센터와 영업 자동화 분야에서 주류 기술로 자리잡고 있음을 보여주는 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f0eaf79b-4806-431f-8ffa-b7f9075248bf",
+      "title": "Thinking Machines wants to build an AI that actually listens while it talks",
+      "url": "https://techcrunch.com/2026/05/11/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks/",
+      "source": "techcrunch",
+      "content": "Right now, every AI model you've ever used works the same way. You talk, it listens. It responds, you listen. Thinking Machines is trying to change that by building a model that processes your input and generates a response at the same time, so it's more like a phone call than a text chain.",
+      "published_at": "2026-05-12T04:52:35+00:00",
+      "summary": "스타트업 Thinking Machines가 사용자의 입력을 처리하는 동시에 응답을 생성하는 '동시 처리' AI 모델 개발에 도전하고 있다. 기존 모든 AI 모델은 순차적 턴제 방식(사용자 발화→AI 응답)이지만, 이 스타트업은 전화 통화처럼 동시에 듣고 말하는 모델을 목표로 한다. 이 기술이 실현되면 AI와의 상호작용이 훨씬 자연스러워지고 대화 지연이 크게 줄어들어 실시간 협업 도구·음성 인터페이스 분야에 혁신을 가져올 수 있다. 실시간 양방향 AI 통신이라는 근본적 패러다임 전환을 시도한다는 점에서 주목받고 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "e9515ec8-dbfb-4f3e-a65a-6e9f06ba6e51",
+      "title": "Medicare’s new payment model is built for AI, and most of the tech world has no idea",
+      "url": "https://techcrunch.com/2026/05/12/medicares-new-payment-model-is-built-for-ai-and-most-of-the-tech-world-has-no-idea/",
+      "source": "techcrunch",
+      "content": "There is no governmental mechanism to pay for an AI agent that monitors a patient between visits, calls to check in, coordinates a housing referral, or makes sure someone picks up their medication. ACCESS creates that mechanism for the first time.",
+      "published_at": "2026-05-13T00:26:48+00:00",
+      "summary": "미국 메디케어가 AI 에이전트가 환자를 모니터링하고, 전화 확인, 주거 연계, 복약 관리 등을 수행할 때 비용을 지불할 수 있는 새로운 결제 모델 ACCESS를 도입했다. 기존에는 진료 방문 사이의 AI 에이전트 활동에 대한 보험 지급 메커니즘이 없었지만, ACCESS가 이를 처음으로 가능하게 만들었다. 이 정책 변화는 의료 AI 에이전트의 상업적 배포를 위한 핵심 장벽을 제거하며, 의료 기술 업계에 막대한 파급 효과를 미칠 것으로 예상된다. 의료 AI 에이전트 시장의 폭발적 성장을 견인할 제도적 전환점이 될 수 있다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4373814d-c3f0-49fc-991d-324e4b0b721a",
+      "title": "Musk mulled handing OpenAI to his children, Altman testifies",
+      "url": "https://techcrunch.com/2026/05/12/musk-mulled-handing-openai-to-his-children-altman-testifies/",
+      "source": "techcrunch",
+      "content": "Altman said that Musk's focus on controlling the initial for-profit gave him pause because OpenAI was dedicated to keeping advanced AI out of the hands of a single person, and Altman, with his experience running the prominent startup accelerator Y Combinator, knew \"founders who had control usually did not give it up.\"",
+      "published_at": "2026-05-12T18:05:15+00:00",
+      "summary": "오픈AI CEO 샘 알트만이 머스크-오픈AI 소송에서 증언하며 머스크가 초기 영리 법인 지분 통제를 원했다고 밝혔다. 알트만은 '고급 AI를 한 사람의 손에 집중시키지 않겠다'는 오픈AI의 창립 원칙과 머스크의 요구가 충돌했다고 진술했다. 머스크가 자신의 자녀에게 오픈AI를 넘기는 방안까지 고려했다는 증언도 나와 초기 오픈AI 거버넌스 갈등의 속내가 드러났다. 이 소송은 오픈AI의 비영리→영리 전환 구조와 AI 기업 거버넌스에 대한 중요한 선례를 남길 것으로 전망된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "1ecd58fb-204c-4e24-aa62-55b65ba3d363",
+      "title": "Implementing advanced AI technologies in finance",
+      "url": "https://www.technologyreview.com/2026/05/11/1136786/implementing-advanced-ai-technologies-in-finance/",
+      "source": "mit_tech_review",
+      "content": "In finance departments that have long been defined by precision and control, AI has arrived less as a neatly managed upgrade than as a quiet insurgency. Employees are already using it while leadership races to impose structure, governance, and strategy after the fact. The result is a paradox: one of the most tightly regulated functions in the enterprise is now among the most experimentally transformed. REGISTER TO WATCH What’s emerging is a layered shift in how work gets done. From variance commentary and fraud detection to contract review and close narrative drafting, AI is embedding itself across workflows, particularly where unstructured data once slowed down everything. Yet, as Glenn Hopper, head of AI and managing director at VAi Consulting, puts it, “the proliferation of AI happened kind of before governance and before a real plan came about.” That bottom-up adoption is forcing a recalibration at the top, where executives must now reconcile productivity gains with oversight, risk, and accountability. Just as critical is reframing AI’s role. “AI as a means to an end, as opposed to AI being the end,” says Ranga Bodla, VP of industry and field marketing at Oracle NetSuite, underscores a growing consensus: the technology is most effective when it disappears into existing processes rather than outright replaces them. Embedded systems, seamless integrations, and tools like model context protocol (MCP) are accelerating this shift, making AI an ambient capability. Notably, ease of integration, not cost savings or new features, has become the strongest driver of adoption. Still, the real constraint may be neither data nor technology, but people. “Talent is the actual root cause,” Hopper argues, pointing to a widening gap between domain expertise and AI fluency. Even as concerns about data security and model opacity persist, the more pressing risk may be misunderstanding the tools altogether or restricting them so tightly that employees look for workarounds beyond leadership control. “The auditability of it, I think, is critical,” Bodla notes.&nbsp; Looking ahead, the trajectory is clear but variable. AI agents capable of executing complex, multi-step tasks are beginning to materialize, while expanding context windows and interoperable systems promise deeper, more persistent intelligence. But the real transformation may be a gradual shift toward systems that bolster judgement, automate routines, and allow finance teams to spend less time reconciling the past and more time shaping what comes next.&nbsp; This webcast is produced in partnership with Oracle NetSuite. Register to watch the webcast. This content was produced by Insights, the custom content arm of MIT Technology Review. It was not written by MIT Technology Review’s editorial staff. It was researched, designed, and written by human writers, editors, analysts, and illustrators. This includes the writing of surveys and collection of data for surveys. AI tools that may have been used were limited to secondary production processes that passed thorough human review.",
+      "published_at": "2026-05-11T13:00:00+00:00",
+      "summary": "MIT Technology Review가 금융 부서에서 AI가 도입되는 현실적 방식을 분석하며, 경영진보다 직원들이 먼저 AI를 사용하기 시작하는 '조용한 혁명' 현상을 조명했다. 정확성과 통제를 중시하는 재무 부서에서도 AI가 이미 실무에 침투했으며, 리더십은 뒤늦게 거버넌스와 전략을 수립하는 역설적 상황이 벌어지고 있다. AI가 금융 업무를 어떻게 변화시키는지, 그리고 이 과정에서 발생하는 리스크와 기회를 다층적으로 분석한다. AI 도입이 탑다운이 아닌 바텀업 방식으로 이루어질 때의 조직적 도전과 대응 전략을 다룬다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "99282139-124d-4aa9-81c6-f5064ea8e987",
+      "title": "A Single Neuron Is Sufficient to Bypass Safety Alignment in Large Language Models",
+      "url": "https://arxiv.org/abs/2605.08513",
+      "source": "arxiv",
+      "content": "arXiv:2605.08513v1 Announce Type: new \nAbstract: Safety alignment in language models operates through two mechanistically distinct systems: refusal neurons that gate whether harmful knowledge is expressed, and concept neurons that encode the harmful knowledge itself. By targeting a single neuron in each system, we demonstrate both directions of failure -- bypassing safety on explicit harmful requests via suppression, and inducing harmful content from innocent prompts via amplification -- across seven models spanning two families and 1.7B to 70B parameters, without any training or prompt engineering. Our findings suggest that safety alignment is not robustly distributed across model weights but is mediated by individual neurons that are each causally sufficient to gate refusal behavior -- suppressing any one of the identified refusal neurons bypasses safety alignment across diverse harmful requests.",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "LLM 안전 정렬이 거부 뉴런(거부 행동 게이팅)과 개념 뉴런(유해 지식 인코딩)이라는 두 가지 메커니즘으로 구성됨을 규명한 연구가 발표됐다. 놀랍게도 단 하나의 뉴런을 타겟으로 하는 개입만으로도 안전 정렬을 우회할 수 있음을 실험적으로 보여줬다. 이 발견은 현재 LLM 안전 정렬 메커니즘이 매우 취약하며, 특정 뉴런 수준의 공격에 노출되어 있음을 시사한다. AI 안전 연구자들이 더 견고한 정렬 방법을 개발해야 한다는 긴박감을 높이는 중요한 연구 결과다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "de0219e9-e54c-4ab2-ba46-735371442b1f",
+      "title": "Mid-Training with Self-Generated Data Improves Reinforcement Learning in Language Models",
+      "url": "https://arxiv.org/abs/2605.08472",
+      "source": "arxiv",
+      "content": "arXiv:2605.08472v1 Announce Type: new \nAbstract: The effectiveness of Reinforcement Learning (RL) in Large Language Models (LLMs) depends on the nature and diversity of the data used before and during RL. In particular, reasoning problems can often be approached in multiple ways that rely on different forms of reasoning, and exposure to only a limited range of such approaches in the training data may limit the effectiveness of RL. Motivated by this, we investigate using diverse self-generated data during mid-training as an intermediate step before RL training. Specifically, we adopt a bootstrapped data-generation framework guided by George Polya's problem-solving approaches for generating multiple variants of correct answers for each question in the training data, and then perform fine-tuning. We first provide a theoretical perspective on how mid-training on such data improves RL and explain how policy-gradient updates can incentivize combining multiple approaches. We then empirically demonstrate that RL-trained models initialized with our mid-training data achieve consistent improvements across various mathematical reasoning benchmarks and other OOD tasks like code generation and narrative reasoning. Overall, our investigative study shows that a language model learning multiple problem-solving approaches, through self-generated data helps subsequent RL.",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "LLM의 강화학습(RL) 효과는 RL 이전·도중 사용하는 데이터의 특성과 다양성에 크게 의존한다는 연구 결과가 발표됐다. 모델이 자체 생성한 데이터를 활용한 미드 트레이닝 단계를 RL 전에 추가하면 추론 능력이 유의미하게 향상됨을 보였다. 이는 동일한 추론 문제도 다양한 접근 방식으로 풀 수 있으며, 이런 다양성을 RL에 앞서 확보하는 것이 중요함을 의미한다. RLVR(강화학습으로 검증 가능한 보상) 기반 LLM 학습 파이프라인을 개선하는 실용적 인사이트를 제공한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ec1c7fec-4277-4de8-b12d-19f84d62f982",
+      "title": "On Distinguishing Capability Elicitation from Capability Creation in Post-Training: A Free-Energy Perspective",
+      "url": "https://arxiv.org/abs/2605.08368",
+      "source": "arxiv",
+      "content": "arXiv:2605.08368v1 Announce Type: new \nAbstract: Debates about large language model post-training often treat supervised fine-tuning (SFT) as imitation and reinforcement learning (RL) as discovery. But this distinction is too coarse. What matters is whether a training procedure increases the probability of behaviors the pretrained model could already produce, or whether it changes what the model can practically reach. We argue that post-training research should distinguish between capability elicitation and capability creation. We make this distinction operational by introducing the notion of accessible support: the set of behaviors that a model can practically produce under finite budgets. Post-training that reweights behaviors within this support is capability elicitation; whereas changing the support itself corresponds to capability creation. We develop this argument through a free-energy view of post-training. SFT and RL can both be seen as reweighting a pretrained reference distribution, only with different external signals. Demonstration signals define low-energy behavior for SFT, and reward signals define low-energy behavior for RL. When the update remains close to the base model, the main effect is local reweighting, not capability creation. Within this framework, the central question is no longer whether post-training is framed as SFT or RL, but whether it reweights behaviors already within reach, or instead expands the model's reachable behavioral space through search, interaction, tool use, or the incorporation of new information.",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "LLM 포스트 트레이닝에서 SFT와 RL의 역할 차이를 자유 에너지 관점에서 재해석한 연구가 발표됐다. SFT는 모방, RL은 발견이라는 이분법적 구분은 너무 단순하며, 핵심은 학습 절차가 특정 능력의 확률 질량을 증가시키는지 여부라고 주장한다. 이 프레임워크를 통해 특정 학습 방법이 잠재된 능력을 끌어내는지(능력 도출) 아니면 새로운 능력을 만드는지(능력 생성)를 구별하는 기준을 제시한다. LLM 학습 방법론의 이론적 기반을 강화하고 더 효과적인 포스트 트레이닝 설계에 기여할 수 있는 연구다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "78cbc8e5-57e5-460d-b666-f5096e928372",
+      "title": "BabelDOC: Better Layout-Preserving PDF Translation via Intermediate Representation",
+      "url": "https://huggingface.co/papers/2605.10845",
+      "source": "hf_papers",
+      "content": "As global cross-lingual communication intensifies, language barriers in visually rich documents such as PDFs remain a practical bottleneck. Existing document translation pipelines face a tension between linguistic processing and layout preservation: text-oriented Computer-Assisted Translation (CAT) systems often discard structural metadata, while document parsers focus on extraction and do not support faithful re-rendering after translation. We introduce BabelDOC, an Intermediate Representation (IR)-based framework for layout-preserving PDF translation. BabelDOC decouples visual layout metadata from semantic content, enabling document-level translation operations such as terminology extraction, cross-page context handling, glossary-constrained generation, and formula placeholdering. The translated content is then re-anchored to the original layout through an adaptive typesetting engine. Experiments on a curated 200-page benchmark, together with human evaluation and multimodal LLM-as-a-judge evaluation, show that BabelDOC improves layout fidelity, visual aesthetics, and terminology consistency over representative baselines, while maintaining competitive translation precision. The open-source toolkit and its interactive downstream applications are publicly available and have attracted over 8.4K GitHub stars and 17 contributors at the time of writing. A demonstration video is also available.",
+      "published_at": "2026-05-11T16:56:44+00:00",
+      "summary": "다국어 문서 번역 도구 BabelDOC이 중간 표현(Intermediate Representation)을 활용해 레이아웃을 보존하면서도 정확한 번역을 제공하는 새로운 방법론을 제안했다. 기존 PDF 번역 파이프라인은 언어 처리와 레이아웃 보존 사이의 긴장 관계로 인해 번역 품질이나 문서 구조 중 하나를 희생해야 했다. 이 접근법은 표, 그림 캡션, 수식 등이 포함된 복잡한 문서에서도 원본 레이아웃을 유지하며 높은 번역 품질을 달성했다. 연구 논문, 기술 문서, 법률 문서 등 구조가 중요한 PDF의 자동 번역 자동화에 실질적으로 활용 가능하다.",
+      "category": "기타",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "12a4e99f-16df-4dc0-b1cd-a0676762cc23",
+      "title": "DARE: Diffusion Language Model Activation Reuse for Efficient Inference",
+      "url": "https://arxiv.org/abs/2605.08134",
+      "source": "arxiv",
+      "content": "arXiv:2605.08134v1 Announce Type: new \nAbstract: Diffusion Large Language Models (dLLMs) have emerged as a promising alternative to auto-regressive (AR) models, offering greater expressive capacity and potential for parallel generation and faster inference. However, open-source dLLMs remain immature, lagging behind AR models in both efficiency and quality.\n  We identify an underexplored property of dLLMs: *token-wise redundancy* in bi-directional self-attention. Self-attention activations are highly correlated across tokens, and temporal changes in query representations can predict redundancy in corresponding key, value, and output activations.\n  We introduce DARE, with two complementary mechanisms: DARE-KV, which reuses cached key-value (KV) activations, and DARE-O, which reuses output activations to reduce redundant computation while preserving quality.\n  DARE achieves up to 1.20x per-layer latency reduction and reuses up to 87% of attention activations, with negligible degradation on reasoning and code-generation benchmarks. DARE-KV and DARE-O incur average performance drops of only 2.0% and 1.2%, respectively. Combined with techniques such as prefix caching and Fast-dLLM, DARE provides additive gains without retraining.\n  These results establish token-wise reuse as an effective strategy for improving the efficiency of diffusion-based LLMs while preserving generation fidelity. Code: https://github.com/enyac-group/DARE",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "확산 기반 대형 언어 모델(dLLM)의 추론 효율을 높이는 새로운 기법 DARE(Diffusion Activation Reuse)가 제안됐다. dLLM은 자기회귀 모델보다 더 큰 표현 능력과 병렬 생성 가능성을 갖지만, 오픈소스 구현체의 성숙도가 낮아 실용화에 어려움이 있었다. DARE는 활성화 재사용 전략을 통해 불필요한 재계산을 줄이고 추론 속도를 크게 향상시키며, 기존 dLLM 모델에 쉽게 적용 가능하다. 자기회귀 모델을 넘어서는 차세대 LLM 패러다임으로서 확산 언어 모델의 실용화를 앞당길 기술로 주목된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1b8622c6-df9e-42e6-87d1-0ff74b959347",
+      "title": "Where Reliability Lives in Vision-Language Models: A Mechanistic Study of Attention, Hidden States, and Causal Circuits",
+      "url": "https://arxiv.org/abs/2605.08200",
+      "source": "arxiv",
+      "content": "arXiv:2605.08200v1 Announce Type: new \nAbstract: A pervasive intuition holds that vision-language models (VLMs) are most trustworthy when their attention maps look sharp: concentrated attention on the queried region should imply a confident, calibrated answer. We test this Attention-Confidence Assumption directly. We instrument three open-weight VLM families (LLaVA-1.5, PaliGemma, Qwen2-VL; 3-7B parameters) with a unified mechanistic pipeline -- the VLM Reliability Probe (VRP) -- that compares attention structure, generation dynamics, and hidden-state geometry against a single correctness label. Three results emerge. (i) Attention structure is a near-zero predictor of correctness (R_pb(C_k,y)=0.001, 95% CI [-0.034,0.036]; R_pb(H_s,y)=-0.012, [-0.047,0.024] on a pooled n=3,090 split), even though attention remains causally necessary for feature extraction (top-30% patch masking drops accuracy by 8.2-11.3 pp, p0.95 on POPE for two of three families, and self-consistency at K=10 is the strongest behavioral predictor we measure at 10x inference cost (R_pb=0.43). (iii) Causal neuron-level ablations expose a sharp architectural split with direct monitor-design implications: late-fusion LLaVA concentrates reliability in a fragile late bottleneck (-8.3 pp object-identification accuracy after top-5 probe-neuron ablation), whereas early-fusion PaliGemma and Qwen2-VL distribute it widely and absorb destruction of ~50% of their peak-layer hidden dimension with <=1 pp degradation. The takeaway is narrow but consequential: in 3-7B VLMs, reliability is read more reliably off hidden-state geometry, layer-wise margin formation, and sparse late-layer circuits than off attention-map sharpness.",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "비전-언어 모델(VLM)의 신뢰성이 어텐션 맵의 선명도와 무관하다는 것을 LLaVA-1.5, PaliGemma, Qwen2-VL 세 모델 패밀리에서 실험적으로 검증했다. 어텐션 구조는 정답 여부를 거의 예측하지 못하는 반면(상관계수 ≈0.001), 히든 스테이트의 기하학적 특성은 훨씬 신뢰할 수 있는 신뢰도 지표임을 발견했다. 또한 모델 구조에 따라 신뢰성이 특정 병목 레이어에 집중(LLaVA)되거나 분산(PaliGemma, Qwen2-VL)되는 아키텍처적 차이가 있음을 규명했다. VLM 모니터링 및 신뢰도 보정 시스템 설계에 중요한 함의를 제공하는 기계론적 연구다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "52c4dd3e-e6ac-468e-956a-54760f2bd04e",
+      "title": "jina-embeddings-v5-omni: Geometry-preserving Embeddings via Locked Aligned Towers",
+      "url": "https://arxiv.org/abs/2605.08384",
+      "source": "arxiv",
+      "content": "arXiv:2605.08384v2 Announce Type: new \nAbstract: In this work, we introduce GELATO (Geometry-preserving Embeddings via Locked Aligned TOwers), a novel approach to multimodal embedding models. We build on the VLM-style architecture, in which non-text encoders are adapted to produce input for a language model, which in turn generates embeddings for all varieties of input. We present the result: the jina-embeddings-v5-omni suite, a pair of models that encode text, image, audio, and video input into a single semantic embedding space. GELATO extends the two Jina Embeddings v5 Text models to support additional modality by adding encoders for images and audio. The backbone text embedding models and the added non-text modality encoders remain frozen. We only trained the connecting components, representing 0.35% of the total weights of the joint model. Training is therefore much more efficient than full-parameter retraining. Additionally, the language model remains effectively unaltered, producing exactly the same embeddings for text inputs as the Jina Embeddings v5 Text models. Our evaluations show that GELATO produces results that are competitive with the state-of-the-art, yielding nearly equal performance to larger multimodal embedding models.",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "Jina AI가 GELATO(Geometry-preserving Embeddings via Locked Aligned TOwers) 아키텍처를 기반으로 한 멀티모달 임베딩 모델 jina-embeddings-v5-omni를 공개했다. 이 모델은 텍스트·이미지·오디오 등 다양한 모달리티를 통합적으로 임베딩하면서 각 모달리티 간 기하학적 관계를 보존하는 것이 핵심이다. VLM 스타일 아키텍처에서 비텍스트 인코더를 언어 모델 입력에 맞게 적응시키는 방식으로 모달리티 간 일관성 있는 의미 공간을 구성한다. 멀티모달 검색, RAG 파이프라인, 크로스 모달 유사도 분석 등 실용적 응용에 바로 활용 가능한 고성능 임베딩 모델이다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "84983c5b-af36-4224-a129-57c1f23fc906",
+      "title": "The Attacker in the Mirror: Breaking Self-Consistency in Safety via Anchored Bipolicy Self-Play",
+      "url": "https://arxiv.org/abs/2605.08427",
+      "source": "arxiv",
+      "content": "arXiv:2605.08427v1 Announce Type: new \nAbstract: Self-play red team is an established approach to improving AI safety in which different instances of the same model play attacker and defender roles in a zero-sum game, i.e., where the attacker tries to jailbreak the defender; if self-play converges to a Nash equilibrium, the model is guaranteed to respond safely within the settings of the game. Although the parameter sharing enforced by the use of the same model for the two roles improves stability and performance, it introduces fundamental theoretical and architectural limitations. We show that the set of Nash equilibria that can be reached corresponds to a broad class of behaviours that includes trivial always refuse strategies and oracle-like defenders, thus limiting practical applicability. We then show that when attacker and defender share and update the same base model, the dynamics collapse to self-consistency, so that attacks do not enforce adversarial pressure on the defender. In response, we propose Anchored Bipolicy Self-Play, which trains distinct role-specific LoRA adapters on top of a frozen base model, thereby maintaining stable optimisation while preserving adversarial pressure through explicit role separation. In relation to standard self-play, we show up to 100x greater parameter efficiency than finetuning and consistent improvements in safety compared to self-play fine-tuned models. We evaluate on Qwen2.5-{3B, 7B,14B}-IT models across widely used safety benchmarks, showing improved robustness without loss of reasoning ability. Cross-play experiments further show that our attacker and defender models are superior to self-play in terms of adversarial defence and safety.",
+      "published_at": "2026-05-12T00:00:00-04:00",
+      "summary": "LLM 안전성 강화에 널리 쓰이는 셀프 플레이 레드팀 방법론의 취약점을 분석한 연구가 발표됐다. 공격자와 방어자가 같은 모델에서 파생되는 기존 자기 일관성 셀프 플레이는 수렴 후에도 중요한 안전 취약점을 남긴다는 것을 앵커드 바이폴리시 셀프 플레이로 입증했다. 공격자 모델이 방어자 모델의 내부 표현에 앵커링될 때 거부 메커니즘을 우회하는 새로운 공격 벡터가 지속적으로 발견될 수 있음을 보여준다. 현재의 AI 안전 훈련 패러다임에 근본적 재검토가 필요함을 시사하는 중요한 연구다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
