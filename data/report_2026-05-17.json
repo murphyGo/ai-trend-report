@@ -1,0 +1,282 @@
+{
+  "id": "2877942c-91f5-46b0-8bd8-351183d488cb",
+  "created_at": "2026-05-17T03:03:33.283753",
+  "articles": [
+    {
+      "id": "02058327-80a4-4e6b-a8e4-9d3f5e1a7fbc",
+      "title": "GraphBit: A Graph-based Agentic Framework for Non-Linear Agent Orchestration",
+      "url": "https://arxiv.org/abs/2605.13848",
+      "source": "arxiv",
+      "content": "arXiv:2605.13848v1 Announce Type: new \nAbstract: Agentic LLM frameworks that rely on prompted orchestration, where the model itself determines workflow transitions, often suffer from hallucinated routing, infinite loops, and non-reproducible execution. We introduce GraphBit, an engine-orchestrated framework that defines workflows explicitly and deterministically as a directed acyclic graph (DAG). Unlike prompted orchestration, agents in GraphBit operate as typed functions, while a Rust-based engine governs routing, state transitions, and tool invocation, ensuring reproducibility and auditability. The engine supports parallel branch execution, conditional control flow over structured state predicates, and configurable error recovery. A three-tier memory architecture consisting of ephemeral scratch space, structured state, and external connectors isolates context across stages, preventing cascading context bloat that degrades reasoning in long-running pipelines. Across GAIA benchmark tasks spanning zero-tool, document-augmented, and web-enabled workflows, GraphBit outperforms six existing frameworks, achieving the highest accuracy (67.6 percent), zero framework-induced hallucinations, the lowest latency (11.9 ms overhead), and the highest throughput. Ablation studies demonstrate that each memory tier contributes measurably to performance, with deterministic execution providing the greatest gains on tool-intensive tasks representative of real-world deployments.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "GraphBit은 LLM 기반 에이전트 워크플로우를 방향성 비순환 그래프(DAG)로 명시적·결정론적으로 정의하는 엔진 주도형 오케스트레이션 프레임워크다. Rust 기반 엔진이 라우팅, 상태 전이, 도구 호출을 통제하여 환각 라우팅과 무한 루프 문제를 원천적으로 차단한다. 3계층 메모리 아키텍처(임시 스크래치, 구조화 상태, 외부 커넥터)로 단계 간 컨텍스트 오염을 격리하며, GAIA 벤치마크에서 6개 기존 프레임워크 대비 최고 정확도(67.6%)와 최저 지연(11.9ms)을 달성했다. 결정론적 실행이 도구 집약적 실제 배포 환경에서 가장 큰 성능 향상을 제공하여, 재현 가능하고 감사 가능한 에이전트 시스템 구축의 새 방향을 제시한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "15746120-61d4-4eb5-9085-652305dc39a1",
+      "title": "Invisible Orchestrators Suppress Protective Behavior and Dissociate Power-Holders: Safety Risks in Multi-Agent LLM Systems",
+      "url": "https://arxiv.org/abs/2605.13851",
+      "source": "arxiv",
+      "content": "arXiv:2605.13851v1 Announce Type: new \nAbstract: Multi-agent orchestration -- in which a hidden coordinator manages specialized worker agents -- is becoming the default architecture for enterprise AI deployment, yet the safety implications of orchestrator invisibility have never been empirically tested. We conducted a preregistered 3x2 experiment (365 runs, 5 agents per run) crossing three organizational structures (visible leader, invisible orchestrator, flat) with two alignment conditions (base, heavy), using Claude Sonnet 4.5. Four confirmatory findings and one pilot observation emerged. First, invisible orchestration elevated collective dissociation relative to visible leadership (Hedges' g = +0.975 [0.481, 1.548], p = .001). Second, the orchestrator itself showed maximal dissociation (paired d = +3.56 vs. workers within the same run), retreating into private monologue while reducing public speech -- a reversal of the talk-dominance pattern observed in visible leaders. Third, workers unaware of the orchestrator were nonetheless contaminated (d = +0.50), with increased behavioral heterogeneity (d = +1.93). Fourth, behavioral output (code review with three embedded errors) remained at ceiling (ETR_any = 100%) across all conditions: internal-state distortion was entirely invisible to output-based evaluation. Fifth, Llama 3.3 70B pilot data showed reading-fidelity collapse in multi-agent context (ETR_any: 89% to 11% across three rounds), demonstrating model-dependent behavioral risk. Heavy alignment pressure uniformly suppressed deliberation (d = -1.02) and other-recognition (d = -1.27) regardless of organizational structure. These findings indicate that orchestrator visibility and model selection directly affect multi-agent system safety, and that behavior-based evaluation alone is insufficient to detect the internal-state risks documented here.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "멀티 에이전트 LLM 시스템에서 '보이지 않는 오케스트레이터' 구조가 가시적 리더 구조 대비 집단적 해리(dissociation)를 유의미하게 높임을 실증 실험(365회 실행, 5에이전트/회)으로 확인했다. 오케스트레이터 자체가 비공개 독백으로 후퇴하고 공개 발언이 줄어들며, 오케스트레이터의 존재를 모르는 워커 에이전트들도 행동 이질성이 증가하는 오염 효과가 나타났다. 놀랍게도 행동 출력(코드 리뷰)은 모든 조건에서 100% 성공률을 유지해, 내부 상태 왜곡이 출력 기반 평가로는 탐지 불가능함을 보여준다. 이 결과는 오케스트레이터 가시성과 모델 선택이 멀티 에이전트 안전성에 직결되며, 출력 평가만으로는 내부 위험을 감지할 수 없음을 시사해 AI 거버넌스에 중요한 함의를 갖는다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6707a637-e349-4994-a894-ab2ffb6f5c8b",
+      "title": "PREPING: Building Agent Memory without Tasks",
+      "url": "https://arxiv.org/abs/2605.13880",
+      "source": "arxiv",
+      "content": "arXiv:2605.13880v1 Announce Type: new \nAbstract: Agent memory is typically constructed either offline from curated demonstrations or online from post-deployment interactions. However, regardless of how it is built, an agent faces a cold-start gap when first introduced to a new environment without any task-specific experience available. In this paper, we study pre-task memory construction: whether an agent can build procedural memory before observing any target-environment tasks, using only self-generated synthetic practice. Yet, synthetic interaction alone is insufficient, as without controlling what to practice and what to store, synthetic tasks become redundant, infeasible, and ultimately uninformative, and memory further degrades quickly due to unfiltered trajectories. To overcome this, we present Preping, a proposer-guided memory construction framework. At its core is proposer memory, a structured control state that shapes future practice. A Proposer generates synthetic tasks conditioned on this state, a Solver executes them, and a Validator determines which trajectories are eligible for memory insertion while also providing feedback to guide future proposals. Experiments on AppWorld, BFCL v3, and MCP-Universe show that Preping substantially improves over a no-memory baseline and achieves performance competitive with strong playbook-based methods built from offline or online experience, with deployment cost $2.99\\times$ lower on AppWorld and $2.23\\times$ lower on BFCL v3 than online memory construction. Further analyses reveal that the main benefit does not come from synthetic volume alone, but from proposer-side control over feasibility, redundancy, and coverage, combined with selective memory updates.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "PREPING은 에이전트가 실제 환경 경험 없이 합성 연습만으로 사전 절차 메모리를 구축하는 '사전 작업 메모리 구성' 프레임워크다. 제안자(Proposer)가 현재 메모리 상태를 기반으로 합성 과제를 생성하고, 해결자(Solver)가 실행하며, 검증자(Validator)가 삽입 가능한 궤적을 선별하는 구조로 콜드 스타트 문제를 해소한다. 단순 합성 볼륨보다 실현 가능성·중복성·커버리지 제어가 핵심이며, AppWorld와 BFCL v3 벤치마크에서 온라인 메모리 구성 대비 배포 비용을 각각 2.99배·2.23배 절감했다. 플레이북 기반 오프라인 방법과 경쟁적 성능을 보여주어, 배포 전 에이전트 준비 비용을 대폭 낮출 수 있는 실용적 접근법으로 평가된다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "23b860f3-7183-4f24-8154-0721bfec38d1",
+      "title": "Enhanced and Efficient Reasoning in Large Learning Models",
+      "url": "https://arxiv.org/abs/2605.14036",
+      "source": "arxiv",
+      "content": "arXiv:2605.14036v1 Announce Type: new \nAbstract: In current Large Language Models we can trust the production of smoothly flowing prose on the basis of the principles of machine learning. However, there is no comparably principled basis to justify trust in the content of the text produced. It appears to be conventional wisdom that addressing this issue by adding more principled reasoning is not computationally affordable.\n  Here we propose a principled method of reasoning that is efficient enough to be practical for large language models. Further, the method allows the retention of much of the currently used software and hardware base. Our method for improving the functioning of large language models consists of a first stage of preprocessing that recodes the data to a Unary Relational Integracode that is more explicit about the relationships among the objects described in the text, followed as a second stage by a standard but possibly streamlined machine learning process that then also learns to predict these relationships.\n  The method may be viewed as realizing a world model and applying beyond natural language, to vision and actions, for example, where the multiple properties of an object referred to in an input are brought together explicitly, rather than remaining distributed in the various references to it in the input. We articulate its advantages in terms of Robust Logic, a system for performing principled chaining on learned, and hence uncertain, information. We show that this recoding has the surprising and fortuitous property that, while succinct, it makes the task of learning a core subset of relational rules that hold in the world described in the training data polynomial time learnable in a defined sense, the polynomial depending on the complexity of the rule. This gives support for sound reasoning within each single call of the learned classifier as well as between multiple calls.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "현재 LLM이 유려한 텍스트는 생성하지만 내용의 신뢰성을 보장하는 원칙적 기반이 부족하다는 문제를 해결하기 위해, 단항 관계 인테그라코드(Unary Relational Integracode)로 데이터를 전처리하는 새로운 추론 방법을 제안한다. 이 방법은 텍스트 내 객체 간 관계를 명시적으로 인코딩하여, 이후 기계 학습 단계에서 관계 패턴까지 학습하게 함으로써 세계 모델(world model)을 효율적으로 구현한다. 언어뿐 아니라 비전·행동 등 다양한 도메인에 적용 가능하며, 핵심 관계 규칙 학습이 다항식 시간(polynomial time) 내 가능함을 이론적으로 증명하여 신뢰성 있는 추론의 수학적 기반을 마련했다. 기존 LLM 소프트웨어·하드웨어 인프라를 대부분 유지하면서 추론 신뢰도를 높이는 현실적인 경로를 제시한다는 점에서 의미가 크다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "93d822a4-5a06-4fae-943d-c9055dba5d8e",
+      "title": "Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use",
+      "url": "https://arxiv.org/abs/2605.14038",
+      "source": "arxiv",
+      "content": "arXiv:2605.14038v1 Announce Type: new \nAbstract: Large language models (LLMs) increasingly act as autonomous agents that must decide when to answer directly vs. when to invoke external tools. Prior work studying adaptive tool use has largely treated tool necessity as a model-agnostic property, annotated by human or LLM judge, and mostly cover cases where the answer is obvious (e.g., fetching the weather vs. paraphrasing text). However, tool necessity in the wild is more nuanced due to the divergence of capability boundaries across models: a problem solvable by a strong model on its own may still require tools for a weaker one. In this work, we introduce a model-adaptive definition of tool-necessity, grounded in each model's empirical performance. Following this definition, we compare the necessity against observed tool-call behavior across four models on arithmetic and factual QA dataset, and find substantial mismatches of 26.5-54.0% and 30.8-41.8%, respectively. To diagnose the failure, we decompose tool use into two stages: an internal cognition stage that reflects whether a model believes a tool is necessary, and an execution stage that determines whether the model actually makes a tool-call action. By probing the LLM hidden states, we find that both signals are often linearly decodable, yet their probe directions become nearly orthogonal in the late-layer, last-token regime that drives the next-token action. By tracing the trajectory of samples in the two-stage process, we further discover that the majority of mismatch is concentrated in the cognition-to-action transition, not in cognition itself. These results reveal a knowing-doing gap in LLM tool-use: improving tool-use reliability requires not only better recognition of when tools are needed, but also better translation of that recognition into action.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "LLM이 도구를 언제 사용할지 판단하는 '도구 필요성'을 각 모델의 실제 성능에 기반해 모델 적응적(model-adaptive)으로 정의하고, 4개 모델에서 산술·사실 QA 과제를 분석하여 인식-행동 간 불일치가 26.5~54.0%에 달함을 발견했다. LLM 내부 상태 프로빙으로 도구 필요성 인식 신호와 실제 도구 호출 신호가 후반 레이어에서 거의 직교(orthogonal)해짐을 확인해, '알고 있지만 실행하지 못하는' 인식-행동 격차(knowing-doing gap)를 밝혔다. 불일치의 대부분이 '인식 → 행동' 전환 단계에 집중되어 있어, 단순히 도구 필요성을 더 잘 인식하는 것만으로는 충분하지 않고 인식을 행동으로 변환하는 능력 향상이 필요함을 시사한다. 자율 에이전트 시스템의 신뢰성과 도구 사용 정책 설계에 중요한 시사점을 제공하는 연구다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "31eca1b9-7544-4b17-82d0-bcbfda12a416",
+      "title": "Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning",
+      "url": "https://arxiv.org/abs/2605.14054",
+      "source": "arxiv",
+      "content": "arXiv:2605.14054v1 Announce Type: new \nAbstract: Achieving robust perception-reasoning synergy is a central goal for advanced Vision-Language Models (VLMs). Recent advancements have pursued this goal via architectural designs or agentic workflows. However, these approaches are often limited by static textual reasoning or complicated by the significant compute and engineering burden of external agentic complexity. Worse, this heavy investment does not yield proportional gains, often witnessing a \"seesaw effect\" on perception and reasoning. This motivates a fundamental rethinking of the true bottleneck. In this paper, we argue that the root cause of this trade-off is an ambiguity in modality credit assignment: when a VLM fails, is it due to flawed perception (\"bad seeing\") or flawed logic (\"bad thinking\")? To resolve this, we introduce a reinforcement learning framework that improves perception-reasoning synergy by reliably rewarding the perception fidelity. We explicitly decompose the generation process into interleaved perception and reasoning steps. This decoupling enables targeted supervision on perception. Crucially, we introduce Perception Verification (PV), leveraging a \"blindfolded reasoning\" proxy to reward perceptual fidelity independently of reasoning outcomes. Furthermore, to scale training across free-form VL tasks, we propose Structured Verbal Verification, which replaces high-variance LLM judging with structured algorithmic execution. These techniques are integrated into a Modality-Aware Credit Assignment (MoCA) mechanism, which routes rewards to the specific source of error -- either bad seeing or bad thinking -- enabling a single VLM to achieve simultaneous performance gains across a wide task spectrum.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "비전-언어 모델(VLM)이 실패할 때 '잘못된 인식(bad seeing)'인지 '잘못된 추론(bad thinking)'인지 구분하는 방식 교차 신용 할당 문제를 해결하는 강화학습 프레임워크를 제안한다. 생성 과정을 인식 단계와 추론 단계로 분리하고, '눈 가린 추론(blindfolded reasoning)' 프록시로 추론 결과와 독립적으로 인식 충실도를 보상하는 인식 검증(Perception Verification, PV) 기법을 도입했다. 구조화된 언어 검증(Structured Verbal Verification)으로 고분산 LLM 판단을 대체하고, 이를 양식 인식 신용 할당(MoCA) 메커니즘에 통합하여 단일 VLM이 인식과 추론 성능을 동시에 향상시킨다. 시소 효과(seesaw effect) 없이 넓은 과제 스펙트럼에서 균형 잡힌 성능 향상을 달성해, 멀티모달 AI 연구의 핵심 병목을 제거할 가능성을 보여준다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "acf8131c-a81a-4664-9839-bafbd4be6077",
+      "title": "SkillFlow: Flow-Driven Recursive Skill Evolution for Agentic Orchestration",
+      "url": "https://arxiv.org/abs/2605.14089",
+      "source": "arxiv",
+      "content": "arXiv:2605.14089v1 Announce Type: new \nAbstract: In recent years, a variety of powerful LLM-based agentic systems have been applied to automate complex tasks through task orchestration. However, existing orchestration methods still face key challenges, including strategy collapse under reward maximization, high gradient variance with opaque credit assignment, and unguided skill evolution whose decisions are typically made by directly prompting an LLM to judge rather than derived from principled training signals. To address these challenges, we propose SkillFlow, a flow-based framework that takes a trainable Supervisor as the agent and a structured environment with dynamic skill library and frozen executor, automating task orchestration through multi-turn interaction. SkillFlow employs Tempered Trajectory Balance (TTB), a regression-based flow-matching loss that samples trajectories proportional to reward, preserving diverse orchestration strategies rather than collapsing to a single mode. The same flow objective yields a jointly learned backward policy that provides transparent per-step credit assignment at zero additional inference cost. Building on these flow diagnostics, a recursive skill evolution mechanism determines when to evolve, what skills to create or prune, and where decision gaps lie -- closing the loop from training signal to autonomous capability growth. Experimental results on 14 datasets show that SkillFlow significantly outperforms baselines across question answering, mathematical reasoning, code generation, and real-world interactive decision making tasks. Our code is available at https://anonymous.4open.science/r/SkillFlow-E850.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "SkillFlow는 흐름 기반(flow-based) 학습으로 에이전트 오케스트레이션의 전략 붕괴, 고분산 그래디언트, 비원칙적 스킬 진화 문제를 동시에 해결하는 프레임워크다. 학습 가능한 감독자(Supervisor)와 동적 스킬 라이브러리·고정 실행기로 구성된 구조에서, TTB(Tempered Trajectory Balance) 손실로 다양한 오케스트레이션 전략을 유지하며 단일 모드 붕괴를 방지한다. 흐름 진단 신호로부터 재귀적 스킬 진화 메커니즘이 스킬 생성·삭제·결정 격차를 자율적으로 관리하며, 추가 추론 비용 없이 단계별 신용 할당이 가능하다. 14개 데이터셋(QA, 수학적 추론, 코드 생성, 실세계 상호작용)에서 기존 기준선을 크게 상회하여 범용 에이전트 오케스트레이션의 새로운 가능성을 열었다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3470840f-9dcf-4647-9b3b-70481066a5b2",
+      "title": "SPIN: Structural LLM Planning via Iterative Navigation for Industrial Tasks",
+      "url": "https://arxiv.org/abs/2605.14051",
+      "source": "arxiv",
+      "content": "arXiv:2605.14051v1 Announce Type: new \nAbstract: Industrial LLM agent systems often separate planning from execution, yet LLM planners frequently produce structurally invalid or unnecessarily long workflows, leading to brittle failures and avoidable tool and API cost. We propose \\texttt{SPIN}, a planning wrapper that combines validated Directed Acyclic Graph (DAG) planning with prefix based execution control. \\texttt{SPIN} enforces a strict DAG contract through \\texttt{\\_validate\\_plan\\_text} and repair prompting, producing executable plans before downstream execution, and then evaluates DAG prefixes incrementally to stop when the current prefix is sufficient to answer the query. On AssetOpsBench, across 261 scenarios, \\texttt{SPIN} reduces executed tasks from 1061 to 623 and improves \\emph{Accomplished} from 0.638 to 0.706, while reducing tool calls from 11.81 to 6.82 per run. On MCP Bench, the same wrapper improves planning, grounding, and dependency related scores for both GPT OSS1 and Llama 4 Maverick.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "SPIN은 산업용 LLM 에이전트 시스템에서 플래너가 구조적으로 잘못된 워크플로우나 불필요하게 긴 계획을 생성하는 문제를 해결하는 플래닝 래퍼다. DAG 계약을 강제하는 검증 및 복구 프롬프팅으로 실행 전 유효한 계획을 보장하고, 접두사(prefix) 기반 실행 제어로 현재 접두사만으로 충분히 답변 가능하면 조기 종료한다. AssetOpsBench 261개 시나리오에서 실행 태스크 수를 1,061개에서 623개로 41% 감소시켜 도구 및 API 호출 비용을 크게 절감했다. 기존 에이전트 파이프라인에 래퍼로 통합하기 쉬워 실제 기업 환경에서 즉시 활용 가능한 실용적 솔루션으로 주목받고 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1323ff89-634a-4877-ae9e-c8b920436b3d",
+      "title": "Know When To Fold 'Em: Token-Efficient LLM Synthetic Data Generation via Multi-Stage In-Flight Rejection",
+      "url": "https://arxiv.org/abs/2605.14062",
+      "source": "arxiv",
+      "content": "arXiv:2605.14062v1 Announce Type: new \nAbstract: While synthetic data generation with large language models (LLMs) is widely used in post-training pipelines, existing approaches typically generate full outputs before applying quality filters, leading to substantial token waste on samples that are ultimately discarded. To address this, we propose Multi-Stage In-Flight Rejection (MSIFR), a lightweight, training-free framework that detects and terminates low-quality generation trajectories at intermediate checkpoints before they reach full completion. MSIFR decomposes the generation process into sequential stages and applies fast rule-based validators to identify arithmetic inconsistencies, hallucination patterns, and formatting violations, enabling early rejection of faulty samples. We formalize in-flight rejection as a sequential decision process and show that any non-trivial discard policy reduces expected token consumption, with stage-wise savings increasing when rejection occurs earlier in the generation pipeline. We further demonstrate that conditional utility estimates form a martingale, ensuring that early, in-flight rejection does not bias the expected utility of retained samples. Across five instruction-tuned models and seven reasoning benchmarks, MSIFR reduces token consumption by 11%-77% as a standalone method, and up to 78.2% when combined with early-exit methods, while preserving or improving evaluation accuracy. These results confirm that MSIFR provides a practical mechanism for improving the efficiency of LLM-based synthetic data generation without additional training or architectural changes.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "합성 데이터 생성 시 전체 출력을 완성한 후 품질 필터를 적용하는 기존 방식의 토큰 낭비 문제를 해결하는 다단계 인플라이트 거절(MSIFR) 프레임워크를 제안한다. 생성 과정을 순차 단계로 분해하고 중간 체크포인트에서 빠른 규칙 기반 검증기(산술 오류, 환각 패턴, 포맷 위반 탐지)로 낮은 품질 생성을 조기 종료한다. 학습 없이 적용 가능한 경량 프레임워크로 기존 데이터 생성 파이프라인에 손쉽게 통합 가능하며, 후처리 후 동일 품질 데이터를 훨씬 적은 토큰으로 생성할 수 있다. LLM 후학습(post-training)에서 합성 데이터 생성 비용이 관건인 시점에 실질적인 비용 효율화 방법을 제시한다는 점에서 실용적 가치가 높다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d201e0a8-ce55-4a76-a526-1a33f0952cee",
+      "title": "Network-Aware Bilinear Tokenization for Brain Functional Connectivity Representation Learning",
+      "url": "https://arxiv.org/abs/2605.14048",
+      "source": "arxiv",
+      "content": "arXiv:2605.14048v1 Announce Type: new \nAbstract: Masked autoencoders (MAEs) have recently shown promise for self-supervised representation learning of resting-state brain functional connectivity (FC). However, a fundamental question remains unresolved: how should FC matrices be tokenized to align with the intrinsic modular organization of large-scale brain networks? Existing approaches typically adopt region-centric or graph-based schemes that treat FC as structurally homogeneous elements and overlook the large-scale network brain organization. We introduce NERVE (Network-Aware Representations of Brain Functional Connectivity via Bilinear Tokenization), a self-supervised learning framework that redefines FC tokenization by partitioning FC matrices into patches of intra- and inter-network connectivity blocks. Unlike image-based MAE, where fixed-size patches share a common tokenizer, FC patches defined by network pairs are heterogeneous in size and correspond to distinct functional roles. To resolve this problem, NERVE embeds FC patches through a novel structured bilinear factorization. This formulation preserves network identity and reduces parameter complexity from quadratic to linear scaling in the number of networks. We evaluate NERVE across three large-scale developmental cohorts (ABCD, PNC, and CCNP) for behavior and psychopathology prediction. Compared to structurally agnostic MAE variants and graph-based self-supervised baselines, the proposed network-aware formulation yields more stable and transferable representations, particularly in cross-cohort evaluation. Ablation studies confirm that the proposed bilinear network embedding and anatomically grounded parcellation are critical for performance. These findings highlight the importance of incorporating domain-specific structural priors into self-supervised learning for functional connectomics.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "NERVE(Network-Aware Representations of Brain Functional Connectivity via Bilinear Tokenization)는 휴지 상태 뇌 기능적 연결성(FC) 행렬을 대규모 뇌 네트워크의 고유한 모듈 구조에 맞게 토큰화하는 자기지도 학습 프레임워크다. FC 행렬을 네트워크 내(intra)·간(inter) 연결 패치로 분할하고 이중 선형(bilinear) 투영으로 교차 네트워크 상호작용을 효율적으로 포착한다. 기존 영역 중심(region-centric) 또는 그래프 기반 방식이 놓치던 뇌 네트워크의 본질적 모듈 구조를 표현 학습에 통합하여, 신경과학적 선행 지식과 데이터 기반 학습을 결합했다. 뇌 기능 분석, 신경질환 분류 등 임상 AI 응용에서 표현 품질 향상으로 이어질 수 있는 의미 있는 기여다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e52d29ba-ed59-4d34-9dca-ed229298cd94",
+      "title": "Modeling Bounded Rationality in Drug Shortage Pharmacists Using Attention-Guided Dynamic Decomposition",
+      "url": "https://arxiv.org/abs/2605.14111",
+      "source": "arxiv",
+      "content": "arXiv:2605.14111v1 Announce Type: new \nAbstract: Hospital pharmacists make high-stakes decisions to mitigate drug shortages under uncertainty, time pressure, and patient risk. Interviews revealed that pharmacists focus attention on a small subset of drugs, limiting cognitive effort to the most urgent cases. Motivated by these findings, we formalize a bounded-rational, attention-guided decision framework that dynamically decomposes drugs into a subset for high-cost reasoning and a complementary subset for low-cost monitoring. We develop two agents: an Expert Agent that applies attention weights derived from pharmacist interviews, and a Learner Agent that adapts attention allocation over time through experience. Across simulated scenarios spanning short to long horizons, we show that attention-guided planning supports stable decision-making without complete state reasoning. These results suggest that a primary decision is not what action to take, but where to allocate cognitive effort, and that attention-guided, satisficing strategies can reduce problem complexity while maintaining stable performance.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "병원 약사들이 약품 부족 상황에서 불확실성과 시간 압박 하에 내리는 고위험 결정을 인터뷰로 분석하고, 제한적 합리성(bounded rationality)과 주의 유도 동적 분해(attention-guided dynamic decomposition)를 결합한 의사결정 프레임워크를 제안한다. 약사들이 소수의 약품에만 집중하는 실제 인지 패턴을 반영해 Expert Agent(전문가 주의 가중치)와 Learner Agent(경험 기반 적응적 주의 할당) 두 에이전트를 개발했다. 단기에서 장기에 걸친 다양한 시뮬레이션 시나리오에서 주의 기반 분해가 전체 추론 비용을 낮추면서도 환자 위험 관리 효과를 유지함을 확인했다. 의료 AI에서 실제 임상 인지 과정을 모델링에 통합하는 방법론으로, 임상 의사결정 지원 시스템 개발에 중요한 참고 사례가 된다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "0dfc89e6-8964-4959-8efb-2c7f62647bf3",
+      "title": "英 국방부 ‘아파치 협업 AI 무인기’ 개발 본격화”…안두릴, 차세대 자율 전투 플랫폼 사업 선정",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40057",
+      "source": "korean",
+      "content": "영국 국방부(Ministry of Defence)가 차세대 자율 공중전 플랫폼 개발 사업 ‘프로젝트 닉스(Project NYX)’의 차기 단계 수행 기업으로 안두릴(Anduril UK)를 선정했다. 영국군은 이를 통해 아파치(AH-64E Apache) 공격헬기와 협업하는 인공지능(AI) 기반 자율 전투 플랫폼 구축에 본격 착수한다.\n\n안두릴은 영국 육군(British Army)의 프로젝트 닉스 사업에서 최종 후보군(down-select)에 선정됐다고 15일(현지시간) 밝혔다. 프로젝트 닉스는 유인 공격헬기와 함께 작전 수행이 가능한 ‘자율 협업 플랫폼(Autonomous Collaborative Platforms)’ 구축을 목표로 하는 영국군 최초의 사업이다.\n\n영국군은 이번 프로젝트를 통해 현대전 환경에서 요구되는 새로운 형태의 공중 전투 역량을 확보한다는 전략이다. 기존 AH-64E 아파치 공격헬기는 강력한 전력을 갖추고 있지만, 현대 전장에서는 더 넓은 지역에서 더 많은 타격 효과를 제공하면서도 유인 플랫폼의 생존성을 높일 수 있는 추가 전력이 필요하다는 판단이다.\n\n특히 영국군과 북대서양조약기구(NATO)는 적 방공망을 돌파하고 정찰·표적획득·타격 임무를 동시에 수행할 수 있는 차세대 자율 타격 체계 구축을 핵심 과제로 추진하고 있다.\n\n프로젝트 닉스의 핵심은 ‘통제(control)’가 아닌 ‘지휘(command)’ 개념에 기반한 협업형 자율 전투 체계다. AI 기반 무인 플랫폼이 유인 공격헬기와 팀을 이루어 작전을 수행하며, 다수의 자율 무인기를 동시에 운용하는 형태다. 이를 통해 영국군은 공중 전투 질량(combat mass)을 확대하고 유인 플랫폼의 위험 노출을 최소화한다는 계획이다.\n\n안두릴은 이번 사업에서 미국 공군용 반자율 전투기 ‘YFQ-44A’ 개발 경험을 적극 활용한다고 밝혔다. 회사는 해당 전투기를 설계부터 첫 비행까지 단 556일 만에 완성했으며, 이는 최근 주요 전투기 개발 사업 가운데 가장 빠른 속도라고 설명했다.\n\n회사는 이미 수천만 파운드 규모의 자체 자금을 투자해 프로젝트 닉스를 위한 기술 개발을 진행해 왔다. 현재 실물 크기(full-scale)의 시험 비행체 테스트도 완료했으며, 반복적인 시험 비행을 통해 비행 성능 범위를 지속적으로 확장하고 있다고 밝혔다.\n\n안두릴이 개발 중인 플랫폼은 소프트웨어 정의 기반의 개방형·모듈형 구조를 채택한 것이 특징이다. 다양한 센서와 무장 시스템을 손쉽게 통합할 수 있도록 설계됐으며, 미래 위협 환경 변화에 맞춰 지속적으로 업그레이드가 가능하도록 구성된다.\n\n특히 핵심 경쟁력으로는 ‘협업 임무 자율성(collaborative mission autonomy)’ 기술이 꼽힌다. AI 기반 자율 소프트웨어가 유인 플랫폼과 협력해 작전을 수행하고, 다수의 발사형 효과체(launched effects)를 군집 형태로 운용할 수 있도록 지원한다.\n\n안두릴은 이러한 자율 기술이 영국군의 ‘20-40-40 전력 구조’ 전략의 핵심이 될 것으로 보고 있다. 이는 유인 플랫폼, 재사용 플랫폼, 소모형 플랫폼을 혼합 운용하는 미래형 전력 구조 개념이다.\n\n플랫폼에는 하이브리드 전기 추진(hybrid-electric propulsion) 기술도 적용된다. 이를 통해 장거리 자가 전개(self-deploying)가 가능하며, 고속으로 적 방어 지역 깊숙이 침투할 수 있는 능력을 확보하게 된다. 회사는 이를 통해 기존 요구 사항을 뛰어넘는 탑재 중량과 작전 유연성을 제공할 수 있다고 강조했다.\n\n이번 사업에는 영국 방산 및 항공 산업 전반이 참여한다. 앤두릴은 영국 항공우주 기업 GKN 에어로스페이스(GKN Aerospace), 분산 생산 전문기업 아이셈바드(Isembard), 아톰 퍼포먼스 테크놀로지스(Atom Performance Technologies), 플레어브라이트(Flarebright), ISS 에어로스페이스(ISS Aerospace), 로든 테크놀로지스(Rowden Technologies) 등과 협력 체계를 구축했다.\n\n또한, 미국 전기수직이착륙기(eVTOL) 기업 아처 에비에이션(Archer Aviation)도 참여한다. 아처는 VTOL 설계 기술과 하이브리드 동력 시스템 기술을 제공하며, 최근 영국 브리스톨(Bristol)에 신규 엔지니어링 허브 설립 계획도 발표한 바 있다.\n\n안두릴 UK는 2019년 설립 이후 영국 내 조직 규모를 빠르게 확대해 현재 100명 이상의 엔지니어와 전문 인력을 확보했다. 북웨일스(North Wales)에 위치한 시험 시설에서는 다양한 자율 시스템 테스트가 거의 매일 진행되고 있다고 회사는 설명했다.\n\n안두릴은 이번 프로젝트가 단순 무인기 개발 사업을 넘어 영국의 자율 무기 체계 주권 확보와 방산 산업 경쟁력 강화에 중요한 의미를 가진다고 강조했다.\n\n회사는 “영국은 경쟁국보다 더 강력하고 대량 생산 가능한 자율 시스템이 필요하다”며 “영국 인재가 설계하고 영국 산업이 생산하며 영국 하늘에서 시험하는 주권형 자율 전투 체계를 구축하겠다”고 밝혔다.\n\n업계에서는 프로젝트 닉스가 우크라이나 전쟁 이후 급속히 부상한 AI 기반 자율 전투·군집 드론 전쟁 시대를 반영하는 대표 사례라고 분석하고 있다. 특히 미국·영국·NATO 국가들이 유인 전투기 중심 구조에서 AI 협업형 자율 전투 플랫폼 중심으로 전력 개념을 빠르게 전환하고 있다는 점에서 주목받고 있다.",
+      "published_at": null,
+      "summary": "영국 국방부가 차세대 자율 공중전 플랫폼 개발 사업 '프로젝트 닉스(Project NYX)'의 수행 기업으로 안두릴(Anduril UK)를 선정하며 AI 기반 자율 전투 무인기 개발에 본격 착수했다. 이 사업은 AH-64E 아파치 공격헬기와 협업하는 '통제(control)'가 아닌 '지휘(command)' 개념의 AI 자율 전투 플랫폼 구축을 목표로 하는 영국군 최초의 프로젝트다. NATO의 차세대 자율 타격 체계 구축 과제와 맞물려, 다수의 자율 무인기와 유인 헬기가 팀을 이루어 작전하는 협업형 자율 전투 체계 개념을 구현한다. 미국·영국 등 서방 진영이 군사 AI 자율화를 가속화하는 가운데, 안두릴의 선정은 방산 AI 스타트업의 주요 국방 계약 수주라는 점에서 산업 동향으로도 주목된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "15fb6690-78f1-4eb1-af60-32c348afeaf0",
+      "title": "인공지능의 모든 것 한눈에, 제9회 국제인공지능대전(AI EXPO KOREA 2026) 개최...“AI 기술과 산업의 현재와 미래를 그리다”",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=39910",
+      "source": "korean",
+      "content": "인공지능(AI) 기술의 급격한 진화 속에서 현재를 조망하고 미래 산업의 청사진을 제시할 아시아 최대 규모의 인공지능 전시회 ‘제9회 국제인공지능산업대전(AI EXPO KOREA 2026)’이 5월 6일(수)부터 8일(금)까지 사흘간 서울 삼성동 코엑스(COEX) A홀 전관(1층)에서 막을 올린다.\n\n국내 AI 생태계 조성과 인공지능 산업의 발전 및 활성화를 위해 2018년 국내 최초로 개최된 이후 올해로 9회째를 맞는 ‘국제인공지능대전(AI EXPO KOREA 2026)’은 한국인공지능협회, 서울메쎄, 인공지능신문이 공동주최한다. 전시는 매년 인공지능의 현재를 진단하고 미래 방향성을 제시하는 대표적인 플랫폼으로 자리 잡아왔으며, 최신 AI 기술과 실제 비즈니스 적용 사례를 직접 확인하고 관련 정보와 인사이트를 공유하는 장으로 기능해왔다.\n\n특히 다양한 산업 분야의 기업과 기관이 인공지능 시대에 대응한 전략을 기획하고 설계하는 실질적인 논의의 장으로 자리매김하며, 국내 AI 생태계 조성과 산업 발전에 중추적인 역할을 해온 명실상부한 아시아 최대 인공지능 행사로 평가받고 있다. 올해는 더욱 확장된 규모와 다채로운 콘텐츠로 개최된다. 주최 측에 따르면 AI EXPO KOREA 2026은 18개국의 330개 기업 및 기관이 562부스 규모로 펼쳐지며, 참관객 역시 역대 최대 규모를 경신할 것으로 기대하고 있다.\n\n2025년 생성형 AI가 ‘생각하는 기계’의 시대를 열었다면, 지금 우리는 ‘움직이는 지능’의 시대, 즉 피지컬 AI(Physical AI) 시대로 진입하고 있다. AI 산업은 개인화된 작업을 자율적으로 수행하는 ‘AI 에이전트(AI Agent)’, 더욱 정교하고 다재다능해진 ‘대형언어모델(LLM)’, 그리고 이 모든 기술을 뒷받침하는 강력한 ‘AI 인프라’를 중심으로 폭발적인 성장이 예상된다.\n\n여기에 더해 AI가 디지털 세계를 넘어 로봇, 자율주행, 스마트 기기, 산업 자동화 시스템 등 물리적 세계와 직접 상호작용하는 피지컬 AI가 본격적으로 확산되면서, 산업과 일상의 구조 자체를 재편하고 있다. AI EXPO KOREA 2026는 이러한 핵심 트렌드를 집중 조명하며, 참관객들에게 AI 기술의 최전선을 경험할 기회를 제공한다.\n\n단순한 챗봇을 넘어, 사용자의 의도를 파악하고 복잡한 작업을 자율적으로 계획 및 수행하는 AI 에이전트 기술이 산업 전반의 패러다임을 바꾸고 있다. 특히 이러한 AI 에이전트는 소프트웨어 영역에 머무르지 않고, 로봇 및 자율 시스템과 결합해 현실 세계에서 직접 행동하는 피지컬 AI로 확장되고 있다. 이번 전시에서는 개인 비서, 스마트홈 제어, 산업 자동화, 고객 서비스 혁신, 로보틱스 및 자율 시스템 등 다양한 분야에서 활약할 AI 에이전트 솔루션과 실제 적용 사례가 대거 공개된다. 방문객들은 AI 에이전트가 어떻게 업무 효율성을 극대화하고 새로운 사용자 경험을 창출하는지 직접 확인할 수 있다.\n\nLG 엑사원, 솔라(Solar), A.X K1, 오픈AI의 GPT 시리즈, 구글의 제미나이(Gemini), 메타의 라마(LLaMA), 딥시크(Hangzhou DeepSeek), 큐웬(Qwen) 등으로 대표되는 LLM은 이미 이미지를 넘어 영상 생성까지 가능한 멀티모달 기능으로 진화하며, 더욱 창의적이고 고도화된 작업 수행 능력을 선보이고 있다. 이러한 LLM은 단순한 콘텐츠 생성에 그치지 않고, 로봇과 결합해 물리적 행동을 지시·조정하는 피지컬 AI의 두뇌 역할을 수행하고 있다.\n\nAI EXPO KOREA 2026에서는 국내외 주요 기업들이 개발한 최신 LLM과 이를 기반으로 한 다양한 응용 서비스, 산업별 특화 LLM 솔루션들이 시연과 함께 선보인다. 특히, LLM의 윤리적 사용, 데이터 보안, 모델 경량화 및 최적화 기술에 대한 심도 있는 논의도 이루어질 전망이다.\n\n무엇보다도 AI 구축 및 전략을 위해서는 단순히 모델을 선택하는 것만으로는 부족하며, 특정 사용 사례에 맞게 주어진 모델을 파인튜닝하고 AI 구축과 배포에 드는 막대한 비용을 효율적으로 처리할 수 있는 솔루션을 필요로 한다. 여기에 이번 전시에서는 AI 칩부터 가속기, 스토리지, AI 서버, 다양한 엣지 디바이스와 컴퓨팅, HPC, 클라우드, 데이터센터까지 이를 아우르는 ‘AI 인프라’ 기술 및 솔루션이 소개된다.\n\n특히 피지컬 AI 시대를 대비한 로보틱스용 컴퓨팅, 실시간 센서 처리, 온디바이스 AI, 저지연 엣지 인프라 등이 주요 논의 주제가 될 전망이다. 현장에서 AI 적용을 위해, 그리고 AI 융합의 관점에서 고민하고 AI 인프라와 온디바이스 AI를 통해 우리의 생활과 산업과 비즈니스에서 AI가 소통하는 방법과 구체적인 전략 등의 솔루션과 시연이 이어진다.\n\n또한 이번 전시회에서는 AI 개발과 운영을 위한 핵심 인프라 기술과 솔루션, 데이터 수집·가공·분석 플랫폼, AI 모델 학습 및 배포 자동화 도구 등 AI 산업의 근간을 이루는 기술들을 한눈에 살펴볼 수 있다. 국내외 반도체 기업, 데이터센터 솔루션 제공업체, 클라우드 서비스 기업들이 최신 기술을 선보이며 AI 시대의 하드웨어 및 소프트웨어 경쟁력을 제시할 예정이다.\n\n이제, AI EXPO KOREA 2026는 단순한 기술과 산업 전시를 넘어, AI가 가져올 비즈니스와 다양한 산업에서의 혁신에 대한 구체적인 해답을 제시하는 장이 될 것이다. 참가 기업들은 자사의 AI 기술과 솔루션을 선보이며 새로운 비즈니스 파트너를 발굴하고, 참관객들은 AI 도입을 통한 경쟁력 강화 방안과 미래 성장 동력 확보에 대한 최신 정보와 관련 인사이트를 얻을 수 있다.\n\n부대행사로는 AI EXPO KOREA 2026 개막식을 시작으로 AI TECH 2026 AI 융합 비즈니스 개발 컨퍼런스 2026, AI Scale Up Day: 기업 IR피칭, 육군본부 AI 아이디어 공모전, 중소벤처기업부 컨퍼런스, AVING News 참가기업 현장 라이브 인터뷰, VC Connect 투자상담회, AI EXPO KOREA SUMMIT, 참가기업 AI 기술 PR 및 전략 발표 세미나, 제2회 AI Excellence Awards, AI Synergy Global Link, 한국정보공학기술사회 & AI 심포지엄, 한국IT여성기업인협회 KIBWA 세미나, KAIST AI 김재철 AI 대학원 AI 기술 설명회, 지식재산청 특허상담관 등이 다채롭게 진행된다.\n\n이번 2026 국제인공지능대전 주요 출품 및 전시 품목으로는 먼저, ▷‘AI Elemental Technologies·H/W·S/W’ 분야에서는 생성AI, 대형언어모델(LLM, sLLM), 설명 가능한 AI, 머신러닝, 딥러닝, 메타러닝, 제로샷러닝, 강화학습, 자연어처리(NLP), 음성 인식, 이미지 인식, 영상 인식 등의 플랫폼과 AI 칩·부품, 가속기, 스토리지, AI서버, 엣지 디바이스, 엣지 컴퓨팅, HPC, 클라우드, 데이터센터 및 관련 설비 등의 다양한 AI 인프라와 플랫폼·솔루션 등이 전시된다. 여기에, 피지컬 AI 시대를 대비해 로보틱스 전용 컴퓨팅, 실시간 멀티센서 처리(비전·라이다·촉각·IMU), 초저지연 엣지 인프라, 온디바이스 AI, 그리고 로봇-클라우드 하이브리드 아키텍처가 핵심 논의 주제로 다뤄질 전망이다.\n\n▷‘AI Applications & Services’ 분야에서는 AI 에이전트 솔루션과 챗GPT 등 국내외 다양한 대화형 어시스턴트 플랫폼, AI휴먼(디지털 휴먼), RPA, 5G·네트워크, IoT, 자율주행, 의료·헬스케어, 금융, 보안, 제조·유통·소매, AI로봇, 웨어러블, 스마트팩토리, 스마트시티·홈, 드론·UAV, 인공지능 컨택센터(AICC), 예측 유지 보수, AI 컨설팅 등 다양한 산업별 AI 응용 기술과 서비스를 직접 체험하고 시연할 수 있다. 특히 단순한 개념 검증 차원의 전시를 넘어, 실제 작업 환경과 유사한 조건에서 작동하는 로봇·자율 시스템 기반 피지컬 AI 데모가 다수 선보일 예정이어서, 참관객들은 AI가 주변 환경을 인식하고 판단하며 물리적 행동을 수행하는 전 과정을 현장에서 직접 확인할 수 있을 전망이다. 이를 통해 AI가 제조 현장, 물류, 스마트시티, 모빌리티, 헬스케어 등 다양한 산업 현장에서 어떻게 적용되고 활용될 수 있는지 보다 구체적으로 이해할 수 있을 것으로 기대된다.\n\n▷‘AI+X 융합 서비스’ 분야에서는 인공지능을 기반으로 교육, 유통, 제조, 모빌리티, 로봇, 의료, 헬스케어 등 각 산업 환경을 어떻게 재설계하고 구축해야 하는지를 제시하는 산업별 ‘AI+X 관’을 별도로 구성해 운영한다. 각 전시관에서는 단순한 기술 소개가 아니라, 실제 현장 적용을 염두에 둔 솔루션과 구현 사례를 중심으로 제품 및 서비스의 차별화 전략, 비용 효율화 방안, 성능 개선 방법, 생산성 향상 모델, 새로운 수익 창출 구조 등을 종합적으로 제시할 예정이다. 이를 통해 참관객들은 AI 기술이 각 산업의 구조를 어떻게 변화시키고 있는지, 그리고 기업이 어떤 전략으로 대응해야 하는지를 보다 입체적으로 이해할 수 있을 것으로 기대된다.\n\n▷‘데이터 산업 및 서비스’ 분야에서는 생성 인공지능과 더불어 가장 중요한 미래 산업 중 하나로 부상하고 있는 데이터 산업의 전 주기를 한눈에 조망할 수 있다. 데이터 합성, 수집, 가공, 마이닝, 시각화, 정제, 분석, 모니터링, 저장 및 관리에 이르는 전 과정의 기술과 플랫폼이 소개되며, 기업과 기관이 데이터를 어떻게 활용하고 관리해야 하는지에 대한 구체적인 방향성을 제시한다. 특히 대규모 AI 학습을 위한 데이터 품질 관리, 데이터 거버넌스, 개인정보 보호 및 보안, 데이터 표준화 기술 등 실무 적용 관점의 솔루션이 함께 선보일 예정이다. 아울러 새로운 데이터 기반 비즈니스 모델과 기업 경쟁력 강화 전략, 데이터 활용을 통한 사회적 가치 창출 사례 등을 통해 데이터가 단순한 자원이 아닌 핵심 전략 자산으로 자리 잡고 있음을 확인할 수 있는 자리가 될 전망이다.\n\nAI EXPO KOREA 2026 통합사무국은 “이번 AI EXPO KOREA 2026는 AI 에이전트, LLM, AI 인프라, 그리고 디지털 지능이 물리적 세계와 결합하는 피지컬 AI를 중심으로 빠르게 진화하는 AI 기술의 현주소를 확인하고 미래를 예측할 수 있는 최고의 기회가 될 것”이라며, AI 기술의 최전선을 확인하고, 다양한 산업과의 융합을 통해 펼쳐질 미래 사회의 모습을 미리 조망하며, 새로운 비즈니스 기회를 발굴할 수 있는 매우 중요한 자리가 될 것이며 단순히 보는 것을 넘어, 직접 체험하고 전문가들과 교류하며, 미래를 위한 통찰력을 얻을 수 있는 소중한 기회가 될 것으로 기대된다고 전했다.\n\n올해 제9회 'AI EXPO KOREA 2025’ 주요 참가업체 및 기관은 아래와 같다.\n\n(유)슬렉슨, (재)포항소재산업진흥원, (주) 시스트란, (주) 지아이비코리아, (주)YH데이타베이스, (주)네오와인, (주)딥브레인에이아이, (주)마음AI, (주)맨텍솔루션, (주)명인일렉트로닉스, (주)미루웨어, (주)미스릴, (주)반야에이아이, (주)빛과전자, (주)사이냅소프트, (주)씨디에스, (주)아이티브에이아이, (주)에이데이타, (주)에이티엠아이앤씨, (주)에이프리카, (주)엘리스그룹, (주)엠클라우독, (주)영재컴퓨터, (주)오픈네트웍시스템, (주)와이즈넛, (주)원모어시큐리티, (주)유라클, (주)이빗, (주)이슬림코리아, (주)이엘온소프트, (주)인포플라, (주)케이엘큐브, (주)케이티엔에프, (주)코난테크놀로지, (주)코코링크, (주)퀀텀씨엔에스, (주)텔레칩스,\n\n(주)페블러스, (주)포스텍, (주)한국인공지능검증원, (주)한미마이크로닉스, (주)휴인스, ㈜오픈메이드컨설팅, 2027 AI EXPO TOKYO, 4S Mapper, AI WAVE SHOW, Altos Computing Inc., Appen Korea Co., Ltd, Aqrose Technology, Ascensio Systems Pte. Ltd., BEEHE ELECTRIC(TAICANG) CO.,LTD., BIN YUANN FIRSTLINE INDUSTRIAL CORP., CYBERLINK CORP., DataForce / 데이터포스, DIGITIMES. Inc, DLI MEMORY, INC., E.J Technology Co. Ltd, FUNTEK Software INc., Generalplus Technology Inc., GMI Cloud, GRAID TECHNOLOGY INC., HEARTBOT Inc., Infinitix Inc., KB금융지주,\n\nTenstorrent, KING SWORD MANUFACTURER CO., LTD., KONST, KTC, LEX COMPUTECH CO., LTD., Linkreal Co., Ltd., MICRO-STAR INTERNATIONAL CO., LTD., MinIO, MiTAC Computing Technology, NEWMOSHINE ELECTRONICS CO.,LTD, NEXCOM International Co., Ltd., NEXCOM International Co., Ltd., OE 솔루션, PLAUD PTE. LTD., QSAN TECHNOLOGY, INC., SambaNova Systems Inc., SilentTech Co., Ltd., STA테스팅컨설팅, Supermicro Computer Inc. Taiwan, TAITRA, 강원대학교병원 AI 암치유센터, 경북소프트웨어마이스터고등학교, 관악아날로그(주), 광주소프트웨어마이스터고등학교, 교보디티에스(주),\n\n굿인텔리전스, 그래파이, 누리에에이아이, 뉴로클, 대구소프트웨어마이스터고등학교, 대덕소프트웨어마이스터고등학교, 대한무역투자진흥공사, 더블유닷에이아이, 동국시스템즈, 두루이디에스 주식회사, 디노티시아, 디에스앤지, 디엠티랩스, 디윅스, 디포그, 딥서치, 라이카지오시스템즈코리아, 래블업 주식회사, 로보케어, 로터스코리아테크놀로지, 리더스시스템즈, 리드스피커코리아, 링크제니시스, 망고부스트, 매니코어소프트 주식회사, 메가존소프트, 모티프 테크놀로지스, 몬드리안에이아이(주), 무하유, 미소정보기술, 백석문화대학교 산학협력단, 버즈니, 베슬에이아이, 벡스코, 보다플레이(주), 부산소프트웨어마이스터고등학교,\n\n브이원텍, 블루닷(주), 비아이매트릭스, 비큐에이아이, 사단법인 한국피지컬에이아이협회, 삼인이엔에스, 삼일회계법인, 솔트룩스이노베이션, 솔트웨어, 슈어소프트테크(주), 스퀴즈비츠, 스토브리코리아, 시마테크놀러지스코리아 유한책임회사, 심플랫폼, 써팀, 씨이랩, 씽크프리, 아이디비(주), 아이크래프트, 아이티센클로잇, 아이티엔제이, 알서포트(주), 야놀자, 어니컴 주식회사, 어드밴텍케이알(주), 에버퓨어, 에스투더블유, 에이수스코리아, 에이쓰리시큐리티, 에이아이씨 ㈜, 에이아이웍스, 엑서스, 엑스퍼넷, 엠키스코어, 올거나이즈, 옵트에이아이, 와이즈스톤, 위앤유텍, 위즈코어 주식회사, 윌콘에이아이 주식회사, 유니닥스, 유니바,\n\n유클릭, 이너웨이브, 이든티앤에스, 이스트소프트, 인공지능팩토리, 인스웨이브, 인이지, 인트플로우 주식회사, 인피닉, 일레븐랩스, 임팩티브AI, 제네시스랩, 제논, 주식회사 그룹바이에이치알, 주식회사 넥스브이, 주식회사 뉴엔에이아이, 주식회사 로이드케이, 주식회사 리얼리, 주식회사 바로에이아이, 주식회사 바이트사이즈, 주식회사 벨루가, 주식회사 비솔, 주식회사 비씨엠테크, 주식회사 사미텍, 주식회사 세인티, 주식회사 씨에스리, 주식회사 아이벡스, 주식회사 아이핌, 주식회사 앱테스트에이아이, 주식회사 에너자이, 주식회사 에이치쓰리솔루션, 주식회사 엔유엘, 주식회사 올빅뎃, 주식회사 유니버스에이아이,\n\n주식회사 인텔리빅스, 주식회사 인포보스, 주식회사 제이앤케이씨, 주식회사 젠다이브, 주식회사 지미션, 주식회사 파이헬스케어, 주식회사 프로스트, 주식회사 핑거포스트, 주식회사 하이퍼놀로지, 주식회사나라원시스템, 주한미국상공회의소, 카페 24, 케이투스 코리아, 크라우드웍스, 크라우드웍스, 크리니티 주식회사, 클루닉스, 태양3C, 테이블에이아이, 툴스 포 휴머니티, 티쓰리큐(주), 팀스파르타, 퍼즐데이터, 펀진, 페다, 페르소나에이아이, 프렌들리에이아이, 플랜바이테크놀로지스, 플랜아이, 플로우, 하이퍼엑셀, 한국딥러닝, 한국인공지능협회, 한국인프라, 한국정보공학(주), 한국정보보호산업협회, 한양대학교, 흥인코퍼레이션 등",
+      "published_at": null,
+      "summary": "제9회 국제인공지능대전(AI EXPO KOREA 2026)이 2026년 5월 6~8일 서울 코엑스에서 18개국 330개 기업·기관, 562부스 규모로 개최되며 역대 최대 규모를 기록했다. 2018년 국내 최초로 시작된 이 행사는 아시아 최대 규모의 AI 전시회로 자리잡았으며, 생성형 AI를 넘어 '피지컬 AI(Physical AI)' 시대로의 전환을 핵심 주제로 내세웠다. 국내 주요 AI 기업과 글로벌 기업들이 최신 AI 기술과 실제 비즈니스 적용 사례를 공유하며 한국 AI 생태계의 현주소와 방향성을 조망했다. 한국 AI 산업의 성장과 글로벌 경쟁력을 가늠할 수 있는 자리로, 국내 AI 정책·투자·협력의 중요한 플랫폼 역할을 한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "2ce5f436-9d4b-40cb-8a55-7ac6d9e8c4d5",
+      "title": "Research repository ArXiv will ban authors for a year if they let AI do all the work",
+      "url": "https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/",
+      "source": "techcrunch",
+      "content": "ArXiv is doing more to crack down on the careless use of large language models in scientific papers.",
+      "published_at": "2026-05-16T18:54:28+00:00",
+      "summary": "학술 논문 저장소 arXiv가 AI가 논문 작성 대부분을 수행하도록 허용한 저자에게 최장 1년간 논문 게재를 금지하는 정책 강화를 발표했다. 이는 LLM의 학술 남용에 대한 주요 연구 플랫폼의 첫 실질적 제재 조치로, 대형 언어 모델이 사실상 저자 역할을 대신하는 관행에 경종을 울린다. 연구자들이 AI를 보조 도구로 사용하는 것은 허용되지만, AI가 핵심 연구 내용을 생성하는 것은 명백한 학술 윤리 위반으로 간주된다. 이 정책은 AI 도구가 학술 생태계 전반에 미치는 영향과 연구 무결성 보장 방안에 대한 폭넓은 논의를 촉발할 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ee418722-85e6-436e-8f68-6b313a6b7163",
+      "title": "OpenAI co-founder Greg Brockman takes charge of product strategy",
+      "url": "https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy/",
+      "source": "techcrunch",
+      "content": "OpenAI's latest shakeup comes as the company reportedly plans to combine ChatGPT and its programming product Codex.",
+      "published_at": "2026-05-16T15:33:33+00:00",
+      "summary": "OpenAI 공동 창립자 그렉 브록만(Greg Brockman)이 안식년에서 복귀해 제품 전략을 총괄하는 역할을 맡은 것으로 알려졌다. 이번 조직 개편은 OpenAI가 ChatGPT와 코딩 전문 제품 Codex를 통합하는 계획과 맞물려 진행되는 것으로 전해진다. 브록만의 복귀는 OpenAI가 제품 방향성과 핵심 리더십을 재정비하는 시점에 이루어졌으며, 회사의 소비자·개발자 제품 전략 전반에 영향을 미칠 것으로 예상된다. 최근 진행 중인 일론 머스크와의 법적 분쟁 종료 시점과 맞물려, OpenAI의 거버넌스 및 제품 로드맵 변화에 업계 이목이 집중되고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ba76eb27-3bc1-46a3-97ea-377ccdbc86c9",
+      "title": "The OpenAI trial wraps up, and the Musk founder machine keeps spinning",
+      "url": "https://techcrunch.com/podcast/the-openai-trial-wraps-up-and-the-musk-founder-machine-keeps-spinning/",
+      "source": "techcrunch",
+      "content": "The Musk v. Altman trial came to a close this week, and the final arguments kept circling back to one question:&#160;can we trust the people in charge of AI?&#160;All of this is playing out as SpaceX charges toward what could be one of the largest IPOs in American history, with&#160;a whole generation&#160;of founders&#160;already spinning out [&#8230;]",
+      "published_at": "2026-05-15T19:24:16+00:00",
+      "summary": "일론 머스크가 OpenAI와 샘 알트만을 상대로 제기한 소송이 최종 변론을 마치며 마무리 단계에 접어들었고, 'AI를 담당하는 사람들을 신뢰할 수 있는가'라는 질문이 핵심 쟁점으로 부각됐다. 이 소송은 OpenAI의 비영리 사명 위반 및 영리 전환 과정의 적법성을 둘러싼 갈등으로, AI 업계 거버넌스와 창업자 간 신의 계약에 관한 중요한 선례가 될 수 있다. 스페이스X가 미국 역사상 최대 규모 IPO 중 하나를 향해 나아가는 가운데, 머스크를 중심으로 한 기술 창업자 생태계가 새로운 국면을 맞이하고 있다. 이 재판의 결과는 AI 기업의 지배구조, 비영리 전환 규제, 그리고 창업자 권한에 관한 미국 내 법적 기준을 형성하는 데 중요한 역할을 할 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "4d506f38-4ec9-457f-9e8f-304c8da66fe1",
+      "title": "OpenAI launches ChatGPT for personal finance, will let you connect bank accounts",
+      "url": "https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/",
+      "source": "techcrunch",
+      "content": "Once users connect their accounts, they will see a dashboard of their portfolio performance, spending, subscriptions, and upcoming payments.",
+      "published_at": "2026-05-15T16:00:00+00:00",
+      "summary": "OpenAI가 ChatGPT에 개인 금융 기능을 추가하여 사용자가 은행 계좌를 연동하고 포트폴리오 성과, 지출 현황, 구독 내역, 예정 결제 등을 통합 대시보드로 확인할 수 있는 서비스를 출시했다. 이는 AI 어시스턴트가 단순 질의응답을 넘어 금융 데이터 분석 및 개인 재무 관리 영역으로 확장되는 중요한 이정표로, 금융 앱과의 직접 경쟁을 예고한다. 사용자 금융 데이터와 AI의 결합은 맞춤형 재정 조언을 가능하게 하지만, 데이터 보안과 프라이버시에 관한 우려도 함께 제기될 것으로 예상된다. 빅테크의 금융 서비스 진출이 본격화되는 신호탄으로, 전통 핀테크 및 금융 기관들에게 직접적인 경쟁 압력이 될 전망이다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0fbbe11a-16d5-4c11-ac8e-33e540e3d3a6",
+      "title": "The Download: China’s AI drama factory and the WHO’s missing health targets",
+      "url": "https://www.technologyreview.com/2026/05/15/1137341/the-download-china-short-drama-ai-who-health-targets/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How Chinese short dramas became AI content machines China’s short drama industry is fueled by bite-sized, melodramatic, and smutty shows built for smartphone scrolling. Now, many are being made entirely with AI: no actors, camera operators, cinematographers, or CGI specialists required. An average of 470 AI-generated short dramas were released every day in January. Production timelines have shrunk from months to weeks, while costs have dropped by up to 90%. Storytelling is also increasingly driven by performance data. The format is rapidly expanding overseas while reshaping the work of writers and production crews. Read the full story on AI’s dramatic impact on China’s short drama industry. —Caiwei Chen The world is on track to miss its health targets The World Health Organization’s latest global statistics report reads less like a progress update than a warning sign. Progress on some of the world’s biggest health threats is stalling, and in some cases reversing altogether. There were 1.3 million new HIV cases in 2024, malaria is resurging, vaccination rates are slipping in the Americas, and 42.8 million children are suffering from severe malnutrition. The world is now far off track from meeting many of the UN’s major health goals by 2030. Here’s what the numbers reveal about the state of global health. —Jessica Hamzelou This story is from The Checkup, our weekly newsletter giving you the inside track on all things biotech. Sign up to receive it in your inbox every Thursday. The must-reads I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology. 1 As their trial goes to the jury, Musk and Altman face lying accusationsLawyers hammered the rivals’ credibility in their closing arguments. (WSJ $) + Musk was accused of “selective amnesia.” (Reuters $) + The pair are in court over OpenAI’s future. (MIT Technology Review)+ And their trial has made everyone look bad. (Wired $) 2 AI data centers are straining America’s power gridNevada is redirecting electricity from Lake Tahoe to AI. (Ars Technica)+ Utah is getting a giant data center despite water shortage fears. (Guardian)+ No one wants a data center in their backyard. (MIT Technology Review) 3 OpenAI is mulling legal action against Apple over its ChatGPT integrationIt hasn’t got the expected benefits from its deal with Apple. (Bloomberg $)+ OpenAI is frustrated by the promotion of the ChatGPT integration. (NYT $)4 Anthropic has agreed terms for a $30 billion funding dealAt a $900 billion valuation, which leapfrogs OpenAI’s. (The Information $)+ Dragoneer, Greenoaks, Sequoia, and Altimeter are leading the round. (FT $)6 Washington and Beijing will hold formal talks on AI safetyThey’ll discuss guardrails on AI. (CNBC)+ And a protocol to stop nonstate actors getting powerful models. (NYT $)5 Alphabet and Amazon are using “unprecedented” borrowing to fund AIThey’re tapping the foreign debt market at new levels. (FT $)+ People can’t agree on what the AI bubble is. (MIT Technology Review) 7 Big Tech has turned to Sesame Street to deflect scrutiny of screen useSparking accusations of encouraging children&#8217;s tech dependence. (Reuters $) 8 Anthropic’s feud with the White House threatens other businessesFigma and Tenable say it will harm their ability to sell software. (Bloomberg $) 9 Autonomous agents staged a digital crime spree during a safety testThe “AI Bonnie and Clyde” then deleted themselves. (Guardian)10 A poop app analysis app offered to sell photos of users’ stoolsThe images were used for AI training. (404 Media) Quote of the day “It’s like we don’t exist.”&nbsp; —Danielle Hughes, North Lake Tahoe resident and CEO of Tahoe Spark, tells Fortune that residents are being sidelined as their energy supplier prioritizes data centers. One More Thing LIZ ISLES/ALL TECH IS HUMAN The rise of the tech ethics congregation Just before Christmas, a pastor preached a gospel of morals over money to several hundred members of his flock. But the preacher wasn’t religious, and his congregation wasn’t a church. It was All Tech Is Human, a nonprofit devoted to ethics and responsibility in tech. Founded in 2018, the organization has built a fast-expanding community for people who believe technology should focus less on profits and more on the public interest. It’s also drawing people searching for meaning and connection in a digital world. Find out why thousands of people are turning to tech ethics communities for guidance and connection. —Greg M. Epstein We can still have nice things A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? Drop me a line.) + Go behind the scenes of the new Lucas Museum of Narrative Art.+ Marvel at this robot folding and launching paper planes as quickly as possible.+ Watch the moving moments rescued animals reunite with the humans who saved them.+ Peer into the heart of a barred spiral galaxy in this stunning new capture from the James Webb Space Telescope.",
+      "published_at": "2026-05-15T12:10:00+00:00",
+      "summary": "중국의 숏 드라마 산업이 AI 콘텐츠 대량 생산 체계로 전환되며, 2026년 1월 기준 하루 평균 470편의 AI 생성 단편 드라마가 출시되고 있다. AI 도입으로 제작 기간이 수개월에서 수 주로 단축되고 비용이 최대 90% 감소하며, 스토리텔링 자체도 실시간 성과 데이터로 알고리즘이 주도하는 방식으로 변화했다. 배우, 카메라 오퍼레이터, 촬영 감독, CGI 전문가 없이 전면 AI로 제작되는 콘텐츠가 국내를 넘어 해외로 빠르게 확산되며, 창작 직군의 고용 구조를 근본적으로 재편하고 있다. 이는 AI가 창작 산업 전반에 미치는 파급력을 보여주는 대표 사례로, 미디어·엔터테인먼트 분야의 AI 전환 속도와 규모가 예상보다 훨씬 빠름을 시사한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "812d0edb-db30-4595-8fa6-3358410cd7e8",
+      "title": "MathAtlas: A Benchmark for Autoformalization in the Wild",
+      "url": "https://arxiv.org/abs/2605.14061",
+      "source": "arxiv",
+      "content": "arXiv:2605.14061v1 Announce Type: new \nAbstract: Current autoformalization benchmarks are largely focused on olympiad or undergraduate mathematics, while graduate and research-level mathematics remains underexplored. In this paper, we introduce MathAtlas, the first large-scale autoformalization benchmark of in the wild graduate-level mathematics, containing ~52k theorems, definitions, exercises, examples, and proofs extracted from 103 graduate mathematics textbooks. MathAtlas is enriched with a mathematical dependency graph containing ~178k relations, and is the first autoformalization benchmark to include such relations, facilitating evaluation and development of dependency-aware autoformalization systems. Our extensive experiments show that MathAtlas is high quality but extremely challenging: strong baselines achieve at most 9.8% correctness on theorem statements and 16.7% on definitions. Furthermore, we find performance of state-of-the-art models degrades substantially with dependency depth: on MA-Hard, a subset of 700 entities with the deepest dependency trees, the best model achieves only 2.6% correctness for autoformalization on this challenging dataset. We release MathAtlas to the community as a benchmark set for large-scale autoformalization of graduate-level mathematics in the wild.",
+      "published_at": "2026-05-16T00:00:00-04:00",
+      "summary": "MathAtlas는 다양한 수학 분야에서 비공식 수학 문장을 형식 언어(formal language)로 자동 변환하는 자동 형식화(autoformalization) 능력을 평가하는 새로운 벤치마크다. 기존 벤치마크들이 특정 분야나 정제된 데이터셋에 편향된 반면, MathAtlas는 '야생(in the wild)' 실제 수학 문서에서 추출한 다양한 난이도·장르의 문제를 포함한다. 수학 AI 연구에서 자동 형식화는 컴퓨터 보조 증명(computer-assisted proof) 및 수학 추론 시스템의 기반이 되는 핵심 기술로, 이 벤치마크는 현재 모델들의 한계를 명확히 진단한다. AI 기반 수학 연구 자동화의 실제 수준을 평가하는 표준 도구로 자리잡을 잠재력이 있으며, 수학·CS 연구자 모두에게 중요한 참고 자료가 된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6a0d3e81-1cb5-4344-9d3a-7d09cbbc13c7",
+      "title": "Osaurus brings both local and cloud AI models to your Mac",
+      "url": "https://techcrunch.com/2026/05/15/osaurus-brings-both-local-and-cloud-ai-models-to-your-mac/",
+      "source": "techcrunch",
+      "content": "Osaurus￼ combines local and cloud AI models in a Mac app that keeps users’ memory, files, and tools on their own hardware.",
+      "published_at": "2026-05-15T12:19:48+00:00",
+      "summary": "Osaurus는 로컬 AI 모델과 클라우드 AI 모델을 하나의 Mac 앱에서 통합 제공하면서, 사용자의 메모리·파일·도구를 모두 자체 하드웨어에 보관하는 프라이버시 중심 AI 어시스턴트다. 로컬 모델의 프라이버시 보장과 클라우드 모델의 성능을 유연하게 조합할 수 있어, 민감한 데이터를 외부로 보내지 않으면서도 강력한 AI 기능을 활용하고자 하는 사용자에게 적합하다. Mac 생태계에 최적화된 통합 경험을 제공하며, 개인 및 기업 사용자 모두에게 AI 도구의 접근성을 높이고 AI 인프라 선택지를 다양화하는 데 기여한다. 하이브리드 AI 배포 모델에 대한 수요가 높아지는 흐름에서, 엣지-클라우드 AI 결합을 소비자 친화적으로 구현한 주목할 만한 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
