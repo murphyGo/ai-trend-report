@@ -1,0 +1,279 @@
+{
+  "id": "f86a6310-b14a-44df-9112-cf9027abebec",
+  "created_at": "2026-05-20T03:35:35.883504",
+  "articles": [
+    {
+      "id": "2cebe570-a08e-4e7d-bcc4-5714e7eb7ca1",
+      "title": "With Gemini 3.5 Flash, Google bets its next AI wave on agents, not chatbots",
+      "url": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/",
+      "source": "techcrunch",
+      "content": "Google launched Gemini 3.5 Flash, its most powerful coding and agentic AI model yet, at the company's annual developer conference. It is capable of autonomously executing complex tasks and building software from scratch.",
+      "published_at": "2026-05-19T17:51:30+00:00",
+      "summary": "Google I/O 2026에서 구글이 새로운 Gemini 3.5 Flash 모델을 공개했다. 이 모델은 구글의 가장 강력한 코딩·에이전트 AI 모델로, 복잡한 작업을 자율적으로 실행하고 소프트웨어를 처음부터 빌드하는 능력을 갖췄다. 구글은 이번 발표를 통해 AI의 다음 물결은 챗봇이 아닌 에이전트 중심임을 선언하며 경쟁사들에게 강한 메시지를 던졌다. Gemini 3.5 Flash는 개발자들이 복잡한 멀티스텝 자동화 파이프라인을 구축하는 데 최적화되어 있어, 기업 생산성 자동화 시장에 큰 영향을 미칠 전망이다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "22feb375-ad30-468b-a5af-8386e3e0fcb1",
+      "title": "Google Search as you know it is over",
+      "url": "https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/",
+      "source": "techcrunch",
+      "content": "Google is transforming Search from a list of links into an AI-powered experience filled with conversational answers, autonomous agents, and interactive interfaces — a shift that could further reduce traffic to publishers across the web.",
+      "published_at": "2026-05-19T17:46:00+00:00",
+      "summary": "구글이 검색의 패러다임을 근본적으로 전환하고 있다. 링크 목록 형태의 기존 검색 결과 대신, AI가 주도하는 대화형 답변, 자율 에이전트, 인터랙티브 인터페이스가 검색 경험의 중심이 된다. 이 변화는 웹 출판사와 언론사로의 트래픽을 더욱 감소시킬 수 있어 미디어 생태계 전반에 파급 효과가 예상된다. 구글은 검색창 자체도 25년 만에 처음으로 재설계하며 AI 네이티브 인터페이스로의 전환을 공식화했다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "749087cb-3436-4009-a459-98bf98876e79",
+      "title": "Google launches Antigravity 2.0 with an updated desktop app and CLI tool at IO 2026",
+      "url": "https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/",
+      "source": "techcrunch",
+      "content": "Google is debuting a new AI Ultra plan priced at $100, which will give users 5x more usage limit than the AI Pro plan alongside the Antigravity 2.0 launch.",
+      "published_at": "2026-05-19T17:45:00+00:00",
+      "summary": "구글이 I/O 2026에서 Antigravity 2.0을 발표했다. 이는 에이전트 오케스트레이션을 중심으로 구축된 독립형 데스크톱 앱과 CLI, SDK, 관리형 실행 환경을 포함하는 통합 AI 개발 플랫폼이다. 구글은 또한 월 $100의 'AI Ultra' 요금제를 선보이며 AI Pro 요금제 대비 5배 높은 사용 한도를 제공한다. Antigravity 2.0은 Claude Code, OpenAI Codex 등 경쟁 AI 코딩 도구들과 직접 경쟁하는 구글의 에이전트 개발 생태계 전략의 핵심이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "30ab02ed-ac67-4ecb-81a0-679b70d2e67d",
+      "title": "Google’s Genie world model can now simulate real streets with Street View",
+      "url": "https://techcrunch.com/2026/05/19/googles-genie-world-model-can-now-simulate-real-streets-with-street-view/",
+      "source": "techcrunch",
+      "content": "Google DeepMind is integrating Street View with Project Genie to create immersive, interactive world simulations for robotics, gaming, and travel, allowing users to explore environments, weather changes, and rare scenarios.",
+      "published_at": "2026-05-19T17:51:39+00:00",
+      "summary": "구글 딥마인드가 Street View를 Project Genie 세계 모델과 통합해 실제 거리를 시뮬레이션할 수 있는 몰입형 인터랙티브 환경을 만들었다. 사용자는 다양한 날씨 변화, 드문 시나리오, 환경 탐색이 가능한 세계를 경험할 수 있으며, 로보틱스·게이밍·여행 분야에 광범위하게 활용될 수 있다. Genie 세계 모델이 실제 데이터와 결합됨으로써 로봇 훈련용 고품질 시뮬레이션 환경 생성 비용이 크게 낮아질 것으로 기대된다. 이는 비디오 생성·공간 이해·물리 기반 시뮬레이션을 하나의 모델로 통합하는 기술 방향의 중요한 이정표다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3dbd48fd-0106-4743-a343-c5f27c81fdec",
+      "title": "Agentic app coding gets an upgrade with Google’s release of Android CLI",
+      "url": "https://techcrunch.com/2026/05/19/agentic-app-coding-gets-an-upgrade-with-googles-release-of-android-cli/",
+      "source": "techcrunch",
+      "content": "Google is embracing the rise of AI coding agents with new Android tools designed to work with platforms like Claude Code and OpenAI’s Codex, allowing developers — or their AI assistants — to build Android apps faster from the command line.",
+      "published_at": "2026-05-19T17:45:00+00:00",
+      "summary": "구글이 Android CLI를 공개하며 AI 코딩 에이전트를 위한 Android 앱 개발 환경을 혁신적으로 개선했다. 이 도구는 Claude Code, OpenAI Codex 등 AI 코딩 플랫폼과 통합 작동하도록 설계되어, 개발자 또는 AI 에이전트가 커맨드라인에서 Android 앱을 더 빠르게 빌드할 수 있게 한다. 구글 AI Studio와 연계해 웹 브라우저에서 수분 내에 네이티브 Android 앱을 생성할 수 있는 기능도 함께 발표됐다. 이는 AI 에이전트가 모바일 앱 개발의 전체 사이클을 자율적으로 처리하는 '에이전틱 앱 코딩' 시대를 앞당기는 중요한 인프라 전환이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "17fbea13-83ef-4909-bf20-80a75abd4c30",
+      "title": "Safety",
+      "url": "https://openai.com/index/advancing-content-provenance/",
+      "source": "openai",
+      "content": "May 19, 2026\n\nHelping people understand the origin of AI-generated content through Content Credentials, SynthID, and an early public verification tool.\n\nPeople are using OpenAI’s tools everyday to create and edit images and audio in ways that make communication more expressive, useful, and accessible. As these tools become a part of how people build, imagine, and share, it’s important that people can understand and verify where the media comes from so they can interpret it with more confidence. Provenance signals can help by giving people context about where content came from, how it was created or edited, and whether it is what it claims to be.\n\nToday we’re strengthening our approach to content provenance with a multi-layered, ecosystem-driven model to building trust online. We are making our provenance signals easier for other tools and platforms to recognize through C2PA conformance, adding durable cross-platform SynthID watermarking to images through a partnership with Google, and sharing a preview of a tool the public can use to verify whether images came from OpenAI.\n\nTogether these updates build on ourearlier work⁠to support open standards, make OpenAI-generated content easier to identify, and collaborate across the industry to support a more trustworthy information ecosystem.\n\nOpenAI has been engaged in the development and adoption of provenance standards since 2024, when we began adding Content Credentials to images generated byDALL·E 3⁠(opens in a new window)and later toImageGen⁠(opens in a new window)andSora⁠(opens in a new window). We also joined the Steering Committee of the Coalition for Content Provenance and Authenticity (C2PA), the cross-industry group behind the open technical standard for content provenance. C2PA’s technical approach uses metadata and cryptographic signatures to help information about a piece of media securely travel with the content itself. This information includes context that helps journalists evaluating a source, platforms making integrity decisions, and people trying to understand what they are seeing online.\n\nWe recently took the step of making OpenAI aC2PA Conforming Generator Product⁠(opens in a new window). By becoming C2PA conformant, we are giving platforms a trusted way to read, preserve, and pass along the provenance information we attach to our content. This matters because provenance only works if it survives beyond the first platform where content is created, and conformance makes that possible.\n\nC2PA metadata is an important foundation for provenance. It helps content carry information about where it came from, how it was created or edited, and who signed that information. But metadata is not foolproof. It can be stripped, lost through uploads and downloads, or broken by transformations like file format changes, resizing, or screenshots.\n\nTo make provenance more resilient, we are taking a multi-layered approach and incorporating watermarking throughGoogle DeepMind’s SynthID⁠(opens in a new window), starting with images generated throughChatGPT⁠, Codex, or the OpenAI API. SynthID embeds an invisible watermarking layer that complements C2PA metadata-based approaches.\n\nWe’ve been building toward this for some time. We have usedvisible watermarks⁠in Sora and anaudio watermark⁠in Voice Engine, and have continued to test and research accuracy and reliability over time. through deployment.\n\nThese two systems reinforce each other. C2PA helps content carry detailed context; SynthID helps preserve a signal when metadata does not survive. Watermarking can be more durable through transformations like screenshots, while metadata can provide more information than a watermark alone. Together, they make provenance more resilient than either layer would be on its own.\n\nTrusted metadata and watermarks that resist most modifications can make provenance signals more durable. But people need a way to detect these signals. We are now previewing apublic verification tool⁠that will help people verify whether an uploaded image was generated on ChatGPT, the OpenAI API, or Codex, by checking if it contains provenance signals, including Content Credentials and SynthID.\n\nWe believe provenance should be easier for people to verify and interpret, and that our tool can help people play a role in answering the question, “Was this generated with AI?” by integrating multiple signals. This builds on learnings from the initial research preview of ourimage detection classifier⁠in 2024 and enables people to reliably detect whether a SynthID watermark originating from OpenAI is present in the media, as well as surface C2PA metadata when it is found.\n\nNo detection method is foolproof, so we take a cautious approach in cases when detection fails. If no metadata or watermark is detected, for example, the tool will not make a definitive conclusion about whether the image was generated with OpenAI tools since provenance signals can in some cases be stripped.\n\nAt launch, the tool is limited to content generated by OpenAI. In the upcoming months, we aim to support cross-industry efforts to make verification possible across platforms. Over time, we also expect to support more types of content that people may encounter online.\n\nNo single provenance technique is enough on its own. We believe a strong approach combines shared standards, durable watermarking signals, and public verification. By building on our long-standing support for Content Credentials, becoming conformant with C2PA, adopting SynthID, and previewing public verification tooling, we hope to contribute in the long run to a more interoperable provenance ecosystem.\n\nSafetyMay 14, 2026\n\nSecurityMay 8, 2026\n\nSafetyMay 7, 2026",
+      "published_at": "2026-05-19T10:45:00",
+      "summary": "OpenAI가 AI 생성 콘텐츠의 출처를 더 투명하게 할 수 있도록 Content Credentials(C2PA 표준)와 구글의 SynthID를 자사 제품에 통합한다고 발표했다. 이 이니셔티브는 사람들이 AI로 생성된 이미지·오디오의 기원을 쉽게 확인할 수 있는 공개 검증 도구도 포함한다. 딥페이크와 AI 생성 허위정보가 사회적 문제로 부상한 상황에서 콘텐츠 출처 인증이 업계 표준으로 자리잡는 계기가 될 수 있다. C2PA는 Adobe, Microsoft, Google 등이 참여하는 업계 표준으로, OpenAI의 합류로 AI 콘텐츠 투명성 생태계가 한층 강화된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c4323ecb-b21e-485a-a1eb-1585db74db25",
+      "title": "NVIDIA-Verified Agent Skills Provide Capability Governance for AI Agents",
+      "url": "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/",
+      "source": "nvidia",
+      "content": "Autonomous AI agents are becoming more capable. Open models, Model Context Protocol (MCP)-connected tools, and portable skills are also making agents easier to...Autonomous AI agents are becoming more capable. Open models, Model Context Protocol (MCP)-connected tools, and portable skills are also making agents easier to extend. But scaling agent use with structural transparency and operational integrity requires more than runtime guardrails. Organizations and teams need to understand and trust the skills, or instructions, an agent is using. Source",
+      "published_at": "2026-05-19T23:40:45+00:00",
+      "summary": "NVIDIA가 자율 AI 에이전트의 역량 거버넌스를 위한 'NVIDIA-Verified Agent Skills' 개념을 발표했다. MCP(Model Context Protocol) 연결 도구와 이식 가능한 스킬 라이브러리가 에이전트 능력을 더 쉽게 확장할 수 있게 되면서, 검증된 스킬 셋을 통한 능력 통제가 핵심 과제로 부상했다. 이 접근법은 AI 에이전트가 수행할 수 있는 작업의 범위를 명시적으로 정의·제한하여 기업 환경에서의 안전한 에이전트 배포를 지원한다. NVIDIA 인증 스킬 프레임워크는 AI 에이전트 표준화와 거버넌스 수립에서 중요한 업계 선례가 될 수 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "bb75df72-9517-480a-a33d-260e708e1e3d",
+      "title": "Inside Anduril and Meta’s quest to make smart glasses for warfare",
+      "url": "https://www.technologyreview.com/2026/05/18/1137412/inside-anduril-and-metas-quest-to-make-smart-glasses-for-warfare/",
+      "source": "mit_tech_review",
+      "content": "The defense-tech company Anduril has shared new details about the augmented-reality headset for the military it’s prototyping with Meta, including a vision for ordering drone strikes via eye-tracking and voice commands. Quay Barnett, who leads the efforts as a vice president at Anduril following a career in the Army’s Special Operations Command, says his fundamental goal is to optimize “the human as a weapons system.” The vision is undoubtedly cyborg-inspired: Barnett wants drones and soldiers to see together, share information seamlessly, and make decisions as one.&nbsp; Anduril actually has two such projects in the works. The first is the Army’s Soldier Born Mission Command, or SBMC, for which the company won a $159 million prototyping contract last year to work with Meta on augmented-reality glasses to attach to existing military helmets. But Anduril has also embarked on a self-funded side quest, announced in October, to design its own helmet and headset combo called EagleEye. This is something the military has not asked for, but Anduril insists it will prefer it and purchase it in the end. So far, both systems are years away. The Army isn&#8217;t expected to move its top choice for the SBMC program into production until 2028, if it picks one at all (the previous lead for the effort, Microsoft, was set to receive a $22 billion production contract that was ultimately cancelled when the glasses didn&#8217;t prove viable). But Barnett told MIT Technology Review about where both Anduril&#8217;s prototypes are headed. Depending on the situation, the glasses for either prototype will overlay certain information onto a soldier’s field of view. This might be as simple as a compass or as complex as an entire map of the area, information about where nearby drones are flying, or AI-driven recognition of a target like a truck.&nbsp; The soldier would then speak to the interface in plain language—for example, to order an evacuation for someone who’s been injured or to plan a route taking into account which areas are off limits. A large language model—Anduril is in tests with Google’s Gemini, Meta’s Llama, and even Anthropic’s Claude, despite the company’s conflict with the Pentagon—will be used to help translate a soldier’s speech into commands the software can follow. And the engine for it all will be Anduril’s software Lattice, which incorporates data from lots of different military hardware into one picture. The Army announced in March that it would spend $20 billion to integrate Lattice with essentially its entire infrastructure. Barnett’s team is designing the headset to carry out multi-step tasks. A soldier might send a drone to surveil an area and instruct it to come back once it’s found something that looks like an artillery unit; then the system would recommend courses of action, like sending a nearby drone to strike, that would have to be approved by the normal chain of command. Leading the system through this, if all goes to plan, might not even require speech; the soldier could instead communicate through tracked eye movements and subtle taps. That’s the idea, anyway. It&#8217;s worked on early prototypes, Barnett says, but there aren’t yet versions ready for the Army to test at scale. The component parts began arriving in March. Because of federal military contracting rules, these parts—unlike Meta’s commercial smart glasses—required new supply chains that don’t rely on Chinese companies. It’s a lot for soldiers already bogged down in information overload, says Jonathan Wong, a former US Marine who works as a senior policy researcher at RAND on Army efforts to buy new tech. Both smart glasses projects aim to create a clean interface that presents only the right information at the right time. But it’s a product that soldiers will reject if it costs more of their attention than it saves. “How much mental bandwidth do you have to be both aware of your surroundings and to operate this technology in a way that makes you and your whole unit better?” he says. Wong recalls that as a platoon commander, for example, he had a radio that operated on three different channels at once. “The moment that two people were on different channels talking at the same time, I immediately couldn’t comprehend anything that either one of them was trying to tell me, and I was probably not aware of my own surroundings,” he says. “I think there are limits to what you can take in.” Ideally, Barnett says, smart glasses can ease that information overload. Anduril’s approach is to get creative with ways the user can access necessary information quickly. Voice commands and eye tracking are a piece of that strategy. But even if it’s all technically feasible, it might take years of field testing to know if the system is actually useful for soldiers, Wong says.&nbsp; Such a system would mark a major escalation in how closely soldiers rely on imperfect AI systems. While computer vision models used to identify objects have long been employed by militaries, and chatbots have recently entered decision-making during the war in Iran, these technologies have not yet made their way to most frontline soldiers. A smart glasses system tasked with identifying threats and recommending strikes would introduce massive new risks of errors.&nbsp; Anduril is not the only one competing to develop smart goggles for combat. Rivet, which specializes in wearable sensors for the military, received a $195 million prototyping contract the same time, and in March the Israeli defense-tech company Elbit received its own $120 million contract. This all comes after Microsoft lost its role leading the Army’s smart glasses effort, following a Pentagon audit that found the Army wasn&#8217;t properly testing the glasses, a mistake that could have wasted $22 billion. For both Anduril&#8217;s prototypes, the company is testing a new system for digital night vision, which uses electronic sensors and algorithms to boost low levels of light. It’s been a promised technology for decades but has tended to work too slowly for practical use and produce grainy images. Anduril says it has found improvements over previous prototypes through techniques rooted in both new generative AI and older machine learning.&nbsp; Much of the other hardware for both projects is being built by Meta, including the displays and the waveguides that send visuals to the user’s eye without blocking the view. That might be a surprise to anyone who knows the backstory: In 2017, Facebook (now Meta) ousted Anduril founder Palmer Luckey following an internal conflict involving his support for Donald Trump. The two are now back in the augmented-reality business together, while Mark Zuckerberg has also adopted a friendlier posture toward the second Trump administration. For the Army initiative, this suite of smart glasses, night vision, and sensors will be attached to the helmets and other gear soldiers already wear, with a separate battery pack. The EagleEye version will instead incorporate the tech into the helmet itself.&nbsp;Even if the Army doesn&#8217;t prefer EagleEye in the end, Barnett says, Anduril will attempt to sell the system to foreign militaries. Multiple challenges must still be overcome. Unlike Meta’s Ray-Ban glasses, the prototypes have to operate in an environment full of dust, explosions, and smoke. Adding the computing power and battery life they need also means more weight for soldiers already carrying upwards of 100 pounds. Then the technology has to work in environments without ubiquitous 5G cell connections; powerful computer vision and AI models will need to run locally on the device. For the Army to want to buy it at scale, “it’s got to work, and it’s got to be pretty seamless,” Wong says. “It’s a high bar.”",
+      "published_at": "2026-05-18T16:01:39+00:00",
+      "summary": "방산 기술기업 Anduril이 Meta와 협력해 군사용 증강현실 헤드셋을 개발 중임을 새로운 세부 사항과 함께 공개했다. 이 헤드셋은 시선 추적과 음성 명령으로 드론 공격을 명령하는 기능을 비전으로 삼고 있으며, 상용 AI 플랫폼과 군사 시스템의 통합이라는 새로운 지형을 열고 있다. Meta의 AR 하드웨어 기술과 Anduril의 방산 소프트웨어가 결합되는 이 프로젝트는 AI 군사 응용에 대한 윤리적 논쟁을 다시 불러일으키고 있다. 빅테크 기업의 군사 계약 참여 확대는 AI 안전성·윤리 커뮤니티에서 큰 우려의 대상이 되고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "38a224de-d385-40da-83c9-64597a6c669e",
+      "title": "Roundtables: Inside the Musk v. Altman Trial",
+      "url": "https://www.technologyreview.com/2026/05/19/1137454/roundtables-inside-the-musk-v-altman-trial/",
+      "source": "mit_tech_review",
+      "content": "Listen to the session or watch below Elon Musk lost his suit against OpenAI, in which he alleged CEO Sam Altman and President Greg Brockman had deceived him over the company’s non-profit status. Watch as AI reporter and attorney Michelle Kim, who covered the trial for MIT Technology Review, joins in conversation with editor in chief Mat Honan to go behind the scenes of the trial and the implications for the AI race. Speakers: Mat Honan, Editor in Chief, and Michelle Kim, AI Reporter Recorded on May 19, 2026 Related Stories: Elon Musk and Sam Altman are going to court over OpenAI’s future Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models Musk v. Altman week 2: OpenAI fires back, and Shivon Zilis reveals that Musk tried to poach Sam Altman Musk v. Altman week 3: Musk and Altman traded blows over each other’s credibility. Now the jury will pick a side. Here’s why Elon Musk lost his suit against OpenAI",
+      "published_at": "2026-05-19T20:15:18+00:00",
+      "summary": "일론 머스크가 OpenAI 공동창업자들을 상대로 제기한 소송에서 배심원단이 신속하게 머스크 패소를 결정했다. 머스크는 샘 알트만과 그렉 브록만이 OpenAI의 비영리 지위에 대해 자신을 기만했다고 주장했으나, 법원은 머스크 본인도 유사한 목적을 가졌음을 확인했다. 이 소송의 패소는 머스크가 OpenAI와 Microsoft를 상대로 벌인 법적 공세가 사실상 마무리되는 것을 의미한다. 이 재판은 AI 산업의 기업 지배구조, 비영리→영리 전환, 창업자 갈등 등 산업 생태계의 핵심 쟁점들을 부각시켰다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "d68d9066-4855-4eea-8d02-ae9963d6622c",
+      "title": "KT-서울대, AI 시대 융합보안 인재 육성 협력...대한민국 융합 보안 경쟁력 강화 기여",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40119",
+      "source": "korean",
+      "content": "인공지능이 산업과 사회 전반에 빠르게 확산되면서 보안의 범위와 역할도 크게 확대되고 있다. 이에 기존 시스템과 네트워크 중심의 보안을 넘어 AI, 클라우드, 통신 인프라, 개인정보보호, 보안 거버넌스까지 함께 이해하는 융합형 보안 역량의 중요성이 커지는 상황이다.\n\nKT(대표이사 박윤영)가 지난 19일, 서울대학교와 AI 정보보안 분야 인재 양성 및 산학 연구협력을 위한 양해각서(MOU)를 체결했다고 20일 밝혔다.\n\n이번 협약은 AI 확산에 따른 보안환경 변화에 대응하고, 교육·연구·기술교류를 연계한 융합보안 인재 양성 체계를 구축하기 위해 마련됐다. 양 기관은 융합보안 분야 인재양성, 산학연계 교육과정 개설 및 운영, 융합보안 분야 공동 연구 및 기술교류, 네트워크 구축 등 다양한 분야에서 협력을 추진한다.\n\n특히 양 기관은 KT그룹의 AI 융합보안 핵심 인재 양성을 위한 산학연계 교육과정 개설 방향을 논의한다. 해당 과정은 단순 보안 기술 교육을 넘어 AI, 클라우드, 제로트러스트, 통신·네트워크 보안 등 차세대 보안환경에 필요한 역량을 다루는 것을 목표로 한다. 또한 정책·규제, 개인정보보호, 보안 거버넌스 등 보안 리더에게 요구되는 역량도 함께 반영하는 방향으로 협의할 예정이다.\n\n서울대학교 유홍림 총장은 “AI 기술 확산과 함께 보안은 산업과 사회 전반의 신뢰를 유지하기 위한 핵심 기반으로 중요성이 더욱 커지고 있다”며 “서울대학교는 KT와의 협력을 통해 융합보안 분야 교육과 연구를 강화하고 국가 보안 경쟁력 제고에 기여할 수 있는 인재 양성에 힘쓰겠다”고 말했다.\n\nKT 박윤영 대표는 “AI 시대의 보안 경쟁력은 기술과 데이터, 네트워크, 정책을 함께 이해하는 융합형 인재에서 나온다”며, “KT는 서울대학교와 함께 KT 및 KT 그룹의 AI 정보보안 인재를 체계적으로 양성하고 대한민국 융합보안 역량 강화에 기여하겠다”고 밝혔다.\n\n한편, KT와 서울대학교는 이번 협약을 기반으로 산학협력 및 향후 발전 방향을 단계적으로 구체화할 계획이다.",
+      "published_at": null,
+      "summary": "KT가 서울대학교와 AI 정보보안 분야 인재 양성 및 산학 연구협력을 위한 양해각서(MOU)를 체결했다. 이번 협약은 AI 확산에 따른 보안환경 변화에 대응하고 교육·연구·기술교류를 연계한 융합보안 인재 양성 체계 구축을 목표로 한다. AI, 클라우드, 통신 인프라, 개인정보보호, 보안 거버넌스를 포괄하는 융합형 보안 역량 개발이 협력의 핵심이다. 한국이 AI 시대 사이버보안 경쟁력 강화를 위해 산학협력을 적극 추진하는 흐름을 반영한 이번 MOU는 국내 AI 보안 인재풀 확충에 기여할 것으로 기대된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "2641b362-c329-4dd5-94ba-b86852bf1202",
+      "title": "Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents",
+      "url": "https://huggingface.co/papers/2605.17830",
+      "source": "hf_papers",
+      "content": "Safety evaluations of memory-equipped LLM agents typically measure within-task safety: whether an agent completes a single scenario safely, often under adversarial conditions such as prompt injection or memory poisoning. In deployment, however, a single agent serves many independent tasks over a long horizon, and memory accumulated during earlier tasks can affect behavior on later, unrelated ones. Studying this regime requires evaluation along the temporal dimension across tasks: not whether an agent is safe at any single memory state, but how its safety profile changes as memory accumulates across many independent interactions. We call this failure mode temporal memory contamination. To isolate memory exposure from stream non-stationarity, we introduce a trigger-probe protocol that evaluates a fixed probe set against read-only memory snapshots at varying prefix lengths, together with a NullMemory counterfactual baseline for identifying memory-induced violations. We apply this protocol across three deployment scenarios spanning records, memos, forms, and email correspondence and eight memory architectures, and additionally on Claw-like AI agents, such as OpenClaw, using the platform's native memory mechanism. Memory-enabled agents consistently exceed the NullMemory baseline, and memory-induced violation rates show a robust upward trend with exposure length on both agent classes. Order-randomization experiments indicate that the effect is driven primarily by accumulated content rather than encounter order. Finally, a structural consequence of the event decomposition is that memory-induced risk is detectable from retrieval state before generation, which we confirm with a high-recall diagnostic monitor. Our results argue for treating memory safety as a longitudinal property that requires temporal evaluation, not a single-state property that can be captured by a snapshot.",
+      "published_at": "2026-05-18T04:06:34+00:00",
+      "summary": "메모리를 갖춘 LLM 에이전트의 장기적 안전 위험을 분석한 연구로, 단일 작업 내 안전성이 아닌 장기 배포 시나리오의 위험에 주목했다. 에이전트가 여러 독립 작업에 걸쳐 메모리를 축적할수록 초기에는 무해해 보이는 정보가 나중에 안전하지 않은 행동을 유발하는 연쇄효과가 발생할 수 있음을 발견했다. 프롬프트 인젝션, 메모리 오염 같은 공격 벡터가 장기 운용에서 더 심각한 결과로 이어질 수 있다는 점에서 에이전트 안전 평가 패러다임의 전환을 촉구한다. 개인 비서형 AI 에이전트가 보편화되는 시대에 메모리 기반 장기 안전 평가 프레임워크의 필요성을 강조하는 중요한 연구다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "90911bc2-fc99-4952-bee7-34253dc4b7d9",
+      "title": "BacktestBench: Benchmarking Large Language Models for Automated Quantitative Strategy Backtesting",
+      "url": "https://huggingface.co/papers/2605.17937",
+      "source": "hf_papers",
+      "content": "Quantitative backtesting is essential for evaluating trading strategies but remains hampered by high technical barriers and limited scalability. While Large Language Models (LLMs) offer a transformative path to automate this complex, interdisciplinary workflow through advanced code generation, tool usage, and agentic planning, the practical realization is significantly challenged by the current lack of a large-scale benchmark dedicated to automated quantitative backtesting, which hinders progress in this field. To bridge this critical gap, we introduce BacktestBench, the first large-scale benchmark for automated quantitative backtesting. Built from over 6 million real market records, it comprises 18,246 meticulously annotated question-answering pairs across four task categories: metrics calculation, ticker selection, strategy selection, and parameter confirmation. We also propose AutoBacktest, a robust multi-agent baseline that translates natural language strategies into reproducible backtests by coordinating a Summarizer for semantic factor extraction, a Retriever for validated SQL generation, and a Coder for Python backtesting implementation. Our evaluation on 23 mainstream LLMs, complemented by targeted ablations, identifies key factors that influence end-to-end performance and highlights the importance of grounded verification and standardized indicator representations.",
+      "published_at": "2026-05-18T06:52:08+00:00",
+      "summary": "LLM이 퀀트 전략 백테스팅을 자동화할 수 있는지 평가하는 BacktestBench 벤치마크를 제안한 연구다. 퀀트 백테스팅은 높은 기술 장벽과 제한된 확장성으로 어려움을 겪어왔는데, LLM의 코드 생성 능력이 이 복잡한 도메인 특화 워크플로우를 자동화할 잠재력을 갖는다고 분석했다. 벤치마크는 데이터 처리, 전략 구현, 성과 분석 등 백테스팅의 전 단계에 걸친 LLM 역량을 종합 평가한다. AI를 활용한 퀀트 투자 전략 개발의 민주화 가능성을 탐색하는 이 연구는 금융 AI 응용 분야에서 주목받고 있다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "b3708220-542b-4861-8dd7-fcbb98afdf34",
+      "title": "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+      "url": "https://huggingface.co/papers/2605.18746",
+      "source": "hf_papers",
+      "content": "Spatial intelligence unfolds through a perception-action loop: agents act to acquire observations, and reason about how observations vary as a function of action. Rather than passively processing what is seen, they actively uncover what is unseen - occluded structure, dynamics, containment, and functionality that cannot be resolved from passive sensing alone. We move beyond prior formulations of spatial intelligence that assume oracle observations by recasting the observer as an actor. We introduce ESI-BENCH, a comprehensive benchmark for embodied spatial intelligence spanning 10 task categories and 29 subcategories built on OmniGibson, grounded in Spelke's core knowledge systems. Agents must decide what abilities to deploy - perception, locomotion, and manipulation - and how to sequence them to actively accumulate task-relevant evidence. We conduct extensive experiments on state-of-the-art MLLMs and find that active exploration substantially outperforms passive counterparts, with agents spontaneously discovering emergent spatial strategies without explicit instructions, while random multi-view often adds noise rather than signal despite consuming far more images. Most failures stem not from weak perception but from action blindness: poor action choices lead to poor observations, which in turn drive cascading errors. While explicit 3D grounding stabilizes reasoning on depth-sensitive tasks, imperfect 3D representation proves more harmful than 2D baselines by distorting spatial relations. Human studies further reveal that unlike humans who seek falsifying viewpoints and revise beliefs under contradiction, models commit prematurely with high confidence regardless of evidence quality, exposing a metacognitive gap that neither better perception nor more embodied interaction alone can close.",
+      "published_at": "2026-05-18T17:59:02+00:00",
+      "summary": "ESI-Bench는 구현형 공간 지능(Embodied Spatial Intelligence)을 평가하는 새로운 벤치마크로, 인식-행동 루프(perception-action loop)를 닫는 능력에 초점을 맞춘다. 기존 벤치마크가 정적 시각 입력을 수동적으로 처리하는 능력만 평가한 반면, ESI-Bench는 에이전트가 행동을 통해 관찰을 능동적으로 획득하고 가려진 구조·물체 역학·공간 포함 관계를 추론하는 능력을 측정한다. 이 벤치마크는 로봇이 실제 세계에서 효과적으로 작동하기 위해 필요한 공간 추론 능력의 한계를 드러내는 데 중요한 역할을 한다. 구현형 AI의 현실적 배포를 위해 필요한 공간 인지 능력 평가의 새로운 기준을 제시한다는 점에서 로보틱스 연구에 시사점이 크다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "cff6cab3-7ad5-4749-b2e1-ffc8948f89d5",
+      "title": "The Scaling Laws of Skills in LLM Agent Systems",
+      "url": "https://arxiv.org/abs/2605.16508",
+      "source": "arxiv",
+      "content": "arXiv:2605.16508v1 Announce Type: new \nAbstract: As agent systems scale, skills accumulate into large reusable libraries, yet their scaling laws remain poorly understood. Across 15 frontier LLMs, 1,141 real-world skills, and over 3M routing or execution decisions, we identify two coupled laws. Routing law: single-step routing accuracy decays logarithmically with library size ($R^2{>}0.97$ for all models), with errors progressing from local skill competition to cross-family drift and capture by overly general \"black-hole skills\". Execution law: before state realization, joint routing is approximately multiplicative, whereas correct execution can improve difficult downstream decisions by about $4{\\times}$. A single parameter, the routing logarithmic decay slope $b$, couples the two laws: routing-side fits predict execution-side rescue across models, showing that the same library property controls both pre-execution collapse and downstream recoverability. The laws are actionable: law-guided optimization raises held-out routing accuracy from 71.3% to 91.7%, reduces hijack from 22.4% to 4.1%, and transfers directionally to downstream ClawBench and ClawMark execution settings, improving mean pass rate from 49.3% to 61.6% on ClawBench and from 28.4% to 34.5% on ClawMark. These results show that agent performance depends not only on model capability, but also on the structure, granularity, and exposure policy of the skill library.",
+      "published_at": "2026-05-19T00:00:00-04:00",
+      "summary": "15개 최전선 LLM, 1,141개 실제 스킬, 300만 건 이상의 라우팅·실행 결정을 분석해 LLM 에이전트 시스템에서 스킬의 스케일링 법칙을 규명한 연구다. 스킬 라이브러리가 확장됨에 따라 라우팅과 실행 성능에 각각 다른 스케일링 패턴이 나타나는 두 가지 결합된 법칙을 발견했다. 이 발견은 대규모 에이전트 시스템 설계 시 스킬 축적 전략과 모델 용량 배분에 중요한 실용적 지침을 제공한다. 에이전트가 수천 개의 스킬을 보유하게 되는 미래를 대비해 효율적인 스킬 관리 아키텍처 설계의 근거를 마련한 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "b5650a2a-33e2-46ab-911a-431718dcea5a",
+      "title": "Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps",
+      "url": "https://arxiv.org/abs/2605.16928",
+      "source": "arxiv",
+      "content": "arXiv:2605.16928v1 Announce Type: new \nAbstract: Long-context inference in large language models is bottlenecked by the quadratic cost of full attention. Existing efficient alternatives often rely either on native sparse training or on heuristic token eviction, creating an undesirable trade-off among efficiency, training cost, and accuracy. In this work, we show that full-attention LLMs are already intrinsically sparse and can be transformed into highly sparse models with only minimal adaptation. Our approach is built on three observations: (1) only a small subset of attention heads truly requires full long-context processing; (2) long-range retrieval is governed primarily by a low-dimensional subspace, allowing relevant tokens to be retrieved efficiently with a 16-dimensional indexer; and (3) the useful token budget is strongly query-dependent, making dynamic top-$p$ selection more suitable than fixed top-$k$ sparsification. Based on these insights, we propose RTPurbo, which retains the full KV cache only for retrieval heads and introduces a lightweight token indexer for sparse attention. By exploiting the model's intrinsic sparsity, RTPurbo achieves sparsification with only a few hundred training steps. Experiments on long-context benchmarks and reasoning tasks show that RTPurbo preserves near-lossless accuracy while delivering substantial efficiency gains, including up to a 9.36$\\times$ prefill speedup at 1M context and about a 2.01$\\times$ decode speedup. These results suggest that strong sparse inference can be obtained from standard full-attention training without expensive native sparse pretraining.",
+      "published_at": "2026-05-19T00:00:00-04:00",
+      "summary": "풀 어텐션(Full Attention)을 단 100 스텝 훈련만으로 스파스 어텐션(Sparse Attention)으로 변환하는 방법론을 제안한 연구다. 장문맥 LLM 추론에서 풀 어텐션의 이차적(quadratic) 비용이 병목인 상황에서, 네이티브 스파스 훈련이나 휴리스틱 토큰 eviction 없이도 풀 어텐션 성능을 유지하면서 스파스 효율을 달성하는 방법을 보인다. 기존 사전훈련된 모델을 재활용해 빠르게 스파스 어텐션 모델로 전환할 수 있다는 점에서 실용성이 높다. 장문맥 추론 비용 절감은 RAG, 에이전틱 시스템, 멀티턴 대화 등 다양한 응용에서 핵심 인프라 개선으로 이어질 것으로 기대된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "be921989-10ce-400e-84ec-2ce4e055f0e7",
+      "title": "CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?",
+      "url": "https://arxiv.org/abs/2605.16679",
+      "source": "arxiv",
+      "content": "arXiv:2605.16679v2 Announce Type: new \nAbstract: End-to-end automation of realistic healthcare operations stresses three capabilities underrepresented in current benchmarks: policy density, decisions must be grounded in a large library of medical, insurance, and operational rules; Multi-role composition: a single task requires the agent to play multiple roles with handoffs; and multilateral interaction: intermediate workflow steps are multi-turn dialogs, such as peer-to-peer review and patient outreach. We introduce $\\chi$-Bench, a benchmark of long-horizon healthcare workflows across three domains: provider prior authorization, payer utilization management, and care management. Each task hands the agent a clinical case in a high-fidelity simulator of 20 healthcare apps exposed via 87 MCP tools, which it must drive to a terminal status through tool calls and writing the role's artifacts, guided by a 1,290+ document managed-care operations handbook skill. Across 30 agent harness/models configurations, the best agent resolves only 28.0% of tasks, no agent clears 20% on strict pass^3, and executing all tasks in a single session slumps the performance to 3.8%. These results raise the hypothesis that similar gaps are likely to surface in other policy-dense, role-composed, irreversible enterprise domains.",
+      "published_at": "2026-05-19T00:00:00-04:00",
+      "summary": "AI 에이전트가 실제 의료 운영 워크플로우를 엔드투엔드로 자동화할 수 있는지 평가하는 CHI-Bench를 제안했다. 이 벤치마크는 정책 밀도(대규모 의료·보험·운영 규칙 준수), 다중 역할 구성(여러 에이전트 협력), 장기 지평(long-horizon) 작업이라는 세 가지 미평가 능력에 집중한다. 현재 벤치마크들이 단순화된 의료 시나리오만 다루는 반면, CHI-Bench는 실제 병원 운영 복잡성을 반영해 AI의 의료 자동화 한계를 명확히 한다. 의료 분야의 AI 에이전트 적용 가능성과 현재의 능력 격차를 체계적으로 분석할 수 있는 기반을 제공한다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8440566a-8151-42bb-bb15-501d89659657",
+      "title": "Google takes a page out of Meta’s book, announces new audio-powered smart glasses at IO 2026",
+      "url": "https://techcrunch.com/2026/05/19/google-takes-a-page-out-of-metas-book-announces-new-audio-powered-smart-glasses-at-io-2026/",
+      "source": "techcrunch",
+      "content": "Google is calling the new devices \"audio glasses,\" in that users will be able to issue verbal commands to them and get things done via its ecosystem of apps and services, including Gemini.",
+      "published_at": "2026-05-19T19:15:31+00:00",
+      "summary": "구글이 Google I/O 2026에서 메타 Ray-Ban 스마트 글래스에 대응하는 오디오 기반 스마트 글래스를 발표했다. 사용자는 음성 명령으로 Gemini 기반의 앱·서비스 생태계를 제어할 수 있으며, 구글의 광범위한 서비스와의 통합이 차별화 요소다. 메타가 Ray-Ban 글래스로 웨어러블 AI 시장을 선점한 상황에서 구글의 진입은 스마트 글래스 시장 경쟁을 본격화시킬 전망이다. 온디바이스 AI와 클라우드 서비스를 연결하는 웨어러블 하드웨어는 AI의 일상화에서 중요한 접점이 될 것으로 예상된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "b0ec3332-6cc0-484e-aa39-28581108bf13",
+      "title": "GIM: Evaluating models via tasks that integrate multiple cognitive domains",
+      "url": "https://huggingface.co/papers/2605.18663",
+      "source": "hf_papers",
+      "content": "As LLM benchmarks saturate, the evaluation community has pursued two strategies to increase difficulty: escalating knowledge demands (GPQA, HLE) or removing knowledge entirely in favor of abstract reasoning (ARC-AGI). The first conflates memorization with capability; the second divorces reasoning from the practical contexts in which it matters. We take a different approach. The Grounded Integration Measure (GIM) is a benchmark of 820 original problems (615 public, 205 private) where difficulty comes from integration; individual problems require coordinating multiple cognitive operations (constraint satisfaction, state tracking, epistemic vigilance, audience calibration) over broadly accessible knowledge, so that reasoning stays grounded in realistic tasks without being gated on specialized expertise. Each problem is an original expert-authored composition, majority with rubric-decomposed scoring (median 6 independently judged criteria). A balanced public--private split provides built-in contamination diagnostic. We calibrate a continuous response 2-parameter logistic (2PL) IRT model over >200k prompt-response pairs across 28 models, producing robust ability estimates that correctly order test-configurations even when raw accuracy is distorted by errors or missing data, addressing a common challenge in benchmark reporting. Using this framework, we present a comprehensive leaderboard spanning 22 models and 47 test-configurations (unique model, thinking-level pairs), and conduct what is to our knowledge the most extensive published study of how test-time compute trades off against model capability on a fixed benchmark: 11 models swept across 35 test-configurations. We observe that within-family configuration choices, such as thinking budget and quantization, matter as much as model selection. We release the evaluation framework, calibrated IRT parameters, and all public problems.",
+      "published_at": "2026-05-18T17:09:50+00:00",
+      "summary": "LLM 벤치마크 포화 문제를 해결하기 위해 여러 인지 영역을 통합한 과제로 모델을 평가하는 GIM(General Integrative Measure) 벤치마크를 제안했다. 기존 접근법이 지식 요구량 증가(GPQA, HLE) 또는 지식을 완전히 배제한 추상 추론(ARC-AGI)으로 나뉘는 반면, GIM은 두 방향 모두를 통합해 실제 지능에 더 가까운 평가를 시도한다. 지식 암기와 실제 추론 능력을 구분하지 못하는 기존 벤치마크의 한계를 극복하는 것이 핵심 목표다. LLM 능력 평가의 신뢰성 문제가 커지는 상황에서 다중 인지 영역 통합 평가는 AI 역량을 더 정확히 측정하는 중요한 방향을 제시한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "7afbbeba-b2db-435b-bfce-79de44f44840",
+      "title": "AgentWall: A Runtime Safety Layer for Local AI Agents",
+      "url": "https://arxiv.org/abs/2605.16265",
+      "source": "arxiv",
+      "content": "arXiv:2605.16265v1 Announce Type: new \nAbstract: The safety of autonomous AI agents is increasingly recognized as a critical open problem. As agents transition from passive text generators to active actors capable of executing shell commands, modifying files, calling APIs, and browsing the web, the consequences of unsafe or adversarially manipulated behavior become immediate and tangible. Existing AI safety work has focused primarily on model alignment and input filtering, but these approaches do not address what happens at the moment an agent's intent becomes a real action on a real machine. This gap is especially acute in local environments, where developers run agents against their own filesystems, credentials, and infrastructure with little runtime control. This paper introduces AgentWall, a runtime safety and observability layer for local AI agents. AgentWall intercepts every proposed agent action before it reaches the host environment, evaluates it against an explicit declarative policy, requires human approval for sensitive operations, and records a complete execution trail for audit and replay. It is implemented as a policy-enforcing MCP proxy and native OpenClaw plugin, working across Claude Desktop, Cursor, Windsurf, Claude Code, and OpenClaw with a single install command. We present the design, architecture, threat model, and policy model of AgentWall, and demonstrate 92.9% policy enforcement accuracy with sub-millisecond overhead across 14 benchmark tests. AgentWall is open-source at https://github.com/agentwall/Agentwall.",
+      "published_at": "2026-05-19T00:00:00-04:00",
+      "summary": "로컬에서 실행되는 AI 에이전트를 위한 런타임 안전 레이어인 AgentWall을 제안했다. AI 에이전트가 셸 명령 실행, 파일 수정, API 호출, 웹 브라우징 등 능동적 행위자로 진화함에 따라, 이러한 행동을 실시간으로 감시·차단하는 보안 레이어의 필요성이 커지고 있다. AgentWall은 에이전트의 실행 행위를 정책 기반으로 런타임에 필터링하여, 에이전트가 허가되지 않은 시스템 접근이나 유해한 행동을 하지 못하도록 막는다. Claude Code, Devin 같은 자율 코딩 에이전트가 보급되면서 로컬 에이전트 보안은 빠르게 실용적 과제로 부상하고 있어 이 연구는 시의적절하다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e5a736ab-4b46-44c9-ad87-881cc8cf8680",
+      "title": "Context Memorization for Efficient Long Context Generation",
+      "url": "https://huggingface.co/papers/2605.18226",
+      "source": "hf_papers",
+      "content": "Modern large language model (LLM) applications increasingly rely on long conditioning prefixes to control model behavior at inference time. While prefix-augmented inference is effective, it incurs two structural limitations: i) the prefix's influence fades as generation proceeds, and ii) attention computation over the prefix scales linearly with its length. Existing approaches either keep the prefix in attention while compressing it, or internalize it into model parameters through gradient-based training. The former still attends to the prefix at inference, while the latter is training-intensive and ill-suited to prefix updates. To address these issues, we propose attention-state memory, a training-free approach that externalizes the prefix into a lightweight, lookup-based memory of precomputed attention states between prefix and query tokens. On ManyICLBench with LLaMA-3.1-8B, our method improves accuracy over in-context learning at 1K-8K memory budgets while reducing attention latency by 1.36x at 8K, and surpasses full-attention RAG performance on NBA benchmark using only 20% of its memory footprint.",
+      "published_at": "2026-05-18T11:12:45+00:00",
+      "summary": "긴 조건부 프리픽스(prefix)를 효율적으로 처리하기 위한 컨텍스트 메모라이제이션(Context Memorization) 기법을 제안한 연구다. 현재 LLM 응용에서 시스템 프롬프트 등 긴 프리픽스를 사용하는 경우 두 가지 구조적 한계—생성이 진행될수록 프리픽스 영향 감소, 어텐션 메커니즘의 계산 병목—가 존재한다. 이 기법은 프리픽스를 컴팩트한 표현으로 '기억'하여 생성 전반에 걸쳐 영향을 유지하면서 추론 효율도 높이는 방식을 제안한다. RAG 시스템, 긴 시스템 프롬프트를 사용하는 에이전트, 멀티턴 대화 애플리케이션의 성능과 비용 효율을 동시에 개선할 수 있는 실용적 기여다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
