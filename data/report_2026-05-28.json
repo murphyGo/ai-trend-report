@@ -1,0 +1,281 @@
+{
+  "id": "354f35e8-01e1-41dd-a2d5-9edd6ceae210",
+  "created_at": "2026-05-28T03:36:59.033149",
+  "articles": [
+    {
+      "id": "d9b83516-93aa-4321-9963-4244f53ba56b",
+      "title": "The MiniMax-M2 Series: Mini Activations Unleashing Max Real-World Intelligence",
+      "url": "https://arxiv.org/abs/2605.26494",
+      "source": "arxiv",
+      "content": "arXiv:2605.26494v1 Announce Type: new \nAbstract: We introduce the MiniMax-M2 series, a family of Mixture-of-Experts language models built around the principle that mini activations can unleash maximum real-world intelligence. The flagship M2 contains 229.9B total parameters with only 9.8B activated per token. Designed end-to-end for agentic deployment, the M2 series rests on three components: (i) agent-driven data pipelines producing large-scale, verifiable trajectories across agentic coding and agentic cowork, each grounded in an executable workspace and an artifact-aligned reward; (ii) Forge, a scalable agent-native RL system that adapts to long-horizon agent trajectories, paired with windowed-FIFO scheduling, prefix-tree merging, inference optimization, and a clean training-inference-agent decoupling that supports both white-box and black-box agents; (iii) the latest M2.7 checkpoint takes an early step toward self-evolution -- autonomously debugging training runs and modifying its own scaffold. Across M2 through M2.7, this combination translates a mini-activation footprint into frontier-tier performance on agentic coding, deep search, office-task, and reasoning benchmarks.",
+      "published_at": "2026-05-27T00:00:00-04:00",
+      "summary": "MiniMax가 총 229.9B 파라미터 중 토큰당 9.8B만 활성화하는 MoE(Mixture-of-Experts) 언어 모델 M2 시리즈를 공개했습니다. '미니 활성화로 최대 실세계 지능 구현'이라는 원칙 하에 에이전트 배포에 최적화되어 end-to-end로 설계되었습니다. 효율적인 계산 비용으로 대형 모델 성능을 달성하는 새로운 접근법을 제시하며, 특히 에이전트 태스크에서의 실용적 성능을 강조합니다. 대형 언어 모델의 추론 비용 절감과 에이전트 응용 분야 모두에서 중요한 기술적 기여를 합니다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4110fda1-ecf5-404b-b9b3-65f30fff9221",
+      "title": "Engineering",
+      "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex/",
+      "source": "openai",
+      "content": "May 27, 2026\n\nBy Members of Technical Staff: Aravind Srinivasan & Samay Shamdasani (Thrive Holdings), Arthur Fernandes Araujo & John de Wasseige (OpenAI)\n\nHow Thrive Holdings and OpenAI co-developed Tax AI for Crete accountants by fusing practitioner expertise with a Codex-driven loop\n\nReal-world systems behave differently in production than they do in a lab, breaking in ways that are hard to anticipate before deployment. Teams often discover those failures after launch, then spend weeks inspecting edge cases, adjusting prompts, and translating production feedback into durable product improvements. The feedback loop is manual and slow, and only improves when an engineer advances it. But today, with thoughtfully designed eval infrastructure, direct access to practitioners and real world environments, and the frontier agentic capabilities of Codex, you can build agents that self-improve.\n\nIn this post, we’ll unpack how we used Codex to build this type of agent. Over the past six months, OpenAI forward deployed engineers and researchers along with Thrive Holdings’ engineers collaborated to build Tax AI alongside and forCrete⁠(opens in a new window)’s network of 30+ accounting firms to help prepare increasingly complex tax returns. Instead of relying on engineers to find and fix each failure, Tax AI uses Codex to turn production use into structured signals that fuel autonomous improvement.\n\nCrete practitioners prepare tens of thousands of tax returns each season which requires working through millions of underlying documents. For medium- to large-complexity filings, data entry alone can take eight hours per return, often involving messy data sources, prior-year documents, and manual extraction and calculation. They pointed us to tax preparation as a significant bottleneck during the busiest stretch of tax season.\n\nTo solve this problem, Tax AI processed 7,000 tax returns across the Crete firms that participated in the pilot this tax season. The system automates much of the time-intensive process of preparing 1040 and 1041 tax returns, but even more compelling than the efficiency gains is that the system itself is measurably better than the version that was first deployed three months ago.\n\nIn Tax AI, practitioners upload source files along with any client-specific notes. Tax AI then creates a tax engine submission, ready for review. It saves practitioners about a third of their time on tax preparation, drafts returns with up to 97% accuracy, and increases throughput by about 50%, creating more room for them to spend time with clients.\n\nWe can quantify this improvement by understanding how accurately Tax AI can complete a return without needing correction later. We measure accuracy by checking what share of returns reach 75%, 90%, or 100% correct field completion. At launch, only a quarter of returns were at 75% correct field completion, but within six weeks, 86% hit that mark. The system showed even faster growth at the 90% and 100% correct field completion levels. These thresholds give us a practical view of how much practitioner follow-up different returns still require.\n\nEarly on, Tax AI handled simpler work, like W-2s and 1099s. As the season went on, it moved into more complex returns with K-1s, schedules, and harder edge cases. Each new capability saved more time per return than the last because the tasks it took on were harder and more time consuming to do manually. We continue to see ongoing progress today.\n\nNext, we’ll walk through how our teams co-engineered Tax AI to be self-improving by leaning on three critical pillars: 1) expert practitioner feedback, 2) production traces (a structured history from inputs through final output), and 3) a Codex-driven iteration loop based on tailored evals to enable continuous, faster product development. We hope our experience will be useful to other builders in domains where practitioner expertise is key to shaping the quality of the overarching system and the data running through it.\n\nAs Tax AI expanded into more complex filings, the share of scored returns reaching 75%, 90%, and full completion continued to rise through tax season.\n\nAs we pushed into harder parts of tax preparation (K-1s, rental real estate schedules, and tax forms where values had to be reconciled across multiple source files), it became obvious that the real challenge was whether the product could make complex production failures visible, understandable, and actionable.\n\nIn the early days of the product, most of the correction was manual. Practitioners could correct system errors, but the product did not capture the full context: a changed value before filing might reflect a true extraction miss, a mapping problem, missing product support, or expected workflow noise. Sorting those cases out still required follow-up from the engineering team. Engineers could use coding agents, but the system was not yet designed to use AI meaningfully inside an improvement loop. We did not have the signal to identify the right hill to climb.\n\nThat led us to design the system around three pillars:\n\nThe rental properties example below shows how that loop works in practice, walking you through how a practitioner correction becomes a structured finding, then an eval target, and finally a Codex-scoped engineering task.\n\nRental property income is reported on Schedule E of an individual tax return. From an engineering perspective, the task of extracting it is simple to describe but hard to do well. The system has to read messy source material (handwritten notes, emails, spreadsheets, and other client files), extract the rental-property fields the system can confidently map to the tax engine, and preserve enough evidence that a practitioner can approve or correct the result. The simplified example below shows what those source files and extracted outputs might look like.\n\nA rental property source package is normalized into cited fields before those are mapped to downstream tax engine concepts.\n\nA difference between the agent-predicted value and the actual value from the filed tax return might reflect a true extraction miss, but it could also be a practitioner preference, a value carried forward from a prior-year return in the tax engine, or a value introduced or changed elsewhere in the filing workflow. Practitioners helped us discern those cases so we could identify which actions required a practitioner correction or blocked a submission.\n\nBecause we could see these corrections in detail, we transformed the review process from a terminal, post-failure step into a continuous learning cycle. We designed the workflow to capture expert actions as structured data. Now, every intervention feeds the product's improvement loop by recording exactly what Tax AI proposed, what the practitioner modified, and what ultimately went into the filed return.\n\nFor a complex workflow like rental properties, the system has to preserve what happens between the source files and the filed return. Along that path, documents are organized, split, and classified; rental-property fields are extracted with citations back to the source material; those values are mapped into the tax engine; and practitioners may still correct them before filing. Those product-level traces make it possible to investigate where a failure occurred. To turn practitioner corrections into useful evaluation targets, the system processes them in three steps:\n\nRental property review rows separate recurring product failures from expected noise, then turn the actionable cases into evaluation targets that give Codex a hill to climb.\n\nThe third pillar is creating an engineering loop capable of acting on these new evals. This is where Codex becomes central.\n\nSuppose our eval pipeline flags that Tax AI consistently misses the \"fair rental days\" field, while practitioners reliably fill it in. Because this finding has already been packaged into a targeted eval set, with representative source packages and expected outputs, Codex can investigate the root cause directly within the product scaffold.\n\nCodex isn’t working solely with a sub-par final output. It inspects the trace, eval, repo, and skills together:\n\nThe end-to-end self-improvement loop: production traces surface repeated field-level corrections, which become failure signals that Codex can inspect alongside the trace, evals, repo, and skills. Actionable patterns become bounded evals and candidate product changes; ambiguous cases route back to engineers for review. Each shipped improvement creates new production evidence for the next cycle.\n\nThe rental property example is emblematic of a broader reusable pattern: using production artifacts and traces to improve an agent’s capabilities. Given reviewed findings from production data, source traces, expected tax-engine output, relevant code examples, and eval commands as a set of inputs, Codex can materially improve on performance and accuracy over weeks and months. This builds on the principles described in our work onharness engineeringandSymphony, which walk-through how to make tasks legible to Codex, provide scoped context and tools, and keep validation and human review part of the environment.\n\nThat evidence does not become a Codex task automatically. A practitioner correction may reflect an extraction miss, a mapping issue, unsupported product behavior, tax judgment, or expected workflow noise. Only after repeated differences have been reviewed and grouped into an actionable finding does the system turn them into a bounded task with a clear success condition.\n\nWe apply this automation to a bounded layer of the product. This layer performs extraction and maps source documents into tax workflows. Engineers remain responsible for architecture, product decisions, and shipping. Practitioners steer the improvement loop through the work they already do: correcting extracted values, reviewing returns, and approving final filings.\n\nFor Codex, the result is not a vague alert but a scope...",
+      "published_at": "2026-05-27T07:00:00",
+      "summary": "OpenAI와 Thrive Holdings가 협력하여 Codex 기반의 자기 개선형 세금 AI 에이전트를 Crete 회계사들을 위해 공동 개발했습니다. 실무자의 전문 지식과 Codex 구동 루프를 결합하여 실제 프로덕션 환경의 복잡성을 극복한 사례를 상세히 소개합니다. 실험실과 달리 프로덕션에서 시스템이 예기치 않게 동작하는 문제들을 자기 개선 루프로 해결하는 방법론을 제시합니다. AI 에이전트가 세금·회계 같은 고도 전문 업무를 처리하는 실세계 적용 사례로서 중요한 이정표입니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1af4884d-5b11-4ae4-9089-7fe718a6473c",
+      "title": "Extending Human Intelligence Through AI",
+      "url": "https://www.microsoft.com/en-us/research/blog/extending-human-intelligence-through-ai/",
+      "source": "microsoft_research",
+      "content": "At a glance Modern AI systems are powerful not because they replicate human intelligence, but because they&nbsp;presuppose it, by&nbsp;extending&nbsp;structures already present in human cognition and language. This perspective helps explain both AI’s remarkable capabilities and its recurring boundaries, including hallucinations and breakdowns in reasoning. This research argues that AI safety is a system-level challenge, shifting attention from “rogue AI” narratives toward harnessing engineering and governance. Understanding AI as an extension of human intelligence—not a replacement for it—offers a more grounded path for building trustworthy AI systems. AI&nbsp;systems today can write essays, generate code, summarize complex ideas, and carry on conversations with remarkable fluency. Yet those same systems still struggle with tasks humans find intuitive: reliably tracking objects through change, reasoning compositionally in unfamiliar situations, or distinguishing truth from plausible fiction. These contradictions have fueled polarized debates about AI.&nbsp;Some see current systems as early forms of human-like intelligence; others dismiss them as sophisticated autocomplete.&nbsp; In recent interdisciplinary work &#8211; including Adam Frank, Marcelo Gleiser, and Evan Thompson&#8217;s The Blind Spot (opens in new tab) and DeepMind researcher Alexander Lerchner&#8217;s The Abstraction Fallacy (opens in new tab) &#8211; a different picture is emerging. Rather than asking whether AI systems are becoming intelligent in the human sense, these approaches ask a more basic question: What if AI systems work because they rely on structures that are rooted in human cognition? This shift in perspective, which draws on the phenomenology of Edmund Husserl, helps make sense of both the capabilities and the limits of modern AI. In our recent paper,&nbsp;The Origins of Artificial Intelligence in Natural Intelligence, we argue that modern AI systems are best understood&nbsp;neither as human minds nor as trivial statistical tricks. Instead, they extend structures that originate in human cognition itself.&nbsp;Further&nbsp;drawing on the phenomenology&nbsp;of Husserl, the paper proposes that language already&nbsp;contains&nbsp;sedimented structures of human understanding&nbsp;—structures that AI systems learn to model and extend. This perspective helps explain both the capabilities and the boundaries of contemporary AI.&nbsp;&nbsp; Human perception is not simply passive reception of sensory data. We experience the world as stable things unfolding through change: a cup&nbsp;remains&nbsp;the same cup as we move around it; a melody&nbsp;remains&nbsp;recognizable even as individual notes pass away. Language&nbsp;emerges&nbsp;by expressing these stable structures in conceptual form. Words like “red,” “round,” or “larger than” articulate relationships that originate&nbsp;in&nbsp;lived&nbsp;experience.&nbsp; Large language models learn statistical relationships within this linguistic world. They capture how concepts tend to relate across enormous bodies of human writing. This explains why AI systems can produce coherent responses across many domains. But it also explains why they&nbsp;hallucinate. Humans&nbsp;remain&nbsp;answerable to the world: experience continually corrects our expectations and beliefs. AI systems, by contrast, extend patterns within text itself. They can continue a line of reasoning with remarkable fluency, but they lack the lived engagement with the world that anchors meaning and truth. AI Extends Human Cognition&nbsp; This framework helps explain several recurring challenges in AI research. One is the “compositionality gap”—the tendency for language models to perform well on familiar reasoning patterns while failing when asked to combine concepts in genuinely novel ways. Research increasingly shows that larger models improve fluency and factual recall much faster than they improve true compositional reasoning. From our perspective, this is not simply an engineering limitation but a structural boundary: AI systems can extend patterns already sedimented in language, but they do not&nbsp;possess&nbsp;the world-directed understanding that allows humans to generate genuinely new conceptual relations.&nbsp; A similar pattern appears in multimodal systems that combine language and vision. These systems can often label images correctly while still failing at robust reasoning about objects and their parts. They learn correlations between visual patterns and language rather than perceiving stable objects unfolding through time in the way humans do. The result is systems that can appear impressively fluent while&nbsp;remaining surprisingly brittle outside familiar patterns.&nbsp; This perspective also&nbsp;reframes&nbsp;debates about AI safety. Public discussion often swings between fears of “rogue superintelligence” and claims that AI poses little meaningful risk. Our research suggests that both extremes misunderstand the nature of current systems. The most immediate risks arise not because AI possesses human-like intentions, but because it can extend patterns of reasoning without reflective responsibility to the world. Systems can generate persuasive but ungrounded outputs, automate flawed decisions at scale, or execute harmful actions if embedded in poorly governed environments. This helps explain why AI safety is increasingly shifting from model safety to system safety. In practice, organizations already rely on layered safeguards—what the industry increasingly calls “harnesses”—to constrain,&nbsp;validate, and&nbsp;monitor&nbsp;AI behavior. Rather than temporary patches, our paper argues that these mechanisms reflect something fundamental about AI architecture itself:&nbsp;trustworthy behavior&nbsp;emerges&nbsp;from the work of builders of AI systems responsible for their behavior, a responsibility that cannot be delegated to or shared with models. This interpretation aligns closely with how enterprises increasingly approach trustworthy AI deployment. Organizations need systems that can extend human intelligence while remaining governable, auditable, and aligned with human oversight. Understanding AI as a derived form of intelligence clarifies why layered governance, evaluation, and operational controls matter so deeply. PODCAST SERIES AI Testing and Evaluation: Learnings from Science and Industry Discover how Microsoft is learning from other domains to advance evaluation and testing as a pillar of AI governance. Listen now Opens in a new tab Looking ahead, we believe phenomenology offers more than a critique of AI—it offers a framework for understanding its promise. AI systems reveal something profound about human cognition itself: that meaning can be formalized, extended, and scaled in powerful new ways.&nbsp;&nbsp;The central societal risk of AI thus turns out to be kicking away the ladder of its origins in human experience and cognition&nbsp;&#8211;&nbsp;misinterpreting&nbsp;AI as a rival&nbsp;intelligence&nbsp;that diminishes our humanity&nbsp;and thus, in turn, diminishes the&nbsp;true&nbsp;promise of AI itself.&nbsp; The question, then, is not whether AI will replace human intelligence. It is how we can responsibly build systems that extend human understanding while remaining grounded in the world from which that understanding arises. If we mistake AI systems for autonomous minds, we risk over-trusting them. If we dismiss them as trivial tricks, we risk overlooking one of the most important technological developments of our time. A more grounded interpretation recognizes both truths at once: AI is a genuine extension of human intelligence—and precisely because of that, humans remain responsible for how it is understood, governed, and used. Opens in a new tabThe post Extending Human Intelligence Through AI appeared first on Microsoft Research.",
+      "published_at": "2026-05-27T16:00:00+00:00",
+      "summary": "마이크로소프트 리서치는 현대 AI 시스템이 인간 지능을 복제하는 것이 아니라 인간 인지·언어에 내재된 구조를 '전제'하며 확장한다는 관점을 제시했습니다. 이 관점은 AI의 놀라운 능력과 동시에 환각, 추론 실패 같은 반복적 한계를 일관되게 설명하는 이론적 틀을 제공합니다. AI 안전성은 외부 제약 추가가 아니라 인간 인지 구조에 대한 깊은 이해에서 출발해야 한다고 주장합니다. AI 개발의 근본 방향과 한계를 재고하게 만드는 중요한 연구 관점입니다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0d76333d-82d1-4f62-85f8-cc59d6dc34a3",
+      "title": "AI coding startup Cognition raises $1B at $25B pre-money valuation",
+      "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
+      "source": "techcrunch",
+      "content": "As Cognition reaches $492 million in annualized revenue run rate, it more than doubled its valuation in eight months, it says.",
+      "published_at": "2026-05-27T16:00:00+00:00",
+      "summary": "AI 코딩 스타트업 Cognition이 250억 달러 기업가치(pre-money)로 10억 달러 투자를 유치했습니다. 연간 반복 수익률(ARR) 약 4억 9200만 달러를 기록한 이 회사는 불과 8개월 만에 기업가치를 두 배 이상 높였습니다. AI 코딩 에이전트 시장의 폭발적 성장을 보여주는 이번 라운드는 소프트웨어 개발 자동화에 대한 투자자 신뢰를 반영합니다. AI가 소프트웨어 개발 방식을 근본적으로 변화시키고 있음을 시장이 강하게 확인하는 사례입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "78ad0ced-cc26-4644-a162-895ed1d9bd1a",
+      "title": "Meta launches Instagram, Facebook, and WhatsApp subscriptions, with more to come, including AI plans",
+      "url": "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/",
+      "source": "techcrunch",
+      "content": "Meta is rolling out paid subscription plans for Instagram, Facebook, and WhatsApp worldwide, while also testing new AI, creator, and business-focused offerings under its broader “Meta One” subscription brand.",
+      "published_at": "2026-05-27T18:00:00+00:00",
+      "summary": "Meta가 인스타그램, 페이스북, 왓츠앱을 아우르는 유료 구독 서비스를 전 세계에 출시했습니다. 'Meta One' 브랜드 하에 AI, 크리에이터, 비즈니스 전용 기능들을 단계적으로 추가할 계획이며 AI 관련 유료 기능도 포함됩니다. 수십억 명의 사용자를 보유한 Meta의 이번 구독 모델 도입은 소셜 플랫폼의 수익화 방식에 새로운 전환점을 제시합니다. AI 기능의 유료화와 플랫폼 수익 다변화 측면에서 업계 전반에 영향을 줄 중요한 전략적 움직임입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "199a1a5b-fc23-434f-9de1-a7cc3285a89e",
+      "title": "In more good news for Amazon, Snowflake signs $6B deal with AWS for AI CPU chips",
+      "url": "https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/",
+      "source": "techcrunch",
+      "content": "Snowflake has signed a new, enormous five-year deal with Amazon to secure chips for AI usage. Nvidia is once again being put on notice.",
+      "published_at": "2026-05-27T20:10:00+00:00",
+      "summary": "데이터 클라우드 기업 Snowflake가 AI 연산에 필요한 칩을 확보하기 위해 AWS와 5년 간 60억 달러 규모의 대형 계약을 체결했습니다. AWS CPU 칩을 선택한 이번 결정은 AI 인프라 공급망에서 NVIDIA 의존도를 낮추려는 전략적 움직임으로 해석됩니다. Amazon에게도 호재인 이번 거래는 클라우드 하이퍼스케일러들이 AI 칩 공급망을 확보하는 경쟁이 가열되고 있음을 보여줍니다. AI 인프라 시장의 주도권을 둘러싼 빅테크 기업들의 전략적 제휴와 경쟁 구도 변화를 상징하는 사례입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c0e031e3-a8ce-4187-a415-d8c36e667804",
+      "title": "China is increasingly keeping its best AI talent to itself",
+      "url": "https://techcrunch.com/2026/05/27/china-is-increasingly-keeping-its-best-ai-talent-to-itself/",
+      "source": "techcrunch",
+      "content": "China's AI boom is producing world-class talent, and Beijing is increasingly reluctant to let them go elsewhere.",
+      "published_at": "2026-05-27T13:48:41+00:00",
+      "summary": "중국의 AI 호황이 세계적 수준의 인재를 배출하고 있는 가운데, 베이징이 이들의 해외 유출을 막기 위한 조치를 강화하고 있습니다. 미국과의 기술 패권 경쟁이 심화되면서 중국은 자국 AI 생태계 강화를 위한 인재 유출 방지를 국가 전략으로 삼고 있습니다. 이러한 변화는 글로벌 AI 연구 인력 이동 패턴과 국제 협력 구도에 중대한 영향을 미칩니다. AI 기술 지정학의 핵심 변수로 떠오른 인재 경쟁이 미-중 기술 패권 갈등의 새로운 전선이 되고 있습니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "34776625-57c7-4080-8e35-b4836d7b99a3",
+      "title": "Robinhood now lets your AI agents trade stocks",
+      "url": "https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/",
+      "source": "techcrunch",
+      "content": "While these agents would be able to read and analyze users' portfolios to come up with trading strategies and suggest investments, they'll only be able to access the pre-loaded balance in the dedicated wallet to place orders.",
+      "published_at": "2026-05-27T12:30:00+00:00",
+      "summary": "미국 주식 거래 플랫폼 Robinhood가 사용자의 AI 에이전트가 자율적으로 주식을 거래할 수 있는 기능을 출시했습니다. 에이전트는 사용자 포트폴리오를 분석해 투자 전략을 수립하고 제안하며, 전용 월렛에 미리 설정된 잔액 내에서만 주문을 실행합니다. AI 에이전트가 실제 금융 시장에 직접 참여하는 전례 없는 사례로, 리테일 투자자의 AI 활용 방식을 근본적으로 바꿀 수 있습니다. 금융 AI 에이전트의 대중화와 이에 따른 규제·리스크 관리 측면의 논의가 본격화될 것으로 예상됩니다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0c04c0cc-4fcb-4b2a-994b-27e42b5cfdbd",
+      "title": "YouTube will now automatically label AI videos",
+      "url": "https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/",
+      "source": "techcrunch",
+      "content": "YouTube will now automatically label videos that use significant photorealistic AI, instead of relying solely on creators to disclose AI-generated content themselves. It's also making AI labels more prominent.",
+      "published_at": "2026-05-27T13:00:00+00:00",
+      "summary": "YouTube가 AI로 생성된 실사 수준의 콘텐츠를 자동으로 탐지하여 레이블을 부착하는 정책을 도입했습니다. 기존에는 크리에이터의 자진 신고에 의존했지만, 이제는 플랫폼이 직접 자동 탐지하여 AI 레이블을 더 눈에 띄게 표시합니다. 딥페이크와 AI 생성 콘텐츠 범람에 대응하기 위한 빅플랫폼의 책임 강화 움직임으로, 콘텐츠 투명성 정책의 새로운 기준을 제시합니다. 온라인 정보 신뢰도와 AI 생성 콘텐츠 규제 논의에서 중요한 선례가 될 전망입니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "8d7bfd85-745e-49d4-a52a-4f3ba3629d95",
+      "title": "NVIDIA Dynamo Snapshot: Fast Startup for Inference Workloads on Kubernetes",
+      "url": "https://developer.nvidia.com/blog/nvidia-dynamo-snapshot-fast-startup-for-inference-workloads-on-kubernetes/",
+      "source": "nvidia",
+      "content": "The cold-start problem In production inference deployments, demand fluctuates over time, requiring inference replicas to scale elastically. However,...In production inference deployments, demand fluctuates over time, requiring inference replicas to scale elastically. However, cold-starting inference workloads on Kubernetes can take several minutes. During that time, GPUs are allocated but idle, generating no tokens and serving no requests. This delay increases the risk of service level agreement (SLA) violations during traffic spikes… Source",
+      "published_at": "2026-05-27T23:09:52+00:00",
+      "summary": "NVIDIA가 Kubernetes 환경에서 AI 추론 워크로드의 콜드 스타트 문제를 해결하는 Dynamo Snapshot 기술을 공개했습니다. 기존에는 추론 레플리카 확장 시 수 분의 지연이 발생해 GPU가 할당되었지만 유휴 상태를 유지하는 비용 낭비가 있었습니다. Dynamo Snapshot은 이 대기 시간을 대폭 단축하여 대규모 AI 추론 서비스 운영의 비용 효율성과 응답 속도를 동시에 개선합니다. 클라우드 네이티브 AI 서비스 운영 기업에게 실질적 인프라 혁신을 제공하는 중요한 기술 업데이트입니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5f6f8038-9b4b-4854-b1fe-194f132e32f4",
+      "title": "NVIDIA Blackwell Sets STAC-AI Record for LLM Inference in Finance",
+      "url": "https://developer.nvidia.com/blog/nvidia-blackwell-sets-stac-ai-record-for-llm-inference-in-finance/",
+      "source": "nvidia",
+      "content": "Large language models (LLMs) are revolutionizing the financial trading landscape by enabling sophisticated analysis of vast amounts of unstructured data to...Large language models (LLMs) are revolutionizing the financial trading landscape by enabling sophisticated analysis of vast amounts of unstructured data to generate actionable trading insights. These advanced AI systems can process financial news, social media sentiment, earnings reports, and market data to predict stock price movements and automate investment strategies with unprecedented… Source",
+      "published_at": "2026-05-27T20:00:00+00:00",
+      "summary": "NVIDIA Blackwell 아키텍처가 금융 LLM 추론 분야에서 STAC-AI 벤치마크 신기록을 달성했습니다. LLM은 대량의 비정형 금융 데이터를 실시간으로 분석하여 거래 인사이트를 생성하는 데 활용되고 있습니다. Blackwell은 금융 LLM 추론의 속도와 처리량 모두에서 역대 최고 성능을 기록하여 알고리즘 트레이딩의 가능성을 확장합니다. 고성능 AI 인프라의 발전이 금융 서비스 분야의 실시간 AI 처리 능력을 획기적으로 높이고 있음을 보여줍니다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a96e45fe-a416-4fd2-b882-d58f3cea947f",
+      "title": "Run Key Genomics and Protein Folding Workloads Faster with NVIDIA RTX PRO 4500 Blackwell",
+      "url": "https://developer.nvidia.com/blog/run-key-genomics-and-protein-folding-workloads-faster-with-nvidia-rtx-pro-4500-blackwell/",
+      "source": "nvidia",
+      "content": "Precision medicine depends on two fundamental capabilities: understanding disease at the genomic level and identifying treatments at the molecular level.&nbsp;...Precision medicine depends on two fundamental capabilities: understanding disease at the genomic level and identifying treatments at the molecular level. NVIDIA’s contributions to precision medicine extend far beyond accelerated computing, delivering a full-stack platform that translates hardware and software advancements directly into healthcare outcomes. Sequencing the human genome… Source",
+      "published_at": "2026-05-26T16:00:00+00:00",
+      "summary": "NVIDIA RTX PRO 4500 Blackwell GPU가 게놈 분석과 단백질 접힘(protein folding) 같은 핵심 생명과학 워크로드를 더욱 빠르게 처리하는 성능을 제공합니다. 정밀 의료는 유전체 수준의 질병 이해와 분자 수준의 치료제 발견에 의존하며, NVIDIA의 이번 기여는 신약 개발 사이클 단축에 기여합니다. 단백질 접힘 분석 가속화는 AlphaFold 등의 연구 흐름과 결합되어 의료·바이오 분야 AI 연구의 컴퓨팅 병목을 해소합니다. AI 기반 생명과학 연구에서 하드웨어 혁신이 연구 속도와 비용에 미치는 실질적 영향을 보여주는 중요한 사례입니다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5ad09b24-5c1a-49bd-9c69-4493980ee95d",
+      "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence",
+      "url": "https://arxiv.org/abs/2605.26340",
+      "source": "arxiv",
+      "content": "arXiv:2605.26340v1 Announce Type: new \nAbstract: Autonomous research agents produce competitive solutions and professional-looking manuscripts, yet their outputs contain verifiability failures undetectable by surface-level evaluation: fabricated citations, unreproducible scores, and method descriptions that diverge from the implementation. We address this through three contributions. First, Chain-of-Evidence (CoE), a verifiability framework requiring every claim to be traceable to its evidence source. Second, ScientistOne, an end-to-end autonomous research system that maintains evidence chains by construction throughout literature review, solution discovery, and paper writing. Third, CoE Audit, a post-hoc audit whose four integrity checks -- score verification, specification violation, reference verification, and method-code alignment -- apply uniformly to all systems. Across 75 papers spanning five systems and five frontier research tasks, every baseline exhibits at least one systematic failure mode: hallucinated reference rates reach 21%, score verification passes in as few as 42% of papers, and method-code alignment ranges from 20% to 80%. ScientistOne achieves zero hallucinated references (0/337), perfect score verification (12/12), and the highest method-code alignment (14/15), while matching or exceeding human expert performance on all five tasks. ScientistOne further generalizes to six additional tasks spanning medical imaging, fine-grained recognition, 3D perception, and language modeling, achieving state-of-the-art on Parameter Golf and gold medals on MLE-Bench tasks where baselines fail entirely.",
+      "published_at": "2026-05-27T00:00:00-04:00",
+      "summary": "ScientistOne은 자율 연구 에이전트가 경쟁력 있는 결과물을 내지만 허위 인용, 재현 불가능한 점수, 구현과 괴리된 방법론 기술 등 검증 불가능한 실패를 포함한다는 문제를 해결합니다. Chain-of-Evidence 접근법을 도입하여 에이전트의 연구 과정을 추적 가능하고 검증 가능하게 만들어 신뢰성을 높였습니다. 인간 수준의 자율 연구를 목표로 하며, AI 연구 에이전트의 검증 가능성과 재현성 기준을 새롭게 제시합니다. 자율 AI 연구 시스템의 신뢰성 문제를 정면으로 다룬 연구로, 과학 연구 자동화의 실용화에 핵심적인 기여를 합니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "aa9b94ef-d046-48f8-88a2-307aba8c96fb",
+      "title": "Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of Reasoning over Linearized Representations",
+      "url": "https://arxiv.org/abs/2605.26362",
+      "source": "arxiv",
+      "content": "arXiv:2605.26362v1 Announce Type: new \nAbstract: In many reasoning tasks, large language models (LLMs) rely on structured external knowledge, such as graphs and tables, which is typically linearized into sequential token representations. However, even when sufficient knowledge is available, LLMs can still produce hallucinated outputs, and the underlying mechanisms behind such failures remain poorly understood. We investigate these mechanisms and find that hallucinations arise from systematic internal dynamics rather than random noise. First, attention disproportionately concentrates toward shortcut-like structural cues rather than distributing across the full context. Second, feed-forward representations fail to ground the provided knowledge, causing the model to revert to parametric memory. Moreover, our results indicate that hallucination is consistently associated with failures in semantic grounding within feed-forward layers, while attention allocation exhibits greater task-dependent variability. Finally, we show that these mechanistic patterns generalize beyond single-hop graphs to multi-hop and tabular settings, enabling effective hallucination detection across structured knowledge formats.",
+      "published_at": "2026-05-27T00:00:00-04:00",
+      "summary": "대규모 언어 모델(LLM)이 그래프나 테이블 같은 구조화된 지식을 선형 텍스트로 변환하여 처리할 때 왜 환각이 발생하는지 메커니즘 분석을 수행했습니다. 충분한 지식이 제공되어도 LLM이 환각된 출력을 생성하는 이유를 내부 표현 수준에서 규명하였습니다. 단순한 지식 주입만으로는 환각 문제를 해결하기 어려우며, 선형화된 구조적 지식 표현 자체에 근본적 한계가 있음을 밝혔습니다. 구조화된 지식 기반 시스템과 RAG(Retrieval-Augmented Generation) 시스템 설계자에게 중요한 실용적 통찰을 제공합니다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4510f2a5-ee47-4c89-914e-bab9335827f3",
+      "title": "Is Agent Memory a Database? Rethinking Data Foundations for Long-Term AI Agent Memory",
+      "url": "https://arxiv.org/abs/2605.26252",
+      "source": "arxiv",
+      "content": "arXiv:2605.26252v1 Announce Type: new \nAbstract: Long-running AI agents need persistent memory. Memory supports learning across sessions, reduces repeated context injection, and enables auditing of past decisions. Current agent memory systems and database paradigms treat memory as storage. They localize correctness at records, embeddings, or edges. Each supplies only some of the capabilities that long-term memory requires. The result is four recurring failure modes: unregulated growth, missing semantic revision, capacity-driven forgetting, and read-only retrieval. In our vision, long-term agent memory is a new data-management workload. Its correctness is a property of the state trajectory, not of individual records. We formalize this as Governed Evolving Memory (GEM). GEM replaces record-level database operations with four state-level operators: ingestion, revision, forgetting, and retrieval. Six correctness conditions govern how the state evolves. Three structural observations establish that no record-level system can satisfy these conditions, regardless of the storage model. We realize the abstraction in MemState, a prototype on a property-graph backend. MemState validates feasibility and exposes the gap to a native engine. We outline three research directions that define memory-centric data management as a workload.",
+      "published_at": "2026-05-27T00:00:00-04:00",
+      "summary": "장기 실행 AI 에이전트에 필수적인 지속적 메모리 시스템을 데이터베이스 패러다임으로 바라보는 기존 관점에 의문을 제기합니다. 현재 에이전트 메모리 시스템이 메모리를 단순 저장소로 취급하여 레코드/임베딩/엣지 수준의 정확성에만 집중하는 한계를 지적합니다. 세션 간 학습, 반복적 컨텍스트 주입 감소, 과거 결정 감사 등을 가능하게 하는 새로운 데이터 기반 메모리 아키텍처의 방향을 제시합니다. 에이전트 메모리 설계의 근본 패러다임 전환을 요구하는 연구로, 장기 에이전트 시스템 개발에 중요한 시사점을 줍니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f41fa94a-4d37-4696-86de-9c89d2e2a60f",
+      "title": "Self-Verified Distillation: Your Language Model Is Secretly Its Own Synthetic Data Pipeline",
+      "url": "https://arxiv.org/abs/2605.26132",
+      "source": "arxiv",
+      "content": "arXiv:2605.26132v1 Announce Type: new \nAbstract: Can post-trained large language models (LLMs) further improve themselves using only unlabeled prompts, without external teachers or feedback from tools? We study this setting starting only from unlabeled seed questions with no ground-truth solutions, across three reasoning domains: math, science, and coding. We propose Self-Verified Distillation, a simple post-training refinement algorithm in which the model generates candidate solutions to these seed questions, filters them using prompt-based self-verification, and trains on the resulting self-curated dataset. Inspired by the UQ benchmark's use of multiple validators to screen candidate answers to hard unsolved questions, we adapt this validation-based filtering idea to self-training: the model filters its own generated solutions through a three-stage cascade of cycle-consistency, factuality, and correctness checks, accepting a solution only if it passes all stages with unanimous judge votes. We find that sampling more candidate generations and using a larger verification budget during training data construction produces higher-quality self-curated data and, in turn, better reasoning models. We then train Qwen3 models at multiple scales with Self-Verified Distillation and obtain gains across all three domains. For Qwen3-4B, our method improves aggregate held-out pass@1 by +16.7 points in math (AIME26 and HMMT), +11.1 points in science (GPQA Diamond and HLE), and +8.3 points in coding (LCBv5 and LCBv6), with gains also extending to 0.6B and 8B models. Compared to our test-time-only baseline (UQ-TTC), which improves performance by spending extra compute at inference time, Self-Verified Distillation achieves better performance in most settings while requiring only a single inference call at test time.",
+      "published_at": "2026-05-27T00:00:00-04:00",
+      "summary": "후학습된 LLM이 외부 교사나 도구 피드백 없이 레이블이 없는 시드 질문만으로 스스로를 개선할 수 있는 Self-Verified Distillation 방법을 제안합니다. 수학, 과학, 코딩 추론 도메인에서 실험한 결과, 모델 자체가 합성 데이터 파이프라인이 되어 자기 검증 메커니즘으로 성능을 향상시킬 수 있음을 보였습니다. 데이터 효율적인 AI 자기 개선 패러다임의 새로운 가능성을 열며, 데이터 부족 환경에서의 모델 향상에 실용적 기여를 합니다. LLM의 자율적 역량 향상에 관한 연구로, 미래 AI 시스템의 지속적 자기 개선 메커니즘 구축에 중요한 토대를 제공합니다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "22ba9e4d-fb62-46f9-babe-d95a3f5547a0",
+      "title": "It’s time to address the looming crisis in entry-level work.",
+      "url": "https://www.technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work/",
+      "source": "mit_tech_review",
+      "content": "Artificial intelligence has not so far produced a clean story of mass unemployment. Aggregate employment in developed countries remains broadly stable, and recent assessments have found limited evidence that AI has shifted the headline numbers. But a troubling change may be hiding beneath the surface: the quiet weakening of the first rung of the career ladder. The most worrisome evidence is showing up exactly where we should expect it first: in early-career hiring. A working paper released in November 2025 by the Stanford Digital Economy Lab found that workers aged 22 to 25 in the most AI-exposed occupations experienced a 16% relative decline in employment after the spread of generative AI, even after controlling for other factors that might affect firms’ employment decisions. An Anthropic report from March 2026 provides suggestive evidence that led to a similar conclusion. More experienced workers in those same occupations did not suffer the same decline. Employment is not also declining in the entry-level jobs with low AI exposure. The concern is specific to early-career jobs that are exposed to AI. That is not a minor signal. It suggests that firms may be using AI to substitute for the junior tasks through which people traditionally gain their first foothold—at least for those in jobs where generative AI is used extensively, like software developers, customer service representatives, computer programmers, and information systems managers. The time is now to make changes in the way we train, prepare, and support young people who are about to enter the workforce. Educational institutions need to reorient for the era of an AI-augmented workforce. Governments must incentivize businesses to hire and train early-career workers. Businesses, in turn, need to recognize the importance of developing a long-term workforce experienced in AI—a process that begins with entry-level workers. And students themselves should take on the responsibility of not only becoming AI fluent but learning how to apply that knowledge in various fields. In short, we must change the way we have traditionally thought of entry-level work. This is especially true because the broader labor market for recent graduates is also softening. The Federal Reserve Bank of New York reported that in the fourth quarter of 2025, the unemployment rate for recent college graduates rose to 5.6%, while the underemployment rate (the share of graduates working in jobs that typically do not require a college degree) reached 42.5%, its highest level since the covid pandemic. No single statistic can prove that AI is the sole cause of that deterioration. Hiring in general is way down post-pandemic, and young people are particularly vulnerable to the slowdown. But it would be a mistake to ignore the possibility that AI is accelerating an already difficult transition from school to work. Behind these statistics is a great deal of personal distress. Recent graduates today often submit hundreds of applications before they receive a single offer, and surveys consistently find elevated rates of anxiety, financial precarity, and burnout among young workers in extended job searches. If AI quietly closes the door on typical early jobs, people will pay the price in delayed independence, postponed family formation, and the sense that their first serious professional efforts have been refused. It also matters because entry-level jobs are part of the economy&#8217;s training system. Junior analysts learn which numbers can be trusted. Young software developers learn how production systems fail. New marketers learn how customers behave outside the neat language of dashboards. Early-career legal and financial staff learn how rules, judgment, deadlines, and human relationships actually interact. If AI absorbs more of the drafting, triage, coding, summarizing, and administrative preparation that once helped train entry-level workers, firms may become more efficient in the short run while society becomes less capable in the longer run. The right way to improve the skills of young workers is not to tell them, “Learn to code.” That advice, which shaped more than a decade of federal initiatives and university expansion, rested on the premise that coding was a stable, scalable skill almost anyone could learn and parlay into a middle-class job. The premise no longer holds. The layer of work AI handles well—translating a specification into routine code, reproducing standard patterns, debugging predictable errors—is precisely the layer that “learn to code” programs were built around. Supervising AI systems in their work is now a much more relevant skill. So understanding the outputs AI systems produce will become very important. To help people develop such skills, we should require universities, community colleges, and professional programs to embed AI literacy, data literacy, prompt-based workflow skills, verification skills, and domain judgment into ordinary degrees. Every graduate should know how to use AI tools, check their output, understand their limits, and combine them with human expertise. This matters even for graduates entering occupations that look relatively safe from AI, such as those in health care. Almost every job contains tasks—drafting, summarizing, scheduling, research, basic data work, routine communication—for which AI is already a substantial productivity tool. The competition most young workers will experience is not human versus machine but colleague versus AI-augmented colleague. For most young workers, the realistic path to making themselves valuable is not to avoid AI but to become fluent in the technology and combine that with domain judgment, contextual reasoning, and human relationship skills. To this end, schools should emphasize paid co-ops, apprenticeships, and employer-linked projects so students build judgment in real workplaces before they graduate. Governments should also create targeted tax credits, wage subsidies, and training grants for employers that hire early-career workers into structured, AI-augmented roles. The architecture for this kind of conditional, behavior-linked subsidy already exists in US tax policy. What is missing is a version of these instruments built specifically around early-career AI-augmented work. Firms, for their part, should stop making hiring decisions based only on short-run cost savings from AI. Young workers are not valuable only for the tasks they perform this quarter. Their value lies in learning, skill formation, institutional memory, and future productivity. Entry-level hiring is not just an expense. It is an investment in the future stock of judgment inside the firm. The most effective AI-augmented senior workforce of the late 2030s will be drawn overwhelmingly from the junior cohort of today. Firms that automate away the learning stage may improve their immediate margins but find themselves, a decade from now, without anyone who understands how their own AI-driven workflows actually behave. Students graduating this spring and next face a tough labor market in transition. AI fluency is becoming a commodity. Domain expertise without AI fluency is being outpaced. The combination is what is genuinely scarce. The mechanical engineer with knowledge of manufacturing and AI proficiency; the software programmer with knowledge of financial services who is also a whiz at AI—these are the types of people who will be in demand. Georgios Petropoulos is an assistant professor at the USC Marshall School of Business. His research focuses on the implications of information technologies for innovation, competition policy, and labor markets.",
+      "published_at": "2026-05-26T09:00:00+00:00",
+      "summary": "AI로 인한 대량 실업의 전반적 증거는 아직 제한적이지만, MIT Technology Review는 AI가 취업 시장의 진입 단계를 조용히 약화시키고 있다는 우려스러운 신호를 분석했습니다. 집계 고용 지표는 안정적이지만 사회초년생과 저경력자들이 경력 사다리의 첫 번째 발판을 잃어가고 있다는 증거가 표면 아래에 잠재합니다. AI의 경제적 영향이 불균등하게 분배될 수 있으며, 특히 미래 노동력 양성에 구조적 위기를 초래할 수 있음을 경고합니다. AI 도입의 사회적 영향을 집계 통계만으로는 파악하기 어렵다는 점을 지적하며, 더 세밀한 정책적 대응의 필요성을 강조합니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "a3bfbaeb-1bdb-4b7f-a269-ec9c40ec08ac",
+      "title": "ReCA: Multi-Shot Long Video Extrapolation via Recursive Context Allocation",
+      "url": "https://huggingface.co/papers/2605.26525",
+      "source": "hf_papers",
+      "content": "Minute-scale cinematic video generation is a central challenge for generative video models. Existing paradigms address only fragments of this challenge: single-shot extrapolation preserves an anchor but lacks cinematic structure, while multi-shot storytelling imposes structure yet remains free to invent its visual states rather than continue an observed one. We define Multi-Shot Video Extrapolation (MSVE), a task that extends an observed frame or clip into a sequence of cinematically structured shots while preserving anchor state and advancing narrative intent. This setting operates under the finite per-call generation budget of short-video models. We identify three coupled bottlenecks: (1) global planners over-specify unsupported details from full screenplays; (2) shot-level prompts dilute task-relevant state when carrying the complete story; and (3) temporal chaining turns generated frames into a lossy memory in which identity, scene, object, and action state decay. MSVE reveals that long-video failure is not merely a limitation of context length, but a failure of context allocation. We propose Recursive Context Allocation (ReCA), an inference-time framework that allocates context hierarchically across planning and generation. ReCA recursively decomposes MSVE into context-bounded subproblems, invokes frozen generators at leaf nodes, and propagates structured state updates across time. To evaluate this setting, we further propose MSVE-Bench and NB-Q, a source-grounded protocol with prompts purpose-built for 3 to 5 minute long-video generation, a regime not addressed by existing short-clip benchmarks. Compared to previous methods, ReCA improves average normalized score by 8 to 16 percent over the strongest competing controller and improves multi-shot consistency metrics by 28 to 43 percent. View the project page at https://reca.vmv.re.",
+      "published_at": "2026-05-26T04:16:56+00:00",
+      "summary": "ReCA(Recursive Context Allocation)는 분 단위의 장편 영화적 비디오 생성을 위한 Multi-Shot Video Extrapolation이라는 새로운 문제를 정의하고 해결합니다. 단일 샷 외삽의 구조 부재와 다중 샷 스토리텔링의 시각적 불연속성 문제를 재귀적 컨텍스트 할당으로 동시에 극복합니다. 관찰된 영상의 연속성을 유지하면서 영화적 구조를 갖춘 장편 비디오 생성에서 중요한 이정표가 될 것으로 기대됩니다. Sora 등 비디오 생성 모델의 핵심 한계인 장편·일관성 문제를 해결하는 기술적 기여로 영화·미디어 제작 자동화에 실용적 가치가 있습니다.",
+      "category": "비디오 생성",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "005d3503-f2d8-4a8f-9b41-317d20bb6b3b",
+      "title": "LocateAnything: Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding",
+      "url": "https://huggingface.co/papers/2605.27365",
+      "source": "hf_papers",
+      "content": "Vision-language models (VLMs) commonly formulate visual grounding and detection as a coordinate-token generation problem, serializing each 2D box into multiple 1D tokens that are learned and decoded largely independently. This token-by-token decoding mismatches the coupled structure of box geometry and creates a practical inference bottleneck due to strictly sequential generation. We introduce LocateAnything, a unified generative grounding and detection framework based on Parallel Box Decoding (PBD). By decoding geometric elements such as bounding boxes and points as atomic units in a single step, LocateAnything preserves intra-box geometric coherence and unlocks substantial parallelism. We show that PBD improves both decoding throughput and localization accuracy. We further develop a scalable data engine and curate LocateAnything-Data, a large-scale dataset with more than 138 million training samples, substantially increasing data diversity for high-precision localization. Extensive evaluations show that LocateAnything advances the speed-accuracy frontier, achieving significantly higher decoding throughput while improving high-IoU localization quality across diverse benchmarks. The results highlight the complementary benefits of Parallel Box Decoding and large-scale training data in enabling efficient and precise unified visual grounding and detection.",
+      "published_at": "2026-05-26T17:59:12+00:00",
+      "summary": "LocateAnything은 시각-언어 모델(VLM)의 비주얼 그라운딩 태스크에서 2D 박스를 독립적인 1D 토큰으로 직렬화하는 기존 방식의 구조적 불일치 문제를 해결합니다. 병렬 박스 디코딩(Parallel Box Decoding)을 도입하여 박스 지오메트리의 결합 구조를 반영함으로써 추론 속도와 탐지 품질을 동시에 향상시켰습니다. 순차적 생성 방식의 추론 병목 문제를 해소하여 실시간 비주얼 그라운딩 응용에 실질적인 성능 향상을 제공합니다. 비주얼 그라운딩과 객체 탐지 분야에서 VLM의 실용적 배포를 가속화할 수 있는 중요한 기술적 기여입니다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "510ae5b9-841e-428f-ab2f-fb5ba1e36980",
+      "title": "국방 AI·무인체계 시대…김득화 펀진 대표, “안정적 네트워크·피지컬 AI 기술 주권 확보가 핵심”",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40237",
+      "source": "korean",
+      "content": "국방·모빌리티 특화 버티컬 AI 전문 플랫폼 기업 펀진(Funzin)의 김득화 대표이사가 지난 26일, 미래국방전략위원으로 경남 진해 해군잠수함사령부에서 열린 제1회 미래국방전략위원회에 참석해 인공지능(AI)·무인체계 시대를 대비하기 위한 핵심 국방 기술 방향을 제언했다.\n\n이재명 대통령이 위원장을 맡고 있는 미래국방전략위원회는 인공지능 등의 과학기술 강군을 지향하는 국방개혁의 성공적인 추진과 미래 전력 발전 방향을 논의하기 위해 구성된 대통령 직속 정책 자문기구다.\n\n이날 회의에는 이재명 대통령을 비롯해 미래국방전략위원회 위원, 관계 부처 장관, 각 군 참모총장 및 해병대사령관, 잠수함 현역·예비역 승조원, 조선·원자력 업계 관계자, 해군사관학교 생도 등 160여 명이 참석했다.\n\n이번 회의는 미래 안보 환경 변화에 대응하고 대한민국을 전방위적 위협으로부터 보호할 수 있는 자주국방 역량 구축 방안을 논의하기 위해 마련됐다. 특히 첫 회의에서는 핵추진잠수함 개발 기본계획, 전시작전통제권 조기 회복, AI·무인전투체계 중심의 군 전환 방향 등을 중심으로 미래 전장 환경 변화와 첨단 기술 기반 국방 혁신 전략이 집중 논의됐다.\n\n이날 김득화 대표는 AI·무인전투체계 시대를 대비하기 위한 핵심 과제로 안정적인 전술 통신망 확보와 독자적인 ‘K-국방 월드모델(World Model)’ 구축 필요성을 강조했다.\n\n김 대표는 “안정적인 전술 통신망 확보를 위해 전투원·드론·지휘소를 하나로 연결하는 차세대 기동형 통합통신체계 사업이 흔들림 없이 추진돼야 하며, 조기 전력화 검토도 필요하다”고 밝혔다.\n\n이어 “민간 통신 기술 발전 속도에 맞춰 군 통신 기술 역시 함께 진화할 수 있는 제도적 기반 마련이 중요하다”며 “AI 기반 무인전투체계의 실질적인 전투력은 안정적인 네트워크 환경 위에서 완성된다”고 설명했다.\n\n또한 김 대표는 “드론과 로봇이 스스로 판단하고 군집 형태로 작전을 수행하는 미래 전장 환경에서는 가상 전장 기반 AI 학습 플랫폼인 ‘월드모델’ 기술 확보가 핵심”이라고 강조했다.\n\n특히 김 대표는 “안보와 피지컬 AI(Physical AI) 기술 주권 확보를 위해 우리 지형과 작전 환경에 최적화된 독자적인 ‘K-국방 월드모델’을 구축해야 한다”며 “첨단 소프트웨어 기술 중심의 미래 국방 체계를 빠르게 마련해야 한다”고 말했다. 이어 “미래국방전략위원회를 통해 국방부 및 관계 기관과의 협력 기반을 확대하고, 대한민국 AI 국방 역량 강화를 위한 정책·기술 협력을 지속 확대해 나가겠다”고 덧붙였다.\n\n김 대표는 “병력 자원 급감 시대에 무인전투체계 중심 군대로의 전환은 미래 안보 강국으로 가기 위한 필수 과제”라며 “대한민국도 AI·무인체계 중심의 미래 국방 역량 확보에 속도를 내야 한다”고 강조했다. 또한 “미래국방전략위원으로서 첨단 AI 기술과 국방 현장을 연결하는 실질적인 정책 제언과 기술 협력 활동을 통해 대한민국 국방 AI 경쟁력 강화에 기여하겠다”고 밝혔다.\n\n한편, 김득화 대표는 국방 AI 기반 지휘결심지원체계 ‘KWM(Kill-Web Matching)’, AI 전자기 스펙트럼 분석체계 ‘KWM-Ocelot’, 합성데이터 생성 플랫폼 ‘이글아이(EagleEye)’ 등을 개발해 온 국방 AI 전문가다. 펀진은 AI 기반 지휘결심지원, 전자기 스펙트럼 분석, 합성데이터 생성, 월드모델 기술 등을 기반으로 AI·무인체계 중심의 미래 전장 환경에 대응하기 위한 연구개발과 정책 제언 활동을 이어가고 있다.",
+      "published_at": null,
+      "summary": "국방·모빌리티 특화 버티컬 AI 전문 기업 펀진의 김득화 대표가 이재명 대통령이 위원장인 대통령 직속 미래국방전략위원회에서 국방 AI 기술 방향을 제언했습니다. 안정적인 네트워크 확보와 피지컬 AI 기술 주권 내재화를 핵심 과제로 제시하며, 단순한 AI 활용을 넘어 자국 기술력 확보가 필요함을 강조했습니다. 이재명 대통령을 포함한 160여 명이 참석한 이번 회의에서 AI·무인체계 기반 국방 혁신의 방향과 전략이 논의되었습니다. 한국이 국가 전략 차원에서 AI 국방 기술 주권을 체계적으로 추진하고 있음을 보여주는 중요한 사례로 한국 AI 생태계에 큰 의미를 지닙니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
