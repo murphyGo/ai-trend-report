@@ -1,0 +1,275 @@
+{
+  "id": "78fd9984-2648-4561-934b-2e3727d3ad1b",
+  "created_at": "2026-06-09T03:33:36.713919",
+  "articles": [
+    {
+      "id": "fe8c2eda-6275-4569-9f97-2455c7550ecb",
+      "title": "Company",
+      "url": "https://openai.com/index/openai-submits-confidential-s-1/",
+      "source": "openai",
+      "content": "June 8, 2026\n\nWe recently submitted a confidential S-1. We expect it to leak so we’re just announcing it. We have not decided on timing yet; it may be a while because there are things we want to do that are likely easier as a private company. But it’s a complicated set of tradeoffs and this gives us the option to go public sooner if that ends up being best.\n\nThis announcement is being made pursuant to Rule 135 under the Securities Act of 1933, as amended, and does not constitute an offer to sell or the solicitation of an offer to buy any securities. Any offers, solicitations of offers to buy, or any sales of securities will be made in accordance with the registration requirements of the Securities Act.\n\nCompanyJun 8, 2026\n\nCompanyJun 8, 2026\n\nCompanyMay 18, 2026",
+      "published_at": "2026-06-08T14:00:00",
+      "summary": "OpenAI가 비밀 S-1 서류를 SEC에 제출했다고 공식 발표했다. 이는 기업공개(IPO)를 위한 필수 절차로, 경쟁사 Anthropic이 먼저 IPO 서류를 제출한 지 약 일주일 만에 이뤄진 것이다. 회사 측은 아직 상장 시점을 결정하지 않았으며, 비공개 기업 상태에서 더 유리한 사업들이 남아 있어 상장이 다소 늦어질 수 있다고 밝혔다. 이번 발표는 글로벌 AI 선두 기업들이 공개 시장으로 진입하는 신호탄으로 주목받고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d26ce190-7575-4f83-bd58-5945d53c2b39",
+      "title": "Company",
+      "url": "https://openai.com/index/built-to-benefit-everyone-our-plan/",
+      "source": "openai",
+      "content": "June 8, 2026\n\nBy Sam Altman and Jakub Pachocki\n\nEvery few generations, a new technology changes everything.\n\nImagine electricity reaching a rural American town in the 1920s. Before power lines arrived, daily life was shaped by physical limits: hauling water, washing clothes by hand, preserving food with ice, and ending much of the day when the sun went down. Electricity did not transform every household overnight, and many of its benefits reached people unevenly. But as access spread, ordinary life changed. Light at night extended the day. Electric pumps, appliances, and refrigeration reduced some of the hardest daily work. Radios brought news, music, and connection from hundreds of miles away into homes and community spaces.\n\nThe first promise of electricity was practical, but its deeper impact came from the new possibilities it opened as more people could use it. With time, a lot of new possibilities emerged, with machines and computers greatly accelerating progress in medicine, engineering, and many other fields.By the end of the 20th century the average lifespan had increased by over 20 years and the median inflation-adjusted income tripled or so. These gains were driven in no small part due to the advances in healthcare, sanitation, and living standards, many of which were enabled or accelerated by widespread electrification and related technological progress.\n\nThis is happening again with AI. AI will soon be capable of extraordinary things. But the point is not the technology by itself. The point is what people can do with it. It can help someone navigate a medical bill, learn a new skill, start a small business, care for an aging parent, understand a legal or financial decision, turn an idea into something real, or make a scientific discovery.\n\nWhile the wonder of light at night probably wore off pretty fast, what people decided to do with it did not. And because technology has been a reliable way to deliver prosperity over time, we think AI should be available to everyone to use as much as they need, where and how they need it.\n\nThat future will not happen automatically. Transformative technologies can concentrate power, or they can broaden it. They can make life easier for a few, or they can expand opportunity for many. Our approach is rooted in the belief that AI should work for people: helping them pursue their own goals, increasing their capabilities, and distributing the benefits of this technology as widely as possible.\n\nOur first commitment is to build AI in service of humanity. That means we want to empower people broadly, not see power concentrated among a few companies, governments, or individuals. We believe the safer future is one where power is broadly distributed, so more of the world can participate in building a resilience ecosystem.*\n\nWe are optimistic about AI because we believe it can expand human capability and prosperity. But we are also clear-eyed about the risks. Powerful systems must remain safe, aligned with human intent, and subject to human control. Our mission at OpenAI is to ensure that AGI benefits all of humanity. That means building systems that help people do more of what they choose, not systems that replace human judgment about what matters.\n\nEntirely automating everything is not the future we want. It would be unfulfilling, and it would be dangerous. AI should help people pursue their goals, not become untethered from them. As AI systems become more capable, the human role becomes more important: setting direction, making tradeoffs, applying judgment, and bringing values, taste, care, and responsibility to the work.\n\nA key long-term role for people will be deciding what is worth doing.\n\nWe believe that AI doing AI research will become the determining factor of the pace of progress within the next few years. That matters because alignment is itself a hard research problem. To make fast and deep progress, our researchers will need AI systems that can help test ideas, find mistakes, explore alternatives, and iterate alongside us.\n\nBut faster technical progress makes human judgment and public coordination more important, not less. The future should be shaped by people, institutions, and societies, not only by the companies building the most capable systems.\n\nAs frontier AI development continues, we expect national and global coordination to become more important. We have long believed there should ultimately be an international organization that helps coordinate leading AI efforts to reduce catastrophic risk. Cooperation and shared safety standards are an important part of the path forward, especially because the incentives around commercial and national competition are hard to escape. One goal of such an organization should be to make it possible for the world to take coordinated action, including slowing frontier development when needed, so societal resilience, safety, and alignment can keep pace.\n\nBuild an automated AI researcher—an AI system that can accelerate and increasingly automate the research process itself, while remaining steerable, accountable, and connected to people. Our internal belief is that by March of 2028 we may have a significant fraction of our research being done by AI systems in tandem with our own researchers. To make sufficient progress on alignment, we believe we will need AIs to iterate alongside us. This will help us navigate the transition to the post-AGI world so that we collectively decide the path toward the future.\n\nAccelerate the economy, by accelerating scientific progress, productivity, and economic growth, while working to ensure the gains are widely shared. Everyone should have an opportunity for a meaningful share in the prosperity AI creates.\n\nGive everyone on Earth a personal AGI, empowering them to benefit from one of humanity's most transformative technologies in whatever way they choose.\n\nTo be able to deliver on this, we are entering the third phase of OpenAI.\n\nThe first phase of OpenAI was about doing research toward AGI. The second phase began when our research became relevant to the real world and we became a product company: deploying our systems, learning from how people used them, and making continued progress toward AGI that is safe and aligned with our mission.\n\nNow we are entering the third phase. The economy is beginning to reshape around AI. The central question now is how to make advanced AI abundant, affordable, safe, useful, and easy enough for every person and organization to benefit from it. Frontier capability is only part of the job. The bigger task is turning that capability into tools people can actually use to thrive.\n\nAbove all, we believe a broad distribution of power will help lead to a better future. Human history shows that concentrated power creates fragility, while widely shared power makes societies more resilient, adaptable, and free.\n\nThat is why access matters. It is also why safety, privacy, affordability, open ecosystems, and public oversight matter.\n\nA good AI future cannot be one where a small number of institutions control most of the capability and most of the upside. It should be a future where many people, companies, communities, and countries can build, benefit, and hold power. We believe this transformation should belong to everyone.\n\nIf we get this right, AI can become a foundation for greater productivity, creativity, scientific progress, and economic opportunity for the many, and we will achieve our mission: to ensure AGI benefits all of humanity.\n\n*AI resilience refers to the collective organizations, systems, and individuals that society could put in place to anticipate, withstand, adapt to, and rapidly recover from AI-driven disruptions. For instance, the automobile transformed society, but they only became broadly beneficial because societies built systems around them: seatbelts, traffic laws, drivers’ licenses, crash testing, and road infrastructure. The goal wasn’t to stop people from driving—it was to make a powerful technology resilient enough for widespread use.\n\nCompanyJun 8, 2026\n\nCompanyJun 8, 2026\n\nCompanyMay 18, 2026",
+      "published_at": "2026-06-08T01:30:00",
+      "summary": "샘 올트만(Sam Altman)과 야쿠브 파초키(Jakub Pachocki)가 공동 작성한 OpenAI의 비전 문서로, AI가 전력(electricity)처럼 모든 사람에게 혜택을 줘야 한다는 철학을 담고 있다. OpenAI는 2028년 3월까지 연구의 상당 부분이 AI-인간 협력으로 이뤄질 것으로 전망하며, '자동화된 AI 연구자(Automated AI Researcher)' 구축을 핵심 목표로 제시했다. 또한 모든 지구인에게 개인화된 AGI를 제공하는 것이 장기 목표이며, 권력 집중을 방지하고 글로벌 협력을 통한 안전한 AI 개발을 강조했다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "396bebcb-211f-47c9-a749-c723ec968010",
+      "title": "Company",
+      "url": "https://openai.com/index/economic-research-exchange/",
+      "source": "openai",
+      "content": "June 8, 2026\n\nA new program to support rigorous external research on the economic impacts of AI.\n\nAI is reshaping how people work, how businesses operate, and how ideas are created and shared. Understanding those changes will require more than anecdotes. It will require rigorous empirical research, grounded in real-world evidence and pursued by a broad community of researchers.\n\nToday, OpenAI is launching the OpenAI Economic Research Exchange, a new platform to support high-impact external research on the economic effects of AI. Through the Exchange, selected researchers will conduct research through structured, project-based collaborations with OpenAI Economic Research, with the goal of producing credible, independent evidence on how AI is affecting workers, firms, institutions, and the broader economy.\n\nWe are seeking projects that address important questions regarding the economic impacts of AI. Proposals should explain how carefully governed, privacy-protected use of OpenAI tools can help answer these questions. The goal is to enable rigorous and credible research that would extend beyond traditional datasets alone, by utilizing OpenAI Tools and datasets. And this while maintaining clear safeguards for user privacy and responsible data use.\n\nSelected researchers will undertake carefully scoped projects with defined milestones, data governance, and review processes. We welcome proposals from researchers with strong empirical skills and relevant expertise in applied causal inference, measurement, labor economics, productivity, firms, education, entrepreneurship, public finance, regional economics, development, inequality, or related fields.\n\nThe Exchange builds on OpenAI’s broader efforts to improve measurement of AI’s economic effects, including OpenAI Signals. By supporting a portfolio of external research collaborations, we hope to expand the evidence base available to researchers, policymakers, businesses, and the public as they navigate a period of rapid technological change.\n\nProposals will be evaluated based on methodological rigor, feasibility, fit with Exchange priorities, clear milestones, and the potential to contribute credible external evidence on AI's economic impacts.\n\nFor more information about the application process, see the Request for Proposalshereor contacteconresearch@openai.com⁠. Applications are now openhereand will close July 5, 2026. We will review submissions and notify selected researchers by July 31, 2026.\n\nCompanyJun 8, 2026\n\nCompanyJun 8, 2026\n\nCompanyMay 18, 2026",
+      "published_at": "2026-06-08T00:00:00",
+      "summary": "OpenAI가 AI의 경제적 영향을 분석하는 외부 연구자들을 지원하는 새로운 플랫폼 'OpenAI Economic Research Exchange'를 출범시켰다. 이 프로그램은 노동경제학, 생산성, 불평등, 교육 분야 연구자들이 OpenAI 도구와 데이터셋에 접근해 엄밀한 인과추론 연구를 수행할 수 있도록 지원한다. 제안서 모집은 2026년 7월 5일까지이며, AI가 일자리·기업·경제 전반에 미치는 영향에 대한 독립적이고 신뢰할 수 있는 증거 기반 구축이 목적이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "499e4d36-7fbd-4908-b113-638da045843d",
+      "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple Intelligence and more",
+      "url": "https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/",
+      "source": "techcrunch",
+      "content": "Apple primarily made the case for an improved experience with its longstanding Siri assistant, which like most other announcements had a hefty helping of AI.",
+      "published_at": "2026-06-08T19:41:32+00:00",
+      "summary": "Apple이 WWDC 2026에서 iOS 27, macOS, visionOS 등 차세대 소프트웨어 플랫폼과 함께 전면 개편된 'Siri AI'를 선보였다. AI 기반 사진 편집, Shortcuts 자동화, Safari 강화, Image Playground 업그레이드 등 Apple Intelligence가 플랫폼 전반에 더 깊이 통합됐다. Apple은 이번 발표를 통해 소비자 AI 경쟁에서 적극적인 입지를 강화하고, $250M 허위광고 합의 이후 실제 작동하는 AI 데모를 강조했다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "36f8947e-ad94-46e5-befa-4eebb6151279",
+      "title": "Apple’s long-awaited AI Siri overhaul is finally here",
+      "url": "https://techcrunch.com/2026/06/08/apples-long-awaited-ai-siri-overhaul-is-finally-here/",
+      "source": "techcrunch",
+      "content": "The idea behind the new \"Siri AI\" is to turn the assistant from a voice controlled assistant into an AI companion that can do a lot more.",
+      "published_at": "2026-06-08T17:56:21+00:00",
+      "summary": "Apple이 WWDC 2026에서 Siri를 음성 명령 비서에서 지능적인 AI 동반자로 전환하는 'Siri AI' 전면 개편을 발표했다. 새로운 Siri는 독립 앱으로 분리되며, 복잡한 멀티스텝 작업 처리, 맥락 이해, 개인화 응답 능력이 크게 향상됐다. 카메라와 연동한 실시간 시각 인식(예: 영수증 인식 후 더치페이 지원), AI 기반 워크플로우 자동화 등 실생활 AI 에이전트 기능이 강화됐다. 이는 Google Assistant, ChatGPT 등과의 경쟁에서 Apple이 본격적인 AI 어시스턴트 레이스에 합류했음을 알리는 신호다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "919ecdae-c806-4cc1-9a82-820de2179896",
+      "title": "Apple bets cheaper AI will woo small developers",
+      "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+      "source": "techcrunch",
+      "content": "As AI experimentation grows more expensive, Apple is waiving cloud API costs for developers with fewer than 2 million first-time App Store downloads.",
+      "published_at": "2026-06-08T20:53:55+00:00",
+      "summary": "Apple이 연간 앱스토어 첫 다운로드 200만 건 미만의 소규모 개발자들에게 클라우드 AI API 비용을 무료로 제공한다고 발표했다. AI 실험 비용이 급증하는 환경에서 소규모 개발자들도 Apple Intelligence API를 활용해 AI 기능을 구현할 수 있도록 지원하는 정책이다. 이는 Apple 생태계에서의 AI 앱 개발을 촉진하고 개발자 커뮤니티를 자사 AI 플랫폼으로 끌어들이려는 전략적 행보로 해석된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9842890f-5271-4a78-a56d-08ee499f06df",
+      "title": "Train Models Faster with JAX and MaxText Using NVFP4 on NVIDIA Blackwell",
+      "url": "https://developer.nvidia.com/blog/train-models-faster-with-jax-and-maxtext-using-nvfp4-on-nvidia-blackwell/",
+      "source": "nvidia",
+      "content": "Pre-training frontier LLMs comes down to throughput. When training spans trillions of tokens across thousands of accelerators, every percentage point of step...Pre-training frontier LLMs comes down to throughput. When training spans trillions of tokens across thousands of accelerators, every percentage point of step time can add up to days of training and substantial compute costs. Numerical precision is one of the highest-leverage knobs available, but low- bit mixed-precision pretraining is hard to get right. To address this… Source",
+      "published_at": "2026-06-08T18:18:06+00:00",
+      "summary": "NVIDIA가 새로운 Blackwell GPU에서 NVFP4 수치 정밀도를 활용한 JAX·MaxText 기반 LLM 사전학습 속도 향상 방법을 소개했다. 저비트 혼합 정밀도 사전학습은 최고 레버리지 최적화 수단이지만 구현이 까다로운데, NVFP4는 수치 안정성과 런타임 성능, 메모리 효율을 동시에 개선한다. 수조 개의 토큰, 수천 개의 가속기를 사용하는 프런티어 LLM 학습에서 스텝 시간을 줄이면 학습 비용과 기간이 대폭 단축되어 실질적인 경쟁력 향상으로 이어진다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1cfea7ce-f2bd-4165-a3c9-a99b266fb254",
+      "title": "AI 에이전트가 코드를 실험하고 개선하는 법",
+      "url": "https://d2.naver.com/helloworld/8061804",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 2026(5월)에서 발표되었던 세션을 공개합니다. 발표 내용 Karpathy의 AutoResearch 방법론을 라이브 스트리밍에 적용하여, AI 에이전트가 코드를 자율적으로 수정·빌드·실험·판정하는 루프를 구축하고 스트리밍 품질(QoE)을 17% 개선한 사례를 소개합니다. 발표 대상 스트리밍/플레이어 개발에 관심 있는 엔지니어 AI 에이전트를 실무 코드 최적화에 활용하고 싶은 개발자 ABR, QoE, LL-HLS 등 미디어 기술을 처음 접하는 엔지니어 목차 EPISODE 1. 왜 시작했나 라이브 스트리밍 시장과 저지연의 과제 학계 SOTA vs 산업 현실 — EWMA에 머물러 있는 hls.js - QoE — 이 실험의 유일한 점수판 사람이 직접 튜닝하면 드는 비용 EPISODE 2. 어떻게 만들었나 Karpathy Agent Loop와 7가지 비타협 원칙 자율 루프 9 Phase 계층적 검증 - Regression Guard — 통계적 엄격성과 Context Rot 방지 에이전트의 3중 기억 장치 소개 실험 인프라 소개 EPISODE 3. 무슨 일이 있었나 실험 전체 iteration 맵 주요 keep 분석 주요 실패 분석 HALT 케이스 분석 EPISODE 4. 무엇을 얻었나 최종 결과 — 7개 전체 시나리오 개선 5시간 사람 / 60시간 AI = 12배 레버리지 한계와 다음 단계 Take-away ◎ NAVER Engineering Day란? NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다.",
+      "published_at": "2026-06-08T11:59:40+00:00",
+      "summary": "네이버 엔지니어링 데이 2026에서 공개된 세션으로, Andrej Karpathy의 AutoResearch 방법론을 라이브 스트리밍 최적화에 적용한 실전 사례를 소개한다. AI 에이전트가 코드를 자율 수정·빌드·실험·판정하는 루프를 구축했으며, 5시간 인간 작업 대비 60시간 AI 작업으로 12배의 레버리지를 달성해 스트리밍 QoE를 17% 개선했다. 이 사례는 단순 코드 생성을 넘어 에이전트가 실제 엔지니어링 의사결정을 자율 수행할 수 있음을 보여주는 국내 기업의 구체적인 실증 사례다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "471568a9-6056-492e-86f6-253f11d77db6",
+      "title": "\"일상 동작만으로 근감소증 진행 추적하는 인공지능\"... GIST·KIST·전남대병원,  물리 기반 AI 프레임워크 'MAISE' 개발",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40402",
+      "source": "korean",
+      "content": "광주과학기술원(GIST·지스트, 총장 임기철)은 AI융합학과 강지연 교수 연구팀이 한국과학기술연구원(KIST), 빛고을전남대학교병원과 공동으로 노년층의 일상 동작만으로 근감소증 진행에 따른 근기능 변화를 추적·분석할 수 있는 인공지능(AI) 기술 ‘MAISE(Motion-AI Integrated Surveillance for the Elderly)’를 개발했다고 9일 밝혔다.\n\n이 기술은 별도의 센서 착용이나 고가 장비 없이 의자에서 일어나기, 물건 집기 등 일상적인 움직임만으로 발목·무릎·고관절의 근기능 상태를 추정하고 근감소증 진행 정도를 수치로 확인할 수 있는 것이 특징이다.\n\n근감소증은 나이가 들면서 근육량과 근력이 비정상적으로 감소하는 질환으로, 낙상과 골절 위험을 높이고 일상생활의 독립성을 떨어뜨린다.\n\n특히 증상이 눈에 띄기 시작할 때는 이미 기능 저하가 상당히 진행된 경우가 많아 조기 발견이 중요하지만, 현재는 악력, 보행속도, 의자에서 일어서기 검사 등 간접적인 기능 검사나 근육량 측정을 위한 영상 검사에 주로 의존하고 있어 일상생활 속에서 서서히 진행되는 기능 저하를 지속적으로 관찰하는 데 한계가 있다.\n\n이를 극복하기 위해 공동연구팀은 노년층의 일상생활에서 수행하는 움직임만으로 근감소증을 관찰할 수 있는 AI 기술 ‘MAISE’를 개발했다. 특히, 관절의 힘을 계산하는 데 필요한 지면반력(사람이 바닥을 밀 때 바닥으로부터 받는 힘)을 별도의 측정 장비 없이 추정할 수 있도록 AI 모델에 물리 정보를 함께 학습시켰다.\n\n일반적으로 관절의 힘을 정밀하게 분석하려면 힘 측정판(force plate)과 같은 전문 장비가 필요하지만, 연구팀은 사람의 움직임 정보만으로 이를 추정할 수 있도록 해 일상 환경에서도 근기능을 분석할 수 있는 기반을 마련했다.\n\n그 결과, 물리 정보를 적용한 모델은 학습에 사용되지 않은 노년층 동작 데이터에서도 발이 바닥을 딛는 위치를 나타내는 ‘압력중심’ 예측 오차를 최대 49.3%, 지면반력 오차를 최대 6.5% 줄였다. 이를 통해 AI가 사람의 움직임을 보다 정확하게 분석해 실제 근기능 상태를 안정적으로 추정할 수 있음을 확인했다.\n\n연구팀은 근감소증 노인과 건강한 노인 총 28명을 대상으로 의자에서 일어서기, 물건 집기, 발판 오르기 등의 동작을 수행하도록 한 뒤, MAISE가 분석한 관절 토크(관절이 움직일 때 필요한 회전 방향의 힘) 정보가 실제 근기능 상태와 근감소증 정도를 얼마나 정확하게 반영하는지 검증했다.\n\n분석 결과, MAISE가 추정한 관절 토크 지표는 악력, 보행속도, 5회 의자에서 일어서기 시간 등 현재 임상에서 사용되는 주요 근감소증 평가 지표와 뚜렷한 상관관계를 보였다. 또한 근감소증군과 건강군 사이에 관절 토크 패턴의 뚜렷한 차이가 나타나 일상 동작만으로도 비정상적 근기능 저하를 정량적으로 평가할 수 있음을 확인했다.\n\n강지연 교수는 “이번 연구는 일상 동작에 숨어 있는 생체역학적 정보를 활용해 근감소증을 정량적으로 관찰하고 평가할 수 있음을 보여준 것으로, 병원 중심의 일회성 검사를 넘어 일상 기반의 지속적인 근기능 추적 가능성을 제시했다”며 “향후에는 카메라 기반 비접촉 모니터링 기술로 발전시켜 근감소증의 조기 발견과 맞춤형 관리에 활용될 수 있을 것으로 기대한다”고 밝혔다.\n\nAI융합학과 강지연 교수가 지도하고 조재범 석사가 수행한 이번 연구는 과학기술정보통신부의 재원으로 한국연구재단 바이오·의료기술개발사업과 정보통신기획평가원 인공지능대학원지원사업의 지원을 받았다.\n\n한편, 이번 연구 결과는 재활공학 분야 최상위 국제학술지 신경공학 및 재활 저널(Journal of NeuroEngineering and Rehabilitation)에 '노인의 수동적 근감소증 모니터링을 위한 일상생활 동작으로부터 관절 토크 추정(Joint torque estimation from daily living motion for passive sarcopenia monitoring in older adults-다운)'란 제목으로 지난 4월 5일에 게재됐다.",
+      "published_at": null,
+      "summary": "광주과학기술원(GIST), KIST, 전남대병원이 공동 개발한 AI 기술 'MAISE'는 센서나 고가 장비 없이 의자 일어서기·물건 집기 등 일상 동작만으로 노년층의 근감소증 진행을 추적한다. 물리 정보를 AI 모델에 함께 학습시켜 지면반력을 추정하는 방식으로, 압력중심 예측 오차를 최대 49.3%, 지면반력 오차를 최대 6.5% 줄였다. 근감소증 노인과 건강한 노인 28명 대상 검증에서 MAISE 관절 토크 지표가 임상 평가 지표와 뚜렷한 상관관계를 보였으며, 국제 재활공학 저널(JNER)에 게재됐다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1927c3bc-f658-4e91-8417-ddd5727c71b5",
+      "title": "Attack Selection in Agentic AI Control Evaluations Meaningfully Decreases Safety",
+      "url": "https://arxiv.org/abs/2606.06529",
+      "source": "arxiv",
+      "content": "arXiv:2606.06529v1 Announce Type: new \nAbstract: An attacker that strategically chooses when to attack is much harder to catch than one that attacks indiscriminately. AI control is a safety framework for deploying capable but untrusted AI agents under the oversight of a weaker, trusted monitor and a limited human audit budget. Control evaluations stress-test these protocols by pitting a red-team attack policy against the blue-team monitor, but current evaluations typically assume attackers that do not strategically select when to attack. We study this capability, attack selection, in agentic settings by decomposing attack decisions into a start policy, which decides when an attacker should attack, and a stop policy, which decides when an attacker should abort an ongoing attack. Across two agentic settings, BashArena and LinuxArena, both policies substantially lower measured empirical safety without changing the underlying attack capability. At a 1% audit budget, our start policy reduces safety by 20pp on both BashArena and LinuxArena, and our stop policy reduces safety by 20pp on BashArena and 28pp on LinuxArena. These reductions should be interpreted as upper bounds on the effect of attack selection. Existing control evaluations may therefore yield overly optimistic safety estimates against selective attackers. We recommend that future evaluations, system cards, and safety cases elicit attack selection to produce more realistic safety estimates.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "AI 제어(Control) 안전 프레임워크에서 공격자가 전략적으로 공격 시점을 선택하는 '공격 선택(attack selection)' 능력이 안전성 평가에 미치는 영향을 연구했다. BashArena와 LinuxArena 두 에이전트 환경에서, 시작 정책과 중단 정책을 도입했을 때 1% 감사 예산 기준 안전성이 최대 28%p 감소하는 것으로 나타났다. 이는 기존 제어 평가들이 선택적 공격자에 대해 지나치게 낙관적인 안전성 추정치를 제공할 수 있음을 의미하며, 미래의 안전 평가·시스템 카드·안전 사례에서 반드시 공격 선택을 고려해야 한다고 권고한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "fb7e453e-deb5-4559-93e5-6807b3bbbfb0",
+      "title": "OpenSkill: Open-World Self-Evolution for LLM Agents",
+      "url": "https://arxiv.org/abs/2606.06741",
+      "source": "arxiv",
+      "content": "arXiv:2606.06741v1 Announce Type: new \nAbstract: Self-evolving agents requires adaptation after deployment, but existing approaches assume a usable learning loop, such as curated skills, successful trajectories, or verifier signals. Real open-world deployments may provide none of these, offering only a task prompt. In this work, we study open-world self-evolution, where an agent must build both its skills and its own verification signals from scratch, using open-world resources but no target-task supervision. We propose OpenSkill, a framework that bootstraps this loop: it acquires grounded knowledge and verification anchors from documentation, repositories, and the web, synthesizes them into transferable skills, and refines those skills against self-built virtual tasks grounded in the anchors rather than in target answers. The open world thus supplies both the knowledge to be learned and a supervision-independent practice environment, with target-task supervision reserved for final evaluation. Across three benchmarks and two target agents, OpenSkill attains the best automated pass rate while satisfying the no-supervision constraint. Analysis shows its skills transfer across models without model-specific adaptation, and its self-built verifier aligns with ground-truth outcomes despite never accessing them.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "OpenSkill은 타겟 태스크 지도 신호 없이 에이전트가 문서·저장소·웹에서 지식을 습득하고 자체 검증 신호를 구축해 스스로 진화하는 오픈월드 자기진화 프레임워크다. 기존 접근법이 큐레이션된 스킬이나 성공 궤적, 검증기 신호를 전제하는 반면, OpenSkill은 이 모든 것을 처음부터 구축한다는 점이 핵심이다. 세 가지 벤치마크와 두 가지 타겟 에이전트에서 최고 자동 통과율을 달성했으며, 구축된 스킬은 모델 특화 적응 없이도 다른 모델로 전이됐다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3f622d7d-fabd-440b-abae-f0b1ec4d8df3",
+      "title": "Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory",
+      "url": "https://arxiv.org/abs/2606.06523",
+      "source": "arxiv",
+      "content": "arXiv:2606.06523v1 Announce Type: new \nAbstract: Equipping Large Language Models (LLMs) to execute reliable multi-step workflows has become a central challenge in artificial intelligence. Despite recent advances in LLMs' agentic capabilities, most agent systems still lack formal methods for specifying, verifying, and debugging their workflow and execution trajectories. This challenge mirrors a long-standing problem in mathematics, where the ambiguity of natural languages (NLs) motivates the development of formal languages (FLs). Inspired by this paradigm, we propose **Lean4Agent**, to the best of our knowledge, the first framework that uses Lean4, a dependent-type FL to model and verify agent behavior. **Lean4Agent** launches **FormalAgentLib**, an extensible Lean4 library for formally modeling and verifying agent workflows' semantic consistency under explicit assumptions, and enabling localization of execution-time failures revealed by trajectories. Building on **FormalAgentLib**, we further develop **LeanEvolve**, which applies results in **FormalAgentLib** to revise workflows to enhance its capability. Extensive experiments on a hard problem subset of SWE-Bench-Verified and a subset of ELAIP-Bench across 5 leading LLMs indicate that the verification-passing workflows outperform the failing ones by an average of **11.94%**, and **LeanEvolve** further improves SWE performance by **7.47%** on average. Furthermore, **Lean4Agent** establishes a foundation for a new field of using expressive dependent-type FL to formally model and verify agent behavior.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "Lean4Agent는 의존형 형식언어(dependent-type formal language)인 Lean4를 사용해 AI 에이전트의 워크플로우와 실행 궤적을 공식적으로 모델링·검증하는 최초의 프레임워크다. FormalAgentLib 라이브러리와 LeanEvolve 컴포넌트로 에이전트 워크플로우의 의미론적 일관성을 검증하고 실행 실패를 지역화한다. SWE-Bench-Verified에서 검증 통과 워크플로우가 실패 워크플로우 대비 평균 11.94% 우위를 보이며, LeanEvolve는 평균 7.47%의 추가 성능 향상을 달성했다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "aeedbeb9-ab66-49f9-9707-af171703f9e0",
+      "title": "MacArena: Benchmarking Computer Use Agents on an Online macOS Environment",
+      "url": "https://arxiv.org/abs/2606.06560",
+      "source": "arxiv",
+      "content": "arXiv:2606.06560v1 Announce Type: new \nAbstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly, driven in part by standardized online evaluation benchmarks such as OSWorld, which serve both as evaluation tools and as training environments for reinforcement learning. However, macOS remains underserved in this landscape: the only existing benchmark, macOSWorld, covers a narrow slice of first-party applications with simpler tasks, and runs on x86 virtual machines incompatible with Apple Silicon. We introduce MacArena, a benchmark of 421 manually verified tasks spanning 50 applications that combines a curated port of OSWorld tasks, content sourced from macOSWorld, and 49 new macOS-native tasks, all running on Apple's native Virtualization framework on Apple Silicon. We argue that macOS presents distinct GUI challenges beyond what Linux-based benchmarks capture, and our evaluation supports this claim: strong model performance on existing benchmarks can reflect familiarity with task distributions rather than genuine cross-platform GUI competence. Notably, model rankings invert between ported and macOS-native tasks, with a leading model trailing by over 26% on the MacArena subset, suggesting that macOS poses a genuinely harder environment for current GUI agents.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "MacArena는 50개 애플리케이션에 걸친 421개 수작업 검증 태스크를 포함하는 macOS 컴퓨터 사용 에이전트(CUA) 벤치마크로, Apple Silicon 네이티브 가상화 환경에서 실행된다. 기존 Linux 기반 벤치마크(OSWorld)에서 강한 성능을 보인 모델이 MacArena의 macOS 네이티브 태스크에서 26% 이상 뒤처지는 결과를 보였다. 이는 벤치마크 분포 친숙도가 실제 크로스 플랫폼 GUI 능력을 의미하지 않음을 드러내며, macOS가 GUI 에이전트 연구에서 독자적인 도전 과제를 제시함을 보인다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3ccd2c89-55bc-4386-8c5c-0c66f7fbe529",
+      "title": "SafeGene: Reusable Adapters for Transferable Safety Alignment",
+      "url": "https://arxiv.org/abs/2606.06519",
+      "source": "arxiv",
+      "content": "arXiv:2606.06519v1 Announce Type: new \nAbstract: Open-weight LLMs are increasingly fine-tuned into customized assistants, but downstream fine-tuning can weaken safety alignment and make models more vulnerable to malicious prompts, even when the training data is not intentionally harmful. This creates a recurring safety recovery problem as target models are repeatedly updated with new task data or user interactions. We propose SafeGene, a reusable safety-adapter module designed for cross-task reuse within each architecture-compatible model family. Rather than treating safety recovery as a model-specific repair step, SafeGene treats safety capability as an independent, reusable adapter representation decoupled from task-specific updates. This representation is obtained from aligned--degraded model discrepancies, refined into task-transferable safety vectors through data-aware layer selection, and expressed in each downstream task-adapted model via few-shot layer-wise coefficient recalibration. Experiments across multiple model families, downstream tasks, and safety judges show that SafeGene-enhanced models reduce harmful response rates while maintaining downstream performance, outperforming representative safe adaptation methods in safety--utility trade-off.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "SafeGene은 다운스트림 파인튜닝으로 인한 안전 정렬 손상 문제를 해결하는 재사용 가능한 안전 어댑터 모듈이다. 정렬된 모델과 손상된 모델 간의 차이에서 안전 능력을 독립적인 어댑터 표현으로 추출하여 소수 샷 레이어별 계수 재보정을 통해 각 다운스트림 모델에 적용한다. 여러 모델 패밀리, 다운스트림 태스크, 안전 평가 기준에서 유해 응답률을 줄이면서 태스크 성능을 유지했으며, 지속적으로 업데이트되는 커스텀 어시스턴트의 안전 관리 비용을 크게 줄일 수 있는 실용적인 접근법이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9c30faa6-50d4-44c5-b3fa-d10f4e5c02e9",
+      "title": "The Piggyback Hypothesis of Generalization: Explaining and Mitigating Emergent Misalignment",
+      "url": "https://arxiv.org/abs/2606.06667",
+      "source": "arxiv",
+      "content": "arXiv:2606.06667v1 Announce Type: new \nAbstract: The mechanisms behind LLMs' broad over-generalization beyond training examples remain unclear. Emergent misalignment (EM) offers a striking case study: finetuning on narrow tasks induces broad misalignment to semantically-unrelated test domains. In this work, we propose the Piggyback Hypothesis: the chat-template tokens can piggyback the finetuned behaviour onto out-of-domain queries. We validate this hypothesis by showing that subtle perturbations to the prefix (tokens preceding all user queries), or patching the prefix representations with those from the unfinetuned model, can restore alignment without changing the user query. Building on this finding, we propose Token-Regularized Finetuning (TReFT), which regularizes specific token representations during training to mitigate EM. Across different models and multiple EM-inducing datasets, TReFT reduces EM while preserving in-domain learning. On Llama-3.1-8B finetuned on the legal domain, TReFT achieves 33.5% more EM reduction than data interleaving with a retain set of aligned examples. We further show that TReFT extends to other narrow-finetuning settings, including abstention, tool use, and refusal (off-topic generalization is reduced by 54.3% on average), supporting the Piggyback Hypothesis. Broadly, our work highlights that LLMs may learn and generalize in unintended ways and suggests a path toward more constrained finetuning. It also calls for further study of how shared input features can piggyback model behavior across domains.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "이 논문은 LLM 파인튜닝 후 발생하는 '긴급 정렬 이탈(emergent misalignment)' 현상의 메커니즘을 밝힌다. '피기백 가설'은 채팅 템플릿의 프리픽스 토큰이 파인튜닝된 행동을 도메인 외 쿼리에 전파하는 매개체 역할을 한다고 주장한다. 이를 검증하고, 학습 중 특정 토큰 표현을 정규화하는 Token-Regularized Finetuning(TReFT)을 제안했다. Llama-3.1-8B 법률 도메인 파인튜닝에서 TReFT는 retain set 인터리빙 대비 33.5% 더 많은 정렬 이탈을 줄이면서 도메인 내 성능을 유지했다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9e76832a-3558-4c5c-9eef-1502ad5ec2f0",
+      "title": "AEGIS: A Backup Reflex for Physical AI",
+      "url": "https://arxiv.org/abs/2606.06660",
+      "source": "arxiv",
+      "content": "arXiv:2606.06660v1 Announce Type: new \nAbstract: Long-horizon robot manipulation tends to fail gradually: one bad step degrades the state, and the policy spirals into a basin from which it cannot recover. The failure is often visible before it happens. We introduce AEGIS (Activation-probe Early-warning, Gated Inference Switching), a selective escalation method that uses a lightweight probe on a weak policy's frozen activations to detect high-risk steps while there is still time to act. When the probe flags a step, control switches to a stronger separate policy, but only for the steps that need it. On LIBERO-Spatial, AEGIS recovers 10.1% of the trajectories the weak policy alone loses, versus 4.6% for budget-matched blind escalation and 5.1% for a random-trigger placebo. These gains are significant under one-sided exact paired McNemar tests with Holm-Bonferroni adjustment over three pre-registered contrasts: +5.4pp over blind escalation, p=8.5e-6; +5.0pp over random triggering, p=1.0e-4; paired-trajectory bootstrap CIs exclude zero. AEGIS activates the stronger policy on only 38% of steps, so the lever is timing rather than compute. The probe clears its precondition with an early-window AUROC of 0.764, 95% CI [0.70, 0.84], read from the weak-policy path over the first 30% of trajectory steps before any handoff. We pre-register the full analysis plan, including a conditional recovered-task-rate estimand and explicit kill criteria, and confirm the result on 700 common-random-number episodes per arm, with nA-fail=646.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "AEGIS는 장시간 로봇 조작 태스크에서 약한 정책이 실패할 조짐을 조기에 감지하고 필요한 단계에서만 더 강한 정책으로 제어를 전환하는 선택적 에스컬레이션 방법이다. 약한 정책의 고정된 활성화에 가벼운 프로브를 적용해 고위험 단계를 탐지하며, LIBERO-Spatial에서 약한 정책만 사용 시 대비 10.1% 궤적을 복구했다. 예산이 동일한 무작위 에스컬레이션(4.6%) 대비 두 배 이상의 복구율을 달성하면서 강한 정책 호출을 전체의 38%로 제한해 계산 비용을 절감했다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "da296a84-4fb4-43c6-b3e2-eefa5c3add2c",
+      "title": "FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models",
+      "url": "https://arxiv.org/abs/2606.06547",
+      "source": "arxiv",
+      "content": "arXiv:2606.06547v1 Announce Type: new \nAbstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but commit them irreversibly, leading to a \"stability lag\" where early decisions remain fragile even after being written. We reveal that Post-Training Quantization (PTQ) error easily flips these borderline decisions at the write frontier, which are then permanently locked in and amplified. To address this, we propose Frontier-Aware Instability-Reweighted Calibration (FAIR-Calib), a two-stage PTQ framework for dLLMs. Stage I probes a full-precision teacher to estimate a position prior that combines frontier hits and masked-stage reliability. Stage II performs off-policy, layer-wise calibration by minimizing a reweighted hidden-state MSE, effectively prioritizing the protection of fragile frontier states without requiring expensive end-to-end diffusion rollouts. We further theoretically justify our weighted objective as a surrogate for output KL divergence. Empirically, FAIR-Calib consistently outperforms state-of-the-art baselines on LLaDA and Dream (W4A4), significantly reducing frontier decision flips and suppressing post-commit mismatches across diverse benchmarks.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "확산 언어 모델(dLLM)의 사후 훈련 양자화(PTQ) 시 발생하는 프런티어 결정 뒤집힘 문제를 해결하는 FAIR-Calib 프레임워크를 제안한다. dLLM은 토큰을 반복 정제하지만 비가역적으로 확정하므로, PTQ 오류가 경계 결정을 뒤집고 이후 단계에 증폭되는 '안정성 지연' 문제가 있다. FAIR-Calib는 프런티어 위치를 추정하는 위치 사전 확률 탐지와 불안정 상태를 우선 보호하는 재가중 캘리브레이션 두 단계로 구성된다. LLaDA와 Dream 모델의 W4A4 양자화에서 기존 기법 대비 프런티어 결정 뒤집힘을 크게 줄였다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0ea3d5f6-79ea-40ea-a050-51107f50ffef",
+      "title": "Skip a Layer or Loop It? Learning Program-of-Layers in LLMs",
+      "url": "https://arxiv.org/abs/2606.06574",
+      "source": "arxiv",
+      "content": "arXiv:2606.06574v1 Announce Type: new \nAbstract: Large language models (LLMs) perform inference by following a fixed depth and order, non-recurrent execution of all layers. We reveal the wide existence of training-free, flexible, dynamic program-of-layers (PoLar), where pretrained layers can be packed as modules and then skipped or looped to form a customized program for each input. For most inputs, substantially shorter program executions can achieve the same or better accuracy, while incorrect predictions of the original LLM can be corrected by alternative programs with fewer layers. These observations indicate that inference admits multiple valid latent computations beyond the standard forward pass. To efficiently achieve PoLar in practice, we propose a lightweight PoLar prediction network, which learns to generate execution programs that dynamically skip or repeat pretrained layers for each input. Experiments on mathematical reasoning benchmarks demonstrate that PoLar consistently improves accuracy over standard inference and prior dynamic-depth methods, often while executing fewer layers, and that these gains persist under out-of-distribution evaluation. Our results suggest that fixed-depth execution captures only a narrow subset of an LLM's latent reasoning capacity.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "사전학습된 LLM 레이어를 건너뛰거나 반복 실행하는 '레이어 프로그램(Program-of-Layers, PoLar)'이 훈련 없이도 대부분의 입력에서 정확도를 유지하거나 향상시킬 수 있음을 발견했다. 표준 순전파보다 훨씬 적은 레이어를 실행하면서 높은 정확도를 달성하거나, 원래 LLM이 틀린 예측을 수정하는 대안 프로그램이 존재한다. 경량 PoLar 예측 네트워크를 통해 입력별로 레이어 실행 순서를 동적으로 결정하며, 수학적 추론 벤치마크에서 표준 추론과 선행 동적 깊이 방법을 꾸준히 능가했다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e81f13fb-ae98-4408-87ff-7b22d8d5136e",
+      "title": "Korean Culture into LLM Alignment: Toward Cultural Coherence",
+      "url": "https://arxiv.org/abs/2606.06797",
+      "source": "arxiv",
+      "content": "arXiv:2606.06797v1 Announce Type: new \nAbstract: Cultural-aspect work on large language models is dominated by a negative target: which outputs to suppress. We argue that a constructive counterpart is also needed, a working definition of what a culturally coherent response is rather than only what it must avoid, and instantiate it for Korean. We design an alignment-data pipeline around a prompt-based LLM seed generator that expands a Korean harm taxonomy, with a Korean-culturally-adapted safe-response policy at its centre: a per-category guideline grounded in Korean legal frameworks, social norms, and interpretive conventions, against which three frontier models each produce a candidate response. DPO fine-tuning on the resulting triplets improves the Korean cultural safe rate across six open-weight LLMs while causing no large degradation on Korean general-capability benchmarks, and qualitative outputs show fine-tuned models naming Korean statutes and institutional procedures and, where appropriate, supplying constructive Korean-context information alongside refusal.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "한국 법적 프레임워크, 사회 규범, 해석 관례를 기반으로 한 한국 문화 정렬 데이터 파이프라인을 제안한다. 한국 유해 분류체계를 확장하는 프롬프트 기반 시드 생성기와 카테고리별 안전 응답 정책을 중심으로, 세 개의 프런티어 모델이 후보 응답을 생성하고 DPO 파인튜닝에 활용된다. 여섯 개 오픈소스 LLM에서 한국 문화 안전률을 높이면서 일반 한국어 벤치마크 성능 저하 없이 한국 법률 조항과 기관 절차를 적절히 인용하는 능력을 보였다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "88a365c8-ce7f-4994-8881-fbee117e8f75",
+      "title": "Improving Cross-Lingual Factual Recall via Consistency-Driven Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2606.06586",
+      "source": "arxiv",
+      "content": "arXiv:2606.06586v1 Announce Type: new \nAbstract: Large language models (LLMs) trained predominantly on English data encode substantial world knowledge, yet often fail to express it reliably in other languages, a phenomenon known as cross-lingual factual inconsistency. To study and address this, we introduce PolyFact, a large-scale parallel multilingual factual QA dataset containing 100K Wikidata-grounded facts across 12 typologically diverse languages. Using PolyFact, we compare light continual pretraining (CPT), supervised fine-tuning (SFT), and reinforcement learning via Group Relative Policy Optimization (GRPO) for improving cross-lingual factual recall in Qwen-2.5-7B and OLMo-2-1124-7B. We find that GRPO consistently outperforms SFT, improving both cross-lingual consistency and generalization to unseen languages, while CPT on parallel data yields limited additional gains. Mechanistic analyses further show that GRPO reorganizes multilingual routing by reducing language specialization in MLP layers and attention heads, thereby promoting more shared cross-lingual representations. We release our code, models, and dataset.",
+      "published_at": "2026-06-08T00:00:00-04:00",
+      "summary": "12개 언어로 구성된 10만 개의 위키데이터 기반 사실 QA 데이터셋 PolyFact를 구축하고, 다국어 사실 일관성 향상을 위해 GRPO가 SFT와 지속적 사전학습(CPT)보다 우수함을 보였다. GRPO는 다국어 일관성과 비학습 언어로의 일반화 모두에서 SFT를 능가했으며, 기계론적 분석을 통해 GRPO가 MLP 레이어와 어텐션 헤드의 언어 전문화를 줄이고 공유 다국어 표현을 촉진함을 밝혔다. Qwen-2.5-7B와 OLMo-2-7B에서 검증했으며, 코드·모델·데이터셋을 공개한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
