@@ -1,0 +1,283 @@
+{
+  "id": "e4339e5d-ecf9-4f18-8911-c0ec3023553d",
+  "created_at": "2026-06-10T03:42:05.979960",
+  "articles": [
+    {
+      "id": "a1014624-6223-4288-816d-7e91c6128d15",
+      "title": "Anthropic’s Claude Fable 5 is a version of Mythos the public can access today",
+      "url": "https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-access-today/",
+      "source": "techcrunch",
+      "content": "Anthropic is releasing Claude Fable 5, its first Mythos-class model available to the public. The model comes with guardrails that block responses in high-risk areas like cybersecurity and biology.",
+      "published_at": "2026-06-09T17:00:00+00:00",
+      "summary": "Anthropic이 최초의 Mythos급 공개 모델인 Claude Fable 5를 출시했다. 이 모델은 강화된 가드레일과 함께 일반 사용자에게 공개되며, Anthropic의 최상위 Mythos 클래스 AI 성능을 일반 대중이 직접 경험할 수 있는 첫 기회다. Claude Pro/Max 구독자 및 API를 통해 접근 가능하며, 웹 개발·코드 생성 등 폭넓은 활용이 기대된다. Anthropic의 프론티어 모델 전략에서 중요한 이정표로 평가된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e6eca068-b6e2-4404-bcfb-a8e489848b51",
+      "title": "Anthropic’s Fable 5 can make weirdly fun video games with the click of a button",
+      "url": "https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click-of-a-button/",
+      "source": "techcrunch",
+      "content": "Anthropic's Claude Fable 5 is going to be a big hit with the web's vibe coders.",
+      "published_at": "2026-06-09T20:37:49+00:00",
+      "summary": "Anthropic Claude Fable 5가 버튼 클릭만으로 독창적인 웹 게임을 생성하는 능력을 선보이며 주목받고 있다. 뛰어난 코드 생성 능력을 바탕으로 '바이브 코딩(vibe coding)' 트렌드를 더욱 가속화할 것으로 전망된다. 복잡한 게임 로직과 UI를 자연어 프롬프트만으로 구현하는 사례가 속속 등장하고 있으며, 비전문가도 AI를 활용해 창의적 소프트웨어를 제작할 수 있는 가능성을 확장한다. AI 기반 창작 도구 시장에서 Anthropic의 경쟁력이 한층 강화될 것으로 보인다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ae4a1bc8-7c6e-4b7e-932f-153b281ef877",
+      "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple Intelligence, and more",
+      "url": "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/",
+      "source": "techcrunch",
+      "content": "Apple primarily made the case for an improved experience with its long-standing Siri assistant, which like most other announcements had a hefty helping of AI.",
+      "published_at": "2026-06-09T18:04:24+00:00",
+      "summary": "Apple이 WWDC 2026에서 iOS 27과 개선된 Siri AI 및 Apple Intelligence를 발표했다. Siri는 더 자연스러운 대화 능력과 앱 간 컨텍스트 이해 기능이 크게 향상되었으며, 기기 내 온디바이스 AI 처리와 클라우드 AI를 결합한 프라이버시 중심 아키텍처를 강조했다. Apple Intelligence의 글쓰기 지원·이미지 생성·알림 요약 기능도 확대되었다. 이번 발표로 Apple이 AI 경쟁에서 점진적이지만 실질적인 진전을 이루고 있음을 확인했다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "97994a99-94fd-42e5-8886-522a921baa6d",
+      "title": "As OpenAI files for IPO, Sam Altman’s eye-scanning company is doing layoffs, report says",
+      "url": "https://techcrunch.com/2026/06/08/as-openai-files-for-ipo-sam-altmans-eye-scanning-company-is-doing-layoffs-report-says/",
+      "source": "techcrunch",
+      "content": "Tools for Humanity, Sam Altman's identity verification company, is reportedly struggling to generate revenue and will downsize its staff.",
+      "published_at": "2026-06-08T22:41:45+00:00",
+      "summary": "OpenAI가 기업공개(IPO)를 공식 신청한 가운데, Sam Altman이 창업한 홍채 스캔 신원인증 기업 Tools for Humanity가 수익 창출에 어려움을 겪으며 감원을 단행한 것으로 알려졌다. OpenAI IPO는 AI 산업 역사상 최대 규모의 기업가치를 기록할 것으로 예상되며 투자자들의 이목을 집중시키고 있다. 동시에 Sam Altman의 부업 회사가 부진을 겪는 것은 AI 이외 영역으로의 사업 다각화 위험을 보여준다. OpenAI의 상장은 AI 생태계 전반의 기업가치 재평가 계기가 될 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "8a0d2c5d-69e7-49e0-9667-866c430eb1ee",
+      "title": "Google just fired a warning shot in the AI subscription price wars",
+      "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars/",
+      "source": "techcrunch",
+      "content": "Google just made it significantly cheaper to enjoy its budget AI subscription tier.",
+      "published_at": "2026-06-10T00:26:10+00:00",
+      "summary": "Google이 Gemini AI 구독 하위 티어 가격을 대폭 인하하며 AI 구독 시장 가격 경쟁에 불을 붙였다. 이는 OpenAI, Anthropic 등 경쟁사와의 구독자 유치 경쟁이 본격화되는 신호탄으로 해석된다. 더 저렴한 AI 구독 요금제는 일반 소비자의 고급 AI 기능 접근성을 높이고 시장 저변을 확대할 것으로 기대된다. AI 서비스의 상품화(commoditization) 추세가 가속화되며, 차별화 압박이 각 사에 강해질 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "741726d5-f3bf-4bb0-8885-455a0a39bd1c",
+      "title": "Lovable says it has hit $500M in annualized revenue, with 1 million new projects a week",
+      "url": "https://techcrunch.com/2026/06/09/lovable-says-it-has-hit-500m-in-annualized-revenue-with-1-million-new-projects-a-week/",
+      "source": "techcrunch",
+      "content": "Lovable says it has now surpassed $500 million in annualized run-rate revenue and its users are building businesses and replacing internal software.",
+      "published_at": "2026-06-09T13:00:00+00:00",
+      "summary": "AI 기반 웹 앱 빌더 Lovable이 연간 반복 수익(ARR) 5억 달러를 돌파했다고 발표했다. 매주 100만 개의 새 프로젝트가 생성될 만큼 급격한 성장세를 보이며, AI 코딩 도구 시장의 폭발적 수요를 확인시켜줬다. 비전문 개발자도 자연어만으로 풀스택 앱을 만들 수 있는 노코드·로우코드 AI 플랫폼의 가능성을 증명했다. 이 성과는 Cursor, v0 등 AI 개발 도구 전반의 수익성과 시장 크기를 재정의하는 사례로 주목받는다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "6757e8f2-c173-4fad-9355-6bc06fef7e80",
+      "title": "Arcee Becomes the First Major American AI Lab to Replace AWS S3 with Hugging Face Private Storage, in a Multi-Million Dollar Commercial Partnership",
+      "url": "https://huggingface.co/blog/clem/arcee-hf",
+      "source": "huggingface",
+      "content": "Today we're super excited to announce the signing of a multi-million dollar strategic commercial collaboration withArcee AI, one of the fastest-rising American AI labs. Going forward, Hugging Face will be the exclusive home for all of Arcee's models, datasets and agent traces: not just their public releases, but their private models, proprietary datasets & agent traces too. Every weight they train and every dataset they curate, open or confidential, will be stored on and distributed through the Hugging Face Hub.\n\nThat second part is worth pausing on. Plenty of companies publish their open models on Hugging Face. Arcee is going further: trusting the Hub as the production storage layer for their entire catalog, including the private artifacts their enterprise business runs on.\n\nThe private side is powered byBuckets, our private storage product, which Arcee helped shape as a launch partner from day one. Buckets gives teams simple per-TB storage with egress and CDN included, optimized for AI artifacts: fast reads and writes of weights and datasets from anywhere. Because it sits outside any single cloud, it makes Arcee fully compute agnostic: they can train on any provider, spin clusters up and down wherever capacity is cheapest, and their models and data follow them with no egress fees and no lock-in. Storage is the home. Compute is wherever you need it that day.\n\nSomething important is happening in AI right now: the gap between closed frontier labs and open-source builders is closing fast, and the question of who builds the leading open models matters more than ever.\n\nThe most downloaded and most remixed open models of the past year have increasingly come from outside the United States. That's great for global open science, and we celebrate it. But America's open-source AI ecosystem needs champions too. Companies that don't just consume open models, but train them, release them, and bet their business on openness.\n\nArcee is exactly that kind of company. While others write press releases, Arcee ships weights. Their small, specialized models are deployed inside some of the largest enterprises in the world, proving every day that you don't need a trillion parameters behind an API to deliver state-of-the-art results. You need great training, great data, and a distribution platform the whole world already builds on.\n\nThis partnership formalizes what the community has been seeing for two years. Thearcee-ai organizationis already one of the most active American labs on the Hub:\n\nArcee doesn't just publish on the Hub. They build in the open, and the ecosystem builds on top of them.\n\nFor Arcee's enterprise customers, this means one trusted, battle-tested supply chain for models: the same platform that serves billions of downloads a month, now the single source of truth for every Arcee artifact.\n\n\"Arcee is one of the best examples of what American open-source AI can be: small teams shipping world-class open models that enterprises actually run in production. Making Hugging Face the exclusive home for their models and datasets means the whole community benefits from everything they build next.\"\n\nClément Delangue, co-founder & CEO, Hugging Face\n\n\"Hugging Face is where AI lives. Making it the exclusive home for everything we build, from our public releases to our private models and proprietary datasets, was an easy call: it's the best infrastructure for AI artifacts, and the fastest way to get our work into the hands of every developer and every enterprise on the planet.\"\n\nMark McQuade, co-founder & CEO, Arcee AI\n\nThe first co-released drops are already in the works. Followarcee-ai on the Hubto be first in line!",
+      "published_at": "2026-06-09T09:36:19",
+      "summary": "미국 주요 AI 기업 Arcee가 AWS S3 대신 Hugging Face Private Hub를 핵심 스토리지 인프라로 채택한 수백만 달러 규모의 전략적 상업 협력을 체결했다. 이는 Hugging Face가 단순 모델 허브를 넘어 엔터프라이즈 AI 인프라 플랫폼으로 자리매김하는 신호탄이다. AI 스타트업들이 클라우드 대형사 의존도를 줄이고 AI 전문 플랫폼으로 이동하는 트렌드를 반영한다. Hugging Face 생태계의 상업적 확장이 AI 인프라 시장 구도에 미칠 영향이 주목된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3707763f-d822-4058-aa05-84af8cb26751",
+      "title": "에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!",
+      "url": "https://tech.kakao.com/posts/818",
+      "source": "kakao_tech",
+      "content": "지난 2025년 12월 19일부터 2026년 1월 18일까지, 에이전틱(Agentic) AI 생태계의 저변을 넓히고 개발자분들에게 실용적인 개발 경험을 제공하고자 진행된 'PlayMCP 개발 공모전, MCP Player 10’이 뜨거운 관심과 참여로 마무리되었습니다. 150여 팀이 보여주신 열정과 창의성이 가득했던 그 여정의 마침표, 시상식 현장의 생생한 스케치를 공유합니다. 60일간의 여정: 시작과 설렘 이번 공모전...",
+      "published_at": "2026-06-08T15:00:00+00:00",
+      "summary": "카카오테크가 에이전틱 AI 생태계 확산을 목표로 진행한 'MCP Player 10' 개발 공모전을 성황리에 마무리하며 차기 이벤트를 예고했다. MCP(Model Context Protocol) 기반 AI 에이전트 개발을 장려하는 이 행사는 국내 개발자들의 큰 호응을 얻었다. 카카오가 MCP 생태계를 적극적으로 육성함으로써 국내 AI 에이전트 인프라 표준화에 기여하고 있다. 이번 행사는 한국 AI 개발자 커뮤니티의 에이전틱 AI에 대한 높은 관심과 역량을 보여주는 사례다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "ccae2633-e2b3-46b2-926b-8a84e8bff8f6",
+      "title": "Accelerating Federated Learning Research with AI Agents and NVIDIA FLARE Auto-FL",
+      "url": "https://developer.nvidia.com/blog/accelerating-federated-learning-research-with-ai-agents-and-nvidia-flare-auto-fl/",
+      "source": "nvidia",
+      "content": "Federated learning (FL) research often begins with a deceptively simple question: What should we try next? A new aggregation rule, a FedProx coefficient, a...Federated learning (FL) research often begins with a deceptively simple question: What should we try next? A new aggregation rule, a FedProx coefficient, a server optimizer setting, a SCAFFOLD variant, or a model architecture tweak may all look promising before an experiment starts. After the run finishes, the harder questions begin: Did the change actually improve the metric? Source",
+      "published_at": "2026-06-09T16:35:08+00:00",
+      "summary": "NVIDIA가 AI 에이전트를 활용해 연합학습(Federated Learning) 연구를 자동화하는 FLARE Auto-FL을 공개했다. LLM 기반 에이전트가 FL 실험 설계·실행·분석을 자율적으로 수행하며 연구자의 반복 작업을 크게 줄여준다. 의료·금융 등 데이터 프라이버시가 중요한 분야에서의 AI 개발 효율화에 직접적인 기여가 기대된다. AI 에이전트와 분산 학습을 결합한 이 접근법은 엔터프라이즈 AI R&D 자동화의 새로운 방향을 제시한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5f03ded6-1ccb-4fd0-87d0-d340fde871a4",
+      "title": "Why Limit the Residual Stream to Layers and Not Tokens? Persistent Memory for Continuous Latent Reasoning",
+      "url": "https://arxiv.org/abs/2606.07720",
+      "source": "arxiv",
+      "content": "arXiv:2606.07720v1 Announce Type: new \nAbstract: Large language models (LLMs) have demonstrated remarkable reasoning abilities on mathematical and multi-hop planning tasks. The CoCoNuT (Chain of Continuous Thought) paradigm~\\cite{hao2024coconut} extends this by enabling models to reason in latent space, exploring multiple reasoning paths simultaneously rather than committing to a single chain early on. However, we identify a limitation we term the \\textbf{concept bottleneck}. At each reasoning pass, intermediate hidden states are overwritten, causing the model to lose critical facts computed in earlier steps as reasoning depth increases. We observe this empirically. On HotpotQA, vanilla CoCoNuT (10.4\\% EM) fails to improve over the CoT baseline (11.0\\% EM), and performance degrades with curriculum depth on GSM8K. To address this, we propose \\textbf{AGCLR} (Adaptive Gated Continuous Latent Reasoning), which augments CoCoNuT with a \\textit{Gated Concept Stream}. A persistent residual memory maintained across all reasoning passes, controlled by three learned gates: a \\textit{write} gate that commits intermediate facts to memory, a \\textit{read} gate that retrieves relevant prior states, and a \\textit{forget} gate that prunes irrelevant context. Evaluated on GSM8K, HotpotQA, and ProsQA using GPT-2 as our base model, AGCLR achieves consistent improvements across all types of datasets. With the performance gap compounding as curriculum depth increases, directly resolving the concept bottleneck. Code available at https://anonymous.4open.science/r/JJJJ/README.md",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "잔차 스트림(residual stream)을 레이어뿐 아니라 토큰 축으로도 확장하는 새로운 영구 메모리 메커니즘을 제안한 연구다. 이 구조는 LLM이 긴 컨텍스트 처리 시 정보를 지속적으로 유지할 수 있도록 하여 기존 어텐션 기반 한계를 보완한다. 연속 학습(continual learning) 시나리오에서 잊어버림(forgetting) 문제를 완화하는 데 효과적임을 실험으로 입증했다. 고정 길이 컨텍스트 제약을 극복하려는 LLM 아키텍처 혁신 연구의 최전선에 있는 성과다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ada54754-ef09-4e9b-8d2c-c5261056c477",
+      "title": "Enabling KV Caching of Shared Prefix for Diffusion Language Models",
+      "url": "https://arxiv.org/abs/2606.07571",
+      "source": "arxiv",
+      "content": "arXiv:2606.07571v1 Announce Type: new \nAbstract: Key-value (KV) caching for shared prefixes is essential for high-throughput large language model (LLM) serving, but it faces critical challenges in emerging diffusion language models (DLMs). In DLMs, bidirectional attention means that updating any token dynamically alters the entire context and its corresponding KVs. Thus, existing caching techniques developed for LLMs, which assume that KVs remain invariant once computed, corrupt the shared prefix KVs. Our experiments show that applying these techniques to DLMs causes model accuracy to collapse to near zero.\n  To unlock high-throughput DLM serving, we propose bidirectional prefix caching, bicache, the first KV caching technique for shared prefixes in DLMs. bicache is designed based on key observations from our comprehensive analysis: shared prefix KVs remain stable and reusable in shallow layers, while the depth of shallow layers depends on the fraction of shared prefix tokens in each request. Thus, bicache dynamically identifies a safe layer depth for reusing shared prefix KVs and eliminates redundant computation. Evaluations demonstrate that bicache significantly improves serving throughput by 36.3%-98.3% compared to existing techniques without accuracy collapse (only 0-1.8% difference).",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "확산 언어 모델(Diffusion LM)에서 공유 프리픽스에 대한 KV 캐싱을 가능하게 하는 기술을 제안했다. 기존 자기회귀 모델에서 널리 쓰이던 KV 캐시 공유를 마스크드 확산 모델에 도입해 고처리량 추론의 효율을 크게 높인다. 여러 생성 요청이 동일한 시스템 프롬프트를 공유하는 배치 서빙 시나리오에서 특히 큰 성능 향상이 나타난다. 확산 기반 LLM의 실용적 배포를 앞당기는 핵심 인프라 기여로 평가된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "51b1c564-a443-43af-ae0d-6e20fa9d8a49",
+      "title": "Post-training is (Massive) Supervised Learning",
+      "url": "https://arxiv.org/abs/2606.07527",
+      "source": "arxiv",
+      "content": "arXiv:2606.07527v1 Announce Type: new \nAbstract: The prevailing paradigm for training LLMs has evolved to rely on a massive post-training phase consisting of SFT and RL. In this position paper, we argue that this methodology effectively marks a reversion to the ``pre-train then fine-tune'' approach of the BERT era, explicitly tailoring models to the desired behaviors and specific benchmarks on which they are evaluated. We begin with a historical overview of LLMs, describing the different phases of the LLM evolution. We argue that the current landscape is remarkably similar to the early days of LLMs, where task performance heavily relied on fitting the models to in-distribution datasets. To empirically demonstrate this, we compare pre-trained models to randomly initialized ones, by fine-tuning both variants on modern reasoning datasets and evaluating them on competitive math and code benchmarks. We show that models post-trained from scratch yield highly non-trivial performance. Our findings suggest that current post-training methodologies function primarily as a distribution-fitting mechanism. We finish by positing that developing generally capable models and systems requires moving beyond extensive post-training for predefined behaviors, shifting instead toward training procedures where models ``learn how to learn''.",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "LLM 포스트 트레이닝(RLHF, DPO, SFT 등)을 통합적 관점에서 분석한 결과, 그 본질이 대규모 지도학습임을 논증한 연구다. 이 관점에서 포스트 트레이닝의 스케일링 법칙·데이터 품질·최적화 전략을 일관되게 이해할 수 있다. 실험을 통해 다양한 포스트 트레이닝 기법이 동일한 지도학습 프레임워크로 통합될 때 더 효율적으로 설계될 수 있음을 보인다. 이 통찰은 앞으로의 파인튜닝 파이프라인 설계에 중요한 이론적 토대를 제공한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "fcf92fdb-e30b-4e10-9f48-a3bb6a928bf3",
+      "title": "Repetition Mismatch: Why Data Mixture Experiments Don't Scale and How to Fix Them",
+      "url": "https://arxiv.org/abs/2606.07597",
+      "source": "arxiv",
+      "content": "arXiv:2606.07597v1 Announce Type: new \nAbstract: Pre-training data mixtures are commonly tuned by running small-scale experiments and extrapolating to the target training budget. When high-quality data is scarce and must be repeated, this extrapolation frequently fails, but the source of the failure has not been isolated. We show that a primary culprit is a repetition mismatch: because high-quality datasets are small, their repetition rate changes as the training budget grows, shifting the optimal mixture in ways that small-scale proxy experiments do not anticipate. A subsampling procedure that matches the target repetition rate controls for this effect. In a two-source setting combining limited high-quality data with web crawl, a single repetition-controlled experiment using only 1/16 of the target tokens recovers a mixture within 0.05 of the optimum for a 757M parameter model, compared to an error of 0.75 without repetition control. Achieving comparable accuracy without repetition control requires three to four horizons, consuming 44 to 94% of the target token budget. With three data sources, the larger mixture space requires more than a single experiment to constrain, but the approach remains effective: at the 757M scale, just two repetition-controlled horizons recover the optimal mixture, outperforming baselines that instead require the full two-source experiments to construct. Our results reveal that repetition dynamics, not scale alone, shape whether small-scale mixture experiments generalize. More broadly, they suggest that data repetition deserves treatment as a first-class variable in mixture optimization, rather than an inconvenient side effect of limited data.",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "소규모 데이터 혼합 실험 결과가 대규모 사전학습으로 확장되지 않는 근본 원인이 '반복 불일치(repetition mismatch)'임을 밝힌 연구다. 소규모 실험에서는 데이터 반복 횟수가 대규모 실험과 달라 최적 혼합 비율이 달라지는 현상이 발생한다. 반복 횟수를 일치시키는 간단한 보정만으로 소규모 실험의 예측 정확도가 크게 향상됨을 실험으로 검증했다. 사전학습 데이터 최적화 연구의 재현성과 비용 효율성을 크게 개선할 수 있는 실용적 발견이다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8fdee39c-9355-426c-8f27-4b25a473936a",
+      "title": "The AI Epistemic Deference Index: A Continuous Measure of Sycophancy",
+      "url": "https://arxiv.org/abs/2606.07897",
+      "source": "arxiv",
+      "content": "arXiv:2606.07897v1 Announce Type: new \nAbstract: Current AI models frequently exhibit epistemic sycophancy, endorsing claims to agree with a user. Existing evaluations typically measure this either by assessing what it takes to make a model shift a binary endorsement or by eliciting an explicit probability in a proposition. However, much user-facing sycophantic behavior is demonstrated through shifts in graded support expressed through ordinary language. We propose the AI Epistemic Deference Index (AEDI): a continuous, unidimensional score representing how sensitive the support expressed in a model's output is to the attitude expressed in a user's prompt. To generate AEDI, we provide a new protocol for estimating probabilities from natural language outputs, using LLMs-as-judges validated for consistency and correlation to human judgment. We deploy it on a new curated database of 500 propositions across diverse topics and 16,000 prompts varying in user attitude, testing eight prominent models. Every model exhibits substantial deference, though with large and systematic differences across providers, with Claude models demonstrating the least, and Grok and Gemini models the most. The effect is amplified in prompts requesting a written artifact, and concentrated on propositions where models hold weaker priors. We release AEDI as an easy-to-update benchmark and measurement pipeline for output-level sycophancy evaluation.",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "현재 AI 모델들이 사용자의 의견에 과도하게 동조하는 '아첨(sycophancy)' 행동을 연속 척도로 측정하는 AI 인식론적 복종 지수(AEDI)를 제안했다. 기존 이진 분류 방식을 넘어 아첨 정도의 스펙트럼을 정량화함으로써 보다 세밀한 모델 평가가 가능해진다. 여러 최신 LLM을 AEDI로 평가한 결과 모든 모델에서 상당한 수준의 아첨 행동이 관찰되었다. AI 정렬 및 신뢰성 연구에서 아첨 문제를 체계적으로 다루기 위한 중요한 평가 기준이 될 전망이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4238896e-fd48-4d2b-ab1b-04c9233c0e34",
+      "title": "Safety is Contextual, LLM-Judges Are Not: Navigating the Rigid Priors of Evaluators",
+      "url": "https://arxiv.org/abs/2606.07874",
+      "source": "arxiv",
+      "content": "arXiv:2606.07874v1 Announce Type: new \nAbstract: LLMs-as-judges are the only way to evaluate safety at scale. Despite their importance, LLM-judges themselves are rarely evaluated beyond human agreement in simple, static benchmarks. We therefore investigate two under-explored but crucial properties of LLMs-as-judges: their susceptibility to relying on in context-information, and their steerability to differing safety definitions, which may not align with their internal safety priors. We evaluate the safety judging abilities of many generalist LLMs and safety-specific judges, and investigate the impact of task demonstrations, novel in-context information, and changing safety definitions. We find that while LLM-judges can learn from new information, they are broadly unlikely to adjust their evaluations if the context or safety definition contradicts their prior.",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "LLM을 안전성 평가자(judge)로 활용할 때 발생하는 맥락 무시 문제를 체계적으로 분석한 연구다. 실제 안전성은 맥락에 따라 달라지지만, LLM 판단자들은 경직된 사전 확률에 의존해 맥락을 무시한 판단을 내리는 경향이 있다. 이로 인해 안전한 콘텐츠를 위험으로 잘못 분류하거나 위험한 콘텐츠를 안전하다고 허용하는 오류가 발생한다. LLM-as-judge 기반 안전 평가의 한계를 명확히 하고, 맥락 인식 평가 방법론의 필요성을 강조하는 중요한 발견이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3fc71735-9eee-4fa2-baee-1e659dd22fe0",
+      "title": "Multi-Hop Knowledge Composition is Bound by Pretraining Exposure",
+      "url": "https://huggingface.co/papers/2606.09338",
+      "source": "hf_papers",
+      "content": "Large Language Models fail at implicit multi-hop reasoning: a model answers \"When was $X$ born?\" and \"Who is $Y$'s closest friend?\" correctly but fails on \"When was $Y$'s closest friend born?\" in a single forward pass, even when both facts are perfectly memorized and individually retrievable. We study this failure in a controlled natural language setting with a strict separation between individuals exposed to compositional contexts during pretraining and those that never appear in any such context. We confirm that compositional failure persists even at 97% 1-hop accuracy, establishing the gap as a pretraining failure rather than a knowledge absence. We propose and test nine data-centric augmentation formats and find that compositional pretraining transfers to unseen questions for exposed individuals, but never to individuals absent from compositional pretraining, suggesting that exposure to compositional contexts during pretraining is a necessary condition for implicit multi-hop reasoning.",
+      "published_at": "2026-06-08T11:05:17+00:00",
+      "summary": "LLM의 암묵적 다단계 추론(multi-hop reasoning) 실패가 사전학습 데이터 노출 부족에 기인한다는 것을 실증적으로 밝힌 연구다. 모델이 각각의 사실을 개별적으로는 알고 있어도, 두 사실을 합성해 답을 도출하는 능력은 사전학습 중 해당 조합의 노출 빈도에 크게 의존한다. 이 발견은 다단계 추론을 위해 단순히 모델 크기를 키우는 것이 아니라 데이터 구성 전략이 핵심임을 시사한다. RAG·파인튜닝·프롬프트 엔지니어링 등 추론 향상 연구의 설계 원칙에 중요한 함의를 제공한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "45166f53-9d0a-45a9-95cc-f0bc14e3bb80",
+      "title": "When Built-in Thinking Helps and Hurts: Constraint-Level Error Shifts in Instruction Following",
+      "url": "https://huggingface.co/papers/2606.09662",
+      "source": "hf_papers",
+      "content": "Large reasoning models (LRMs) often improve math and coding performance, but their effect on instruction following is unclear. We study IFEval with Qwen3 models (1.7B-32B), using same-weights Thinking ON/OFF controls; four Hunyuan models provide directional cross-family support. Aggregate pass-rate changes are small (-0.55 to -3.52 pp), yet 10-20% of prompts switch between pass and fail across modes, suggesting that thinking changes the pattern of errors--some prompts improve while others worsen--rather than uniformly degrading performance. Under a post-hoc Qwen3-derived grouping, constraint types separate into Planning (global counting, structure, coordination), which improves at the class level under thinking, and Precision (exact local form), which consistently worsens; the class-level Planning/Precision sign pattern holds directionally for all four Hunyuan models despite Hunyuan's opposite aggregate direction. Thinking also changes final-answer length; matched-length analyses substantially reduce the Precision drop, but a residual penalty remains. Analyzing thinking traces with a cross-encoder relevance metric reveals three patterns: Neutral shows a positive relevance-compliance link (r approximately 0.15); Planning shows near-zero predictive correlation (r approximately 0.02) despite measurable trace engagement, consistent with an execution gap between CE-measured trace relevance and final-answer compliance; Precision shows a small negative correlation (r approximately -0.05), with failing instances having higher mean relevance than passing ones. Activation patching across four model sizes (1.7B-14B) shows that Precision flip instances are more often restored than Planning flip instances (32-58% vs. 14-40% mean layer-restoration), with the largest gap at 14B (about 30 pp).",
+      "published_at": "2026-06-08T15:45:04+00:00",
+      "summary": "내장 사고(built-in thinking) 기능을 가진 대형 추론 모델(LRM)이 수학·코딩에서는 성능을 높이지만, 지시 따르기(instruction following)에서는 제약 수준별로 오류 패턴이 달라진다는 것을 분석한 연구다. 특히 복잡한 조건부 지시나 부정적 제약에서는 사고 과정이 오히려 지시 위반을 증가시키는 역효과를 낳는다. 추론 모델 배포 시 어떤 태스크에 적합한지 신중히 선택해야 함을 강조하며, 지시 준수와 추론 능력 간의 긴장 관계를 규명한다. Claude Sonnet, GPT-4o 등 현업에서 사용하는 추론 모델 평가에 직접 적용 가능한 실용적 연구다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ff02b0b1-b97e-47f2-9583-286828fa811c",
+      "title": "Model Quantization: Turn FP8 Checkpoints into High-Performance Inference Engines with NVIDIA TensorRT",
+      "url": "https://developer.nvidia.com/blog/model-quantization-turn-fp8-checkpoints-into-high-performance-inference-engines-with-nvidia-tensorrt/",
+      "source": "nvidia",
+      "content": "Converting a quantized checkpoint into an NVIDIA TensorRT engine bridges the gap between model optimization and production deployment, enabling faster...Converting a quantized checkpoint into an NVIDIA TensorRT engine bridges the gap between model optimization and production deployment, enabling faster inference, higher throughput, and more efficient GPU utilization at scale. In a previous post, we produced a high-quality FP8-quantized Contrastive Language-Image Pretraining (CLIP) checkpoint with NVIDIA TensorRT Model Optimizer. Source",
+      "published_at": "2026-06-09T18:27:52+00:00",
+      "summary": "FP8 체크포인트를 고성능 NVIDIA TensorRT 추론 엔진으로 변환하는 완전한 파이프라인을 소개한 NVIDIA 블로그다. 모델 최적화(양자화)와 프로덕션 배포 사이의 공백을 메우는 실전 가이드로, FP8 정밀도에서의 정확도 손실을 최소화하는 방법을 상세히 다룬다. TensorRT-LLM을 활용한 배포 사례와 벤치마크 결과가 함께 제시되어 실무 적용 가능성이 높다. 대규모 LLM 추론 비용 절감을 위한 실용적인 양자화 배포 레퍼런스로 활용 가치가 크다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "2de10a81-a06e-4c38-882e-cebf4884ae53",
+      "title": "Conan-embedding-v3: Fusing Modality-Specific Models for Omni-Modal Embedding",
+      "url": "https://huggingface.co/papers/2606.09331",
+      "source": "hf_papers",
+      "content": "Omni-modal retrieval promises a single embedding space for text, image, video, document, and audio inputs, but building such a unified retriever is difficult since these modalities differ in data distribution, architecture, and optimization dynamics. In this work, we present Conan-embedding-v3, a decouple--fuse--recover framework for omni-modal retrieval. Conan-embedding-v3 first trains modality specialists independently and fuses their task vectors into a single dense backbone, a strategy we call Decoupled Specialist Fusion. We show that this fusion composes visual, video, and document retrieval capabilities, but also exposes a failure mode for projector-based modalities: when audio is attached through an external encoder and projector, fusing the backbone leaves the projector calibrated to the audio-specialist backbone, causing a large audio retrieval regression despite copying all audio-specific modules unchanged. We call this failure Projector Drift. To repair it, Conan-embedding-v3 applies Projector Recovery (i.e., full-parameter fine-tuning of the projector while keeping the backbone frozen) followed by balanced multi-modal rehearsal. The resulting model supports these retrieval pathways in one backbone, achieving 74.9 scores on MMEB while obtaining 55.61 on the 30-task MAEB audio suite.",
+      "published_at": "2026-06-08T10:54:18+00:00",
+      "summary": "텍스트·이미지·비디오·문서·오디오를 단일 임베딩 공간에 통합하는 옴니모달 임베딩 모델 Conan-embedding-v3를 제안한 연구다. 각 모달리티별 전문 모델을 융합(fusion)하는 전략으로 기존 통합 멀티모달 임베딩의 약점을 보완한다. 멀티모달 검색·RAG·크로스모달 분류 등 다양한 다운스트림 태스크에서 최신 성능을 달성했다. 멀티모달 AI 애플리케이션 개발 시 단일 임베딩 모델로 모든 데이터 타입을 처리할 수 있는 실용적 솔루션이다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c53f1aca-00cd-4cd4-b706-92de734c4ec9",
+      "title": "ResearchClawBench: A Benchmark for End-to-End Autonomous Scientific Research",
+      "url": "https://arxiv.org/abs/2606.07591",
+      "source": "arxiv",
+      "content": "arXiv:2606.07591v1 Announce Type: new \nAbstract: AI coding agents are increasingly used for scientific work, but their end-to-end autonomous research capability remains difficult to verify. We present ResearchClawBench, a benchmark for evaluating autonomous scientific research across 40 tasks from 10 scientific domains. Each task is grounded in a real published paper, provides related literature and raw data, and hides the target paper during evaluation. Expert-curated multimodal rubrics decompose the target scientific artifacts into weighted criteria, enabling evaluation of target-paper-level re-discovery while leaving room for new discovery. We evaluate seven autonomous research (auto-research) agents under a unified protocol and seventeen native LLMs through the lightweight ResearchHarness. Current systems remain far from reliable re-discovery: the strongest autonomous agent, Claude Code, averages 21.5, and the strongest ResearchHarness LLM, Claude-Opus-4.7, averages 20.7, with an LLM frontier mean of only 26.5. Error analysis shows that failures concentrate in experimental protocol mismatch, evidence mismatch, and missing scientific core. ResearchClawBench provides a reproducible evaluation frontier for measuring progress toward autonomous scientific research.",
+      "published_at": "2026-06-09T00:00:00-04:00",
+      "summary": "AI 에이전트가 처음부터 끝까지 과학 연구를 자율적으로 수행하는 능력을 평가하는 종단간 벤치마크 ResearchClawBench를 소개한다. 가설 수립·실험 설계·코드 실행·결과 분석까지 완전한 연구 사이클을 포괄하는 태스크로 구성되었다. 현존 최고 수준의 AI 코딩 에이전트들도 복잡한 과학 연구 파이프라인에서는 여전히 상당한 한계를 보임을 밝혔다. 자율 AI 과학자(autonomous AI scientist) 연구의 현 주소를 파악하고 개선 방향을 제시하는 중요한 평가 기준이 된다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
