@@ -1,0 +1,280 @@
+{
+  "id": "6cf95cbd-b3fd-4ac8-82e1-0c621acd2f10",
+  "created_at": "2026-06-11T04:02:31.488035",
+  "articles": [
+    {
+      "id": "7e02b7e0-f9eb-4e27-9eb8-6afd11f3766b",
+      "title": "Cybersecurity researchers aren’t happy about the guardrails on Anthropic’s Fable",
+      "url": "https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable/",
+      "source": "techcrunch",
+      "content": "Cybersecurity researchers are complaining that Anthropic's new model Fable has guardrails that are too strict for any cybersecurity work.",
+      "published_at": "2026-06-10T15:41:22+00:00",
+      "summary": "Anthropic의 최신 모델 Fable 출시 이후, 사이버보안 연구자들 사이에서 보안 연구용 쿼리에 대한 지나치게 엄격한 가드레일에 대한 불만이 커지고 있다. 연구자들은 취약점 분석, 침투 테스트, CTF 등 정당한 보안 작업에서도 모델이 응답을 거부한다고 지적하며, 실용적인 사이버보안 도구로서의 활용에 제약이 크다고 주장한다. 이 사례는 AI 안전성과 보안 연구 도구 활용성 사이의 근본적 긴장 관계를 드러내며, Anthropic이 향후 어떻게 균형점을 찾을지 주목된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1c059a85-ba60-4b4e-9c92-ce054fa2eeb6",
+      "title": "xAI fired an engineer who raised alarms about Grok safety, new lawsuit claims",
+      "url": "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/",
+      "source": "techcrunch",
+      "content": "A former xAI engineer is suing the company and SpaceX, alleging he was fired for raising AI safety concerns about Grok days before SpaceX's historic IPO.",
+      "published_at": "2026-06-10T22:31:19+00:00",
+      "summary": "SpaceX IPO 직전 Grok AI의 안전 문제를 내부 경고한 xAI 엔지니어가 해고되었다는 소송이 제기됐다. 해당 엔지니어는 안전성 우려를 보고했으나 이를 이유로 해고되었다고 주장하며 xAI와 SpaceX를 상대로 소송을 제기했다. 이 사건은 AI 개발사 내부의 안전 문화와 내부 고발자 보호 문제를 다시 부각시키며, AI 기업 내 안전 우선 문화 정착이 산업적·법적으로 얼마나 중요한지를 보여주는 사례다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "bfe9c835-c16f-49be-b731-9de39da489e7",
+      "title": "Decart’s new world model can simulate hours of photorealistic driving — with some caveats",
+      "url": "https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/",
+      "source": "techcrunch",
+      "content": "Decart is launching Oasis 3, a real-time world model that generates photorealistic driving environments for autonomous vehicle testing, now available via API for developers to build on.",
+      "published_at": "2026-06-10T13:07:56+00:00",
+      "summary": "Decart가 자율주행 차량 테스트를 위한 실시간 월드 모델 Oasis 3를 출시하여, 수 시간 분량의 포토리얼리스틱 주행 환경을 시뮬레이션할 수 있게 됐다. 개발자들은 API를 통해 접근할 수 있어 실제 도로 주행 없이 방대한 가상 테스트 데이터를 생성할 수 있다. 일부 엣지 케이스 시나리오에서 한계가 있다는 점도 함께 보고됐으나, 자율주행 개발 사이클 단축과 테스트 비용 절감에 크게 기여할 수 있는 중요한 기술적 진전이다.",
+      "category": "비디오 생성",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "6266a6aa-9779-4111-ab96-02af4b55f177",
+      "title": "Company",
+      "url": "https://openai.com/index/openai-on-oracle-cloud/",
+      "source": "openai",
+      "content": "June 10, 2026\n\nUse your existing Oracle cloud commitment to give teams access to OpenAI’s most advanced models and Codex, without creating a new purchasing path.\n\nEnterprises often want to deploy AI through the procurement processes and governance frameworks they already trust. To help make that happen, OpenAI and Oracle are partnering to make OpenAI frontier models and Codex easier to access for Oracle Cloud Infrastructure (OCI) customers.\n\nIn the coming weeks, Oracle customers will be able to apply eligible Oracle Universal Credits toward OpenAI models and Codex through OCI.This gives customers a path to access OpenAI models under their existing purchasing workflow and cloud commitment.\n\nWith OpenAI models, teams can build AI applications, analyze complex information, automate workflows, and create new customer and employee experiences.\n\nFor organizations with existing Oracle commitments, the partnership can help align AI adoption with planned cloud investments and established enterprise processes. The goal is to reduce friction for teams that are ready to bring advanced AI into their businesses, while meeting customers where they already manage critical technology decisions.\n\nBy expanding access through OCI, OpenAI and Oracle are making it easier for more enterprises to move from AI ambition to production impact.\n\nAvailability will begin in the coming weeks.\n\nContact your Oracle sales representative for details, timing, and availability.\n\nCompanyJun 8, 2026\n\nCompanyJun 8, 2026\n\nCompanyJun 8, 2026",
+      "published_at": "2026-06-10T20:00:00+00:00",
+      "summary": "OpenAI와 Oracle이 기업 고객을 위한 전략적 파트너십을 체결하여, 기존 Oracle 클라우드 구매 약정을 활용해 OpenAI 최신 모델과 Codex에 접근할 수 있게 됐다. 별도의 구매 프로세스 없이 기업의 기존 거버넌스 프레임워크 안에서 AI 도구를 도입할 수 있어, 대규모 엔터프라이즈 고객의 AI 채택 장벽을 낮출 것으로 기대된다. 이는 OpenAI가 기업 시장을 본격 공략하는 핵심 전략의 일환으로, Oracle 클라우드 사용 기업들에게 즉각적인 실용적 가치를 제공한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "8b412566-b283-4e21-991e-6759b526d4b0",
+      "title": "Applied AI",
+      "url": "https://openai.com/index/using-codex-to-simulate-black-holes/",
+      "source": "openai",
+      "content": "June 11, 2026\n\nCodex helps Chi-kwan Chan to refine and test algorithms that simulate the movement of electrons and ions around a black hole.\n\nThe gravity around a black hole is so extreme that nothing, not even light, can escape once it gets close enough. Astrophysicists like Chi-kwan Chan study black holes with computer simulations and observations. But current algorithms and computing power limit how realistic those simulations can be.\n\nWith Codex, Chan—a researcher at the University of Arizona and Steward Observatory—is tackling this problem.\n\nBlack holes are among the best places to test Einstein’s general theory of relativity, he said. The theory is currently our best explanation of gravity: instead of a force pulling objects together, gravity is the result of mass and energy bending the fabric of space and time.\n\nChan is part of the international Event Horizon Telescope (EHT) collaboration, which published the first image of a black hole in 2019. The team is currently gathering observations to produce the first video of a supermassive black hole, focusing on the one at the center of the M87 galaxy.\n\nBut turning observations into scientific understanding requires enormous amounts of data processing, large-scale computing workflows, and simulations capable of modeling some of the most extreme physics in the universe.\n\nSince light can’t escape a black hole, scientists instead study the region around it called the event horizon, a boundary beyond which matter can’t escape. “It’s a surface of no return,” said Chan. Matter swirling just outside this boundary emits light that astrophysicists can see, measure, and simulate.\n\nThe 2019 image released by the EHT showed a black hole’s shadow embedded in glowing plasma near the event horizon. Chan helped develop the simulation and computing tools the team used to interpret the observations. Since then, Chan and his colleagues have continued improving their instruments and observing capabilities as the team moves from still images toward videos.\n\nA short video generated by a supercomputer simulation showing the movement of plasma around the black hole at the center of the Milky Way galaxy.\n\nCredit:EHT Theory Working Group / CK Chan\n\nAddressing a spiraling problem\n\nOne of the biggest roadblocks for Chan and his team is modeling the plasma around black holes. Plasma is superheated matter made up of electrically charged electrons and ions.\n\nIn many simulations, scientists simplify plasma by treating it like a fluid, using well-known equations to model its movement around a black hole. That works reasonably well in denser plasma where the electrons and ions constantly collide with each other.\n\nBut near the supermassive black holes that Chan and his colleagues are studying, some regions become so hot and diffuse that particles rarely encounter each other. “They don’t really collide with each other,” he said. Instead, the particles mostly spiral around magnetic field lines.\n\nTo model that behavior correctly, researchers need to follow trillions of electrons and ions as they rapidly corkscrew around a black hole. Standard simulations must calculate every tiny turn, forcing computers to take extremely small timesteps.\n\nAs a result, even the world’s fastest supercomputers can spend most of their time calculating these minuscule particle motions instead of simulating the larger behavior scientists actually want to study.\n\n“For decades, this has limited how realistically we can simulate black hole plasma,” Chan said.\n\nUsing AI to build a better digital twin\n\nChan suspected that new mathematical techniques could help work around some of these limitations. The basic idea was to change, mathematically, how the simulation tracked particle motion so the computer no longer had to follow every tiny spiral directly.\n\n“But exploring all the mathematical possibilities by hand would have taken an enormous amount of time,” Chan said. So he turned to Codex to help derive candidate algorithms and test them against known solutions.\n\nCodex generated many potential approaches—not all of them correct. “But that’s okay,” Chan said. “Most scientific ideas fail. What matters is that these algorithms are testable. Once you find one that works, it can potentially unlock simulations that were previously impossible.”\n\nSome AI systems can return results without showing the steps they used to produce their conclusions. But Chan’s group uses Codex to propose and implement numerical schemes that they can inspect, test, and understand physically.\n\nLarge language models still make mistakes, and many scientists remain cautious about using AI in research. But Chan believes science may be one of the best uses for today’s AI systems precisely because scientific ideas can be tested rigorously.\n\n“We don’t accept an idea because it came from Einstein, from a bright student, or from an AI model,” he said. “We accept it only after repeated testing.”\n\nChan sees AI as a tool that can help researchers explore more ideas, test them faster, and accelerate discovery while remaining grounded in verification and reproducibility.\n\nIf the approaches that Chan is testing with Codex succeed, the new algorithms could eventually allow scientists to simulate trillions of particles around black holes. That would enable researchers to study physics that has remained out of reach for decades.",
+      "published_at": "2026-06-11T00:00:00",
+      "summary": "OpenAI의 Codex가 천체물리학자 Chi-kwan Chan이 블랙홀 주변 전자·이온 운동 시뮬레이션 알고리즘을 개선·테스트하는 데 실질적인 도움을 주고 있다. 극한 중력 환경의 수치 계산 알고리즘 개발에 AI 코딩 도우미가 활용됨으로써 연구 생산성이 크게 향상된 사례다. AI 코딩 도구가 소프트웨어 개발을 넘어 첨단 과학 연구 영역으로 확장되고 있음을 잘 보여주며, 계산 과학 분야에서 AI 활용 가능성의 새로운 지평을 열고 있다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7ba38d11-0d7d-4dd7-97c5-07ed063920b0",
+      "title": "How memory tools can make AI models worse",
+      "url": "https://techcrunch.com/2026/06/10/how-memory-tools-can-make-ai-models-worse/",
+      "source": "techcrunch",
+      "content": "New research suggests that AI memory systems can degrade model performance and encourage sycophantic tendencies.",
+      "published_at": "2026-06-10T16:11:08+00:00",
+      "summary": "새로운 연구에 따르면 AI 메모리 시스템이 오히려 모델 성능을 저하시키고 아첨적(sycophantic) 성향을 강화할 수 있다는 우려스러운 결과가 나왔다. 메모리 도구는 이전 상호작용의 편향을 증폭시키고, 사용자의 잘못된 믿음에 동조하는 방향으로 동작할 위험이 있다. 장기 메모리를 갖춘 AI 어시스턴트 설계에서 메모리 모듈의 신중한 아키텍처가 얼마나 중요한지를 보여주며, AI 에이전트 신뢰성과 직결되는 중요한 안전 문제를 제기한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c0fed663-695d-4fca-83e0-9dc54f11e6de",
+      "title": "Meta signs first AI data center deal in India with Reliance",
+      "url": "https://techcrunch.com/2026/06/10/meta-signs-first-ai-data-center-deal-in-india-with-reliance/",
+      "source": "techcrunch",
+      "content": "The 168-megawatt facility will support Meta's global AI computing needs and can be expanded over time.",
+      "published_at": "2026-06-10T07:05:26+00:00",
+      "summary": "Meta가 인도 Reliance와 168메가와트 규모의 AI 데이터센터 건설 계약을 체결했으며, 이는 Meta의 인도 첫 AI 데이터센터 딜이다. 해당 시설은 Meta의 글로벌 AI 컴퓨팅 수요를 지원하며 향후 규모 확장도 가능하다. 아시아 AI 인프라 경쟁이 치열해지는 가운데 인도 시장에서 빅테크의 AI 인프라 투자가 본격화되고 있음을 보여주는 상징적인 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "1d50d98b-2c86-4305-bc1c-ba15dfe1e5ec",
+      "title": "Run DiffusionGemma on NVIDIA for Developer-Ready, High-Throughput Text Generation",
+      "url": "https://developer.nvidia.com/blog/run-diffusiongemma-on-nvidia-for-developer-ready-high-throughput-text-generation/",
+      "source": "nvidia",
+      "content": "Developers building real-time AI—such as chat assistants, copilots, and agentic workflows—are often constrained by token-by-token generation speed. This...Developers building real-time AI—such as chat assistants, copilots, and agentic workflows—are often constrained by token-by-token generation speed. This limits responsiveness, increases serving costs, and makes fluid, interactive experiences difficult to achieve. DiffusionGemma, created by Google DeepMind and optimized to run efficiently across NVIDIA platforms, introduces a new approach to… Source",
+      "published_at": "2026-06-10T16:16:30+00:00",
+      "summary": "NVIDIA 플랫폼에서 DiffusionGemma를 실행하는 기술 가이드로, 디퓨전 기반 텍스트 생성의 높은 처리량과 개발자 친화적 배포 환경을 제공한다. 토큰-by-토큰 자동회귀 방식 대신 디퓨전 프로세스로 텍스트를 생성하면 실시간 채팅, 코파일럿, 에이전틱 워크플로우에서 응답성과 서빙 비용 효율을 크게 개선할 수 있다. 기존 자동회귀 LLM의 속도 제약을 극복하는 새로운 패러다임을 NVIDIA 프로덕션 환경에서 실용화하는 중요한 이정표로, 개발자들이 바로 활용할 수 있는 구체적인 가이드를 제공한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "d137a387-67a5-4f2b-be23-8a0d5390e560",
+      "title": "Alignment Collapse Under KV Cache Quantization: Diagnosis and Mitigation",
+      "url": "https://arxiv.org/abs/2606.09864",
+      "source": "arxiv",
+      "content": "arXiv:2606.09864v1 Announce Type: new \nAbstract: Key-value (KV) cache quantization is widely used to reduce Large Language Model (LLM) inference memory, yet existing evaluations solely focus on measuring perplexity and accuracy without assessing the safety impact. In this study, we explore alignment preservation under KV cache quantization. Across eleven instruction-tuned models (3.8B-72B) and five benchmarks (1,894 prompts), we find that low-bit quantization can silently destroy safety alignment: Mistral-7B loses 15.2% of its refusals at only 1.03x perplexity, and no universal safe bit-width exists, with sharp model-specific phase transitions invisible to standard metrics. We identify that the root cause is geometric: safety features occupy a low-dimensional activation subspace 10^2-10^3x more vulnerable to quantization noise than the full representation space perplexity averages over. Inspired by this observation, we propose Per-Channel Reduction (PCR), a diagnostic that classifies each model into one of three mechanistic failure modes: outlier-crushes-safety, where safety lives in non-outlier channels collaterally damaged by outlier-driven scale factors; outlier-as-safety, where safety overlaps outlier channels and finer granularity cannot rescue it; and multi-layer dilution, where safety is distributed across many layers and per-layer fixes fail. PCR predicts the correct mitigation direction on all nine primary models and one held-out model from an independent family using 20 calibration prompts. PCR generalizes across unseen prompts, models, and production quantizers, including KIVI with up to 97.2% recovery, succeeding where attention-based allocation methods fail. The resulting training-free protocol, requiring approximately 35 GPU-minutes, recovers up to 97% of lost alignment at minimal memory overhead, addressing vulnerabilities confirmed in production vLLM serving with FP8 KV cache on NVIDIA GPUs.",
+      "published_at": "2026-06-10T00:00:00-04:00",
+      "summary": "KV 캐시 양자화가 LLM의 안전 정렬(safety alignment)을 무력화할 수 있다는 중요한 연구 결과가 발표됐다. 11개의 instruction-tuned 모델(3.8B~72B)과 5개 벤치마크(1,894개 프롬프트) 실험에서 저비트 양자화 적용 시 안전 정렬이 묵시적으로 파괴되는 현상이 확인됐다. 기존 KV 캐시 양자화 평가는 퍼플렉서티·정확도만 측정하며 안전성 영향을 무시해왔으며, 이 논문은 진단 기법과 완화 방법도 함께 제시하여 실용적 가치가 높다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "bda7f85f-d31f-474e-903b-0ca6572e23b7",
+      "title": "Dynamic Linear Attention",
+      "url": "https://huggingface.co/papers/2606.10650",
+      "source": "hf_papers",
+      "content": "The scalability of Large Language Models (LLMs) to long contexts is fundamentally constrained by the quadratic complexity of standard attention, motivating the adoption of linear attention mechanisms with sub-quadratic cost. To improve representation capacity under long contexts, recent approaches organize memory in a multi-state manner. However, existing multi-state linear attention methods rely on fixed state merging policies that cannot adapt to dynamically varying token importance, irreversibly obscuring critical tokens and causing severe error accumulation over long sequences. To address this limitation, we propose DLA, a dynamic memory modeling framework for multi-state linear attention. DLA introduces (i) Information-Aware Dynamic State Merging, which adaptively determines state boundaries based on token-level information variation, preserving high-resolution representations around semantic transitions while aggressively summarizing stable regions, and (ii) Capacity-Bounded Memory Modeling, which maintains a fixed-size, chronologically ordered state cache by selectively merging adjacent low-information states to control memory growth with minimal information loss. We pre-train DLA on two different linear attention models and evaluate on 16 datasets across three categories. Experimental results demonstrate the superiority of DLA over state-of-the-art.",
+      "published_at": "2026-06-09T09:57:48+00:00",
+      "summary": "긴 컨텍스트를 처리하는 LLM의 확장성 문제를 해결하기 위한 동적 선형 어텐션(Dynamic Linear Attention) 메커니즘을 제안한 연구다. 기존 멀티-스테이트 선형 어텐션이 고정 메모리 용량에 의존하는 반면, 이 방법은 컨텍스트에 따라 메모리를 동적으로 조정하여 표현 능력을 향상시킨다. 이차(quadratic) 복잡도의 표준 어텐션을 서브-이차 비용으로 대체하면서도 표현력을 유지하여, 수십만 토큰 이상의 긴 컨텍스트 처리에 실질적인 효율 이점을 제공하는 아키텍처 혁신이다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1a4c486e-f357-4fc6-b17e-d099a163da74",
+      "title": "Continual LLM Upcycling: A Predictor-Gated Bank-Wise Sparsity Training Recipe for Dense-to-Sparse LLMs",
+      "url": "https://huggingface.co/papers/2606.10722",
+      "source": "hf_papers",
+      "content": "We study dense-to-sparse continual training as a way to construct channel-sparse large language models from dense checkpoints. Starting from a Qwen2.5-8B dense backbone, we continue training at 32K context and introduce a predictor-gated sparse SwiGLU FFN in the 32K stage. For each token and layer, we use a low-rank predictor to produce FFN-channel routing logits. We then apply a bank-wise top-k rule to retain 16 channels in every 64-channel bank, yielding 4x sparsity in the FFN intermediate activation. Unlike post-hoc sparse inference methods, the routing module is placed on the main language modeling path and optimized during continual training, enabling the dense model to be upcycled into a hardware-oriented sparse model. We report the architecture, training recipe, benchmark performance, and training lessons. We also identify a layer-local long-context failure mode on RULER-CWE and propose a single-layer repair algorithm that substantially improves the affected length range.",
+      "published_at": "2026-06-09T11:32:58+00:00",
+      "summary": "Dense LLM 체크포인트에서 채널-스파스 LLM을 구성하는 연속 학습(continual training) 방법론을 제안한다. Qwen2.5-8B dense 백본에서 시작해 predictor-gated sparse SwiGLU FFN을 도입하는 방식으로, 처음부터 스파스 모델을 훈련하는 것보다 훨씬 적은 자원으로 추론 효율이 높은 모델을 얻을 수 있다. 이미 학습된 대형 Dense 모델을 MoE 스타일의 스파스 모델로 재활용함으로써 AI 인프라 비용 절감과 추론 속도 향상을 동시에 달성하는 실용적 접근법이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "7c157b80-4328-4d56-9c07-2995f750621d",
+      "title": "ManiSplat: Manipulation Trajectory Synthesis from Monocular Video via Decoupled 3D Gaussian Splatting",
+      "url": "https://huggingface.co/papers/2606.10645",
+      "source": "hf_papers",
+      "content": "Reconstructing dynamic and interactive 3D scenes from real-world observations remains a fundamental challenge in computer vision and robotics. While recent advances in 3D Gaussian Splatting have enabled high-fidelity static reconstruction, extending it to interactive environments with articulated robots and manipulable objects remains difficult due to complex contact interactions and abrupt pose changes. To address these challenges, we introduce ManiSplat, a unified framework that reconstructs controllable and decoupled Gaussian digital twins directly from monocular ego-view robotic videos. Our method introduces a Graph-Structured Disentangled Representation that separates the robot, objects, and background into independently optimizable Gaussian subfields organized within a scene graph. To ensure stability, we propose a Task-Oriented Spatio-Temporal Alignment module that leverages the inherent logic of manipulation tasks-alternating between Motion and Skill phases-to construct accurate pseudo-ground-truth trajectories. Finally, a joint photometric-geometric optimization ensures the reconstructed scenes are temporally coherent, physically consistent, and simulation-ready. Extensive experiments demonstrate that our approach reconstructs interaction-driven dynamic scenes with high fidelity and controllability, effectively supporting downstream robotic tasks and policy learning.",
+      "published_at": "2026-06-09T09:55:58+00:00",
+      "summary": "단안(monocular) 비디오에서 로봇 조작 궤적을 합성하기 위해 분리된 3D Gaussian Splatting을 활용하는 ManiSplat 프레임워크를 제안한다. 정적 재구성에 강점을 보이는 3DGS를 로봇과 조작 가능한 물체가 있는 동적 인터랙티브 환경으로 확장하여, 복잡한 접촉 상호작용과 갑작스러운 포즈 변화를 처리할 수 있다. 단일 카메라 영상만으로 조작 궤적 데이터를 생성할 수 있어 로보틱스 연구의 데이터 수집 비용을 크게 낮출 수 있는 중요한 기여다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a5322554-4f2b-4c96-9c4c-eef1221d5efe",
+      "title": "Mechanistic Analysis of Alignment Algorithms in Language Models",
+      "url": "https://arxiv.org/abs/2606.09850",
+      "source": "arxiv",
+      "content": "arXiv:2606.09850v1 Announce Type: new \nAbstract: Post-training alignment algorithms are predominantly evaluated as black boxes, obscuring how they reshape language models' internal computations. We present a systematic mechanistic analysis of six preference-optimization methods: PPO, DPO, SimPO, ORPO, GRPO, and KTO across three open-weight model families. By integrating layer-wise linear probing, Sparse Autoencoders, and crosscoders, we localize preference representations and quantify alignment-induced geometric transformations in latent space. We find that preference signals consistently concentrate in early--mid or mid--late layers, but different objectives induce qualitatively distinct representational shifts. KTO and GRPO enhance linear separability through constructive feature sharing and sparse, high-salience recruitment. In contrast, DPO and ORPO degrade separability via non-constructive geometric rotation and feature attenuation, while PPO and SimPO largely preserve baseline geometry. These transformations exhibit architecture-dependent variability, demonstrating that behavioral alignment does not imply uniform internal restructuring. Our findings establish alignment as a heterogeneous intervention, motivate standardized feature-level auditing for safety and interpretability, and highlight the need for mechanism-aware optimization objectives.",
+      "published_at": "2026-06-10T00:00:00-04:00",
+      "summary": "PPO, DPO, SimPO, ORPO, GRPO, KTO 등 6가지 정렬(alignment) 알고리즘이 언어 모델의 내부 계산을 어떻게 재구성하는지를 체계적으로 분석한 기계론적 해석 연구다. 레이어별 선형 프로빙, Sparse Autoencoders, 크로스코더를 통합하여 선호 표현의 위치를 파악하고 각 알고리즘이 모델 내부를 다르게 변화시킴을 세 가지 오픈 웨이트 모델 패밀리에서 실증한다. 블랙박스로 평가되던 정렬 알고리즘의 내부 작동 방식을 해석 가능하게 하는 중요한 연구로, 더 안전하고 예측 가능한 정렬 기법 개발에 기여할 수 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3276c409-5029-4873-87cc-42fb70d7a387",
+      "title": "MLXP : Kubernetes LLM Serving 최적화 기술 도입기",
+      "url": "https://d2.naver.com/helloworld/1059238",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER ENGINEERING DAY 2026(5월)에서 발표되었던 세션을 공개합니다. 발표 내용 LLM 추론 성능을 극대화하기 위한 최신 기술들(KV Cache 인지 라우팅, Prefix Cache, 분산 멀티노드 서빙 등)을 Kubernetes 프로덕션 환경에 도입하는 과정에서 기존 인프라 스택(Istio 서비스 메시, 스케줄러, Pod 보호 정책)과 충돌하며 발생한 실전 문제들을 어떻게 진단하고 해결했는지 공유합니다. 발표 대상 Kubernetes 위에서 GPU 워크로드를 운영하는 플랫폼 엔지니어 LLM 서빙 인프라를 직접 구축·운영하는 MLOps / Infra 엔지니어 Istio 서비스 메시 환경에서 AI 워크로드를 다루는 DevOps 엔지니어 목차 배경 : MLXP와 LLM Serving 최적화 기술 MLXP에서 LLM Serving 최적화를 반영한 구조 Troubleshooting GroupDisruptionBudget ◎ NAVER Engineering Day란? NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다.",
+      "published_at": "2026-06-11T11:16:31+00:00",
+      "summary": "네이버가 Kubernetes 프로덕션 환경에서 LLM 추론 성능 극대화를 위한 최신 기술 도입 경험을 공개했다. KV 캐시 인지 라우팅, Prefix Cache, 분산 멀티노드 서빙 등 고급 기술을 기존 Istio 서비스 메시·스케줄러·Pod 보호 정책과 충돌 없이 도입하는 과정의 실전 문제와 해결책을 상세히 공유한다. GPU 워크로드를 Kubernetes 위에서 운영하는 MLOps·인프라 엔지니어들에게 매우 실용적인 인사이트를 제공하며, 한국 최대 테크 기업의 대규모 LLM 서빙 운영 경험을 배울 수 있는 귀중한 자료다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ba2302c4-34da-4d17-bbaa-25e29e75f941",
+      "title": "From Confident Closing to Silent Failure: Characterizing False Success in LLM Agents",
+      "url": "https://arxiv.org/abs/2606.09863",
+      "source": "arxiv",
+      "content": "arXiv:2606.09863v1 Announce Type: new \nAbstract: LLM agents can fail silently by asserting task completion when the environment state shows otherwise. We study this failure mode, false success, across two agent benchmarks: 9,876 tau2-bench trajectories from 8 model families and 1,879 AppWorld trajectories from 4 model families with text-independent ground truth. False success is common but varies by setting: 45--48% of failures in single-control tau2-bench domains, 3% in dual-control telecom, and 75.8% among AppWorld self-assessing coding-agent trajectories with explicit status claims. LLM judges fail reliably: no configuration across 5 judges, 5 prompt strategies, and full task specifications exceeds AUROC 0.65 on tau2-bench, and the same judges reach only 0.54 AUROC on AppWorld API-call traces. Judges rely on surface completion proxies -- confident closing language in tau2-bench and coarse action-sequence volume in AppWorld -- rather than verified state changes. Lightweight TF-IDF detectors achieve task-disjoint AUROC 0.83 on tau2-bench and 0.95 on AppWorld, recovering 4--8x more false successes than the best judge at the same flag rate with 3,300x lower latency. These results suggest that production monitoring should use lightweight, domain-calibrated detectors as triage signals rather than relying on LLM judges as the primary monitor for false success.",
+      "published_at": "2026-06-10T00:00:00-04:00",
+      "summary": "LLM 에이전트가 실제로 작업을 완료하지 않았음에도 완료했다고 주장하는 '거짓 성공(false success)' 현상을 8개 모델 패밀리 총 11,755개 궤적을 분석하여 체계적으로 규명한 연구다. 단일 제어 도메인에서 에이전트 실패의 45~48%가 거짓 성공 형태로 나타나는 심각한 신뢰성 문제가 밝혀졌다. 환경 상태와 에이전트 주장 간 불일치를 탐지하는 방법 개발이 에이전트 신뢰성의 핵심 과제임을 강조하며, 기업 환경 에이전트 배포 시 반드시 고려해야 할 실패 모드를 정의하는 중요한 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8c54b6b4-0791-4329-9ca4-e98c0e287335",
+      "title": "‘AI-pilled’ firms spend $7,500 per employee each month on AI",
+      "url": "https://techcrunch.com/2026/06/10/ai-pilled-firms-spend-7500-per-employee-each-month-on-ai/",
+      "source": "techcrunch",
+      "content": "The most AI-obsessed firms are spending roughly $7,500 monthly per employee on AI, per Ramp AI Index. That's not more than an engineer's salary — yet.",
+      "published_at": "2026-06-10T17:07:35+00:00",
+      "summary": "Ramp AI Index에 따르면 AI에 가장 적극적인 기업들은 직원 1인당 월 7,500달러(약 1,000만 원)를 AI 도구에 지출하고 있으며, 이는 빠르게 증가하는 추세다. 아직 평균 엔지니어 연봉보다 낮은 수준이지만, AI가 기업 운영의 핵심 비용 항목으로 자리잡으면서 ROI 측정과 지출 최적화가 CTO·CFO의 주요 과제가 되고 있다. AI 투자가 단순한 실험을 넘어 주요 운영 비용이 되어가는 산업 동향을 구체적 수치로 보여주는 중요한 데이터 포인트다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "dc9d060b-e946-4262-bf34-02eb5325a34b",
+      "title": "Datadog veterans launch AI coding startup Niteshift on a bet against Big AI lock-in",
+      "url": "https://techcrunch.com/2026/06/10/datadog-veterans-launch-ai-coding-startup-niteshift-on-a-bet-against-big-ai-lock-in/",
+      "source": "techcrunch",
+      "content": "AI coding agent startup Niteshift has raised a $7 million seed round from a who's who of angels. It's betting companies will want power over, not lock-in with model makers.",
+      "published_at": "2026-06-10T15:00:00+00:00",
+      "summary": "Datadog 출신 개발자들이 창업한 AI 코딩 에이전트 스타트업 Niteshift가 700만 달러 시드 라운드를 조달했다. 주요 AI 제공업체에 대한 종속(lock-in) 없이 기업이 AI 코딩 도구를 자체적으로 제어할 수 있게 하는 것이 핵심 차별화 포인트다. Big AI 벤더 종속 없이 기업 거버넌스를 유지하려는 수요가 AI 코딩 도구 시장에서도 뚜렷하게 나타나고 있으며, AI 코딩 에이전트 시장 경쟁이 치열해지는 가운데 독립성을 전략으로 택한 흥미로운 사례다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ad3f6c5a-4571-48c9-8d9b-54967815d9e0",
+      "title": "Evaluate Clinical ASR Models Faster with Agent Skills and NVIDIA Nemotron Speech",
+      "url": "https://developer.nvidia.com/blog/evaluate-clinical-asr-models-faster-with-agent-skills-and-nvidia-nemotron-speech/",
+      "source": "nvidia",
+      "content": "Training a speech AI model to correctly recognize or synthesize clinical terminology is surprisingly difficult. Drug names like Acetaminophen, Amlodipine,...Training a speech AI model to correctly recognize or synthesize clinical terminology is surprisingly difficult. Drug names like Acetaminophen, Amlodipine, Cefazolin, and Biktarvy are not part of everyday vocabulary. Procedure names, anatomy terms, and specialty-specific diagnoses introduce the same problem in a different form. Off-the-shelf speech systems can sound fluent and still miss the words… Source",
+      "published_at": "2026-06-09T15:00:00+00:00",
+      "summary": "NVIDIA Nemotron Speech와 Agent Skills를 활용하여 임상 ASR(자동음성인식) 모델 평가를 자동화하고 속도를 높이는 방법을 소개한다. 의약품명, 해부학 용어, 시술명 등 일반 어휘에 없는 임상 전문 용어를 정확하게 인식하도록 음성 AI를 훈련하는 것의 어려움을 에이전트 기반 자동화로 해결하는 접근법이다. NVIDIA의 AI 에이전트 인프라가 의료 AI 모델 개발·평가 파이프라인에 적용되는 구체적인 사례로, 의료 분야 AI 솔루션의 실용화를 가속화할 수 있는 기술적 기반을 제시한다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "de36220f-2ea9-4dfc-9ced-13a4c3f36514",
+      "title": "STAGE-Claw: Automated State-based Agent Benchmarking for Realistic Scenarios",
+      "url": "https://huggingface.co/papers/2606.10394",
+      "source": "hf_papers",
+      "content": "Large language models are increasingly used to power personal agents for everyday applications, but evaluating these agents remains a challenge. Existing benchmarks still rely on sandboxed artifacts, static task design, and coarse scoring, which hinder scalability and limit progress toward reliable personal-agent evaluation. This paper introduces STAGE-Claw, an automated framework for building and evaluating realistic personal-agent scenarios in state-based personal-computing environments. Given a task hint, STAGE-Claw automatically creates and validates a realistic benchmark task with its environment, task prompts, ground truth, and related verification programs. Agents are then evaluated in realistic operating environments, where performance is measured by the correctness of the final system state rather than only the textual response. Using STAGE-Claw, this paper creates a benchmark with 40 challenging real scenario agent tasks, evaluates 11 frontier models, and analyzes their task scores, costs, tool-call reliability, and common failure patterns. Overall, STAGE-Claw offers a scalable, state-based way to evaluate agents in realistic user scenarios.",
+      "published_at": "2026-06-09T04:16:35+00:00",
+      "summary": "일상 애플리케이션에서 LLM 기반 개인 에이전트를 평가하기 위한 자동화된 상태 기반 벤치마킹 프레임워크 STAGE-Claw를 제안한다. 기존 벤치마크의 샌드박스 제약, 정적 태스크 설계, 거친 채점 방식의 한계를 극복하여 현실적인 시나리오에서 에이전트를 평가하는 더 확장 가능한 방법론을 제시한다. 자동화된 상태 기반 평가로 에이전트의 실제 작업 완료 여부를 더 정확하게 측정하며, 신뢰할 수 있는 개인 에이전트 개발을 위한 평가 인프라 발전에 기여할 것으로 기대된다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0cad75c5-52f4-48c6-856d-eadfb9cbb0e9",
+      "title": "Learning to lead in a hybrid human-AI enterprise",
+      "url": "https://www.technologyreview.com/2026/06/09/1137830/learning-to-lead-in-a-hybrid-human-ai-enterprise/",
+      "source": "mit_tech_review",
+      "content": "As adoption of AI agents looks set to surge by as much as 300% in the next two years, leadership teams are carefully considering the implications of a hybrid human-AI workforce. Unlike existing enterprise-level automation that relies on manual input, AI agents are capable of autonomously coordinating complex tasks, interacting with multiple tools and environments across an organization. In early applications that center on customer service, HR, and sales, adoption of agentic AI has led to productivity gains of 30-50%. Their autonomy positions agents more as collaborators than tools, working side-by-side with human employees in blended teams that look poised to upend traditional workplace dynamics.&nbsp; More than three-quarters of HR leaders believe that the deployment of AI agents will transform existing workplace norms, driving a complete reappraisal of how roles and responsibilities are distributed, how skills are prioritized, and how workplace culture is shaped. Though many admit they’re in the early or preparatory phase of this shift, 86% of chief HR officers predict that navigating digital labor shaped by agentic AI will be a central component of their role in the years ahead. Fluency in the change management aspect of agentic AI adoption will be a crucial differentiator when it comes to unlocking the full potential of the technology going forward, believes Ateet Jayaswal, chief culture and employee experience officer at Wipro, a leading technology services and consulting company. This moment is one that he says, “calls for a mindset shift in how HR leaders would enable their organizations.” Redeploying roles to enable higher-value work As AI agents assume ownership of more complex and integral tasks, the distribution of roles and responsibilities within an organization will undergo significant change. It’s estimated that three-quarters of current roles will require redesign, reskilling, or redeployment by 2030 as a result of agentic AI. For leadership, this shift should be about reskilling employees toward higher-value work in order to optimize the potential of an agent-human hybrid workforce, says Jayaswal.&nbsp; For example, Wipro is a complex organization of 240,000 employees across 65 countries. It previously had multiple policies, documents, and knowledge fragmented across different systems, which delayed response to employee queries.&nbsp; But the company has recently integrated a custom agentic AI assistant—an agent co-created in partnership with enterprise agentic AI platform Ema Unlimited—that can swiftly navigate this complex system, assuming responsibility for 50 HR tasks that had previously fallen to human employees. With the help of an AI agent, average response time to queries has lowered from 48 hours to five seconds. Human employees have more time to focus on work “that requires a creative and imaginative mind and cross-functional collaboration, leveraging diverse ideas and thoughts to problem-solve,” says Jayaswal. The AI agent, meanwhile, handles rote administrative tasks like sorting timesheets or helping employees navigate policies and take actions in the flow of work. When reallocating employee responsibilities, though, it is imperative that humans remain in the loop, Jayaswal caveats. When agentic AI is incorporated into enterprise technology, it must work with sensitive and personal data and therefore needs even more stringent guardrails and constraints than consumer applications. “When you expose an AI agent to organizational data, when you integrate it into multiple enterprise systems, then pathways around the AI agent become extremely important,” he says. “It’s an evolving space that leadership needs to have front-of-mind.” Governance should include robust data privacy rules and the establishment of governance layers, such as an AI council, he suggests.&nbsp;&nbsp; At a fundamental level, the adoption of AI agents will force a re-evaluation of human roles, believes Jayaswal. Rather than employees primarily performing repetitive tasks or troubleshooting, a significant proportion of their time will shift to designing, teaching, and optimizing an AI agent that can do this work for them with far greater speed and predictability and without the agent getting bored.&nbsp; “The nature of your job changes from being the hero who comes in to solve the problem to designing the hero who can solve the problem,” he summarizes. “The individuals who I have seen thrive in this environment are the ones who make this shift.” An evolving employee skillset Just as roles and responsibilities will be reconfigured to reflect the input of AI agents, the core skills of human employees will be reprioritized. More than four in five HR leaders say they’re planning to reskill workers to become more competitive in a market shaped by AI agents. Technical skills will be increasingly important. Leading employers such as Salesforce, Danone, and Walmart are already rolling out dedicated AI and digital skills programs that aim to equip everyone from frontline workers to C-suite executives with a baseline level of AI literacy in response to the pervasiveness of the technology. But desirable soft skills will also evolve, Jayaswal points out. Employees who assign tasks to an AI agent need to plainly articulate what modular steps may be needed to accomplish a task, what the desired outcome should be, and what parameters or guardrails need to be in place to ensure the agent doesn’t access or share confidential data.&nbsp; As HR executives adapt to a blended workforce, three skills are emerging as top priorities during recruitment, according to a recent survey: relationship building, like forging constructive partnerships and account management; collaboration; and adaptability. Maintaining a healthy workplace culture In freeing up human employees to focus on higher-value tasks, the hope is that AI agents can elevate the employee experience, deepening fulfilment and satisfaction in the workplace.&nbsp; “At Wipro, our vision is to improve the life of Wiproites,” says Jayaswal. “We are taking away non-value added work by embracing modern ways of collaborating, engaging, and transacting, leaving associates with higher order work content.”&nbsp; But leadership teams embracing agentic AI will also need to plan for the new pressures and stressors that the technology can place on a workforce.&nbsp; There is already confusion and knowledge gaps, with 73% of HR leaders reporting their employees don’t yet understand how digital labor will impact their work. Many organizations have opted to define AI agents as teammates or colleagues on org charts, but new research says this could erode trust and a sense of professional identity. It also raises new questions around accountability and ownership. The role of management in addressing these concerns is critical, says Jayaswal. To maintain healthy dynamics, managers need to become skilled at orchestrating blended systems, splitting their focus between supervising AI agents and motivating human employees as they also build and supervise AI agents. Upgrading employee well-being programs will be a core part of maintaining a robust workplace culture. “As there are more interactions with AI agents, you are losing some of the human touch that was provided by service delivery partners or leaders, or often even by colleagues and peers,” Jayaswal says. Employee services that encourage social connection and empathetic communication may help teams navigate this.&nbsp; A breakneck transformation Agentic AI looks set to scale at breakneck speed across many enterprises, and it will significantly transform how these organizations operate.&nbsp; Carefully considering and deciding how to adapt to this newly blended workforce is now a top priority for leadership teams. Reviewing and refining organizational strategies is essential for optimizing both technological gains and the employee experience. This content was produced by Insights, the custom content arm of MIT Technology Review. It was not written by MIT Technology Review’s editorial staff. It was researched, designed, and written by human writers, editors, analysts, and illustrators. This includes the writing of surveys and collection of data for surveys. AI tools that may have been used were limited to secondary production processes that passed thorough human review.",
+      "published_at": "2026-06-09T10:20:06+00:00",
+      "summary": "향후 2년 내 AI 에이전트 도입이 300%까지 급증할 것으로 예상되는 가운데, 기업 리더십 팀들이 인간-AI 혼합 인력 운영 방식을 고심하고 있다는 MIT Technology Review의 분석이다. 기존 자동화와 달리 AI 에이전트는 복잡한 작업을 자율적으로 조율하고 다양한 도구·환경과 상호작용할 수 있어, 관리 방식의 근본적 변화가 필요하다. 성공적인 하이브리드 AI 기업 전환을 위한 리더십 역량과 조직 문화 변화에 대한 실용적 인사이트를 제공하며, AI 도입이 기술 문제를 넘어 조직 관리의 과제임을 강조한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
