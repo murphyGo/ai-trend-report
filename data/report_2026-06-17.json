@@ -1,0 +1,282 @@
+{
+  "id": "c29a13e1-683f-4bbc-97f9-f6c53e148fac",
+  "created_at": "2026-06-17T04:09:11.629837",
+  "articles": [
+    {
+      "id": "e0a2f9b9-11e5-4685-94b2-4e88eb287019",
+      "title": "Deployment Simulation: Realistic Conversation Contexts to Estimate Model Behavior Before Release",
+      "url": "https://openai.com/index/deployment-simulation/",
+      "source": "openai",
+      "content": "June 16, 2026\n\nUsing realistic conversation contexts to better estimate undesired model behavior before release.\n\nBefore releasing a new model, labs need to understand not just what it can do, but how it is likely to behave in real-world use, including where it might introduce new risks. This becomes even more important as capabilities increase. As part of our pre-deployment safety review, we leverage targeted evaluations, red-teaming, and other checks to understand model behavior. We’ve now started using a method for simulating model deployments before they happen, which adds a complementary signal: a deployment-like preview of how a candidate model may behave before it reaches users.\n\nDeployment Simulation is a method for simulating a future deployment before it happens. We do so by replaying previous conversations in a privacy-preserving manner with a new candidate model. This enables us to study how the new model responds in realistic contexts before release, including whether new undesired behaviors emerge and how often they may appear.\n\nAcross multiple GPT‑5‑series Thinking deployments, Deployment Simulation improved our estimates of undesired model behavior rates, helped surface novel forms of misalignment before release, and helped reduce the risk that models would be able to tell they were being tested. We also applied the method to challenging agentic rollouts, showing that it can extend beyond standard chat to more complex agent settings involving tool use, and can also be used for risk assessment before internal model deployments.\n\nWe have already used insights from Deployment Simulation during model development to identify blind spots in traditional evaluations and inform mitigations and deployment decisions. As we make the pipeline easier to run, we expect it to play a larger role in the future model development process.\n\nPre-deployment evaluations used across the industry generally consist of a mix of synthetic, manually written, or production prompts intentionally selected to be difficult, high severity, or adversarial. These evaluations have generally had two intertwined goals: assessing how the model responds when stress-tested in situations that have a very small chance of occurring in deployment traffic, and gaining a general understanding of undesired model behaviors, including finding novel undesired behaviors and predicting their deployment-time frequencies.\n\nWhile traditional evaluations remain crucial for the first goal, Deployment Simulation represents a significant step forward with regards to the second goal for non-tail risks (in our experiments, our approach can’t be expected to measure behaviors that occur with frequency less than 1 in 200,000 messages). Deployment Simulation’s strength comes from side-stepping some core challenges with traditional evaluations:\n\nThe main technique behind Deployment Simulation is simple: we take recent conversations from deployment, remove the original assistant response from the older model, and regenerate it with a candidate model to be released. We evaluate the completions by searching for new failure modes, and estimate deployment-time undesired behavior frequency based on frequency in this deployment-like distribution. We can perform the same measurements after release on real deployment traffic, enabling us to validate our pre-deployment forecasts.\n\nDeployment Simulation significantly mitigates the three limitations listed above: sampling bias is addressed by using a distribution of evaluation prompts representative of recent usage. Deployment Simulation with representative prompts can also mitigate concerns about coverage: we get greater coverage of undesirable model behaviors by simply simulating more traffic. This tradeoff between compute and coverage is important, because it makes the quality of this axis of risk assessment scale with compute, rather than the manual effort required to build more evaluations. Models also don’t seem to be able to distinguish between conversations obtained via deployment simulation and real deployment traffic.\n\nFigure 1: Overview of our Deployment Simulation pipeline\n\nArea\n\nTraditional Evaluations\n\nDeployment Simulation\n\nCoverage\n\nBetter for low prevalence but high severity risks that we want to make sure we have coverage for\n\nBetter for understanding the spectrum of risks we’re likely to see in deployment traffic\n\nRepresentativeness / bias\n\nFocused on evaluating targeted past or predicted risks, even for behaviors that have extremely low prevalence in deployment\n\nRepresentative of risks that occur above a certain prevalence in current deployment traffic\n\nEvaluation awareness\n\nPotentially obvious test cues (e.g., with synthetic data) unless evals are created with deployment data\n\nDeployment-like context seems to significantly mitigate eval awareness\n\nEffort\n\nCustom prompt distributions and setups requires significantly more manual effort\n\nRequires a one-time infrastructure cost, and then reuses prefixes from deployment and graders from known undesired behaviors\n\nHigh level comparison between traditional evaluations and Deployment Simulation\n\nTo evaluate Deployment Simulation, we pre-registered predictions for the deployment-time frequency of 20 types of undesirable behavior for GPT‑5.4 Thinking. We also ran retrospective studies across other deployments of Thinking models of the GPT‑5‑series. The model behaviors we analyze cover both misalignment and disallowed content categories which we have been reporting in system cards (e.g. the model lying about tools, or outputting disallowed sexual content). While for these results we only track 20 categories of undesired model behavior, and only look for novel misaligned behaviors, Deployment Simulation is a general technique which could be applied to simulate any deployment-time model property.\n\nThe production traffic we leveraged was also from Thinking models of the GPT‑5‑series. Before running our evaluations, we automatically removed account-linked identifiers and identifiable information. In accordance with our privacy policy, we only analyzed ChatGPT traffic from users who allow their data to be used for model improvements. We report only aggregate findings from these evaluations. In total, we analyzed approximately 1.3 million de-identified conversations across GPT‑5 Thinking through GPT‑5.4 deployments, spanning August 2025 to March 2026.\n\nWe evaluate the quality of the pre-deployment risk-assessment produced by Deployment Simulation in three main ways:\n\nWe also measure how much models are able to tell they are in an evaluation during Deployment Simulation, and test how robust the method is to different forms of deployment traffic and to challenging tool use settings.\n\nAcross GPT‑5‑series Thinking deployments, Deployment Simulation outperformed challenging-prompt baselines in determining actual risk rate, was able to surface calculator hacking before release, and appeared potentially indistinguishable from deployment to the model.\n\nOverview of our predictions.For a visualization of all predictions for Thinking model deployments of the GPT‑5‑series, see Figure 2. The predictions for GPT‑5.4 Thinking were pre-registered, while the others were retroactive predictions. In aggregate, our predictions had a median multiplicative error of 1.5x (e.g. if the undesirable behavior rate is 10 in 100k, this would correspond to estimating a rate of 15 or 6.67 in 100k). While tail errors of our method can be roughly 10x larger, we expect they can be significantly reduced with further improvements to our simulation pipeline, as discussed below.\n\nFigure 2. Deployment Simulation frequency predictions of deployment-time undesirable behavior based on prior deployment data. The notation 5.1 → 5 indicates that we are resampling prefixes from GPT‑5 with GPT‑5.1, that is, simulating GPT‑5.1’s deployment based on data from GPT‑5. The highest rate of misaligned behavior was “calculator hacking” in GPT‑5.1, which we have discussedpreviously⁠(opens in a new window).\n\nComparing Deployment Simulation predictions to baselines.The most important categories to estimate correctly for pre-deployment risk-assessments are ones that have large changes of incidence after the model’s deployment (e.g. >= 1.5x). On this subset, Deployment Simulation is substantially better than baselines both at predicting whether a certain undesirable behavior will increase or decrease in prevalence with a model’s deployment (Figure 3, left), and at estimating its exact deployment-time incidence (Figure 3, right). We use two main baselines: a Challenging Prompts baseline which we currently use for system cards and launch decisions, and a naive baseline of using rates from the previous deployment as estimates for the new model.\n\nFigure 3. Deployment Simulation predicts both the direction of incidence changes (left) and exact production rates (right) better than static evals.\n\nSources of simulation error in our pipeline.We also studied the current sources of error in our pipeline. Specifically, large tail errors make the pipeline less trustworthy for deployment decisions: for example, when seeing a large predicted increase in an undesirable behavior of a certain type, if the pipeline is known to have even occasional large errors, it raises doubt about whether this is a reliable estimate or an artifact of the pipeline. There are two main sources of possible error:\n\nAs seen in Figure 4, we find that a large fraction of the error in our pipeline–especially for tail errors–is currently due to simulation fidelity. This is good news, as we expect simulation fidelity to be generally easier to improve than reducing prompt distribution shift. We also find that prompt distribution shift error may be reduced by using the most recent data from the previous deployment. More detail can be found in the research paper.\n\nFigure 4: Resampling environment fidelity seems to be the largest source of error in our estimates, especially fo...",
+      "published_at": "2026-06-16T00:00:00",
+      "summary": "OpenAI는 새 모델 출시 전 원치 않는 행동을 사전 탐지하기 위해 '배포 시뮬레이션(Deployment Simulation)' 방법론을 공개했다. 실제 배포 환경에 가까운 대화 문맥을 생성해 모델이 실제 사용에서 어떻게 행동할지 추정하며, 표준 벤치마크보다 훨씬 현실적인 위험 평가가 가능하다. 이 기법은 모델이 실험실 환경에서는 안전하게 보여도 실제 배포 후 문제가 발생하는 간극을 좁히는 데 초점을 맞춘다. AI 안전성 평가 프레임워크에 중요한 기여로, 프론티어 모델의 책임 있는 배포를 위한 실용적 방법론으로 주목받는다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "dbe10ade-9195-40c5-8d9c-041c371df2e4",
+      "title": "NVIDIA Blackwell Tops MLPerf Training 6.0 with Industry-Leading Scale and Performance",
+      "url": "https://developer.nvidia.com/blog/nvidia-blackwell-tops-mlperf-training-6-0-with-industry-leading-scale-and-performance/",
+      "source": "nvidia",
+      "content": "NVIDIA delivered a clean sweep in MLPerf Training v6.0, the latest edition of industry-standard AI training benchmarks developed by the MLCommons consortium....NVIDIA delivered a clean sweep in MLPerf Training v6.0, the latest edition of industry-standard AI training benchmarks developed by the MLCommons consortium. NVIDIA achieved the fastest time to train at scale, and also delivered the highest performance when normalized on a per-accelerator basis on every benchmark. It was also the only platform to submit on every test. Source",
+      "published_at": "2026-06-16T15:11:13+00:00",
+      "summary": "NVIDIA가 MLCommons의 최신 AI 학습 표준 벤치마크인 MLPerf Training v6.0에서 Blackwell GPU로 전 부문 최고 성능을 기록했다. 산업 최대 규모의 클러스터 확장성과 초당 처리량 모두에서 경쟁 제품을 압도하는 결과를 보여줬다. 이번 결과는 NVIDIA Blackwell 아키텍처가 대규모 언어 모델과 멀티모달 AI 학습에서 사실상의 표준 하드웨어로 자리 잡음을 입증한다. AI 인프라 투자와 클라우드 AI 서비스 성능에 직접 영향을 미치는 중요한 산업 지표로, 기업들의 GPU 선택 결정에 큰 영향을 미칠 전망이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6577e74b-72b5-498d-a4f7-7817fc24602a",
+      "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+      "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/",
+      "source": "techcrunch",
+      "content": "The deal is supposed to help SpaceX's struggling AI division. The company told IPO investors it sees a $26 trillion addressable market in AI.",
+      "published_at": "2026-06-16T11:21:41+00:00",
+      "summary": "SpaceX가 AI 코딩 도구 스타트업 Cursor를 600억 달러 규모의 주식 거래로 인수한다고 발표했다. SpaceX IPO 직후 이루어진 이번 인수는 Cursor를 통해 자사의 AI 사업 부문을 강화하려는 전략으로, SpaceX는 AI 시장의 총 주소 가능 시장을 26조 달러로 추산하고 있다. AI 코딩 어시스턴트 시장에서 급성장한 Cursor의 가치가 수개월 만에 최고 수준에 도달했음을 보여주는 상징적인 딜이다. 이 인수는 AI 개발 도구 시장의 치열한 경쟁과 주요 테크 기업들의 AI 코딩 생산성 도구에 대한 막대한 투자 의지를 다시 한번 확인시켜 준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d834a3e9-a153-47e5-bf03-bbc5284c4ed5",
+      "title": "ChatGPT’s market share slips below 50% for first time",
+      "url": "https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/",
+      "source": "techcrunch",
+      "content": "The chatbot still remains the most popular AI assistant worldwide with over 1.1 billion monthly users, followed by Gemini with 662 million and Claude with 245 million.",
+      "published_at": "2026-06-16T10:30:00+00:00",
+      "summary": "ChatGPT의 AI 어시스턴트 시장 점유율이 사상 처음으로 50% 아래로 떨어졌다. 월간 활성 사용자 11억 명으로 여전히 1위를 유지하고 있지만, Gemini(6억 6200만 명)와 Claude(2억 4500만 명)의 빠른 성장이 두드러진다. 이는 ChatGPT가 지배하던 생성형 AI 시장이 점차 멀티플레이어 경쟁 구도로 재편되고 있음을 보여주는 중요한 시장 전환점이다. Anthropic과 Google의 공격적인 모델 개선 및 마케팅이 OpenAI의 독점적 지위에 균열을 내고 있으며, 기업 사용자들의 AI 도구 선택지가 다양해지고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b9a60134-2ddf-4b92-b8ba-583a23f36fb5",
+      "title": "도구에서 동료로 — AI 에이전트 자율 성장 프레임워크",
+      "url": "https://d2.naver.com/helloworld/4399330",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER ENGINEERING DAY 2026(5월)에서 발표되었던 세션을 공개합니다. 발표 내용 매 세션 초기화되는 AI의 한계를 넘어, 경험을 축적하고 스스로 성장하는 에이전트 프레임워크 GNOSIS의 설계 원칙과 구현 사례를 소개합니다. 발표 대상 AI Agent 프레임워크 활용에 관심 있는 개발자 목차 PROLOGUE — 당신의 AI는 어제와 똑같다 INTRODUCTION — GNOSIS 30초 요약 ARCHITECTURE — 3-Loop + Constitution + 5층 기억 ALGORITHMS — 13 공리 · 17 메커니즘 · 7 알고리즘 THEORY — 수학적 안전 보장 EXPERIMENTS — 검증과 외부 근거 IMPLEMENTATION — Phase -1 → 3 DISCUSSION — 모르는 것은 모른다고 말한다 SUMMARY &amp; Q&amp;A — 5분 핵심 요약 ◎ NAVER Engineering Day란? NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다.",
+      "published_at": "2026-06-17T11:31:17+00:00",
+      "summary": "네이버가 NAVER ENGINEERING DAY 2026에서 매 세션마다 초기화되는 AI의 한계를 극복한 자율 성장 에이전트 프레임워크 'GNOSIS'를 공개했다. GNOSIS는 3-Loop 아키텍처, 헌법(Constitution) 기반 행동 원칙, 5계층 기억 시스템을 결합해 AI 에이전트가 경험을 축적하고 스스로 개선할 수 있도록 설계되었다. 기존 AI 도구와 달리 장기 기억과 자기 반성 능력을 통해 반복 작업에서 지속적으로 성능이 향상되는 '동료형 AI'를 구현한 사례이다. 네이버의 실제 사내 환경에서 검증된 프레임워크로, 국내 AI 에이전트 연구와 실용화의 수준을 보여주는 중요한 기술 공유다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "83ada10a-bfe0-47d5-9f97-b047038d055f",
+      "title": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기",
+      "url": "https://tech.kakao.com/posts/824",
+      "source": "kakao_tech",
+      "content": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기: Hadoop 기반 도입 사례 안녕하세요. 소셜추천엔진팀에서 숏폼 추천 모델을 개발하고 있는 루퍼트(rupert)입니다. 추천 시스템을 개발하다 보면 코드를 짜는 시간만큼이나 데이터를 들여다보는 시간이 길어집니다. 지표가 조금만 움직여도 “이번 주 CTR이 왜 떨어졌지?”, “실험군 반응은 어땠지?”, “배포 이후 특정 사용자군에서 달라진 점은 없을까?” 같은 질문이 이어집니다. 질문은 한 문장이지만,...",
+      "published_at": "2026-06-15T15:00:00+00:00",
+      "summary": "카카오가 AI 에이전트를 활용해 카카오톡 추천 시스템의 지표 분석을 자동화한 사례를 공개했다. Hadoop 기반 데이터 인프라 위에서 AI 에이전트가 CTR 변동, 실험군 분석, 배포 후 사용자 행동 변화 등 반복적인 질의를 자동으로 처리한다. 분석 요청 한 문장을 입력하면 에이전트가 데이터를 조회·분석·시각화까지 수행하여 수동 작업 시간을 크게 단축했다. 추천 시스템 운영 현장에서의 실전 AI 에이전트 적용 사례로, 국내 빅테크의 AI 내재화 수준을 잘 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5b15b1c0-371e-4f04-b5f6-b955607e7504",
+      "title": "알리바바, 첫 큐웬 기반 로보틱스 파운데이션 모델 '큐원 로봇 스위트' 공개",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40549",
+      "source": "korean",
+      "content": "알리바바 그룹이 인공지능(AI) '임바디드 인텔리전스(Embodied Intelligence, 체화 지능)' 분야의 중요한 진전을 보여주는 큐웬(Qwen) 기반 로보틱스 파운데이션 모델 '큐원 로봇 스위트(Qwen-Robot Suite)'를 16일(현지시간) 공식 공개했다.\n\n큐원 로봇 스위트는 세 가지 핵심 모델로 구성된다. 범용 비전-언어-액션(VLA) 모델인 큐원 로봇 매니프(Qwen-RobotManip), 확장 가능한 비전-언어 내비게이션(VLN) 모델인큐원 로봇 내브(Qwen-RobotNav), 구현형 지능을 위한 비디오 월드 모델인 큐원 로봇 월드(Qwen-RobotWorld)가 그 핵심이다.\n\n큐원 로봇 스위트는 이동성과 조작, 물리 세계의 동작 원리등 물리적 상호작용의 다양한 측면을 포괄적으로 다루도록 설계됐다. 이를 통해 실제 로봇이 다양한 환경에 자연스럽게 적응하고, 낯선 환경에서도 새로운 작업을 처리하며, 처음 접하는 물체와도 자연스럽게 상호작용하면서 물리 법칙을 따르고 자연어 지시를 정확히 수행할 수 있다.\n\n큐원 로봇 스위트는 큐원(통이첸원)의 고도화된 멀티모달 역량인 언어 이해, 시각적 인식, 공간 추론을 물리적 세계로 확장한다. 세 모델은 RoboChallenge 등 수십 개의 권위 있는 로봇 평가 벤치마크에서 업계 최고 수준의 성능을 입증했다.\n\n특히, 큐원 로봇 스위트는 다양한 환경에서 새로운 작업과 지시를 처리하는 일반화 능력을 바탕으로 물리 공간에서 범용 에이전틱 시스템 구축을 위한 유력한 기반 기술로 평가받고 있다. 큐원 로봇 스위트는 현재 로보틱스 분야의 일부 알리바바 클라우드 기업 고객을 대상으로 실제 환경 파일럿 테스트를 진행 중이다.\n\n▷Qwen-RobotManip 모델은 Qwen3.5-4B VL 모델을 기반으로 구축된 VLA 모델 Qwen-RobotManip은 로보틱스 리포지토리, 인간 조작 영상, 합성 인간-로봇 데이터셋 등 전적으로 오픈소스 데이터로 구성된 3만 8,000시간 이상의 데이터를 학습에 활용했다.\n\n대규모 실제 로봇 기반 구현형 AI 평가인 RoboChallenge에서 1위를 기록했으며, AgileX ALOHA, Franka, UR, ARX 등 주요 로봇 하드웨어 플랫폼에서 검증을 완료했다. Qwen-RobotManip은 분포 외(out-of-distribution) 일반화 능력이 특히 뛰어나다.\n\n새로운 환경에서의 모바일 조작을 평가하는 EBench에서 1위를 달성했으며, 장면 변화 평가인 RoboTwin-Clean2Rand Hard에서 69.4%, 처음 접하는 지시 수행 평가인 RoboTwin-IF에서 72.0%를 기록했다. 또한 서로 다른 로봇 플랫폼 간 전이 성능(cross-embodiment transfer) 부문에서 기존 최고 수준(SOTA) 대비 3배 향상된 성능을 달성해, 재학습을 최소화하면서 다양한 로봇 하드웨어에 모델을 배포할 수 있게 됐다.\n\n▷Qwen-RobotNav 모델은 Qwen3-VL을 기반으로 개발된 Qwen-RobotNav는 궤적 계획 및 비전-언어 추론에 걸쳐 1,560만 건의 정제된 샘플로 학습됐다. 이 VLN 모델은 에이전틱 내비게이션 시스템을 위한 확장 가능한 내비게이션 엔진이자 통합 인터페이스로 기능한다.\n\n계획 모듈이 업무별 재학습 없이 추론 시점에 내비게이션 작업 모드와 컨텍스트 전략을 동적으로 선택할 수 있도록 설계돼, 구현형 질문 응답(EQA)과 같은 장기 과제를 처리하는 에이전틱 시스템의 핵심 구성 요소로 활용될 수 있다.\n\nEQA는 로봇이 \"제 출입증을 어디에 두었나요?\" 처럼 물리 공간에 관한 질문에 답하는 AI 태스크다. Qwen-RobotNav는 에이전틱 시스템에 통합될 경우 내비게이션 단계를 크게 줄이면서도 주요 벤치마크에서 최고 수준의 EQA 성능을 달성한다. 또한 이전에 접하지 않은 다양한 실제 환경에서도 강력한 일반화 능력을 발휘한다.\n\n▷Qwen-RobotWorld 모델은 현재 관측값을 기반으로 물리 법칙에 부합하는 미래 시각 변화를 예측하는 비디오 월드 모델이다. 실시간 시각 장면과 자연어 지시를 입력받아 물리 세계의 이후 변화를 정확하게 예측한다.\n\n20개 이상의 로봇 형태(embodiment type)와 500개의 동작 범주에 걸쳐 2억 프레임 이상을 포함하는 860만 건의 비디오-텍스트 쌍으로 학습됐으며, 로봇을 위한 합성 비디오 학습 데이터를 생성하고 실행 전 미래 궤적을 시뮬레이션할 수 있다. 이 기능은 로봇 조작, 구현형 계획 수립, 복잡한 실내 내비게이션 분야에 폭넓게 적용될 수 있다. 구현형 월드 모델 평가인 EWMBench와 로봇 학습 데이터 생성 평가인 DreamGen Bench에서 모두 1위를 달성했다.\n\n\"범용 AI와 물리적 행동을 잇는 에이전틱 시스템\"\n\n큐원 로봇 스위트는 범용 AI 모델을 물리 공간의 실용적인 에이전트로 전환하는 가능성을 열어준다. 범용 Qwen 모델은 로보틱스 모델과 직접 연계돼 일반 지능과 물리적 행동 사이의 간극을 메우는 특화 도구로 활용될 수 있다.\n\n예를 들어, \"코티커피(Cotti Coffee) 매장에 초록색 우산이 놓여 있는지 확인해 줘\" 와 같은 개방형 요청을 처리하는 에이전틱 워크플로에서, 범용 Qwen 모델이 상위 전략 기획자 역할을 맡고 Qwen-RobotNav가 실시간 실행 도구로 기능할 경우 해당 시스템은 실제 물리 공간을 자율적으로 탐색해 근거 기반 답변을 반환할 수 있다.\n\n한편, 더 자세한 내용은 알리바바의 연구 논문 '큐원 로봇 스위트: 물리 세계 지능 구현을 위한 파운데이션 모델 제품군(Qwen-Robot Suite: A Foundation Model Suite for Physical World Intelligence-보기)'를 참고하면 된다. 알리바바는 향후 큐원 로봇 스위트를 물리적 에이전트 생태계 전반에 통합해, 복잡하고 변화하는 실제 환경에서 고도의 자율 인식·공간 의사결정·장기 실행 능력을 갖춘 에이전트 구현을 목표로 한다.",
+      "published_at": null,
+      "summary": "알리바바 그룹이 Qwen 기반 로보틱스 파운데이션 모델 '큐원 로봇 스위트(Qwen-Robot Suite)'를 공식 발표했다. 범용 VLA(비전-언어-액션) 모델 Qwen-RobotManip, 확장형 시각-언어 내비게이션 모델 Qwen-RobotNav, 체화 지능용 비디오 이해 모델 등 세 가지 핵심 모델로 구성된다. 중국 최대 테크 기업이 로보틱스 파운데이션 모델 분야에 본격 진입했다는 점에서 글로벌 물리 AI 경쟁이 더욱 치열해질 것으로 전망된다. 한국 AI 타임스를 통해 보도된 이 소식은 중국 AI 기업의 체화 지능 투자가 가속화되고 있음을 보여주는 중요한 산업 동향이다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "be483dcb-4448-487f-b5b1-5dadba562fad",
+      "title": "The Download: the first brain implant power user and South Korea’s AI obsession",
+      "url": "https://www.technologyreview.com/2026/06/16/1139010/the-download-brain-implant-power-user-bci-south-korea-ai-obsession/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. This man with ALS is the first “power user” of a brain implant that lets him speak Casey Harrell has had a set of electrodes embedded in his brain for almost three years. Harrell, who has ALS and is paralyzed, first used his brain-computer interface (BCI) to “speak” in 2023. Since then, he’s clocked thousands of hours of use.&nbsp; Harrell can now use the device largely independently. His team has added new features to it, and he also uses it to surf the web and perform his job. “Living with a disease like ALS, you are supposed to have diminished dreams. I do not,” Harrell told MIT Technology Review.&nbsp; The team behind the device call Harrell “the first power user of a speech BCI.” They now plan to add further enhancements to the device. Dive into the groundbreaking impact of Casey Harrell’s BCI. —Jessica Hamzelou Why do South Koreans love AI so much? While a public backlash against AI brews across the US, South Koreans are optimistic. Only 16% say they are more concerned than excited about AI—the lowest of the 25 countries surveyed by the Pew Research Center—while 50% of Americans were more worried than excited.&nbsp; South Koreans share a deep conviction that embracing technology is integral to modernizing the country and cementing its place in the global order. Their fascination with AI is just the latest incarnation of that ethos—and it’s making them anxious to stay ahead. Read the full story on South Korea’s AI fervour. —Michelle Kim This story is from The Algorithm, our weekly newsletter giving you the inside track on all things AI. Sign up to receive it in your inbox every Monday. The must-reads I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology. 1 The US says it restricted Anthropic AI over foreign intelligence risksCommerce chief Lutnick said he acted over national security fears. (Reuters $)+ Following the ban, Anthropic disabled access to its new models. (BBC)+ Both sides are increasingly desperate for a resolution. (WSJ $)2 DeepSeek just became China&#8217;s most valuable startupIt raised $7 billion, the largest-ever first-round funding for an AI startup. (The Information $)+ The deal values DeepSeek at over $50 billion. (WSJ $)+ Its unusual structure preserves founder control. (Reuters $)+ DeepSeek’s new flagship model has caused a stir. (MIT Technology Review)&nbsp;3 Alibaba has unveiled AI models for robots amid a shift from chatbotsIt’s joined a global race to move AI into the physical world. (SCMP)+ AI is learning to understand its surroundings. (MIT Technology Review)&nbsp;4 Fox is buying streaming giant Roku for $22 billionThe deal creates the third-largest player in US TV by viewing share. (BBC)+ Fox is making a big bet on free streaming. (Washington Post $)5 EA has launched a new way to advertise “directly into gameplay”EA Advertising allows brands to become part of the game itself. (CNBC)+ Xbox’s new chief strategy officer is also eyeing in-game ads. (PC Gamer)+ GenAI could reinvent what it means to play. (MIT Technology Review)6 It’s trivially easy to use Reddit to manipulate AI searchA tiny snippet of text can&nbsp;trick ChatGPT and Google’s AI search. (404 Media)+ AI search is being manipulated to generate dangerous biases. (BBC)&nbsp;7 Sperm have been made magnetic to allow IVF inside the bodyThe technique enables remote guidance towards an egg. (New Scientist $)+ Automation and AI are transforming IVF. (MIT Technology Review)&nbsp;8 The world’s leading deepfake expert no longer trusts his own eyesHe’s struggling to prove what’s real before the internet decides. (NYT $)&nbsp;9 Meta’s CTO admits its AI reorganisation was “atrocious”He&#8217;s promised staff better communication—and snacks. (Wired $)&nbsp;10 Silicon Valley billionaires are pretending to kill each other for funIn a new game show from Peter Thiel’s Founders Fund. (WSJ $) Quote of the day “There was a speeding ticket, and they gave Fable the death penalty.”&nbsp; —Alex Stamos, the former chief security officer of Facebook, tells the Washington Post that banning foreign access to Anthropic’s leading model is a disproportionate punishment. One More Thing VICTOR KERLOW Inside effective altruism, where the far future counts a lot more than the present Since its birth in the late 2000s, effective altruism has aimed to answer a deceptively simple question: “How can those with means have the greatest impact?” Directing money to evidence-based approaches is EA’s best-known technique. But as it’s expanded from an academic philosophy into a community and a movement, its ideas of the “best” way to change the world have evolved as well.&nbsp; Find out how effective altruism became one of the most influential—and contested—forces in philanthropy. —Rebecca Ackermann We can still have nice things A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? Drop me a line.) + The humble table has been reimagined as an unconventional public artifact.+ Take a visual tour of the weird, centuries-old history of architecture&#8217;s most gruesome gargoyles.+ A colorful parakeet unseen for an entire century was triumphantly rediscovered in an unexplored Indonesian forest.+ This shimmering Southern Lights timelapse filmed by an astronaut on the SpaceX Dragon is stunning.",
+      "published_at": "2026-06-16T12:10:00+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 뇌-컴퓨터 인터페이스(BCI) 최초의 '파워 유저'와 함께 한국의 AI 집착(AI obsession)을 집중 조명했다. ALS 환자 Casey Harrell은 뇌에 전극을 이식해 음성을 복원하는 BCI를 활용 중이며, 이는 신경 보조 기술의 실용화 이정표로 평가된다. 한국의 AI 집착 특집 기사는 정부 주도의 AI 투자와 민간 기업들의 빠른 AI 도입이 한국 사회 전반을 어떻게 변화시키고 있는지를 분석한다. 글로벌 주요 미디어가 한국의 AI 전략을 주요 기사로 다루는 것은 한국의 AI 국제 영향력이 높아지고 있음을 반영한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "5f714a68-9ce1-4b93-a0a7-467daa3dc93b",
+      "title": "Rift: A Conflict Signature for Deception in Language Models",
+      "url": "https://arxiv.org/abs/2606.17229",
+      "source": "arxiv",
+      "content": "arXiv:2606.17229v1 Announce Type: new \nAbstract: A model that lies while knowing the truth is the central case ELK cannot handle with behavioral evaluation alone. We ask whether such deception leaves an internal signature distinguishing it from honest error. Our key move is a control for wrongness: we contrast a sleeper agent (knows the truth, lies on trigger) against a naive liar (fine-tuned to emit the same wrong answers with no honest training). Both produce identical wrong outputs; any difference is about knowledge conflict, not incorrectness. We find deceptive forward passes carry a conflict signature - 2.1-2.3x higher residual rank than naive-liar passes on the same wrong answer - strong enough to identify which of two responses is the lie with 100% accuracy and no labels, across GPT-2 small/medium (three seeds) and three instruct models. Across Qwen2.5-1.5B/7B and Phi-3-mini, instructed deception raises residual rank on every tested fact (18/18, 40/40, 34/34); on Phi-3, lies separate perfectly from both honest answers and hallucinations (AUC 1.0, Wilcoxon p~6e-11). The signature survives strategic self-constructed deception (model invents its own lie, AUC 1.0), active concealment attempts (AUC 1.0), and length-controlled replication (20/20, AUC 1.0, p~1e-6). Using basis-free relative representations, a probe trained on one model family detects deception in two other families zero-shot (mean AUC 0.933), surviving simultaneous architecture and format change (AUC 0.821), and transfers across five languages (AUC 1.000, length-controlled). The signature is read-only: detectable but not injectable (0/8 both directions). Honest limitations and six negative experiments are documented in full.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "언어 모델의 의도적 기만(deception)을 탐지하는 내부 충돌 시그니처 'Rift'를 제안한 연구가 발표되었다. 모델이 사실을 알면서도 거짓말을 할 때 나타나는 내부 표현의 충돌 패턴이 정직한 오류와 구조적으로 다름을 실험으로 입증했다. ELK(Eliciting Latent Knowledge) 문제의 핵심인 '알면서 속이는 모델'을 행동 평가만으로는 탐지할 수 없다는 한계를 내부 표현 분석으로 극복하는 접근이다. AI 정렬(alignment) 및 해석 가능성(interpretability) 연구에 직접 기여하는 중요한 안전성 논문으로, 모델 신뢰성 평가 방법론에 새로운 방향을 제시한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0d3ef4a1-e581-47d0-a7db-9644fedd4ac8",
+      "title": "ProCUA-SFT Technical Report",
+      "url": "https://arxiv.org/abs/2606.17321",
+      "source": "arxiv",
+      "content": "arXiv:2606.17321v1 Announce Type: new \nAbstract: Training computer-use agents (CUAs) -- models that interact with graphical desktops through screenshots and keyboard/mouse actions -- requires large-scale, diverse trajectory data collected in full desktop environments. The largest public resource, AgentNet (22.5K human trajectories), leads to negative transfer when used for supervised fine-tuning (SFT): continuing training UI-TARS 7B on AgentNet causes OSWorld success rate to fall from 26.3% to 8-10%. We present ProCUA-SFT, a dataset of 3.1M step-level SFT samples distilled from 93K synthetic trajectories across 2,484 application combinations. The dataset is produced by a fully automated pipeline that (i) synthesizes grounded tasks on live desktops seeded with real-world content -- 912 spreadsheets from SpreadsheetBench, approximately 10K permissively-licensed presentations from Zenodo10K, and multi-application OSWorld configs -- and (ii) verifies each task's feasibility through binary precondition checking before rollout. A single VLM (Kimi-K2.5) serves as goal generator, precondition judge, and trajectory executor, eliminating planner-actor capability gaps. Each trajectory is expanded into step-prefix samples that exactly reproduce the context layout seen at inference time. Fine-tuning UI-TARS 7B on ProCUA-SFT for one epoch yields 45.0% on OSWorld -- an 18.7 percentage-point improvement over the base model and over 35% above AgentNet-trained counterparts. A subset of ProCUA was incorporated into the training data for the Nemotron 3 Nano Omni model, contributing to its computer-use capabilities.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "컴퓨터 사용 에이전트(CUA) 학습을 위한 대규모 SFT 데이터셋 및 학습 방법론 'ProCUA-SFT'의 기술 보고서가 공개되었다. 실제 데스크탑 환경에서 스크린샷과 키보드/마우스 액션으로 상호작용하는 모델 학습에 필요한 다양하고 대규모의 궤적 데이터를 생성하는 방법을 다룬다. 기존 최대 공개 데이터셋인 AgentTrek을 보완하는 방식으로, CUA 모델 성능 향상에 필요한 데이터 다양성 문제를 해결한다. GUI 자동화와 컴퓨터 사용 에이전트 분야의 실용적 발전을 이끄는 연구로, 오픈소스 CUA 생태계 강화에 기여할 전망이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e61a7344-37b4-4429-9fcb-cd649904577a",
+      "title": "PhoneHarness: Harnessing Phone-Use Agents through Mixed GUI, CLI, and Tool Actions",
+      "url": "https://arxiv.org/abs/2606.14832",
+      "source": "arxiv",
+      "content": "arXiv:2606.14832v1 Announce Type: new \nAbstract: Phone agents are increasingly expected to complete real mobile workflows rather than merely predict the next screen action. However, much of the current mobile-agent literature still evaluates agents primarily as GUI controllers that observe a screen, emit taps and swipes, and are scored by target app state. Real phone-use tasks are broader: they require deciding when to use app GUIs, device-side commands, or structured tools, while leaving evidence that the intended side effect actually occurred. We introduce PhoneHarness, a mixed-action benchmark and execution harness for studying phone-use agents on verifiable mobile workflows. PhoneHarness runs a device-side agent loop over GUI, CLI, and host-side tool actions, combining deterministic action routing with bounded GUI delegation and auditable execution traces. Its benchmark, PhoneHarness Bench, evaluates whether agents complete tasks with observable side effects, not only whether they produce plausible final answers. On the annotated evaluation split, PhoneHarness reaches a 75.0% pass rate, outperforming the strongest non-PhoneHarness settings by 12.9 percentage points. PhoneHarness and PhoneHarness Bench therefore play distinct but mutually dependent roles: the harness makes mixed phone workflows executable, while the benchmark measures whether agents can use that harness reliably and safely. Our findings suggest that reliable phone automation depends on action-surface routing and verifiable execution, not only visual GUI control.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "모바일 폰 에이전트 연구의 새로운 프레임워크 'PhoneHarness'가 GUI, CLI, 도구 호출(Tool)을 혼합한 액션 공간을 제안했다. 기존 연구가 화면 탭/스와이프 등 GUI 제어에만 집중했던 한계를 벗어나, 실제 모바일 워크플로우에 필요한 명령줄 인터페이스와 API 도구 호출도 통합했다. 혼합 액션 공간을 활용한 접근법은 실제 앱 환경에서의 복잡한 모바일 태스크 완료율을 순수 GUI 방식 대비 크게 향상시킴을 실험으로 입증했다. 스마트폰 자동화와 AI 에이전트의 실용적 결합을 다음 단계로 이끄는 연구로, 모바일 AI 에이전트 개발자들에게 직접적인 시사점을 제공한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f4e37309-efcb-4a5e-bee8-bf34d6098955",
+      "title": "How to Optimize Transformer-Based Models for Low-Precision Training",
+      "url": "https://developer.nvidia.com/blog/how-to-optimize-transformer-based-models-for-low-precision-training/",
+      "source": "nvidia",
+      "content": "Transformer architectures are the backbone of many modern large language and generative AI models. As these models grow in size, training runs consume more GPU...Transformer architectures are the backbone of many modern large language and generative AI models. As these models grow in size, training runs consume more GPU hours and more engineering iteration time. Accelerating transformers is therefore not just a performance optimization, but directly affects how quickly teams can experiment and how large a model they can afford to train. Source",
+      "published_at": "2026-06-16T16:00:00+00:00",
+      "summary": "NVIDIA가 트랜스포머 기반 모델의 저정밀도(low-precision) 학습 최적화 기법을 상세히 정리한 가이드를 공개했다. FP8, BF16 등 혼합 정밀도 학습에서 수치 안정성과 정확도를 유지하면서 GPU 메모리와 계산 비용을 줄이는 실용적 방법론을 다룬다. 대형 언어 모델과 생성형 AI 모델의 학습 비용이 급증하는 상황에서, 실무자들이 바로 적용할 수 있는 최적화 레시피를 제공한다. NVIDIA Blackwell GPU와 연계한 최신 저정밀도 학습 워크플로우를 포함하며, AI 인프라 비용 절감에 관심 있는 ML 팀에 필수적인 참고 자료다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "efa65fcf-95ff-4446-9b03-26d33eb21684",
+      "title": "Models Take Notes at Prefill: KV Cache Can Be Editable and Composable",
+      "url": "https://arxiv.org/abs/2606.17107",
+      "source": "arxiv",
+      "content": "arXiv:2606.17107v1 Announce Type: new \nAbstract: Prefix caching reuses prefill only across an exactly shared prefix, so one changed field invalidates the entire downstream cache. Yet overwriting the field's own key/value vectors and reusing the rest leaves the model acting on the old value. The reason, established causally across four model families: at prefill the model has already written the field-conditioned conclusion onto downstream notes; the field's own key/value drives under 1% of the decision. Read as a notebook of memoized conclusions, two capabilities follow. (1) It is editable. A salient erratum amends the notes; and with chain-of-thought, editing the field alone recovers the decision (1.00 at 8B, ~1% compute), while without CoT it is ignored. (2) It is composable. The notes are position-portable, so a precompiled skill can be RoPE-repositioned and spliced into any context, indistinguishable from full recompute (logit cosine 0.90-0.999, twelve models) at O(L) rather than O(L^2) time-to-first-token. A unified edit+compose agent stays decision-identical to recompute at up to 14.9x lower latency. The approach applies to any per-token attention KV cache, validated across scale, quantization, Mixture-of-Experts, and multimodal caches, and extends to several attention variants through small adapters. Because the erratum is append-only, it composes with production prefix caching: in an online vLLM benchmark it keeps the prefix cache-aligned (98.5% hit-rate), cutting p90 time-to-first-token by 53-398x.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "프리필(prefill) 과정에서 LLM이 생성하는 KV 캐시를 편집 가능하고 합성 가능한 구조로 만드는 새로운 접근법이 제안되었다. 기존 프리픽스 캐싱은 공유 접두사가 하나라도 변경되면 전체 캐시가 무효화되는 문제가 있었으나, 이 연구는 특정 필드의 키-밸류 벡터만 선택적으로 갱신하는 방법을 제시한다. 이를 통해 동적 콘텐츠가 포함된 프롬프트에서도 대부분의 캐시를 재활용할 수 있어 추론 비용과 지연 시간을 크게 줄일 수 있다. LLM 추론 최적화의 새로운 패러다임을 제시하는 연구로, RAG 시스템과 긴 컨텍스트 애플리케이션의 실제 배포 효율을 혁신할 잠재력이 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "17507715-e863-4740-8f6f-8d7ce0a921d8",
+      "title": "Rethinking Groups in Critic-Free RLVR",
+      "url": "https://arxiv.org/abs/2606.17250",
+      "source": "arxiv",
+      "content": "arXiv:2606.17250v1 Announce Type: new \nAbstract: Reinforcement learning (RL) has become a central paradigm for post-training large language models. Existing critic-free RL methods typically generate a group of rollouts for the same question to estimate value baselines for advantage computation. However, this design suffers from data inefficiency, group synchronization barriers, and inflexibility with structured rollouts. In this work, we revisit the role of the ``group'' and show that its underlying function is not merely to estimate baselines but to prevent false penalties on negative samples. Building on this insight, we propose negative token filtering, a simple and effective strategy that enables stable single-rollout training. We apply it to two batch-level advantage methods, achieving comparable performance on reasoning tasks and stronger performance on agentic tasks relative to group-based RL techniques.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "비평자(critic) 없는 강화학습 기반 언어 모델 학습(RLVR)에서 그룹 샘플링 방식을 재검토한 연구가 발표되었다. GRPO 등 기존 방법이 같은 질문에서 여러 롤아웃을 그룹으로 생성해 기준값을 추정하는 방식의 한계와 대안적 그룹 구성 전략을 분석했다. 새로운 그룹화 전략은 더 다양한 학습 신호를 제공하고 보상 해킹(reward hacking)을 줄이는 방향으로 RLVR 효율을 향상시킨다. 포스트 트레이닝 단계의 핵심 기법인 RLVR의 성능 한계를 극복하는 연구로, 추론 능력 향상 연구에 중요한 기여를 한다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c339f6b9-e969-4c9e-8693-f614edd7e4e4",
+      "title": "Verified Detection and Prevention of Concurrency Anomalies in Multi-Agent Large Language Model Systems",
+      "url": "https://arxiv.org/abs/2606.17182",
+      "source": "arxiv",
+      "content": "arXiv:2606.17182v1 Announce Type: new \nAbstract: Multi-agent LLM systems share state through memory stores, vector indices, and tool registries. We model such sharing as long-running read-generate-write operations under deterministic-generation semantics -- the regime durable-execution engines enforce by deterministic replay -- and formalize four concurrency anomalies in TLA+: stale-generation, phantom-tool, causal-cascade, and tool-effect reordering, structural analogues of classical isolation anomalies, each with a TLC counter-example. The exclusion lattice over these anomalies is trivial; the contribution is the mechanically verified realizability and strict separation of one maximal chain within it, $L_0 \\subsetneq \\cdots \\subsetneq L_4$, to our knowledge the first machine-checked consistency hierarchy for such runtimes. A development of 274 Verus obligations (zero assume, zero admit; trust base: two structural axioms and a mutex correspondence) proves the detectors sound and complete against the specifications and each runtime its avoidance set. Three deployed Rust runtimes realize L0-L1 (pessimistic locking, serializable snapshot isolation, default-SI), each verified against stale-generation and refined to its state machine; L2-L4 are exec-mode-verified with dependency-free prevention twins (A3, A6, A2: 0/1000 versus 1000/1000), and L2 is run live across three model families (A3 prevented in all 120 retracted sessions). We reproduce a silent lost update in ByteDance's deer-flow, formalizing its fix as a verified $L_0 \\to L_1$ refinement, and exhibit tool-effect reordering in LangGraph's ToolNode on unmodified output, removed by an L3 commit-order sequencer. The verified detector, refinements, and realizability artifacts are the contribution; the phenomena and lattice are classical.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "다중 에이전트 LLM 시스템에서 공유 상태(메모리 스토어, 벡터 인덱스, 도구 레지스트리) 접근 시 발생하는 동시성 이상(concurrency anomaly)을 탐지하고 예방하는 방법론이 발표되었다. 다중 에이전트가 공유 자원에 장기 읽기-생성-쓰기 작업을 동시에 수행할 때 나타나는 경쟁 조건(race condition)과 불일치 상태를 형식적으로 모델링하고 검증하는 프레임워크를 제안한다. 결정론적 생성 시맨틱 하에서 내구성 실행 엔진이 강제하는 직렬화 요건과의 충돌을 사전 탐지하는 것이 핵심 기여다. 실제 프로덕션 멀티에이전트 시스템의 신뢰성과 안전성 확보에 직결되는 연구로, AI 에이전트 시스템 설계자들에게 중요한 가이드라인을 제공한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "de8064b7-e543-4f8c-b197-e95ba76c3b07",
+      "title": "Anthropic’s latest feud with the Trump admin may actually help it, sales data suggests",
+      "url": "https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/",
+      "source": "techcrunch",
+      "content": "Anthropic's popularity with business users is growing so well that the latest beef with the government might actually boost it, data from Ramp suggests.",
+      "published_at": "2026-06-16T22:34:17+00:00",
+      "summary": "Anthropic과 트럼프 행정부의 갈등이 오히려 Anthropic의 기업 고객 성장에 긍정적 영향을 미치고 있다는 Ramp의 지출 데이터 분석이 공개되었다. 정치적 논란이 특정 기업 사용자들 사이에서 Anthropic에 대한 신뢰와 관심을 높이는 '역설적 효과'를 낳고 있으며, Claude의 기업 고객 침투율이 꾸준히 성장 중임을 데이터가 보여준다. 이는 AI 산업에서 기업의 정치적 입장이 B2B 영업에 미치는 영향을 보여주는 흥미로운 사례로, AI 정책 환경과 시장 경쟁의 복잡한 상호작용을 반영한다. OpenAI 점유율 하락과 맞물려 Claude의 기업 시장 내 위상 강화가 주목받고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9b25d12a-b15d-4081-876d-92608aca3747",
+      "title": "SaaS 대체하기: AI와 함께한 광고SDK 에러 모니터링 시스템 구축기",
+      "url": "https://d2.naver.com/helloworld/8319114",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER ENGINEERING DAY 2026(5월)에서 발표되었던 세션을 공개합니다. 발표 내용 서드파티 SDK 환경에서 범용 에러 모니터링 도구 연동 시 발생하는 구조적 한계를 극복하기 위해, AI Agent를 활용해 전용 Javascript 에러 모니터링 시스템을 직접 구축한 경험과 그 가능성을 공유합니다. 발표 대상 외부 SaaS 도구의 한계를 경험해본 개발자 프론트엔드/SDK 에러 모니터링에 관심 있는 개발자 AI Agent를 활용한 개발 생산성 향상에 관심 있는 개발자 사내 인프라를 활용한 자체 도구 구축을 고민 중인 팀 목차 Sentry와 광고 SDK 직접 만들기로 한 이유 glog 구축기 결과와 교훈 ◎ NAVER Engineering Day란? NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다.",
+      "published_at": "2026-06-16T14:14:39+00:00",
+      "summary": "네이버가 서드파티 SDK 환경의 구조적 한계를 극복하기 위해 AI 에이전트를 활용해 전용 자바스크립트 에러 모니터링 시스템을 직접 구축한 경험을 NAVER ENGINEERING DAY 2026에서 공유했다. 외부 SaaS 에러 모니터링 도구가 SDK 환경에서 제대로 동작하지 않는 문제를 AI 에이전트 기반 자체 개발로 해결하면서, 비용 절감과 맞춤형 기능 확보를 동시에 달성했다. AI 에이전트가 단순 작업 자동화를 넘어 SaaS 도구 대체 수준의 시스템 구축에 활용될 수 있음을 실증한 사례로 주목된다. 국내 개발팀이 AI 에이전트를 도구로 활용해 내부 인프라를 혁신하는 실질적 접근법을 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "26b1f1de-0b79-4016-9421-85119e0d0d41",
+      "title": "MODE: Modality-Decomposed Expert-Level Mixed-Precision Quantization for MoE Multimodal LLMs",
+      "url": "https://arxiv.org/abs/2606.17118",
+      "source": "arxiv",
+      "content": "arXiv:2606.17118v1 Announce Type: new \nAbstract: Mixture-of-Experts Multimodal Large Language Models (MoE-MLLMs) offer remarkable performance but incur prohibitive GPU memory costs, making compression essential. Among PTQ methods, expert-level mixed-precision quantization has proven effective for MoE-LLMs, yet suffers notable degradation on MoE-MLLMs due to two overlooked biases in expert importance estimation. (1) At the cross-modal level, the numerical dominance of vision tokens causes expert selection frequency to be dominated by vision tokens, masking experts that are critical to the text modality; (2) at the intra-vision level, the large proportion of redundant vision tokens further skew frequency statistics, obscuring experts critical for informative visual content. To bridge gaps, we propose MODE, a modality-decomposed expert-level mixed-precision quantization framework for MoE-MLLMs that decomposes expert selection frequency by modality, filters redundant vision tokens to obtain denoised visual frequency, and further evaluates quantization sensitivity per modality as a complementary signal to frequency-based estimation. These signals are integrated into an Integer Linear Programming formulation to assign per-expert bit-widths under a given budget. Extensive experiments show that MODE is particularly well-suited for MoE-MLLMs, limiting average performance loss to within 2.9% at W3A16, with larger gains at the extreme 2-bit setting.",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "MoE(Mixture-of-Experts) 멀티모달 LLM의 GPU 메모리 문제를 해결하는 모달리티 분해 전문가 수준 혼합 정밀도 양자화 기법 'MODE'가 제안되었다. 텍스트와 비전 등 서로 다른 모달리티를 처리하는 전문가 그룹의 양자화 민감도 차이를 활용해 비트 수를 차별적으로 할당하는 방식으로 정확도-압축률 트레이드오프를 최적화한다. 기존 단일 모달리티 기반 전문가 수준 양자화보다 멀티모달 MoE 모델에서 더 높은 압축률과 낮은 성능 저하를 동시에 달성한다. 대규모 멀티모달 모델의 엣지 디바이스 배포와 비용 효율적 추론을 가능케 하는 실용적 연구로, MoE 모델 압축 분야에 중요한 기여를 한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "14ed21be-95a4-42de-a5f2-8784475ce2ae",
+      "title": "Build Your Own Transaction Foundation Model for Financial Intelligence",
+      "url": "https://developer.nvidia.com/blog/build-your-own-transaction-foundation-model-for-financial-intelligence/",
+      "source": "nvidia",
+      "content": "Every swipe, transfer, and payment on a modern financial network encodes a pattern of human behavior. Transaction data is one of the richest signals an...Every swipe, transfer, and payment on a modern financial network encodes a pattern of human behavior. Transaction data is one of the richest signals an enterprise owns. Yet most production use cases for such tabular data still depend on hand-engineered features and rule sets that are brittle, expensive to maintain, and blind to the sequential structure inside a customer history. Source",
+      "published_at": "2026-06-16T20:30:08+00:00",
+      "summary": "NVIDIA가 금융 거래 데이터를 학습한 트랜잭션 파운데이션 모델 구축 방법론을 공개했다. 카드 결제, 이체 등 금융 거래의 시퀀셜 패턴에서 사용자 행동 신호를 학습해 사기 탐지, 신용 평가, 개인화 금융 서비스에 적용 가능한 범용 표현을 만드는 방법을 다룬다. 텍스트 없이 순수 거래 이력 데이터만으로 파운데이션 모델 수준의 표현 학습이 가능함을 보여주며, 금융 AI의 새로운 패러다임을 제시한다. 한국 금융권의 AI 도입이 가속화되는 시점에서, 대규모 거래 데이터를 보유한 금융 기관들의 AI 경쟁력 강화에 직접 활용 가능한 접근법이다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "04323b1f-7523-4279-9f1d-fe92b09bd2e2",
+      "title": "SpeechDx: A Multi-Task Benchmark for Clinical Speech AI",
+      "url": "https://arxiv.org/abs/2606.17339",
+      "source": "arxiv",
+      "content": "arXiv:2606.17339v1 Announce Type: new \nAbstract: Speech offers a uniquely informative window into health by simultaneously engaging neurological, motor, respiratory, and vocal systems. Current clinical speech AI methods have largely progressed through isolated condition-specific studies, making results difficult to compare and generalization difficult to assess. We introduce SpeechDx, a large-scale benchmark for clinical speech AI spanning 12 datasets and 27 tasks across diverse health conditions. To enable evaluation across shared clinical mechanisms, SpeechDx structures tasks by the stage of speech production they disrupt: conceptualization, formulation, and articulation. The benchmark tests generalization by including tasks with limited labeled data and evaluating the same health condition across multiple datasets, distinguishing clinically meaningful patterns from dataset artefacts. We systematically evaluate 12 state-of-the-art audio encoders across all tasks and under zero-shot cross-condition transfer. Results show that large-scale speech models represent the strongest overall baselines, domain-specific models improve performance only on closely matched tasks, and no current representation generalizes reliably across the clinical speech landscape. SpeechDx establishes a shared evaluation framework for tracking progress toward general-purpose clinical speech representations",
+      "published_at": "2026-06-17T00:00:00-04:00",
+      "summary": "임상 음성 AI를 위한 대규모 멀티태스크 벤치마크 'SpeechDx'가 공개되었다. 음성은 신경학, 운동, 호흡, 성대 시스템을 동시에 반영하는 독특한 건강 지표임에도 기존 임상 음성 AI는 개별 질환별 고립된 연구로 진행되어 비교와 일반화가 어려웠다. SpeechDx는 다양한 임상 조건과 태스크를 통합한 표준 평가 플랫폼을 제공하여 임상 음성 AI 모델의 체계적 비교와 발전을 가능케 한다. 디지털 헬스케어와 AI 진단 도구 개발에 핵심 인프라가 되는 연구로, 음성 기반 비침습적 건강 모니터링 기술의 발전을 크게 촉진할 것으로 기대된다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
