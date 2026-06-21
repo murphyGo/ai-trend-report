@@ -1,0 +1,145 @@
+{
+  "id": "06a4986f-a762-4975-9f68-4b8bf09625d1",
+  "created_at": "2026-06-21T04:11:09.995814",
+  "articles": [
+    {
+      "id": "1cfab49e-4110-4fd0-881b-4122a9fea7be",
+      "title": "The US banned Anthropic’s Fable 5 release, but the numbers don’t seem to care",
+      "url": "https://techcrunch.com/podcast/the-us-banned-anthropics-fable-5-release-but-the-numbers-dont-seem-to-care/",
+      "source": "techcrunch",
+      "content": "Just as last week&#160;was ending,&#160;the US government&#160;forced Anthropic to pull its two newest models, Fable 5 and Mythos 5, citing national security concerns after Amazon researchers allegedly found a way to bypass Fable 5&#8217;s guardrails.&#160; Cybersecurity researchers have&#160;since signed an open letter&#160;calling&#160;the move dangerous, and Anthropic itself noted the same jailbreaks exist in other models.&#160;So&#160;is [&#8230;]",
+      "published_at": "2026-06-19T16:01:03+00:00",
+      "summary": "미국 정부가 Amazon 연구진이 발견한 안전 가이드라인 우회 문제를 이유로 Anthropic의 최신 모델 Fable 5와 Mythos 5의 출시를 국가 안보 우려를 근거로 강제 철회시켰습니다. 이에 대해 사이버보안 연구자들은 공개서한을 통해 이 조치가 오히려 위험하다고 반박했으며, Anthropic도 동일한 탈옥 기법이 다른 모델에도 동일하게 존재한다고 지적했습니다. 그러나 규제 조치에도 불구하고 Anthropic의 주요 사업 지표에는 큰 영향이 없는 것으로 알려져, AI 모델에 대한 정부 규제의 실효성 논란이 이어지고 있습니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "17d78f47-8b01-422b-9c47-c540279db581",
+      "title": "Nobel laureate John Jumper is leaving DeepMind for rival Anthropic",
+      "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
+      "source": "techcrunch",
+      "content": "Jumper isn't the only big name leaving Google DeepMind.",
+      "published_at": "2026-06-20T16:39:57+00:00",
+      "summary": "AlphaFold로 2024년 노벨 화학상을 공동 수상한 구글 DeepMind의 저명한 과학자 존 점퍼(John Jumper)가 DeepMind를 떠나 경쟁사 Anthropic으로 이직하는 것으로 알려졌습니다. 점퍼는 단백질 3D 구조 예측 문제를 획기적으로 해결한 AlphaFold의 핵심 개발자로, 구조 생물학과 신약 개발 분야에 혁명적 변화를 가져온 인물입니다. 이번 이직은 최근 AI 분야 최정상급 연구자들이 구글 DeepMind에서 이탈하는 추세의 일환으로, Anthropic이 생명과학 및 안전성 연구 분야에서 새로운 도약을 준비하고 있음을 시사합니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8b0b5ea8-6862-4b32-8680-0004a9e2747f",
+      "title": "The Download: AI bottleneck debates, and BCI trials take off",
+      "url": "https://www.technologyreview.com/2026/06/19/1139327/the-download-llms-bottleneck-breakthrough-bci-trials-take-off/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. A startup claims it broke through a bottleneck that’s holding back LLMs AI startup Subquadratic came out of stealth last month with a huge claim: it had solved a mathematical bottleneck that had held back large language models for almost a decade. The purported breakthrough comes from slashing the number of computations transformers need to carry out to generate answers. The result is a faster and cheaper LLM that uses far less energy than any other model on the market. Many experts remained skeptical—but Subquadratic has started to share the receipts. They suggest that their approach might be worth paying attention to. Here’s how the system works—and why some researchers still aren’t convinced. —Will Douglas Heaven Brain-computer interface trials are taking off —Jessica Hamzelou This week, I covered the story of Casey Harrell—a man with ALS who is “the first power user” of a brain implant. The device has enabled him to maintain an income, reconnect with friends and family, and read to his daughter. He told me that it’s “nothing short of revolutionary.”&nbsp; Over the past couple of years, the number of BCI trial volunteers has soared. This year, China became the first country to approve a BCI for medical use. Advances in technology are allowing engineers to provide more features than ever. BCI research is properly taking off. Find out how the technology is edging from the lab towards the market.This story is from The Checkup, our weekly newsletter giving you the inside track on all things biotech. Sign up to receive it in your inbox every Thursday. The must-reads I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology. 1 Amazon workers who backed data center limits may face terminationThe engineers say they’re under investigation by the company. (NYT $)+ And could face discipline, including potential termination. (The Verge)+They had testified at meetings about pausing data centers. (CNBC)+ They’ve filed a joint complaint to Seattle’s Office for Civil Rights. (Wired $)2 A new fossil discovery has rewritten 150 years of evolutionary theoryIt suggests early land vertebrates skipped the tadpole stage. (New Scientist $)+ And raises questions about how vertebrates adapted to land. (404 Media)+ Sponges may have been the first animals. (MIT Technology Review) 3 Bernie Sanders plans to give the public direct ownership of AI firmsHe’s unveiled new legislation to create an AI sovereign wealth fund. (AP News)+ It would be funded through a one-time tax on AI companies’ stock. (Quartz)+ And make annual payments directly to Americans. (Washington Post $) 4 Investors in China secretly acquired stakes in SpaceX before its IPOOne had ties to Chinese military contractors. (ProPublica)+ The US fears China has got one of ASML’s top machines. (Reuters $) 5 Researchers have figured out Russia&#8217;s nuclear-powered missileThey call it “a terrible idea”—but not an impossible one. (NPR)+ NASA is building a nuclear reactor-powered spacecraft. (MIT Technology Review) 6 Longevity medicine faces a do-or-die moment in a landmark trialIt will test whether cellular aging can be safely reversed in humans. (Axios)+ The next step is “chemical reprogramming.” (MIT Technology Review) 7 Studies suggest AI may already be deskilling professionalsOver-reliance appears to weaken doctors’ and engineers’ abilities. (Nature) 8 Tech workers who maxed out their AI use are now trying to minimize itSpiralling costs mean “tokenminning” has replaced “tokenmaxxing.” (NYT $) 9 Scientists say the human genome’s structure may confound AI modelsWhich would constrain AI-based models of biology and disease. (Quanta)10 A new robotic self-driving toilet brings the bathroom to youThe Xiaoban also cleans up and empties itself all on its own. (The Verge) Quote of the day “They hated me. They were doing everything they could to knock me down. And look at them now.”&nbsp; —Donald Trump mocks Mark Zuckerberg and Jeff Bezos in a conversation with Elon Musk that’s recounted in a new book, Wired reports.&nbsp; One More Thing PABLO DELCAN Technology can help us feed the world, if we look beyond profit The pandemic exposed the weak spots in our interconnected food system. They’re the result of decades’ worth of technological advances, from globe-spanning shipping to refrigeration networks. But technology is not inherently opposed to sustainable and resilient food systems. Powerful technologies like genetic modification can create stronger local agriculture and a healthier food system—but they normally aren’t. The challenge is ensuring they serve food security and human well-being, rather than simply maximizing profits. Dive into our food system’s problems and the solutions that technology can provide. —Fabio Parasecoli We can still have nice things A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? Drop me a line.) + This intriguing video tracks the covert reality of Japan&#8217;s shinobi.+ Dive into this admirably obsessive archive covering over 100 different ways to tie your shoes.+ One of the world’s largest digital collections of plants and fungi is now available for free to everyone.+ A grand orchestra has beautifully covered Michael Jackson’s &#8220;Human Nature&#8221; at Abbey Road Studios.",
+      "published_at": "2026-06-19T12:10:00+00:00",
+      "summary": "AI 스타트업 Subquadratic이 대형 언어 모델(LLM)의 핵심 병목인 트랜스포머 어텐션 메커니즘의 계산 복잡도 문제를 해결했다고 주장하며 스텔스 모드에서 나왔습니다. 기존 트랜스포머는 입력 길이에 따라 계산량이 제곱으로 증가하는 구조적 한계를 갖고 있었는데, Subquadratic은 이를 대폭 줄여 더 긴 컨텍스트와 효율적인 추론을 가능하게 한다고 밝혔습니다. 같은 날 뇌-컴퓨터 인터페이스(BCI) 임상시험도 확대되고 있어, AI 인프라 최적화와 신경 기술 분야에서 동시에 중요한 진전이 이루어지고 있습니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9b5688b0-154a-45fb-955d-f32570a7f24a",
+      "title": "From PGP to Mythos: a brief history of export controls that didn’t stop anyone",
+      "url": "https://techcrunch.com/2026/06/19/encryption-spyware-and-now-mythos-history-shows-why-cyber-export-control-doesnt-work/",
+      "source": "techcrunch",
+      "content": "For the last 30 years, stopping the flow of cybersecurity-related software has proven to be ineffective. It's unclear why it would work now with Anthropic’s cybersecurity model Mythos.",
+      "published_at": "2026-06-19T22:40:14+00:00",
+      "summary": "PGP 암호화 기술부터 스파이웨어, 그리고 현재 Anthropic의 사이버보안 AI 모델 Mythos에 이르기까지 미국의 사이버 기술 수출 통제 30년 역사를 분석한 기사입니다. 역사적으로 사이버보안 소프트웨어의 수출을 막으려는 시도는 번번이 실패해왔으며, Mythos에 대한 현재의 규제 조치도 같은 실패를 반복할 것이라는 비판적 시각이 제기되고 있습니다. AI 모델의 수출 통제가 기술 확산을 실질적으로 막을 수 있는지, 과거의 선례에 비추어 의문을 던지는 심층 분석입니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9624186d-1adc-4abc-915f-d4fb2b441d38",
+      "title": "Signal’s Meredith Whittaker wants you to remember that AI chatbots ‘are not your friends’",
+      "url": "https://techcrunch.com/2026/06/20/signals-meredith-whittaker-wants-you-to-remember-that-ai-chatbots-are-not-your-friends/",
+      "source": "techcrunch",
+      "content": "\"These are not your friends. These are not conscious beings. These are not sentient interlocutors.”",
+      "published_at": "2026-06-20T20:32:29+00:00",
+      "summary": "Signal 대표이자 저명한 AI 비평가 메러디스 휘태커(Meredith Whittaker)가 AI 챗봇의 본질에 대한 대중의 인식 왜곡을 경고했습니다. 그녀는 '이것들은 여러분의 친구가 아니며, 의식 있는 존재도, 감각 있는 대화 상대도 아니다'라고 강조하며 AI와의 감정적 유대 형성에 따른 사회적 위험성을 지적했습니다. AI 서비스가 일상화되면서 챗봇 의인화 현상이 심화되고 있는 가운데, 이용자 보호와 올바른 AI 리터러시 교육의 필요성을 다시 한번 환기시키는 발언으로 주목받고 있습니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "22ce64dd-ddba-409e-a7a4-60cb9c18d38c",
+      "title": "Billionaire Ambani wants AI in every call, app, and home",
+      "url": "https://techcrunch.com/2026/06/19/billionaire-ambani-wants-ai-in-every-call-app-and-home/",
+      "source": "techcrunch",
+      "content": "Reliance is weaving AI into telecom services used by more than 500 million people.",
+      "published_at": "2026-06-19T15:23:28+00:00",
+      "summary": "인도 최고 부호 무케시 암바니가 이끄는 릴라이언스(Reliance)가 통화·앱·가정 서비스 전반에 AI를 통합하는 야심찬 전략을 발표했습니다. 5억 명 이상의 가입자를 보유한 Jio 통신 플랫폼을 기반으로 AI 기능을 전면 적용할 예정이며, 이는 신흥국 시장에서 AI를 대규모로 상용화하는 세계적으로 유례없는 시도입니다. 성공할 경우 통신·AI 융합 서비스의 새로운 비즈니스 모델을 전 세계에 제시할 수 있을 것으로 기대되며, AI 민주화 논의에서도 중요한 사례가 될 전망입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "807849de-eb42-483d-a6e9-62aa726a94f8",
+      "title": "The US says ASML’s top chip tool may be in China, but how?",
+      "url": "https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/",
+      "source": "techcrunch",
+      "content": "There's a commercial logic that cuts against the idea that ASML would risk its export license to arm a Chinese customer.",
+      "published_at": "2026-06-19T07:59:12+00:00",
+      "summary": "미국 정부가 ASML의 최첨단 EUV 극자외선 반도체 장비가 중국 내 반입됐을 가능성을 제기하며 논란이 불거졌습니다. ASML 측은 이를 부인하고 있으나, 사안의 특성상 진위 확인이 어려운 상황입니다. AI 칩 생산에 필수적인 EUV 장비는 미국이 주도하는 대중국 반도체 수출 통제의 핵심 품목으로, 만약 사실로 확인될 경우 글로벌 AI 공급망과 미중 기술 패권 경쟁에 심각한 파장을 미칠 수 있습니다. 이 사안은 반도체 장비 수출 통제의 실효성과 AI 인프라 안보에 대한 국제 사회의 우려를 더욱 심화시키고 있습니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "387cdf45-b7dd-4a1d-bc02-f81654aa2cb1",
+      "title": "인공지능과 융합, 농업혁신의 날개를 달다...농진청, ‘2026 농업기술박람회’ 개최",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40597",
+      "source": "korean",
+      "content": "농촌진흥청(청장 이승돈)은 지난 18일부터 20일까지 청주오스코(OSCO)에서 ‘인공지능(AI) 융합, 농업혁신의 날개를 달다’를 주제로 ‘2026 농업기술박람회’를 개최했다.\n\n올해 박람회는 AI 기술과 농업 연구개발(R&D) 융합 성과를 체험하고 농업의 미래 성장 가능성과 농촌 혁신 방향을 조망하는 자리로 마련됐다. 행사 기간 동안 농업 연구개발 체험 프로그램과 AI 융복합 연구 현황을 소개하는 다양한 부대행사가 진행돼 참관객들의 관심을 모았다.\n\n전시관 곳곳에는 농업 AI, 농업 로봇, 스마트팜, 기후 대응 기술, 지역 특화작목 등 농업 연구개발 성과를 직접 보고 배우고 체험할 수 있는 공간이 운영됐다.\n\n인공지능 주제관에서는 농업 전문 AI 대화 로봇 ‘AI 이삭이’가 농업인에게 현장 기술지원 사례와 품종 정보, 시장 전망 등을 제공하는 과정을 체험형 콘텐츠로 선보였다. 연구 활동 지원을 위해 도입된 ‘AI 새싹이’도 함께 소개됐다.\n\n농업R&D관에서는 농촌진흥청의 대표 연구개발 성과를 현장 중심, 미래 대응, 균형성장 분야로 나눠 전시했다. 농업인 안전관리와 착용형 장비, 밭농업 기계화, 기상재해 대응 기술, 농업 로봇, 기후 적응형 품종, 저탄소·친환경 농업 기술, 청년농업인 육성, K-농업기술 세계화 성과 등을 종합적으로 소개했다.\n\n지역 R&D관에서는 경기, 강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주 등 각 도 농업기술원이 참여해 AI 및 스마트팜 연구 현황과 지역 특화작목 육성 성과를 공유했다. 한국농업기술진흥원은 농촌진흥청 우수 기술이전 성과와 산업화 제품을 전시했으며, 농림축산식품부는 혁신 제품 지원 성과를 소개했다.\n\n부대행사로는 농업 연구와 산업 현안을 논의하는 학술 토론회와 혁신대회가 열렸으며, ‘곤충식품 비엔날레’, ‘농식품 히든테크 설명회’ 등 다양한 특별 프로그램도 진행됐다.\n\n관람객 참여 프로그램으로는 바나나 DNA 추출, 팥 고추장 만들기, 식물바이러스 진단, 반려동물 집밥 만들기, 농업 드론 체험, 가상현실(VR) 트랙터 운전 체험 등이 운영됐다. 또한 SNS 이벤트와 참가자 경품 추첨, 농업 퀴즈쇼 등 온·오프라인 행사가 함께 진행돼 관람객들의 참여를 이끌어냈다.\n\n이승돈 농촌진흥청장은 “이번 박람회는 인공지능과 농업과학기술이 융합해 진화하는 농업의 미래상을 확인할 수 있는 자리였다”며 “농촌진흥청은 앞으로도 농업·농촌의 현안을 해결하고 국민이 체감할 수 있는 연구 성과를 확대해 농업을 미래 성장산업으로 육성하는 데 최선을 다하겠다”고 말했다.",
+      "published_at": null,
+      "summary": "농촌진흥청이 청주에서 '2026 농업기술박람회'를 개최하며 AI와 농업 R&D의 융합 성과를 선보였습니다. 행사의 핵심은 농업 전문 AI 대화 로봇 'AI 이삭이'로, 농업인에게 현장 기술 지원, 품종 정보, 시장 전망 등을 실시간으로 제공합니다. 스마트팜, 농업 로봇, 기후 대응 기술 등 다양한 첨단 기술이 전시되어 AI가 1차 산업 분야에서도 실질적인 변화를 이끌고 있음을 보여주는 국내 대표 사례입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "0aa46aae-3c92-40a0-945e-2c4efbca2cc1",
+      "title": "In the Weights is your new AI-centric vanity search",
+      "url": "https://techcrunch.com/2026/06/20/in-the-weights-is-your-new-ai-centric-vanity-search/",
+      "source": "techcrunch",
+      "content": "So ... what's your In the Weights score?",
+      "published_at": "2026-06-20T19:41:11+00:00",
+      "summary": "'In the Weights'는 사용자 자신의 이름이나 정보가 AI 모델의 학습 데이터에 얼마나 포함돼 있는지를 확인할 수 있는 새로운 AI 중심 검색 서비스입니다. AI 모델이 학습한 데이터의 투명성과 개인 정보 노출 여부에 대한 관심이 높아지는 가운데 출시됐습니다. 아직 초기 단계지만, AI 훈련 데이터 출처 및 개인 정보 보호 논의에 새로운 관점을 더할 것으로 기대되며, AI 리터러시 향상에도 기여할 수 있는 도구로 주목받고 있습니다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "81205bbd-1520-40a4-94af-2eafcb7a4454",
+      "title": "The CEO of Allbirds’ new AI biz has a plan, but no team",
+      "url": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
+      "source": "techcrunch",
+      "content": "Call it a startup with a sole founder and a very large seed round, but what's next is less clear.",
+      "published_at": "2026-06-19T13:00:00+00:00",
+      "summary": "신발 브랜드 Allbirds의 CEO 출신이 새로운 AI 스타트업을 시작했지만, 팀원 없이 단독으로 거액의 시드 투자를 확보한 특이한 상황이 조명됐습니다. 구체적인 제품 개발 계획이나 팀 구성이 불분명한 채로 투자를 받은 이 사례는 최근 AI 분야의 과도한 투자 열기와 '명성 기반 창업'의 트렌드를 잘 보여줍니다. AI 스타트업 생태계의 거품 논란과 투자자들의 옥석 가리기가 필요하다는 시각을 불러일으키는 사례입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
