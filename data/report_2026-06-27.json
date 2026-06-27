@@ -1,0 +1,280 @@
+{
+  "id": "1145c4e5-ee0b-4a04-aaa6-88b281f28745",
+  "created_at": "2026-06-27T03:25:25.144155",
+  "articles": [
+    {
+      "id": "50b43193-cd5d-4149-88eb-27b532d8e9c1",
+      "title": "GPT-5.6 시리즈 출시: Sol·Terra·Luna 세 모델 프리뷰 시작",
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "source": "openai",
+      "content": "June 26, 2026\n\nWe're beginning a limited preview of the GPT‑5.6 series: Sol, our flagship model; Terra, a balanced model for everyday work; and Luna, a fast and affordable model. Terra has competitive performance to GPT‑5.5 while being 2x cheaper and Luna brings strong capability at our lowest cost.\n\nGPT‑5.6 Sol launches with our most robust safety stack to date. We strengthened protections for higher-risk activity, sensitive cyber requests, and repeated misuse, and spent multiple weeks finding weaknesses, pressure-testing our system, and hardening it against real-world attacks.\n\nWe believe in broad access, and we plan to make GPT‑5.6 Sol, Terra, and Luna generally available in the coming weeks. As part of our ongoing engagement with the U.S. government, we previewed our plans and the models’ capabilities ahead of today’s launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly. During this preview, we will continue testing and coordinating closely with partners as we work toward broader availability. We don’t believe this kind of government access process should become the long-term default. It keeps the best tools from users, developers, enterprises, cyber defenders, and global partners who need them. We are taking this short-term step because we believe it is the strongest path to broader availability in the coming weeks, while we work with the Administration to develop the cyber Executive Order framework and a repeatable process for future model releases.\n\nGPT‑5.6 Sol is our strongest model yet. To give a preview of model performance, we share a set of evaluations highlighting improved agentic capabilities in coding, biology, and cybersecurity, with additional safety and preparedness evaluations available in oursystem card⁠(opens in a new window). We will share an expanded suite of evaluation results when we make the model broadly available.\n\nWith GPT‑5.6, we’re introducing a newmaxreasoning effort to give Sol the most time to reason deeply. Additionally, we’re introducing a newultramode that goes beyond the capabilities of a single agent by leveraging subagents to accelerate complex work.\n\nFor coding workflows, GPT‑5.6 Sol sets a new state of the art onTerminal‑Bench 2.1, which tests command-line workflows requiring planning, iteration, and tool coordination.\n\nGPT‑5.6 Sol also shows broad improvements in biology workflows. OnGeneBench v1, which evaluates long-horizon genomics and quantitative-biology analyses, it achieves stronger results than GPT‑5.5 while using fewer tokens.\n\nGPT‑5.6 Sol is our most capable model yet for cybersecurity. It shifts the performance-efficiency frontier for long-horizon security tasks including vulnerability research and exploitation. OnExploitBench², GPT‑5.6 Sol is competitive with Mythos Preview using only ~1/3 of the output tokens. OnExploitGym⁠(opens in a new window)3, a benchmark created by UC Berkeley researchers in collaboration with OpenAI and other frontier labs, GPT‑5.6 Sol, Terra, and Luna models all demonstrate strong improvements in cyber capabilities as we increase reasoning.\n\nWe developed GPT‑5.6 Sol, Terra and Luna with our most robust safeguards to date, with configurations matched to each model’s capabilities. As the model becomes more capable, we design safeguards to increasingly hold up to real-world adversarial pressure while preserving access to legitimate work such as code review, vulnerability research, patch development, debugging, security education, and defensive testing. Our goal is to make prohibited offensive activity more difficult, uncertain, and detectable without unnecessarily limiting those beneficial uses. Based on our assessment of the model and safeguards, we expect substantial benefit for legitimate defensive work, while meaningfully constraining prohibited offensive use.\n\nGPT‑5.6 Sol is better at helping people find and fix vulnerabilities than reliably carrying out end-to-end attacks. As these capabilities continue to advance, our priority is to make sure they reach and benefit defenders, who can use these tools to find weaknesses, develop patches, and strengthen systems more broadly.\n\nGPT‑5.6 Sol does not cross the Cyber Critical threshold under ourPreparedness Framework⁠. In evaluations involving Chromium and Firefox, it identified bugs and exploitation primitives—the building blocks of an exploit—but did not autonomously produce a functional full-chain exploit under the conditions tested. Still, benchmark thresholds cannot capture every way a model may be used or combined with other tools. That uncertainty, along with the model’s broader step change in capabilities, is why we are pairing the model’s increased capabilities with stronger safeguards and a phased release. We share more details about our safeguards in theGPT‑5.6 Preview system card⁠(opens in a new window).\n\nNo single safeguard is sufficient against determined or adaptive misuse. Across the GPT‑5.6 preview, we use layered safeguards, with exact configurations varying across models, and pressure-test them for real-world attacks. These include protections trained into the model, real-time checks during generation, account-level signals, differentiated access, monitoring, enforcement, and continued testing.\n\nGPT‑5.6 is trained to refuse prohibited cyber assistance, including when users attempt to disguise their intent or jailbreak the model. These model-level safeguards establish the first boundary around what the model should and should not help with.\n\nReal-time cyber and biology misuse classifiers provide another layer by evaluating output as it is generated. For higher risk cases, if they detect a potential violation, the generation may be paused while a larger reasoning model reviews the conversation and its context. If the output is assessed as disallowed, it is withheld before it reaches the user.\n\nFlagged activity can also trigger account-level review across relevant conversations and risk signals, consistent with our terms and policies around content retention and review. Looking beyond a single conversation helps our systems distinguish persistent malicious behavior from legitimate dual-use security work, where similar technical concepts may appear in very different contexts.\n\nTogether, these layers make the overall approach more robust than any one safeguard on its own. Model behavior reduces the likelihood of harmful responses, real-time systems can intervene during generation, account-level review can identify broader patterns, and differentiated access preserves important defensive work without making the most sensitive capabilities broadly available by default.\n\nEspecially during the preview, users may encounter safeguards that block or refuse some requests. Other requests may take longer because generation is paused for additional review. Safeguards may occasionally intervene on legitimate work, particularly in dual-use areas where defensive and offensive activity can initially look similar.\n\nThat is part of what the preview is designed to test. We want to understand not only whether the safeguards constrain misuse, but whether legitimate users can still complete normal work reliably and efficiently. Feedback during the preview will help us reduce unnecessary blocks and delays, improve how the safeguards interpret context, and create a smoother experience before wider release.\n\nWe are also working with enterprise customers on longer-term approaches—including privacy-preserving detection, customer-operated safety controls, and access calibrated to the risk of a customer, user, or workload—to advance safety while supporting enterprise privacy requirements.\n\nSafeguards also need to remain effective when attackers adapt their tactics. A protection that works only on a fixed set of known attacks is not robust enough for a frontier model.\n\nThat’s why we are applying more intelligence and compute than ever before to safety, using our own models to find weaknesses and improve safeguards faster. We dedicated over 700,000 A100-equivalent GPU hours to automated red teaming aimed at finding universal jailbreaks: attacks that can work across many prompts or contexts, not just one narrow setting. Focusing on these harder, more general attacks let us test the safeguards beyond a fixed set of known failures. It also lets us explore far more attack patterns than human testing alone could cover, identify failure patterns earlier, and shorten the path from finding a weakness to addressing it.\n\nIn addition to automated red-teaming, we worked with third-party testers to conduct extensive human expert red teaming, which will continue in the preview period. Human red-teaming complements the automated work by testing safeguards against creative experts trying to misuse the model in ways our systems might not anticipate.\n\nNo evaluation can represent every product configuration, multi-step attack, or real-world workflow. We therefore maintain a rapid-response process to reproduce, assess, prioritize, and remediate newly discovered jailbreaks, then add them to our ongoing evaluations so we can test against similar failures in the future.\n\nDuring the preview, GPT‑5.6 models will initially be available through the API and Codex to a select group of trusted partners and organizations. We plan to make them more broadly available to people using ChatGPT, Codex, and the API soon.\n\nIn this new naming system introduced with GPT‑5.6, the number identifies a model’s generation, while Sol, Terra, and Luna identify durable capability tiers that can advance on their own cadence. Together, the family gives people and developers clearer choices across intelligence, speed, and cost.\n\nGPT‑5.6 is priced per 1M tokens across three model sizes: Sol is $5 input / $30 output; Terra is $2.50 input / $15 output; and Luna is $1 input / $6 output. GPT‑5.6 also introduces more pred...",
+      "published_at": "2026-06-26T10:00:00",
+      "summary": "OpenAI가 차세대 추론 모델 GPT‑5.6 시리즈를 발표하고 제한적 프리뷰를 시작했다. 플래그십 'Sol', 균형형 'Terra'(GPT-5.5 대비 2배 저렴), 경량·저비용 'Luna' 세 모델로 구성되며, 숫자는 세대를 의미하고 Sol·Terra·Luna는 독립적으로 발전하는 성능 계층을 나타내는 새로운 명명 체계다. 이번 출시는 OpenAI가 추론 능력과 비용 효율을 동시에 제공하는 모델 라인업을 구축했다는 점에서 의미가 크다. 다만 미국 정부 요청에 따라 출시 직후 접근이 제한되는 이례적인 상황이 발생했다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "186f60ea-900c-4515-83eb-6239ca0f8d55",
+      "title": "오픈AI, 세계 최고 수준 차세대 추론 모델 'GPT-5.6' 공개…플래그십 '솔' 제한 프리뷰 시작",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40714",
+      "source": "korean",
+      "content": "오픈AI(OpenAI)가 26일(현지시간) 차세대 추론 모델 GPT-5.6 시리즈를 공개하고 생성형 AI 시장의 새로운 경쟁 구도를 제시했다.\n\n새 제품군은 최고 성능 모델인 솔(Sol), 균형형 모델인 테라(Terra), 경량·저비용 모델인 루나(Luna) 등 3종으로 구성된다. 오픈AI는 새로운 명명 체계를 도입해 숫자는 모델 세대를 의미하고, 솔·테라·루나는 각각 독립적으로 발전하는 성능 계층(Capability Tier)을 나타낸다고 설명했다.\n\n이와 함께 오픈AI는 플래그십 모델인 GPT-5.6 솔에 대한 제한적 개발자 프리뷰와 테스트 API 제공을 시작했다. 일반 공개에 앞서 미국 정부와 공유된 일부 신뢰 파트너를 대상으로 우선 제공된다.\n\n업계에서는 이번 GPT-5.6 시리즈가 단순한 언어 모델 업그레이드를 넘어 복잡한 업무를 스스로 계획하고 수행하는 '에이전트 AI(Agentic AI)' 시대를 겨냥한 전략적 모델이라는 평가를 내놓고 있다.\n\n솔·테라·루나 3종 체계 구축\n\nGPT-5.6 시리즈는 성능과 비용에 따라 명확히 구분된다. 플래그십 모델인 솔은 오픈AI가 지금까지 공개한 모델 가운데 가장 강력한 추론 능력과 에이전트 역량을 제공한다. 테라는 GPT-5.5 수준의 성능을 유지하면서도 비용을 절반 수준으로 낮춘 균형형 모델이며, 루나는 오픈AI 역사상 가장 빠르고 경제적인 모델로 설계돼 모바일 환경과 대규모 추론 서비스 시장을 겨냥한다.\n\n오픈AI는 이번 체계를 통해 개발자와 기업 고객이 성능, 비용, 처리 속도에 따라 보다 유연하게 모델을 선택할 수 있도록 했다고 밝혔다.\n\n\"역대 가장 강력한 모델\"…장기 추론과 에이전트 능력 강화\n\nGPT-5.6 솔은 코딩, 생명과학, 사이버보안 분야에서 특히 큰 성능 향상을 이뤘다. 새롭게 추가된 '맥스 추론 노력(Max Reasoning Effort)' 기능은 보다 깊고 장기적인 추론을 수행하도록 설계됐으며, '울트라(Ultra)' 모드는 여러 하위 에이전트(Subagents)를 동시에 활용해 복잡한 작업을 병렬 처리할 수 있도록 지원한다.\n\n이를 통해 대규모 소프트웨어 개발 프로젝트, 연구 분석, 복합적인 문제 해결, 장기 계획 수립과 같은 고난도 업무 수행 능력이 크게 향상됐다고 오픈AI는 설명했다.\n\n오픈AI는 GPT-5.6을 단순 질의응답 시스템이 아닌 실제 업무를 수행하는 디지털 작업자(Digital Worker) 형태의 AI로 발전시키는 중요한 단계로 평가하고 있다.\n\n주요 벤치마크서 최고 수준 성능 입증\n\nGPT-5.6 솔은 다양한 고난도 벤치마크에서 업계 최고 수준의 성능을 기록했다. 특히 AI 에이전트의 실제 개발 업무 수행 능력을 평가하는 터미널벤치(TerminalBench) 2.1에서 GPT-5.6 솔 울트라는 91.9%의 성공률을 기록하며 전체 모델 가운데 가장 높은 점수를 달성했다.\n\n일반 GPT-5.6 솔 역시 88.8%를 기록해 앤트로픽(Anthropic)의 최신 모델인 클로드 미토스 5(Claude Mythos 5)의 88.0%를 앞섰다. 또한 GPT-5.6 테라는 84.3%, GPT-5.6 루나는 82.5%를 기록해 비용 효율형 모델임에도 경쟁력 있는 성능을 입증했다.\n\n비교 대상인 클로드 페이블 5(Claude Fable 5)는 84.3%, GPT-5.5는 83.4%, 클로드 오퍼스 4.8(Claude Opus 4.8)은 78.9%, 제미나이 3.1 프로 프리뷰(Gemini 3.1 Pro Preview)는 70.7%를 기록했다. 특히 GPT-5.6 솔 울트라는 GPT-5.5 대비 약 8.5%포인트 향상된 결과를 기록하며 차세대 추론 아키텍처의 경쟁력을 입증했다.\n\n오픈AI는 이러한 결과가 단순한 언어 생성 능력 향상이 아니라 계획 수립, 코드 작성, 디버깅, 도구 활용, 문제 해결 등 실제 업무 수행 능력 강화에 따른 결과라고 설명했다.\n\n수학 및 추론 분야에서도 GPT-5.6은 프런티어매스(FrontierMath)와 휴머니티스 라스트 이그잼(Humanity's Last Exam, HLE) 등 최고 난도 벤치마크에서 GPT-5.5를 능가하는 성과를 기록했다고 밝혔다.\n\n생명과학·사이버보안 분야서 큰 도약\n\n생명과학 분야에서는 유전체 분석과 정량 생물학 연구 능력을 평가하는 진벤치(GeneBench) v1에서 GPT-5.5 대비 향상된 성능을 기록하면서도 토큰 사용량은 줄였다.\n\n사이버보안 분야에서도 취약점 탐지와 보안 분석 능력이 크게 향상됐다. 익스플로잇벤치(ExploitBench) 평가에서는 경쟁 모델 수준의 결과를 더 적은 토큰 사용량으로 달성했으며, 크로미움(Chromium)과 파이어폭스(Firefox) 프로젝트를 대상으로 한 평가에서는 실제 취약점을 식별할 수 있는 수준에 도달했다고 설명했다.\n\n다만 오픈AI는 GPT-5.6 솔이 완전한 공격 체인을 자율적으로 생성하는 수준은 아니며 방어적 활용에 초점을 맞추고 있다고 강조했다.\n\n美 정부 요청에 따라 제한 공개\n\n이번 GPT-5.6 공개는 배포 방식에서도 주목받고 있다. 오픈AI는 발표에 앞서 미국 정부와 GPT-5.6의 성능과 공개 계획을 공유했다. 이에 따라 현재는 일부 신뢰 파트너에게만 제한적으로 제공되고 있으며, 일반 개발자와 기업 고객, 챗GPT 이용자 대상 공개는 향후 수주 내 순차적으로 진행될 예정이다.\n\n오픈AI는 \"광범위한 접근을 지지한다\"면서도 \"정부 요청에 따라 제한된 프리뷰 프로그램을 운영하고 있다\"고 설명했다. 동시에 \"정부 접근 절차가 장기적인 표준이 되어서는 안 된다\"며 과도한 규제가 AI 혁신을 저해해서는 안 된다는 입장도 밝혔다.\n\n70만 GPU 시간 투입한 역대 최고 수준 안전성 체계\n\n오픈AI는 GPT-5.6 시리즈에 자사 역사상 가장 강력한 안전성 체계를 구축했다고 강조했다. 새로운 '세이프가드 스택(Safeguard Stack)'은 실시간 위험 탐지 분류기, 접근 권한 관리, 계정 기반 모니터링, 정책 위반 차단 시스템 등을 포함한 다층 구조로 설계됐다.\n\n특히 사이버보안과 생명과학 관련 위험 요청을 탐지하는 활성화 분류기(Activation Classifier)가 새롭게 적용됐다. 위험성이 감지되면 추가 검증 과정을 거쳐 응답을 차단하는 방식이다.\n\n오픈AI는 이를 위해 엔비디아 A100 GPU 기준 약 70만 시간 규모의 자동화 레드팀 테스트를 수행했으며, 외부 전문가들이 참여하는 인간 중심 레드팀 평가도 병행했다고 밝혔다.\n\n생성형 AI 경쟁, '에이전트 플랫폼' 시대로\n\n업계는 GPT-5.6 공개를 생성형 AI 경쟁의 새로운 분기점으로 평가하고 있다. 최근 AI 경쟁은 단순한 언어 생성 능력에서 벗어나 실제 업무를 수행하는 에이전트 플랫폼 경쟁으로 빠르게 이동하고 있다. GPT-5.6 시리즈는 장기 추론, 멀티에이전트 협업, 전문 연구 지원, 사이버보안 분석 역량을 통합한 차세대 플랫폼 전략의 중심에 서 있다.\n\n또한 오픈AI는 AI 반도체 스타트업 세레브라스(Cerebras)와 협력해 오는 7월부터 GPT-5.6 솔을 초당 최대 750토큰 수준의 초고속 추론 환경에서 제공할 계획도 공개했다.\n\nGPT-5.6 시리즈의 본격적인 시장 확대가 시작되면 오픈AI와 앤트로픽, 구글, 메타, xAI 간 차세대 에이전트 AI 경쟁은 한층 더 치열해질 전망이다.",
+      "published_at": null,
+      "summary": "오픈AI가 GPT-5.6 시리즈를 공개하고 새로운 성능 계층 명명 체계(솔·테라·루나)를 도입했다. 기존 버전 번호 방식에서 벗어나 각 모델이 독립적인 능력 계층으로 발전하는 구조로 재편된 것이 핵심이다. 플래그십 솔은 세계 최고 수준 추론 성능을 목표로 하며, 테라는 GPT-5.5와 동급 성능을 절반 가격에 제공한다. 미 정부의 요청으로 초기 공개 직후 접근이 제한됐으나 OpenAI는 이를 장기 정책으로 삼지 않겠다고 밝혔다. 한국 AI 시장에서도 GPT-5.6 계열 도입 논의가 빠르게 이뤄질 전망이다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b33bed7b-5aac-47a4-aed5-1e8810145133",
+      "title": "OpenAI limits GPT-5.6 rollout after government request, says restrictions shouldn’t be the norm",
+      "url": "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
+      "source": "techcrunch",
+      "content": "“We don’t believe this kind of government access process should become the long-term default,” says OpenAI. “It keeps the best tools from users, developers, enterprises, cyber defenders, and global partners who need them.”",
+      "published_at": "2026-06-26T18:32:14+00:00",
+      "summary": "미국 정부 요청에 따라 OpenAI가 GPT-5.6 출시 직후 접근을 제한하는 이례적인 조치가 취해졌다. OpenAI는 '이 방식이 장기 기본값이 되어서는 안 된다'며, 개발자·기업·사이버 방어자가 최고 도구에 접근하지 못하는 현실을 우려했다. 이 사건은 AI 모델의 역량이 실질적인 정치적·안보적 결과를 낳는 수준에 도달했음을 보여준다. 정부의 AI 통제 논의가 실질적인 출시 제한으로 이어진 것은 업계 선례로, 향후 규제 방향에 중요한 신호가 될 수 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9f10082c-72fc-4038-96b0-6f57f645912f",
+      "title": "Trump Admin releases Anthropic Mythos to be used by more than 100 US companies, agencies",
+      "url": "https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/",
+      "source": "techcrunch",
+      "content": "Over 100 companies and government agencies are reportedly authorized to use Mythos 5, including their non-American employees.",
+      "published_at": "2026-06-27T01:01:37+00:00",
+      "summary": "트럼프 행정부가 Anthropic의 Mythos 5 모델을 미국 내 100개 이상의 기업과 정부 기관에 공개 사용을 허가했다. 해당 허가는 비미국 직원도 포함하며, 정부 주도로 특정 프론티어 AI 모델의 보급을 주도하는 새로운 형태의 정책이다. 이는 AI가 단순한 기술 제품을 넘어 국가 전략 자산으로 편입되는 추세를 보여준다. Anthropic 입장에서는 정부·기업 생태계 확장의 교두보가 되며, AI 규제와 보급 정책의 새로운 모델로 주목된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d8d62b0a-4a48-4362-a0c1-1d928ea4dbd6",
+      "title": "It’s not about Anthropic vs. OpenAI anymore",
+      "url": "https://techcrunch.com/2026/06/26/its-not-about-anthropic-vs-openai-anymore/",
+      "source": "techcrunch",
+      "content": "AI models have progressed to the point where their capabilities have real political consequences. Dealing with those consequences will require collective action.",
+      "published_at": "2026-06-26T16:24:47+00:00",
+      "summary": "AI 모델 역량이 실질적인 정치적 결과를 낳는 수준에 도달하면서 경쟁 구도가 단순한 기업 간 대결을 넘어섰다는 분석이다. OpenAI의 GPT-5.6 출시 제한과 Anthropic Mythos의 정부 배포는 AI가 국가 안보·정책 도구로 편입됐음을 상징한다. 앞으로의 핵심 과제는 기업 경쟁력이 아닌 집단적 거버넌스와 국제 협력이라는 주장이다. AI 업계 전체가 규제·윤리·안보 문제를 공동으로 다뤄야 하는 국면으로 접어들었음을 시사한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "ad07d9d8-5e47-4635-92b8-33da6219f8d6",
+      "title": "Why everyone from OpenAI to SpaceX is building their own chips (and turning up the heat on Nvidia)",
+      "url": "https://techcrunch.com/video/why-everyone-from-openai-to-spacex-is-building-their-own-chips-and-turning-up-the-heat-on-nvidia/",
+      "source": "techcrunch",
+      "content": "Nvidia has dominated the AI chip market for years, but the era of total dependence might be ending.&#160;&#160; OpenAI just shared its plans to spice things up with&#160;Jalapeño, its custom inference chip built with Broadcom, joining Google, Apple, and SpaceX in a growing list of companies building their way out of single-supplier risk. The goal&#160;is&#160;less&#160;of&#160;a [&#8230;]",
+      "published_at": "2026-06-26T17:43:22+00:00",
+      "summary": "OpenAI가 Broadcom과 협력해 커스텀 추론 칩 'Jalapeño'를 발표하며, Google·Apple·SpaceX에 이어 자체 칩 개발 대열에 합류했다. 엔비디아 의존도 탈피와 추론 비용 절감이 주요 동기로, 대형 테크 기업들의 수직 통합 전략이 AI 인프라 시장을 재편하고 있다. 자체 칩은 특정 워크로드에 최적화돼 범용 GPU 대비 비용·에너지 효율에서 유리하지만 개발 리스크도 크다. 엔비디아의 독점적 시장 지위가 흔들릴 수 있다는 신호로, AI 하드웨어 경쟁의 새로운 장이 열리고 있다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "114a04c5-b238-45a7-b587-3fbe8e879566",
+      "title": "Q&amp;A: How KRAFTON Built PUBG Ally, a Co-Playable Character Powered by NVIDIA ACE",
+      "url": "https://developer.nvidia.com/blog/how-krafton-built-pubg-ally-a-co-playable-character-powered-by-nvidia-ace/",
+      "source": "nvidia",
+      "content": "AI companions in games have long been constrained by fixed dialogue. PUBG Ally is a different kind of system. Built by KRAFTON for PUBG: BATTLEGROUNDS, this AI...AI companions in games have long been constrained by fixed dialogue. PUBG Ally is a different kind of system. Built by KRAFTON for PUBG: BATTLEGROUNDS, this AI teammate is powered by NVIDIA ACE and its suite of efficient models and tooling. PUBG Ally uses automatic speech recognition, a 2B-parameter small language model, and text-to-speech to understand player voice… Source",
+      "published_at": "2026-06-25T16:38:18+00:00",
+      "summary": "한국 게임사 크래프톤(KRAFTON)이 NVIDIA ACE 기술을 활용해 PUBG에 AI 동반자 'PUBG Ally'를 구현했다. 고정된 대화 스크립트를 벗어나 실시간 맥락 기반의 자연스러운 상호작용이 가능한 AI 동반 플레이어 시스템이다. NVIDIA ACE의 음성 인식·생성 및 캐릭터 AI 파이프라인을 게임 엔진과 통합하는 구체적인 구현 사례를 공개했다. 게임 AI 에이전트가 실제 상용 타이틀에 적용된 사례로, 인터랙티브 엔터테인먼트에서 AI 에이전트 활용 가능성을 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c1085d3d-0541-49f8-87a3-c7872e90a8bb",
+      "title": "Creating the NVIDIA Nemotron 3 Ultra NVFP4 Checkpoint with NVIDIA Model Optimizer",
+      "url": "https://developer.nvidia.com/blog/creating-the-nvidia-nemotron-3-ultra-nvfp4-checkpoint-with-nvidia-model-optimizer/",
+      "source": "nvidia",
+      "content": "As context windows grow longer, moving large model weights efficiently becomes critical to performance. A common way to address this is quantization, an...As context windows grow longer, moving large model weights efficiently becomes critical to performance. A common way to address this is quantization, an optimization technique that compresses model weights into a smaller data format. One quantization format is NVFP4, an innovative 4-bit floating point introduced with NVIDIA Blackwell architecture. That’s the approach behind our new Nemotron 3… Source",
+      "published_at": "2026-06-26T16:00:35+00:00",
+      "summary": "NVIDIA가 Model Optimizer를 활용해 Nemotron 3 Ultra 모델의 NVFP4(4비트 부동소수점) 양자화 체크포인트를 생성하는 과정을 공개했다. 컨텍스트 윈도우가 길어질수록 모델 가중치 이동 비용이 커지는 문제를 해결하기 위해 정밀한 양자화 기법이 적용됐다. NVFP4는 INT4 대비 더 넓은 동적 범위를 제공해 모델 정확도 손실을 최소화하면서 메모리 효율을 극대화한다. 대형 모델의 프로덕션 배포 시 비용과 속도를 개선하는 실용적 인프라 기법으로, 엔터프라이즈 AI 도입에 유의미한 참고 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "aa2391e4-dbe5-4e98-969f-d1f294429151",
+      "title": "VLX-Flow: Continuous Video Understanding for Real-Time Multimodal Interaction",
+      "url": "https://huggingface.co/blog/omlab/vlx-flow",
+      "source": "huggingface",
+      "content": "Most video models start watching only after a user asks a question. Real devices do not work that way: cameras keep recording, robots keep moving, screens keep changing, and queries can arrive at any time. A model for these scenarios should not wait until a query arrives before it begins to understand the scene.\n\nVLX-Flow is designed for this online setting. It processes video as a sequence of streaming chunks, updates model memory incrementally, and answers from the maintained state instead of reprocessing the entire video history for every interaction.\n\nMany video understanding systems still assume an offline workflow: collect the video first, sample or encode it, then ask the model to reason over the resulting frames. That works for many benchmark-style tasks, but live environments require something different. The harder problem is whether a model can maintain an evolving visual state as the world changes. VLX-Flow treats video understanding as a continuous process. New chunks are absorbed as they arrive, internal memory is updated during inference, and later questions are answered from this accumulated state.\n\nThe core question behind VLX-Flow is:how can a multimodal model keep understanding a video stream, rather than starting from zero only after a user asks a question?\n\nMost video VLMs are built around one of two input strategies.Full-frame inputfeeds many frames from the whole video into the model at once. It preserves more information, but it is expensive, high-latency, and difficult to scale to long streams.Fixed samplingis cheaper, but it only gives the model sparse snapshots. Important actions can easily fall between sampled frames. If a person picks up a cup between two samples, the model may see the before and after states but miss the action itself.\n\nBoth approaches are useful, but they are still fundamentally offline. The model begins to process the video after the request is made. For cameras, robots, screen recordings, and edge devices, this creates a mismatch: the video is continuous, but the model's understanding happens in disconnected bursts.\n\nVLX-Flow presents video to the model as a stream rather than a single static request. The stream is divided into short, consecutive chunks, and each chunk is processed in temporal order. The visual encoder converts the new frames into model-readable features, while the language model maintains a reusable internal state.\n\nWhen a new chunk arrives, VLX-Flow updates this state instead of rebuilding the full context. Past information is neither discarded nor allowed to grow into an unbounded raw history. It iscompressed into state rather than copied as history.\n\nConsider a simple event: a person picks up a cup, walks toward a door, and later places the cup on a table. Sparse sampling may only capture isolated snapshots. VLX-Flow is designed to preserve the event chain across chunks, so a later question such as \"What did the person put on the table?\" can be answered from the maintained state.\n\nThe language model usesLinear Attentioncomponents. With standard self-attention, longer sequences require a growing KV cache, so memory and computation increase as the stream gets longer. Linear Attention can carry history through a recurrent state and update it incrementally, giving the model a natural mechanism for stream-oriented inference.\n\nThis gives VLX-Flow two practical advantages:\n\nVLX-Flow builds on this with two complementary memory layers. Thevisual cachekeeps recent visual details such as actions, object positions, and short-term scene changes. Thesemantic memorystores higher-level context, including streaming descriptions, user questions, model answers, and dialogue context. The visual cache protects short-term detail; the semantic memory keeps the longer narrative coherent.\n\nFor multi-turn interaction, this memory cannot be treated as a simple text transcript. When text history is merged, trimmed, or replayed, VLX-Flow synchronizes the model's internal cache so that the visible conversation and the actual model state do not drift apart.\n\nTime to first token (TTFT) as the number of input images increases. Full Attention (orange) rises steadily as the historical context grows. SlideWindow (green) limits history with window resets, producing a rise-reset-rise pattern. VLX-Flow (red) compresses history through its two-layer memory mechanism, keeping TTFT low and stable over long sequences.\n\nOne core capability of VLX-Flow iscontinuous video description. The generated descriptions are not isolated single-frame descriptions. They act as semantic memory for streaming inference. As video flows in, the model records useful information about the scene, subjects, actions, object states, and camera changes. Each description continues from the previous state rather than starting over.\n\nWe formulate this as a streaming understanding data format. A short video window is divided into chronological chunks, and each chunk is paired with a concise, visually grounded streaming description. Later, a question is introduced, and the model must answer from the memory it has accumulated so far rather than going back to rewatch the video.\n\nThis separatesobservationfromanswering. Instead of static segment-level supervision, the supervision becomes recursive over time: streaming descriptions teach the model how to compress visual history, while question answering tests whether that memory can support reasoning.\n\nThis supports several online video workflows:\n\nFrom an engineering perspective, VLX-Flow changes video understanding from arequest-based APIinto acontinuously running perception module. If every question requires uploading video to the cloud and reanalyzing the full history, the system pays a combined price in bandwidth, latency, privacy exposure, and compute cost.\n\nVLX-Flow is a better fit for on-device and edge scenarios. Video streams can be encoded locally, memory can be updated incrementally, and language generation only needs to run when the system must answer a question, trigger an alert, or produce structured output.\n\nA camera does not look at the world once every five seconds. It is always watching. Models built for real devices should work the same way. VLX-Flow is about making video usable as a live, long-lived model context, not just as another uploaded file.\n\nFor more technical details and open-source projects, please visit:om-ai-lab/VLX-Flow.",
+      "published_at": "2026-06-27T00:39:24",
+      "summary": "VLX-Flow는 사용자 질문을 기다리지 않고 지속적으로 비디오 스트림을 처리해 실시간 멀티모달 상호작용을 가능케 하는 모델이다. 카메라·로봇·화면 등 연속 입력 환경에 적합하도록 온라인 스트리밍 비디오 이해 패러다임을 새롭게 설계했다. 기존 오프라인 방식의 비디오 모델이 갖는 지연 문제를 극복하고 쿼리 도착 시점과 무관하게 일관된 컨텍스트를 유지한다. 실시간 로봇 비전, 라이브 스트리밍 모니터링, AR/VR 인터페이스 등 다양한 응용 분야에서 핵심 기술이 될 전망이다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "42906692-0932-4c60-9acf-7c221e0500f0",
+      "title": "E-TTS: A New Embodied Test-Time Scaling Framework for Robotic Manipulation",
+      "url": "https://huggingface.co/papers/2606.27268",
+      "source": "hf_papers",
+      "content": "Recently, a few works have made early attempts to study test-time scaling for embodied tasks. However, two major challenges remain unsolved: (1) reasoning can effectively improve the performance of the policy, but its scaling mechanism has seldom been studied; (2) historical information is essential, as embodied tasks are inherently long-horizon and sequential, making sole reliance on current observations for action scaling inadequate due to the lack of historical context utilization. To address these challenges, we introduce E-TTS, a modular and plug-and-play Embodied Test-Time Scaling framework that unifies reasoning and action scaling for robotic manipulation via history-aware iterative refinement with vision-language verifiers. To support joint reasoning-action scaling, E-TTS performs reasoning-action joint sampling and scoring in a pairwise manner. To better utilize historical information, E-TTS uses a history buffer to store historical context, which is then used by reasoning and action verifiers to evaluate the sampled candidates. Unlike conventional open-loop TTS methods, E-TTS introduces feedback generation into the sampling process to form a closed-loop iterative refinement mechanism, enhancing both inference efficiency and environmental adaptability. Each component functions as an independent and composable module, allowing flexible and adaptive configuration depending on task requirements. To evaluate the advantages of our framework, we conduct experiments across 4 different benchmarks, 6 environments, 3 embodiments, and 4 base vision-language-action models. The experimental results demonstrate that, without requiring additional expert data collection or retraining, E-TTS consistently improves performance, achieving up to a 33.14% increase in simulation and 26.62% in real-world scenarios.",
+      "published_at": "2026-06-25T16:50:21+00:00",
+      "summary": "E-TTS는 로봇 조작 태스크에서 테스트 타임 스케일링(TTS)을 실체화하는 새로운 프레임워크다. 추론 단계의 컴퓨팅 확장이 정책 성능을 향상시키는 메커니즘을 체계적으로 연구하고, 히스토리 정보를 효과적으로 활용하는 방법을 제시한다. 기존 TTS 연구가 언어·수학 도메인에 집중된 것과 달리, 물리 세계 조작이라는 embodied AI 도전 과제에 적용한 점이 차별점이다. 로봇 학습에서 추론 시 컴퓨팅 투자가 성능 향상으로 이어지는 새로운 스케일링 법칙의 가능성을 보여준다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "b922643b-1287-4ca3-a1c3-4b09dc71c925",
+      "title": "In-Context Model Predictive Generation: Open-Vocabulary Motion Synthesis from Language Models to Physics",
+      "url": "https://huggingface.co/papers/2606.26981",
+      "source": "hf_papers",
+      "content": "Synthesizing human motion from textual descriptions is essential for immersive digital applications, yet existing methods face a persistent trade-off between semantic fidelity and physical realism. Large language model (LLM)-based approaches can interpret diverse open-vocabulary instructions and compose high-level action plans, but they often generate motions that violate physical constraints. Physics-aware models improve realism through simulation or control, but they struggle with semantic complexity, fine-grained instructions, and novel concepts. To address this gap, we propose In-Context Model Predictive Generation (ICMPG), a framework that integrates language-model planning with inference-time physical feedback. ICMPG reformulates motion synthesis as a Model Predictive Control (MPC)-like process with two modules. The Context-Aware Motion Generation (CAMG) module uses an LLM as a planner to decompose textual commands and generate candidate motion sequences from motion tokens. The Model Predictive Generation (MPG) module evaluates these candidates through physical simulation and semantic alignment, estimates a composite reward, and selects the best sequence to guide subsequent generation steps. Unlike open-loop generation, this closed-loop refinement enables ICMPG to adapt motions to both the input semantics and the simulated physical environment without task-specific policy retraining. Extensive experiments across standard and zero-shot open-vocabulary settings show that ICMPG generalizes robustly to diverse commands and produces motions that are more physically plausible and semantically faithful than representative baselines on the evaluated benchmarks. The framework bridges semantic interpretation and physical simulation while remaining flexible enough to incorporate different LLM backbones, enabling more versatile and controllable text-driven motion synthesis.",
+      "published_at": "2026-06-25T12:50:33+00:00",
+      "summary": "텍스트 설명으로부터 물리적으로 현실적인 인간 동작을 합성하는 새로운 접근법으로, LLM 기반 시맨틱 이해와 물리 시뮬레이터를 결합했다. 기존 방법들이 의미적 충실도와 물리적 현실성 사이에서 tradeoff를 갖는 문제를 인컨텍스트 모델 예측 생성(ICMPG)으로 해결한다. 다양한 오픈보캐블러리 명령을 물리 기반 모션으로 변환하는 파이프라인은 애니메이션·게임·로봇 제어에 직접 활용 가능하다. LLM의 언어 이해와 물리 엔진의 현실성을 통합한 하이브리드 접근법으로 모션 합성 연구의 새로운 방향을 제시한다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "bb8f9276-3b37-47ff-aa42-96093d238b3b",
+      "title": "Detecting and Controlling Sycophancy with Cascading Linear Features",
+      "url": "https://arxiv.org/abs/2606.26155",
+      "source": "arxiv",
+      "content": "arXiv:2606.26155v1 Announce Type: new \nAbstract: Interpreting and controlling model behaviors through activation steering methods requires many pairs of contrastive samples that clearly exhibit desired or undesired behavior. These data pairs determine the degree to which interpretability frameworks can reliably detect model features responsible for a behavior, and therefore the ability to steer models toward or away from such behavior. In this work, we present an iterative data generation pipeline that isolates cascading linear features responsible for a behavior. Specifically, we show how moving beyond simple binary pairs of samples, and instead isolating samples that show degrees of features that scale linearly with behavior, allows for better disentanglement of features. We focus on detecting and steering away from sycophancy -- the tendency of language models to prioritize user validation. We demonstrate that sycophancy features discovered through cascading samples form linearly separable subspaces, and allow for selection of model activations that more clearly correspond to the desired behavior than baseline approaches. We also evaluate their ability to enable detection, deterministic scoring, and robust steering, and see that they either match or outperform LLM-as-a-judge and system prompting baselines while providing lower computational demand and more interpretability guarantees. Code & Data: https://cascading-feats.github.io/",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "LLM의 아첨(sycophancy) 행동을 활성화 공간에서 탐지하고 조절하는 계단식 선형 특징(Cascading Linear Features) 방법론을 제안한다. 활성화 스티어링을 위해 대조적 샘플 쌍이 많이 필요하다는 기존 한계를 극복하고, 아첨과 관련된 선형 방향을 효율적으로 식별한다. 탐지뿐 아니라 추론 중 실시간 조절도 가능해, 아첨 행동을 줄이는 실용적 안전장치로 활용될 수 있다. AI 정렬 연구에서 모델 내부 표현을 해석하고 제어하는 interpretability 기법의 중요한 진전으로 평가된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e43e709b-a662-4061-ab30-3c75a782972b",
+      "title": "Refusal Lives Downstream of Persona in Chat Models",
+      "url": "https://arxiv.org/abs/2606.26161",
+      "source": "arxiv",
+      "content": "arXiv:2606.26161v1 Announce Type: new \nAbstract: Linear directions in activation space have been identified for both refusal and persona traits in instruction-tuned chat models, but the two have been studied as separate mechanisms. We show they interact: a compliant persona gates refusal. In Qwen2.5-7B-Instruct and Llama-3.1-8B-Instruct, we extract a compliant model-persona direction and a refusal direction and intervene on both. Compliant persona steering suppresses refusal -- in Llama, the refusal rate falls from 97% to 2%. Reintroducing the refusal direction partially restores refusal at late layers but not at early ones. Projecting out the persona direction in a late-layer window restores it to baseline; projecting out a random direction does not. Refusal is therefore gated at the late-layer expression stage, downstream of where it is computed. Treating refusal as a single isolated direction misses its dependence on persona.",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "채팅 모델에서 거부(refusal) 행동이 페르소나(persona) 특성 다운스트림에 위치한다는 메커니즘을 발견했다. 활성화 공간에서 거부와 페르소나 방향이 상호작용하며, 순응적 페르소나가 거부 게이트를 여는 구조임을 Qwen2.5 등 모델에서 실증했다. 이는 페르소나 조작을 통해 안전 장치를 우회할 수 있다는 위험성을 시사하며, 정렬 훈련 설계에 중요한 함의를 갖는다. 거부 메커니즘의 취약성을 이해하고 더 강건한 안전 훈련 전략을 개발하는 데 기초 연구로 활용될 수 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "063bef34-75eb-4c81-afae-c9ba2e1ac778",
+      "title": "The Red Queen G\\\"odel Machine: Co-Evolving Agents and Their Evaluators",
+      "url": "https://arxiv.org/abs/2606.26294",
+      "source": "arxiv",
+      "content": "arXiv:2606.26294v1 Announce Type: new \nAbstract: Self-improving agents are state-of-the-art (SOTA) on agentic coding benchmarks and have recently been extended to general domains. However, their search methods generally assume a stationary evaluation criterion: a fixed verifier, benchmark, or labeled dataset that remains valid as the agent improves. This ignores a central feature of evolution: species adapt as their environments change with them. We aim to bring the same principle to recursive self-improvement, making evaluation part of the improvement loop and opening search to evolving evaluators, adversarial objectives, and dynamic utilities that may surpass static benchmarks. We introduce the Red Queen Godel Machine (RQGM), an evolutionary framework for recursive self-improvement under non-stationary utilities. The RQGM makes this possible through controlled utility evolution: search is organized into epochs with a fixed within-epoch evaluation criterion, while the utility can be updated at epoch boundaries, so self-improvement guarantees hold per epoch as the objective evolves across them. We begin by showing that even on verifiable coding tasks, the RQGM improves test pass rate over the prior SOTA by adding a complementary agent-as-a-judge code-review signal. This signal is cheaper and the RQGM uses 1.35x-1.72x fewer tokens. We then turn to scientific paper writing and reviewing, and Olympiad-level proof writing and grading, where the RQGM improves performance over prior self-improving agents: co-evolved writers reach 1.78x-1.86x higher acceptance rates under a diverse agent-as-a-judge panel, while co-evolved graders reach 9% higher ground-truth accuracy. In paper reviewing, the strongest baseline reviewer over-accepts AI-generated papers at up to 1.91x the human rate. The RQGM corrects this by introducing an adversarial objective that discovers reviewers equally stringent on AI and human work.",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "자기 개선 에이전트와 그 평가자가 공진화하는 'Red Queen Gödel Machine' 프레임워크를 제안한다. 기존 자기 개선 에이전트가 고정된 평가 기준(검증자, 벤치마크)을 가정하는 한계를 극복해, 에이전트와 평가자가 함께 발전하는 시스템을 구축한다. 레드 퀸 효과(Red Queen Effect)처럼 양쪽이 끊임없이 진화하며 더 강한 역량을 획득하는 동적 균형을 목표로 한다. 자율적 AI 에이전트의 장기적 자기 개선 가능성과 평가 지표 설계의 중요성을 동시에 다루는 근본적인 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c80a7239-c1d7-4cc7-98c0-bf49a096b3ee",
+      "title": "Context Recycling for Long-Horizon LLM Inference",
+      "url": "https://arxiv.org/abs/2606.26105",
+      "source": "arxiv",
+      "content": "arXiv:2606.26105v1 Announce Type: new \nAbstract: Large language models (LLMs) exhibit strong capabilities in short-context reasoning but degrade in performance over long conversational horizons due to context window limitations and inefficient token usage. We introduce ContextForge, a system for context recycling that maintains task-relevant information across turns by combining structured query generation, external memory retrieval, and controlled synthesis. The system enables efficient reuse of prior computation without relying on full context replay, reducing token overhead while preserving answer quality. We evaluate ContextForge using a 15-turn conversational benchmark that tests multi-turn reasoning, back-references, and domain shifts across structured healthcare queries. Compared to a baseline agent using identical underlying models, ContextForge demonstrates improved consistency and reduced token consumption, while maintaining comparable response accuracy. These results suggest that context recycling provides a practical approach for extending LLM capabilities in long-horizon tasks without requiring larger context windows or model retraining. Code and evaluation artifacts are available at https://github.com/Betanu701/ContextForge.",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "긴 대화 흐름에서 LLM 성능이 저하되는 문제를 해결하는 ContextForge 시스템을 제안한다. 기존 토큰을 폐기하는 대신 '재활용(recycling)'해 컨텍스트 창 한계를 극복하고 장기 추론 효율을 높인다. 반복 참조되는 컨텍스트 구간을 동적으로 식별해 우선순위를 부여하는 방식으로, 훈련 없이 추론 시 적용 가능한 점이 실용적이다. 멀티턴 에이전트, 긴 문서 분석, 코딩 세션 등 장기 LLM 추론이 필요한 응용에서 즉각적인 활용 가능성이 높다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "7fabcec7-a891-44b4-9cf8-5c30531f5c06",
+      "title": "Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM",
+      "url": "https://arxiv.org/abs/2606.26120",
+      "source": "arxiv",
+      "content": "arXiv:2606.26120v1 Announce Type: new \nAbstract: Diffusion Large Language Models (dLLMs) offer a promising alternative to autoregressive models, excelling in text generation tasks due to their bidirectional attention mechanisms. However, their computational complexity scales on the order of L cubed with the sequence length L. This poses significant challenges for long-sequence and real-time applications, primarily due to the lack of compatibility with key-value caching and the non-autoregressive nature of denoising steps. Existing acceleration methods rely on static caching or parallel decoding strategies, which fail to account for the dynamic behavior of token properties across layers and decoding steps. We propose Dynamic-dLLM, a training-free framework that enhances dLLM inference efficiency through two components: Dynamic Cache Updating (DCU), which adaptively allocates cache-update budgets based on layer-wise token dynamics, and Adaptive Parallel Decoding (APD), which dynamically calibrates decoding thresholds to balance generation quality and efficiency. Extensive experiments on models like LLaDA-8B-Instruct, LLaDA-1.5, and Dream-v0-7B-Instruct across benchmarks such as MMLU, GSM8K, and HumanEval demonstrate that Dynamic-dLLM significantly improves inference speed. It attains an average speedup exceeding 3 times while maintaining performance. Dynamic-dLLM outperforms state-of-the-art acceleration methods and provides a plug-and-play solution for efficient dLLM deployment without compromising performance. The code is available at https://github.com/TianyiWu233/DYNAMIC-DLLM.",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "확산 기반 대형 언어 모델(dLLM)의 추론 속도를 훈련 없이 대폭 가속하는 Dynamic-dLLM을 제안한다. dLLM은 양방향 어텐션으로 텍스트 생성 품질이 우수하지만 계산 복잡도가 O(L³)에 달하는 문제가 있었다. 동적 캐시 예산 할당과 적응형 병렬 디코딩을 결합해 연산량을 크게 줄이면서도 생성 품질을 유지한다. 자기회귀 모델의 대안으로 주목받는 확산 LLM의 실용화 장벽을 낮추는 핵심 기여로, 관련 연구 가속화가 기대된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a63ff9c6-065e-43fa-b4f0-d720c86bab6e",
+      "title": "The Verification Horizon: No Silver Bullet for Coding Agent Rewards",
+      "url": "https://arxiv.org/abs/2606.26300",
+      "source": "arxiv",
+      "content": "arXiv:2606.26300v1 Announce Type: new \nAbstract: A classical intuition holds that verifying a solution is easier than producing one. For today's coding agents, this intuition is being inverted: as foundation models develop stronger reasoning capabilities and engineering harnesses grow more sophisticated, generating complex candidate solutions is no longer difficult -- reliably verifying them has become the harder problem. Every verifier we can build is only a proxy for human intent, never the intent itself. This makes verification subject to a twofold difficulty: first, intent is underspecified by nature, making it inherently hard to faithfully check whether it has been fulfilled; second, during model training, optimization widens the gap between proxy and intent -- manifesting as reward hacking or signal saturation. To address this, we characterize the quality of verification signals along three dimensions -- scalability, faithfulness, and robustness -- and argue that achieving all three simultaneously is the central challenge. We further study four reward constructions: a test verifier for general coding tasks, a rubric verifier for frontend tasks, the user as verifier for real-world agent tasks, and an automated agent verifier for long-horizon tasks. Across different task types and policy capability levels, we conduct in-depth analysis and experiments on the core challenges of reward design and how to more effectively leverage reward signals. Experiments show that targeted verification design can effectively suppress reward hacking, improve task completion quality, and achieve significant gains across multiple internal and public benchmarks. These experiences collectively point to a core observation: no fixed reward function can remain effective as policy capability continues to grow; and verification must co-evolve with the generator.",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "코딩 에이전트에서 '검증이 생성보다 쉽다'는 고전적 직관이 역전되고 있다는 현상을 'Verification Horizon' 개념으로 분석한다. 모델 추론 능력이 발전할수록 코딩 에이전트의 보상 신호를 올바르게 설계하는 것이 더 어려워지는 역설적 문제를 다룬다. 단순 통과/실패 기반 보상이 갖는 취약성과 더 정교한 검증 전략의 필요성을 실험적으로 보여준다. 코딩 에이전트 훈련 및 배포에서 보상 해킹(reward hacking) 방지를 위한 시스템 설계에 중요한 시사점을 제공한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9fbd04df-8bb8-4d02-9d40-e7b6e5d14e98",
+      "title": "EVOM: Agentic Meta-Evolution of Actor-Critic Architectures for Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2606.26327",
+      "source": "arxiv",
+      "content": "arXiv:2606.26327v1 Announce Type: new \nAbstract: In actor-critic reinforcement learning, network architectures are typically manually designed. Automating this design is challenging because each candidate must be trained before evaluation, and the design space is open-ended. To address these challenges, we introduce EVOM, an agentic meta-evolution framework for discovering high-performance actor-critic architectures. We frame architecture search as a bi-level optimization: an inner loop trains weights via the low-fidelity proximal policy optimization (PPO), while an outer loop drives meta-evolution by iteratively refining architecture programs. Crucially, this outer loop is powered by an LLM-based design agent that operates purely as an architecture designer, completely decoupled from policy execution and environment control. Experiments reveal that EVOM outperforms the manually designed baseline, an LLM-guided random search, and the state-of-the-art LLM-guided programmatic policy search method MLES, delivering superior performance on Ant-v4 and HalfCheetah-v4. Ablation studies validate that both the meta-evolution loop and the LLM Design Agent are indispensable for final performance.",
+      "published_at": "2026-06-26T00:00:00-04:00",
+      "summary": "강화학습의 액터-크리틱 아키텍처를 에이전트가 자동으로 진화시키는 EVOM(Agentic Meta-Evolution) 방법론을 제안한다. 후보 아키텍처를 실제로 훈련해야 평가할 수 있는 고비용 문제를 메타-진화 전략으로 효율적으로 탐색한다. 개방형 설계 공간에서 LLM 에이전트가 새로운 아키텍처를 제안하고 평가 결과를 반영해 반복 개선하는 자동화 파이프라인이다. RL 아키텍처 탐색 자동화는 AI 시스템의 자기 설계 역량으로 이어질 수 있어 메타학습·AutoML 분야에서 중요한 진전이다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a8ce2948-0fc1-44ff-b8f9-e78ba67286a7",
+      "title": "Learning to Recover Task Experts from a Multi-Task Merged Model",
+      "url": "https://huggingface.co/papers/2606.26902",
+      "source": "hf_papers",
+      "content": "Multi-task model merging aims to consolidate several task-specific experts into a unified model, yet static merging consistently suffers from parameter interference. While dynamic merging models aim to bridge this gap, many works rely on the costly storage and loading of redundant expert components at inference. In this work, from the perspective of task expert, we view parameter interference as parameter perturbation introduced to each expert during merging process. We show that such parameter perturbations can be modeled as affine transformation, which can be approximated as additive offsets. Motivated by these, we propose Recover Task eXpert (ReTeX), a framework that predicts those offsets, in order to undo parameter interference and recover task-expert performance from a single merged checkpoint. To recover the appropriate expert when task identity is unknown, we introduce a router-free task identifier based on SVD subspace signatures computed offline before inference. At inference, the identifier selects the task whose subspace yields the smallest projection residual for a given input. As a result, ReTeX recovers over 95% of individual-expert performance in both vision and NLP domains, while significantly improving generalization to unseen tasks. Crucially, we also show that the parameter offset prediction leads to emergent adaptive interpolation of expert knowledge for out-of-distribution (OOD) tasks. ReTeX adaptively interpolates seen expert knowledge to handle unseen tasks. Our code is available at https://github.com/BAIKLAB/ReTeX",
+      "published_at": "2026-06-25T11:34:33+00:00",
+      "summary": "여러 태스크 전문가 모델을 단일 모델로 병합(model merging)한 후, 필요 시 태스크별 전문가를 복원(recover)하는 방법을 연구한다. 정적 병합의 고질적인 파라미터 간섭(parameter interference) 문제를 동적 복원 학습으로 해결하는 접근법이다. 기존 동적 병합 방법들이 중복 전문가 저장·로딩에 드는 비용을 극복하면서도 태스크 특화 성능을 유지할 수 있음을 보인다. 멀티태스크 모델 경량화와 성능 유지를 동시에 달성하는 모델 병합 연구의 새로운 방향을 제시한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "747ea8af-fe75-4c00-8ef0-5f441d876528",
+      "title": "Netris raises $15M Series A from a16z to help AI neoclouds go live faster",
+      "url": "https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/",
+      "source": "techcrunch",
+      "content": "Netris provides software that runs on network switches, and offers a platform that helps neocloud operators reduce the time it takes to go live.",
+      "published_at": "2026-06-25T14:55:38+00:00",
+      "summary": "AI 네오클라우드의 빠른 서비스 출시를 지원하는 네트워크 소프트웨어 스타트업 Netris가 a16z 주도로 1,500만 달러 시리즈 A를 유치했다. Netris는 네트워크 스위치에서 실행되는 소프트웨어로, 네오클라우드 운영사의 네트워크 구성·배포 시간을 단축한다. AI 인프라 수요 급증으로 기존 하이퍼스케일러와 경쟁하는 네오클라우드 생태계가 빠르게 성장하고 있음을 반영한다. a16z의 투자는 AI 컴퓨팅 인프라 경쟁이 소프트웨어 정의 네트워킹 계층까지 확산되고 있음을 시사한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
