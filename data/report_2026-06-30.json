@@ -1,0 +1,283 @@
+{
+  "id": "6f7973ef-e25e-4f4d-bfab-f5efeaa59ada",
+  "created_at": "2026-06-30T03:40:29.477152",
+  "articles": [
+    {
+      "id": "c9ba0c20-9c20-4cee-9983-7bc46834be17",
+      "title": "South Korean tech giants commit over $550B to ease ‘RAMageddon’",
+      "url": "https://techcrunch.com/2026/06/29/south-korean-tech-giants-commit-over-550b-to-ease-ramageddon/",
+      "source": "techcrunch",
+      "content": "The world's two largest memory chip companies vow to build more memory lab fabs as South Korea positions itself as an AI tech powerhouse country.",
+      "published_at": "2026-06-29T18:07:48+00:00",
+      "summary": "삼성전자와 SK하이닉스가 AI 시대 메모리 수요 폭발('RAMageddon')에 대응하기 위해 총 5,500억 달러 이상의 신규 메모리 제조 설비 투자를 약속했다. AI 훈련 및 추론에 필요한 HBM(고대역폭 메모리) 수요가 공급을 크게 초과하면서 글로벌 AI 인프라 확장의 병목으로 부상하고 있다. 이번 투자는 한국이 AI 반도체 공급망의 핵심 축으로 자리매김하려는 국가 전략의 일환으로, 세계 최대 메모리 반도체 기업들의 대규모 생산 능력 확충을 의미한다. 양사의 투자는 데이터센터 및 AI 가속기 시장의 메모리 제약을 완화하고, 글로벌 AI 생태계 전반에 걸쳐 공급망 안정화에 기여할 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7a7f8990-8921-4054-b925-b4d1765c6a85",
+      "title": "Anthropic and Gov. Newsom forge deal allowing California government to use Claude at half price",
+      "url": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/",
+      "source": "techcrunch",
+      "content": "As Anthropic forges a closer relationship with the state of California, the federal government has made an enemy out of the OpenAI rival.",
+      "published_at": "2026-06-29T18:10:26+00:00",
+      "summary": "Anthropic이 캘리포니아 주정부와 Claude AI를 절반 가격에 제공하는 협약을 체결하며 공공 부문 AI 도입 확대에 나섰다. 뉴섬 주지사 주도로 추진된 이번 계약은 주정부 업무 효율화를 목표로 하며, 연방정부와 갈등 관계에 있는 Anthropic의 기업·정부 시장 공략을 강화하는 신호로 읽힌다. 공공 부문 AI 계약은 규제·보안·책임 문제와 맞물려 있어 Anthropic의 안전 중심 브랜드 이미지와 전략적으로 부합한다. 이는 AI 기업들이 규제 환경을 능동적으로 형성하는 동시에 주정부 레벨에서 AI 서비스 시장을 선점하려는 흐름을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "03b107d5-0e70-4d48-b9a3-37e61699b7bc",
+      "title": "Gemini’s personalized AI image generation is now free for US users",
+      "url": "https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/",
+      "source": "techcrunch",
+      "content": "Google is expanding Gemini’s personalized AI image generation to eligible free users in the U.S., allowing the chatbot to create images based on your interests and data from connected Google apps.",
+      "published_at": "2026-06-29T20:12:59+00:00",
+      "summary": "Google이 Gemini의 개인화 AI 이미지 생성 기능을 미국 내 무료 사용자에게까지 확대 제공하기 시작했다. 이 기능은 사용자의 관심사와 연결된 Google 앱 데이터를 기반으로 맞춤형 이미지를 생성하며, 개인화와 멀티모달 AI 경험을 결합한 것이 특징이다. 유료 플랜 없이도 고급 이미지 생성 기능에 접근할 수 있게 됨으로써 OpenAI, Adobe 등 경쟁사와의 생성형 AI 이미지 시장 경쟁이 더욱 치열해질 전망이다. 개인 데이터 연동 방식은 사용 편의성을 높이는 동시에 프라이버시 우려를 제기하며 사용자 선택의 중요성을 부각시킨다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "963f6602-7a7e-40f1-9b4e-c6013c31ed12",
+      "title": "Cursor now has a mobile app for guiding your coding agent on the go",
+      "url": "https://techcrunch.com/2026/06/29/cursor-now-has-a-mobile-app-for-guiding-your-coding-agent-on-the-go/",
+      "source": "techcrunch",
+      "content": "Cursor has launched a new mobile app for remote oversight over coding agents.",
+      "published_at": "2026-06-29T17:03:50+00:00",
+      "summary": "AI 코딩 도구 Cursor가 코딩 에이전트를 원격으로 제어·감독할 수 있는 모바일 앱을 출시했다. 개발자는 이동 중에도 스마트폰에서 에이전트의 작업 진행 상황을 모니터링하고 방향을 수정할 수 있어, 24시간 에이전트 운영의 실용성이 크게 높아진다. 이는 코딩 에이전트가 완전 자율 실행보다는 인간 감독과 결합된 형태로 진화하고 있음을 보여주는 구체적인 사례다. Cursor의 모바일 확장은 AI 개발 도구 생태계에서 에이전트 인터페이스가 데스크톱을 넘어 멀티플랫폼화되는 흐름을 가속화할 전망이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f49211da-62fe-45e6-ad3e-b4893a012542",
+      "title": "Memora: A Harmonic Memory Representation Balancing Abstraction and Specificity",
+      "url": "https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/",
+      "source": "microsoft_research",
+      "content": "At a glance Today&#8217;s AI agents don&#8217;t remember past interactions. They must repeatedly be fed relevant information or retrieve it from external sources, which becomes less efficient as they handle longer and more complex tasks. To scale agent capabilities, we need a more efficient way to retain and access information over time. Memora is a scalable memory system that dramatically increases agent productivity on long-horizon tasks by decoupling what is stored (rich memory content) from how it&#8217;s retrieved (lightweight abstractions and cue anchors), balancing abstraction and specificity. Memora sets new state-of-the-art on LoCoMo and LongMemEval, outperforming Mem0, RAG, and full-context inference while using up to 98% fewer context tokens. Memora paper (opens in new tab) is published at ICML 2026. Memora code is available at https://github.com/microsoft/Memora (opens in new tab). Imagine a workplace AI assistant helping you run a multi-month project. Over weeks of conversations, you share constraints, agree on milestones, revise deadlines, and surface dozens of stakeholder preferences. When you later ask it to draft an update for a colleague, it should recall not just the latest decision but the journey that got you there: what was tried, what was ruled out, who weighed in. Today&#8217;s AI agents struggle with this. Modern large language models (LLMs) are powerful reasoners, but they are effectively stateless: every session starts from zero, every long conversation forces the model to re-read its entire history, and every new piece of information is either stored as raw text (fragmented and noisy) or compressed into a vague summary (precise details lost). As AI assistants and autonomous agents move into long-horizon deployments, such as copilots that tracks a project for many months or even research agents that build up domain expertise with long horizon usage, the absence of principled memory system has become the critical bottleneck. A growing line of work has begun to fill this gap. Systems like Mem0 extract atomic facts from conversations; retrieval-augmented (RAG) approaches index raw text fragments for later recall; and graph-based memory systems such as Zep and GraphRAG impose structure through entity relations. Each represents real progress, yet each runs into the same wall: existing designs force an unavoidable tradeoff between specificity (preserving fine-grained detail) and abstraction (organizing memory efficiently as it grows). Memora is built to give agents both. What is Memora Memora is an agentic memory framework designed for long-horizon AI agents. Memora&#8217;s central insight is to decouple what is stored from how it is retrieved. Memory content can remain rich and expressive, such as a project timeline, a multi-turn discussion about constraints, while a separate, lightweight structural layer handles indexing and retrieval. The result is a memory system that scales: it consolidates related information into stable units, surfaces fine-grained details when they matter, and lets the agent navigate its own history without re-reading everything. On standard long-conversation benchmarks, Memora sets new state-of-the-art performance while using up to 98% fewer tokens than would be consumed by dumping the full history into context. Why this is hard: the abstraction–specificity tension Existing memory systems fall into two extremes. Content-fragmentation systems, such as RAG and Mem0, embed extracted facts or text fragments directly. This preserves detail but produces brittle, isolated entries that lose narrative coherence. Coarse-abstraction systems compress experience into compact summaries. They are efficient, but summarization strips away the constraints, edge cases, and numeric details that make memory useful in the first place. Graph-based systems add structure on top of content, yet still rely on the content itself for retrieval and typically require rigid ontologies that don&#8217;t generalize across domains. None of these resolves the underlying tension between abstraction (which keeps memory efficient) and specificity (which gives memory utility). Figure 1: Architecture overview of Memora. How Memora works Memora resolves this tension through a harmonic organization. Each memory entry has two components: a primary abstraction, which a short phrase (6–8 words) that captures what the memory is fundamentally about, and a memory value holding the rich content itself. Crucially, only the primary abstraction is embedded for similarity search; the value is never directly retrieved through its own content. This separation means new information about an evolving topic merges into the existing memory entry under the same primary abstraction, rather than fragmenting into a chain of partial duplicates. Complementing primary abstractions, cue anchors are short, context-aware tags extracted from each memory&#8217;s value, providing alternative access paths to the same memory. They function as flexible, organically-generated metadata. To make this concrete: suppose a user says, &#8220;Dave and Sarah agreed to push the prototype to April 1, the pilot to May 2, and the MVP to May 30.&#8221; A knowledge-graph system would need predefined entity types and relation schemas: Person → agreed_on → Milestone → has_date → Date,&nbsp;and any new relation type would require schema extension. In&nbsp;Memora, the primary abstraction&nbsp;Updated Project Orion timeline agreed by Dave and Sarah&nbsp;serves as the&nbsp;canonical&nbsp;access point, while cue anchors like&nbsp;Dave Project Orion update,&nbsp;Project Orion prototype schedule, and&nbsp;Project Orion pilot timeline&nbsp;provide alternative retrieval paths&nbsp;&#8212;&nbsp;all without committing to an ontology. A later query about Dave&#8217;s recent contributions, or the prototype schedule, or pilot timing can all route to the same underlying memory through different cues, with the full detail preserved in the memory value. On top of this representation, Memora introduces a policy-guided retriever that treats memory access as an active reasoning process. Rather than returning the top-k semantically similar items in a single shot, the policy retriever iteratively refines its query, expands through cue anchors to surface related-but-not-similar memories, and decides when to stop. This lets the agent navigate to relevant non-local context that pure semantic search would miss, chasing multi-hop dependencies the way a human would when recalling connected events. The retrieval policy can be either hand-prompted with a strong LLM or distilled into a much smaller model via reinforcement learning. PODCAST SERIES The AI Revolution in Medicine, Revisited Join Microsoft’s Peter Lee on a journey to discover how AI is impacting healthcare and what it means for the future of medicine. Listen now Opens in a new tab Results Figure 2: Memora performance on LoCoMo dataset. We evaluate Memora on two long-context benchmarks: LoCoMo, where dialogues average 600 turns, and LongMemEval, with 115,000-token contexts. Memora achieves new state-of-the-art performance on both: 86.3% LLM-judge accuracy on LoCoMo and 87.4% on LongMemEval, outperforming RAG, Mem0, Nemori, Zep, LangMem, and even full-context inference. The gap is largest on multi-hop reasoning, where Memora&#8217;s ability to traverse cue anchors pays the biggest dividends. The efficiency story is just as striking: Memora stores roughly half the memory entries per conversation that Mem0 does (344 vs. 651) and reduces token consumption by up to 98% relative to full-context inference. Less to read, less to store, better answers. Looking forward Memora&#8217;s design has implications beyond benchmark performance. We see this work as a step toward AI agents that can sustain long-term collaboration with users and accumulate organizational knowledge over months and years, not just within a single session. Building on this foundation, we are pursuing several complementary directions. MemLoop explores how memory systems can learn from retrieval and task failures, attribute errors to specific stages of the memory pipeline, and improve themselves over time. Deferred Memory investigates when memory construction should be postponed until sufficient context, evidence, or future utility becomes available, rather than committing prematurely to what should be stored. Group Memory examines how knowledge can be shared across teams and agents while preserving provenance, access boundaries, ownership, and sensitive context. We release our code alongside the paper and invite the community to build on this representation and explore what becomes possible when AI agents are no longer stateless. Acknowledgements We would like to thank Shantanu Dixit (Research Fellow)&nbsp;Paramaguru&nbsp;Harimurugan (Research Fellow),&nbsp;Rujia Wang, Victor Rühle, and&nbsp;Robert Sim for contributing to this project. Opens in a new tabThe post Memora: A Harmonic Memory Representation Balancing Abstraction and Specificity appeared first on Microsoft Research.",
+      "published_at": "2026-06-29T21:14:22+00:00",
+      "summary": "Microsoft Research가 에이전트의 장기 기억 문제를 해결하는 Memora 시스템을 발표했다. '조화로운 메모리 표현(Harmonic Memory Representation)'을 통해 추상적 요약과 구체적 세부 정보 사이의 균형을 잡아, 에이전트가 복잡한 장기 작업에서 과거 상호작용을 효율적으로 활용할 수 있게 한다. 기존 에이전트는 매 세션마다 관련 정보를 외부에서 재주입해야 했으나, Memora는 이 과정을 내재화하여 에이전트 역량 확장의 핵심 병목을 해소한다. 장기 에이전트 실용화를 위한 메모리 효율성 연구의 새로운 이정표로, 멀티세션 에이전트 개발에 실용적 방향성을 제시한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "61357566-4c28-44ff-b5f6-24e7bb3e2d60",
+      "title": "How to Govern Autonomous Agents in Enterprise AI Factories",
+      "url": "https://developer.nvidia.com/blog/how-to-govern-autonomous-agents-in-enterprise-ai-factories/",
+      "source": "nvidia",
+      "content": "AI agents are quickly moving beyond chat. They inspect code, run tests, read documents, search knowledge bases, query internal systems, and operate for hours on...AI agents are quickly moving beyond chat. They inspect code, run tests, read documents, search knowledge bases, query internal systems, and operate for hours on behalf of a user. This unlocks productivity, but can also give agents access to sensitive enterprise data and the ability to complete tasks and take action across business systems, making a secure, governed environment essential. Source",
+      "published_at": "2026-06-29T15:50:13+00:00",
+      "summary": "NVIDIA가 기업 AI 팩토리 환경에서 자율 에이전트를 안전하게 관리·거버넌스하는 방법론과 실용 가이드라인을 발표했다. AI 에이전트는 코드 검사, 테스트 실행, 문서 검색, 내부 시스템 쿼리 등 광범위한 작업을 수행하며 수 시간 동안 자율 운영되는 수준으로 발전해 있다. 에이전트 권한 제어, 감사 로그, 위험 경계 설정 등 기업 환경에서 에이전트를 책임감 있게 배포하기 위한 구체적인 아키텍처 패턴을 제시한다. 기업 AI 도입이 본격화되면서 거버넌스와 통제 체계 구축이 기술 구현만큼 중요해지고 있음을 NVIDIA의 권위 있는 시각으로 확인해주는 내용이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "244c5296-b666-4e8e-8292-c9ea9194b1c5",
+      "title": "식약처, LLM 기반 디지털의료기기의 허가·심사 기준 제시... '허가·심사 가이드라인’ 공개",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40753",
+      "source": "korean",
+      "content": "식품의약품안전처(처장 오유경) 식품의악품안전평가원(원장 강석연)은 의료 분야 전반으로 빠르게 확산하고 있는 대형언어모델(LLM) 기술의 안전성과 유효성을 체계적으로 확인할 수 있도록 ‘식의약 안심 50대 과제’로 추진된 ‘LLM 기반 디지털의료기기 허가·심사 가이드라인(민원인 안내서)’을 30일 제정했다.\n\n생성형 인공지능 기술의 발전으로 다양한 디지털의료기기가 개발되고 있으며, 식약처는 이러한 기술 변화에 적극 대응하기 위해 지난해 1월 ‘생성형 인공지능 의료기기 허가·심사 가이드라인’을 선제적으로 마련하여 디지털의료기기의 허가·심사 방향을 제시한 바 있다.\n\n최근에는 범용성을 갖춘 초거대 AI 기반 모델과 자연어 기반 상호작용 기능을 바탕으로 임상의사결정 지원, 의무기록 요약 및 의료영상 판독 보조 등 다양한 LLM 기반 제품 개발도 활발히 이루어지고 있다. 이에 따라 기존 가이드라인에서 다루기 어려웠던 LLM의 세부 기술적 특성을 고려한 구체적인 허가·심사 기준 마련 필요성이 지속적으로 제기되어 왔다.\n\n식약처는 업계의 규제 개선 요청에 따라 제조사, 의료기관 및 대학 등 관련 전문가들의 자문을 거쳐 실제 국내외 기술, 규제 동향 등을 분석하고 디지털의료기기 개발 및 인·허가 과정에서 활용할 수 있는 고려사항과 관련 예시를 발굴하여 가이드라인에 반영했다.\n\n이번 가이드라인의 주요 내용은 LLM 기반 디지털의료기기 예시, LLM의 특성을 반영한 허가신청서 작성, 분석적·임상적 유효성 확인, 주요 기능의 성능 검증, 중요한 인·허가 변경 예시 등이다.\n\n특히 LLM 특유의 장기 대화(멀티 턴), 중요 정보 누락·왜곡 및 맥락 오인식 등 주요 위해요인에 대해 제품의 성능을 객관적·과학적으로 확인할 수 있는 검증 방법과 중요한 인·허가 변경에 해당하는 예시를 안내하여 업계의 예측 가능성을 높이고 시행착오를 줄이는 데 도움을 주고자 했다.\n\n이러한 LLM 기반 디지털의료기기는 실제 의료현장에 다양한 효용을 가져올 것으로 기대된다. 예를 들면, 의료진은 의무기록 작성, 요약 등 반복적인 문서 업무 부담을 덜고 의료영상 및 검사결과 해석을 보조받아 진료와 환자 소통에 더 집중할 수 있으며, 환자는 대기시간 단축 및 일관된 의무기록 관리 등을 통해 보다 안전하고 질 높은 의료서비스를 받을 것으로 예상된다.\n\n전문가협의체에 참여한 숨빗에이아이 배웅 대표는 “이번 가이드라인은 LLM 기반 디지털의료기기를 개발할 때 무엇을 어떻게 검증해야 하는지를 구체적으로 제시한 것”이라며, “국내 제조업체가 제품을 개발하고 허가받는 과정의 불확실성을 크게 줄이고, 궁극적으로 국민이 더 안전한 인공지능 의료서비스를 받도록 하는 데 기여할 중요한 성과”라고 평가했다.\n\n한편, 식약처는 6월 30일 ‘디지털의료기기 허가·심사 임상평가 업무설명회’를 서울지방식품의약품안전청(서울시 양천구 소재)에서 개최한다. 이번 설명회에서는 디지털의료기기의 임상평가 제도와 ‘거대언어모델(LLM) 기반 디지털의료기기 허가·심사 가이드라인’의 상세 내용을 안내하여 제조·수입업체가 실무에 원활히 적용할 수 있도록 지원할 예정이다.\n\n식약처는 이번 가이드라인(보기)이 LLM을 적용한 디지털의료기기의 신속한 제품화를 지원하는 데 도움을 줄 것으로 기대하며, 앞으로도 규제과학에 기반한 합리적인 허가·심사 체계를 지속적으로 마련하고 안전성 및 유효성이 검증된 의료기기가 국민에게 신속하게 제공될 수 있도록 최선을 다할 계획이다.",
+      "published_at": null,
+      "summary": "식품의약품안전처가 LLM 기반 디지털의료기기의 허가·심사 가이드라인을 제정하고 공개했다. 생성형 AI를 활용한 의료기기의 안전성·유효성 검증 기준을 체계화한 것으로, 국내 의료 AI 시장의 규제 프레임워크 정비라는 점에서 산업적 의미가 크다. 지난해 마련된 생성형 AI 의료기기 가이드라인에 이어 LLM 특화 기준을 별도 수립함으로써 의료 AI 개발사들의 허가 절차 예측 가능성이 높아질 전망이다. 이 가이드라인은 한국 의료 AI 스타트업 및 대기업의 제품 개발 방향에 직접적인 영향을 미치는 규제적 이정표로 작용할 것이다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b5758a15-821c-4a5c-9cee-d0adea9acd47",
+      "title": "AI 에이전트 회사 차리기: 설립부터 어디서든 동기화까지",
+      "url": "https://d2.naver.com/helloworld/3897377",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER ENGINEERING DAY 2026(5월)에서 발표되었던 세션을 공개합니다. 발표 내용 AI 에이전트로 나만의 회사를 차리고, 어디서 접속하든 같은 구성원이 같은 목표로 일하게 만든 이야기입니다. 발표 대상 AI 에이전트 활용에 관심있는 분들 목차 PROLOGUE — Claude Code, 매일 쓰는데 왜 매번 처음인가요? PLATFORM — NaverMadCat이란 ORGANIZATION — 비서실장과 10개 부서 AUTOMATION — 라이프사이클 훅 SYNC — 어디서든 같은 회사 OPERATION — 슬래시 커맨드와 대시보드 HR — 에이전트의 채용·해고·병합 INSTALL — 설치와 실전 시나리오 SUMMARY — 다른 에이전트 시스템과의 차별점 OPS-NOTES — 운영 노트 CONCLUSION — NaverMadCat 5가지 핵심 ◎ NAVER Engineering Day란? NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다.",
+      "published_at": "2026-06-30T11:00:48+00:00",
+      "summary": "네이버 엔지니어링 데이 2026에서 공개된 세션으로, AI 에이전트를 활용해 가상의 회사를 설립하고 운영한 실제 경험을 상세히 공유했다. Claude Code를 핵심 도구로 활용하며, 비서실장 에이전트와 10개 부서 에이전트로 구성된 조직 구조를 설계하고 라이프사이클 훅으로 자동화를 구현했다. 어디서 접속하든 동일한 에이전트 조직이 같은 목표로 동기화되어 동작하는 '에이전트 회사' 아키텍처를 실제 구현한 사례로 주목받는다. 멀티 에이전트 시스템의 실용적 구성 방법에 관심 있는 개발자에게 구체적인 아키텍처 인사이트를 제공하는 발표다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "22b9c508-88d9-48f8-b141-3118ec4a8e33",
+      "title": "AI agents are not your “coworkers”",
+      "url": "https://www.technologyreview.com/2026/06/29/1139849/ai-agents-are-not-your-coworkers/",
+      "source": "mit_tech_review",
+      "content": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Imagine coming in to work to learn that a new underling will report to you. The worker is not a person but an AI tool—one that your company nonetheless calls Alex, an “employee” with a title and defined responsibilities. How well do you think you would work with Alex? If you’re anything like the managers recently studied by Emma Wiles, a Boston University business professor, treating Alex as a “coworker” and not a software tool would lead you to do a worse job. Wiles found that people caught 18% fewer errors when the work was said to have come from an agentic “AI employee” rather than a chatbot. It turns out that what’s in a name matters. A lot. This is an alarming glimpse of the future Silicon Valley is hurling us toward. Last year Nvidia’s CEO, Jensen Huang, talked about workplaces of “digital humans.” Since April, Microsoft, OpenAI, Anthropic, and Google have all released new tools oriented toward managing teams of AI agents, many of which are explicitly advertised as digital colleagues with the flexibility and cognitive power of actual humans. And nearly a third of the 1,261 managers who participated in Wiles’s study said their companies already frame AI agents as employees (23% even list them on org charts). The technical progress of agentic AI is not all hot air, of course. Agents, which can effectively be thought of as AI tools programmed to work in a loop until they achieve a goal, have become measurably better at more complicated tasks. But it’s a huge leap to refer to these tools as coworkers or employees, and doing so will set unrealistic expectations for what AI can do while leaving the human employees supposedly responsible for them worse off. That’s partially because, Wiles’s research suggests, it inverts our sense of who’s in charge. When an AI tool was framed as an employee, participants in the study saw themselves as less responsible for its output. They were also 44% more likely to escalate its questionable work to a manager for further review rather than trusting their own corrections (thus negating the time-saving purpose of using the AI agent in the first place).&nbsp; That matters far beyond office culture: As AI agents are embedded into health care, warfare, education, and government, there’s a growing risk they’ll become a convenient place to dump blame for failures that are instead the product of bad human decisions, incentives, and oversight (recall how the bomb strike on a girls’ school in Iran was popularly blamed on Claude, when all signs point to a cascade of human errors). “AI agents right now are being marketed as things that can replace humans, and I think that’s just a losing proposition,” says Daron Acemoglu, an economist at MIT who won the Nobel Prize in 2024 and studies AI’s impact on the economy. “They should instead be optimized so that they can improve human capabilities, which is not what they have [been] at the moment.” What could that look like? Consider a new effort at Stanford, where researchers presented 1,500 workers in 104 jobs with information about what tasks AI could potentially do in their work and then asked what would actually be most helpful and productive. Workers did want automation in certain areas: Law clerks thought AI could help ensure that adequate progress was being made across cases, for example. But often the tasks that tech experts deemed most suitable for AI—like verifying customer credit ratings for sales reps—were what the actual workers said they definitely did not want or need an agent to do. Which brings us back to Alex. Calling Alex an employee is easy—and convenient, especially when something goes wrong—but it’s a branding exercise. It doesn’t make the tool more fit for the job, and as Wiles’s research shows, it makes the humans around it worse at theirs. And recall that they are the ones with the agency that AI is trying to replicate. They deserve better than Alex.&nbsp;",
+      "published_at": "2026-06-29T18:00:00+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 기업들이 AI 에이전트에 '동료' 같은 페르소나와 이름을 부여하는 트렌드에 비판적 시각을 제시했다. 에이전트를 인간 동료처럼 대우하는 방식이 책임 소재 혼란, 과도한 신뢰, 심리적 의존성 등의 문제를 야기할 수 있다고 경고한다. AI 도구와 AI 에이전트를 명확히 구분하고, 사용자가 에이전트의 한계와 본질을 정확히 이해한 상태에서 협업해야 한다는 점을 강조한다. AI 에이전트 배포가 본격화되는 시점에서 조직 문화와 인간-AI 관계 설계에 대한 중요한 사회적 질문을 던지는 논평이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3a754dd5-2f36-4597-8fa9-b35a9ca15ba3",
+      "title": "Arena, the AI leaderboard everyone uses, is now a $100M business",
+      "url": "https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/",
+      "source": "techcrunch",
+      "content": "The startup, which runs a popular free AI leaderboard, launched its commercial service just last September.",
+      "published_at": "2026-06-29T17:39:17+00:00",
+      "summary": "AI 모델 평가 리더보드 'Arena(구 Chatbot Arena)'가 상업 서비스 론칭 9개월 만에 연간 매출 1억 달러 규모의 기업으로 성장했다. 크라우드소싱 기반 인간 선호도 평가 플랫폼으로 출발해, 기업들이 프로덕션 배포 전 모델 성능을 검증하는 핵심 인프라로 자리잡았다. AI 벤치마킹·평가 시장이 독립적인 고부가가치 비즈니스 영역으로 성숙하고 있음을 보여주는 사례다. Arena의 급성장은 기업들의 AI 모델 평가 수요가 얼마나 빠르게 증가하고 있는지를 반증하며, AI 산업 생태계에서 신뢰할 수 있는 평가 인프라의 전략적 가치를 확인해준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3d2bd64b-6eec-4a87-a395-5b086e514724",
+      "title": "Agent-Native Immune System: Architecture, Taxonomy, and Engineering",
+      "url": "https://arxiv.org/abs/2606.28270",
+      "source": "arxiv",
+      "content": "arXiv:2606.28270v1 Announce Type: new \nAbstract: The transition from static chat bots to autonomous agents--equipped with persistent memory, tool-use protocols, and multi-agent collaboration--has fundamentally expanded the AI threat landscape. Current defense mechanisms, such as perimeter security and training-time alignment, remain external to the agent's active reasoning loop. Consequently, they fall short: a fully aligned agent remains highly vulnerable to runtime hijacking via memory poisoning, tool-chain manipulation, or multi-agent protocol attacks. To address this critical gap, we introduce the Agent-Native Immune System (ANIS), the first biologically inspired, endogenous defense architecture embedded directly within the agent's cognitive loop. Our framework presents four primary contributions. First, we design a six-layer Immune Tower (L0-L5), distinctly incorporating Barrier Immunity (L1) as a non-cognitive, physical-and-logical isolation layer. Second, we establish a unified taxonomy of Agent Viruses and Agent Vaccines, formalizing the critical distinction between superficial non-parametric defenses and robust parametric vaccines. Third, we conceptualize the Harness Triad--Meta, Self, and Auto--a self-monitoring, meta-cognitive automation backbone that drives Continual Immune Learning (CIL), enabling vaccines to dynamically adapt to novel threats. Finally, we establish a rigorous theoretical demarcation between model alignment and agent immunity: while alignment provides a static \"constitutional\" value foundation during training, ANIS serves as the dynamic \"law enforcement\" mechanism during runtime. We conclude by framing open challenges for the field, including immune protocol standardization, novel evaluation metrics such as the Autoimmunity Rate (false-positive intervention rate), and the co-evolutionary dynamics between pathogens and vaccines within collective intelligence ecosystems.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "자율 에이전트의 확산으로 확장된 AI 위협 환경에 대응하기 위한 '에이전트 고유 면역 시스템(Agent-Native Immune System)' 아키텍처를 제안했다. 기존 경계 보안 및 훈련 시 정렬 방식은 에이전트의 능동적 추론 루프 외부에 위치해 프롬프트 인젝션, 툴 오남용, 멀티 에이전트 공모 등의 공격에 취약하다. 제안된 프레임워크는 에이전트 추론 과정에 내재된 실시간 감지·대응 메커니즘을 구축하며, 위협 분류 체계(taxonomy)와 엔지니어링 가이드라인을 함께 제시한다. 멀티 에이전트 시스템이 기업 프로덕션 환경에 진입함에 따라, 에이전트 보안이 AI 안전성 연구의 새로운 핵심 영역으로 부상하고 있음을 보여준다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "31825f70-d142-42a3-a042-7b449691c61f",
+      "title": "Tandem Reinforcement Learning with Verifiable Rewards",
+      "url": "https://arxiv.org/abs/2606.28166",
+      "source": "arxiv",
+      "content": "arXiv:2606.28166v1 Announce Type: new \nAbstract: Reinforcement learning with verifiable rewards (RLVR) has significantly improved the reasoning capability of large language models, reaching expert or even superhuman performance in domains such as competition math. However, whether weaker agents and humans can actually harness this capability is far less certain, with RLVR documented to drift reasoning toward idiosyncratic patterns such as poor readability and language mixing. Tandem training is a recently introduced paradigm that targets this compatibility problem: a trained, stronger senior co-generates each rollout with a frozen, weaker junior, and the two are rewarded as a team, so the senior is pushed to reason in ways the junior can follow. Yet this paradigm has so far been demonstrated only in proof-of-concept settings, leaving open whether it scales to the long chains of thought of the modern RLVR pipeline. In this work, we propose Tandem Reinforcement Learning (TRL), which carries the tandem training paradigm into RLVR. In TRL, the senior and a frozen junior alternate stochastically to co-generate the reasoning, the resulting generation is rewarded, and the standard GRPO loss is applied to the senior. Training Qwen3-4B-Instruct on competition math, we find that TRL matches vanilla GRPO on solo reasoning capability while three properties emerge together from the same rollout structure: stronger handoff robustness with the junior, reduced distributional drift from the junior, and a chain-of-thought more legible to the junior. Our results demonstrate a promising route for RLVR with practical payoffs in multi-model communication and human compatibility.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "검증 가능한 보상을 활용한 강화학습(RLVR)이 수학 경시대회 수준의 추론 능력을 달성했지만, 일반 사용자와 약한 에이전트가 이 능력을 실제로 활용하기 어렵다는 문제를 지적했다. RLVR로 훈련된 모델은 추론 스타일이 일반 사용자 이해 범위를 벗어날 수 있어 '사용 가능성 격차'를 만들어내는데, 탠덤 학습 방식으로 강한 모델의 역량을 약한 에이전트·인간이 실용적으로 활용할 수 있게 전달한다. 지식 증류와 강화학습을 결합한 탠덤 방식은 성능과 접근성의 균형을 맞추는 새로운 훈련 패러다임을 제시한다. 이 연구는 고성능 AI의 민주화와 실용화 관점에서 RLHF·RLVR 연구의 다음 과제를 명확히 제시하며, 실세계 배포에서 추론 능력 전달 방법론에 기여한다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0987d3d4-ee6a-4ac5-a06c-7919399168a1",
+      "title": "EntMTP: Accelerating LLM Inference with Entropy Guided Multi Token Prediction",
+      "url": "https://arxiv.org/abs/2606.27550",
+      "source": "arxiv",
+      "content": "arXiv:2606.27550v1 Announce Type: new \nAbstract: Multi-token prediction has been shown to increase data density during training, improve downstream text-generation quality, and serves as the defacto approach for self-speculative decoding. Existing foundation and open source models that use MTP heads commit to a static tree-based attention topology throughout the entire generation sequence, meaning the speculation depth, and thus the compute required during verification, stays constant regardless of the context. This is fundamentally misaligned with the entropy patterns of natural language where low-entropy regions often support reliable multi-step drafting, while high-entropy regions require more conservative speculation. To address this, we propose Entropy-guided Multi-Token Prediction (EntMTP), a training-free scheduler that toggles between tree-based attention topologies from a set of task-specific pareto-optimal trees conditioned on a running estimate of local generation entropy. By matching speculation depth to context predictability, EntMTP maximizes expected accepted-token throughput across the full distribution of generated text without sacrificing generation quality. When evaluated across Humaneval, ShareGPT, GSM8k, and Litbench benchmarks, EntMTP consistently achieves a 1.15x speedup against Hydra and peak speedup of 1.36x against Medusa baselines respectively.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "엔트로피 기반 멀티토큰 예측(EntMTP)을 통해 LLM 추론 속도를 크게 향상시키는 방법을 제안했다. 기존 MTP 헤드는 생성 전 과정에서 고정된 트리 기반 어텐션 토폴로지를 사용해 효율성이 제한되는데, EntMTP는 각 단계에서 토큰의 엔트로피(불확실성)를 실시간으로 계산해 동적으로 예측 깊이를 조정한다. 불확실성이 낮은 토큰은 여러 개를 한 번에 예측해 디코딩 속도를 높이고, 불확실한 토큰에서는 신중하게 처리하는 방식으로 속도와 품질의 균형을 달성한다. 이 접근법은 오픈소스 및 상용 LLM의 추론 인프라 비용을 줄이는 데 실용적으로 적용 가능하며, 스펙큘레이티브 디코딩 분야의 새로운 기여를 제시한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "52a859ff-be11-4444-ac5d-59818dfa55db",
+      "title": "Ko-WideSearch: A Korean Breadth-Search Benchmark for Exhaustive Set Enumeration by Web Agents",
+      "url": "https://arxiv.org/abs/2606.27595",
+      "source": "arxiv",
+      "content": "arXiv:2606.27595v1 Announce Type: new \nAbstract: Web-agent benchmarks overwhelmingly measure depth -- pinning one obscure answer behind a chain of constraints -- while breadth, exhaustively enumerating a closed set and filling each item's attributes, is barely evaluated, especially outside English. Breadth is also hard to build: certifying that a gold set is complete and every cell correct is far costlier than checking a single answer. I introduce \\textsc{Ko-WideSearch}, a Korean breadth-search benchmark built by an automated synthesize-and-verify pipeline. Each task names a set-parent entity -- a TV season, a dynasty, a league, an administrative region, an election -- and asks for its full membership plus a per-item attribute table, graded by Item-, Column-, and Row-F1. It spans 228 tables over 190 entities and sixteen categories across three difficulty tiers, set by two structural knobs I dial independently -- table width and a 2-D composite key -- so cross-product membership climbs from 0\\% to 100\\% across the tiers. A single normalization-aware comparator is shared between gold construction and grading, so stable date and count columns are not over-dropped on formatting alone. Across twenty web agents, the failure is consistent: agents recover the set but not the rows (e.g.\\ Item-F1 92.8 against Row-F1 53.7), accuracy falls steadily as the knobs harden, and neither more search nor more spend closes the gap. Broken down by cell, the hard part is finding the right value, not formatting it: open-ended free-text cells fail most, while cells with a standard answer such as a date or a name usually come out right.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "기존 웹 에이전트 벤치마크의 '깊이(depth)' 편향을 지적하고, 한국어 환경에서 '너비(breadth)' 기반 정보 검색 능력을 평가하는 Ko-WideSearch 벤치마크를 제안했다. 너비 검색은 제한된 답 집합을 빠짐없이 열거하고 각 항목의 속성을 채우는 과제로, 특히 영어 외 언어 환경에서 거의 평가된 바 없는 영역이다. 이 벤치마크는 한국어 웹 에이전트의 체계적 평가를 가능하게 하며, 한국 AI 연구 커뮤니티의 에이전트 평가 인프라 강화에 기여한다. 글로벌 벤치마크의 언어 다양성 부족 문제를 해결하는 중요한 시도로, 다국어 에이전트 연구에 새로운 평가 방향을 제시한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b72aa14e-3ad6-4da3-a16b-01d602761636",
+      "title": "Masked Language Flow Models",
+      "url": "https://arxiv.org/abs/2606.27617",
+      "source": "arxiv",
+      "content": "arXiv:2606.27617v1 Announce Type: new \nAbstract: Masked Diffusion Models (MDMs) promise fast, parallel language generation, but their reverse transition factorises across token positions -- an approximation that breaks down in the few-step sampling regime where parallel generation ought to provide the greatest efficiency gains. Flow Language Models (FLMs) sidestep this limitation by learning a continuous flow that transports noise toward clean sequences represented in Euclidean space, inducing a flow map that can be distilled for single-step generation. However, this makes complex tasks requiring multi-step reasoning problematic for FLMs, as FLMs are forced to decode every token during generation. To address this, we introduce Masked Language Flow Models (MLFMs), which incorporate masking into FLMs using a continuous stochastic interpolant to bridge partially masked and clean sequences. This design enables conditional generation via continuous flows and allows pretrained MDMs to be converted into MLFMs through a simple, lightweight adaptation. Leveraging this flexibility, we propose a novel sampler that alternates continuous denoising with the discrete unmasking of confident tokens to better support multi-step reasoning. We evaluate our approach on GSM8K and MT-Bench and find, for the first time, that flow-based language models can be scaled to solve downstream reasoning and instruction-following tasks.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "마스크드 확산 모델(MDM)과 플로우 언어 모델(FLM)의 장점을 결합한 '마스크드 언어 플로우 모델(MLFM)'을 제안했다. MDM은 빠른 병렬 언어 생성을 약속하지만 소수 샘플링 단계에서 토큰 간 독립성 가정으로 인한 근사 오류가 발생하는 반면, FLM은 이 한계를 우회하지만 고차원 마스크 분포 직접 학습으로 훈련이 어렵다. MLFM은 두 접근법의 단점을 해소하며 고품질 언어 생성과 샘플링 효율성을 동시에 달성하는 새로운 생성 모델 패러다임을 제시한다. 자기회귀 모델 중심 현재 LLM 패러다임을 넘어서는 차세대 언어 생성 아키텍처 연구로, 추론 속도와 생성 품질 모두에서 장기적 이점을 제공할 수 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8d1f5c86-c356-4138-8bd3-a24fa0837337",
+      "title": "Yuvion LLM: An Adversarially-Aware Large Language Model for Content And AI Safety",
+      "url": "https://arxiv.org/abs/2606.27632",
+      "source": "arxiv",
+      "content": "arXiv:2606.27632v1 Announce Type: new \nAbstract: As large language models are increasingly deployed in real-world systems, safety failures can still lead to harmful outputs and dangerous misuse. We argue that the essence of safety is adversarial: many failures arise not from natural inputs alone, but from strategic attempts to evade model policies and safeguards. However, existing general-purpose model development largely overlook this adversarial nature, and often remain insufficient for realistic safety scenarios involving planning, tool use, and multi-step reasoning, causing measured safety performance to overestimate real deployment robustness. To address this gap, we present Yuvion LLM, a large language model built for adversarially robust content safety and broader AI safety. Yuvion LLM treats adversarial robustness and agentic capability as first-class objectives. Its pipeline combines adversarially aware data construction, knowledge-enhanced continued pretraining, and policy-grounded multi-task safety post-training, including risk-aware supervised fine-tuning and reinforcement learning-based policy optimization, together with safety-aware agentic reinforcement learning for tool use and multi-step reasoning in complex safety scenarios. We further introduce the Yuvion LLM RiskEval (YLRE), a collection of 93 benchmarks across four evaluation categories, covering diverse open and internal evaluations with a focus on safety, adversarial robustness, and real-world capability requirements. Across these evaluations, Yuvion LLM demonstrates clear advantages on safety-focused benchmarks and particularly strong robustness under adversarial conditions, while maintaining solid overall capability. Notably, Yuvion-8B outperforms most state-of-the-art baselines, including substantially larger models such as GPT-5.4 and Qwen3-MAX, on several safety tasks.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "AI 안전성 실패의 본질이 '적대적(adversarial)'임을 강조하며, 적대적 공격 인식 능력을 내재화한 Yuvion LLM을 개발했다. 기존 범용 LLM은 자연 입력 외에 모델 정책을 우회하려는 전략적 시도에 취약한데, Yuvion은 이러한 적대적 프롬프트를 인식하고 대응하는 능력을 훈련 단계에서 직접 내재화한다. 콘텐츠 안전성과 AI 안전성을 동시에 다루는 통합 접근법으로, 프로덕션 환경에서의 모델 강건성을 실질적으로 높이는 방향을 제시한다. LLM 상용화가 가속화되면서 적대적 안전성 연구의 중요성이 증가하고 있으며, 이 연구는 안전 중심 모델 개발의 실용적 방향을 구체적으로 보여준다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "659d2cc5-ce97-4a51-8087-24cfcb50012e",
+      "title": "JD Oxygen AI Item Center (Oxygen AIIC) V1: An Industrial-Scale LLM/VLM-Centric Solution for Item Understanding, Management, and Applications",
+      "url": "https://arxiv.org/abs/2606.28070",
+      "source": "arxiv",
+      "content": "arXiv:2606.28070v2 Announce Type: new \nAbstract: JD$.$com, one of the world's largest e-commerce platforms, serves over 700 million active users and millions of merchants, with a catalog of tens of billions of SKUs. At this scale, high-quality, structured item knowledge underpins a better consumer experience, lower management costs, and higher operational efficiency-yet producing and serving it poses three industrial-scale challenges: fast-emerging concepts, high-quality knowledge production for massive SKUs, and diverse downstream requirements. To address these challenges, we present the JD Oxygen AI Item Center (Oxygen AIIC), an industrial-scale platform built on LLMs/VLMs for item-knowledge production and service. Oxygen AIIC is built around four core pillars: (i) ontology engineering driven by efficient human-AI collaboration, which supports the dynamic evolution and agile expansion of an ontology with millions of entries; (ii) a \"Semantic Search then Discrimination\"(S2D) knowledge identification architecture that, combined with throughput improvement strategies, enables scalable, extensible, and high-throughput AI Item Library production for tens of billions of SKUs; (iii) self-evolving item-understanding LLMs/VLMs that improve in a stable and controllable manner, enabling knowledge production with 94.2% precision and 82.8% recall; and (iv) a unified item tunnel that serves as the data and service hub. Oxygen AIIC now covers tens of thousands of JD categories and processes hundreds of millions of item updates per day on Huawei Ascend NPUs. It has accumulated hundreds of billions of item-knowledge assets. Deployed across core business scenarios-including search, recommendation, operations, category planning-Oxygen AIIC has delivered measurable gains at scale. Search-traffic coverage reaches 80.4%, item-information quality issues drop by 37%, the automated fill rate of core attributes during item listing exceeds 80%.",
+      "published_at": "2026-06-29T00:00:00-04:00",
+      "summary": "중국 최대 이커머스 플랫폼 JD.com이 수백억 개 SKU를 관리하는 산업 규모 LLM/VLM 기반 AI 아이템 센터(Oxygen AIIC V1)를 공개했다. 7억 명 이상 활성 사용자와 수백만 판매자를 지원하는 초대규모 상품 지식 관리 시스템으로, 상품 이해·구조화·추천 전 과정을 LLM과 VLM으로 통합했다. 텍스트와 이미지를 동시에 처리하는 멀티모달 접근법이 이커머스 상품 데이터 품질과 운영 효율을 동시에 높이는 방법을 실증적으로 보여준다. 이 사례는 LLM/VLM이 기술 데모를 넘어 실제 산업 인프라의 핵심 구성 요소로 자리잡고 있음을 확인시켜주는 중요한 산업 레퍼런스다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8e015be6-83fa-43d5-afa4-2db66248c735",
+      "title": "Vibe coding platform Base44 launches own model as AI startups seek defensibility",
+      "url": "https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-own-model-as-ai-startups-seek-defensibility/",
+      "source": "techcrunch",
+      "content": "Wix-owned vibe coding platform Base44 has started rolling out its own AI model — with hopes that it will eventually outperform frontier models.",
+      "published_at": "2026-06-30T02:28:41+00:00",
+      "summary": "Wix 자회사인 바이브 코딩 플랫폼 Base44가 자체 AI 모델을 출시하며, 프론티어 모델 의존에서 벗어나 방어적 차별화를 추구하는 AI 스타트업 전략의 사례를 제시했다. Base44는 자사 도메인 특화 데이터로 훈련된 모델이 결국 범용 프론티어 모델을 앞설 것으로 기대하며, API 의존성을 줄이고 비용을 통제하려 한다. 자체 모델 개발은 AI 스타트업들이 OpenAI·Anthropic 등 대형 공급자에 대한 의존을 줄이고 독자적 경쟁력을 확보하려는 더 큰 트렌드를 반영한다. 바이브 코딩(자연어로 앱 생성) 플랫폼에 특화된 모델은 코드 생성과 UI 이해에서 강점을 발휘하며, 수직 특화 AI 모델의 경쟁력을 가늠하는 사례가 될 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "DEVELOPER",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "2bfb9408-f88f-4afe-ac10-1519db53cabd",
+      "title": "Robot hand company settles Tesla trade secret suit and announces $11M raise",
+      "url": "https://techcrunch.com/2026/06/29/robot-hand-company-settles-tesla-trade-secret-suit-and-announces-11m-raise/",
+      "source": "techcrunch",
+      "content": "The startup, Proception, is taking a unique approach to collecting training data to tackle one of the hardest problems in robotics: hands.",
+      "published_at": "2026-06-29T14:00:08+00:00",
+      "summary": "로봇 손 전문 스타트업 Proception이 Tesla의 영업비밀 소송을 합의로 마무리하고 동시에 1,100만 달러 신규 투자를 유치했다. Proception은 로봇공학에서 가장 어려운 문제 중 하나인 로봇 손 제어를 위한 훈련 데이터 수집에 독자적 접근법을 채택하고 있다. 이번 소송 합의는 로봇공학 분야에서 기술 인력·데이터·IP 확보를 둘러싼 경쟁이 격화되고 있음을 보여주며, 대기업과 스타트업 간 기술 이전 분쟁의 한 단면을 드러낸다. 인간형 로봇 개발 경쟁이 가열되면서 정교한 로봇 손 기술이 핵심 차별화 요소로 부상하고 있어, 관련 스타트업과 IP 생태계에 대한 관심이 높아지고 있다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "da764089-e910-4e27-90c1-b7f2946cf5e2",
+      "title": "TIDAL cracks down on AI music by cutting off monetization",
+      "url": "https://techcrunch.com/2026/06/29/tidal-cracks-down-on-ai-music-by-cutting-off-monetization/",
+      "source": "techcrunch",
+      "content": "In addition, TIDAL will use automated tools to remove AI-generated music that attempts to impersonate an artist or a group, the company said.",
+      "published_at": "2026-06-29T16:29:04+00:00",
+      "summary": "음악 스트리밍 서비스 TIDAL이 AI 생성 음악의 수익화를 차단하고, 아티스트를 모방하는 AI 음악을 자동으로 제거하는 정책을 발표했다. 생성형 AI의 급속한 발전으로 인한 창작물 저작권·수익 분배 문제가 음악 산업에서 본격적인 플랫폼 수준의 대응을 촉발하고 있다. AI가 실제 아티스트의 스타일을 모방해 생성한 콘텐츠는 원작자의 수익과 창작 생태계를 위협할 수 있어, 플랫폼의 정책적 역할이 중요해지고 있다. TIDAL의 결정은 Spotify, Apple Music 등 경쟁 플랫폼의 AI 음악 정책에도 영향을 미칠 선례로 주목되며, 창작 AI와 저작권 갈등의 새로운 국면을 열고 있다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
