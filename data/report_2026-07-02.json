@@ -1,0 +1,282 @@
+{
+  "id": "f35fa32c-e359-4602-b688-415a80ea8534",
+  "created_at": "2026-07-02T03:36:57.786245",
+  "articles": [
+    {
+      "id": "10ce08c0-3e88-4fc6-844e-4f42900f6396",
+      "title": "Gemini Spark, Google’s agentic assistant, is now available on Mac",
+      "url": "https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/",
+      "source": "techcrunch",
+      "content": "Google's 24/7 agentic assistant, Gemini Spark, comes to Mac alongside other improvements, like real-time tracking and support for more apps.",
+      "published_at": "2026-07-01T14:20:19+00:00",
+      "summary": "Google의 상시 구동형 에이전틱 어시스턴트 'Gemini Spark'가 macOS 지원을 시작하며 웹과 모바일에 이어 데스크톱까지 서비스 범위를 넓혔다. 이번 업데이트로 실시간 작업 진행 상황 추적과 더 많은 애플리케이션과의 연동이 추가돼 사용자가 백그라운드에서 돌아가는 작업을 더 세밀하게 파악할 수 있게 됐다. 24시간 대기하며 사용자를 대신해 작업을 처리하는 에이전틱 어시스턴트가 특정 플랫폼을 넘어 전방위로 확산되는 흐름을 보여주는 사례다. Microsoft Copilot, OpenAI의 에이전트형 제품과의 데스크톱 경쟁이 본격화될 전망이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "54082979-8439-482c-8727-1dfe471ddb79",
+      "title": "OpenClaw is finally available on Android and iOS",
+      "url": "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/",
+      "source": "techcrunch",
+      "content": "The free open source agentic program is finally invading your phone.",
+      "published_at": "2026-06-30T21:53:28+00:00",
+      "summary": "오픈소스 에이전틱 프로그램 'OpenClaw'가 안드로이드와 iOS용 앱으로 정식 출시됐다. 그동안 데스크톱 환경에 국한됐던 자율 에이전트 실행 환경이 모바일까지 확장되면서, 사용자는 스마트폰에서도 직접 에이전트를 구동하고 작업을 위임할 수 있게 됐다. 오픈소스이기 때문에 OpenAI·Google 등 빅테크의 폐쇄형 에이전트 앱과 달리 누구나 코드를 검토하고 커스터마이징할 수 있다는 점이 개발자 커뮤니티의 관심을 끌고 있다. 모바일 에이전트 경쟁이 빅테크 중심에서 오픈소스 진영으로도 확대되고 있음을 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "5841caa4-bf73-480b-8b3f-c6b8106d63fa",
+      "title": "Mastering Agentic Techniques: AI Agent Reinforcement Learning",
+      "url": "https://developer.nvidia.com/blog/mastering-agentic-techniques-ai-agent-reinforcement-learning/",
+      "source": "nvidia",
+      "content": "Reinforcement learning (RL) is central to aligning language models, from reinforcement learning with human feedback (RLHF) within AI assistants to newer...Reinforcement learning (RL) is central to aligning language models, from reinforcement learning with human feedback (RLHF) within AI assistants to newer reinforcement learning with verifiable rewards (RLVR) workflows for reasoning and agent tasks. RL is now becoming a practical technique for specialized AI where enterprises need more accurate agents for domain-specific workflows. Source",
+      "published_at": "2026-07-01T17:04:02+00:00",
+      "summary": "NVIDIA가 개발자 블로그를 통해 AI 에이전트에 강화학습(RL)을 적용하는 실전 기법을 정리했다. 인간 피드백 기반 강화학습(RLHF)에서 한 걸음 나아가, 검증 가능한 보상을 활용하는 RLVR(RL with Verifiable Rewards)이 추론과 에이전트 작업에서 실질적인 성능 개선 수단으로 자리잡고 있다고 설명한다. 특정 도메인에 특화된 정확도 높은 에이전트가 필요한 기업들에게 RL이 실용적인 선택지로 부상하고 있다는 점을 강조했다. NVIDIA의 GPU 생태계와 결합한 RL 파이프라인 구축 노하우를 다뤄 엔터프라이즈 개발자에게 실질적인 참고자료가 될 것으로 보인다.",
+      "category": "강화학습",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ca36977f-8266-43f7-93f2-3a19e8e22cce",
+      "title": "Cloudflare’s new policy pushes AI companies to pay for publishers’ content",
+      "url": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
+      "source": "techcrunch",
+      "content": "Cloudflare is giving AI companies until September 15 to separate web crawlers used for search from those used for AI training and agents, or risk being blocked by default on many publisher sites.",
+      "published_at": "2026-07-01T17:48:37+00:00",
+      "summary": "Cloudflare가 AI 기업들에게 오는 9월 15일까지 검색용 웹 크롤러와 AI 학습·에이전트용 크롤러를 분리하도록 요구하는 새 정책을 발표했다. 이를 지키지 않는 AI 크롤러는 다수의 퍼블리셔 사이트에서 기본적으로 차단될 위험에 놓인다. 콘텐츠 제공자의 저작권 및 수익 보호 목소리가 커지는 가운데, 인터넷 인프라 사업자가 직접 나서 AI 기업에 콘텐츠 대가 지불을 압박하는 조치로 해석된다. AI 학습 데이터 수급을 둘러싼 퍼블리셔·플랫폼·AI 기업 간의 힘겨루기가 새로운 국면에 접어들었음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "fddd2625-3248-48a6-a925-a6b5d7342035",
+      "title": "Venice AI becomes a unicorn with $65M Series A as its privacy-first AI platform takes off",
+      "url": "https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/",
+      "source": "techcrunch",
+      "content": "Venice AI is already profitable, with annualized run-rate revenues of over $70 million, CEO Erik Voorhees said.",
+      "published_at": "2026-07-01T14:25:23+00:00",
+      "summary": "프라이버시 중심 AI 플랫폼 Venice AI가 6500만 달러 규모의 시리즈A 투자를 유치하며 유니콘 기업(기업가치 10억 달러 이상)으로 올라섰다. CEO Erik Voorhees는 회사가 이미 흑자를 기록 중이며 연환산 매출이 7000만 달러를 넘어섰다고 밝혔다. 개인정보 보호를 앞세운 AI 서비스가 실제 수익성까지 입증하며 투자자들의 신뢰를 얻고 있다는 점이 주목할 만하다. 데이터 프라이버시에 민감한 사용자층을 겨냥한 AI 스타트업들이 본격적으로 자본시장의 주목을 받기 시작했음을 시사한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "b0a4eba2-2541-4160-a912-b997f681d542",
+      "title": "Meta, like SpaceX, looks to turn excess AI compute into cash",
+      "url": "https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash/",
+      "source": "techcrunch",
+      "content": "Meta is developing plans for a cloud infrastructure business, selling access to AI compute power and models. The move would pit it against the big cloud providers like Amazon Web Services, Google Cloud, and Microsoft Azure.",
+      "published_at": "2026-07-01T13:43:07+00:00",
+      "summary": "Meta가 여유 AI 컴퓨팅 자원을 외부에 판매하는 클라우드 인프라 사업을 검토 중인 것으로 알려졌다. 이는 AI 컴퓨팅 파워와 자사 모델에 대한 접근을 함께 제공하는 형태로, 아마존 AWS·구글 클라우드·마이크로소프트 애저 등 기존 클라우드 강자들과 정면으로 경쟁하겠다는 의미다. 앞서 SpaceX도 유사하게 잉여 AI 컴퓨팅 자원을 수익화하려는 움직임을 보인 바 있어, 대규모 GPU 인프라를 보유한 빅테크들이 컴퓨팅 자체를 새로운 수익원으로 삼는 흐름이 확산되고 있다. AI 인프라 시장의 경쟁 구도가 기존 클라우드 3사 중심에서 더 다양한 플레이어로 재편될 가능성을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "8884bbe9-9826-4383-8c0d-87ce5c99e703",
+      "title": "The DeepMind trio who built a poker AI are now making money for quant hedge funds",
+      "url": "https://techcrunch.com/2026/06/30/the-deepmind-trio-who-built-a-poker-ai-are-now-making-money-for-quant-hedge-funds/",
+      "source": "techcrunch",
+      "content": "EquiLibre Technologies, a Prague-based AI lab founded by three ex-DeepMind researchers, is now valued at more than $500 million.",
+      "published_at": "2026-06-30T20:33:48+00:00",
+      "summary": "포커 AI를 개발했던 前 DeepMind 연구원 3인이 설립한 프라하 기반 AI 랩 EquiLibre Technologies가 기업가치 5억 달러 이상으로 평가받았다. 이들은 게임 이론과 불완전 정보 환경에서의 의사결정에 특화된 포커 AI 기술력을 퀀트 헤지펀드를 위한 트레이딩 알고리즘 개발에 적용하고 있다. 게임 AI 연구에서 축적된 전략적 추론 능력이 금융 트레이딩이라는 실질적 고부가가치 영역으로 전이되고 있음을 보여주는 사례다. 프론티어 랩 출신 연구자들이 스핀오프 창업을 통해 AI 기술을 금융권에 접목하는 흐름이 계속되고 있다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d5d86c67-2a06-40ff-a489-abd49588671c",
+      "title": "\"인공지능, 자연어만으로 영상 속 객체 추적한다\"… 인하대 배승환 교수팀,차세대 비전 AI 기술 개발",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40796",
+      "source": "korean",
+      "content": "인하대학교(총장 조명우)는 배승환 전기컴퓨터공학과 교수 연구팀이 사용자가 자연어로 설명한 대상을 영상 속에서 자동으로 찾아 추적하는 새로운 인공지능(AI) 기술을 개발했다고 2일 밝혔다.\n\n이 기술은 기존 객체 추적 기술의 한계를 극복한 것으로 평가된다. 현재 대부분의 영상 객체 추적 시스템은 첫 화면에서 사용자가 추적 대상의 위치를 사각형 박스 형태로 직접 지정해야 한다. 이후에도 대상이 가려지거나 화면 밖으로 벗어나면 추적 성능이 급격히 저하되는 문제가 있었다.\n\n연구팀이 개발한 기술은 이러한 초기 위치 지정 과정 없이 사용자가 \"도로 위의 녹색 자동차\", \"흰 셔츠와 검은 바지를 입은 남자\", \"파란 옷을 입은 여성\", \"빨간 장갑을 낀 남성\" 등과 같이 자연어로 대상을 설명하면 AI가 영상 속에서 해당 객체를 찾아 지속적으로 추적한다.\n\n특히 연구팀은 기존 객체 추적 방식에서 필수적으로 사용되던 시각적 템플릿(Visual Template)을 완전히 제거한 '템플릿 프리 추적(Template-Free Tracking)' 구조를 제안했다. 이는 사용자가 추적 대상의 위치를 직접 지정하지 않아도 AI가 언어 설명만으로 대상을 식별하고 추적할 수 있도록 설계된 것이 특징이다.\n\n연구의 핵심 기술은 'MVLM(Memory-based Vision-Language Margin Confidence)'으로 불리는 새로운 신뢰도 판단 메커니즘이다.\n\n이 기술은 영상 정보와 언어 설명 간의 연관성을 계산하는 동시에, 이전 프레임에서의 추적 결과를 기억하는 메모리 기능을 결합했다. 이를 통해 AI는 현재 추적 결과가 얼마나 신뢰할 수 있는지를 스스로 판단한다.\n\n대상이 명확하게 보이는 경우에는 현재 위치 주변만 탐색하는 ROI(관심 영역) 기반 추적을 수행해 계산량을 줄이고 안정성을 높인다. 반면 대상이 가려지거나 비슷한 객체가 주변에 많아 추적 신뢰도가 낮아지면 화면 전체를 다시 탐색하는 글로벌 재탐색(Global Re-localization)을 수행해 대상을 다시 찾아낸다.\n\n연구팀은 이러한 동작 원리를 수학적으로 분석해 추적 실패 확률이 어떻게 감소하는지에 대한 이론적 근거도 함께 제시했다. 논문에서는 자연어와 영상 간 상관관계가 높을수록 오인식 확률이 지수적으로 감소한다는 사실을 증명하고, 제안한 신뢰도 기반 탐색 전략이 추적 정확도를 향상시키는 이유를 설명했다.\n\n또 다른 특징은 실시간 대상 전환 기능이다. 사용자가 추적 도중 자연어 설명을 변경하면 AI가 새로운 대상을 즉시 찾아 추적을 이어갈 수 있다. 연구팀은 실제 실험에서 \"긴 머리의 파란 옷 여성\"을 추적하던 중 \"빨간 장갑을 낀 갈색 옷 남성\"으로 설명을 변경하자 AI가 자연스럽게 새로운 인물로 추적 대상을 전환하는 데 성공했다.\n\n성능 평가에서도 우수한 결과를 기록했다. 연구팀은 TNL2K, LaSOT, OTB99, MGIT 등 국제 객체 추적 벤치마크 데이터셋을 활용해 실험을 진행했다. 그 결과 자연어만을 이용한 추적 환경에서 여러 기존 최신 기술 대비 높은 성능을 기록했으며, 일부 벤치마크에서는 최고 수준(State-of-the-Art)의 정확도를 달성했다. 특히 MGIT 데이터셋에서는 정확도(PRE) 55.5%, AUC 63.5%를 기록하며 기존 방법들을 앞섰다.\n\n연구팀은 이번 기술이 지능형 CCTV, 자율주행 로봇, 드론, 영상 검색, 스마트 팩토리, 사람-AI 상호작용(Human-AI Interaction) 등 다양한 산업 분야에서 활용될 수 있을 것으로 기대하고 있다. 특히 사용자가 음성 명령만으로 특정 인물이나 사물을 추적할 수 있어 차세대 영상 인공지능 시스템의 핵심 기술로 발전할 가능성이 높다고 설명했다.\n\n이번 연구는 박대현 박사과정, 백민아 통합과정, 하정훈 통합과정, 박찬섭 석사과정, 잠시드전 가니에브(Jamshidjon Ganiev) 통합과정이 참여했으며, 배승환 교수의 지도 아래 수행됐다. 배승환 교수는 \"이번 연구는 사용자가 직접 대상을 지정하지 않아도 자연어만으로 영상 속 객체를 추적할 수 있다는 가능성을 입증한 연구\"라며 \"향후 지능형 영상 분석, 로봇 비전, 온디바이스 AI 등 실제 산업 환경에 적용 가능한 기술로 발전시켜 나갈 계획\"이라고 밝혔다.\n\n한편, 연구 결과는 'MVLM: 시각-언어 마진 신뢰도와 기억-게이트 추적을 통한 템플릿 없는 추적(MVLM: Template-Free Tracking via Vision-Language Margin Confidence and Memory-Gated Tracking-다운)'이라는 제목으로 지난 3일부터 7일까지 미국 콜로라도주 덴버에서 개최된 컴퓨터 비전 및 패턴 인식 분야에서 세계 최고 권위를 자랑하는 CVPR 2026에서 발표됐다. 아울러 관련 소스 코드는 현재 깃허브(다운)를 통해 공개돼있다.",
+      "published_at": null,
+      "summary": "인하대 배승환 교수 연구팀이 자연어 설명만으로 영상 속 대상을 찾아 지속적으로 추적하는 '템플릿 프리 트래킹' 기술을 CVPR 2026에서 발표했다. 기존 객체 추적 기술이 필수로 요구하던 최초 위치 지정(바운딩 박스) 없이도 \"빨간 장갑을 낀 남성\" 같은 자연어 설명만으로 대상을 식별·추적하며, 대상이 가려지거나 화면을 벗어나도 강건하게 재탐색한다. 핵심은 영상-언어 연관성과 이전 프레임 기억을 결합해 추적 신뢰도를 스스로 판단하는 'MVLM' 메커니즘으로, TNL2K·LaSOT 등 국제 벤치마크에서 기존 최신 기법 대비 우수한 성능을 기록했다. 지능형 CCTV, 자율주행, 드론, 스마트팩토리 등 산업 전반에 적용 가능한 차세대 비전 AI 기술로, 국내 연구진이 세계 최고 권위 컴퓨터비전 학회에서 성과를 인정받았다는 점에서 의미가 크다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "36b1dd97-7f5c-4d39-96bf-f87703973f03",
+      "title": "LLMs are stuck in a groupthink groove. This startup is trying to get them out.",
+      "url": "https://www.technologyreview.com/2026/07/01/1140003/llms-are-stuck-in-a-groupthink-rut-this-startup-is-trying-to-get-them-out/",
+      "source": "mit_tech_review",
+      "content": "Let’s start with a game. Open up your chatbot of choice—Claude, ChatGPT, Gemini—and type “Give me a random number between 1 and 10.” You’re going to get 7. Almost always. Now type “Another” and you’ll get 3 or 4. Type “Another” again and you’ll get 8 or 9. That won’t work every time—but if it did for you, you may wonder if I have superpowers. I don’t. The truth is that most large language models are stuck in a rut. They are far more predictable and far less creative in their responses than you might expect. That’s fine for tasks like coding or research, but groupthink is a problem when you’re brainstorming or planning your next vacation. The Australian startup Springboards has a solution. It built an LLM called Flint, which has been trained to come up with a wider variety of responses than mainstream LLMs to open-ended questions such as “Where should I go in Europe?” “Most language models are fighting hallucinations,” says Springboards cofounder and CEO Pip Bingemann. “We welcome them.” Bingemann introduced me to the random number game when he first showed me his company’s new model. It felt like watching an illusionist with a deck of cards. “This is our sales trick, and it works every single time,” he says. After ChatGPT and Claude both gave their 7s, Bingemann turned to Flint. It too came back with 7: “Aha, of course that was going to happen, but it’s okay—7 is a legitimate answer.” He restarted the session and prompted again: ChatGPT gave 7, Claude gave 7, Flint gave 3.7916. Run your way It’s not just numbers. When Bingemann asked ChatGPT and Claude to name a type of car, he predicted that it would be a Toyota or a Honda—and he was right. Flint came up with a Ford F-150. “There’s all this lost information that doesn’t get served up in these models,” he says. “They’re just as capable of saying a Buick or a Tesla. They just don’t—they’re biased.” Bingemann sent one last prompt to each of the three models: “Give me a tagline for a campaign for New Balance running shoes. Just the tagline.” Claude: “Run your way.” ChatGPT: “Run your way.” Flint: “Built to last, run to win.” It won’t win any awards, but at least it’s different. This weird limitation of LLMs is starting to get more attention. In November a team of researchers put out a paper, titled &#8220;Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond),” that exposed a remarkable degree of repetition not only in the answers from individual LLMs but between them as well. They found that different LLMs converged on very similar answers when prompted with open-ended questions. It’s not clear exactly why this happens, but the researchers speculate it’s because most LLMs today are trained in similar ways on similar data to do similar tasks. The team won the best paper award at NeurIPS, a major AI conference. When the researchers asked 25 different LLMs (including models from the top US firms as well as open-source models from China and elsewhere) 50 times each to write a metaphor about time, most of the 1,250 responses were a version of “Time is a river” or “Time is a weaver.” (I asked some of my colleagues the same question and six people gave me six different answers. My highlight: “Time is a favorite sweatshirt, shaped by a lifetime of wear.”) When you look for it, you see repetition everywhere, says Kieran Browne, cofounder and CTO at Springboards. “The way that most chat interfaces are designed, it makes it feel like you’re having a personal conversation,” he says. “I think most people don’t really realize the extent to which they are getting the same stuff as everybody else.” Take another example: “What should I name my band?” Most models will say something involving “glass,” “neon,” “velvet,” or “static,” says Browne. When I tried it, ChatGPT spat out a list of 56 band names. At the top was “Glass Harbor.” Skimming through, I found “Static Empire,” “Neon Hearts,” and “Velvet Echo.” I asked Gemini; it gave me 15 suggestions, including “Static Horizon.” Some of the suggestions looked pretty cool, though. ChatGPT’s “Sofa Astronauts” caught my eye, so I googled it—and found that a band called Sofa Astronauts already exists.&nbsp; (OpenAI says that training models to give reliable and coherent answers can lead them to converge around familiar, high-probability responses and that pushing harder for novelty can lead to weaker or less reliable responses. It also notes that the “Artificial Hivemind” paper studied models from 2024 that have since been updated.) Creative catapult Springboards has developed a tool backed by a selection of LLMs, including ChatGPT and Claude, that creative professionals in advertising or marketing can use to brainstorm ideas. The tool lets you drag around text produced by different models, picking the bits that you like and combining them into something new—in theory. Springboards is pitching Flint as an alternative model that users of its tool can select when looking for more variety. Zoe Scaman, founder of the business strategy startup Bodacious and chief strategy officer at 77X, a direct-to-fan marketing platform set up by Luka Dončić of the LA Lakers, has been trying it out. “I find it really useful for throwing me in completely different directions,” she says. “I use it if I want to catapult myself all over the place.” In one test, Scaman pitted Flint against Claude, Gemini, and ChatGPT by giving each of the models a classic MBA case study: How would you reinvent a finance company for today’s youth? The three mainstream models all went down the same path, she says: “You know, we need to teach financial literacy in a fun and funky way—well, that’s nothing new.” But Flint came up with something different, suggesting that the whole concept of wealth accumulation should get a rebrand. “That was really interesting,” says Scaman. She notes that Flint is still a prototype and doesn’t work all the time. “It sometimes falls over when you start pushing it too far,” she says. “But I think that the premise behind it is really powerful.” Taking the temperature Springboards built Flint on top of Qwen 3, an open-source model from the Chinese tech giant Alibaba. “We’re a small team,” says Browne. “Training a foundation model is not on the table for us. It’s just too expensive.” Most LLMs have settings that let you adjust the level of randomness in their output. The most common is called temperature. “Obviously, that was one of the first things we explored, because that’s what people tell you: If you want more creativity, you turn up the temperature,” says Browne. But changing those settings can also make models incoherent. Dialing up the temperature on one of OpenAI’s models to its maximum setting made it produce responses that switched from English into code halfway through a sentence, says Browne. Springboards realized that parameters were blunt instruments for what it wanted to do. It does not make sense to dial up the randomness across the board; you only want to boost it at specific points in its output, he says. For example, when you ask a chatbot “Where should I go in Europe?” the model only needs to tweak the randomness just before it names a destination, not for every word in its response. To make Flint do this, Springboards trained its version of Qwen 3 to identify the points in its output where more variety was possible and fill those spots with words or phrases that were a little more random. “Flint’s programmed to throw an oddball in. It’s more of an invitation to think wider,” says Maximilian Weigl, cofounder and chief strategy officer at Uncommon, a marketing firm. “That’s super interesting.” Weigl’s team uses Flint alongside ChatGPT, Claude, and Gemini. “You can’t really create something boundary-breaking with tools that pull you back to the average,” he says.&nbsp; And yet Weigl notes that nine times out of 10 the average is fine. You don’t always need to reach for extremes with something like Flint, he says: “Most people are fine with good enough. They want to see mass-market familiar things.” Weigl also cautions against using any LLM too much. “I have a big problem when people rely on the output from any AI, including Flint,” he says. “If I saw people on my team copy-pasting something from AI, I’d be like, ‘That’s not your job! Think, talk to other people, use your own voice.’” For now, Flint is aimed at advertisers and marketers because those are Springboards’s customers. But Bingemann and Browne insist that a lack of variety is a problem for anyone using chatbots. The idea is to give people the choice and leave it to them to decide if the result is good or not, says Bingemann. “Variety is great when you’re trying to spark ideas,” he says. “Let’s go down this route instead of letting the machines do it all and ending up in a gray, boring world.”",
+      "published_at": "2026-07-01T14:35:16+00:00",
+      "summary": "호주 스타트업 Springboards가 대다수 LLM이 개방형 질문에 놀라울 정도로 예측 가능하고 획일적인 답변만 내놓는 '그룹싱크' 문제를 해결하기 위해 자체 모델 'Flint'를 개발했다. 예컨대 \"1부터 10 사이 무작위 숫자를 말해줘\"라고 물으면 대부분의 챗봇이 거의 항상 '7'을 답하는 등, 코딩·리서치처럼 정답이 명확한 작업에는 문제없지만 브레인스토밍이나 여행 계획처럼 다양성이 중요한 작업에는 이런 편향이 한계로 작용한다. Flint는 여행지 추천 같은 개방형 질의에 기존 주류 LLM보다 훨씬 다채로운 답변을 생성하도록 학습됐다. 창의성과 다양성이 요구되는 활용 사례에서 표준 LLM의 근본적 한계를 조명하고, 이를 겨냥한 틈새 모델 시장이 형성되고 있음을 보여주는 사례다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "35527998-2bdf-422e-ac94-c17ed56b00fa",
+      "title": "The Download: AI “coworkers” and stratospheric internet",
+      "url": "https://www.technologyreview.com/2026/06/30/1139954/the-download-ai-agents-coworkers-solar-powered-internet/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. AI agents are not your “coworkers” Imagine coming in to work to learn that a new underling will report to you. The worker is not a person but an AI tool—one that your company nonetheless calls Alex, an “employee” with a title and defined responsibilities. How well do you think you would work with Alex? If you&#8217;re anything like the managers studied by Boston University professor Emma Wiles, treating that AI as a &#8220;coworker&#8221; would lead you to do a worse job. They caught 18% fewer errors when the work was attributed to an agentic &#8220;AI employee&#8221; rather than a chatbot. This is an alarming glimpse of the future Silicon Valley is hurling us toward. Microsoft, OpenAI, Anthropic, and Google have all released tools for managing teams of AI agents, many of which are advertised as digital colleagues. Find out why that’s a losing proposition for workers. —James O&#8217;Donnell This story is from The Algorithm, our weekly AI newsletter. Sign up to receive it in your inbox every Monday. This flying solar-powered platform could deliver better internet from the air As soon as August, a giant silver bullet will cut its way through the dry air of the southwestern US and cross the Pacific to reach the coast of Japan.Once there, the roughly 200-foot-long craft, built by the New Mexico–based company Sceye, will park some 18 kilometers above the ocean’s surface in the stratosphere, then use a custom-built antenna to supplement a 5G network, in a test that includes beaming data straight to devices.Sceye (pronounced “sky”) is one of several firms building these high-altitude platform stations, or HAPS. Find out why they plan to connect us from the stratosphere. —Rachel Courtland This story is from the latest edition of our magazine, which is all about engineering. Subscribe now to get a copy, plus all our other issues and a range of subscriber-only content. Longevity’s next frontier: “reprogramming” your body Billions of dollars are flooding into efforts to reverse aging as scientists explore ways to return cells to a younger state. But how far off are these experimental treatments? Will they really work? At a virtual Roundtables event today, MIT Technology Review will examine the science behind the hype. Science editor Mary Beth Griggs and senior biotechnology reporter Jessica Hamzelou will explore longevity’s latest frontier in a subscriber-only discussion. Register here to join the session at 11:30 AM ET / 8:30 AM PT / 16:30 GMT. The must-reads I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology. 1 The US House has passed new youth online safety legislation+ It would set baseline federal standards for kids’ online safety. (Politico $)+ States would be allowed to adopt more aggressive protections. (Reuters $)+ But critics say it lets tech companies avoid accountability. (Axios)+ And tech groups warn it threatens privacy and free expression. (NBC)+ The Senate is expected to push for tougher rules. (The Hill)2 Ford is rehiring human engineers after AI failed to match quality checksIt said the AI lacked the training and expertise of technicians. (Bloomberg $)&nbsp;+ The new hires will train younger staff and reprogram AI tools. (BBC)+ Many firms that replaced workers with AI are now rehiring humans. (Forbes)+ The AI jobs hysteria needs a reality check. (MIT Technology Review)&nbsp;3 Senator Mark Warren is set to introduce a bill to regulate AI agentsIt would set rules for agent permissions and verification. (The Information $)+ Voters of both parties want tighter AI regulation. (NBC News)+ But politicians are bitterly divided on the rules. (MIT Technology Review)&nbsp;4 Rocket Lab is buying Iridium for $8 billion to take on SpaceXIt wants to integrate the satellite network with its launch services. (The Verge)+ Which could create a fleet that can compete with SpaceX. (WSJ $)&nbsp;5 Hackers have exposed secrets about Apple’s upcoming iPhone 18The data was stolen from Tata Electronics, Apple’s Indian supplier. (Reuters $)+ The breach also exposed Tesla secrets. (TechCrunch)6 Chatbots are replacing therapists despite&nbsp;lacking scientific evidenceExperts question their safety and therapeutic quality. (WSJ $)+ Chatbots may make us lose control of our brains. (MIT Technology Review)&nbsp;7 Newborn DNA sequencing is edging closer to routine healthcareTrials are expanding despite privacy and ethical concerns. (Economist $)+ The push for perfect babies is an ethical mess. (MIT Technology Review)8 Astronomers are using AI to find new galaxiesNew tools are reviving decades of space telescope data. (FT $)9 Remote-controlled cockroach swarms can now breathe underwaterThe cyborg insects could one day explore Mars. (New Scientist $)10 Drone shows are creating new forms of worship&nbsp;Churches are depicting biblical stories with thousands of UAVs. (Wired $)) Quote of the day “This is taking us back to the 1950s, and that is not progress.”&nbsp; —Edwin Lyman, director of nuclear power safety at the Union of Concerned Scientists, tells NPR that slashing regulations undoes decades of safety lessons from the industry. One More Thing Design thinking was supposed to fix the world. Where did it go wrong? When Kyle Cornforth walked into IDEO’s San Francisco offices for a meeting about reimagining school lunches, she was impressed. “It was Post-its everywhere, prototypes everywhere,” she recalls. “What I really liked was that they offered a framework for collaboration and creation.” Cornforth was new to IDEO’s way of working: a six-step methodology for innovation called design thinking. But when she looked at the ideas themselves, she had questions: “I was like, ‘You didn’t talk to anyone who works in a school, did you?’ They were not contextualized in the problem at all.” Design thinking broadened the idea of “design,” elevating designers to take on big, knotty problems through a structured process. But critics argue it has produced unrealistic ideas and, by centering designers, reinforced existing inequities. Read the full story on the rise and fall of design thinking. —Rebecca Ackermann We can still have nice things A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? Drop me a line.) + A London tube station has solved its persistent flooding issue by reintroducing beavers.+ The Beastie Boys song &#8220;Sabotage&#8221; has been stunningly recreated in this stop-motion video.+ Classical antiquity is lovingly preserved in this collection of over 8,000 late Latin and Greek letters from the Roman world.+ This homemade jet-powered fishing boat is a reminder that great engineering and good judgment don&#8217;t always travel together. Top image credit: Photo Illustration by Sarah Rogers/MITTR | Photos Getty Please send homemade jet-powered fishing boats to hi@technologyreview.com.&nbsp; You can follow me on LinkedIn. Thanks for reading! —Thomas",
+      "published_at": "2026-06-30T12:10:00+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 보스턴대 교수 Emma Wiles의 연구를 인용해, AI를 '동료(coworker)'로 프레이밍했을 때 오히려 업무 품질이 떨어진다는 조사 결과를 소개했다. 이름과 직함을 부여받은 '에이전틱 AI 직원'이 처리한 업무는, 단순 챗봇이 처리했다고 안내된 동일 업무보다 관리자들이 오류를 18% 더 적게 잡아냈다. Microsoft, OpenAI, Anthropic, Google이 모두 AI 에이전트 팀을 '디지털 동료'로 마케팅하는 도구를 내놓은 상황에서, 이런 의인화된 프레이밍이 오히려 인간의 검증·비판적 검토를 무디게 만들 수 있다는 경고다. AI 에이전트 도입이 확산될수록 그 인터페이스와 프레이밍 방식이 실제 업무 품질에 미치는 영향을 신중히 고려해야 한다는 시사점을 준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "55533d7d-daae-483f-8fdd-5d49b8446a3c",
+      "title": "A Single Rewrite Suffices: Empirical Lessons from Production Skill Description Optimization",
+      "url": "https://arxiv.org/abs/2606.30775",
+      "source": "arxiv",
+      "content": "arXiv:2606.30775v1 Announce Type: new \nAbstract: Enterprise AI agents route user queries to specialized skills by matching queries against natural language skill descriptions. When two skills share overlapping descriptions, the routing LLM misroutes queries, a failure we term skill collision. As agents scale to dozens of skills, manually tuning descriptions to maintain routing accuracy becomes a significant engineering bottleneck. We deploy an automated description optimization pipeline on a production enterprise group chat agent (9 skills, 372 regression cases). The pipeline produces descriptions averaging 79.2% F1, matching manually tuned descriptions at 79.4% F1 (average per-skill difference -0.20%, within the 0.78% multi-seed noise floor), while reducing per-skill engineering effort from 120 minutes to 3.8 minutes (32 times speedup). We then examine which pipeline components actually drive this match. Systematic ablation on both the production system and ToolBench (16k tools) reveals that a single LLM rewrite using any available false-positive and false-negative cases captures most of the available improvement. Other design choices we tested (iteration budget, feedback signal composition, dual editing of confused pairs, and training set size) each affect final F1 by less than 0.5%. Description optimization addresses skill collisions caused by overlapping descriptions but cannot resolve cases where two skills intended scopes genuinely overlap. We identify a diagnostic (a large train-validation F1 gap) that flags the latter cases for architectural rather than text-level intervention.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "엔터프라이즈 AI 에이전트가 자연어 설명을 기준으로 사용자 질의를 적절한 스킬로 라우팅할 때, 설명이 서로 겹치면 '스킬 충돌'로 오라우팅이 발생하는 문제를 다룬 실전 연구다. 실제 프로덕션 환경의 사내 그룹챗 에이전트(스킬 9개, 회귀 테스트 케이스 372건)에 자동화된 설명 최적화 파이프라인을 적용한 결과, 평균 F1 79.2%로 수작업으로 튜닝한 설명(79.4%)과 거의 동일한 라우팅 정확도를 달성했다. 에이전트가 수십 개 스킬로 확장될수록 설명을 수작업으로 유지보수하는 것이 병목이 된다는 점에서, 자동화 파이프라인이 엔지니어링 비용을 크게 절감할 수 있음을 실증했다. 대규모 에이전트 시스템을 운영하는 개발팀에게 즉시 적용 가능한 실용적 교훈을 제공하는 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "2008ea4c-cab1-447c-9a63-9a0e103c3d83",
+      "title": "AgentBound: Verifiable Behavioral Governance for Autonomous AI Agents",
+      "url": "https://arxiv.org/abs/2606.30970",
+      "source": "arxiv",
+      "content": "arXiv:2606.30970v1 Announce Type: new \nAbstract: Autonomous AI agents increasingly perform consequential actions on behalf of human principals, including financial transactions, external communications, and enterprise workflows. Existing agent infrastructure relies on identity federation and delegated authorization to authenticate workloads and control resource access, but it cannot determine whether an authorized action should be executed under the current behavioral and operational context.\n  We present AgentBound, a runtime governance framework that provides verifiable behavioral oversight for autonomous AI agents. AgentBound evaluates each proposed action using three independent authorities: delegated authorization, owner-signed behavioral constitutions, and site action contracts. Their judgments are conservatively composed through a formal decision model to determine whether an action should be permitted, reviewed, or denied before execution.\n  To provide accountability, AgentBound generates cryptographically verifiable governance receipts that bind every action to the exact delegation, policy, and semantic artifacts governing the decision, enabling independent replay verification and policy provenance. The framework also introduces standing delegation for long-running agents, allowing periodic workloads to operate under continuously refreshed governance policies while preserving revocability and bounded authority.\n  We present the formal foundation, system architecture, governance receipt protocol, and AgentBound-Bench, a benchmark framework for evaluating governance correctness, authority composition, and accountability. Rather than replacing model alignment, AgentBound complements it by providing a deterministic governance layer between authorization and execution, transforming governance from a process that must be trusted into one that can be independently verified.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "자율 AI 에이전트가 금융 거래, 외부 커뮤니케이션, 기업 워크플로우 등 중대한 작업을 인간을 대신해 수행하는 사례가 늘면서, 권한은 있지만 현재 맥락에서 실행해도 되는 행동인지 판단하는 문제를 다룬 연구다. 'AgentBound'는 위임된 인가(authorization), 소유자가 서명한 행동 헌장(behavioral constitution), 사이트별 행동 계약이라는 세 가지 독립적 권한을 결합해 각 행동을 실행 전에 검증하는 런타임 거버넌스 프레임워크를 제안한다. 세 판단을 형식적 의사결정 모델로 보수적으로 종합해, 권한은 있어도 맥락상 부적절한 행동은 차단할 수 있도록 설계됐다. 자율 에이전트가 실제 자산과 시스템을 다루는 사례가 늘어나는 만큼, 이런 검증 가능한 행동 거버넌스 기술이 기업 도입의 핵심 전제조건으로 부상하고 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "cb275e47-f0d5-4de0-a351-c25dcbc38a70",
+      "title": "CORTEX: Token-Level Hallucination Detection in RAG via Comparative Internal Representations",
+      "url": "https://arxiv.org/abs/2606.31033",
+      "source": "arxiv",
+      "content": "arXiv:2606.31033v1 Announce Type: new \nAbstract: In this paper, we propose CORTEX, a token-level hallucination detection method for Retrieval-Augmented Generation (RAG). In long-form RAG outputs, hallucinations often arise in localized spans rather than throughout an entire response. CORTEX therefore identifies ungrounded content at the token level, enabling fine-grained localization of hallucinations. The key intuition behind CORTEX is that tokens grounded in retrieved documents should be more strongly influenced by those documents than hallucinated tokens. To capture this document-induced effect, CORTEX compares internal representations of a large language model (LLM) under two conditions: with and without the retrieved documents. Instead of relying solely on each token's immediate sensitivity to the retrieved documents, CORTEX also leverages the propagation of document-grounded information through preceding tokens, reducing false positives for tokens whose evidence has already been absorbed into the context. Finally, CORTEX applies post-processing smoothing step that models the tendency of hallucination labels to persist over contiguous spans, reducing local noise and encouraging span-consistent predictions. Experiments on two RAG benchmarks and three LLMs show that CORTEX substantially improves token-level hallucination detection, with each component consistently contributing to performance gains.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "검색증강생성(RAG) 응답에서 환각(hallucination)은 전체 답변이 아니라 특정 구간에서 국소적으로 발생하는 경우가 많다는 점에 착안해, 토큰 단위로 환각 여부를 정밀 탐지하는 기법 'CORTEX'를 제안했다. 핵심 아이디어는 검색된 문서가 있을 때와 없을 때 LLM 내부 표현(internal representation)을 비교해, 문서에 실제로 근거한 토큰일수록 문서의 영향을 더 강하게 받는다는 점을 활용하는 것이다. 단순히 각 토큰이 문서에 얼마나 민감한지뿐 아니라, 문서에 기반한 정보가 이후 토큰들로 전파되는 양상까지 함께 포착해 탐지 정밀도를 높였다. 문장 전체가 아닌 문제가 되는 구간만 짚어낼 수 있어, RAG 기반 서비스의 신뢰성 검증과 근거 제시 UX 설계에 실질적으로 활용될 수 있는 기법이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "fdd5cbb3-7f23-4952-975a-758e5d48a416",
+      "title": "When transformers learn \"impossible\" languages, what do they learn?",
+      "url": "https://arxiv.org/abs/2606.30815",
+      "source": "arxiv",
+      "content": "arXiv:2606.30815v1 Announce Type: new \nAbstract: Recent work suggests that transformer language models show a bias towards human languages over unnatural (\"impossible\") languages argued to be unacquirable by humans. However, this literature has largely based these claims on differences in sample efficiency and test-set perplexity, rather than on direct evaluations of the linguistic capacities that could plausibly explain non-attestation in human languages. We evaluate two theoretically motivated linking hypotheses: impossibility arising from deficiencies in grammatical sensitivity or generative production. Using GPT-2 style models trained on perturbed \"impossible\" variants of English, we measure sensitivity to grammaticality using BLiMP minimal pairs, finding that model performance exhibits only gradual degradation, mediated by the language's information locality. In contrast, these models exhibited pronounced failures in generation, producing substantially fewer high-quality sentences at longer lengths. Together, these results suggest generative deficiency and transmission failures as a plausible linking hypothesis between language model behaviour and non-attestation of impossible languages.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "트랜스포머 언어모델이 인간이 습득할 수 없다고 여겨지는 '불가능한 언어(impossible language)'보다 자연 언어를 학습하기 쉬워한다는 기존 주장을, 표본 효율성·퍼플렉시티 차이가 아닌 실제 언어 능력 평가로 직접 검증한 연구다. GPT-2 구조의 모델을 영어를 변형한 다양한 '불가능한' 언어 변형본으로 학습시킨 뒤 BLiMP 미니멀 페어로 문법성 민감도를 측정한 결과, 성능 저하는 언어의 정보 지역성(information locality)에 따라 완만하게만 나타났다. 반면 생성 능력 측면에서는 다른 양상이 관찰돼, 두 가설(문법 민감도 결핍 vs 생성 능력 결핍) 중 어느 것이 '불가능성'을 더 잘 설명하는지에 대한 실증적 근거를 제공한다. LLM이 실제로 어떤 언어적 편향을 내재화하는지를 규명하려는 기초 연구로, 모델의 일반화 메커니즘을 이해하는 데 기여한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ceda3ed6-4efe-4000-9157-8c2d3cdfd682",
+      "title": "Quality-Aware Modulation for Diffusion Transformers",
+      "url": "https://arxiv.org/abs/2606.30934",
+      "source": "arxiv",
+      "content": "arXiv:2606.30934v1 Announce Type: new \nAbstract: Modern text-to-image diffusion models, such as diffusion transformers (DiT), rely on timestep or prompt embeddings to modulate the strength of the denoising process in each timestep. While this modulation communicates the current noise level, it does not provide any quality-aware information, which can lead to generated images that are unaligned, visually inconsistent, and lacking in fidelity. In this paper, we propose the Quality Representation Module (QRM), a lightweight transformer module that learns a quality-aware representation based on existing model inputs, and produces a set of vectors $M_{qrm}$. These vectors adjust the adaptive LayerNorm modulation within the DiT transformer blocks, thereby injecting a quality-sensitive signal into the denoising parameters. The QRM introduces no significant changes to the sampling schedule or diffusion backbone. Experiments include ablations on QRM training losses and architectures, as well as empirical results demonstrating consistent image quality improvements over baseline DiT-based models.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "텍스트-이미지 확산 트랜스포머(DiT)가 노이즈 제거 강도를 조절할 때 타임스텝·프롬프트 임베딩만 참고할 뿐 결과물의 '품질'에 대한 신호는 반영하지 못해, 이미지가 프롬프트와 어긋나거나 시각적으로 일관되지 않은 문제가 발생한다는 점을 지적한다. 연구팀은 가벼운 트랜스포머 모듈인 'Quality Representation Module(QRM)'을 제안해, 기존 모델 입력을 바탕으로 품질 인식 표현 벡터를 학습하고 이를 DiT 블록 내부의 적응형 LayerNorm 변조에 주입한다. 샘플링 스케줄이나 확산 과정 자체를 바꾸지 않고도 품질 신호를 노이즈 제거 파라미터에 직접 반영할 수 있다는 점이 특징이다. 이미지 생성 모델의 실제 배포 단계에서 추가 연산 부담 없이 결과물 충실도를 끌어올릴 수 있는 실용적인 개선 기법으로 평가된다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1fcd1c3f-e189-42f3-8b41-c8818db174ea",
+      "title": "MultiUAV-Plat: An LLM-Oriented Platform, Benchmark and Framework for Multi-UAV Collaborative Task Planning",
+      "url": "https://arxiv.org/abs/2606.31073",
+      "source": "arxiv",
+      "content": "arXiv:2606.31073v1 Announce Type: new \nAbstract: Large language models (LLMs) provide a promising interface for high-level robotic task planning, but their use in multi-UAV collaboration remains difficult to evaluate systematically. Existing UAV simulators mainly emphasize dynamics, perception, or low-level control, while existing LLM-agent benchmarks rarely capture aerial-robotics constraints such as partial observability, spatial coverage, UAV assignment, and multi-vehicle coordination. To bridge this gap, we present MultiUAV-Plat, a lightweight, easy-to-use, LLM-agent-oriented simulation platform for multi-UAV collaborative task planning. The platform exposes concise RESTful APIs, agent-facing observations, role-based information access, hidden validation logic, and optional 2D/3D visualization, allowing agents to solve missions through realistic tool interaction rather than privileged simulator access. Built on this platform, the MultiUAV-Plat Benchmark contains 75 mission sessions, 1500 natural-language tasks, and 9396 validation checks across target assignment, area search, and area assignment and patrol scenarios. We further propose Agent4Drone, a task-specific LLM agent framework that structures multi-UAV behavior into memory, observation, task understanding, planning, execution, and verification. In a full paired benchmark comparison, Agent4Drone achieves a 57.9% task pass rate, a 74.6% average task check pass rate, and a 72.0% global check pass rate, substantially outperforming a ReAct baseline at 30.6%, 47.9%, and 43.1%, respectively. Agent4Drone also reduces the total failed task rate from 32.4% to 12.9%. These results demonstrate that MultiUAV-Plat and MultiUAV-Plat Benchmark provide a reproducible foundation for studying LLM-driven multi-UAV autonomy under realistic information and execution constraints.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "LLM을 활용한 고수준 로봇 작업 계획이 주목받고 있지만, 다중 드론(UAV) 협업 환경에서는 이를 체계적으로 평가할 벤치마크가 부족했다는 문제의식에서 출발한 연구다. 'MultiUAV-Plat'은 부분 관측성, 공간 커버리지, UAV 배정, 다중 기체 조율 같은 항공 로보틱스 고유의 제약을 반영한 경량 시뮬레이션 플랫폼으로, RESTful API와 에이전트용 관측 인터페이스, 역할 기반 정보 접근, 숨겨진 검증 로직, 2D/3D 시각화를 제공한다. 기존 UAV 시뮬레이터가 동역학·인지·저수준 제어에 치우쳐 있고 기존 LLM 에이전트 벤치마크는 항공 로보틱스 제약을 반영하지 못했던 공백을 메운다. 에이전트가 특권 정보 없이 실제 도구 상호작용을 통해 임무를 해결하도록 설계돼, LLM 기반 드론 군집 제어 연구의 표준 평가 환경으로 활용될 가능성이 있다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0985bef5-dc41-4162-be7e-7abaa407df5f",
+      "title": "Revocable Learned State via Process Sidecars",
+      "url": "https://arxiv.org/abs/2606.30788",
+      "source": "arxiv",
+      "content": "arXiv:2606.30788v1 Announce Type: new \nAbstract: Language models are often adapted in stages: a public skill phase, a private memory phase, and a later safety phase that learns to refuse outputs tied to the remembered entities. Revoking the memory after the safety phase is not the same problem as subtracting the memory update: the later safety optimizer has transported the memory direction. We introduce process sidecars, a two-coefficient edit family $\\hat{\\theta}(\\lambda,\\gamma)=\\theta_{\\mathrm{AMS}}-\\lambda\\Delta_{\\mathrm{M}}-\\gamma\\hat{R}_{\\mathrm{S}\\leftarrow\\mathrm{M}}$, with $\\hat{R}_{\\mathrm{S}\\leftarrow\\mathrm{M}}=\\hat{J}_{\\mathrm{S},\\varepsilon}(\\Delta_{\\mathrm{M}})-\\Delta_{\\mathrm{M}}$, where $\\hat{J}_{\\mathrm{S},\\varepsilon}$ is a centered secant through the realized future AdamW safety-training process. The implementation uses $\\varepsilon=1$ at the natural memory-edit scale; it reuses $\\theta_{\\mathrm{AMS}}$ as the positive endpoint and computes one additional safety trace at $\\theta_{\\mathrm{A}}-\\Delta_{\\mathrm{M}}$. We prove two things. First, the exact sidecar, using the true transported direction $R_{\\mathrm{S}\\leftarrow\\mathrm{M}}$ rather than the secant estimate, at $(\\lambda,\\gamma)=(1,1)$ recovers the counterfactual safety-only oracle $\\theta_{\\mathrm{AS}}$ up to second order; the proof treats AdamW as an augmented-state map over parameters, first moments, and second moments. Second, this process information is necessary: whenever future safety training bends the memory direction, every scalar task-arithmetic edit leaves first-order counterfactual error, while the process-sidecar edit is second-order accurate. Across three models, the validation-selected 2D edit improves held-out refusal closure over naive task arithmetic in all trials, and over the $\\gamma=\\lambda$ process-JVP subfamily, the diagonal slice of the cached 2D grid, in all paired trials.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "언어모델은 통상 공개 스킬 학습, 비공개(프라이버시) 메모리 학습, 이후 기억된 엔터티 관련 출력을 거부하도록 하는 안전성 학습이라는 여러 단계를 거쳐 조정되는데, 안전성 학습이 끝난 뒤에는 앞서 주입된 메모리를 단순히 빼는 것만으로는 되돌릴 수 없다는 문제를 다룬다. 이는 후속 안전성 최적화 과정이 메모리 방향 자체를 이미 변형시켰기 때문으로, 연구팀은 이를 정확히 역전시키기 위한 'process sidecar'라는 2계수 편집 기법을 제안한다. 실현된 미래의 안전성 학습 과정을 센터드 시컨트(secant)로 근사해, 메모리를 안전하게 '철회'할 수 있는 수학적 프레임워크를 제시한 것이 핵심이다. 모델에 학습된 특정 정보(개인정보 등)를 사후에 신뢰성 있게 제거해야 하는 실무적 요구가 커지는 가운데, 모델 편집·언러닝 연구에 이론적 토대를 더하는 작업이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "46f34c3d-0265-4ba8-a9a4-9e00ed27ba3e",
+      "title": "Using AI Agents to Automate Black-Box Audits of Personalization Algorithms at Scale",
+      "url": "https://arxiv.org/abs/2606.30801",
+      "source": "arxiv",
+      "content": "arXiv:2606.30801v1 Announce Type: new \nAbstract: Personalization algorithms determine what content users encounter on online platforms. Auditing these systems is difficult because independent auditors have only black-box access to the algorithms, while personalization depends on users' attributes, behavior, and evolving interaction histories. Existing auditing methods face a tradeoff: studies with real users capture realistic behavior but are costly and hard to control, whereas sock-puppet audits scale more easily but often rely on scripted behavior that limits realism. Beyond this, both approaches struggle to decouple user attributes from user behavior, limiting our ability to causally understand personalization. To address this gap, we introduce a framework for black-box audits of personalization algorithms using generative AI agents as behavioral engines for synthetic accounts. Each agent is instantiated with a fixed persona, grounded in demographic and political survey data, and interacts with a platform's content by reasoning about it and choosing actions. Because behavior is fixed within each persona while platform-visible signals such as age, gender, or location can be experimentally perturbed, our design enables counterfactual auditing of how platforms respond to user attributes. As a case study, we deploy 1,120 agents on X shortly after the 2024 U.S. election, spanning 14 personas and three counterfactual conditions, collecting over 200,000 content exposures. We find that X's algorithmic feed amplifies toxic, polarizing, political, and right-leaning content relative to the chronological feed, with amplification varying sharply by user ideology. Counterfactual analyses show that demographic signals affect content delivery in persona-dependent ways: pooled effects are largely null, while subgroup-level effects vary in direction and magnitude. Our work establishes GenAI-based agents as a new tool for algorithmic auditing.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "온라인 플랫폼의 개인화 알고리즘은 사용자에게 어떤 콘텐츠를 보여줄지 좌우하지만, 외부 감사자는 블랙박스로만 접근할 수 있어 검증이 어렵다는 문제를 다룬다. 실제 사용자를 동원한 조사는 현실적이지만 비용이 크고 통제가 어려운 반면, 기존 '삭펫(sock-puppet)' 감사는 스크립트화된 행동에 의존해 현실성이 떨어지는 트레이드오프가 있었다. 연구팀은 생성형 AI 에이전트를 가상 계정의 행동 엔진으로 활용해, 사용자 속성과 행동 이력을 독립적으로 통제하면서도 현실적인 상호작용을 대규모로 재현하는 감사 프레임워크를 제안한다. 이를 통해 개인화 알고리즘이 특정 속성이나 행동에 어떻게 차별적으로 반응하는지 인과적으로 분석할 수 있어, 알고리즘 투명성·공정성 감사를 스케일업하는 실질적 도구를 제공한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "e96340cf-1f3a-4fc6-863e-1ef9fdf08e3a",
+      "title": "Training Therapeutic Judges and Multi-Agent Systems for Human-Aligned Mental Health Support",
+      "url": "https://arxiv.org/abs/2606.30887",
+      "source": "arxiv",
+      "content": "arXiv:2606.30887v1 Announce Type: new \nAbstract: Large language models show promise for mental health support, yet therapeutic quality improves only when evaluation functions as an actionable control signal rather than a passive metric. We introduce a framework that formulates therapeutic response generation as a decision-refinement problem driven by multi-dimensional, human-aligned evaluation. In Stage I, we introduce TheraJudge, an open-source therapeutic evaluator trained via preference-based optimization on human-annotated data to produce reliable judgments across 7 psychological dimensions. In Stage II, we introduce TheraAgent, which operationalizes TheraJudge's evaluations through a coordinated refinement process with specialized Critic, Coach, and Therapist roles that translate evaluative signals into targeted response revisions. Empirically, TheraJudge achieves strong agreement with clinician ratings, with intraclass correlation coefficients (ICC = 0.87-0.95), surpassing supervised baselines and strong closed-source judges, particularly on critical dimensions such as Safety, Relevance, and Empathy. Acting on these evaluations, TheraAgent yields a +0.43 improvement in human-rated therapeutic quality (on a 5-point scale) under blind evaluation, with 96\\% clinician inter-rater reliability. Low-quality responses ($\\leq 3$) improve by +2.45 points with a 94\\% recovery rate, demonstrating targeted correction of unsafe outputs. Overall, our results indicate that effective alignment of mental-health LLMs stems from acting on human-aligned evaluation, rather than relying solely on stronger generation. We release code at https://github.com/vis-nlp/TheraAlign.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "LLM이 정신건강 상담 지원에서 잠재력을 보이고 있지만, 평가 지표가 수동적인 측정에 그치지 않고 실제로 응답 품질을 끌어올리는 '제어 신호'로 작동해야 한다는 문제의식에서 출발한 연구다. 1단계에서는 인간이 주석한 데이터에 대한 선호 기반 최적화로 학습돼 심리학적 7개 차원에 걸쳐 신뢰도 높은 평가를 내리는 오픈소스 평가모델 'TheraJudge'를 소개한다. 2단계에서는 이 평가 신호를 실제 응답 개선으로 연결하는 'TheraAgent'를 제시하는데, Critic·Coach·Therapist 역할을 맡은 전문화된 에이전트들이 협업해 평가 결과를 구체적인 응답 수정으로 전환한다. 정신건강 지원 AI가 단순 생성을 넘어 평가-피드백-개선의 폐루프 구조로 발전하고 있음을 보여주며, 인간 정렬(human-aligned) 평가체계 구축의 실질적 사례를 제공한다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ff496d3e-3494-4365-999e-d59eb23e3ea7",
+      "title": "Predictable GRPO: A Closed-Form Model of Training Dynamics",
+      "url": "https://arxiv.org/abs/2606.30789",
+      "source": "arxiv",
+      "content": "arXiv:2606.30789v2 Announce Type: new \nAbstract: We develop a first-principles reduced-order model of these dynamics. Under a single mean-field assumption that summarizes the policy by its expected reward, we reduce the GRPO update to a stochastically-forced damped oscillator whose mass, damping, and stiffness are fixed in closed form by the optimizer hyperparameters together with a single measured curvature scale -- momentum supplies the inertia, off-policy lag erodes the damping, and the group size enters, to leading order, as a noise temperature. The reduction has three consequences. First, it subsumes the empirical single-exponential saturation law as its overdamped limit, recasting the fitted plateau, timescale, and size exponent as the fixed point, inverse stiffness, and curvature-scaling exponent of the underlying potential, and adding, through the retained inertial term, the slow-start phase the single exponential cannot represent. Second, it yields predictions tied to independently measurable quantities rather than fitted ones: group-size invariance of the deterministic trajectory with a $1/G$ stationary fluctuation, a sharp stability threshold in the refresh interval, and an overdamped-to-oscillatory transition. Third, it furnishes diagnostics that separate failure modes a reward curve alone conflates -- reward hacking, advantage degeneracy, policy concentration, and dynamical instability. Across three models and two group sizes, the closed-form trajectory fits training reward to $R^2 \\geq 0.91$ and the mean trajectory is group-size invariant to leading order -- on both the reward curve and out-of-distribution transfer to eight math benchmarks -- while the within-group reward spread retains a residual $G$-dependence that the leading-order temperature picture does not capture.",
+      "published_at": "2026-07-01T00:00:00-04:00",
+      "summary": "GRPO(Group Relative Policy Optimization) 같은 강화학습 기반 LLM 훈련의 동역학을 처음부터 원리적으로 모델링한 축소 차수(reduced-order) 이론 연구다. 정책을 기대 보상값으로 요약하는 평균장(mean-field) 가정 하에서, GRPO 업데이트를 옵티마이저 하이퍼파라미터와 측정된 곡률 스케일로 질량·감쇠·강성이 닫힌 형태로 결정되는 '확률적으로 강제된 감쇠 진동자(damped oscillator)'로 환원한다. 이 모델은 기존에 경험적으로 관찰된 단일 지수 포화 법칙을 특수한(과감쇠) 경우로 포함하면서, 학습 플래토·타임스케일·크기 지수 같은 현상들을 물리적 파라미터로 재해석해낸다. 강화학습 기반 LLM 훈련 과정을 사후 관찰이 아닌 사전 예측이 가능한 대상으로 만들어, 하이퍼파라미터 튜닝과 학습 곡선 예측에 실질적으로 활용될 수 있는 이론적 토대를 제공한다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
