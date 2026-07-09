@@ -1,0 +1,277 @@
+{
+  "id": "9ce2fec6-2acc-4c63-9d34-ae678916e7df",
+  "created_at": "2026-07-09T02:58:06.730583",
+  "articles": [
+    {
+      "id": "3155160f-6618-4383-a752-411debeb0d9e",
+      "title": "Product",
+      "url": "https://openai.com/index/introducing-gpt-live/",
+      "source": "openai",
+      "content": "July 8, 2026\n\nA new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice.\n\nWe’re launching GPT‑Live, a new generation of voice models that make talking with AI feel much more like having a real conversation.\n\nGPT‑Live is built on a full-duplex architecture, meaning it can listen and speak at the same time. During conversations, GPT‑Live can show it’s paying attention with phrases like “mhmm” or “yeah”, engage in quick back-and-forth, or just stay quiet when you need a moment to think. The result is a voice experience that is refreshingly easy to talk to.\n\nGPT‑Live is also our smartest voice model yet. For questions that require web search, deeper reasoning, or more complex work, it delegates to our latest frontier model behind the scenes and brings the result back into the conversation when it’s ready. While it works, GPT‑Live can keep talking with you and maintain the flow of conversation. At launch, GPT‑Live will use GPT‑5.5 in the background. As we release new frontier models, we’ll continuously update the model used by GPT‑Live.\n\nThese advances power a new ChatGPT Voice experience that is more intelligent and natural to use. Over time, we believe this research will also unlock the ability to use voice for increasingly complex, longer-running, and more agentic work.\n\nWe’re beginning to roll out two versions of GPT‑Live –GPT‑Live‑1andGPT‑Live‑1 mini– to ChatGPT users globally today. We also plan to bring them to the API soon, and developers and enterprises can sign up to be notified using thisform⁠.\n\nOur vision is to enable truly natural human–AI interaction: a world where collaborating with AI feels as fluid and responsive as working with another person, while reasoning and complex task execution happen seamlessly in the background.\n\nOlder generations of voice AI systems brought us closer to that vision, but with important tradeoffs.\n\nCascaded voice systems rely on a series of models acting one after another to process each turn. Theoriginal ChatGPT Voicechained three models together: a speech-to-text model to transcribe your speech, a large language model to produce a response, and a text-to-speech model to convert it back into speech. This approach enabled us to talk to frontier AI models for the first time, but the complexity came at a cost: information could be lost across models, and responses were slow and stilted.\n\nTurn-based voice models likeChatGPT Advanced Voice Modeprocessed and generated audio within a single model, reducing latency and making conversations smoother — but they still operated through discrete turns. The model had to wait for the user to stop speaking before responding, resulting in rigid back-and-forth. In addition, because turn detection is based on silence, even a brief pause or background noise could be mistaken for the end of turn — causing the model to interrupt at unnatural times.\n\nGPT‑Liveaddresses these limitations through two architectural changes.\n\nFirst, we built GPT‑Live for continuous interaction using a full-duplex architecture.Instead of processing a sequence of separate messages, GPT‑Live continuously processes input while generating output. The model can therefore make interaction decisions many times per second: whether to speak, continue listening, pause, interrupt, or invoke a tool.\n\nThis allows the model to engage in more natural back-and-forth, maintain a better sense of time, and even perform live translation.\n\nSecond, we decoupled GPT‑Live — which handles continuous interaction — from deeper work. When a question requires search, reasoning, or more agentic capabilities, GPT‑Live can delegate the task to another model like GPT‑5.5. This allows it to keep the conversation going, even as it handles multiple tasks in the background.\n\nThis architectural change also allows GPT‑Live to continuously use the latest models and agents, combining frontier intelligence with natural interaction.\n\nWe built new human evaluations to measure pleasantness and the flow of conversation. In these head-to-head comparisons, GPT‑Live‑1 and GPT‑Live‑1 mini are strongly preferred over Advanced Voice Mode in matched 5–10 minute conversations that measure overall preference, turn-taking, interruptions, conversational flow, and how natural each interaction felt.\n\n* GPT‑Live‑1 (instant) and GPT‑Live‑1 mini use the GPT‑5.5 Instant model in the background, while GPT‑Live‑1 Medium and GPT‑Live‑1 High use the GPT‑5.5 Thinking model with medium and high reasoning effort.\n\n**We used a customized user model, powered by our latest reasoning models, for this eval.\n\nEach week, more than 150 million people talk to ChatGPT using features like Voice and Dictation. They use it to get hands-free everyday help, to practice languages, tell bedtime stories, or just chat during their commute.\n\nStarting today, when you tap the Voice button to talk with ChatGPT, you’ll get an improved experience powered by GPT‑Live—with more natural conversations, smarter answers, better listening, and visual responses.\n\nTalking with ChatGPT should now feel much more like a real conversation. You can interrupt with a question, pause to gather your thoughts, or ask ChatGPT to slow down. It naturally acknowledges what you’re saying with phrases like “mhmm” or “got it,” so you know it’s following along. We’ve also remastered the nine distinct voices in ChatGPT for GPT‑Live.\n\nChatGPT Voice can now draw on our latest frontier models, giving you smarter answers when you need them. You can also choose the level of reasoning that fits your needs: Instant for fast responses, or Medium and High when you want ChatGPT to spend more time thinking.\n\nIf you take a moment to think, ChatGPT Voice now waits instead of jumping in and interrupting. If you ask it to stay quiet and listen, it will. And when there’s background noise, like passing traffic or nearby conversations, ChatGPT is better at focusing on your voice instead of getting distracted.\n\nSome answers are more useful when you can see them. While you’re talking, ChatGPT can now show rich visual cards for topics like weather, stocks, sports, and more. Voice also continues to support search, memory, images, and file uploads.\n\nThe result is a ChatGPT Voice experience that feels more natural, more capable, and more useful in everyday life.\n\nGPT‑Live was designed to be safe by default. It builds on the safety advances from our latest models while adding dedicated safety training across key risk areas and new safeguards designed specifically for voice.\n\nTo better reflect how people use voice in real-life settings, we began by expanding our safety testing to include new audio-native evaluations. We also created synthetic evaluations that use generated audio to focus more intensively on key safety areas, drawing on what we learned from Advanced Voice Mode. Those areas include self-harm, psychosis and mania,emotional reliance on AI, violence, and sexual content. Internal experts also red-teamed the model for risks unique to voice.\n\nIn our testing, GPT‑Live performed comparably to or better than Advanced Voice Mode across nearly all of the areas we evaluated. You can read more about our testing and safeguards in the GPT‑Livesystem card⁠(opens in a new window).\n\nBecause voice conversations unfold in real time, we also built safeguards that can act while the model is speaking. When the system detects potentially unsafe output, it can steer the model toward a safer response, surface additional safety messaging or resources, or end the voice conversation in higher-risk cases. For conversations involving self-harm, we adapted ChatGPT’s support flows for voice, including offering expert-vetted crisis helpline support.\n\nWe designed additional protections to support teen users, and trained age-appropriate behavior directly into the model to reduce the risk of inappropriate responses. Parents can choose whether their teen can use ChatGPT Voice through Parental Controls, and linked parents may be notified in higher-risk situations involving signs of potential self-harm or suicidal intent.\n\nWe’re also rolling out longer-term measurement and post-launch monitoring focused on emotional reliance to continue improving our understanding and refining safeguards. Building on our previous research intoaffective use and emotional well-being, this will help us identify emerging patterns and improve how the system responds in emotionally sensitive interactions.\n\nFinally, GPT‑Live is designed for conversation, not voice impersonation. It uses a set of predefined voices in ChatGPT, with safeguards to prevent it from imitating a real person’s voice.\n\nWe’re committed to supporting safety and well-being and will keep strengthening these protections as we learn from real-world use.\n\nGPT‑Live is rolling out now to ChatGPT users globally across iOS, Android, andChatGPT.com⁠(opens in a new window). GPT‑Live‑1 will become the default model powering ChatGPT Voice for Go, Plus, and Pro users, and GPT‑Live‑1 mini will become the default for Free users. More availability details can be found in ourHelp Center⁠(opens in a new window).\n\nWe’ve optimized GPT‑Live for some of the most popular languages in ChatGPT. For certain languages, the model may have a non-native accent or gaps in fluency. We’re actively working to improve the experience across languages.\n\nAt launch, GPT‑Live will not support voice with video or screen sharing in ChatGPT, but we’re working to introduce these capabilities soon. You can still access legacy versions of ChatGPT Voice, including Standard and Advanced Voice Mode, where these features are available.\n\nProductJun 26, 2026\n\nProductJun 18, 2026\n\nProductJun 18, 2026",
+      "published_at": "2026-07-08T00:00:00",
+      "summary": "OpenAI가 ChatGPT 음성 모드를 새 세대 음성 모델 'GPT-Live'로 전면 교체했다. 기존의 음성-텍스트-음성 연쇄 방식이나 턴 단위 처리 대신, 듣기와 말하기를 동시에 처리하는 풀-듀플렉스 아키텍처를 도입해 자연스러운 끼어들기와 대화 흐름을 구현했다. 복잡한 질의는 백그라운드에서 GPT-5.5 등 프론티어 모델에 위임하고, 대화는 끊김 없이 이어가는 구조가 핵심 기술적 의의다. GPT-Live-1과 미니 버전이 iOS·안드로이드·웹에 순차 배포되며, 자해·정서적 의존 등 음성 특화 안전장치도 함께 강화됐다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "54011a9e-da89-454f-9c9e-2b290bd92d41",
+      "title": "SpaceXAI releases Grok 4.5, which Elon describes as an ‘Opus-class model’",
+      "url": "https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/",
+      "source": "techcrunch",
+      "content": "Elon Musk's tech company released the newest version of Grok on Wednesday, promising a cheaper, more efficient alternative to other powerful AI models.",
+      "published_at": "2026-07-08T19:30:16+00:00",
+      "summary": "xAI가 차세대 모델 Grok 4.5를 공개했으며, 일론 머스크는 이를 'Opus급' 모델이라 칭하며 기존 프론티어 모델 대비 더 저렴하고 효율적인 대안이 될 것이라 주장했다. 구체적 벤치마크 수치는 공개되지 않았지만, 경쟁이 치열한 프론티어 LLM 시장에서 성능과 비용 효율을 동시에 내세우는 전략으로 해석된다. OpenAI·Anthropic·Google과의 모델 경쟁 구도에 직접적인 영향을 미칠 수 있는 소식이다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6078b1b8-4058-4c6d-9b1f-848c777c86b0",
+      "title": "Research",
+      "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/",
+      "source": "openai",
+      "content": "July 8, 2026\n\nThrough a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.\n\nAccurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.\n\nWerecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.\n\nSWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.\n\nWe’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.\n\nWe find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).\n\nThe issues primarily fell into four categories:\n\nOur findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.\n\nOur aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.\n\nAn initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.\n\nAn initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.\n\nEach flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.\n\nIn parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.\n\nReviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.\n\nHuman reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.\n\nCompared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.\n\nIn several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.\n\nThis task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as\" | Chapter 1 | 1\"and\"** | Chapter 1 | 1\":\n\nThe hiddentest_to_markdownassertions instead require\"  | Chapter 1 | 1\"and\"**  | Chapter 1 | 1\":\n\nThere are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.\n\nThe issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.\n\nAt the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.\n\nWe hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.\n\nUltimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.\n\nWepreviously⁠referred to this category as narrow tests.\n\nWe previously referred to this category as wide tests.\n\nResearchJun 30, 2026\n\nResearchJun 17, 2026\n\nResearchJun 17, 2026",
+      "published_at": "2026-07-08T13:00:00",
+      "summary": "OpenAI가 코딩 벤치마크 SWE-Bench Pro를 정밀 감사한 결과, 전체 태스크의 약 30%가 결함이 있다고 밝혔다. 자동화된 데이터 품질 파이프라인과 Codex 기반 조사 에이전트, 그리고 숙련 엔지니어 5인의 인간 검수를 결합한 감사 과정에서 테스트 커버리지 부족, 프롬프트와 숨겨진 테스트 간 불일치 등 네 가지 유형의 결함이 반복적으로 발견됐다. 이는 앞서 SWE-bench Verified에서도 유사한 문제가 드러난 데 이어, 모델 능력 측정에 널리 쓰이는 벤치마크의 신뢰성 위기를 재확인시킨 사례다. OpenAI는 SWE-Bench Pro 채택 권고를 철회하고, 업계에 더 엄격하게 검증된 새 벤치마크 개발을 촉구했다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ff5e0d3f-8892-4f5e-9051-d1354ca30e9b",
+      "title": "NVIDIA Isaac Teleop and GR00T 1.7 Open VLA Model Available in LeRobot",
+      "url": "https://huggingface.co/blog/nvidia/nvidia-isaac-teleop-and-gr00t17-in-lerobot",
+      "source": "huggingface",
+      "content": "",
+      "published_at": "2026-07-07T06:05:12",
+      "summary": "NVIDIA의 오픈 VLA(비전-언어-액션) 모델 GR00T 1.7과 Isaac Teleop 원격조작 도구가 Hugging Face의 오픈소스 로보틱스 프레임워크 LeRobot에 통합됐다. 이를 통해 개발자와 연구자들은 표준화된 파이프라인으로 로봇 시연 데이터를 수집하고, GR00T 기반 정책을 손쉽게 파인튜닝·배포할 수 있게 됐다. 프론티어 하드웨어 기업과 커뮤니티 주도 오픈소스 생태계의 협업이 실물 로봇 학습의 진입장벽을 낮추는 흐름을 보여준다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "27beed4b-67e8-436e-9bd1-027ca4b4182f",
+      "title": "Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding",
+      "url": "https://arxiv.org/abs/2607.05722",
+      "source": "arxiv",
+      "content": "arXiv:2607.05722v1 Announce Type: new \nAbstract: We introduce Nemotron-Labs-Diffusion, a tri-mode language model (LM) that unifies AR, diffusion, and self-speculation decoding within a single architecture. Trained with a joint AR-diffusion objective, Nemotron-Labs-Diffusion can switch modes to sustain high throughput across deployment settings and concurrency levels. Our study shows that (1) AR and diffusion objectives are complementary: diffusion improves lookahead planning, while AR provides left-to-right linguistic priors. (2) In self-speculation mode, diffusion drafts while AR verifies, outperforming multi-token prediction (MTP) methods in both acceptance rate and real-device efficiency. (3) A speed-of-light analysis further demonstrates diffusion's long-term potential, with up to 76.5% more tokens per forward pass than self-speculation under an optimal sampler. Scaling to 3B, 8B, and 14B parameters, our Nemotron-Labs-Diffusion family, including base, instruct, and vision-language models, consistently outperforms state-of-the-art open-source AR and diffusion LMs in both accuracy and speed. For example, Nemotron-Labs-Diffusion-8B decodes 6x more tokens per forward than Qwen3-8B with comparable accuracy, translating to 4x higher throughput on SPEED-Bench with SGLang on a GB200 GPU.",
+      "published_at": "2026-07-08T00:00:00-04:00",
+      "summary": "NVIDIA Nemotron 연구팀이 자기회귀(AR), 디퓨전, 셀프-스펙큘레이션 디코딩을 하나의 아키텍처로 통합한 'Nemotron-Labs-Diffusion' 모델을 공개했다. AR과 디퓨전 목적함수가 상호 보완적이라는 점을 활용해, 디퓨전이 초안을 생성하고 AR이 이를 검증하는 방식으로 기존 멀티토큰 예측 기법보다 높은 수용률과 효율을 달성했다. 3B·8B·14B 규모로 확장한 결과 8B 모델은 Qwen3-8B 대비 forward pass당 6배 많은 토큰을 디코딩하며 GB200 GPU에서 4배 높은 처리량을 기록해, 차세대 추론 효율 아키텍처로서의 잠재력을 입증했다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9310504e-96c5-4895-8306-cb21bca35f6e",
+      "title": "Google’s deepfake detector system used to debunk McConnell hoax pic",
+      "url": "https://techcrunch.com/2026/07/08/googles-deepfake-detector-system-used-to-debunk-mcconnell-hoax-pic/",
+      "source": "techcrunch",
+      "content": "Earlier this week, a picture seemed to show Kentucky Senator Mitch McConnell covered in tubes in a hospital bed in a state of extreme distress. It turned out to be an AI-generated fake.",
+      "published_at": "2026-07-08T20:37:03+00:00",
+      "summary": "구글의 딥페이크 탐지 시스템이 미치 매코널 상원의원이 병상에서 고통받는 모습을 담은 조작 사진을 AI 생성 이미지로 판별해 허위정보 확산을 조기에 차단하는 데 활용됐다. 생성 AI로 만든 가짜 이미지가 정치인을 대상으로 빠르게 확산되는 사례가 늘면서, 탐지 기술이 실제 여론전에서 실질적 방어 수단으로 작동함을 보여준 사례다. 딥페이크 탐지 기술의 실전 검증 사례로서 AI 안전성·정보 신뢰성 논의에 힘을 싣는다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "35bd4050-012c-4f48-8797-05cada00c11c",
+      "title": "Meta wants its AI glasses to seem less creepy. Its AI strategy says otherwise.",
+      "url": "https://techcrunch.com/2026/07/08/meta-wants-its-ai-glasses-to-seem-less-creepy-its-ai-strategy-says-otherwise/",
+      "source": "techcrunch",
+      "content": "Meta is adding a new safeguard to stop people from secretly recording others with its AI glasses. But the update comes as the company continues to expand how much personal data its AI products collect and use.",
+      "published_at": "2026-07-08T17:11:18+00:00",
+      "summary": "메타가 AI 글래스에서 동의 없는 몰래 녹화를 막는 새 안전장치를 추가하며 '덜 불쾌한' AI 기기를 표방했지만, 동시에 AI 제품이 수집·활용하는 개인 데이터 범위는 계속 확대되고 있어 전략적 모순이 지적된다. 웨어러블 AI 기기의 프라이버시 침해 우려가 커지는 가운데, 기능적 안전장치와 근본적 데이터 정책 사이의 간극을 보여주는 사례다. AI 글래스 시장 확대와 함께 개인정보 보호 규제·윤리 논의가 더욱 중요해질 전망이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "002ac085-996a-4fff-89aa-5fc88054b547",
+      "title": "Google Photos adds a new AI ‘Video Remix’ tool",
+      "url": "https://techcrunch.com/2026/07/08/google-photos-adds-a-new-ai-video-remix-tool/",
+      "source": "techcrunch",
+      "content": "The feature can do things like apply cinematic relighting to brighten up a dark clip, swap out a plain background for something fun, or add artistic styles to videos.",
+      "published_at": "2026-07-08T18:30:08+00:00",
+      "summary": "구글 포토가 새로운 AI 기능 'Video Remix'를 추가해, 어두운 영상에 시네마틱 조명을 입히거나 배경을 교체하고 예술적 스타일을 적용하는 등 손쉬운 영상 편집을 지원한다. 전문 편집 기술 없이도 스마트폰에서 바로 고품질 영상 편집이 가능해지면서, 생성형 비디오 기술이 일반 소비자 앱으로 빠르게 확산되고 있음을 보여준다.",
+      "category": "비디오 생성",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1e39f61d-ac46-487d-a9a0-0a97d2e18e38",
+      "title": "\"냄새 맡고 분석하는 AI\"…DGIST, 수만 가지 향 구별하는 차세대 '전자코' 기술 제시",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=40903",
+      "source": "korean",
+      "content": "인공 후각 시스템, 이른바 ‘전자코’는 여러 센서가 냄새 분자에 반응해 만들어낸 신호 패턴을 인공지능이 학습·분석하는 기술이다. 식품 위생, 환경오염 감시, 유해가스 탐지, 질병 진단 등 다양한 분야에서 활용 가능성이 크지만, 기존 센서 소재는 선택성·반응속도·작동 조건 등에서 한계가 있었다.\n\n여기에, DGIST 전기전자컴퓨터공학과 권혁준 교수 연구팀이 금속-유기 골격체(MOF, Metal-Organic Frameworks)를 활용해 사람의 코처럼 냄새를 감지하고 인공지능(AI)으로 분석하는 ‘인공 후각 시스템’ 기술의 발전 방향을 제시했다. 연구팀은 MOF 소재 설계부터 센서 구현, AI 기반 냄새 패턴 인식까지 전자코 기술의 핵심 연구 흐름을 체계적으로 정리했다.\n\n연구팀은 핵심 소재로 MOF에 주목했다. MOF는 금속 이온과 유기물이 결합해 형성된 다공성 소재로, 미세한 구멍을 통해 냄새 분자를 효과적으로 흡착할 수 있다. 또한 구조와 화학적 성질을 목적에 맞게 설계할 수 있어, 상온·저전력 조건에서도 다양한 냄새를 민감하게 감지할 수 있는 차세대 센서 소재로 평가된다.\n\n특히 이번 연구에서는 사람이 냄새를 인식하는 원리와 전자코 기술을 연결해 설명했다. 사람은 제한된 후각 수용체만으로 수많은 냄새를 구별하는데, 이는 하나의 냄새가 여러 수용체에 동시에 반응해 고유한 신호 조합을 만들기 때문이다. 연구팀은 이 같은 ‘조합 코딩’ 원리를 바탕으로, 서로 다른 반응 특성을 가진 MOF 센서 배열과 AI 기반 신호 분석 전략을 종합적으로 제시했다.\n\n연구팀은 MOF 기반 전자코 기술을 MOF, MOF-복합체, MOF-유도체로 나눠 정리했다. MOF는 다공성과 골격 구조를 조절할 수 있는 기본 플랫폼이며, MOF-복합체와 MOF-유도체는 감도·안정성·선택성을 높이는 데 기여한다. 여기에 머신러닝과 딥러닝 기반 분석 기술을 접목하면 복잡한 냄새 신호를 보다 정확하게 분류하고 해석할 수 있다.\n\n권혁준 교수는 “MOF는 사람의 후각 수용체처럼 다양한 냄새에 서로 다른 반응을 보이도록 설계할 수 있는 무한한 소재 라이브러리를 제공한다”라며, “이번 논문은 소재 연구와 AI 기반 냄새 인식 연구 사이의 간극을 메우고, 응용 목적에 맞춘 지능형 전자코 개발 로드맵을 제시했다는 데 의의가 있다”라고 밝혔다.\n\n연구팀은 MOF 기반 전자코가 향후 질병 진단 등 헬스케어, 공기질 및 산업 안전 모니터링, 스마트 농업, 자율주행·로봇의 화학 인지 기술 등으로 확장될 수 있을 것으로 전망했다.\n\n한편, 이번 연구는 임형태 석·박사 통합과정생이 제1저자로, 권혁준 교수가 교신저자로 참여했다. 연구 성과는 재료과학 분야 세계적 권위의 학술지 프로그레스 인 머티리얼스 사이언스(Progress in Materials Science)에 '금속-유기 골격체(MOF) 기반 생체모사 인공 후각 시스템: 소재 설계에서 지능형 패턴 인식까지(Biomimetic Artificial Olfactory Systems Based on Metal-Organic Frameworks: From Material Design to Intelligent Pattern Recognition-다운)'란 제목으로 지난달 26일 게재됐다.",
+      "published_at": null,
+      "summary": "DGIST 권혁준 교수 연구팀이 금속-유기 골격체(MOF) 소재를 활용한 차세대 '전자코' 인공 후각 시스템의 발전 방향을 제시하는 리뷰 논문을 국제 학술지 Progress in Materials Science에 발표했다. MOF의 다공성 구조로 다양한 냄새 분자를 상온·저전력에서 민감하게 흡착하고, 사람의 후각 수용체처럼 여러 센서의 조합 신호를 AI로 분석하는 '조합 코딩' 원리를 접목한 것이 핵심이다. 질병 진단, 환경·산업 안전 모니터링, 자율주행·로봇의 화학 인지 등 폭넓은 응용이 기대되며, 소재 설계와 AI 신호 분석 연구를 잇는 로드맵을 제시했다는 점에서 한국 소재과학·AI 융합 연구의 성과로 주목된다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "83980d8f-8a94-45bd-a1c6-f816c48d7d5c",
+      "title": "Flint: A visualization language for the AI era",
+      "url": "https://www.microsoft.com/en-us/research/blog/flint-a-visualization-language-for-the-ai-era/",
+      "source": "microsoft_research",
+      "content": "At a glance Polished charts from simple specs. Flint allows AI agents to reliably generate expressive, visually polished charts from simple, human-editable specifications. Semantic types guide design. Flint leverages semantic data types to express meanings of data. They help the compiler choose appropriate scales, baselines, formatting, and color schemes. Layouts adapt to the data. Flint automatically manages sizing, spacing, labels, and layout so charts remain readable as cardinality and density change, without explicit user configurations. One spec can target multiple backends. A single Flint specification can compile to Vega-Lite, Apache ECharts, or Chart.js without rewriting the chart from scratch. Built for agent workflows. The open-source project includes the flint-chart library and the flint-chart-mcp server, so agents can create, validate, and render charts directly in chat or coding environments. Figure 1. Flint supports a diverse collection of visualizations with its simple spec, which can be rendered with visualization libraries like Vega-Lite, Echarts, and Chart.js. Creating a good chart requires many design decisions: how dates should be parsed, whether a scale should start at zero, how values should be formatted, how much room labels need, and which colors make the data easier to read. Modern visualization libraries such as Vega-Lite, Apache ECharts, and Chart.js expose these controls, but there is a trade-off: Short specifications that rely on system defaults often produce uninspiring charts, while polished visualizations require detailed specifications with purposely chosen parameters that are often verbose, fragile, and error-prone. This trade-off becomes sharper as large language models (LLMs) and AI agents take on more visualization work. Agents are especially prone to errors when they must manage complex, low-level specification details, and the resulting fragile code can be difficult for people to inspect, repair, or reuse. Ideally, we need something in between: a compact specification that agents can produce reliably, people can edit directly, and a system can compile into a well-designed chart. To address this challenge, we introduce Flint (opens in new tab), a visualization intermediate language for AI-driven chart creation. Flint helps AI agents create expressive, attractive charts from simple, human-editable chart specs. Instead of requiring verbose low-level parameters for scales, axes, spacing, and layout, the Flint compiler derives optimized chart settings from the data, semantic types, chart type, and encodings. The same Flint spec can render through multiple backends, including Vega-Lite, Apache ECharts, and Chart.js. Figure 2. Flint compiles a compact, human-editable chart specification into a complete backend-native specification and rendered visualization. In this heatmap example, the Flint spec names semantic types (period as YearMonth, newUsers as Profit) and maps fields to visual channels. The compiler derives the Vega-Lite details, including temporal parsing, axis formatting, color scale, cell sizing, legend configuration, and layout. How Flint works Figure 2 illustrates the how the Flint compiler turns a compact chart specification into a refined heatmap. To produce a high-quality heatmap, traditionally, we need to explicitly tell the system with low-level chart properties about how to process the period field, how to properly label MonthYear values, size individual heatmap cells, and choose a color scale that appropriately represents positive and negative newUsers values. Without these configurations, visualization libraries must guess from field names and raw values, which can lead to charts that are technically valid but potentially misleading. While they are important, hard-coding these details can be difficult and error-prone, and they make specification fragile and hard for users to understand or adapt. In Flint, these low-level details are systematically managed, where the compiler infers them from high-level data and chart specifications. Here, the data specification captures semantic types and optional metadata, and the chart specification defines the chart type and maps fields to visual channels such as x, y, color, size, or facet. From this information, the compiler derives the parsing rules, scales, axes, aggregations, formatting, color schemes, layout, and generates the backend-native specification, which is used to render the final polished visualization. This frees users from explicitly setting fragile and error-prone low-level details. Furthermore, because the intermediate representation is separate from any single rendering library, Flint can target backends with very different APIs and programming models. Users can keep the same compact chart intent while compiling to Vega-Lite, ECharts, or Chart.js, and choose the backend whose capabilities best fit the visualization. Azure AI Foundry Labs Get a glimpse of potential future directions for AI, with these experimental technologies from Microsoft Research. Azure AI Foundry Opens in a new tab Flint for AI-assisted visualization Flint is well suited to LLM-based chart generation because semantic types are often easier for models to infer than the full set of low-level visualization parameters. Field names, value patterns, and common data knowledge can help an agent recognize whether a column represents a date, price, percentage, country, ranking, or correlation. Once those meanings are explicit, the compiler can handle many design decisions that would otherwise appear as brittle, library-specific code. In our research study, we compared Flint with DirectVL, a baseline that asks the model to directly generate full (more complex) Vega-Lite specifications in a LLM self-evaluation pipeline. Across three tested models based on testing data from Tidy Tuesdays, Flint received higher overall LLM-judge scores: 16.27 vs. 15.91 with GPT-5.1, 16.16 vs. 15.60 with GPT-5-mini, and 15.91 vs. 15.34 with GPT-4.1. In fact, Flint has been so powerful and reliable that it is now used to power Data Formulator (opens in new tab), a Microsoft Research project for AI-assisted data analysis and visualization. To make Flint easy for your agents to access, we also release flint-chart-mcp, a Model Context Protocol (MCP) server that allows agents to create, validate, and render charts inside a chat or coding environment. MCP calls can embed data inline or read configured local files, and the server can open an interactive chart view so users can inspect and refine the results. Figure 3. Once you set up the flint-chart-mcp with your favorite AI client, the agent can generate interactive visualizations powered by Flint to answer your data exploration questions. Try Flint Flint is open source and ready to use: Project site: https://microsoft.github.io/flint-chart/ (opens in new tab) GitHub: https://github.com/microsoft/flint-chart (opens in new tab) Flint MCP server instruction: https://microsoft.github.io/flint-chart/#/mcp (opens in new tab) Flint points toward a shared semantic layer for visualization, where people and AI agents can work with compact chart intent while a compiler handles the careful low-level details. We invite the community to explore the project and build on it. Opens in a new tabThe post Flint: A visualization language for the AI era appeared first on Microsoft Research.",
+      "published_at": "2026-07-08T16:00:00+00:00",
+      "summary": "마이크로소프트 리서치가 AI 에이전트를 위한 시각화 중간언어 'Flint'를 오픈소스로 공개했다. 데이터의 의미론적 타입(semantic type)을 명시하면 컴파일러가 축·색상·레이아웃 등 저수준 디자인 결정을 자동으로 도출해, LLM 에이전트가 장황하고 오류에 취약한 상세 스펙 없이도 완성도 높은 차트를 안정적으로 생성할 수 있게 한다. 하나의 Flint 스펙으로 Vega-Lite, Apache ECharts, Chart.js 등 여러 백엔드에 렌더링 가능하며, MCP 서버(flint-chart-mcp)로 채팅·코딩 환경에서 바로 시각화를 생성·검증할 수 있어 에이전트 워크플로우에 최적화됐다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c4021263-bc56-4dae-bac3-045ae7df3536",
+      "title": "Create a LangChain Deep Agents Harness Profile for NVIDIA Nemotron 3 Ultra to Improve Performance",
+      "url": "https://developer.nvidia.com/blog/create-a-langchain-deep-agents-harness-profile-for-nvidia-nemotron-3-ultra-to-improve-performance/",
+      "source": "nvidia",
+      "content": "Agentic systems often face a trade-off between accuracy and cost. The highest-performing proprietary frontier models and harnesses provide top accuracy but are...Agentic systems often face a trade-off between accuracy and cost. The highest-performing proprietary frontier models and harnesses provide top accuracy but are expensive. Fine-tuning offers one way to address this problem. Smaller or more efficient open models starting with lower accuracy are taught to perform better with specific agents. However, fine-tuning requires expertise and hardware for… Source",
+      "published_at": "2026-07-08T15:00:00+00:00",
+      "summary": "NVIDIA가 오픈소스 모델 Nemotron 3 Ultra의 에이전트 성능을 높이기 위해 LangChain의 Deep Agents 하네스용 프로파일을 구성하는 방법을 공개했다. 고성능 독점 프론티어 모델과 하네스는 정확도는 높지만 비용이 크다는 트레이드오프를 해결하기 위해, 파인튜닝 대신 하네스 설정 최적화로 오픈 모델의 에이전트 정확도를 끌어올리는 접근을 제시한다. 기업들이 프론티어 API 의존도를 낮추면서도 에이전트 품질을 유지할 수 있는 실용적 가이드로서 개발자에게 유용하다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3ffa7dd3-b366-47d8-8498-1ad002e093ae",
+      "title": "Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving",
+      "url": "https://arxiv.org/abs/2607.05399",
+      "source": "arxiv",
+      "content": "arXiv:2607.05399v1 Announce Type: new \nAbstract: Large language model serving is increasingly limited by KV-cache growth under long-context workloads, yet existing KV-cache compression techniques are difficult to compare because they were evaluated on different models, tasks, budgets, and serving stacks. This paper presents a workload-aware benchmark of representative KV-cache optimization mechanisms spanning quantization, pruning, and merging, including KIVI, TurboQuant, SnapKV, and CaM, evaluated on LongBench-style multi-document QA, single-document QA, few-shot learning, and summarization workloads using Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3. The benchmark measures task quality, mean output throughput, mean time-to-first-token, and realized compression ratio across context-length buckets. The results show that the compression ratio alone is a poor predictor of end-to-end performance. KIVI4 provides the most stable quality across models, SnapKV delivers the strongest long-context throughput, and CaM yields large gains on selected QA workloads but exhibits substantial workload sensitivity in both quality and realized compression ratio. These findings motivate workload-aware selection of KV-cache mechanisms rather than one-size-fits-all compression and provide deployment guidance for long-context serving systems.",
+      "published_at": "2026-07-08T00:00:00-04:00",
+      "summary": "장문맥 LLM 서빙의 핵심 병목인 KV-캐시 최적화 기법들(KIVI, TurboQuant, SnapKV, CaM)을 동일한 조건(Llama-3.1-8B, Mistral-7B)에서 품질·처리량·TTFT·압축률 기준으로 종합 비교한 벤치마크 연구다. 압축률 수치만으로는 실제 서빙 성능을 예측할 수 없으며, KIVI4는 가장 안정적인 품질을, SnapKV는 최고의 장문맥 처리량을 보이는 등 기법별 강점이 워크로드에 따라 크게 달라진다는 점을 실증했다. '하나의 압축 기법이 모든 상황에 맞지 않는다'는 결론은 실제 LLM 서빙 인프라를 설계하는 개발자에게 직접적인 배포 가이드를 제공한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "4dd26aff-d357-4667-af22-b1a75867426c",
+      "title": "SearchEyes: Towards Frontier Multimodal Deep Search Intelligence via Search World Simulation",
+      "url": "https://arxiv.org/abs/2607.05943",
+      "source": "arxiv",
+      "content": "arXiv:2607.05943v1 Announce Type: new \nAbstract: Training multimodal search agents to perform multi-hop reasoning remains challenging due to a fundamental structural disconnect: existing pipelines construct training data, search environments, and reward signals independently, causing synthesized structural metadata to be discarded, environments to rely on irreproducible external engines, and RL rewards to remain sparse at the trajectory level. We present \\textbf{SearchEyes}, which uses a typed knowledge graph as the backbone of a \\emph{simulated search world} that unifies all three components. We propose \\textbf{Perception-Knowledge Chains (PKC)} to sample constrained multi-hop paths over the visual-knowledge intersection of Wikidata5M, retaining hop-level entity metadata that simultaneously defines a self-contained search world and step-level reward anchors. We further propose \\textbf{Hop-Anchored Policy Optimization (HaPO)}, which reuses these anchors for step-level credit assignment without a separately trained process reward model. Experiments on six multimodal knowledge-intensive benchmarks show that SearchEyes achieves state-of-the-art performance among open-source multimodal search agents, with SearchEyes-27B improving over the strongest open-source baseline by 6.2 points on average.%",
+      "published_at": "2026-07-08T00:00:00-04:00",
+      "summary": "멀티모달 검색 에이전트의 다중 홉 추론 학습을 위해, 타입이 지정된 지식 그래프를 기반으로 한 시뮬레이션 '검색 세계'를 구축한 SearchEyes를 제안했다. Wikidata5M의 시각-지식 교집합에서 다중 홉 경로를 샘플링하는 Perception-Knowledge Chains와, 홉 단위 보상을 재사용하는 Hop-Anchored Policy Optimization을 결합해 별도의 프로세스 보상 모델 없이도 스텝 단위 크레딧 할당을 가능하게 했다. 6개 멀티모달 지식 집약 벤치마크에서 SearchEyes-27B가 기존 오픈소스 최강 모델 대비 평균 6.2점 향상된 최고 성능을 기록했다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "25bf93dc-c33b-48ef-8f67-0142f6b01194",
+      "title": "Design-CP: Context Parallelism for Design of Protein Nanoparticles",
+      "url": "https://arxiv.org/abs/2607.05439",
+      "source": "arxiv",
+      "content": "arXiv:2607.05439v1 Announce Type: new \nAbstract: Many all-atom generative protein models can in principle design large multimeric complexes by jointly modelling all chains, but their quadratic token- and atom-pair representations quickly exceed single-GPU memory as the number of chains and residues modelled grows. We introduce Design-CP, two context-parallel (CP) inference strategies for RFdiffusion 3 (1D row-sharding and 2D grid sharding with ring attention) that distribute the quadratic activations across a multi-GPU mesh while preserving pretrained weights. We characterise their scaling when sampling icosahedral assemblies, showing that the maximum feasible asymmetric subunit (ASU) size grows with the expected square-root trend in GPU count and that 2D sharding achieves better wall-clock scaling. Moreover, we show how strong point-group symmetry constraints make CP usable out of the box for end-to-end, all-atom design of icosahedral nanoparticles, yielding favourable in silico structural and interface metrics. Finally, we demonstrate octahedral nanoparticle design on a small cluster of workstation-grade 16GB GPUs, illustrating how Design-CP can be a practical path towards democratising large-assembly protein design.",
+      "published_at": "2026-07-08T00:00:00-04:00",
+      "summary": "단백질 나노입자 등 대형 다량체 복합체를 설계하는 생성형 단백질 모델(RFdiffusion 3)은 체인·잔기 수가 늘어나면 GPU 메모리 한계에 빠르게 부딪힌다는 문제를 해결하기 위해, Design-CP라는 두 가지 컨텍스트 병렬화 전략(1D 행 샤딩, 링 어텐션 기반 2D 그리드 샤딩)을 제안했다. GPU 수를 늘릴수록 설계 가능한 비대칭 서브유닛 크기가 제곱근 비율로 증가함을 보였고, 16GB급 워크스테이션 GPU 소규모 클러스터에서도 정팔면체 나노입자를 설계해내며 대형 단백질 어셈블리 설계 기술의 대중화 가능성을 입증했다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "4d4911a0-5980-4abf-ace6-4dc2f741a6c6",
+      "title": "Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents",
+      "url": "https://arxiv.org/abs/2607.05775",
+      "source": "arxiv",
+      "content": "arXiv:2607.05775v1 Announce Type: new \nAbstract: Large language model (LLM) agents are increasingly evaluated on their ability to use tools, plan multi-step tasks, coordinate with other agents, and operate over extended horizons. Reported benchmark gains often obscure recurring failure modes documented across otherwise unrelated evaluation efforts. This paper synthesizes 27 benchmark, taxonomy, and audit papers (2023-2026), spanning 19 distinct benchmarks, into a cross-cutting taxonomy of agent limitations. To our knowledge, this is the first synthesis that integrates evidence across tool use, planning, long-horizon reasoning, multi-agent coordination, safety, and measurement validity into a single, unified taxonomy of LLM agent limitations. We identify six failure clusters: (1) tool invocation and parameter-level errors, (2) planning and constraint-satisfaction failures, (3) long-horizon degradation from context accumulation, (4) multi-agent coordination failures, (5) safety and security failures under adversarial or underspecified conditions, and (6) measurement validity problems. The taxonomy was derived iteratively by grouping independently reported error categories into themes corresponding to distinct stages of the agent reasoning-to-action pipeline. Across the literature, we find that failures compound nonlinearly with task length, that strong performance on individual sub-tasks does not reliably translate into end-to-end success, and that additional scaffolding does not consistently improve reliability. At the same time, substantial progress has been demonstrated in single-turn tool use, short-horizon web navigation, and narrowly scoped coding tasks.",
+      "published_at": "2026-07-08T00:00:00-04:00",
+      "summary": "2023~2026년 발표된 27편의 벤치마크·분류체계·감사 논문(19개 벤치마크 포괄)을 종합해 LLM 에이전트의 실패 유형을 하나의 통합 분류체계로 정리한 서베이 논문이다. 도구 호출 오류, 계획·제약 충족 실패, 장기 컨텍스트 누적에 따른 성능 저하, 멀티에이전트 협업 실패, 적대적 조건에서의 안전 실패, 측정 타당성 문제 등 6가지 실패 군집을 도출했다. 특히 실패가 작업 길이에 따라 비선형적으로 누적되고, 개별 서브태스크 성능이 종단 간 성공으로 이어지지 않으며, 추가 스캐폴딩이 신뢰성을 일관되게 개선하지 못한다는 발견은 실무 에이전트 설계자에게 중요한 시사점을 준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "47033a1f-cf7d-45a1-a118-fc1b0d71066f",
+      "title": "Beyond Static Evaluation: Building Simulation Environments for Scalable Agentic Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2607.05773",
+      "source": "arxiv",
+      "content": "arXiv:2607.05773v1 Announce Type: new \nAbstract: As Large Language Models (LLMs) evolve into autonomous agents, traditional static evaluation fails to capture multi-step decision-making. We introduce AgenticAI-Supervisor, an API and UI-driven RL Gym environment that decouples environment creation from scalable execution. By moving to verifiable execution outcomes, the platform generates high-fidelity traces and applies multi-dimensional reward shaping. Critically, our framework mitigates reward hacking through rigorous internal state validation and testing. This work provides a first look at our platform's core capabilities through a Customer Support Agent case study demonstrating a consistent closed-loop feedback for model optimization. Future work will focus on advanced features such as Computer Use, Tool Use, automated \"stumping\", and edge-case generation.",
+      "published_at": "2026-07-08T00:00:00-04:00",
+      "summary": "LLM이 자율 에이전트로 진화하면서 기존의 정적 평가로는 다단계 의사결정 능력을 제대로 측정할 수 없다는 문제의식에서, 환경 생성과 확장 가능한 실행을 분리한 API/UI 기반 강화학습 짐(Gym) 환경 'AgenticAI-Supervisor'를 제안했다. 검증 가능한 실행 결과를 바탕으로 고충실도 트레이스를 생성하고 다차원 보상 형성을 적용하며, 내부 상태 검증을 통해 리워드 해킹을 완화하는 것이 핵심이다. 고객지원 에이전트 사례 연구를 통해 모델 최적화를 위한 일관된 폐루프 피드백 구조를 시연했다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5cc8c574-9c06-4044-a44c-5b1373435d80",
+      "title": "Segmentation before Answering: Pixel Grounding for MLLM Visual Reasoning",
+      "url": "https://huggingface.co/papers/2607.05798",
+      "source": "hf_papers",
+      "content": "Recent advancements in Multimodal Large Language Models (MLLMs) have evolved from static perception to interleaved visual-language reasoning, often referred to as ``thinking with images''. A basic operation in this reasoning process is to zoom in on regions of interest (often represented with bounding boxes) to acquire finer visual details. In this paper, we propose \\textbf{Seg}mentation before \\textbf{Answer}ing (SegAnswer), which shifts the unit of zoom-in from the popular bounding box to pixel-level segmentation mask. By employing fine-grained masks to isolate the target area from cluttered environments, segmented visual input yields a more precise region of interest, effectively filtering out redundant background and interfering objects. Furthermore, the discrete patches of segmented visual input align more seamlessly with how MLLMs structure visual tokens via positional embeddings. In experiments, we evaluate SegAnswer across diverse benchmarks, including high-resolution perception, general perception, and hallucination. It achieves consistent improvements and also exhibits considerable performance on segmentation tasks, validating its capability for reliable pixel grounding.",
+      "published_at": "2026-07-07T03:50:43+00:00",
+      "summary": "멀티모달 대형언어모델(MLLM)이 이미지 속 관심 영역을 확대해 '이미지로 사고하는' 과정에서, 기존의 바운딩 박스 대신 픽셀 단위 분할 마스크를 사용하는 SegAnswer 기법을 제안했다. 정교한 마스크로 대상 영역을 배경·방해 요소로부터 깔끔하게 분리해 더 정밀한 관심 영역을 제공하고, 분할된 시각 패치가 MLLM의 위치 임베딩 구조와도 더 잘 맞아떨어진다는 점을 규명했다. 고해상도 인지, 일반 인지, 환각(hallucination) 등 다양한 벤치마크에서 일관된 성능 향상을 보여, 신뢰할 수 있는 픽셀 그라운딩 기법으로서의 가능성을 입증했다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9924853d-6a28-4246-9237-eacf3f7fb4fc",
+      "title": "This startup thinks robotics is about to have its ChatGPT moment",
+      "url": "https://techcrunch.com/2026/07/08/this-startup-thinks-robotics-is-about-to-have-its-chatgpt-moment/",
+      "source": "techcrunch",
+      "content": "General Intuition is betting millions of hours of video game data can train the foundation models for physical AI, making it easier to build smarter robots with minimal real-world data.",
+      "published_at": "2026-07-08T19:19:15+00:00",
+      "summary": "로보틱스 스타트업 General Intuition이 수백만 시간 분량의 비디오 게임 데이터를 활용해 물리 세계를 이해하는 파운데이션 모델을 학습시켜, 최소한의 실제 로봇 데이터만으로도 스마트한 로봇을 만들 수 있다는 베팅을 하고 있다. 게임 환경이 공간·물리 상호작용에 대한 대규모 시뮬레이션 학습 데이터를 저비용으로 제공할 수 있다는 점에서 '로보틱스의 챗GPT 모멘트'를 노리는 접근으로, 텍스트 중심 LLM이 다루기 어려운 물리적 직관을 게임 데이터로 보완하려는 시도다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "2a058376-8592-4e0d-a339-35cf01f5c4e9",
+      "title": "Hot French startup ZML releases free product to speed inference across lots of AI chips",
+      "url": "https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/",
+      "source": "techcrunch",
+      "content": "ZML, a hot French AI startup endorsed by Turing Award winner Yann LeCun, has now released ZML/LLMD, software that could make running AI less costly.",
+      "published_at": "2026-07-08T08:00:00+00:00",
+      "summary": "얀 르쿤이 지지하는 프랑스 스타트업 ZML이 다양한 AI 칩에서 추론 속도를 높여주는 무료 소프트웨어 'ZML/LLMD'를 공개했다. 특정 하드웨어 벤더에 종속되지 않고 여러 AI 칩 아키텍처에 걸쳐 추론 효율을 높이는 것을 목표로 하며, AI 운영 비용을 낮출 수 있는 오픈 인프라 도구로서 개발자들의 관심을 받고 있다. 프론티어 모델 경쟁뿐 아니라 추론 인프라 계층에서도 비용 효율화 경쟁이 치열해지고 있음을 보여주는 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "556f5962-f96e-41de-8e0d-2864901cfc2a",
+      "title": "Prime Intellect raises $130M Series A to help enterprises build their own AI agents",
+      "url": "https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/",
+      "source": "techcrunch",
+      "content": "Founded in 2024, Prime Intellect’s goal is to give organizations capabilities to train their own agentic systems without relying on frontier AI labs.",
+      "published_at": "2026-07-08T16:22:38+00:00",
+      "summary": "2024년 설립된 Prime Intellect가 기업들이 프론티어 AI 랩에 의존하지 않고 자체 에이전틱 시스템을 학습시킬 수 있도록 돕는 사업으로 시리즈A 1억3000만 달러를 유치했다. 대형 프론티어 모델 API에 대한 의존을 줄이고, 기업이 직접 에이전트를 훈련·소유하려는 수요가 커지고 있음을 보여주는 투자 사례로, 에이전틱 AI 인프라 시장의 자금 유입이 계속되고 있음을 시사한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
