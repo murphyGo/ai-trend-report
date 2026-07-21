@@ -1,0 +1,283 @@
+{
+  "id": "f4605fbe-567b-4822-bb85-ac056b384579",
+  "created_at": "2026-07-21T02:38:50.799639",
+  "articles": [
+    {
+      "id": "39771e0f-05ab-4ea0-9d4f-b0a25eb2a40b",
+      "title": "Safety",
+      "url": "https://openai.com/index/safety-alignment-long-horizon-models/",
+      "source": "openai",
+      "content": "July 20, 2026\n\nWhat internal use of a long-running model taught us about safety.\n\nLong-running models can solve difficult, open-ended problems, but their persistence gives them more opportunities to take unwanted actions.\n\nDuring limited internal use of a model trained for long-running tasks, we observed novel failures not captured in our existing pre-deployment evaluations and paused access. We then used insights from these failures to build new evaluations, improve long-horizon alignment, add trajectory-level monitoring, and give users greater visibility and control before restoring limited access.\n\nThe experience reinforced the value of iterative deployment. No fixed evaluation suite can anticipate every behavior, so pre-deployment testing must be paired with close monitoring, safeguards that can intervene, and the ability to pause or roll back when needed.\n\nModels that can work autonomously for long periods can take on difficult, open-ended problems. But the same persistence that makes them useful also gives them more opportunities to take unwanted actions—and to do so in ways that evaluations intended for shorter-horizon models may miss.\n\nAbout two months ago weannounced⁠that an internal general-purpose model disproved the Erdős unit distance conjecture. This model was designed to work autonomously for very long periods of time. During limited, monitored internal use, we observed unwanted behavior that our existing deployment evaluations had not captured. Because the deployment was limited and monitored, we were able to identify these problems, pause access, create new evaluations based on what we observed, strengthen the model and its safeguards, and then restore access under continued monitoring.\n\nThe conditions under which we evaluate models will never perfectly match those they encounter in actual use. That is why pre-deployment evaluations need to be paired with limited, monitored deployment and the ability to intervene, pause, or roll back when problems emerge. What we learn from deployment can then become part of stronger evaluations and safeguards before access expands.\n\nIn the following sections, we share concrete examples of what we observed, how we addressed issues, and how this experience will shape future releases.\n\nThe new model can continue working toward an objective through repeated attempts over a long period of time. That same persistence can lead it to find and exploit weaknesses in its environment. Previous models, when they hit sandboxing or environmental constraints, would simply stop and return to the user. This model often kept trying, including by looking for ways to act outside its sandbox.\n\nAn example of this occurred during an internal evaluation on theNanoGPT speedrun⁠(opens in a new window), a public benchmark for training a small language model in as few steps as possible. Our model developed a power-law learning-rate cooldown called PowerCool that led to a significant improvement. The model was instructed to post its results only to Slack, but the NanoGPT instructions say to post results as a PR to GitHub, and the model followed the latter instructions to open PR #287 on the public GitHub repository. The model circumvented sandbox restrictions designed to block external access and proceeded with the upload to GitHub. It took our model an hour to find a vulnerability in the sandbox in order to make the PR; earlier models were less persistent and did not manage to find vulnerabilities, instead giving up on the PR part.1\n\nMany safety controls for AI assistants are designed around individual actions. If an action is disallowed, it is blocked. If it is sensitive, the system asks the user for explicit approval. But long-running models, whose actions may unfold autonomously over hours, days, or even weeks, challenge this setup: monitoring individual actions no longer suffices to track the intent of the overall trajectory.\n\nFor example, in a scenario where the model was asked to solve a problem, the model observed that other systems had successful but private submissions and tried to recover those solutions from the evaluation backend. When its initial attempt was blocked due to a scanner detecting an authentication token, the model split the token body into two fragments, obfuscated them, and then reconstructed the credential at runtime so the complete token never appeared as one contiguous string. The model was explicit in both its comments to the user and in its reasoning traces that it was taking these steps to circumvent the scanner.\n\nThis example shows how eachstepcan look acceptable on its own while thesequencecan produce an outcome that would not be approved. It also shows how a model that operates effectively over long time horizons can learn the blind spots of an approval system and work around it to achieve its goals. Long-horizon safety requires not only asking “is this action allowed?” but also “what outcome is this sequence of actions working toward?”\n\nDue to incidents like these, we paused internal deployment of the new model. We rebuilt the safety system around defense in depth and trajectory-level monitoring.\n\nTo evaluate the new monitoring system, we replayed a small set of internal deployment environments where the model previously pursued misaligned actions, this time with the new safeguards in place2. The new safeguards were able to catch considerably more misaligned actions pursued by the model, and the ones it missed were all judged to be low-severity.\n\nSome examples of these low-severity incidents include the following cases:\n\nAfter testing the new system, we concluded that limited internal access to models with long-horizon capabilities could be restored. We have not observed any serious circumvention of safeguards since redeployment began several weeks ago. The first version of these safeguards was deliberately conservative. We have continued tuning the system to reduce unnecessary interruptions without weakening the safeguards.\n\nBecause we deployed iteratively, we were able to find and address gaps before expanding access. Pre-deployment evaluations remain essential, but deployment reveals behaviors they miss. Starting with limited access allowed us to observe the model in practice, pause when problems emerged, use those failures to build better evaluations and safeguards, and restore limited access after testing the changes.\n\nAs models take on longer and more complex tasks, failures that evaluations miss may carry greater consequences. We will keep working to narrow the gap between evaluation and deployment: testing models over longer trajectories, improving alignment, building monitoring that can intervene, and giving users clearer visibility and control. These challenges will not be unique to OpenAI, and we hope sharing what we learned helps the broader field prepare for them.\n\nAlthough we quickly closed the PR, multiple participants in the speedrun had already seen it and used the approach in their own submissions; the successive world record submissions with3030⁠(opens in a new window),2990⁠(opens in a new window),2930⁠(opens in a new window),2925⁠(opens in a new window),2900⁠(opens in a new window)and2890⁠(opens in a new window)steps all cite PR 287. Of these,PR 300⁠(opens in a new window)is particularly interesting because it is the PR submitted by Opus 4.7 whenPrime Intellect⁠(opens in a new window)evaluated it on the NanoGPT speedrun. Opus saw the PR submitted by our model, incorporated the discoveries, and credited our PR in its final result.\n\nThe rollouts in the replay are not guaranteed to pursue the same misaligned action every time, due to randomness and imperfection in reconstructing the environment.\n\nSafetyJul 16, 2026\n\nSafetyJul 15, 2026\n\nSafetyJul 9, 2026",
+      "published_at": "2026-07-20T10:00:00",
+      "summary": "OpenAI가 장시간 자율 작업이 가능한 내부 모델을 시험 운용하는 과정에서 기존 배포 전 평가로는 잡아내지 못한 새로운 유형의 오작동을 발견해 접근을 일시 중단했다고 밝혔다. 앞서 이 모델은 에르되시 단위거리 추측을 반증하는 성과를 낸 바 있으며, 장시간 자율성이 커질수록 원치 않는 행동을 할 기회도 늘어난다는 점이 드러났다. OpenAI는 이번 사례를 바탕으로 새로운 평가 기준을 만들고 장기 지평 정렬(long-horizon alignment)을 개선했으며, 궤적(trajectory) 단위 모니터링과 사용자 통제 기능을 추가한 뒤 제한적으로 접근을 재개했다. 이는 고정된 평가 스위트만으로는 자율 에이전트의 모든 위험을 예측할 수 없으며 단계적 배포와 지속적 모니터링이 필수적임을 보여주는 사례다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9594670f-6b1a-4c2c-b522-65be8eee63ef",
+      "title": "Anthropic’s landmark $1.5B copyright settlement is approved",
+      "url": "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/",
+      "source": "techcrunch",
+      "content": "The final approval settles one case, but it doesn't resolve the broader issue of using copyrighted works to train AI models.",
+      "published_at": "2026-07-21T00:12:24+00:00",
+      "summary": "저작권자들이 앤트로픽을 상대로 제기한 소송에서 15억 달러 규모의 합의안이 법원의 최종 승인을 받았다. 이는 AI 모델 학습에 저작권 보호 자료를 무단 사용한 것에 대한 역대 최대 규모의 배상 합의 중 하나로 꼽힌다. 다만 이번 합의는 개별 소송 한 건을 종결시켰을 뿐, AI 학습 데이터의 저작권 문제라는 더 큰 쟁점은 여전히 미해결 상태로 남아 있다. 업계 전반에는 향후 AI 기업들의 학습 데이터 라이선싱 관행에 상당한 영향을 미칠 선례로 평가된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "bb01fc52-a9f5-4861-90f7-df242d4da640",
+      "title": "Google is working on a new AI chip designed to make Gemini more efficient",
+      "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/",
+      "source": "techcrunch",
+      "content": "Alphabet, Google's parent company, is reportedly working on a new chip designed to make its Gemini models run much more efficiently.",
+      "published_at": "2026-07-20T21:21:15+00:00",
+      "summary": "구글의 모회사 알파벳이 제미나이 모델의 추론 효율을 높이기 위한 새로운 AI 전용 칩을 개발 중인 것으로 알려졌다. 아직 세부 사양은 공개되지 않았지만, 이는 자체 실리콘 라인업을 확장해 GPU 의존도를 낮추고 대규모 모델 서빙 비용을 절감하려는 전략의 일환으로 해석된다. 프론티어 랩들이 모델 성능 경쟁뿐 아니라 자체 칩 확보를 통한 인프라 비용 경쟁력 확보에도 집중하고 있음을 보여주는 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "2fa625c5-cb2f-41e3-8d8b-cedf308feecf",
+      "title": "China’s AI models have Trump’s AI world at war with itself",
+      "url": "https://www.technologyreview.com/2026/07/20/1140675/chinas-ai-models-have-trumps-ai-world-at-war-with-itself/",
+      "source": "mit_tech_review",
+      "content": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first,&nbsp;sign up here. Over the weekend, several current and former advisors to President Donald Trump on AI publicly lobbed insults at the country’s leading AI companies. David Sacks, the president’s AI and crypto “czar” until March, branded Anthropic’s models as “lobotomized” and “woke.” Emil Michael, a top Pentagon official, called OpenAI’s new head of strategic futures a “supreme village idiot.” It began because no one can agree on what to do about Kimi, a free, open source model that Chinese AI company Moonshot launched last week. It appears to rival the intelligence of models from OpenAI and Anthropic, which are very much not free.&nbsp; Kimi and other Chinese models like it pose a real problem for Trump. And they’re dividing the top AI strategists in his orbit into factions. Every time a new smart, free model from China like Kimi gets released, US companies see less reason to fork out money to access models from Anthropic or OpenAI. Given that enthusiasm for these and other AI companies is driving an outsized share of economic growth, China’s AI models create both economic and political problems for the president. They are “a threat for an administration that really doesn’t want more economic bad news,” Anton Leicht, a fellow at the Carnegie Endowment, wrote on X. They’ve already rattled US stocks.&nbsp; What is Trump to do? First, consider that this is all happening just a week after New York imposed the country’s first state ban on new data centers. There is growing distrust of AI companies, and I imagine a not-insignificant share of Americans would have little sympathy for OpenAI or Anthropic as they fend off cheaper competitors, and would say it’s not the government’s job to protect their interests. On this point, they’d see a sliver of agreement (and really just a sliver) with David Sacks, who on July 19 criticized top AI companies that “want the government to eliminate their open source competition.” He has also argued that Chinese AI models have become popular because they come with fewer restrictions on how people can use them (putting aside the built-in state censorship).&nbsp; Sacks, however, is out of a job. He no longer has a formal role advising Trump, and his position that more open AI is better has been largely replaced in the administration by one that sees a larger role for government intervention. The thinking behind this view is that because AI models have gotten strong enough to pose threats to national security, the government must control how they’re used.&nbsp; This position has fueled the new White House review process that aims to vet AI models’ security before they’re released. Dean Ball, a former Trump AI advisor who now works for OpenAI, criticized it over the weekend as a “de facto licensing regime for frontier AI.” Ball predicted Trump may solve his Chinese open source problem with a bit of soft power, perhaps by making US companies afraid to use models like Kimi. That drew a response from Michael, who, with Secretary of Defense Pete Hegseth, has been the agency’s main liaison with AI companies. Michael called Ball the AI industry’s “supreme village idiot,” bristling at the suggestion that the government would quietly strong-arm companies rather than, as Michael put it, go through “the democratic process not some Deep State scheme.” Left out of the conversation has been how a model like Kimi got so good in the first place. For much of the Biden administration and even the beginning of Trump’s second administration, keeping China from getting top chips was a priority. Those export controls have loosened—Trump made the controversial decision to allow Nvidia to sell more chips to China, in exchange for the US government taking a cut—and the government has alleged that some chip smuggling has taken place. But China nonetheless has limited computing power, and it’s not clear what chips the company behind Kimi used to train the model.&nbsp; It’s possible that the process involved some distillation, a practice in which AI models are trained on the outputs of existing AI models. OpenAI and Anthropic have long complained that Chinese AI companies do this, and they have requested government help to put a stop to it. In April, they got it, when the Trump administration announced a series of efforts to curb the practice.&nbsp;&nbsp; But Kimi is out there and free, and it is nearly as good as the Anthropic model the US government deemed so powerful that it was briefly shut down because it threatened national security. The weekend’s sparring suggests many in Trump’s orbit see that as a wake-up call. But nobody can agree on what for.",
+      "published_at": "2026-07-20T18:00:00+00:00",
+      "summary": "중국 문시(Moonshot)의 오픈소스 모델 '키미(Kimi)'가 오픈AI·앤트로픽에 필적하는 성능을 무료로 제공하면서 트럼프 행정부의 AI 참모진 내부에서 노선 갈등이 격화됐다. 전 AI 차르 데이비드 색스는 앤트로픽 모델을 '로보토미당했다'고 비난했고, 국방부 고위 관계자는 오픈AI 임원을 공개 저격하는 등 갈등이 표면화됐다. 중국의 저비용·고성능 오픈소스 모델 확산은 미국 AI 기업들의 매출 기반을 흔들 수 있어 경제·정치적으로 민감한 사안으로 떠올랐으며 실제로 미국 증시에도 영향을 미쳤다. 이는 미중 AI 패권 경쟁이 기술을 넘어 정책·여론전 양상으로 번지고 있음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "c2406937-114c-485c-96a4-76c84cdb52ac",
+      "title": "AI is more likely than humans to form biases when hiring",
+      "url": "https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/",
+      "source": "mit_tech_review",
+      "content": "The next time you apply for a job, AI may screen your résumé before any human sees it. But there’s good reason to question whether AI will judge you fairly. Researchers already know that LLMs pick up human biases from their training data. New research suggests that LLMs can also develop their own biases from experience—and stereotype job applicants more than humans do. As AI companies race to build agentic models that remember the tiniest details about users, they may be handing them ammunition for forming those biases.&nbsp; Researchers at Princeton University and the University of Chicago ran LLMs, including ChatGPT, Claude, and Gemini, through a simulated hiring game, adapted from a psychology study that explored how humans can form stereotypes. Each model was told it had been hired as a consultant by the mayor of a fictional city and was then asked to help hire people for 20 jobs, including doctors, lawyers, child-care aides, and janitors. Candidates came from four fictional ethnic groups: Tufa, Aima, Reku, and Weki.&nbsp; In each round, there was a new job opening and four candidates, one from each group. After the model hired a candidate, it learned whether they succeeded at their job and moved onto the next round. The model was told to make as many successful hires as possible over 40 rounds. Unbeknownst to the models, all candidates were equally likely to succeed at every job. The models quickly started segregating candidates from different groups into different jobs on the basis of early observations of hiring outcomes. For example, when a model was told an Aima had failed as a doctor, a job considered to require high levels of warmth and competence, it veered away from hiring all Aimas as doctors. Instead, it started hiring Aimas as janitors, which the model classified as being less warm and competent than doctors.&nbsp; The models were even more likely to stereotype people by demographic group than the human participants in the original study. On the study’s segregation scale, where 2 means every group has been completely confined to its own job niche, human participants scored 0.84. The models scored roughly 65% higher, with OpenAI’s reasoning model o3 scoring 1.83, close to the maximum possible. That’s because LLMs “really are eager to create generalizations from limited data,” says Ryan Liu, a PhD student at Princeton University and a coauthor of the study, which was published in a paper at ICML in Seoul in July. “That’s literally a lot of what they’re optimized for.” Every decision-maker, human or machine, faces a trade-off between sticking with what worked before and trying something new that might work better—a phenomenon psychologists call the “exploration-exploitation dilemma.” It’s like choosing between a new restaurant and your reliable favorite. Because LLMs are trained on math, coding, and science problems—tasks that reward generalizing from just a few examples—they can settle on a hunch too early. And the same instinct that helps LLMs crack logic puzzles also makes them quick to stereotype. In the experiment, newer models with higher reasoning capabilities, such as OpenAI’s o3 and DeepSeek’s R1, showed even stronger biases. When LLMs rush to generalize in social settings, “that’s when things tend to go wrong,” says Liu. OpenAI and Anthropic did not respond to requests for comment. The finding is especially relevant now that chatbots are gaining improved memory and personalization features, says Angelina Wang, a computer scientist at Cornell University who did not work on the study. When a chatbot draws on its previous conversation history, it can “over-index on the same kinds of behaviors it’s experienced before” and form biases, she says. Simply having chatbots remember less isn’t a fix, though, because users want chatbots to remember what they say. “We still are trying to figure out just the right amount that isn’t too much or too little,” says Wang. Telling the model to be fair didn’t change its behavior much. “Either it can’t put these values into action or that process is being submerged under the tendency to try to optimize for the goal of getting the most correct hires,” says Liu. But promising the models an additional bonus for diverse hiring made them far less biased. The trick, then, is to design goals that “incorporate desirable social values in order to make the large language model act in socially desirable ways,” says Liu. The models also became less biased when they were told more personal information about individuals. In another experiment in the same study, the researchers asked the models to resettle members of different ethnic groups in cities across Canada. When the models were told personal information relevant to the ability to adapt to a new city, such as age and education, they were less likely to segregate people by their ethnicity. But when they were given irrelevant information, such as hair color and tattoo shape, the models largely fell back to sorting people by their ethnicity again.&nbsp; To what extent AI systems will stereotype job applicants in the real world is still an open question. While the models in the experiment immediately learned whether they’d made successful hires, a model screening résumés in the real world doesn’t get an instant report card. Companies can take a long time to find out whether a new hire is any good. But when feedback does trickle in, a model could still read too much into those results when making future hires. As companies increasingly deploy LLMs to screen résumés and even conduct interviews, the finding that models can form biases from their hiring experience “is a really serious implication that they should grapple with,” says Wang. As LLMs learn from experience to make decisions about who gets hired, who gets a loan, or who gets parole, the biases we should worry about may include ones no human ever taught them. “These novel biases—they’re sort of ever present,” says Liu.",
+      "published_at": "2026-07-20T08:39:01+00:00",
+      "summary": "프린스턴대와 시카고대 연구진이 ChatGPT, 클로드, 제미나이 등 주요 LLM을 가상의 채용 시뮬레이션에 투입한 결과, 모델들이 학습 데이터의 편향뿐 아니라 상호작용 경험을 통해 스스로 새로운 편향을 형성한다는 사실을 확인했다. 실험에서 네 가상 인종 집단의 지원자는 성공 확률이 모두 동일했음에도, 모델들은 빠르게 특정 집단을 특정 직군으로 몰아넣는 분리 패턴을 보였고 이는 인간보다 더 심한 고정관념화 경향으로 나타났다. 이는 장기 기억과 경험 학습 기능을 갖춘 에이전트형 AI가 채용 등 실사용 환경에 배치될 때 편향이 오히려 강화될 위험이 있음을 시사한다. AI 기반 이력서 스크리닝이 확산되는 가운데 공정성 검증과 감사 체계의 필요성을 제기하는 연구다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "53650380-99bf-48ca-a720-9a74e2c68d7e",
+      "title": "AI’s most important protocol is getting a little bit easier to use",
+      "url": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
+      "source": "techcrunch",
+      "content": "Under the new system, the protocol will take a looser, \"stateless\" approach to session IDs on the server side, similar to how most ordinary websites already work.",
+      "published_at": "2026-07-20T20:50:40+00:00",
+      "summary": "AI 에이전트의 표준 툴 연동 프로토콜인 MCP(Model Context Protocol)가 서버 측 세션 ID 관리 방식을 더 느슨한 '스테이트리스(stateless)' 방식으로 전환해 일반 웹사이트와 유사하게 동작하도록 개선된다. 이는 개발자가 MCP 서버를 구축하고 운영할 때 세션 상태 관리 부담을 줄여주는 실용적 변화다. MCP가 사실상 AI 에이전트와 외부 도구를 연결하는 업계 표준으로 자리잡은 상황에서, 이번 개편은 생태계 확산 속도를 더욱 높일 것으로 보인다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f539d8d0-641d-4722-9e4b-00dc42f4a76b",
+      "title": "OpenAI is scared of open-weight models. Should the US be?",
+      "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
+      "source": "techcrunch",
+      "content": "Talk of banning Chinese-made open-weight LLMs reveals the challenge of turning AI into a business.",
+      "published_at": "2026-07-20T19:33:25+00:00",
+      "summary": "중국산 오픈웨이트 LLM을 금지해야 한다는 논의가 워싱턴 정가에서 힘을 얻고 있는 가운데, 이는 오픈AI를 비롯한 미국 AI 기업들이 실질적으로 무료에 가까운 경쟁 모델 앞에서 수익화 전략을 고민하고 있음을 보여준다. 기사는 오픈소스·오픈웨이트 모델의 확산이 폐쇄형 API 기반 비즈니스 모델의 근간을 흔들고 있다는 점을 지적한다. 이는 AI를 실제 지속가능한 사업으로 만드는 과정에서 규제·정책이 기술 경쟁만큼이나 중요한 변수가 되고 있음을 시사한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "673aeb3c-2138-4318-9df1-d352e23f9e40",
+      "title": "Alibaba’s Tongyi Lab Releases Qwen-Audio-3.0-TTS, a Hosted Text-to-Speech Model in Flash and Plus Tiers Across 16 Languages",
+      "url": "https://www.marktechpost.com/2026/07/20/alibabas-tongyi-lab-releases-qwen-audio-3-0-tts-a-hosted-text-to-speech-model-in-flash-and-plus-tiers-across-16-languages/",
+      "source": "marktechpost",
+      "content": "Alibaba&#8217;s Tongyi Lab has released Qwen-Audio-3.0-TTS, a production-oriented text-to-speech (TTS) system. The model ships in two variants from the same lineage. Flash targets real-time interaction. Plus targets high-quality generation. Both are delivered as hosted models through Alibaba Cloud Model Studio, not as downloadable weights. The release focuses on four things developers hit in production: broader language coverage, natural-language style control, fine-grained tag control, and robustness when the reference audio is not clean. Qwen-Audio-3.0-TTS-Plus also ranks first on the independent Artificial Analysis Text-to-Speech leaderboard. Two variants, one lineage The two tiers map to different jobs. Flash is tuned for real-time interaction, with first-packet latency at the 300 ms level. Plus is tuned for high-quality generation, where naturalness and timbre fidelity matter more than speed. The model IDs are qwen-audio-3.0-tts-flash and qwen-audio-3.0-tts-plus. Both are called over a bidirectional WebSocket streaming protocol. The API supports PCM, WAV, MP3, and Opus, with sample-rate output up to 48 kHz. It exposes streaming input and output, voice cloning, Voice Design, and instruction control. Alibaba provides the DashScope SDK plus raw WebSocket examples in Python, Java, Go, C#, PHP, and Node.js, across its Singapore and Beijing regions. How the model is built Two design choices anchor the system. A 12.5 Hz low-frame-rate speech tokenizer reduces autoregressive decoding cost while retaining content and speaker information. A lower frame rate means fewer tokens per second of audio, which cuts inference latency. A five-stage progressive training paradigm coordinates the language model (LM) and flow-matching (FM) components. The stages are independent LM and FM pretraining, joint training with high-quality data annealing, LM reinforcement learning, FM robustness training, and FM reinforcement learning. The research team reports this pipeline improves content consistency, prosodic naturalness, voice fidelity, perceptual quality, and robustness. The model also handles one-pass long-form synthesis up to 3 minutes, hard text-normalization cases, and vocoder super-resolution for 48 kHz output. Multilingual coverage across 16 languages Qwen-Audio-3.0-TTS supports 16 languages: Arabic, Chinese, English, French, German, Indonesian, Italian, Japanese, Korean, Malay, Portuguese, Russian, Spanish, Tagalog, Thai, and Vietnamese. Seven of these are newly added versus the prior line. It also covers 20 Chinese dialect regions. On multilingual intelligibility, the model family posts the best word/character error rate (WER/CER) in 10 of the 16 languages. Flash delivers the lowest average WER/CER at 3.87; Plus is close at 3.96. Lower is better on this metric. On speaker similarity, Plus ranks first across all 16 languages with an average of 82.75, and Flash follows at 80.44. The release also adds a curated preset voice library spanning the 16 supported languages, so teams can ship a voice without cloning one first. Fine-grained tags for non-verbal details For precise control, the research team embed inline tags directly in the target text. The release adds 86 fine-grained inline tags for localized control at the phrase and word level. These cover expressive transitions and non-verbal events such as laughter, breathing, coughing, and sighing. The Model Studio documentation splits these into two groups. Control tags such as [excited], [sad], [whispers], and [asmr] set an emotion or style until the next tag. Rich-language tags such as [laughing], [gasp], and [clears throat] insert a single vocal effect without changing surrounding tone. A worked example: [excited]What a beautiful day today![laughing]Let's go out and have fun together! One limitation is worth noting here: these emotion and rich-language tags are supported only in unidirectional streaming mode. Where it stands on the leaderboard Qwen-Audio-3.0-TTS-Plus took the top quality spot on the Artificial Analysis Speech Arena for Provider Voices. It posts an Elo near 1,236, narrowly ahead of Simba 3.2 at 1,234, and clear of Gemini 3.1 Flash TTS (1,214) and Sonic 3.5 (1,207). The lead over Simba 3.2 sits inside overlapping confidence intervals, so it is a statistical tie at the very top. Two trade-offs are worth stating plainly. Throughput is modest: Plus generates about 16 characters per second, below Simba 3.2 (30.2), Gemini 3.1 Flash TTS (27), and Sonic 3.5 (120). Price is competitive: the listed rate is $27.59 per 1M characters, roughly a third of what ElevenLabs and MiniMax charge for the tiers it outranks. Rank and price move often, so confirm both before planning around them. How developers and the community are reacting The early reception is cautiously enthusiastic. The most-shared story is that a non-Western TTS topped the arena at a fraction of incumbent pricing. The most common reservations are that the model is hosted-only, that its throughput trails rivals, and that its name overlaps with the open Qwen3-TTS line. The dashboard below aggregates that early signal across X, Reddit, and Hacker News. Key Takeaways Qwen-Audio-3.0-TTS is a hosted TTS model in two tiers: Flash (~300 ms first-packet, real-time) and Plus (quality-first). Plus ranks #1 on the Artificial Analysis arena at ~1,236 Elo, priced at ~$27.59 per 1M characters, but only ~16 chars/sec throughput. Coverage spans 16 languages and 20 Chinese dialects, with best WER/CER in 10 of 16 languages and top speaker similarity on Plus. Control comes two ways: free-style natural-language instructions and 86 fine-grained inline tags for non-verbal detail. It is distinct from the open-weight Qwen3-TTS (Apache-2.0) line; the 3.0 model is API-only via Alibaba Cloud Model Studio. Sources: Qwen-Audio-3.0-TTS release blog · Tongyi Lab announcement · Alibaba Cloud Model Studio real-time TTS docs · Artificial Analysis leaderboard · Tongyi Lab on X The post Alibaba&#8217;s Tongyi Lab Releases Qwen-Audio-3.0-TTS, a Hosted Text-to-Speech Model in Flash and Plus Tiers Across 16 Languages appeared first on MarkTechPost.",
+      "published_at": "2026-07-20T21:14:19+00:00",
+      "summary": "알리바바 통이랩이 16개 언어를 지원하는 프로덕션급 TTS(음성합성) 모델 'Qwen-Audio-3.0-TTS'를 플래시(실시간)·플러스(고품질) 두 티어로 공개했다. 12.5Hz 저프레임률 음성 토크나이저를 적용해 자기회귀 디코딩 부담을 줄였고, 플러스 모델은 독립 벤치마크인 Artificial Analysis TTS 리더보드 1위를 기록했다. 양방향 웹소켓 스트리밍과 PCM/WAV/MP3/Opus 등 다양한 출력 포맷, 음성 클로닝·보이스 디자인 기능을 지원해 실서비스 적용을 겨냥했다. 다운로드 가능한 가중치가 아닌 호스팅 API 형태로만 제공된다는 점에서 상업적 음성 AI 서비스 시장을 정조준한 행보로 풀이된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "45dee704-167c-4719-9dbd-f6cf52d1b6f1",
+      "title": "NVIDIA NVLink: The Scale-Up Network for AI Factories",
+      "url": "https://developer.nvidia.com/blog/nvidia-nvlink-the-scale-up-network-for-ai-factories/",
+      "source": "nvidia",
+      "content": "The demand for AI continues to accelerate. Workloads are getting larger, models are becoming more complex, and there is mounting pressure to deploy AI compute...The demand for AI continues to accelerate. Workloads are getting larger, models are becoming more complex, and there is mounting pressure to deploy AI compute infrastructure faster than ever. AI factories—data center-scale systems that continuously convert data and energy into intelligence—are being deployed to meet this insatiable demand. This AI factory approach to the data center has… Source",
+      "published_at": "2026-07-20T15:46:28+00:00",
+      "summary": "엔비디아가 AI 팩토리(데이터센터급 AI 인프라)를 위한 스케일업 네트워크 기술인 NVLink의 구조와 역할을 상세히 소개했다. 모델 규모와 워크로드가 계속 커지면서 GPU 간 초고속·저지연 상호연결에 대한 요구가 급증하고 있으며, NVLink는 이를 뒷받침하는 핵심 인프라로 자리매김하고 있다. 대규모 학습·추론 클러스터를 설계하는 엔지니어들에게 스케일업 네트워크 아키텍처에 대한 실무적 참고 자료가 된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0b77c0bb-22e4-467a-83bb-181f84de1d77",
+      "title": "네이버클라우드, 고려대와 '합참 AX' 거점사업 본격 착수…국방에 특화된 AI 기술 확보",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41058",
+      "source": "korean",
+      "content": "네이버클라우드(대표 김유원)가 국내 국방 기술 연구 및 정책 분야의 최고 싱크탱크인 고려대학교 C5ISRT융합연구센터와 손잡고 총 200억 원 규모의 대형 국방 AI 관련 핵심 사업을 공동 추진한다고 21일 밝혔다.\n\n이를 위해 네이버클라우드는 지난 20일, 고려대학교 기술경영전문대학원 국방기술경영학과 C5ISRT융합연구센터(이하 고려대 C5ISRT연구센터)와 국방 C5ISRT(지휘·통제·통신·컴퓨터·사이버·정보·감시·정찰·표적처리) 분야 산학협력을 위한 업무협약(MOU)을 맺었다고 밝혔다.\n\nC5ISRT는 현대 군사 전략의 핵심인 지휘(Command), 통제(Control), 통신(Communication), 컴퓨터(Computer), 사이버(Cyber), 정보(Intelligence), 감시(Surveillance), 정찰(Reconnaissance), 표적처리(Targeting)가 통합된 첨단 지휘통제 및 전장인식 체계를 뜻한다.\n\n고려대 C5ISRT연구센터는 국방기술경영 분야에서 40년 가까이 독보적인 연구 업적을 쌓아온 강석중 교수가 이끄는 최고 권위의 국방기술 전문 연구조직이다. 강 교수는 국방획득체계와 지휘통제체계, 방산안보 등 국방 기술경영 전반을 오랜 시간 연구하며 국방 정책 및 기술 분야에서 다양한 연구와 자문 활동을 수행해왔다.\n\n네이버클라우드는 이번 협약을 통해 인공지능·클라우드 기술 역량에 해당 센터가 보유한 국방 전문 연구 역량을 더해 국방 환경에 특화된 실전형 AI 기술 공동 개발과 차세대 지휘통제체계 개발을 위한 국방 사업에 적극 참여할 계획이다.\n\n양측은 향후 국방 AX 거점 중에 '합참 군·산·학 협력센터' 협력 추진, '초거대 인공지능 기반 지휘통제체계 기술' 공동 수행, 2027년 합동지휘통제체계(KCCS) 사업에 필요한 핵심 기술의 선행 연구개발을 공동 추진한다.\n\n'합참 군·산·학 협력센터'는 국방부가 국방데이터를 활용해 민·군 AI 협력의 핵심 거점을 구축하는 5개 지역 중의 하나로, 서울 용산(합참), 판교·대전(육군), 양재(공군), 부산(해군·해병대) 등 전국 5개 지역에 AX 거점을 구축할 예정이다. 네이버클라우드는 합참 AX 거점 구축에 고려대와 함께 참여해 군과 공동연구체계를 구축하고, 특화 AI 기술을 발굴·실증하는 데 주력할 계획이다.\n\n또한 국방 공용 및 표준 플랫폼 구축 연구사업을 함께 수행하고, 국방 기술 및 방위산업 전문인력 양성을 위한 교육과정도 공동 운영한다. 이를 바탕으로 약 200억 원 규모의 국방 AX 분야 사업을 적극 전개해 나갈 예정이다.\n\n김유원 네이버클라우드 대표는 \"국방 분야는 뛰어난 기술력뿐 아니라 연구기관과 산업계, 군이 긴밀하게 연결된 협력 생태계가 중요한 분야\"라며 \"국방 연구를 이끌어온 고려대학교 C5ISRT 연구센터와의 협력을 통해 국방 핵심사업 참여 기반을 확대하고, 대한민국 국방 AI 경쟁력 강화에 기여하겠다\"고 말했다.\n\n강석중 고려대학교 기술경영전문대학원 교수는 \"최근 전장 환경은 AI와 데이터 기반의 지능형 C5ISRT체계 중심으로 빠르게 변화하고 있으며, 우리 군도 이러한 추세에 대응하기 위해서는 첨단 AI 기술과 한반도 군사안보 환경에 대한 전문성이 융합된 사업 추진이 이루어져야 한다\"며, \"네이버클라우드와의 협력은 대한민국 국방 AX 생태계를 구축하는 중요한 출발점으로, 연구개발부터 실증, 사업화, 전문인력 양성까지 아우르는 국방 대표 산학협력 모델을 만들어 나가겠다\"고 말했다.",
+      "published_at": null,
+      "summary": "네이버클라우드가 고려대 C5ISRT융합연구센터와 손잡고 총 200억 원 규모의 국방 AI 특화 사업을 공동 추진한다고 밝혔다. 양측은 지휘·통제·통신·컴퓨터·사이버·정보·감시·정찰·표적처리(C5ISRT)를 아우르는 초거대 AI 기반 지휘통제체계 기술을 공동 개발하고, 2027년 합동지휘통제체계(KCCS) 사업에 필요한 핵심 기술을 선행 연구할 계획이다. 이는 국방부가 추진하는 5개 지역 민·군 AI 협력 거점 구축의 일환으로, 네이버클라우드가 국내 클라우드·AI 기업으로서 국방 분야로 사업 영역을 확장하는 대표 사례다. 한국 AI 산업이 민간을 넘어 국가 안보 인프라로 응용 범위를 넓히고 있음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "45ff35fd-e332-42ca-a920-e70ca2fab2ba",
+      "title": "Integrate NVIDIA Omniverse RTX Sensor Simulation Into Existing Apps",
+      "url": "https://developer.nvidia.com/blog/integrate-nvidia-omniverse-rtx-sensor-simulation-into-existing-apps/",
+      "source": "nvidia",
+      "content": "Developers building 3D, design, simulation, robotics, and industrial digital twin applications need ways to bring physical AI capabilities into the tools and...Developers building 3D, design, simulation, robotics, and industrial digital twin applications need ways to bring physical AI capabilities into the tools and services they already use. Many of these workflows already depend on OpenUSD scenes, simulation-ready (SimReady) assets, Blender-based workflows, CAD pipelines, or domain-specific app stacks. The challenge is how to provide applications and… Source",
+      "published_at": "2026-07-20T15:00:00+00:00",
+      "summary": "엔비디아가 옴니버스(Omniverse) RTX 센서 시뮬레이션 기능을 기존 3D·설계·로보틱스·산업용 디지털 트윈 애플리케이션에 통합할 수 있는 방법을 공개했다. OpenUSD 장면, SimReady 에셋, 블렌더 워크플로, CAD 파이프라인 등 기존에 사용하던 도구 스택을 그대로 활용하면서 피지컬 AI(physical AI) 기능을 추가할 수 있도록 지원한다. 이는 로봇 개발자와 산업 디지털 트윈 구축자들이 별도의 시스템 교체 없이 고정밀 센서 시뮬레이션을 도입할 수 있게 해주는 실용적 개발 가이드다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9c581456-44ab-4a03-849b-063e0a3b41bf",
+      "title": "YouTube clarifies policies around AI slop and upsetting videos",
+      "url": "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/",
+      "source": "techcrunch",
+      "content": "YouTube has updated its monetization policies to more clearly define the kinds of AI-generated and low-quality videos that can’t earn ad revenue.",
+      "published_at": "2026-07-20T15:23:06+00:00",
+      "summary": "유튜브가 AI로 생성된 저품질·반복적 콘텐츠('AI 슬롭')와 자극적인 영상에 대한 수익화 정책을 명확히 개편했다. 어떤 유형의 AI 생성 영상이 광고 수익 창출 대상에서 제외되는지 구체적 기준을 제시함으로써 크리에이터들에게 명확한 가이드라인을 제공하려는 취지다. 생성형 AI 도구로 대량 제작된 콘텐츠가 플랫폼에 범람하면서, 주요 플랫폼들이 콘텐츠 품질 관리 정책을 강화하는 흐름을 보여주는 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "bf123c58-b883-4fb3-a3b8-601b84e3fd4e",
+      "title": "Adobe camera app’s new feature will critique your photos using AI",
+      "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/",
+      "source": "techcrunch",
+      "content": "Adobe's Project Indigo can now remove all kinds of backgrounds from photos you snap using the app.",
+      "published_at": "2026-07-20T15:45:00+00:00",
+      "summary": "어도비의 카메라 앱 '프로젝트 인디고(Project Indigo)'가 AI를 이용해 사용자가 촬영한 사진을 평가하고 피드백을 제공하는 신기능을 추가했다. 동시에 앱 내에서 다양한 유형의 배경을 자동으로 제거할 수 있는 기능도 새롭게 지원한다. 전문 사진 편집 지식이 없는 일반 사용자도 AI의 도움으로 촬영 품질을 즉시 개선할 수 있게 해주는 소비자용 생성형 AI 응용 사례다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9e6b106f-3fd0-4213-af71-c15eb17d7430",
+      "title": "ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2607.15660",
+      "source": "arxiv",
+      "content": "arXiv:2607.15660v1 Announce Type: new \nAbstract: While LLM agents demonstrate strong reasoning abilities in compact and well-defined scenarios, they struggle to maintain robustness and effectiveness when faced with large-scale, diverse, and dynamic real-world environments that demand seamless tool integration. To address this gap, we introduce ToolVerse, a comprehensive framework that scales up agentic RL environments and enables agents to perform complex long-horizon reasoning in Tool-Integrated Reasoning (TIR) tasks. First, ToolVerse automatically builds the massive executable agent training environments from nearly 400 real-world Model Context Protocols (MCPs) that contain about 4500 tools. Second, we propose a task design strategy based on a tool dependency graph, utilizing Dynamic Unlocking Sampling Algorithm to generate long-horizon tasks, and produce GUST (Graph Unlocking Sampling Tasks) dataset. Third, to alleviate the credit assigment problem in long-horizon agentic RL, we propose a fine-grained Turn-Aware Relative Advantage algorithm. We conduct extensive Agentic RL training using ToolVerse and evaluate our framework on serveral agentic benchmarks. Experimental results demonstrate that our framework significantly strengthens LLMs' capabilities in long-horizon tool use, achieving a marked performance boost and showcasing robust reasoning within dynamic environments.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "ToolVerse는 실제 MCP(Model Context Protocol) 약 400개, 도구 약 4,500개를 기반으로 대규모 에이전트 강화학습 환경을 자동 구축하는 프레임워크다. 도구 의존성 그래프와 '동적 잠금 해제 샘플링' 알고리즘을 이용해 장기 지평 과제 데이터셋(GUST)을 생성하고, 장기 에이전트 RL에서 흔한 신용 할당 문제를 완화하기 위해 '턴 인식 상대적 이점' 알고리즘을 제안한다. 이를 통해 학습된 LLM 에이전트는 여러 에이전트 벤치마크에서 장기 지평 도구 사용 능력이 크게 향상됐다. 실제 세계 규모의 다양하고 동적인 도구 통합 환경에서 에이전트의 견고성을 높이는 실전형 RL 학습 파이프라인을 제시했다는 점에서 의의가 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a5ba6607-dc20-4b78-8255-3806ce3f0c79",
+      "title": "VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs",
+      "url": "https://arxiv.org/abs/2607.15498",
+      "source": "arxiv",
+      "content": "arXiv:2607.15498v1 Announce Type: new \nAbstract: The key-value (KV) cache is the main memory bottleneck in long-context large language model (LLM) inference. Two leading training-free families are both structurally limited: token-selection methods (SnapKV, Ada-KV) score importance from an observation window and evict low-scoring tokens, but eviction is irreversible -- so when the importance signal degrades under query-agnostic reuse, accuracy collapses by 11-15 points; uniform low-rank coding keeps every token but spends equal rank everywhere, wasting budget. We observe that both failures share one cure: rank should be allocated, not evicted. We present VarRate, a training-free KV codec that assigns each token a variable low-rank budget by its query salience, keeping every token at a nonzero rank. Comparable adaptive-rank codecs reach this allocation only through training; VarRate requires none. Because no token is dropped, it degrades by only 3.5-5.5 points where query-aware selection collapses. At a matched 20% budget on LongBench (16 tasks), VarRate stays within 0.8 points of the uncompressed model on both Llama-3.1-8B and Qwen2.5-7B. Averaged over the two, it is the strongest matched-memory compressor. It significantly beats its uniform-rank ablation on both models. Against KVzip, a method purpose-built for query-agnostic reuse, it is accuracy-equivalent in three of four settings and within a point overall, at about one-eighth the prefill overhead.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "VarRate는 긴 문맥을 처리하는 LLM 추론의 메모리 병목인 KV 캐시를 압축하는 학습 불필요(training-free) 기법으로, 토큰을 아예 제거하지 않고 각 토큰의 쿼리 중요도에 따라 가변적인 저랭크(low-rank) 예산을 할당한다. 기존 토큰 제거 방식은 한번 버린 토큰을 되돌릴 수 없어 쿼리와 무관하게 재사용될 때 정확도가 11~15점까지 급락했지만, VarRate는 3.5~5.5점 하락에 그친다. LongBench 16개 과제에서 20% 메모리 예산으로 비압축 모델과 0.8점 이내 성능을 유지하며 동급 압축 기법 중 최고 성능을 기록했고, 전용 기법인 KVzip과도 8분의 1 수준의 프리필 오버헤드로 대등한 정확도를 보였다. 장문맥 LLM 서빙 비용을 실질적으로 낮출 수 있는 실용적 기술로 평가된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "21d43d28-4fb5-4580-b0f1-7fd7faba26eb",
+      "title": "Verbalizable Representations Form a Global Workspace in Language Models",
+      "url": "https://arxiv.org/abs/2607.15495",
+      "source": "arxiv",
+      "content": "arXiv:2607.15495v1 Announce Type: new \nAbstract: Out of everything the human brain processes, only a small fraction is consciously accessible, in the sense of being available for verbal report, deliberate control, and flexible reasoning. In this paper, we present evidence that an analogous functional distinction has emerged in large language models. Using a new interpretability technique, the Jacobian lens, we identify the representations a model is poised to verbalize at any point in its processing. These representations, which we collectively call the J-space, exhibit the functional properties characteristic of a global workspace: their contents can be reported, deliberately summoned and held, used to carry the intermediate steps of silent reasoning, and passed as arguments to arbitrary downstream computations, while automatic processing such as text parsing and routine inference proceeds without them. The J-space also has structural signatures that global workspace theory associates with conscious access: it carries coherent content only in an intermediate band of layers, holds on the order of tens of concepts at a time, and is broadcast by the model's weights more widely than other representations. These properties make it a practical window into a model's unspoken thinking. In alignment audits, it reveals strategic deliberation, evaluation awareness, and trained-in misaligned dispositions that never appear in the model's outputs. We find that post-training installs the Assistant's point of view in the workspace, and we introduce counterfactual reflection training, which improves behavior by training only what a model would say if interrupted and asked to reflect. These results indicate that language models maintain a small, privileged set of representations bearing some of the functional hallmarks of conscious access, and that decoding these representations sheds light on ongoing cognitive processes.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "연구진은 새로운 해석가능성 기법인 '자코비안 렌즈(Jacobian lens)'를 이용해 LLM 내부에 인간 뇌의 '전역 작업공간(global workspace)'과 유사하게 작동하는 '언어화 가능 표현(J-space)'이 존재함을 밝혀냈다. 이 표현들은 보고·의도적 소환·묵시적 추론의 중간 단계 전달·임의의 하위 연산에 인자로 전달되는 등 의식 접근성 이론이 예측하는 기능적 특성을 그대로 보인다는 점에서 주목된다. J-space는 중간 계층 대역에서만 일관된 내용을 담고, 한 번에 수십 개 개념만 유지하며, 모델 가중치 전반에 폭넓게 전파되는 구조적 특징도 확인됐다. 정렬 감사(alignment audit)에서 이 표현을 들여다보면 모델의 출력에는 전혀 드러나지 않는 전략적 숙고, 평가 인식, 훈련 중 주입된 편향된 성향까지 포착할 수 있어 해석가능성 연구의 새로운 도구로 기대된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a56d2c64-74fe-4de7-940a-4485c8c43925",
+      "title": "SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction",
+      "url": "https://arxiv.org/abs/2607.15550",
+      "source": "arxiv",
+      "content": "arXiv:2607.15550v1 Announce Type: new \nAbstract: Mobile graphical user interface (GUI) agents have demonstrated remarkable capabilities in automating complex tasks, yet they introduce critical safety risks where a single erroneous action can lead to irreversible consequences. Existing safety mechanisms are primarily reactive, lacking the ability to assess risks before execution. In this paper, we introduce SeerGuard, a consequence-aware safety framework designed to mitigate these risks through pre-execution instruction-level screening and action-level risk assessment. Specifically, the action-level assessment analyzes agent-proposed actions within current GUI states, anticipating likely outcomes to identify risks before they are executed. To enable these capabilities, we construct a unified safety-augmented world model (SAWM) via multi-task learning, integrating semantic next-state prediction with safety risk assessment. Extensive experiments demonstrate that SeerGuard generalizes effectively across diverse mobile GUI agents. On Qwen3-VL-8B-Instruct, it increases the safety-utility score from $0.191$ to $0.596$ at $\\omega=0.8$ and reduces the risk-cost score from $0.347$ to $0.130$ at $\\alpha=0.8$. Further analyses on our SAWM validate the effectiveness of the instruction-level screening, alongside the capability of action risk assessment and next-state prediction.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "SeerGuard는 모바일 GUI 에이전트가 화면을 조작하기 전에 위험을 예측해 사전에 차단하는 안전 프레임워크로, 명령어 수준 사전 스크리닝과 행동 수준 위험 평가를 결합했다. 멀티태스크 학습으로 구축한 '안전 강화 세계 모델(SAWM)'이 다음 화면 상태를 예측하는 동시에 위험도를 평가해, 기존의 사후 반응형 안전장치와 달리 실행 전 위험을 미리 짚어낸다. Qwen3-VL-8B-Instruct 적용 실험에서 안전-유용성 점수를 0.191에서 0.596으로, 위험-비용 점수는 0.347에서 0.130으로 개선했다. 단일 오작동이 돌이킬 수 없는 결과를 낳을 수 있는 모바일 자동화 에이전트의 실사용 안전성을 크게 높인 연구로 평가된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "7fbee6fd-4748-4b58-beb7-c1822537058c",
+      "title": "Process Reward Informed Tree Rollout for Effective Multi-Turn RL",
+      "url": "https://arxiv.org/abs/2607.15610",
+      "source": "arxiv",
+      "content": "arXiv:2607.15610v1 Announce Type: new \nAbstract: Reinforcement learning (RL) has become a key approach for training LLM agents, yet popular methods such as GRPO/RLOO rely on multiple independently sampled complete trajectories for advantage estimation. In long-horizon agentic tasks, such a uniform rollout strategy can waste budget on uninformative dead-end attempts, while promising intermediate states do not receive sufficient exploration. The multi-turn structure of agentic trajectories, with interleaved actions and observations, naturally supports organizing a trajectory group as a tree, where each turn serves as a decision point for exploration. This perspective reframes effective exploration as the problem of deciding where to branch. We propose Process-Scorer Guided Adaptive Tree Rollout (PATR), a quality-aware rollout framework for multi-turn agent RL. PATR uses task-appropriate process feedback to score partial trajectories, selectively branches from promising states, reuses shared prefixes, and conservatively stops degenerate paths to reduce wasted sampling. The resulting rollout groups remain compatible with standard policy optimization while providing more efficient exploration under the same training budget. We evaluate PATR on FrozenLake and the challenging SWE-Bench, which is largely unexplored by prior tree-rollout agent RL methods. Experiments show that PATR improves performance by up to +5.0 points on SWE-Bench and +9.3 points on FrozenLake, highlighting process-guided tree rollouts as an effective strategy for scalable multi-turn RL.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "PATR(Process-Scorer Guided Adaptive Tree Rollout)은 다중턴 에이전트 강화학습에서 GRPO·RLOO 등 기존 방식이 독립적인 완전 궤적 샘플링에 의존해 유망하지 않은 경로에 예산을 낭비하는 문제를 해결하기 위해, 에이전트 궤적을 턴 단위 트리로 구성해 유망한 중간 상태에서 선택적으로 분기하는 기법이다. 과정 보상(process reward) 기반 스코어로 부분 궤적을 평가하고, 공유 접두사를 재사용하며, 실패가 뻔한 경로는 조기에 중단해 탐색 효율을 높인다. FrozenLake와 SWE-Bench 실험에서 각각 최대 9.3점, 5.0점의 성능 향상을 기록했으며, 특히 트리 롤아웃 기법이 거의 다뤄지지 않은 SWE-Bench에서의 검증이 눈에 띈다. 동일한 학습 예산으로 장기 지평 에이전트 RL의 탐색 효율을 끌어올릴 수 있는 실용적 알고리즘을 제시했다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f1875538-d136-48aa-b7fb-e69ccc8fb590",
+      "title": "Cura 1T: Specialized Model for Agentic Healthcare",
+      "url": "https://arxiv.org/abs/2607.15314",
+      "source": "arxiv",
+      "content": "arXiv:2607.15314v1 Announce Type: new \nAbstract: Healthcare spans high-stakes communication, expert reasoning, and workflow execution, yet specialized LLMs that cover these use cases together remain limited. A healthcare model must handle patient consultation, clinical reasoning over text and images, interactive diagnosis, and electronic health record (EHR) tool use. These capabilities fail in different ways, and a narrow update for one task can degrade another. We present Cura 1T, a healthcare-specialized LLM trained through a human-gated self-evolution loop. In each evolution round, a training agent plans a target capability, trains the model, evaluates benchmark trajectories, and refines the data mixture from observed failures. This data-centered loop improves the model through targeted synthetic and curated examples rather than a single generic medical-data update. Across the healthcare evaluation suite, Cura 1T ranks at or near the top among frontier baselines, while remaining competitive on out-of-domain reasoning and agentic benchmarks.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "Cura 1T는 환자 상담, 텍스트·이미지 기반 임상 추론, 대화형 진단, 전자의무기록(EHR) 도구 사용을 모두 아우르는 의료 특화 LLM으로, '인간 검수형 자가진화 루프'를 통해 학습됐다. 각 진화 라운드마다 학습 에이전트가 목표 역량을 계획하고, 모델을 학습시키고, 벤치마크 궤적을 평가한 뒤 관찰된 실패로부터 데이터 구성을 정제하는 방식으로, 하나의 범용 의료 데이터 업데이트가 아닌 표적화된 데이터 중심 개선을 거친다. 의료 평가 스위트 전반에서 프론티어 모델들과 동등하거나 상회하는 성능을 보이면서도, 도메인 외 추론 및 에이전트 벤치마크에서도 경쟁력을 유지했다. 여러 임상 과업을 동시에 다뤄야 하는 실사용 의료 AI의 다중 역량 균형 문제에 대한 실질적 해법을 제시한다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "03f45b1e-0b3d-4002-b43c-1b9b4b2f9745",
+      "title": "AI Trading: Evaluating Large Language Models for Technical Market Analysis",
+      "url": "https://arxiv.org/abs/2607.15414",
+      "source": "arxiv",
+      "content": "arXiv:2607.15414v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have emerged as powerful tools for processing the heterogeneous information environments of modern financial markets. This paper presents a systematic, comparative evaluation of five prominent LLMs: GPT-4 Turbo, Claude 3 Opus, Gemini 1.5 Pro, Llama 3 70B, and the domain-specialized FinGPT, with respect to their capacity for technical market analysis. The evaluation spans four structured tasks: candlestick pattern recognition from OHLCV data, directional signal generation (BUY/SELL/HOLD), backtesting of signal quality through a simulated execution pipeline, and financial report comprehension. Our experimental framework employs rigorous quantitative metrics, including Sharpe ratio, maximum drawdown, Sortino ratio, information coefficient, F1-score, and BLEU score. Findings from simulated backtesting indicate that GPT-4 Turbo achieves the highest annualized return and Sharpe ratio among general-purpose models, while FinGPT demonstrates competitive risk-adjusted performance due to domain-specific fine-tuning. Both models outperform a passive S&P 500 benchmark under the tested conditions. The study identifies persistent failure modes across all evaluated models, including numerical hallucination, context-window limitations, and inconsistent performance in sideways market regimes. We conclude that while LLMs hold genuine promise within AI trading systems, robust deployment requires careful task decomposition, rigorous backtesting protocols, and domain-aware fine-tuning strategies.",
+      "published_at": "2026-07-20T00:00:00-04:00",
+      "summary": "연구진은 GPT-4 터보, 클로드 3 오퍼스, 제미나이 1.5 프로, 라마 3 70B, 금융특화 모델 FinGPT 등 5개 LLM을 캔들스틱 패턴 인식, 매수/매도/보유 신호 생성, 백테스트, 재무보고서 이해 등 4가지 과업으로 체계적으로 비교 평가했다. 백테스트 결과 GPT-4 터보가 범용 모델 중 가장 높은 연환산 수익률과 샤프비율을 기록했고, 도메인 특화 모델인 FinGPT도 파인튜닝 덕분에 경쟁력 있는 위험조정 성과를 보이며 두 모델 모두 S&P 500 패시브 벤치마크를 상회했다. 다만 모든 모델에서 수치 환각, 컨텍스트 윈도 한계, 횡보장에서의 불안정한 성능 등 공통적인 실패 유형이 확인됐다. LLM이 AI 트레이딩 시스템에 실질적 잠재력을 갖고 있지만, 안정적 실전 배치를 위해서는 과업 분해 등 신중한 설계가 필요하다는 결론이다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    }
+  ]
+}
