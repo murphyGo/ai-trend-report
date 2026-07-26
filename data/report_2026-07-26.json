@@ -1,0 +1,281 @@
+{
+  "id": "1cf7a8a0-dcaa-4a1c-9d48-8eeb771fea81",
+  "created_at": "2026-07-26T02:45:20.480178",
+  "articles": [
+    {
+      "id": "d1f81e39-42ce-4325-a301-6a038d786078",
+      "title": "What is Good? Extracting and Testing Implicit Theories of Literary Quality from LLM Reasoning Traces",
+      "url": "https://arxiv.org/abs/2607.20425",
+      "source": "arxiv",
+      "content": "arXiv:2607.20425v1 Announce Type: new \nAbstract: What makes writing \"good\" remains a persistent question in literary studies and computational linguistics. We present a two-study investigation of how reasoning-enabled LLMs evaluate literary quality.\n  In Study 1, we construct a benchmark of 30 real texts spanning six quality tiers, from canonical literature to anonymous forum posts, and extract the model's implicit theory of quality from its reasoning traces. Across five DeepSeek replications, the model achieves 79.3% mean tier-classification accuracy. The traces reveal a consistent stated theory: the model values intentionality over correctness, prioritizing craft, depth, and distinctive voice. A familiarity experiment with style-matched but unrecognizable passages suggests that source recognition may inflate scores, although this is confounded by genuine quality differences between canonical originals and researcher-written pastiches.\n  In Study 2, we probe this theory through systematic degradation of five canonical prose passages. We apply six manipulations - vocabulary simplification, rhythm flattening, imagery removal, voice genericization, structure simplification, and combined degradation - and reevaluate each version. Vocabulary simplification causes the smallest quality loss (0.41 +/- 0.46 points), far below structure (2.78) or voice (2.34) loss. Combined degradation is devastating (-5.64) but subadditive. An exploratory comparison with Qwen QwQ shows the same broad qualitative pattern.\n  Together, these studies suggest that LLM judgments of writing quality are holistic, author-specific, and more sensitive to structural than lexical features, with implications for automated writing feedback and computational aesthetics.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "추론 기능을 갖춘 LLM이 문학적 글쓰기의 '좋음'을 어떻게 판단하는지 분석한 연구로, DeepSeek 모델이 실제 텍스트 30편에 대해 79.3%의 정확도로 품질 등급을 매겼다. 모델의 추론 흔적을 분석한 결과 정확성보다 의도성과 문체의 독창성을 중시하는 일관된 암묵적 평가 기준이 드러났다. 문장을 어휘·리듬·이미지·문체·구조별로 인위적으로 저하시킨 실험에서는 어휘 단순화보다 구조와 문체 손상이 품질 점수에 훨씬 큰 영향을 미쳤다. 이는 LLM의 글쓰기 평가가 표면적 어휘보다 구조적 특성에 민감하다는 것을 시사하며, 자동 작문 피드백 및 계산 미학 연구에 시사점을 제공한다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "66798814-5f8a-45c8-8c86-d847a529ac0b",
+      "title": "Knowledge Injection Exists in MoE? Exploring Expert-Aware Contrast Decoding in MoE for Mitigating LLMs'Hallucinations",
+      "url": "https://arxiv.org/abs/2607.20426",
+      "source": "arxiv",
+      "content": "arXiv:2607.20426v1 Announce Type: new \nAbstract: Existing LLM hallucination mitigation methods, including prompt engineering and model optimization, either hardly alter models'internal knowledge or have poor cross-domain generalization. Contrastive decoding mitigates hallucinations by using layer-wise differences in LLMs. However, prior studies only explore transformer-based models (e.g., GPT), ignoring other effective frameworks like mixture-of-experts (MoE) models. Since MoE alters the traditional transformer architecture, we conduct empirical studies to investigate whether similar layer-wise differences exist in MoEs. Our results show that they do not exist in MoE with shared experts; nevertheless, across different MoEs, higher layers exhibit distinct expert activation patterns between factual and non-factual outputs. Building on these, we propose EAACD, an expert-aware adaptive contrast decoding that uses expert differences in MoE's higher layers to mitigate hallucinations on QA tasks. EAACD splits high-layer experts into a higher-reliability group and several lower-reliability groups based on their confidence and consistency. It contrasts the higher-reliability group's prediction with each lower-reliability group's prediction to calibrate the model's original predictions. To strengthen this contrast, EAACD amplifies hallucinations from lower-reliability experts via attention and masking to provide stronger negative references. EAACD outperforms all baselines on four datasets.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "기존 환각(hallucination) 완화 기법인 대조적 디코딩(contrastive decoding)이 표준 트랜스포머 모델에만 검증되어 왔던 것과 달리, 이 연구는 MoE(전문가 혼합) 구조에서의 적용 가능성을 처음으로 탐구했다. 공유 전문가(shared expert)가 있는 MoE에서는 계층 간 차이가 나타나지 않지만, 상위 계층에서 사실적 응답과 비사실적 응답 간 전문가 활성화 패턴이 뚜렷이 다르다는 점을 발견했다. 이를 바탕으로 신뢰도가 높은 전문가 그룹과 낮은 전문가 그룹의 예측을 대조해 환각을 교정하는 EAACD 기법을 제안했으며, 4개 데이터셋에서 기존 기법 대비 우수한 성능을 보였다. MoE 기반 LLM이 늘어나는 상황에서 이 기법은 실제 서비스에 적용 가능한 저비용 환각 완화 방안으로 활용될 수 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "d5610d4d-4fae-4054-8508-fba7e3e817bd",
+      "title": "Human-in-the-Loop Large Language Model Framework for Identification of Cutaneous Immune-Related Adverse Events",
+      "url": "https://arxiv.org/abs/2607.20428",
+      "source": "arxiv",
+      "content": "arXiv:2607.20428v1 Announce Type: new \nAbstract: This study evaluated a retrieval-augmented, multi-agent large language model (LLM)-driven, human-in-the-loop framework for detecting cutaneous immune-related adverse events (cirAEs) from clinical notes. Compared with unassisted manual review, the LLM-assisted workflow improved accuracy (F1 = 0.88 vs 0.77), inter-rater agreement measured by Cohen's kappa (kappa = 0.82 vs 0.50), and reduced average review time by approximately half. This framework pilots how LLMs can be applied to identify immune-related toxicities across organ systems and, more broadly, enable accurate, scalable, and transparent adverse event data extraction.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "검색증강생성(RAG) 기반 다중 에이전트 LLM과 인간 검토자가 협업하는 프레임워크를 활용해 임상 기록에서 피부 면역 관련 이상반응(cirAE)을 탐지하는 연구다. 이 LLM 보조 워크플로우는 수작업 검토 대비 F1 점수를 0.77에서 0.88로, 평가자 간 일치도(Cohen's kappa)를 0.50에서 0.82로 크게 개선했다. 또한 평균 검토 시간을 절반가량 단축시켜 임상 현장에서의 실용성을 입증했다. 이는 면역항암제 부작용과 같은 다양한 장기별 이상반응 탐지에 LLM을 적용할 수 있는 가능성을 보여주며, 확장 가능하고 투명한 이상반응 데이터 추출 체계 구축에 기여할 것으로 기대된다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a0ff5fdd-ac3d-4050-9ec4-8ed873e507e7",
+      "title": "More Is Not More: What Matters for Diversity in LLM Opinions?",
+      "url": "https://arxiv.org/abs/2607.20429",
+      "source": "arxiv",
+      "content": "arXiv:2607.20429v1 Announce Type: new \nAbstract: Large language models are increasingly used to simulate diverse human opinions in open-ended tasks such as synthetic surveys, focus group modeling, and public opinion prediction. However, LLM outputs exhibit systematic opinion homogenization. Practitioners have explored various interventions to increase diversity, but the landscape remains fragmented: different methods are evaluated in isolation with incomparable metrics, and in practice they are typically deployed and upgraded simultaneously, making it difficult to attribute gains to specific components. To advance a more scientific understanding of LLM output diversity, we design a factorial experiment that separates two primary intervention dimensions: input conditioning (operationalized through persona depth) and interaction architecture. We evaluate all conditions on 100 real-user open-ended questions across 7 models, measuring diversity with multiple complementary metrics. Our findings challenge several common assumptions. First, more persona detail does not monotonically increase diversity. The initial step of persona conditioning already captures the majority of the gain, while further elaboration with demographic detail does not consistently improve and can reduce diversity on some models. Second, rather than seeking a single best interaction architecture, we find that different architectures explore largely non-overlapping opinion regions. Combining multiple architectures yields broader coverage than optimizing any one. Third, commonly attempted low-cost alternatives such as raising sampling temperature and adding diversity instructions produce negligible effects compared to structured interventions. Overall, our work demonstrates that diversity is not a product of scaling along any single dimension, but is highly sensitive to the structural form and combination of interventions.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "LLM이 설문조사나 포커스 그룹처럼 다양한 인간 의견을 시뮬레이션할 때 나타나는 '의견 획일화' 문제를 해결하기 위한 개입 방법들을 체계적으로 비교한 연구다. 7개 모델과 실제 사용자 질문 100개를 대상으로 페르소나 조건화와 상호작용 구조라는 두 축을 분리해 실험한 결과, 페르소나 정보를 자세히 추가한다고 다양성이 비례해서 늘지 않으며 오히려 감소하는 경우도 있었다. 반면 서로 다른 상호작용 아키텍처는 서로 겹치지 않는 의견 영역을 탐색하기 때문에 여러 구조를 조합하는 것이 단일 구조 최적화보다 더 넓은 다양성을 확보했다. 온도 조절이나 다양성 지시문 같은 저비용 기법은 구조적 개입에 비해 효과가 미미해, 실무에서 의견 다양성을 확보하려면 아키텍처 수준의 설계가 중요함을 시사한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f79bda28-127f-4396-bffa-07f4026c7b5d",
+      "title": "Skill-Contracted Agents for Evidence-Aware Materials Literature Analysis",
+      "url": "https://arxiv.org/abs/2607.20431",
+      "source": "arxiv",
+      "content": "arXiv:2607.20431v1 Announce Type: new \nAbstract: Materials science literature analysis requires simultaneous attention to composition, processing, characterization, and property relationships, yet conventional retrieval-augmented generation pipelines struggle to reconcile heterogeneous tasks within a single retrieve-then-generate architecture. Here we present AlphaAgent, a skill-driven agent framework that decouples retrieval-based question answering from paper-level report generation through explicit skill contracts. A dedicated retrieval skill rewrites user requests into material-specific search intents, queries a curated index of more than 300,000 papers from the Journal Citation Reports Metallurgy and Metallurgical Engineering category, and reformulates queries when initial evidence is insufficient. A separate report-generation skill parses full-text PDFs to produce structured per-paper analytical reports and cross-paper summaries. In a blind evaluation on 40 materials-science questions, half of which required deep analytical reasoning, AlphaAgent substantially outperformed a baseline system matched for underlying model, document index, and retrieval scale, with the largest gains in mechanistic explanation and awareness of credibility boundaries. These results indicate that explicit task separation, refined retrieval intent, and evidence-aware generation improve large-language-model-based literature analysis for materials research.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "소재과학 문헌 분석을 위한 스킬 기반 에이전트 프레임워크 'AlphaAgent'를 제안한 연구로, 검색 기반 질의응답과 논문 단위 리포트 생성을 명시적인 '스킬 계약'으로 분리해 처리한다. 30만 편이 넘는 야금·금속공학 분야 논문 색인을 활용하며, 초기 근거가 불충분할 경우 질의를 재구성하는 전용 검색 스킬과 전체 텍스트 PDF를 구조화된 보고서로 변환하는 리포트 생성 스킬로 구성된다. 심층 분석 추론이 필요한 문항을 포함한 40개 소재과학 질문에 대한 블라인드 평가에서 기존 RAG 기반 시스템 대비 특히 메커니즘 설명과 신뢰 경계 인식에서 큰 성능 향상을 보였다. 이는 작업을 명확히 분리하고 근거 인식형 생성을 결합하는 접근이 전문 분야 문헌 분석용 LLM 에이전트의 실용성을 높일 수 있음을 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "bbc3e005-b81f-4e51-a79c-059570e0939f",
+      "title": "Moir: Let the Model Direct Its Own Story for Robust Cross-Domain Knowledge Editing",
+      "url": "https://arxiv.org/abs/2607.20433",
+      "source": "arxiv",
+      "content": "arXiv:2607.20433v1 Announce Type: new \nAbstract: While language models remain frozen at their training state, the world evolves continuously. Knowledge editing has emerged as a key alternative to full retraining, but its deployment is bottlenecked by the erosion of core capabilities: mathematical and programmatic reasoning collapse while encyclopedic recall remains intact. We trace this asymmetric degradation to a distributional mismatch. Covariance-based editors preserve only the subspaces spanned by their reference corpus, but fail to capture the operative distribution shaped by post-training such as SFT and DPO. Static external corpora, including Wikipedia and even the original pretraining mixture, cannot recover this shifted manifold. We propose Moir, which estimates the preservation covariance $C$ directly from the model itself by sampling from its own decoding distribution. Seeding generation with a single random vocabulary token bypasses the instruction-following templates that otherwise dominate sampled outputs, exposing the broader subspaces the model has internalized. Moir requires no external data and serves as a drop-in component for any covariance-based editor, a practical advantage given that the pre- and post-training corpora of most modern LLMs are not publicly accessible. Across OLMo-2, Llama-3.1, and Qwen-3 (7-8B), under both MEMIT and AlphaEdit and in batch and sequential regimes, Moir consistently extends preservation in the most vulnerable domains, most strikingly on Qwen3-8B after 20,000 AlphaEdit batch edits, it retains 79.9% GSM8K accuracy compared to 10.9% with the Wikipedia baseline. These results suggest that aligning the preservation distribution with the model's operative distribution is a key factor in non-destructive editing, and that the model itself may be the most accessible source of that distribution for deployed systems.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "지식 편집(knowledge editing) 기법이 수학·프로그래밍 추론 능력을 붕괴시키는 문제의 원인이 편집기가 참조하는 외부 데이터와 실제 모델의 사후학습(SFT/DPO) 분포 사이의 불일치에 있음을 밝힌 연구다. 연구진은 위키피디아 같은 정적 외부 데이터 대신, 모델이 무작위 어휘 토큰으로 생성을 시작해 스스로의 디코딩 분포에서 직접 보존 공분산을 추정하는 기법 'Moir'를 제안했다. Moir는 외부 데이터 없이 기존 공분산 기반 편집기(MEMIT, AlphaEdit)에 플러그인처럼 적용 가능하며, Qwen3-8B에 2만 건의 배치 편집을 적용한 뒤에도 GSM8K 정확도를 79.9% 유지해 위키피디아 기반 방식의 10.9%를 크게 앞질렀다. 사전·사후학습 데이터에 접근할 수 없는 상용 LLM 배포 환경에서 모델 스스로가 가장 실용적인 보존 분포의 원천이 될 수 있음을 시사한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "4c021658-9c3b-4ead-98a1-2ddcc54d89d6",
+      "title": "Break Through the Compression Bottleneck: From Theory to Practice",
+      "url": "https://arxiv.org/abs/2607.20434",
+      "source": "arxiv",
+      "content": "arXiv:2607.20434v1 Announce Type: new \nAbstract: As the parameter size of language models continues to grow, effective model compression is required to reduce their computational and memory overhead. Existing compression methods suffer from bottleneck issues: when the compression ratio is increased, performance degrades significantly. Low-rank decomposition and quantization are two prominent compression methods that have been proven to significantly reduce the computational and memory requirements of Large Language Models (LLMs) while maintaining model accuracy. Evidently, combining these two methods will break through the existing compression bottleneck. However, how these two methods interact when combined remains a critical question for developers, as many assume they are orthogonal, meaning their combination would not introduce additional errors beyond those independently introduced by each method. This paper provides the first mathematical proof that low-rank decomposition and quantization are non-orthogonal. We validate these findings through a series of experiments on large language models. Our results demonstrate that these methods are non-orthogonal, and their combination leads to significant performance degradation. Importantly, we propose a novel approach Diagonal Adhesive Method (DAM), which can effectively combine the two methods and mitigate the performance loss. Our research provides deep insights into model compression and lays a solid theoretical and experimental foundation for future related studies.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "저랭크 분해(low-rank decomposition)와 양자화(quantization)라는 두 대표적 LLM 압축 기법이 서로 직교(orthogonal)하지 않는다는 사실을 최초로 수학적으로 증명한 연구다. 두 기법을 단순 결합하면 각각을 독립적으로 적용했을 때보다 성능이 크게 저하되는 것을 실험으로 확인했으며, 이 상호작용이 압축률을 높일수록 성능이 급격히 나빠지는 '압축 병목' 현상의 핵심 원인임을 규명했다. 이를 해결하기 위해 두 기법의 결합 오차를 완화하는 새로운 방법인 대각 접착 기법(Diagonal Adhesive Method, DAM)을 제안했다. 이 연구는 모델 압축의 이론적 토대를 다지는 동시에, 메모리와 연산 비용을 동시에 줄여야 하는 대규모 LLM 배포 실무에 직접적인 지침을 제공한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a5575f4d-7c4c-4465-88d0-4e7729009829",
+      "title": "Making Open-Source Text LLM Watermarks Durable Against Merging",
+      "url": "https://arxiv.org/abs/2607.20435",
+      "source": "arxiv",
+      "content": "arXiv:2607.20435v1 Announce Type: new \nAbstract: Open-source LLMs (OSMs)arereaching near state-of-the-art performance, prompting prior works to trace the text they generate by embedding text watermarking algorithms directly into their weights. Yet, OSMs are subject to post-training modifications, which has been shown to remove the watermark. Model merging in particular, a prominent method used for combining expert knowledge and preventing catastrophic forgetting, strongly removes such OSM watermarks. A key question is how to enable OSM watermarks that survive subsequent merging. In this work, we show for the first time how to design an OSM watermark that is durable against model merging. We propose Merge-Adversarial Training, an adversarial training algorithm to distill text watermarks into model weights while being robust to subsequent model merging. Our approach consistently outperforms all baselines (e.g. with SLERP up to +51 percentage points (pp) TPR@1%FPR with +25 pp on average) while preserving downstream capabilities. We also for the first time evaluate OSM watermarks against realistic merge scenarios, representing common use-cases such as combining expert capabilities or preventing catastrophic forgetting, and with 3 prominent merging algorithms. More broadly, our findings suggest that adversarial training is a reliable approach for increasing OSM watermark durability against post-training modifications.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "오픈소스 LLM에 삽입된 텍스트 워터마크가 모델 병합(model merging) 과정에서 쉽게 제거된다는 문제를 해결하기 위해, 병합에도 견디는 워터마크 설계 기법 'Merge-Adversarial Training'을 제안한 연구다. 이 기법은 워터마크를 모델 가중치에 증류하는 과정에서 병합에 대한 강건성을 함께 학습시키며, SLERP 등 병합 시나리오에서 기존 기법 대비 최대 51%p까지 탐지 성능(TPR@1%FPR)을 끌어올렸다. 전문가 능력 결합이나 치명적 망각 방지처럼 실제로 널리 쓰이는 3가지 병합 알고리즘 시나리오에서 처음으로 워터마크 내구성을 체계적으로 평가했다는 의의도 있다. 오픈소스 모델의 생성물 출처를 추적하고 저작권·오남용을 관리해야 하는 실무자들에게 실질적인 대응 수단을 제공한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3c04e386-b6c3-4daa-8081-42a7bcd9949c",
+      "title": "Routing Subspaces: Auditing Evaluation-to-Deployment Mismatch in Fine-Tuned Language Models",
+      "url": "https://arxiv.org/abs/2607.20436",
+      "source": "arxiv",
+      "content": "arXiv:2607.20436v1 Announce Type: new \nAbstract: Safety evaluations often assume that behavior observed during testing reflects behavior in ordinary use, but fine-tuning can break this assumption. A checkpoint can appear fixed under evaluation-style prompts while the same behavior persists under ordinary-use prompts. Output scores reveal this mismatch but do not locate it. We investigate whether the distinction is encoded in a stable internal site and introduce an approach that fits a paired activation contrast at a path-patching-informed mid-depth window, then modifies the resulting coordinate on held-out prompts. The intervention closes the evaluation-to-deployment gap in ten of twelve model--behavior settings (six of the eight settings with $n{\\geq}120$ paired questions) across four full-matrix instruction-tuned model instances; a fifth model supports localization and edit-provenance checks, and deployment-framed rates change by at most $6.1$pp. The two flat cells, both sycophancy, indicate that a single-coordinate audit is not sufficient when the installed distinction is higher-rank or missed by the depth heuristic. The audit is a diagnostic for fine-tuned checkpoints, not a training-time defense or a guarantee of deployment safety.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "안전성 평가 시 사용하는 '평가용 프롬프트'에서는 안전해 보이지만 실제 사용 환경의 '일반 프롬프트'에서는 위험 행동이 그대로 남아있는 평가-배포 간 불일치 문제를 다룬 연구다. 연구진은 이 차이가 모델 내부의 특정 위치에 안정적으로 인코딩되어 있다는 가설 아래, 경로 패칭(path-patching) 기반으로 찾아낸 중간 깊이 지점에서 활성화 대조를 적용하는 감사(auditing) 기법을 제안했다. 4개의 파인튜닝된 모델, 12개의 모델-행동 조합 중 10개에서 평가-배포 간 격차를 성공적으로 좁혔으나, 아첨(sycophancy)처럼 더 고차원적인 구분이 필요한 2개 사례에서는 단일 좌표 감사로는 한계가 있음을 확인했다. 이 기법은 학습 단계의 안전장치나 배포 안전성을 보장하는 수단이 아니라, 파인튜닝된 체크포인트를 사전 점검하는 진단 도구로 자리매김한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "31c00106-4ecf-4131-af83-ce42386269db",
+      "title": "TopoGuard: Graph Theory Based Defenses Against Split-Knowledge Attacks on RAG",
+      "url": "https://arxiv.org/abs/2607.20437",
+      "source": "arxiv",
+      "content": "arXiv:2607.20437v1 Announce Type: new \nAbstract: Production Retrieval Augmented Generation (RAG) systems rely on aggregating multiple external documents to answer complex queries. However, the retrieved documents introduce a new threat surface that can be exploited to launch split-knowledge attacks. In this attack, the adversary injects documents that are individually benign but create false associations when combined and fed to language models. This paper shows that the new attack is structurally invisible to existing per-document filters, like LlamaGuard. To address this issue in RAG, this work introduces TopoGuard, a family of graph theory-based methods specifically targeting the split-knowledge attacks by building a semantic similarity graph from retrieved documents and detecting contexts with malicious topology. Grounded on the theoretical analysis, the TopoGuard family has been proven to be effective and robust even with noisy inputs. Extensive experiments are conducted on two retrieval datasets and compared with multiple baseline methods. Specifically, the TopoGuard-$\\lambda_2$+Entity catches 21$\\times$ more attacks than LlamaGuard-2-8B at 1\\% FPR (32.6\\% vs 1.5\\% recall) on the HotpotQA dataset. Compared with production RAG detection systems using large language models, the proposed TopoGuard variants run efficiently at sub-millisecond latency and stay robust under adaptive adversaries and benign cross-domain queries.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "RAG(검색증강생성) 시스템에서 개별적으로는 무해해 보이는 문서들을 조합했을 때 잘못된 연관관계를 만들어내는 신종 공격 '분할지식 공격(split-knowledge attack)'을 다루고, 이를 방어하는 그래프 이론 기반 탐지 기법 'TopoGuard'를 제안한 연구다. 이런 공격은 LlamaGuard 같은 기존 문서 단위 필터에는 구조적으로 탐지되지 않는데, TopoGuard는 검색된 문서들로 의미적 유사도 그래프를 구성하고 악의적인 위상 구조를 탐지하는 방식으로 대응한다. HotpotQA 데이터셋 실험에서 TopoGuard-λ2+Entity 변형은 LlamaGuard-2-8B 대비 21배 많은 공격을 탐지했으며(재현율 32.6% vs 1.5%), 서브밀리초 수준의 지연시간으로 실시간 프로덕션 환경에 적용 가능하다. 적대적 상황과 정상적인 교차 도메인 질의에도 강건성을 유지해, 실서비스 RAG 시스템의 새로운 보안 계층으로 활용될 수 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "d7edfd39-7cc1-44d0-a7a9-1dac605cb578",
+      "title": "Preference Tuning as Spectral Update Reorganization",
+      "url": "https://arxiv.org/abs/2607.20438",
+      "source": "arxiv",
+      "content": "arXiv:2607.20438v1 Announce Type: new \nAbstract: Preference-based post-training is usually understood through endpoint behavior, yet the learned update that produces this behavior remains largely opaque. We study RLHF and related preference optimization through the spectral structure of their induced parameter updates. By decomposing effective LoRA updates and reloading their spectral components as plug-in modules, we turn preference-induced updates into objects that can be isolated, recomposed, and directly intervened on. Across model families, optimization algorithms, and supervision regimes, these updates consistently develop a spectral head--tail organization. A compact head emerges early and carries the dominant endpoint shift, while a heterogeneous residual tail remains. The split is functional rather than merely descriptive. Plug-in intervention shows that the head accounts for the visible behavioral departure from the base model, while the tail is weak in isolation. Cross-run recomposition further shows that mixed adapters follow the source of the head, indicating that the head carries run-level solver bias. This endpoint dominance does not imply learning sufficiency. Head-only learning is non-vacuous but fails to recover the full solution, especially on out-of-distribution behavior. Tail-only learning yields little visible gain, yet the full solution is not recovered without the tail. These findings recast preference post-training as structured update reorganization rather than a monolithic behavioral correction, and suggest that alignment gain and coverage loss are tied to how the learned update itself is organized.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "RLHF 등 선호 기반 사후학습(preference-based post-training)이 모델 파라미터를 어떻게 바꾸는지, 그 결과로 나온 업데이트를 스펙트럼(고유값) 구조로 분해해 분석한 연구다. LoRA 업데이트를 스펙트럼 성분으로 분해해 플러그인 모듈처럼 다룰 수 있게 만든 결과, 다양한 모델·최적화 알고리즘·감독 방식에 걸쳐 일관되게 '헤드(head)'와 '테일(tail)'로 나뉘는 구조가 나타남을 발견했다. 초반에 형성되는 소규모 헤드가 눈에 보이는 행동 변화의 대부분을 담당하지만, 헤드만으로는 완전한 해를 복원하지 못하며 테일 없이는 분포 외(OOD) 상황에서 성능이 떨어진다는 점도 확인했다. 이는 선호 학습을 단일한 행동 교정이 아니라 구조화된 업데이트 재구성으로 재해석하게 하며, 정렬(alignment) 성능과 커버리지 손실이 업데이트의 내부 구조와 직접 연결되어 있음을 시사한다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "7432462b-62a9-453e-a590-e71eb1369a17",
+      "title": "Answer-then-Edit: Reasoning Skeleton Editing for Anti-Distillation with Preserved Utility",
+      "url": "https://arxiv.org/abs/2607.20440",
+      "source": "arxiv",
+      "content": "arXiv:2607.20440v1 Announce Type: new \nAbstract: Proprietary large language models (LLMs) entail substantial intellectual and financial investment, making them valuable intellectual property (IP). However, even when deployed via black-box APIs, these models remain vulnerable to unauthorized knowledge distillation, which allows adversaries to cheaply extract and replicate model capabilities. To address this issue, anti-distillation (AD) has been proposed to generate defensive outputs that hinder distillation effectiveness, overcoming the limitation of watermarking-based approaches that rely on post-hoc verification. However, existing AD methods based on internal model perturbations struggle to balance anti-distillability and utility (e.g., answer accuracy and naturalness) of reasoning traces, with stronger defenses often causing significant utility loss. To fill this gap, we propose \\textbf{\\underline{S}}keleton-\\textbf{\\underline{G}}uided \\textbf{\\underline{R}}easoning \\textbf{\\underline{E}}diting (SGRE), an \\textit{Answer-then-Edit} framework that performs post-hoc trace modification for anti-distillation. In the answer stage, the teacher model first generates clean reasoning traces, preserving the original reasoning accuracy while enabling more flexible control over trace naturalness. In the editing stage, we draw inspiration from Cognitive Load Theory (CLT) and introduce a three-stage strategy consisting of reasoning skeleton extraction, skeleton graph coarsening, and skeleton verbalization. These operations jointly perturb reasoning structures and augment textual complexity to amplify extraneous load on student models, hindering their acquisition of underlying reasoning patterns. Extensive experiments across diverse LLMs demonstrate that SGRE achieves state-of-the-art performance in reducing distillation effectiveness, while maintaining lossless reasoning accuracy and superior trace naturalness.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "API로만 공개된 독점 LLM이라도 저비용 지식 증류(distillation) 공격으로 복제될 수 있다는 문제에 대응해, 사후 편집으로 추론 과정을 왜곡시켜 증류를 방해하는 'SGRE(Answer-then-Edit)' 기법을 제안한 연구다. 먼저 교사 모델이 정확한 추론 과정을 생성한 뒤, 인지부하이론(Cognitive Load Theory)에 착안해 추론 골격을 추출·조악화·재서술하는 3단계 편집으로 학생 모델의 학습을 방해한다. 기존 반증류(anti-distillation) 기법들이 방어력을 높일수록 답변 정확도나 자연스러움이 크게 손상되는 트레이드오프를 겪었던 반면, SGRE는 정답 정확도를 거의 그대로 유지하면서도 증류 방지 성능에서 최고 수준을 달성했다. 이는 API 기반으로 서비스되는 상용 LLM의 지적재산을 보호하는 실용적인 방어 수단으로 활용될 수 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c5544fb7-930b-40c9-a95b-086206738593",
+      "title": "Belief Propagation in LLM World Models: Measuring Strategic Information Bias with Prediction Markets",
+      "url": "https://arxiv.org/abs/2607.20441",
+      "source": "arxiv",
+      "content": "arXiv:2607.20441v1 Announce Type: new \nAbstract: Every information ecosystem produces beliefs that shape strategic decisions. Both human analysts and AI systems inherit the blind spots of their information sources. We show that LLMs, combined with prediction markets, function as a calibrated instrument for measuring how far ecosystem-induced beliefs deviate from an external reference: LLMs extract the beliefs a text corpus implies, and prediction market price trajectories, anchored at resolution by realised outcomes, provide the calibration reference against which to quantify the deviation.\n  We isolate the bias contribution of specific text through ablation: varying information context while holding the model fixed, with a contaminated model that knows actual outcomes as control. Applied to 111 Ukraine-related prediction markets, comprising approximately 93,000 predictions across four models, we find that English news context systematically biases territorial predictions, wrong 64 to 72 percent of the time when it pushes predictions toward territorial capture. A contaminated model that knows actual outcomes shows the same error rate, indicating that the bias originates primarily in the text. Supplementing with Ukrainian military-analytical sources reduces the bias for all clean models, while absolute-error gains are partial and model-dependent.\n  We show that the distortion originates primarily in the sources, not the models. Consistent across four architectures, it will persist in any system that processes them and propagate into downstream decisions.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "LLM과 예측시장(prediction market) 가격 데이터를 결합해, 특정 정보 생태계가 AI 시스템에 심어놓는 전략적 정보 편향을 정량적으로 측정하는 방법론을 제시한 연구다. 우크라이나 관련 예측시장 111개, 약 9만3000건의 예측을 4개 모델로 분석한 결과, 영어권 뉴스 맥락이 영토 점령 가능성을 과대평가하는 방향으로 체계적 편향을 유발했으며 이 예측은 64~72%가 틀린 것으로 나타났다. 실제 결과를 알고 있는 '오염된' 모델도 동일한 오류율을 보여, 편향의 근원이 모델이 아니라 입력된 텍스트 자체에 있음을 확인했다. 우크라이나 군사분석 자료를 보강하면 편향이 줄어들긴 했지만 효과는 모델마다 제한적이었으며, 이는 정보원의 편향이 어떤 AI 시스템을 사용하든 그대로 전파되어 전략적 의사결정을 왜곡할 수 있음을 경고한다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5c9dc7c2-243c-4b68-885f-1dfac65ab62e",
+      "title": "GLAN-QnA-KR: A Seedless Taxonomy-Driven Korean Instruction Corpus",
+      "url": "https://arxiv.org/abs/2607.20443",
+      "source": "arxiv",
+      "content": "arXiv:2607.20443v1 Announce Type: new \nAbstract: We release GLAN-QnA-KR, a 303,581-row openly redistributable Korean instruction-QA corpus produced via the seedless taxonomy-driven GLAN synthesis pipeline with Microsoft's Phi-3.5-MoE-instruct as the producer model (generation: 2024-12; release: 2024-12; licence: OpenRAIL). The corpus spans a flat taxonomy of 1,084 English-labelled disciplines paired with Korean question/answer text, a 100-900 difficulty scale, and a median of 313 question characters and 1,098 answer characters per record. Two properties are atypical for synthetic instruction data at this scale: (i) exact duplicate questions number only 1 in 303,581 rows and character-trigram near-duplicate clusters at Jaccard >= 0.9 number zero in a 5,000-sample probe, and (ii) a two-layer contamination audit against KMMLU, KoBEST (five sub-tasks), and HAE-RAE-Bench shows a maximum test-vs-corpus question-level character-trigram Jaccard of 0.163 with zero test items at Jaccard >= 0.7, and a maximum multilingual-E5 cosine of 0.901 with a single test item at cosine >= 0.90 and zero at >= 0.95, across 20,000 sampled GLAN questions and seven evaluation sets. At the time of release, this is, to our knowledge, the largest single-pipeline synthetic Korean instruction corpus verifiable on the Hugging Face Hub and the only Korean >=100k-row corpus built under a seedless taxonomy-driven protocol. This note documents the generation protocol, corpus statistics, the contamination audit, and the licensing boundary in a form suitable for downstream citation.",
+      "published_at": "2026-07-25T00:00:00-04:00",
+      "summary": "마이크로소프트의 시드리스(seedless) 택소노미 기반 GLAN 합성 파이프라인과 Phi-3.5-MoE-instruct 모델을 활용해 제작한 30만3581행 규모의 한국어 지시학습(instruction) QA 코퍼스 'GLAN-QnA-KR'을 공개한 연구다. 1084개 영어 라벨 학문 분야에 걸친 평탄한 택소노미와 100~900 난이도 스케일을 갖췄으며, 30만 건이 넘는 데이터임에도 정확한 중복 질문이 단 1건에 불과할 정도로 데이터 품질이 높다. KMMLU, KoBEST, HAE-RAE-Bench 등 주요 한국어 벤치마크와의 오염 검증에서도 최대 자카드 유사도 0.163으로 오염 위험이 거의 없음을 확인했다. 오픈라이선스(OpenRAIL)로 공개되어, 한국어 특화 LLM을 파인튜닝하려는 국내외 연구자와 개발자들이 즉시 활용할 수 있는 대규모 학습 자원이라는 점에서 실용적 가치가 크다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a783336a-8e17-4bdd-abf3-f7ace55a2bdc",
+      "title": "알리바바, 차세대 이미지 생성 AI '큐웬 이미지 3.0' 공개… \"보기 좋은 이미지 넘어 실용적 생산성 도구로\"",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41164",
+      "source": "korean",
+      "content": "알리바바가 차세대 이미지 생성 인공지능(AI) 모델 '큐웬 이미지 3.0(Qwen-Image 3.0)​'을 지난 22일(현지시간) 공개하고 생성형 AI의 활용 범위를 디자인을 넘어 교육, 콘텐츠 제작, 전자상거래 등 생산성 중심 영역으로 확대하겠다는 청사진을 제시했다.\n\n알리바바 클라우드는 이번 모델의 핵심 키워드를 '리얼(Real)'로 제시하며, 단순히 보기 좋은 이미지를 생성하는 수준을 넘어 실제 업무에 투입 가능한 이미지 생성 AI를 목표로 개발했다고 밝혔다.\n\n큐웬 이미지 1.0이 '정밀성(Precision)', 큐웬 이미지 2.0이 '정밀성·다양성·완성도·심미성·사실성'을 강조했다면, 큐웬 이미지 3.0은 '풍부한 콘텐츠(Rich Content)', ​'사실적인 디테일(Authentic Details)', ​'깊이 있는 지식(Deep Knowledge)'이라는 세 가지 축을 기반으로 현실성과 실용성을 크게 강화한 것이 특징이다.\n\n최대 4,500토큰 이해… 신문·시험지·스토리보드도 한 번에 생성\n\n가장 큰 변화는 모델이 처리할 수 있는 프롬프트 길이가 최대 4,500토큰​으로 확대됐다는 점이다.\n\n이를 통해 하나의 이미지 안에 대량의 정보를 담은 복합 레이아웃을 구현할 수 있다. 예를 들어 3×3 형태의 인포그래픽에서는 터널 안전 만화, 공간기하학 수업자료, 물리학 포물선 운동, 생물학 기생충 설명, 의학 해부도, 은행 내부 인포그래픽, 세포 DNA 구조 비교 등 서로 다른 주제를 하나의 이미지 안에서 동시에 정확하게 표현할 수 있다.\n\n각 영역에는 중국어와 영어 텍스트, 수식, 차트, 일러스트 등 다양한 요소가 포함되며, 기존 이미지를 이어 붙이는 방식이 아니라 한 번의 생성 과정으로 완성된다.\n\n알리바바는 이를 '풍부한 콘텐츠' 역량이라고 설명했다. 모델은 단순히 여러 요소를 나열하는 데 그치지 않고 공간 배치 능력도 크게 향상됐다. 하나의 프롬프트만으로 VSCode 개발환경, 큐웬 챗(Qwen Chat), 위챗(WeChat), 핸드드립 커피 포스터가 순차적으로 중첩되는 '그림 속의 그림(Picture-in-Picture)' 형태의 복합 UI도 자연스럽게 구현할 수 있다.\n\n10픽셀 글자까지 선명… 피부 모공·머리카락도 사실적으로 표현\n\n두 번째 핵심 특징은 초정밀 이미지 표현이다. 큐웬 이미지 3.0은 10픽셀(px) 크기의 작은 글씨도 읽을 수 있을 정도의 텍스트 생성 성능​을 제공한다. 이에 따라 교육자료, 신문, 논문, 인포그래픽 등 대량의 텍스트를 포함하는 문서 이미지 생성이 가능해졌다.\n\n특히 대수기하학 분야의 학술논문 사례에서는 복잡한 LaTeX 수식, 위첨자와 아래첨자, 분수식, 그리스 문자, 정리 번호 등을 정확하게 표현해 높은 가독성을 유지했다.\n\n신문 이미지 역시 실제 인쇄물과 유사한 질감과 조판 형식을 구현했으며, 편집 작업에서는 밑줄, 동그라미, 화살표, 메모 등 학생의 필기 스타일을 자연스럽게 추가하는 기능도 선보였다.\n\n인물 사진에서는 피부 모공과 머리카락 한 올까지 세밀하게 표현하며, 손상된 독수리 수묵화 복원 사례에서는 붓의 질감과 먹의 농담, 깃털 표현 등을 유지하면서 훼손 부위를 자연스럽게 복원하는 모습을 보여줬다.\n\n한국어 포함 12개 언어 지원… 웹·게임 UI도 자연스럽게 구현\n\n큐웬 이미지 3.0은 한국어를 포함한 12개 언어를 기본적으로 지원하며, 다양한 글꼴과 100종 이상의 예술 스타일을 표현할 수 있다.\n\n다국어 텍스트를 자연스럽게 생성할 수 있으며, 실제 웹페이지와 게임 화면, 라이브 스트리밍 인터페이스 등 다양한 디지털 사용자환경(UI)도 높은 정확도로 재현한다.\n\n현실 세계에 대한 풍부한 지식을 바탕으로 복잡한 인포그래픽을 생성하거나 실제 이미지를 기반으로 새로운 시각 자료를 제작하는 작업도 가능하다.\n\n또한 역사적 인물과 예술가를 활용한 창작 사례도 제시했다. 예를 들어 중국 화가 치바이스(齊白石)와 빈센트 반 고흐가 라이브 방송에서 Qwen-Image 3.0을 소개하는 장면처럼 세계 지식을 활용한 창의적인 콘텐츠 생성도 지원한다.\n\n알리바바는 이번 모델의 목표가 단순한 이미지 생성 성능 경쟁이 아니라 실제 업무에 활용 가능한 AI 플랫폼 구축이라고 강조했다.\n\n회사 측은 \"큐웬 이니지 3.0은 신문 PDF 제작, 숏드라마 스토리보드 작성, 복잡한 UI 디자인 등 높은 생산성이 요구되는 업무에서 의미 있는 성과를 보여준다\"며 \"향후 디자인, 콘텐츠 제작, 교육, 전자상거래 등 다양한 산업에서 이미지 생성 AI가 실질적인 생산성 가치를 창출할 것으로 기대한다\"고 밝혔다.\n\n이번 발표는 최근 생성형 AI 업계가 단순한 이미지 품질 경쟁에서 벗어나 문서 작성, 교육 콘텐츠 제작, 사용자 인터페이스 설계 등 실무 중심의 생산성 도구 경쟁으로 빠르게 이동하고 있음을 보여주는 사례로 평가된다. 특히 대규모 프롬프트 이해 능력과 정교한 텍스트 생성 기술은 기존 이미지 생성 AI의 한계로 지적됐던 문서 생성과 정보 전달 영역을 크게 확장할 것으로 전망된다.",
+      "published_at": null,
+      "summary": "알리바바 클라우드가 차세대 이미지 생성 AI '큐웬 이미지 3.0'을 공개하며 최대 4500토큰의 프롬프트 이해력을 바탕으로 하나의 이미지 안에 신문, 시험지, 스토리보드 등 복합 레이아웃을 한 번에 생성할 수 있는 능력을 선보였다. 10픽셀 크기의 작은 텍스트까지 정확히 렌더링하고 LaTeX 수식·표·차트 등을 포함한 학술 문서나 인포그래픽도 높은 가독성으로 생성하며, 한국어를 포함한 12개 언어를 지원한다. 기존 이미지 생성 모델들이 '보기 좋은 이미지'에 집중했다면, 이번 모델은 웹·게임 UI 재현, 편집 표시(밑줄·화살표) 추가 등 실제 업무에 바로 투입 가능한 생산성 도구를 지향한다는 점이 특징이다. 이는 생성형 이미지 AI 경쟁이 단순 화질 경쟁에서 문서 제작·교육·전자상거래 등 실무 생산성 경쟁으로 이동하고 있음을 보여주는 사례로, 국내 콘텐츠·디자인 업계에도 영향을 미칠 것으로 전망된다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d72ca6b1-ddbb-43b3-95ad-3bbc01b8d702",
+      "title": "Monday.com is the latest tech company to blame AI for layoffs — here are 20 others",
+      "url": "https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+      "source": "techcrunch",
+      "content": "A running look — in reverse chronological order — at the bigger tech companies that have announced significant layoffs this year with AI as a stated factor.",
+      "published_at": "2026-07-26T01:30:00+00:00",
+      "summary": "먼데이닷컴(Monday.com)이 AI를 감원 사유로 명시적으로 언급한 최신 사례로 이름을 올리면서, 테크크런치가 올해 AI를 이유로 대규모 감원을 발표한 주요 테크 기업 20여 곳을 시간 역순으로 정리한 목록을 공개했다. 이는 생성형 AI 도입이 채용 축소 및 인력 구조조정과 직접적으로 연관되고 있다는 산업 전반의 흐름을 보여주는 누적 기록이다. 개별 기업의 기술 혁신 소식이라기보다는, AI가 실제 고용시장에 미치는 영향을 추적하는 저널리즘 성격의 자료다. AI 자동화가 특정 직군의 고용 안정성에 실질적 위협이 되고 있다는 대중적 우려를 뒷받침하는 근거 자료로 활용될 수 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "637cb85a-5ccd-4349-9b8d-9fa731208320",
+      "title": "One fallen power line exposed a growing AI data center problem. Here’s how to fix it.",
+      "url": "https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/",
+      "source": "techcrunch",
+      "content": "A close call in Northern Virginia revealed just how poorly data centers respond to grid disruptions. Here's how to fix the problem.",
+      "published_at": "2026-07-25T13:05:00+00:00",
+      "summary": "버지니아주 북부에서 발생한 전력선 낙뢰 사고가 AI 데이터센터들이 전력망 교란에 얼마나 취약한지를 여실히 드러낸 사건을 계기로, AI 인프라의 전력 안정성 문제를 다룬 기사다. 대규모 AI 학습·추론 수요 급증으로 데이터센터의 전력 소비가 폭증하면서, 예기치 못한 그리드 장애가 서비스 중단으로 이어질 위험이 커지고 있다는 점을 지적한다. 이는 AI 모델 자체의 성능 경쟁을 넘어, 이를 뒷받침하는 전력망·인프라 회복탄력성이 업계의 새로운 병목으로 떠오르고 있음을 보여준다. 데이터센터 운영사와 전력 공급업체 모두에게 그리드 장애 대응 체계를 재점검해야 한다는 실질적 과제를 제기한다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "a0db286d-5fff-4298-8ad3-f2399299a44d",
+      "title": "I tried out OpenAI’s new AI keypad — which will be fun for some coders and slightly mystifying to everyone else",
+      "url": "https://techcrunch.com/2026/07/24/i-tried-out-openais-new-ai-keypad-which-will-be-fun-for-coders-and-slightly-mystifying-to-everyone-else/",
+      "source": "techcrunch",
+      "content": "OpenAI's fancy new AI keypad will be a lot of fun for some, while many others are probably not going to touch it.",
+      "published_at": "2026-07-25T00:23:11+00:00",
+      "summary": "오픈AI가 코딩 작업을 위한 전용 'AI 키패드' 하드웨어를 공개했으며, 테크크런치가 이를 직접 사용해본 리뷰를 공개했다. 특정 개발자들에게는 반복적인 AI 코딩 명령을 물리적 버튼으로 단축시켜주는 재미있는 도구가 될 수 있지만, 일반 사용자에게는 용도가 다소 낯설고 이해하기 어려울 수 있다는 평가다. 이는 AI 코딩 어시스턴트가 소프트웨어를 넘어 전용 하드웨어 폼팩터로도 확장되고 있는 흐름을 보여주는 사례다. 개발자 생산성 도구 시장에서 AI 기업들이 하드웨어까지 영역을 넓히는 실험적 시도로 주목할 만하다.",
+      "category": "기타",
+      "audience": [
+        "DEVELOPER",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "0f04b6a2-48cc-4b94-ac54-93cfd54d516e",
+      "title": "Bluesky’s AI assistant Attie expands into an open social research tool",
+      "url": "https://techcrunch.com/2026/07/24/blueskys-ai-assistant-attie-expands-into-an-open-social-research-tool/",
+      "source": "techcrunch",
+      "content": "Users can now ask Attie questions about news, trends, and conversations on Bluesky and other apps on the AT Protocol.",
+      "published_at": "2026-07-24T15:13:57+00:00",
+      "summary": "탈중앙화 소셜 프로토콜 AT Protocol 기반 서비스인 블루스카이(Bluesky)가 자사 AI 어시스턴트 '애티(Attie)'를 개방형 소셜 리서치 도구로 확장했다. 이용자는 이제 애티에게 블루스카이뿐 아니라 AT 프로토콜 기반 다른 앱들의 뉴스, 트렌드, 대화 내용까지 질문할 수 있게 됐다. 이는 폐쇄적인 단일 플랫폼을 넘어 개방형 프로토콜 생태계 전반을 아우르는 AI 리서치 에이전트로의 진화를 보여주는 사례다. 소셜 데이터를 실시간으로 탐색하고 요약하는 AI 에이전트가 대형 플랫폼뿐 아니라 오픈 프로토콜 진영에서도 경쟁력을 확보해가고 있음을 시사한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "428a52f5-6bb9-482d-bf34-ca11538c645e",
+      "title": "Midjourney acquired the astrology app Co-Star",
+      "url": "https://techcrunch.com/2026/07/24/midjourney-acquired-the-astrology-app-co-star/",
+      "source": "techcrunch",
+      "content": "The AI lab Midjourney continues to expand its purview beyond image and video generation.",
+      "published_at": "2026-07-24T15:09:55+00:00",
+      "summary": "이미지·비디오 생성 AI 랩 미드저니(Midjourney)가 점성술 앱 '코스타(Co-Star)'를 인수하며 사업 영역을 확장했다. 이는 미드저니가 순수 생성형 이미지·비디오 모델 개발사에서 벗어나 소비자 대상 라이프스타일 애플리케이션으로 포트폴리오를 넓히고 있음을 보여주는 행보다. AI 이미지 생성 기업들이 핵심 모델 경쟁력을 소비자 앱 인수합병을 통해 실제 서비스로 확장하려는 산업 전반의 흐름과 맞닿아 있다. 향후 코스타 앱에 미드저니의 생성형 AI 기술이 어떻게 통합될지가 업계의 관심사로 떠오를 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
