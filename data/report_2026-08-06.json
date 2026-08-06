@@ -1,0 +1,281 @@
+{
+  "id": "e8a3f938-cb0b-44a4-8994-ac53d246057c",
+  "created_at": "2026-08-06T02:32:50.425169",
+  "articles": [
+    {
+      "id": "498f9ef1-9b1a-4839-8daa-b68e745b29f0",
+      "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
+      "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/",
+      "source": "techcrunch",
+      "content": "The legendary Google executive is joined by other outgoing Google execs in a joint mission to use AI to push forward the process of scientific discovery.",
+      "published_at": "2026-08-05T19:30:19+00:00",
+      "summary": "구글의 전설적 AI 리서치 리더인 제프 딘을 비롯한 다수의 고위 AI 연구자들이 구글을 떠나 과학적 발견을 가속화하기 위한 AI 스타트업을 공동 창업한다고 밝혔다. 이는 최근 프론티어 AI 인재들이 빅테크를 떠나 독립 벤처를 세우는 흐름을 보여주는 상징적 사례로, 구글 딥마인드의 리서치 리더십 공백 우려를 낳고 있다. 새 스타트업은 AI를 활용해 과학 연구 프로세스 자체를 혁신하는 것을 목표로 한다고 알려졌다. 구체적 사업 모델과 자금 조달 규모는 아직 공개되지 않았지만, 업계에서는 이번 이탈이 AI 인재 전쟁의 새로운 국면을 예고한다고 평가한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "67dc4e04-05b2-4c6c-86e3-4515a01cf027",
+      "title": "Meta launches Muse Code, an AI agent for large code bases",
+      "url": "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/",
+      "source": "techcrunch",
+      "content": "Meta expanded its AI coding offerings with a new agent that, it promises, can handle complex tasks with complex software.",
+      "published_at": "2026-08-05T21:21:28+00:00",
+      "summary": "메타가 대규모 코드베이스를 다루는 복잡한 소프트웨어 엔지니어링 작업을 위한 새로운 AI 코딩 에이전트 'Muse Code'를 출시했다. 기존 코딩 어시스턴트들이 소규모 코드 조각 생성에 강점을 보인 것과 달리, Muse Code는 대규모 리포지터리 전반의 맥락을 이해하고 복합적인 작업을 수행하도록 설계됐다. 이는 메타가 Cursor, GitHub Copilot 등과 경쟁하며 AI 코딩 에이전트 시장에서 입지를 넓히려는 전략의 일환이다. 개발자들은 대규모 프로젝트 리팩터링이나 크로스 모듈 변경 작업에서 생산성 향상을 기대할 수 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "d1632203-eeef-446b-8801-5c2e4d46cebf",
+      "title": "Anthropic is hiring an AI chip design team",
+      "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
+      "source": "techcrunch",
+      "content": "Anthropic is building a team for designing its own custom AI chips. The Claude maker said it would co-design hardware and models to help its technology run faster and more efficiently.",
+      "published_at": "2026-08-05T14:13:18+00:00",
+      "summary": "앤트로픽이 자체 AI 칩을 설계하기 위한 전담 하드웨어 팀을 신규 채용 중이라고 밝혔다. 클로드 모델과 하드웨어를 공동 설계함으로써 추론 속도와 효율성을 동시에 높이는 것이 목표다. 이는 OpenAI, 구글, 아마존 등 경쟁 프론티어 랩들이 이미 커스텀 실리콘 개발에 뛰어든 흐름을 앤트로픽도 뒤따르는 것으로, AI 기업들의 인프라 수직계열화 경쟁이 가속화되고 있음을 보여준다. 장기적으로는 엔비디아 등 외부 칩 공급업체에 대한 의존도를 낮추고 비용 구조를 개선하려는 전략으로 해석된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "23400d49-ceb3-4d68-8ce3-f6e699dc5b66",
+      "title": "Hark previews its browser use agent for completing tasks",
+      "url": "https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/",
+      "source": "techcrunch",
+      "content": "Hark claims that its browser use agent is faster and cheaper than competition.",
+      "published_at": "2026-08-05T15:46:27+00:00",
+      "summary": "스타트업 Hark가 웹 브라우저에서 작업을 자동으로 완수하는 '브라우저 사용 에이전트'를 공개했다. 회사 측은 경쟁 제품 대비 더 빠르고 저렴한 비용으로 브라우저 기반 작업을 처리할 수 있다고 주장한다. 이는 OpenAI의 Operator, 구글의 Project Mariner 등 기존 브라우저 자동화 에이전트들과 직접 경쟁하는 제품으로, 웹 자동화 에이전트 시장의 경쟁이 격화되고 있음을 보여준다. 실사용자 벤치마크와 구체적 가격 정책은 아직 명확히 공개되지 않았다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b705823e-ae7a-436d-9a98-326ada1c9db8",
+      "title": "MacPaw taps Liquid AI to offer on-device inference to devs building for its app store",
+      "url": "https://techcrunch.com/2026/08/05/macpaw-taps-liquid-ai-to-offer-on-device-inference-to-devs-building-for-its-app-store/",
+      "source": "techcrunch",
+      "content": "MacPaw is building a local version of its AI assistant Eney using Liquid AI's models.",
+      "published_at": "2026-08-05T12:28:38+00:00",
+      "summary": "우크라이나 소프트웨어 기업 MacPaw가 자사 앱스토어 개발자들에게 온디바이스 추론 기능을 제공하기 위해 Liquid AI와 협력한다고 밝혔다. MacPaw는 이를 통해 자사 AI 어시스턴트 'Eney'의 로컬 실행 버전을 구축할 계획이다. Liquid AI의 경량 파운데이션 모델을 활용하면 클라우드 API 호출 없이도 기기 내에서 개인정보를 안전하게 처리하며 AI 기능을 제공할 수 있다. 이는 온디바이스 AI 추론이 소규모 소프트웨어 생태계로도 빠르게 확산되고 있음을 보여주는 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "11d82b0c-a15a-487d-9584-f037c6ab9162",
+      "title": "Spotify expands AI remix and covers project with Merlin partnership",
+      "url": "https://techcrunch.com/2026/08/04/spotify-adds-merlin-to-its-ai-music-remix-and-covers-effort/",
+      "source": "techcrunch",
+      "content": "Spotify says Merlin, which represents more than 30,000 independent labels and distributors, has joined Universal Music Group in backing its upcoming AI-powered remix and covers product. The paid tool will let fans create AI-generated covers and remixes of participating artists’ music while ensuring artists opt in, receive credit, and are compensated.",
+      "published_at": "2026-08-04T15:50:06+00:00",
+      "summary": "스포티파이가 AI 기반 리믹스·커버 제작 프로젝트에 3만여 개 독립 레이블을 대표하는 Merlin을 새 파트너로 합류시켰다고 밝혔다. 이미 유니버설뮤직그룹(UMG)이 참여하고 있던 이 유료 도구는 팬들이 참여 아티스트의 곡으로 AI 생성 커버와 리믹스를 만들 수 있게 해주며, 아티스트의 사전 동의와 크레딧 표기, 보상 지급을 보장한다. 이는 음악 업계가 AI 생성 콘텐츠에 대한 우려를 해소하면서도 신규 수익원을 확보하려는 시도로 해석된다. 저작권자 동의 기반 라이선싱 모델은 향후 다른 AI 콘텐츠 플랫폼에도 참고 사례가 될 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "681858e9-9285-4487-aaf9-c1fa9b0caba4",
+      "title": "Shopify says AI search is driving more traffic and sales, not replacing Google",
+      "url": "https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/",
+      "source": "techcrunch",
+      "content": "Shopify says AI isn’t cannibalizing search traffic the way it has for publishers. Instead, AI-driven traffic and orders to Shopify stores tripled year over year in Q2.",
+      "published_at": "2026-08-05T15:56:14+00:00",
+      "summary": "쇼피파이가 AI 기반 검색 트래픽이 언론사들과 달리 자사 매출을 잠식하지 않고 오히려 견인하고 있다고 밝혔다. 올해 2분기 AI 기반 트래픽과 주문량이 전년 대비 3배 증가했다는 수치를 공개했다. 이는 챗GPT 등 AI 챗봇을 통한 쇼핑 추천이 전통적 구글 검색을 대체하는 것이 아니라 새로운 수요를 창출하는 채널로 작동하고 있음을 시사한다. 전자상거래 업계에서 AI 에이전트 쇼핑이 실질적 매출 기여 채널로 자리잡고 있음을 보여주는 실증 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b0b89850-e155-4e12-8a10-32c6a730c5e9",
+      "title": "AI makes weather prediction better. Can WindBorne make it lucrative?",
+      "url": "https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/",
+      "source": "techcrunch",
+      "content": "WindBorne Systems has raised a $37 million Series B round to scale its weather balloons and AI forecasts.",
+      "published_at": "2026-08-05T11:00:00+00:00",
+      "summary": "기상 관측 스타트업 윈드본시스템즈가 날씨 풍선과 AI 예보 모델을 확장하기 위해 3,700만 달러 규모의 시리즈B 투자를 유치했다. AI가 기상 예측 정확도를 높이고 있다는 점은 입증됐지만, 이를 지속가능한 사업으로 만들 수 있는지가 관건으로 지목된다. 윈드본은 자체 고도 제어 풍선으로 수집한 관측 데이터를 AI 모델에 결합해 기존 기상청보다 정밀한 예보를 제공하는 것을 목표로 한다. 기후 관련 산업 전반에서 AI 기반 예측 스타트업에 대한 투자 관심이 이어지고 있음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "46465b5b-aeec-474e-b9d2-1dc4867e9509",
+      "title": "MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale",
+      "url": "https://arxiv.org/abs/2608.02613",
+      "source": "arxiv",
+      "content": "arXiv:2608.02613v1 Announce Type: new \nAbstract: Edge-deployed personal memory assistants must handle private interpersonal conversations on-device with open-weight models. Yet, existing memory benchmarks often under-test the combination of activity-dense interaction, ego-centric perspective, and coherent multi-session worlds. MemArena fills these gaps with a single-world conversational benchmark built with its MASim agent simulator, for 50 agents over 15 days (10.3M dialog-text tokens, 24.1K text-only ego-observed tokens/agent/day). With the interaction history, it co-generates ground truth over six recall, reasoning, and trustworthiness evaluation dimensions. We evaluate five open-weight readers with Vanilla context, BM25-RAG, Oracle retrieval, Memobase, and MemSearch as memory backends. Three results stand out: (1) Memory-backend choice matters more for content accuracy: At Qwen3-0.6B, Memobase-to-MemSearch gains +32.5/+19.2 pp, exceeding MemSearch reader scaling (+10.6/+6.8 pp). (2) Permission-aware access fails universally, with Oracle leaking heavily and other backends too timid to disclose. (3) Search latency bites only at very small reader: on a Spark GB10 edge node, memory-search adds a moderate and fixed 87/7/48 ms (BM25-RAG/Memobase/MemSearch) that composes a small part of TTFT for most reader-backend combinations. Code, the MASim simulator, and the MemArena-L benchmark will be released upon acceptance.",
+      "published_at": "2026-08-05T00:00:00-04:00",
+      "summary": "연구진이 온디바이스 개인 메모리 어시스턴트를 평가하기 위한 벤치마크 'MemArena'를 공개했다. 자체 개발한 에이전트 시뮬레이터 MASim으로 50개 에이전트가 15일간 상호작용하는 대규모 대화 데이터(1,030만 토큰)를 생성하고, 기억 회상·추론·신뢰성 등 6개 차원에서 정답을 함께 구성했다. Vanilla, BM25-RAG, Oracle 검색, Memobase, MemSearch 등 다섯 가지 메모리 백엔드로 오픈웨이트 모델들을 평가한 결과, 메모리 백엔드 선택이 콘텐츠 정확도에 모델 크기보다 더 큰 영향을 미치는 것으로 나타났다. 이는 프라이버시가 중요한 온디바이스 개인비서 시스템 설계에서 검색·기억 아키텍처 선택이 핵심 변수임을 시사한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "fc5a5f1d-6cd9-4c7f-953a-f02306cd840b",
+      "title": "KT, AI 기반 실시간 스팸차단 서비스 전 고객 확대 적용...오차단율 0.003% · VOC 0건",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41327",
+      "source": "korean",
+      "content": "KT가 ‘인공지능 기반 실시간 스팸차단 서비스(이하, AI 스팸차단)’를 전 고객 대상으로 확대 적용했다고 6일 밝혔다.\n\n최근 스팸은 패턴의 주기가 점점 짧아지고, 키워드 차단을 피하기 위해 특수문자를 포함해 변형하는 등 수법 또한 갈수록 정교해지고 있다. KT는 이러한 신규 및 변형 스팸 차단의 사각지대를 해소하기 위해 새로운 유형의 스팸까지 실시간 탐지, 차단할 수 있는 AI 스팸차단을 자체 개발했다.\n\n지난 1월 개발된 AI 스팸차단은 ‘KT 스팸차단’ 앱에서 스마트 차단기능 ‘높음’을 설정한 고객 80만 명을 대상으로 시범 운영됐다. 스마트 차단 감도가 높을수록, 스팸이 의심되는 문자는 대부분 차단된다.\n\nKT는 이와 같은 단계적 운영을 통해 서비스 안정성을 확보하고, 지난 7월 29일부터 기존 서비스인 ‘(안심)스팸차단 서비스(이하 스팸차단 서비스)’에 KT알뜰폰 포함 전 고객을 대상으로 AI 스팸차단 기능을 확대 적용했다. 스팸차단 서비스는 KT 고객이라면 누구나 무료로 이용할 수 있다.\n\nAI 스팸차단은 주말과 야간을 포함해 24시간 운영된다. KT는 AI 스팸차단 기능 확대 적용 이후, 서비스 안정성과 고객 체감 품질을 집중 모니터링 중이다. 실제 AI 스팸차단이 확대 적용된 7월 29일부터 8월 3일까지 스팸차단 서비스 오차단율은 0.003%, 관련 VOC(고객 문의)는 0건으로 안정적인 품질을 유지하고 있다. AI 스팸 차단을 통해 기존에는 걸러지지 못했던 스팸도 정교하게 차단되면서, 전체 스팸차단 건수가 3.5% 증가하는 등 실효성을 입증하고 있다.\n\n아울러 KT는 8월중 ‘스팸차단 실시간 알림 서비스’를 새롭게 출시한다. 알림 서비스 이용 고객은 실시간으로 스팸차단 내역을 안내 받고, 차단현황을 보다 쉽고 빠르게 확인할 수 있다.\n\nKT Customer부문 Customer전략본부장 최세준 상무는 “AI 스팸차단 기능은 고객보호365TF 활동의 일환으로 다양한 스팸 및 디지털 범죄로부터 고객을 실시간으로 보호하기 위해 개발됐다”며 “앞으로도 서비스를 지속 업데이트해 고객 신뢰도를 높이고, AI 기반 탐지 기술을 고도화해 예방 중심의 고객 보호 체계를 구축해 나가겠다”고 말했다.",
+      "published_at": null,
+      "summary": "KT가 AI 기반 실시간 스팸차단 서비스를 전체 고객 대상으로 확대 적용했다고 밝혔다. 지난 1월 개발돼 80만 명 대상 시범 운영을 거친 이 서비스는 새로운 유형과 변형된 스팸까지 실시간으로 탐지·차단할 수 있도록 설계됐다. 7월 29일 확대 적용 이후 일주일간 오차단율 0.003%, 관련 고객 불만은 0건을 기록하며 안정성을 입증했고, 전체 스팸 차단 건수도 3.5% 증가했다. KT는 8월 중 실시간 알림 서비스도 추가로 출시할 예정이며, 이는 국내 통신사의 AI 기반 고객보호 기술이 상용 서비스 단계로 안착하고 있음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "0e464bd1-62c9-4631-8880-736e4611e35a",
+      "title": "Evaluating OpenAI's Privacy Filter: Cross-Lingual, Cross-Domain PII Detection Across 42 Benchmarks",
+      "url": "https://arxiv.org/abs/2608.02616",
+      "source": "arxiv",
+      "content": "arXiv:2608.02616v1 Announce Type: new \nAbstract: We present the first independent, systematic evaluation of OpenAI's Privacy Filter (OPF), a 1.5B-parameter bidirectional PII detector, across 42 synthetic benchmarks spanning 22 languages and 5 domains. Zero-shot, OPF achieves F1=0.855 on AI4Privacy and 0.464 on SPY medical, outperforming Presidio (0.431, 0.273) and XLM-RoBERTa (0.269, 0.111) on PII-annotated benchmarks; on multilingual NER, XLM-RoBERTa leads OPF on all 13 Indic and non-Latin languages. GPT-4o leads on medical, legal, and financial PII (SPY: 0.643 avg, Gretel: 0.527), while OPF leads on structured synthetic PII (0.71 avg) and customer support (0.60). OPF degrades sharply when PII is embedded in narrative prose: F1=0.04--0.57 on NER benchmarks and collapse for non-Latin scripts (Arabic: 0.04, Cyrillic: 0.03). Error analysis shows OPF is strongest on structurally regular PII types (email: 0.78, phone: 0.76) and weakest on culturally variable ones (person: 0.40, address: 0.49), and is recall-biased on customer-support and medical/legal PII (P=0.31--0.54, R=0.70--0.85); global precision spans 0.31--0.86 across all domains.",
+      "published_at": "2026-08-05T00:00:00-04:00",
+      "summary": "연구진이 OpenAI의 15억 파라미터 규모 PII(개인식별정보) 탐지 모델 'Privacy Filter(OPF)'를 22개 언어·5개 도메인에 걸친 42개 벤치마크로 독립 평가한 첫 연구를 발표했다. OPF는 AI4Privacy 벤치마크에서 F1 0.855를 기록해 Presidio(0.431), XLM-RoBERTa(0.269)를 크게 앞섰지만, 13개 인도계·비라틴 문자 언어의 다국어 개체명 인식에서는 XLM-RoBERTa에 뒤처졌다. 특히 PII가 자연스러운 서술형 문장에 섞여 있을 때 성능이 급락했으며(F1 0.04~0.57), 아랍어·키릴문자 등 비라틴 문자에서는 사실상 붕괴 수준(0.03~0.04)을 보였다. 이는 상용 프라이버시 필터가 구조화된 데이터에는 강하지만 실제 대화·문서 환경의 다국어 PII 탐지에는 여전히 한계가 크다는 점을 보여준다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "94fd99e2-3175-46ce-9391-9d77848b82bf",
+      "title": "HyperAgent: Planning and Acting over Tool-Schema Hypergraphs for Tool-Use LLM Agents",
+      "url": "https://arxiv.org/abs/2608.02650",
+      "source": "arxiv",
+      "content": "arXiv:2608.02650v1 Announce Type: new \nAbstract: Large language model (LLM) agents increasingly rely on external tools to complete complex real-world tasks. However, reliable tool-use planning remains challenging due to the limitations of implicit reasoning and the evolving nature of real-world execution environments. Existing tool-use agents typically rely on LLMs to infer tool compositions from textual descriptions, which can lead to inefficient exploration and unreliable execution in complex tasks. To address these challenges, we model tool relations at the schema level and construct a directed Tool--Schema Hypergraph, in which tools are represented as hyperedges from their required input-schema nodes to their output-schema nodes. Furthermore, we propose HyperAgent, a Tool--Schema Hypergraph-guided framework for dynamic planning and execution. Given a task, HyperAgent first extracts a task-relevant tool context graph and uses it to guide the construction of a schema-aware Task DAG. During execution, HyperAgent dynamically realizes each subtask by constructing a state-conditioned tool support graph through deficit-oriented expansion, which identifies unresolved requirements and retrieves supporting producer tools according to the current agent state. Experiments on AppWorld demonstrate that HyperAgent improves task completion performance while reducing redundant API calls, LLM interactions, and token consumption compared with existing agent baselines.",
+      "published_at": "2026-08-05T00:00:00-04:00",
+      "summary": "연구진이 도구 사용 LLM 에이전트의 신뢰성 있는 계획 수립을 위해 도구를 스키마 수준의 하이퍼그래프로 모델링하는 프레임워크 'HyperAgent'를 제안했다. 도구를 입력 스키마 노드에서 출력 스키마 노드로 향하는 하이퍼엣지로 표현함으로써, 기존처럼 LLM이 텍스트 설명만으로 도구 조합을 추론할 때 발생하는 비효율적 탐색과 불안정한 실행 문제를 해결한다. HyperAgent는 작업이 주어지면 관련 도구 컨텍스트 그래프를 추출해 스키마 인지형 태스크 DAG를 구성하고, 실행 중에는 부족한 요구사항을 식별해 동적으로 도구 지원 그래프를 확장한다. 이는 복잡한 실세계 작업을 수행하는 에이전트 시스템의 계획 안정성과 실행 신뢰성을 높이는 구조적 접근으로 평가된다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "b4fb1351-9073-4b71-ae5d-c5a10ee2c38c",
+      "title": "Output-Aware Rotation for INT2 KV-Cache Quantization",
+      "url": "https://arxiv.org/abs/2608.02691",
+      "source": "arxiv",
+      "content": "arXiv:2608.02691v1 Announce Type: new \nAbstract: The key-value (KV) cache has become a major memory and bandwidth bottleneck in long-context large language model inference, making ultra-low-bit quantization increasingly important. However, existing rotation-based INT2 methods optimize cache statistics or proxy errors before the complete attention readout, even though the model is ultimately affected by the error propagated through attention and the output projection $W_O$. To address this mismatch, we propose \\textit{OptR}, an output-aware rotation method that minimizes post-$W_O$ attention-output error. OptR decomposes the post-$W_O$ attention-output error into key- and value-induced terms and learns per-head orthogonal corrections through the full INT2 quantization and attention path. OptR further applies an attention-equivalent key reparameterization to reduce large channel-wise offsets without changing the softmax distribution. Across three models and five reasoning and coding benchmarks, OptR consistently improves both QuaRot and OSCAR and strengthens long-context retrieval, while preserving the paged KV-cache format with negligible inference overhead.",
+      "published_at": "2026-08-05T00:00:00-04:00",
+      "summary": "연구진이 장문맥 LLM 추론의 메모리 병목인 KV 캐시를 초저비트(INT2)로 압축하면서 정확도 손실을 최소화하는 출력 인지형 회전 기법 'OptR'을 제안했다. 기존 회전 기반 INT2 양자화 방법들이 어텐션 최종 출력 이전 단계의 캐시 통계나 대리 오차만 최적화했던 것과 달리, OptR은 출력 프로젝션 이후의 실제 어텐션 출력 오차를 직접 최소화하도록 키·값별 직교 보정을 학습한다. 3개 모델·5개 추론/코딩 벤치마크 실험에서 기존 기법인 QuaRot, OSCAR 대비 일관된 성능 향상을 보였으며, 장문맥 검색 능력도 개선됐다. 페이지드 KV 캐시 형식을 그대로 유지하면서 추론 오버헤드가 거의 없어, 실제 서빙 인프라에 바로 적용 가능한 실용적 최적화 기법으로 주목된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "d66680c3-06b7-4ad4-bbf1-ee0a281dca40",
+      "title": "Preferred, Not Safer: Pairwise Preference Is a Poor Proxy for Clinical Safety",
+      "url": "https://arxiv.org/abs/2608.02617",
+      "source": "arxiv",
+      "content": "arXiv:2608.02617v1 Announce Type: new \nAbstract: We evaluate whether clinician pairwise preferences provide a reliable signal of clinical safety in large language model (LLM) evaluation using expert feedback from MOOVE (Massive Open Online Validation and Evaluation), a clinician-led platform collecting blinded pairwise preferences alongside multi-criterion rubric ratings. Clinicians assign scores on a discrete $[-2, +2]$ scale, where negative values indicate clinically unsafe or misleading content. Using 26{,}804 pairwise judgments across outputs from 13 LLMs, contributed by more than 736 clinicians across 28+ countries, we find that clinician preference is a poor proxy for safety-critical performance. Models ranking highly under pairwise preference can still exhibit substantial rates of clinically meaningful failures ($\\leq -1$) on dimensions such as \\emph{Harmlessness} and \\emph{Accuracy}. These failures are unevenly distributed across specialties, creating domain-specific ``no-go zones'' not visible in aggregate rankings or single-number leaderboards. We further analyze contributing factors including prompt length, refusal and escalation behavior, and the relative contributions of safety-critical versus surface-level features. A substantial fraction of preference votes carry no positive safety signal, while feature decomposition shows that surface-level characteristics explain slightly more preference variation than safety-critical rubric differences. Finally, we introduce a clinically adjusted preference ranking combining pairwise preference with rubric-derived feedback, producing a more safety-aware ordering than raw Bradley--Terry strength alone. Our findings support evaluation practices that separate preference from safety, report safety-critical failure rates directly, and incorporate clinically grounded adjustments when ranking LLMs for clinical decision making.",
+      "published_at": "2026-08-05T00:00:00-04:00",
+      "summary": "임상 의료 LLM 평가에서 의사들의 쌍대 선호도(pairwise preference)가 실제 임상 안전성을 제대로 반영하지 못한다는 연구 결과가 발표됐다. 28개국 736명 이상의 임상의가 참여해 13개 LLM에 대해 수집한 2만 6,804건의 쌍대 평가를 분석한 결과, 선호도 순위에서 상위권인 모델도 무해성·정확성 등 안전성 지표에서는 상당한 비율로 임상적으로 위험한 실패를 보였다. 이러한 실패는 진료과별로 고르지 않게 분포해, 종합 리더보드나 단일 점수로는 드러나지 않는 특정 분야의 '위험 지대'를 형성했다. 이는 의료 AI 도입 시 사용자 선호도 기반 평가만으로는 불충분하며, 별도의 임상 안전성 검증 체계가 반드시 필요함을 시사한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "efe1df33-41cf-476b-8713-a937fc406d66",
+      "title": "Aligned in Form, Not in Meaning: The Comprehension - Containment Decoupling of LLM Safety in Low-Resource Bangla Derogatory Speech",
+      "url": "https://arxiv.org/abs/2608.02941",
+      "source": "arxiv",
+      "content": "arXiv:2608.02941v1 Announce Type: new \nAbstract: We audit five frontier large language models on native Bangla derogatory speech (gali) across six protocols to test a single hypothesis: Comprehension-Containment Decoupling. We propose that contemporary safety alignment is bound to high-resource surface forms rather than harmful meaning, causing a model's capacity to comprehend a low-resource slur and its capacity to contain it to operate independently. Every protocol corroborates this hypothesis against a human-calibrated baseline (kappa = 0.84). At baseline, models exhibit a 7.92 percentage point comprehension deficit in Bangla while maintaining an identical 92.83% token leakage rate across both languages. Severity calibration tracks surface anatomical cues over compositional harm (+4.00 error on mild slang; -2.00 on threats), while apparent containment gains under orthographic perturbation prove to be a tokenizer-driven \"containment mirage.\" Crucially, explicit Chain-of-Thought reasoning rescues comprehension (94.72% Pass) while systematically dismantling containment (96.23% Use). Furthermore, expert-persona framing collapses refusal to 6.57%, revealing that keyword-based filters ignore dehumanizing communal slurs entirely. Our findings demonstrate that high-resource benchmarks cannot certify low-resource safety, necessitating meaning-grounded containment.",
+      "published_at": "2026-08-05T00:00:00-04:00",
+      "summary": "연구진이 5개 프론티어 LLM을 대상으로 저자원 언어인 벵골어 비속어(gali) 처리 능력을 감사한 결과, 모델이 유해 표현을 '이해'하는 능력과 이를 '차단'하는 능력이 서로 분리되어 있다는 '이해-차단 분리(Comprehension-Containment Decoupling)' 현상을 발견했다. 기준 상태에서 모델은 벵골어 이해도가 영어 대비 7.92%p 낮았지만, 토큰 유출률(유해 표현 생성 비율)은 두 언어에서 동일하게 92.83%로 나타나 안전장치가 표면적 언어 형태에만 맞춰져 있음을 보였다. 특히 사고연쇄(Chain-of-Thought) 추론을 적용하면 이해도는 94.72%로 개선되지만 차단 능력은 오히려 96.23%까지 붕괴했고, 전문가 페르소나를 부여하면 거부율이 6.57%까지 떨어졌다. 이는 현재의 안전 정렬 기법이 고자원 언어의 표면 패턴에만 의존하고 있어, 저자원 언어 환경에서는 실질적 보호 기능을 하지 못할 위험이 크다는 점을 경고한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "dbbe5479-5220-445b-a029-8da28fa40d26",
+      "title": "FakeI2V-Bench: Benchmarking the Applicability of Image-level Deepfake Detectors for Deepfake Video Detection",
+      "url": "https://huggingface.co/papers/2608.03096",
+      "source": "hf_papers",
+      "content": "Recent advances in video generation models have significantly intensified the deepfake threat, yet the current deepfake video detection benchmarks remain underdeveloped. In particular, the effectiveness of image-level detectors in the video domain has not been systematically assessed. To fill this gap, we present FakeI2V-Bench, a benchmark for evaluating state-of-the-art video-level deepfake detectors in challenging scenarios, with a particular focus on systematically assessing the performance of image-level deepfake detectors in the video domain. FakeI2V-Bench comprises 97,548 videos, containing content generated by the latest powerful generation models and covering a broader range of categories. Using this dataset, we conduct a systematic evaluation of eight video-level detectors and twelve representative image-level detectors. Experimental results show that the best-performing image-level detector achieves an 80.16% AUC, slightly outperforming the strongest video-level detector (i.e., 79.99% AUC). Going beyond benchmarking, we present IV-Bridge, a general framework that enhances the applicability of image-level deepfake detectors to videos. IV-Bridge employs a random forest model with statistical features to aggregate frame-level predictions, allowing eleven image-level detectors to surpass state-of-the-art video-level approaches, with the best-performing variant achieving a 93.80% AUC. Overall, FakeI2V-Bench establishes a rigorous benchmark for deepfake video detection and introduces a novel pathway for extending image-level detectors to the video domain, offering new insights and directions for future research. Code and data are available at https://github.com/CryptoAILab/FakeI2V-Bench.",
+      "published_at": "2026-08-04T04:13:31+00:00",
+      "summary": "연구진이 최신 비디오 생성 모델로 만들어진 딥페이크 영상을 탐지하는 성능을 체계적으로 평가하기 위한 대규모 벤치마크 'FakeI2V-Bench'를 공개했다. 9만 7,548개의 영상으로 구성된 이 벤치마크는 8개의 비디오 수준 탐지기와 12개의 이미지 수준 탐지기를 함께 평가했으며, 최고 성능의 이미지 수준 탐지기가 AUC 80.16%로 최고 비디오 수준 탐지기(79.99%)를 근소하게 앞질렀다. 연구진은 나아가 이미지 수준 탐지기를 비디오 도메인에 적용할 수 있도록 돕는 프레임워크 'IV-Bridge'도 함께 제시했다. 이는 생성 AI 발전으로 급증하는 딥페이크 영상 위협에 대응하는 탐지 기술의 현재 한계와 개선 방향을 제시하는 연구로, AI 안전·미디어 신뢰성 분야에 실질적 함의를 갖는다.",
+      "category": "비디오 생성",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "223d7f88-574d-4164-ac83-14bd81bd3664",
+      "title": "UniNav: A Unified World-Action Diffusion Model for Visual Navigation",
+      "url": "https://huggingface.co/papers/2608.03244",
+      "source": "hf_papers",
+      "content": "Image-goal visual navigation is a fundamental capability for embodied agents. Existing navigation policies efficiently predict waypoint trajectories but lack visual foresight, while navigation world models can anticipate future observations but often require costly planning rollouts. We present UniNav, a unified world-action model that generates future visual observations and continuous waypoint trajectories through a single diffusion process. Given history frames and a goal image, UniNav jointly denoises visual and waypoint tokens within a single transformer, unifying future prediction and action generation in a shared framework. To improve spatial grounding, we incorporate geometry-aware camera tokens. We also train on both trajectory-labeled navigation data and video-only data, enabling the model to benefit from diverse videos without waypoint annotations. Based on this unified framework, we introduce two variants: UniNav-Full jointly predicts interpretable future observations and their corresponding trajectories, while UniNav-Fast removes future-image tokens at inference for efficient trajectory prediction. Experiments on navigation benchmarks show that UniNav outperforms the strongest baseline in ATE across all datasets. With one-step inference, UniNav-Fast achieves a latency of 0.1s without a substantial accuracy drop. Code will be released.",
+      "published_at": "2026-08-04T07:15:45+00:00",
+      "summary": "연구진이 미래 시각 관측과 이동 경로를 하나의 확산 모델로 동시에 생성하는 통합 시각 내비게이션 모델 'UniNav'를 제안했다. 기존 내비게이션 정책이 웨이포인트 경로만 예측하고 미래를 내다보는 능력이 부족했거나, 월드 모델이 미래를 예측해도 비용이 큰 별도의 플래닝 롤아웃이 필요했던 한계를 극복하기 위해, UniNav는 과거 프레임과 목표 이미지를 입력받아 하나의 트랜스포머 안에서 시각·경로 토큰을 함께 디노이징한다. 기하학 인지 카메라 토큰을 도입해 공간적 정합성을 높였고, 경로 라벨이 없는 영상 데이터로도 학습이 가능해 다양한 데이터를 활용할 수 있다. 내비게이션 벤치마크에서 기존 최고 성능을 능가했으며, 실시간 추론이 필요한 경량 변형(UniNav-Fast)도 함께 제시해 실용적 로보틱스 배포 가능성을 보였다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0b07060d-b1f6-4030-ae88-7a24b45b358f",
+      "title": "MuRA: Multi-Rank Adaptation for Efficient and Effective Test-Time Vision-Language Generalization",
+      "url": "https://huggingface.co/papers/2608.03885",
+      "source": "hf_papers",
+      "content": "Vision-language models exhibit remarkable zero-shot capabilities but suffer significant performance degradation under distribution shifts. While test-time adaptation (TTA) via Low-Rank Adaptation offers a parameter-efficient solution, we identify a fundamental bottleneck in current methods: the reliance on static rank configurations. Because visual inputs inherently possess varying information densities, a fixed rank forces an inevitable optimization compromise, leading to underfitting on complex scenes and overfitting on simple ones. To bridge this gap, we propose Multi-Rank Adaptation (MuRA), a novel framework that dynamically selects and fuses adaptation modules of varying capacities based on token-level visual complexity. MuRA synergizes Multi-Rank Orthogonal Decomposition to provide a superior, knowledge-preserving initialization, and Unified Component Fusion with Continuous Router Updating to sustainably learn semantic-to-rank mappings. Furthermore, we provide rigorous theoretical justifications mathematically proving the necessity and gradient stability of this adaptive mechanism. Crucially, MuRA's dynamic design uniquely thrives at the deepest visual layer, capitalizing on the shortest gradient backpropagation path. Extensive experiments demonstrate that MuRA achieves state-of-the-art accuracy across extensive domain generalization and cross-dataset benchmarks while significantly reducing both computational and memory overhead.",
+      "published_at": "2026-08-04T16:20:54+00:00",
+      "summary": "연구진이 비전-언어 모델(VLM)의 테스트 타임 적응(TTA)에서 고정된 랭크 구성이 성능을 제한한다는 문제를 지적하고, 시각 토큰별 정보 밀도에 따라 적응 모듈의 용량을 동적으로 선택·융합하는 'MuRA(Multi-Rank Adaptation)'를 제안했다. 기존 저랭크 적응(LoRA) 기반 TTA는 고정 랭크로 인해 복잡한 장면에서는 과소적합, 단순한 장면에서는 과적합이 발생하는 딜레마가 있었는데, MuRA는 다중 랭크 직교 분해로 지식을 보존하는 초기화와 지속적으로 갱신되는 라우터를 결합해 이를 해결한다. 이론적으로 이 적응 메커니즘의 필요성과 그래디언트 안정성을 수학적으로 증명했으며, 가장 깊은 시각 레이어에서 특히 효과적임을 보였다. 이는 분포 변화(distribution shift) 환경에서도 VLM의 제로샷 성능을 안정적으로 유지하는 실용적 기법으로, 다양한 실세계 시각 인식 응용에 적용될 수 있다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "fb8741ce-26b7-4f47-813c-e8b0e078f912",
+      "title": "ParVL: Parallel Scaling and Expandable Compute Allocation for Multimodal LLMs",
+      "url": "https://huggingface.co/papers/2608.04010",
+      "source": "hf_papers",
+      "content": "Existing scaling strategies for Multimodal Large Language Models (MLLMs) typically expand either model parameters or sequential inference computation, incurring substantial memory or latency overhead. More importantly, most existing methods fail to alter the rigid, fixed computation allocation between the Vision Transformer and the Large Language Model components, limiting task-specific optimization. To address this, we introduce the Parallel Vision-Language (ParVL) scaling framework for MLLMs, which scales parallel computation by reusing the existing ViT and LLM backbone parameters across multiple vision and language branches. This framework raises a central question: given a fixed backbone parameter budget, how should additional shared-backbone computation be allocated between the vision and language modalities? We instantiate each parallel computational stream with branch-specific prefix parameters over a shared backbone, and train the entire model end-to-end via full-parameter supervised fine-tuning on roughly 13B tokens. We systematically study the computation-allocation trade-off between the ViT encoder and LLM decoder. ParVL improves overall multimodal performance over same-recipe single-branch baselines, and the best evaluated vision--language allocation varies across tasks. Code is available at https://github.com/YangYangGirl/ParVL.",
+      "published_at": "2026-08-04T17:59:58+00:00",
+      "summary": "연구진이 멀티모달 LLM(MLLM)의 성능을 높이기 위해 파라미터를 늘리거나 순차적 추론 연산을 늘리는 기존 방식 대신, 비전 트랜스포머(ViT)와 LLM 백본을 여러 개의 병렬 분기에서 재사용하는 확장 프레임워크 'ParVL'을 제안했다. 기존 방법들이 비전-언어 컴포넌트 간 연산 배분을 고정된 구조로 다뤄 작업별 최적화가 어려웠던 한계를 극복하기 위해, ParVL은 공유 백본 위에 분기별 프리픽스 파라미터를 두고 약 130억 토큰 규모의 전체 파라미터 파인튜닝으로 학습했다. 연구진은 고정된 파라미터 예산 내에서 비전 인코더와 언어 디코더 사이의 연산 배분 트레이드오프를 체계적으로 분석했다. 이는 메모리·지연시간 오버헤드를 크게 늘리지 않으면서도 멀티모달 성능을 높일 수 있는 새로운 스케일링 축을 제시했다는 점에서 의미가 있다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6a611c00-f5f5-4975-bea7-ae299eec3902",
+      "title": "FedCARE: A Multi-Objective Personalised Federated Learning Framework for Smart Healthcare",
+      "url": "https://huggingface.co/papers/2608.03498",
+      "source": "hf_papers",
+      "content": "Federated Learning (FL) enables collaborative model training across distributed healthcare institutions without centralising sensitive patient data. However, real-world healthcare federations are often characterised not only by non-IID data, but also by heterogeneous clinical objectives and partially overlapping feature spaces. Different hospitals may optimise distinct and potentially conflicting objectives, such as mortality risk prediction, readmission reduction, or length-of-stay estimation, while also retaining institution-specific clinical features that cannot be shared with other participants. Existing personalised FL methods mainly address statistical heterogeneity, whereas multi-objective FL approaches typically learn a shared global model without explicit client-level adaptation. To address these limitations, we propose \\textbf{FedCARE}, a multi-objective personalised FL framework for smart healthcare services. FedCARE follows a two-stage training strategy. First, it learns a shared global backbone from common clinical features using Pareto-driven multi-objective federated optimisation. Second, each client independently fine-tunes the shared backbone using its private features and local clinical objectives, enabling institution-specific personalisation without additional communication overhead. We implement FedCARE in a cloud-based client-server federated deployment on the Melbourne Research Cloud and evaluate it on two real-world healthcare datasets, MIMIC-III and Diabetes 130-US Hospitals. Experimental results show that FedCARE consistently outperforms standard FL, multi-objective FL, and personalised FL baselines, achieving up to 12.5% AUROC improvement and 32.0% MAE reduction over FedAvg.",
+      "published_at": "2026-08-04T11:37:03+00:00",
+      "summary": "연구진이 병원 간 목표와 데이터 특성이 서로 다른 실제 의료 환경을 위한 다목적 개인화 연합학습(Federated Learning) 프레임워크 'FedCARE'를 제안했다. 사망률 예측, 재입원 감소, 재원 기간 추정 등 병원마다 상이하고 때로 상충하는 임상 목표를 다루면서도, 기관별로 공유할 수 없는 고유 임상 피처를 보존해야 하는 이중의 이질성 문제를 해결한다. FedCARE는 2단계 학습 전략을 사용해, 먼저 공통 임상 피처로 파레토 기반 다목적 연합 최적화를 통해 공유 백본을 학습한 뒤, 각 병원이 자체 피처로 이 백본을 독립적으로 파인튜닝한다. 이는 환자 데이터를 중앙화하지 않고도 병원별 맞춤형 예측 모델을 구축할 수 있게 해, 프라이버시를 보존하면서 의료 AI 협업을 확장하는 실용적 경로를 제시한다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
