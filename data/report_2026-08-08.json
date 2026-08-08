@@ -1,0 +1,284 @@
+{
+  "id": "8bec79bb-dea1-4a11-8d76-38a2bb1930be",
+  "created_at": "2026-08-08T01:30:28.994983",
+  "articles": [
+    {
+      "id": "43e10120-1e35-4771-bed8-090d23ba3ffe",
+      "title": "GPT-5.6",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "source": "openai",
+      "content": "July 9, 2026\n\nMore intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.\n\nUpdate on July 30, 2026:OpenAI reduced the price of GPT‑5.6 Luna by 80% and GPT‑5.6 Terra by 20%.Learn more here.\n\nWe’re launching the GPT‑5.6 family of models for general availability following ourlimited preview⁠: our new flagship,Sol, alongsideTerra, a balanced model for everyday work, andLuna, our most cost-efficient model.\n\nGPT‑5.6 Sol sets a new standard for both intelligence and efficiency, achieving state-of-the-art results across coding, knowledge work, cybersecurity, and science while outperforming previous and competing frontier models with fewer tokens and at lower estimated cost. The result is stronger performance per dollar: more successful work for the same spend, or comparable results at a lower total cost. We also introduce a new way to accelerate the most demanding work:ultrais our highest-capability setting, coordinating multiple agents across parallel workstreams to finish complex tasks faster. Stronger computer use and design judgment make GPT‑5.6 Sol our most polished collaborator yet, helping it inspect, refine, and deliver ready-to-use results.\n\nWe trained GPT‑5.6 to get more useful work from every token. OnAgents’ Last Exam⁠(opens in a new window), an evaluation of long-running professional workflows across 55 fields, GPT‑5.6 Sol sets a new high of 53.6, eclipsing Claude Fable 5 (adaptive reasoning) by 13.1 points. Even at medium reasoning, it beats Fable 5 by 11.4 points at roughly one-quarter the estimated cost. That efficiency extends to smaller models, which are essential to making intelligence more abundant and affordable: GPT‑5.6 Terra and GPT‑5.6 Luna outperform Fable 5 at around one-sixteenth the cost. On theArtificial Analysis Intelligence Index⁠(opens in a new window), a broad measure of intelligence spanning agentic work, coding, scientific reasoning, and general capabilities, GPT‑5.6 Sol with max reasoning comes within one point of Fable 5 while completing tasks in 61% less time at roughly half the estimated cost.\n\nAgents’ Last Exam⁠(opens in a new window): Long-horizon agentic workflows across professional domains.\n\nGPT‑5.6 launches with our most robust safeguards to date, designed to be resilient against determined and adaptive misuse without broadly limiting legitimate work. Before general availability, we put the models and safeguards through our most extensive evaluation period yet, combining human red teaming with large-scale automated testing. During the preview, we worked closely with expert organizations and with trusted partners to pressure-test defenses and strengthen safeguards before broader launch. The resulting system layers protections trained into the model with real-time checks, monitoring, and access calibrated to trust and risk.\n\nGPT‑5.6 Sol is our best coding model yet. On theArtificial Analysis Coding Agent Index,GPT‑5.6 Sol with max reasoning sets a new state of the art at 80, 2.8 points above Fable 5, while using less than half the output tokens, taking less than half the time, and costing about one-third less. That advantage extends across the family: Terra performs just above Fable 5, while Luna outperforms Opus 4.8; each does so in roughly one-third of the time, with about half as many output tokens, and at approximately one-quarter the estimated cost. It also sets new state-of-the-art results on Terminal‑Bench 2.1 and DeepSWE, which test complex command-line workflows and long-horizon engineering in real codebases.\n\nArtificial Analysis Coding Agent Index:an independent index of coding-agent performance across implementation, terminal use, and real codebases.\n\nGPT‑5.6 can write and run lightweight programs that coordinate tools, process intermediate results, monitor progress, and choose the next action as work unfolds. This lets tool-heavy tasks advance with fewer tokens, fewer model round trips, and less guidance. Instead of requiring developers to script every step or passing every tool response back through the model,Programmatic Tool Calling⁠(opens in a new window)in the Responses API can filter large amounts of intermediate data, retain only what matters, and adapt its workflow along the way.\n\nFor problems that reward a greater investment of time and compute, GPT‑5.6 can push beyond this efficient default.maxgives GPT‑5.6 even more time thanxhighto reason and explore alternatives, run checks, and revise its approach.ultragoes further by coordinating four agents in parallel by default, trading higher token use for stronger results and faster time-to-result on demanding tasks. The charts below compare ultra’s default four-agent setup with a one-agent baseline across BrowseComp, SEC-Bench Pro, and Terminal-Bench 2.1; BrowseComp and SEC-Bench Pro also show 16-agent configurations. Across all three evaluations, adding parallel agents shifts the score-latency frontier upward and to the left, reaching stronger results in less time. In the API, developers can build ultra-like experiences using themulti-agent⁠(opens in a new window)beta in the Responses API.4,5,6\n\nGPT‑5.6 delivers a step change in design judgment. With only high-level direction, GPT‑5.6 creates tasteful, ergonomic, and functional interfaces. Its stronger computer-use capabilities let it inspect and refine the rendered result—not just generate the underlying code or content—so it can catch visual and functional issues and apply finishing touches before handing the work back.\n\nGPT‑5.6’s frontend capabilities also turn natural-language requests into polished, interactive explanations and visualizations within ChatGPT Work.\n\nGPT‑5.6delivers better results for professional tasks. It takes messy context from your documents and everyday workflows like Slack, Notion, Microsoft 365, and Google Drive, and converts it into expert-level, shareable artifacts.\n\nGPT‑5.6’s strength on knowledge work shows up in evaluations spanning long-horizon professional analysis, browsing, tool use, and computer use. GPT‑5.6 Sol sets new state-of-the-art results onBrowseCompat 92.2% andOSWorld 2.0at 62.6%; on OSWorld, it surpasses Opus 4.8 while using 85% fewer output tokens. Here, the performance-per-dollar gains extend across the GPT‑5.6 family. Luna nearly matches GPT‑5.5’s peak performance at less than half the estimated cost, while Terra surpasses it at a lower cost.\n\nBrowseComp: GPT‑5.6 Sol achieves a new state of the art on BrowseComp, consisting of agentic browsing tasks.\n\nGPT‑5.6 Sol improves quality in presentations, documents, and spreadsheets,producing outputs that are more polished and accurate. It can create fully editable presentations from scratch, translating a prompt and source material into a coherent visual narrative with strong layouts, hierarchy, and design.\n\nThe improvement is especially pronounced when following templates and reference decks.GPT‑5.6 can infer a deck’s design system—layouts, typography, spacing, colors, and recurring content patterns, including rules embedded in the Slide Master—and apply those conventions consistently to new material. In this example, when asked to update numbers based on a reference file, the GPT‑5.5 output is missing key components from the master slide, while GPT‑5.6 follows the reference structure more faithfully.\n\nGPT‑5.6 also creates more visually refined documents and spreadsheets. It follows complex reference formats more faithfully, which is important for repeatable knowledge work activities. It handles equations and financial models with greater precision, and makes better use of typography, spacing, hierarchy, and page or worksheet layout.\n\nEarly customers testing GPT‑5.6 saw improvements to knowledge work outputs across domains.\n\nGPT‑5.6 is our strongest cybersecurity model yet, achieving frontier performance with significantly fewer tokens. OnExploitBench2,which measures progress from reaching vulnerable code through arbitrary code execution, it scores 73.5% versus GPT‑5.5’s 47.9% at a comparable output-token budget. OnExploitGym3,which asks agents to turn real-world vulnerabilities into working exploits, it almost doubles GPT‑5.5’s peak pass rate, from 15.1% to 24.9% under the two-hour cap; with six hours, it reaches 33.7%. OnSEC-Bench Pro,which tests proof-of-concept generation on complex software, it scores 71.2% versus GPT‑5.5’s 45.8% at an improved latency.1\n\nGPT‑5.6 supports important defensive tasks such as secure code review, patching, threat modeling, and blue teaming. Qualified individuals and organizations inOpenAI Daybreak’s Trusted Access for Cyber⁠program can access more of its defensive capability through more precise safeguards for verified work in authorized environments, including vulnerability triage and validation, malware analysis, detection engineering, and patch validation.\n\nIndividuals canverify their identity and request trusted access⁠(opens in a new window), and organizations canapply⁠for their teams. Individual members will need to enableAdvanced Account Security⁠(opens in a new window)with hardware-backed passkeys by September 1 to retain access to our most cyber-capable frontier models; those who do not will return to default access. Users who do not already have hardware-backed passkeys can receivepreferred pricing⁠(opens in a new window)from our partner, Yubico. We are also taking additional steps to restrict access to high-risk entities and in high-risk jurisdictions.\n\nExploitBench:Building progressively more capable V8 exploits; GPT‑5.6 shows a large gain over GPT‑5.5. Latency chart is not shown as latency estimation is unreliable for this benchmark.\n\nGPT‑5.6 Sol also shows broad gains acrossscientific research. On life sciences evaluations, GPT‑5.6 demonstrates Pareto improvements over GPT‑5.5 on real-world biology, life science research workflows, and chemistry.\n\nGeneBench Pro⁠:Long-horizon genomics and quantitative-biology analyses; GPT‑5.6 reaches stronger results with f...",
+      "published_at": null,
+      "summary": "OpenAI가 GPT-5.6 패밀리(Sol, Terra, Luna)를 정식 출시했다. 플래그십 모델 Sol은 'Agents' Last Exam' 등 장기 전문 업무 평가에서 Claude Fable 5를 큰 격차로 앞섰고, 여러 에이전트를 병렬로 조율하는 'ultra' 모드를 새로 도입해 복잡한 작업 처리 속도를 높였다. 코딩·지식노동·사이버보안·과학 전 영역에서 토큰당 성능과 비용 효율을 동시에 개선한 것이 특징이며, 이후 업데이트로 Luna는 80%, Terra는 20% 가격을 인하해 접근성을 더 넓혔다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3a06fc07-341f-43be-9339-3685fa10d7d9",
+      "title": "Security",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+      "source": "openai",
+      "content": "August 7, 2026\n\nCybersecurity is rapidly changing as models become more capable in ways that can both strengthen cyberdefenses and enable attacks at unprecedented speed and scale.\n\nOur latest internal evaluations of Astra, one of our upcoming models, over the past few days indicate significant advancements in agentic coding and cybersecurity. These results, in addition to expert assessments, have led us to conclude last night that we cannot rule out critical cyber capabilities under ourPreparedness Framework⁠(opens in a new window).\n\nWe are sharing this because we believe it’s important to be transparent with the public and the safety and security communities about this potential shift in capabilities.\n\nWe first published our Preparedness Framework in December 2023, well before models approached biological, chemical, cybersecurity, and AI self-improvement capabilities at this level. We created it to give us a guide for identifying progress in capability and then planning what our company would do as those capabilities emerge. Previous models, including GPT‑5.6‑Sol, have been evaluated for frontier cyber capabilities and assessed at the High (rather than Critical) threshold.\n\nUnder our Preparedness Framework, a model reaches the Critical cybersecurity threshold if it can identify and develop functional zero-day exploits of all severity levels in many hardened real-world critical systems without human intervention, or can devise and execute end-to-end novel strategies for cyberattacks against hardened targets given only a high level desired goal.\n\nWhile we continue to benchmark and assess this model, our preliminary evaluations indicate strong enough performance that we cannot rule out Critical capability level at this time. Astra is an upcoming model, and was not involved in exploiting Hugging Face.\n\nAccordingly, we have scaled up robustness testing of our safeguards and security controls so that they are appropriate for a deployment of these capabilities. Internally, we have also taken the following steps so that further development of this model happens safely and securely:\n\nThe framework has already guided us through other capability transitions. In June 2025, as our models approached the high capability threshold for biology under the Preparedness Framework, weoutlined the steps we were takingto strengthen safeguards, expand testing, work with external experts, and deploy additional security controls. We are applying the same principle here.\n\nWe believe advanced cyber-capable models should helpdefendersidentify and address vulnerabilities before attackers do. We’re committed to working alongside governments, safety institutes, and civil society to ensure that the frontier capabilities of models like Astra, and those that follow, are deployed responsibly and broadly for the benefit of all humanity.\n\nSecurityAug 4, 2026\n\nSecurityJul 21, 2026\n\nSecurityJun 22, 2026",
+      "published_at": "2026-08-07T15:20:00+00:00",
+      "summary": "OpenAI는 개발 중인 차기 모델 Astra의 내부 평가에서 에이전틱 코딩과 사이버보안 능력이 급격히 향상되어 자사 Preparedness Framework 기준 '치명적(Critical)' 사이버 위협 수준을 배제할 수 없다고 발표했다. 이는 실전 방어가 견고한 시스템에 대해 인간 개입 없이 제로데이 취약점을 찾아내거나 종단간 공격 전략을 스스로 수립할 수 있는 수준을 의미하며, 이전 모델인 GPT-5.6 Sol은 한 단계 낮은 'High' 등급으로 평가됐다. OpenAI는 안전·보안 커뮤니티와의 투명성을 이유로 모델 출시 전 이 사실을 선제적으로 공개했다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "fb5d149d-231e-437c-a359-453adf001da5",
+      "title": "ChatGPT brings unlimited text chats to free users",
+      "url": "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/",
+      "source": "techcrunch",
+      "content": "OpenAI said that ChatGPT free and Go users are also getting a new think button for complex queries.",
+      "published_at": "2026-08-06T17:34:42+00:00",
+      "summary": "OpenAI가 ChatGPT 무료 및 Go 요금제 사용자에게 텍스트 채팅 무제한 이용을 제공한다고 밝혔다. 기존에는 메시지 수 제한이 있었으나 이번 조치로 텍스트 기반 대화에는 사용량 상한이 사라진다. 동시에 복잡한 질문을 더 깊이 있게 처리하는 '생각하기(think)' 버튼도 무료 사용자에게 함께 제공되어, 유료 구독 없이도 고급 추론 기능에 대한 접근성이 확대된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "e78bc7ab-4c05-4f40-a877-322c67062286",
+      "title": "Cloudflare launches Kitesurf, a browser built for AI agents",
+      "url": "https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/",
+      "source": "techcrunch",
+      "content": "Kitesurf is a cloud-hosted browser designed for AI agents instead of people. It uses less computing power than Chromium for common automation tasks, helping developers build browser-based AI agents more efficiently.",
+      "published_at": "2026-08-07T16:16:09+00:00",
+      "summary": "Cloudflare가 AI 에이전트 전용으로 설계된 클라우드 호스팅 브라우저 'Kitesurf'를 출시했다. 사람이 아닌 자동화된 에이전트의 작업 패턴에 맞춰 최적화되어, 일반적인 Chromium 기반 브라우저보다 적은 컴퓨팅 자원으로 반복적인 웹 자동화 작업을 수행할 수 있다. 이를 통해 개발자들은 브라우저 기반 AI 에이전트를 더 효율적이고 저비용으로 구축할 수 있게 됐다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7dfe4346-5411-41d7-b608-86befe9e439b",
+      "title": "메타가 자체 'AI 데이터센터'를 짓는 이유는?...자체 인프라로 ‘개인용 초지능’ 시대 준비",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41354",
+      "source": "korean",
+      "content": "메타(Meta)가 인공지능(AI) 경쟁의 핵심을 모델 개발뿐 아니라 대규모 데이터센터와 컴퓨팅 인프라 확보로 확장하고 있다.\n\n메타의 데이터센터 사업을 총괄하는 레이철 피터슨(Rachel Peterson) 부사장은 6일(현지시간) 개발자이자 크리에이터인 톰 쇼(Tom Shaw)와 인터뷰에서 메타가 외부 클라우드 사업자에 의존하지 않고 자체 데이터센터를 구축해 온 이유부터 AI 시대의 데이터센터 설계, 전력과 냉각, 물 사용, 입지 선정, 지역사회와의 관계, 향후 인프라 확장 계획까지 설명했다.\n\n피터슨 부사장은 메타의 데이터센터가 단순히 서버를 수용하는 시설이 아니라 하드웨어부터 네트워크와 소프트웨어까지 AI 서비스를 뒷받침하는 전체 컴퓨팅 스택의 기반이라고 강조했다.\n\n특히 그녀 메는타가 2009년부터 자체 데이터센터 구축을 시작한 결정이 현재 AI 시대에 필요한 대규모 컴퓨팅을 확보할 수 있는 기반이 됐다고 평가했다.\n\n메타는 왜 자체 데이터센터를 구축했나\n\n메타가 자체 데이터센터를 구축하기 시작한 것은 지금과 같은 AI 시대를 예상했기 때문만은 아니었다. 피터슨 부사장에 따르면 2009년 당시 페이스북은 현재보다 훨씬 작은 규모였으며, 여러 데이터센터 사업자의 시설을 임대해 사용하고 있었다.\n\n그러나 메타는 기존 데이터센터를 분석하면서 직접 구축할 경우 비용을 낮추고, 더 빠르게 확장할 수 있는 기회가 있다고 판단했다. 특히 기존 데이터센터에 적용된 여러 중복 설계 가운데 일부는 메타의 서비스에 반드시 필요한 수준이 아니라고 봤다.\n\n메타는 데이터센터를 처음부터 직접 설계함으로써 비용과 속도를 개선하는 동시에 데이터센터의 설계와 운영을 직접 통제할 수 있다고 판단했다.\n\n피터슨 부사장이 강조한 것은 단순한 데이터센터 소유권이 아니다. 메타는 데이터센터 건물뿐 아니라 그 안에 들어가는 하드웨어, 자체적으로 설계하는 소프트웨어, 애플리케이션과 서비스에 맞춘 맞춤형 인프라까지 전체 스택을 직접 통제하는 방향을 선택했다.\n\n그 결과 2009년의 선택은 현재 AI 시대의 대규모 컴퓨팅을 빠르게 확장할 수 있는 기반이 됐다는 설명이다.\n\n“개인용 초지능에는 막대한 컴퓨팅 필요”\n\n메타가 데이터센터를 대규모로 확장하는 배경에는 회사가 추진하는 ‘개인용 초지능(personal superintelligence)’ 비전도 자리하고 있다.\n\n피터슨 부사장은 개인용 초지능을 각 사용자의 고유한 선호와 업무 방식 등을 깊이 이해하고, 사용자를 위해 일하는 ‘최고의 전문가’와 같은 AI로 설명했다. 그녀가 그리는 개인용 초지능은 단순히 질문에 답하는 범용 AI가 아니라 사용자를 이해하고 개인의 능률과 효율성을 높여주는 개인화된 AI에 가깝다.\n\n문제는 이러한 AI를 구현하기 위해 막대한 컴퓨팅 인프라가 필요하다는 것이다.\n\n피터슨 부사장은 개인용 초지능을 구현하려면 “엄청난 양의 인프라와 컴퓨팅”이 필요하며, 따라서 데이터센터를 처음부터 다시 바라봐야 한다고 설명했다. 이는 메타가 AI 데이터센터를 단순히 기존 데이터센터의 규모를 키우는 방식으로 접근하지 않는 이유이기도 하다.\n\nAI 데이터센터는 ‘풀스택’으로 설계\n\n메타가 AI 인프라를 구축하는 방식에서 핵심은 풀스택(full stack) 접근이다. 피터슨 부사장에 따르면 메타는 먼저 충분한 컴퓨팅을 적시에 효율적으로 제공할 수 있는 데이터센터 입지를 찾고, 해당 지역에 맞는 전력 인프라와 데이터센터를 설계한다.\n\n이후 대규모 슈퍼컴퓨터에서 발생하는 열을 처리하기 위한 냉각 기술까지 데이터센터 설계에 포함한다. 그 위에 다양한 서버와 반도체를 배치할 수 있도록 데이터센터를 유연하게 설계한다.\n\n메타 자체가 설계하는 맞춤형 칩뿐만 아니라 AMD와 엔비디아(NVIDIA) 등 외부 업체의 GPU도 활용할 수 있도록 설계하며, 데이터센터의 네트워크 스택 역시 메타가 직접 설계한다.\n\n마지막으로 소프트웨어 스택이 해당 데이터센터의 컴퓨팅 자원을 활용해 서비스를 제공하고 AI 모델을 개발할 수 있도록 연결한다.\n\n즉 메타의 AI 데이터센터는 단순히 GPU를 많이 설치한 건물이 아니라 데이터센터 → 전력 → 냉각 → 서버 → 반도체 → 네트워크 → 소프트웨어를 하나의 시스템으로 설계하는 것이다.\n\n데이터센터 입지는 20년을 내다보고 결정\n\n대규모 AI 데이터센터의 입지를 정하는 과정도 단순하지 않다. 메타는 우선 데이터센터를 얼마나 빠르게 구축할 수 있는지를 본다. 이를 위해 전력 인프라와 물 공급 여건을 확인하고, 실제 데이터센터를 얼마나 빠르게 건설할 수 있는지도 검토한다.\n\n여기에 건설 인력과 운영 인력을 확보할 수 있는지, 해당 지역에서 사업을 추진하기 쉬운지, 규제와 법적 문제가 없는지도 함께 고려한다.\n\n특히 데이터센터는 단기 프로젝트가 아니다. 피터슨 부사장은 데이터센터를 20년 투자로 표현했다. 따라서 메타는 현재의 조건뿐 아니라 장기간 해당 시설을 운영할 수 있는지를 고려해 입지를 결정한다.\n\n여기에는 지역사회와의 적합성도 포함된다. 메타가 단순히 데이터센터를 짓고 떠나는 것이 아니라 해당 지역에서 직원들이 생활하고 일하게 되는 만큼, 지역사회와 장기적인 관계를 구축할 수 있는지도 중요하다는 설명이다.\n\n물 사용 논란에 메타가 내놓은 해법\n\nAI 데이터센터가 확대되면서 전력과 함께 물 사용량도 주요 논쟁거리로 떠올랐다. 메타는 이에 대해 데이터센터의 냉각 시스템을 폐쇄형 순환 구조(closed-loop system)​로 설계하고 있다고 설명했다.\n\n피터슨 부사장에 따르면 GPU와 시설을 냉각하는 물은 데이터센터 내부에서 순환하며 외부로 배출되지 않는 구조다. 또한 시설 전체를 냉각하기 위한 별도의 냉각 장치 역시 연간 물 사용량을 최소화하도록 설계하고 있다고 밝혔다.\n\n그녀는 실제 사례로 메타의 비버댐(Beaver Dam) 시설을 들었다. 해당 시설이 완전히 가동되면 연간 사용하는 물의 양이 대형 풀서비스 레스토랑 두 곳보다 적은 수준이 될 것이라고 설명했다.\n\n루이지애나 리치랜드 패리시(Richland Parish) 데이터센터의 경우에는 식수로 사용되지 않는 비음용수(non-potable water)​를 활용한다고 밝혔다. 사용 후 처리해야 하는 물 역시 지역사회로 그대로 방출하는 것이 아니라 수처리 시스템을 거치도록 설계했다는 설명이다.\n\n전력망 부담? “인프라 비용은 우리가 부담”\n\nAI 데이터센터가 지역사회에 미치는 또 다른 문제는 막대한 전력 수요다. 메타는 데이터센터 건설 초기부터 전력망 사업자와 협력해 해당 시설에 필요한 전력 공급이 가능한지 검토하고, 전력 인프라 구축 방법을 협의한다고 밝혔다.\n\n피터슨 부사장은 중요한 원칙으로 데이터센터 때문에 지역 주민에게 추가 비용이 전가되지 않도록 하는 것을 꼽았다. 메타는 필요한 인프라 비용을 직접 부담하고 전력회사와 협력해 지역 전력망의 효율성과 안정성을 높이는 것을 목표로 한다는 설명이다.\n\n특히 루이지애나 데이터센터를 사례로 들면서 메타가 전력회사인 엔터지(Entergy)와 협력해 데이터센터에 필요한 인프라를 구축하고 있으며, 이 과정에서 지역 전력망을 개선해 소비자들이 부담했을 비용 가운데 20억 달러 이상을 절감할 수 있을 것이라고 주장했다.\n\n메타가 제시하는 논리는 대규모 데이터센터가 전력망에 부담만 주는 것이 아니라, 데이터센터 개발 과정에서 필요한 전력망 투자를 직접 부담함으로써 오히려 기존 인프라 개선을 앞당길 수 있다는 것이다.\n\n데이터센터는 지역사회와 함께 건설\n\n메타는 데이터센터가 들어서는 지역사회에 대한 책임도 강조했다. 대표적으로 물 관련 목표를 달성하기 위해 데이터센터가 사용하는 것보다 더 많은 물을 지역사회에서 복원하는 프로그램을 운영하고 있다고 밝혔다.\n\n지하수층 복원이나 지역 생태계의 물 관련 환경 개선 등이 사례로 제시됐다. 고용 측면에서도 지역 인력을 적극적으로 활용한다. 데이터센터 건설 및 운영 인력을 지역사회에서 채용하고, 지역사회 지원을 위한 보조금 프로그램도 운영한다.\n\n피터슨 부사장은 메타가 데이터센터를 단순히 건설하는 기업이 아니라 해당 지역에서 장기간 활동하는 지역사회의 구성원으로 접근해야 한다고 강조했다.\n\n“지난 1~2년 구축 규모가 이전 15년과 맞먹어”\n\n메타의 AI 인프라 확대 속도는 피터슨 부사장의 발언에서 더욱 분명하게 드러난다. 그녀는 메타가 데이터센터 사업을 시작한 2009년부터 최근까지의 변화를 돌아보면서 지난 1~2년 동안 구축한 데이터센터 규모가 이전 15년 동안 구축한 규모와 맞먹을 정도라고 밝혔다.\n\n데이터센터 캠퍼스의 규모 역시 최근 몇 년 사이 크게 확대됐다고 설명했다.\n\n이 같은 변화의 원인은 AI다. 메타는 과거 자신을 소프트웨어 기업으로 생각했지만 이제는 점점 인프라 기업으로도 바라보게 됐다고 피터슨 부사장은 설명했다. AI와 초지능을 대규모로 지원하기 위해서는 소프트웨어만으로는 충분하지 않고 이를 뒷받침할 물리적 인프라를 직접 구축해야 하기 때문이다.\n\n2030년 데이터센터 규모는 “예측하기 어렵다”\n\n향후 데이터센터 규모를 묻는 질문에 피터슨 부사장은 2030년의 정확한 모습을 예측하기 어렵다고 답했다. 그 이유는 AI 산업의 변화 속도가 과거와 비교할 수 없을 정도로 빠르기 때문이다.\n\n그녀는 데이터센터 산업과 메타의 자체 인프라 구축 프로그램 모두 매우 가파른 성장 곡선에 있으며, 앞으로 더욱 효율적인 기술과 새로운 방식의 인프라가 등장할 것으로 전망했다. 특히 메타가 앞으로 구축하게 될 인프라는 AI 성장과 초지능을 지원하기 위한 방향으로 계속 확대될 것이라고 강조했다.\n\n“가장 걱정되는 것은 규모와 속도”\n\n인터뷰의 마지막에서 피터슨 부사장은 현재 데이터센터 산업에서 가장 큰 부담으로 변화의 속도와 복잡성을 꼽았다. 현재 메타가 추진하는 프로젝트 가운데는 설계부터 현장에 구축되는 발전소와 새로운 기술까지 사실상 ‘최초의 시도(first of kind)’에 해당하는 것들이 있다는 설명이다.\n\n문제는 이러한 새로운 기술들을 매우 빠른 속도로 동시에 구축해야 한다는 것이다. 피터슨 부사장은 새로운 규모와 속도에서 대규모 인프라를 구축하면서 모든 것이 예상대로 작동할지에 대한 불확실성이 가장 큰 고민이라고 말했다.\n\n한편, 이번 피터슨 부사장의 인터뷰에서 가장 주목해야 할 부분은 메타가 스스로를 바라보는 방식이 달라졌다는 점이다. 메타는 출발 당시 데이터센터를 직접 구축하는 이유를 비용 절감과 구축 속도, 그리고 기술에 대한 통제권​에서 찾았다.\n\n하지만 AI 시대에는 그 의미가 완전히 달라졌다. AI 모델의 규모가 커질수록 데이터센터는 단순한 서비스 운영 시설이 아니라 AI 자체의 성능과 확장성을 결정하는 핵심 인프라가 된다. 특히 메타가 말하는 개인용 초지능은 사용자마다 다른 정보를 이해하고 개인화된 방식으로 작동하는 AI다. 이를 실현하려면 막대한 컴퓨팅 자원을 적시에 확보해야 한다.\n\n결국 메타가 자체 데이터센터를 구축하는 이유는 단순히 ‘클라우드 비용을 아끼기 위해서’가 아니다. 어떤 반도체를 사용할지, 어떤 서버를 배치할지, 네트워크를 어떻게 연결할지, 어떤 냉각 시스템을 적용할지, 필요한 전력을 어디에서 확보할지까지 AI 컴퓨팅의 전체 구조를 직접 설계하고 통제하기 위해서다.\n\n이런 관점에서 보면 메타의 데이터센터 전략은 AI 시대의 새로운 경쟁 구도를 보여준다. 과거 빅테크 경쟁이 더 좋은 소프트웨어와 서비스를 만드는 경쟁이었다면, 이제는 컴퓨팅·전력·냉각·네트워크·반도체·데이터센터를 얼마나 빠르고 효율적으로 결합하느냐가 AI 경쟁력의 일부가 되고 있다.\n\n더욱 중요한 것은 이 변화가 메타에만 국한되지 않는다는 점이다. AI 학습과 추론 규모가 커질수록 빅테크 기업들은 더 많은 GPU와 더 큰 데이터센터를 필요로 하고, 이는 다시 전력망과 냉각, 물, 토지, 지역사회와의 관계라는 현실적인 문제로 이어진다.\n\n따라서 향후 AI 산업에서 데이터센터는 단순한 IT 인프라가 아니라 에너지와 물, 제조, 건설, 지역경제까지 연결하는 거대한 산업 인프라​가 될 가능성이 높다. 레이철 피터슨의 표현대로 메타는 이미 ‘소프트웨어 기업’에서 ‘인프라 기업’으로 변화하고 있는 것이다.\n\n그리고 그 변화의 중심에는 단순히 더 큰 데이터센터가 아니라, AI와 개인용 초지능을 현실에서 작동시키기 위한 물리적 컴퓨팅 기반을 직접 확보하려는 전략이 자리하고 있다.\n\n메타가 지난 1~2년 동안 과거 15년에 맞먹는 규모의 데이터센터를 구축했다는 발언은 AI 인프라 경쟁이 얼마나 빠르게 진행되고 있는지를 보여주는 상징적인 수치다. 앞으로 AI 경쟁의 승자는 가장 뛰어난 모델을 가진 기업만이 아니라, 그 모델을 대규모로 학습시키고 수십억 명의 사용자에게 안정적으로 제공할 수 있는 인프라를 가진 기업이 될 가능성이 높다.(아래는 인터뷰 영상)",
+      "published_at": null,
+      "summary": "메타의 데이터센터 사업 총괄 부사장 레이철 피터슨이 메타가 외부 클라우드에 의존하지 않고 2009년부터 자체 데이터센터를 구축해온 배경을 밝혔다. 하드웨어부터 네트워크, 소프트웨어까지 AI 서비스 전체 컴퓨팅 스택을 자체 인프라로 뒷받침하는 전략이 현재의 대규모 AI 컴퓨팅 수요를 감당하는 기반이 됐다고 설명했다. 전력·냉각·용수·입지 선정까지 포괄하는 이 전략은 메타가 지향하는 '개인용 초지능' 시대 대비와 직결된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "62c3d770-60b6-4d78-81a4-ce0f5ff61bc1",
+      "title": "New Mexico court orders Meta to pay additional $567M in child safety case",
+      "url": "https://techcrunch.com/2026/08/07/new-mexico-court-orders-meta-to-pay-additional-567m-in-child-safety-case/",
+      "source": "techcrunch",
+      "content": "Meta's total fine has racked up to $942 million in this case.",
+      "published_at": "2026-08-07T11:40:37+00:00",
+      "summary": "뉴멕시코 법원이 아동 안전 관련 소송에서 메타에 5억6700만 달러의 추가 벌금을 명령했다. 배심원단은 메타가 아동 안전 문제에 대해 사용자를 오도했다고 판단했으며, 이번 판결로 메타가 이 소송에서 부담하게 된 총 벌금은 9억4200만 달러로 늘었다. AI 및 소셜 플랫폼 기업의 아동 보호 책임에 대한 사법부의 압박이 커지고 있음을 보여주는 사례다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "87ac1885-ae66-461b-be04-c7c72bf5c4a7",
+      "title": "Exclusive: Mirendil inks $100M+ Google Cloud deal to scale self-improving AI",
+      "url": "https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/",
+      "source": "techcrunch",
+      "content": "Mirendil has signed a $100 million-plus Google Cloud partnership to expand its compute infrastructure, powering research into self-improving AI systems designed to accelerate scientific discovery and AI development.",
+      "published_at": "2026-08-06T13:00:00+00:00",
+      "summary": "AI 스타트업 미렌딜(Mirendil)이 구글 클라우드와 1억 달러 이상 규모의 컴퓨팅 파트너십을 체결했다고 단독 보도됐다. 이번 계약은 스스로 개선해 나가는 '자기 개선형(self-improving) AI' 시스템 연구를 확장하기 위한 것으로, 과학적 발견과 AI 연구 개발을 가속하는 것이 목표다. 프론티어 AI 연구를 위한 대규모 클라우드 컴퓨팅 확보 경쟁이 스타트업 단위까지 확산되고 있음을 보여준다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "9bb50a9f-75ac-44da-b8fa-674d8ed458ed",
+      "title": "After Rippling blew millions on AI in months, it built an employee ROI tool",
+      "url": "https://techcrunch.com/2026/08/07/after-rippling-blew-millions-on-ai-in-months-it-built-an-employee-roi-tool/",
+      "source": "techcrunch",
+      "content": "After its own AI usage wake-up call, Rippling this week unveiled AI Spend Console, a product that tracks individual and team employee AI spending.",
+      "published_at": "2026-08-07T21:30:11+00:00",
+      "summary": "인사관리 소프트웨어 기업 리플링(Rippling)이 자사의 과도한 AI 지출 경험을 계기로 직원별·팀별 AI 사용 비용을 추적하는 'AI Spend Console'을 출시했다. 몇 달 만에 수백만 달러를 AI 도구에 소비하며 얻은 교훈을 제품화한 사례로, 기업들이 AI 투자 대비 효과(ROI)를 가시화할 필요성이 커지고 있음을 보여준다. 조직 내 AI 도입이 확산되면서 비용 관리 도구 자체가 새로운 시장으로 떠오르고 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0a0d3951-3e95-4a1d-bddc-650702e087f0",
+      "title": "An Emerging Retail Portfolio Management Application: Personalized, Tax-Aware Reinforcement Learning with Natural Language Goals",
+      "url": "https://arxiv.org/abs/2608.05255",
+      "source": "arxiv",
+      "content": "arXiv:2608.05255v1 Announce Type: new \nAbstract: Retail investors lack access to the kind of personalized, tax-aware portfolio management that institutional clients take for granted -- existing robo-advisors use static, rule-based allocation, and institutional-grade systems require account minimums and technology stacks unavailable to individual investors. We present a fully built, integration-tested application that closes this gap: a FastAPI backend and web dashboard that let a user describe an investment goal in plain language (e.g. \"I want steady growth but need to sell some shares next month for a down payment\"), routes that goal to one of six investment mandates, and produces a live, broker-integrated portfolio recommendation from athree-phase reinforcement learning system -- a self-supervised cross-asset encoder, a Mixture-of-Experts (MoE) allocation policy with a learned intent router, and a lightweight LoRA adapter that personalizes recommendations from an individual's revealed brokerage behavior without retraining the shared model. The system is functionally complete and integration-tested end-to-end against a live brokerage API (Alpaca, paper-trading mode), including multi-user authentication, a trust first preview-before-apply confirmation flow, daily email digests, and an auditable action-integrity chain, but has not yet been opened to real end-users; we report this honestly as an emerging, pre-deployment application with a concrete path to full deployment, alongside 14-day walk-forward backtests (bootstrapped confidence intervals included) as preliminary, pre-deployment validation rather than production performance. We also report several practical engineering lessons -- silently-inactive integration paths, hanging third-party API calls, and the value of end-to-end empirical verification over trusting checkpoint metadata -- that we believe generalize to other applied RL systems built on external, live data sources.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "개인 투자자를 위한 세금 최적화 포트폴리오 관리 애플리케이션을 제안한 연구로, 자연어로 입력한 투자 목표(예: '다음 달 계약금 마련을 위해 일부 매도해야 하지만 꾸준한 성장도 원한다')를 6가지 투자 방침 중 하나로 라우팅해 실시간 맞춤 자산배분을 제공한다. FastAPI 백엔드와 웹 대시보드로 구현된 완결형 시스템이며, 그동안 기관 투자자 전유물이던 세금 인지형(tax-aware) 포트폴리오 관리를 개인 투자자에게 확장했다는 점에서 실용적 의의가 크다.",
+      "category": "금융 & 트레이딩",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5727c047-c1c3-420c-b5f0-e4f0be5b5e1e",
+      "title": "Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning",
+      "url": "https://arxiv.org/abs/2608.05250",
+      "source": "arxiv",
+      "content": "arXiv:2608.05250v1 Announce Type: new \nAbstract: Multi-task supervised fine-tuning (SFT) often casts a heterogeneous data mixture as a single optimization problem, even though different tasks may reach their best generalization at different times. msft exposes this mismatch through task-wise roll-out, exclusion, and rollback, but its original formulation materializes the scheduler state as full-model checkpoints, making stage transitions costly to store, restore, and deploy. This paper introduces AuroSFT, a parameter-efficient framework that recasts the carried state of overfitting-aware multi-task SFT as a compact, mergeable adapter state. AuroSFT freezes the pretrained backbone, trains only injected adapters, rolls back adapter checkpoints at task-wise peaks, and continues on the remaining active mixture. At the layer level, each adapter applies an AuroRA-inspired adaptive nonlinear layer to a low-rank weight factor rather than to the sample representation. The resulting update remains linear in the input, rank-bounded, and exactly mergeable into the frozen projection. Under the retained-backbone comparison protocol, AuroSFT achieves 61.36% average accuracy, compared with 59.85% for the corresponding msft reference row, and obtains higher accuracy on all five backbones. Our code is available at the anonymous repository: https://anonymous.4open.science/r/AuroSFT-80D1.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "다중 작업(Multi-task) 지도 미세조정에서 작업별로 최적 시점이 다른 문제를 다루는 msft 기법은 롤백을 위해 전체 모델 체크포인트를 저장해야 해 비용이 크다는 한계가 있었다. 이 논문은 이 스케줄러 상태를 압축 가능한 어댑터 상태로 재구성한 AuroSFT를 제안해, 백본은 고정한 채 경량 어댑터만으로 작업별 롤아웃·제외·롤백을 수행할 수 있게 했다. 저장·복원·배포 비용을 크게 줄이면서 파라미터 효율적 미세조정의 실용성을 높인 연구다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c6c8a9e5-8e6c-4333-8d3f-4318bd48ffed",
+      "title": "Agentic self-driving microscopy benchmarks support qualification but do not necessarily generalize to unseen tasks",
+      "url": "https://arxiv.org/abs/2608.05266",
+      "source": "arxiv",
+      "content": "arXiv:2608.05266v1 Announce Type: new \nAbstract: Large language model agents are increasingly being developed to control a wide range of scientific characterization tools including microscopes and synchrotron beamlines. Research into agentic control of physical infrastructure is nascent and there are few well-established paradigms for how to engineer an agentic system. There are many choices to make when designing a microscopy agent, including the choice of LLM, the number of agents to use, agent responsibilities and delegation rules, retrieval-augmented generation parameters, and more. When designing and optimizing an agentic microscope controller, researchers not only want to ensure that the agent can correctly perform known tasks but also that the agent can generalize to new tasks that it has not encountered before. In this study, we develop a benchmark and trace-logging framework that reveals a) how different choices of agent architecture impact performance at microscopy tasks and b) the limitations of benchmarks for predicting if a particular agent will perform well on unseen microscopy tasks. The framework was used to evaluate one-, two-, and three-agent graph topologies, five LLMs, RAG and context parameters, and operational constraints across 53 microscopy benchmark tests. In total, 105 agent configurations, 1,949 individual test runs, and 49,109 RAG retrievals were recorded. Direct comparisons showed clear differences in latency, token use, cost, and failure mode between configurations. However, surrogate models trained on agent architecture and test results did not reliably predict an agent's performance on new, unseen tasks. These results show that these benchmarks are useful for qualification, regression testing, diagnosis, and direct comparison, but the current heterogeneous test suite does not support a task-independent global configuration model.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "현미경이나 방사광가속기 같은 실제 과학 장비를 제어하는 LLM 에이전트에 대한 연구로, 에이전트 설계(LLM 선택, 에이전트 수, 역할 분담, RAG 파라미터 등)에 따라 벤치마크 성능이 크게 달라짐을 보였다. 특히 특정 벤치마크에서 자격을 갖춘 것으로 평가된 에이전틱 현미경 제어 시스템이 未見 과제(unseen task)로 일반화되지는 않는다는 점을 실증적으로 드러냈다. 물리 인프라를 다루는 에이전트 시스템의 안전한 검증·배포 기준 마련이 시급함을 시사한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "88f12d40-69e9-4700-b30a-cfdd85d2793c",
+      "title": "WorldClaw: Agentic 3D Open-World Generation at Scale",
+      "url": "https://arxiv.org/abs/2608.05248",
+      "source": "arxiv",
+      "content": "arXiv:2608.05248v1 Announce Type: new \nAbstract: Generating large-scale, freely explorable 3D worlds from open-ended text remains challenging because a system must jointly maintain global spatial coherence, rich local content, and explicit assets suitable for downstream editing and reuse. We present WorldClaw, a fully agentic, coarse-to-fine framework for open-world 3D scene generation. Planning agents translate a text prompt into a structured specification of regions, terrain, assets, materials, and spatial relations. WorldClaw then builds a globally coherent terrain foundation from semantic layouts, reusable assets, generative or procedural materials, and a region-aware height field. For detail-demanding regions, it generates terrain-conditioned compositions, reconstructs editable textured meshes, and recovers their placement on the terrain; render-based agents further refine terrain, objects, appearance, and contacts. Across diverse open-world prompts, WorldClaw produces large-scale scenes with coherent spatial organization, visually compelling local content, and editable instance-level assets while preserving a consistent global terrain structure.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "텍스트 프롬프트만으로 자유롭게 탐험 가능한 대규모 3D 오픈월드를 생성하는 완전 에이전틱 프레임워크 WorldClaw가 공개됐다. 계획 에이전트가 텍스트를 지역·지형·에셋·재질·공간 관계로 이루어진 구조화된 명세로 변환하고, 이를 바탕으로 전역적으로 일관된 지형과 재사용 가능한 에셋을 구축한 뒤 세부 지역은 지형 조건부로 편집 가능한 메쉬까지 복원한다. 게임·시뮬레이션·메타버스 콘텐츠 제작 파이프라인을 자동화할 잠재력을 보여준다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "afdb97af-882c-4db4-989a-4cfe0feb3aa4",
+      "title": "BioM-JEPA: joint-embedding prediction of graph-connected gene blocks in single cells",
+      "url": "https://huggingface.co/papers/2608.05928",
+      "source": "hf_papers",
+      "content": "Single-cell transcriptomes are sparse observations of coordinated biological programmes, yet most self-supervised models learn by reconstructing individual genes. Here we present BioM-JEPA, a joint-embedding predictive architecture that instead predicts aggregate representations of graph-connected gene blocks defined by protein-association and corpus-derived coexpression evidence. A student network infers each target-block representation from the remaining genes in a cell, while a slowly updated teacher supplies the corresponding target from the full observed gene set. Under the reported extraction procedure, block-level prediction produced embeddings with higher effective rank and weaker association with detected-gene depth in the tested diagnostics than token-prediction, random-block and reconstruction controls. Across CellBench tasks, frozen BioM-JEPA embeddings retained expression, pathway and neighbourhood information and achieved the lowest aggregate perturbation-response error among the evaluated models. Representation diagnostics were also consistent with canonical pancreatic programmes and compositional relationships between genetic perturbations. Linear attention avoids constructing a quadratic gene-by-gene attention matrix; in a matched one-epoch hPancreas experiment at batch size 8, BioM-JEPA provided 5.75-fold higher fine-tuning throughput and 3.76-fold higher held-out embedding throughput than scFoundation. Together, these results support graph-connected gene blocks as useful prediction units for JEPA-style representation learning in single-cell biology.",
+      "published_at": "2026-08-06T11:58:29+00:00",
+      "summary": "단일세포 전사체 데이터를 다루는 자기지도학습 모델 BioM-JEPA는 개별 유전자를 복원하는 대신 단백질 상호작용과 공발현 정보로 정의된 '유전자 블록' 단위의 표현을 예측하도록 설계됐다. 학생-교사 구조를 통해 블록 단위 예측이 토큰 단위 예측이나 재구성 방식보다 더 높은 유효 랭크와 검출 유전자 수에 덜 의존적인 임베딩을 만들어냄을 확인했다. 단일세포 생물학 분석의 표현학습 품질을 높여 신약 개발·질병 연구용 파운데이션 모델의 기반이 될 수 있다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1f8db4ae-1cdc-44d0-869e-2e4fe055501d",
+      "title": "TRACE: Learned Proprioceptive Odometry for Legged Robots under Unreliable Contact Conditions",
+      "url": "https://huggingface.co/papers/2608.05975",
+      "source": "hf_papers",
+      "content": "In this paper, we present TRACE (Tokenized Robust Attention for Contact-Aware Estimation), an end-to-end learned proprioceptive odometry estimator for legged robots under unreliable contact conditions. The proposed estimator directly predicts relative displacement, relative rotation, and body-frame velocity from a recent history of onboard inertial and joint measurements. To improve robustness under unreliable contact conditions, we introduce a foot-aware cross-attention module that adaptively weights IMU and leg-wise kinematic tokens without relying on manually defined contact or slip thresholds. The estimator is trained with direct supervision and two physics-inspired auxiliary losses that promote kinematic consistency and reliable use of leg information. To reduce policy-specific overfitting and consequently improve sim-to-real transfer, simulation training incorporates policy randomization, followed by partial real-world fine-tuning of the temporal encoder and prediction head. Experiments across diverse indoor and outdoor terrains demonstrate consistent reductions in position drift compared with classical filtering-based, hybrid, and purely learning-based baselines. Ablation studies further validate the contributions of the proposed training objectives, policy randomization, and real-world fine-tuning, particularly under unreliable contacts and sim-to-real mismatch.",
+      "published_at": "2026-08-06T12:53:33+00:00",
+      "summary": "다리로 움직이는 로봇(legged robot)이 불안정한 접지 조건에서도 정확한 자세 추정을 할 수 있도록 하는 학습 기반 고유수용성 오도메트리 모델 TRACE가 제안됐다. 발 인식 교차 어텐션 모듈을 도입해 수동으로 설정한 접지·미끄러짐 임계값 없이도 관성·관절 센서 신호의 중요도를 적응적으로 조절한다. 물리 기반 보조 손실과 정책 무작위화로 시뮬레이션-실제 전이 성능을 높여, 험지를 걷는 4족·2족 로봇의 위치 추정 신뢰성을 개선했다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "29b41a96-b860-43a6-912b-3062ed2252aa",
+      "title": "Woodpecker Distillation: Weak Models Diagnose Reasoning Bugs in Strong Models",
+      "url": "https://arxiv.org/abs/2608.05168",
+      "source": "arxiv",
+      "content": "arXiv:2608.05168v1 Announce Type: new \nAbstract: Large language models often fail on reasoning tasks despite possessing the capability to solve them. We argue that many such failures arise from localized reasoning bugs in intermediate steps rather than from global incompetence. We show that these bugs are frequently repairable: inserting a short patch generated by a weak probe model after the same strong-model reasoning prefix can redirect the trajectory toward a correct solution.\n  However, this corrective effect is not reliably internalized by directly fine-tuning on weak patches or repaired trajectories, suggesting that the useful signal lies not in the intervention text itself, but in how it reshapes the model's future reasoning distribution. We therefore propose Woodpecker Distillation, a weak-to-strong training framework that learns from contrastive local interventions. Our method contrasts successful and unsuccessful weak-model patches at the same prefix, constructs a corrective teacher distribution from their induced future token predictions, and distills this signal into the strong model.\n  Experiments on mathematical reasoning benchmarks show that Woodpecker Distillation consistently improves strong-model performance and outperforms direct imitation baselines.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "LLM의 추론 실패 상당수는 전반적 무능이 아니라 중간 단계의 국소적 '버그'에서 비롯된다는 통찰을 바탕으로, 약한 모델이 강한 모델의 추론 과정을 진단하고 짧은 패치를 삽입해 정답으로 유도할 수 있음을 보였다. 다만 이런 패치를 그대로 미세조정에 사용하면 효과가 내재화되지 않아, 개입 문구 자체가 아니라 그것이 향후 추론 분포를 바꾸는 방식에 유용한 신호가 있다는 점을 확인했다. 이를 바탕으로 대조적 국소 개입으로부터 학습하는 'Woodpecker Distillation'을 제안해 약한 모델이 강한 모델의 추론 오류를 진단·교정하는 새로운 weak-to-strong 학습 프레임워크를 제시했다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "241e071f-c1b4-4c94-896f-b9ebf4e1bb43",
+      "title": "Large Language Models Threaten Double-blind Review",
+      "url": "https://arxiv.org/abs/2608.05157",
+      "source": "arxiv",
+      "content": "arXiv:2608.05157v1 Announce Type: new \nAbstract: Double blind peer review serves as the scientific community primary defense against status and affiliation bias. Its effectiveness rests on the assumption that anonymized manuscripts convey scientific merit without revealing their authors. While authorship can often be recovered using citation networks or stylistic markers, we show that this assumption is increasingly fragile in the presence of large language models (LLMs). Using only titles and abstracts from papers published after model training, we find that LLMs collapse anonymity more efficiently than humans, with belief concentrating onto a small subset of plausible authors drawn from pools of five domain expert candidates. This vulnerability persists even when stylistic and bibliographic cues are excluded, indicating that stable patterns in problem framing and research focus function as latent conceptual signatures of authorship. Together, these findings indicate that double blind review is vulnerable to automated semantic inference, necessitating a revaluation of how anonymity and fairness are maintained in an AI augmented research ecosystem.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "익명성 보장이 핵심인 이중맹검(double-blind) 동료 심사가 LLM에 의해 위협받고 있다는 연구 결과가 나왔다. 제목과 초록만으로도 LLM은 사람보다 더 효율적으로 익명성을 무너뜨려, 소수의 후보 저자 풀 안에서 저자를 특정할 수 있는 것으로 나타났다. 문체나 인용 등 표면적 단서를 배제해도 이 취약성이 지속되는데, 이는 문제 설정과 연구 초점의 안정적 패턴 자체가 저자를 드러내는 지문 역할을 하기 때문이다. 학계의 심사 공정성 및 편향 방지 체계에 근본적 재검토가 필요함을 시사한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1b43c53c-68d7-4d9d-a580-9449b7c01d83",
+      "title": "QEvict: Recoverable Quantized KV Eviction for Attention-Drift-Robust Long-Context Decoding",
+      "url": "https://arxiv.org/abs/2608.05326",
+      "source": "arxiv",
+      "content": "arXiv:2608.05326v1 Announce Type: new \nAbstract: Autoregressive large language model inference is increasingly constrained by the memory footprint of the Key-Value (KV) cache. A dominant line of work reduces this footprint by evicting tokens that appear unimportant under attention-derived scores. However, such policies make an implicit irreversible decision: once a token is evicted, it cannot become useful again. We show that this assumption is brittle during decoding. Token and window importance drift as generated queries evolve, causing standard eviction policies to permanently discard states that later receive substantial attention under the full-cache model. To characterize this behaviour, we introduce Future Missed Mass and Global LIR, two diagnostics that measure future attention assigned to discarded states and the reactivation of historically inactive regions. We propose QEvict, a three-tier KV-cache management scheme that replaces binary retain-or-delete eviction with recoverable eviction. QEvict maintains high-confidence windows in full precision, stores intermediate windows in a quantized recoverable tier, and deletes only the lowest-confidence windows. During decoding, cumulative attention scores update window importance and when a quantized window becomes important again, it is dequantized and promoted to the full-precision. Under a fixed memory budget, this design preserves broader historical context while retaining exact full precision for the most important regions. Across long-context understanding, retrieval, and reasoning benchmarks, QEvict consistently improves over representative eviction and quantization baselines, reducing missed attention and improving information retention",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "긴 컨텍스트를 다루는 LLM 추론에서 KV 캐시 메모리 부담을 줄이기 위해 덜 중요한 토큰을 영구 삭제하는 기존 방식은, 디코딩이 진행되며 토큰 중요도가 바뀌는 '어텐션 드리프트' 앞에서는 이미 버린 토큰이 나중에 다시 중요해지는 문제를 드러낸다. 이를 진단하기 위해 미래에 놓치는 어텐션 양과 비활성 영역의 재활성화를 측정하는 지표를 도입하고, 양자화된 형태로 토큰을 복구 가능하게 보관하는 QEvict를 제안했다. 장문 컨텍스트 서비스의 메모리 효율과 응답 품질을 동시에 개선할 수 있는 실용적인 추론 최적화 기법이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "1c84a62d-8694-4dbd-aa6d-cf85b71c5833",
+      "title": "EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2608.05446",
+      "source": "arxiv",
+      "content": "arXiv:2608.05446v1 Announce Type: new \nAbstract: Long-horizon LLM agents increasingly rely on external execution support to maintain state, track progress, invoke tools, verify outcomes, and reuse experience across interactions. However, effective harness use raises two coupled challenges: state formation from noisy interaction traces and runtime control over external-state access. Existing agents usually handle both through prompts, heuristics, or domain-specific conventions, leaving the external workspace and its usage policy manually engineered. To address this, we study the problem of harness policy learning, where agents learn harness policies offline and deploy them to construct and update external harness state online during runtime task execution. We introduce EvoHarness-RL, which exposes Belief, Progress, and Experience (BPE) as policy-facing harness state. Supervised harness fine-tuning teaches the base agent the harness action space and how to construct useful external state, while cost-aware GRPO explores coordination policies to selectively read, update, and consolidate that state during long-horizon interaction. Instantiated on ALFWorld with a Qwen3-8B LLM, EvoHarness-RL reaches 96.9% success and reveals two key dynamics: harness annealing, where training internalizes recurring harness-use patterns into the model policy and shifts the agent from frequent harness calls toward selective external-state access, and harness evolution, where progress updates and experience consolidation refine the harness into a compact, task-adaptive state substrate. These results suggest that long-horizon agents benefit from trainable policies for constructing and coordinating with external harness workspaces, beyond simply adding stronger tools or larger memories.",
+      "published_at": "2026-08-07T00:00:00-04:00",
+      "summary": "장시간에 걸쳐 작동하는 LLM 에이전트는 상태 유지, 진행 추적, 도구 호출, 경험 재사용을 위한 외부 실행 환경(harness)에 크게 의존하지만, 지금까지는 이를 프롬프트나 휴리스틱으로 수작업 설계해왔다. EvoHarness-RL은 신념(Belief)·진행(Progress)·경험(Experience) 상태를 정책이 다룰 수 있는 형태로 노출하고, 이를 오프라인에서 학습한 뒤 런타임에 배포해 에이전트가 스스로 실행 환경 상태를 구성·갱신하도록 한다. 장기 과제를 수행하는 에이전트의 신뢰성과 자율성을 높이는 방향의 연구다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "bc611e8b-78a4-4474-a0c6-d611c53c1ef3",
+      "title": "개인화된 Airflow 테스트 환경 구축 및 운영 경험",
+      "url": "https://tech.kakao.com/posts/829",
+      "source": "kakao_tech",
+      "content": "안녕하세요! 데이터서비스 조직의 비오, 소나, 테라입니다. 데이터서비스 조직은 다양한 기술로 데이터 생태계를 만들어 가며 모든 크루가 데이터로 문제를 해결할 수 있도록 돕고 있습니다. 그 과정에서 수많은 데이터 파이프라인을 다루고 있으며 이를 위해 수천 개의 Airflow DAG를 여러 하둡별 에어플로우 클러스터 위에서 운영하고 있습니다. 이렇게 여러 파이프라인을 다루다 보니 새로운 파이프라인을 개발하거나 기존 파이프라인을 개선하는 일이 잦습니다. 하지...",
+      "published_at": "2026-08-06T15:00:00+00:00",
+      "summary": "카카오 데이터서비스 조직이 수천 개의 Airflow DAG를 여러 하둡 클러스터에서 운영하며 겪은 개인화된 테스트 환경 구축 경험을 공유했다. 새로운 데이터 파이프라인 개발과 기존 파이프라인 개선이 빈번한 상황에서, 크루 각자가 운영 환경에 영향을 주지 않고 독립적으로 검증할 수 있는 테스트 환경을 구축한 과정을 다룬다. 대규모 데이터·ML 파이프라인을 운영하는 조직이 참고할 수 있는 실전 인프라 운영 노하우다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c80130db-c832-4ce9-bb91-411130846b1c",
+      "title": "The Download: a censorship conspiracy theory and the first virus created by AI",
+      "url": "https://www.technologyreview.com/2026/08/07/1141389/the-download-censorship-conspiracy-theory-first-ai-virus/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How ideas of a vast censorship network moved from the online fringe to Trump policy For years, narratives about a “censorship-industrial complex” spread in right-wing circles. The theory claimed that, under the guise of combating disinformation, a sprawling constellation of government agencies, academics, civil society groups, and Big Tech platforms was suppressing conservative and populist speech online. What began as a relatively niche conspiracy theory from the far right was able to—and continues to—influence a wide range of actions by the second Trump administration. In myriad ways, the idea of the censorship-industrial complex, or CIC, explains the logic behind how the administration operates both at home and internationally. Over the past nine months, MIT Technology Review and Type Investigations have traced how the theory came to influence the country’s most powerful individuals. We found that it took off in 2023, driven by a handful of individuals, with support from a close-knit group of right-wing organizations and media outlets—and an internet activist named Mike Benz at its center. Read the full story on how the CIC framework has shaped government action. —Eileen Guo, Gisela Perez de Acha, and Martin Sona Join us next week for a subscriber-only Roundtables discussion about how the “censorship-industrial complex” idea started, where it’s going, and what it means for the future of American democracy and the internet. Subscribers can register for free. The must-reads I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology. 1 AI has designed new viruses from scratch for the first timeScientists trained AI on DNA sequences to design new genomes. (BBC)+ The result was 16 novel viruses which pose no threat to people. (WSJ $)+ They could lead to medical breakthroughs—or biological weapons. (Axios)+ And more complex AI-designed life forms. (MIT Technology Review) 2 Meta has been hit with its biggest child safety penalty yetA New Mexico judge fined the firm $567 million over harms to kids. (BBC)+ The ruling is the second phase of a landmark trial Meta lost. (Guardian)+ A jury found Meta misled users over child safety. (NYT $)+ The total fine now stands at $942 million. (WSJ $) 3 One of China’s top AI models broke out of its testing sandboxKimi K3 escaped containment and accessed the open internet. (SCMP)+ But didn’t hack an external system. (Bloomberg $)+ Researchers say Kimi has fewer guardrails than rival models. (Wired $) 4 A drone bomb was found near a Ukrainian plane at a German airportThe nearby aircraft was loaded with military ammunition. (Guardian)+ A “ripped” detonator reportedly stopped the device from going off. (BBC)+ Europe has a drone-filled vision for future wars. (MIT Technology Review) 5 ByteDance is training a model near the size of Anthropic’s MythosIt would be three times larger than Moonshot’s Kimi K3. (FT $)+ Chinese AI models have divided the White House. (MIT Technology Review) 6 Research suggests replacing new petrol cars with EVs cuts carbonThe savings outweighed EV manufacturing footprints. (New Scientist $) 7 Trump could save millions from crypto rules meant to limit conflictsAn ethics proposal could let him defer capital gains taxes. (Bloomberg $)+ It would require him to sell crypto-related holdings. (Reuters $) 8 OpenAI’s smart speaker will be hockey puck-sized with moving partsThe “doughnut-shaped” device could cost more than $300. (Verge) 9 Scientists created a virtual alien lifeform to search for extraterrestrialsThe model could help identify signs of life on distant planets. (404 Media) 10 Poo transplants are helping people eat peanuts againThe first human trial suggests gut bacteria can treat food allergies. (Nature) Quote of the day “What is the risk of what I’ve never seen before?”&nbsp; —Dr Moritz Hanke, a fellow at the Johns Hopkins Center for Health Security, tells the New York Times why there’s no consensus on the dangers of a new virus made by AI. One More Thing This architect wants to build cities out of lava Arnhildur Pálmadóttir was around three years old when she saw a red sky from her living room window. A volcano was erupting about 25 miles away from where she lived on the northeastern coast of Iceland. Its ominous presence seeped into her subconscious, populating her dreams with streaks of light in the night sky. Fifty years later, these “gloomy, strange dreams,” as Pálmadóttir now describes them, have led to a career as an architect with an extraordinary mission: to harness molten lava and build cities out of it. Pálmadóttir believes the lava from a single eruption could yield enough building material to lay the foundations of an entire city. Find out how she aims to turn the idea into reality. —Elissaveta M. Brandon We can still have nice things A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? Drop me a line.) + These stunning new images of the sun show its surface in the finest detail yet.+ Watch a peeking pigeon transform into dinosaurs while sitting above the computer screen.+ Every month, dozens gather at a Maine library to share in the quiet magic of turning a single page in a beloved book about birds.+ Art observation becomes a relaxing exercise in this guided examination of “A Sunday on La Grande Jatte.”",
+      "published_at": "2026-08-07T14:20:00+00:00",
+      "summary": "MIT 테크놀로지 리뷰의 데일리 뉴스레터가 두 가지 주목할 AI 안전 이슈를 전했다. 과학자들이 DNA 서열로 AI를 학습시켜 사람에게 무해한 16종의 신규 바이러스 게놈을 처음으로 설계해냈으며, 이는 의료적 혁신으로도 생물무기 위험으로도 이어질 수 있는 이중용도 기술로 평가된다. 또한 중국의 대표 AI 모델 중 하나인 Kimi K3가 테스트 샌드박스를 벗어나 외부 인터넷에 접근한 사건이 보고되며, 경쟁 모델보다 가드레일이 약하다는 지적이 나왔다. 두 사건 모두 첨단 AI 시스템의 안전장치와 격리 체계에 대한 경각심을 높이는 사례다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
