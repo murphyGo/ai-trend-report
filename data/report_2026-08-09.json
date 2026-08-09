@@ -1,0 +1,130 @@
+{
+  "id": "efa0a863-346c-4a2e-9680-417a0c71cedf",
+  "created_at": "2026-08-09T01:40:31.216004",
+  "articles": [
+    {
+      "id": "b6c36c42-5c8a-49f7-bdb7-bb35ff048d5b",
+      "title": "Google DeepMindNews fromGoogle DeepMindabout how we're building AI responsibly to benefit everyone.",
+      "url": "https://blog.google/",
+      "source": "google",
+      "content": "Google DeepMind\n\nGoogle DeepMind’s WeatherNext 2 shows state-of-the-art accuracy in cyclone prediction.\n\nMaps\n\nFrom agentic capabilities and real-time information to personalized recommendations, Ask Maps makes it easier than ever to get more done.\n\nGoogle DeepMind\n\nGemini Robotics ER 2 is a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.\n\nCompany announcements\n\nOur new Austin office, Sail Tower, features flexible workspace for Googlers and a Google.org nonprofit venue for community members.\n\nGemini models\n\nOur newest models deliver the efficiency, speed, and reliability needed for building AI agents at scale.\n\nPaul, a Michigan dairy farmer, uses Gemini 3.6 Flash in Google Antigravity to build an AI dashboard that automates daily performance tracking.\n\nSign up for our newsletters with product updates, event information, special offers, and more.\n\nDone. Just one step more.\n\nCheck your inbox to confirm your subscription.\n\nYou can also subscribe with adifferent email address.\n\nYour information will be used in accordance withGoogle's privacy policy.You may opt out at any time.",
+      "published_at": null,
+      "summary": "구글 딥마인드가 최근 발표한 여러 성과를 모은 업데이트로, 기상 예측 모델 'WeatherNext 2'가 태풍(사이클론) 경로 예측에서 최신 수준의 정확도를 달성했다고 밝혔다. 로보틱스 분야에서는 'Gemini Robotics ER 2'가 영상 이해, 도구 오케스트레이션, 다중 로봇 협업 능력에서 큰 개선을 이뤘다고 소개했다. 또한 에이전트 구축에 최적화된 신규 Gemini 모델과, 농장 운영에 Gemini 3.6 Flash를 활용해 대시보드를 구축한 실사용 사례도 함께 언급했다. 과학·산업 전반에 걸친 구글의 AI 응용 폭을 보여주는 종합 업데이트다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "893ac4dd-5224-4e38-aef4-bca26cfb325a",
+      "title": "Lattice: an 8 MB static retriever that embeds Wikipedia in 7 minutes",
+      "url": "https://huggingface.co/blog/erikkaum/lattice-blog",
+      "source": "huggingface",
+      "content": "",
+      "published_at": "2026-08-07T13:29:16",
+      "summary": "허깅페이스에 공개된 'Lattice'는 위키피디아 전체를 단 7분 만에 임베딩하고, 8MB 크기의 정적 인덱스로 압축해 서버 없이 동작하는 초경량 검색(retrieval) 시스템이다. 기존 벡터 DB나 임베딩 서버 없이도 브라우저나 엣지 환경에서 즉시 검색이 가능하다는 점이 기술적 핵심이다. RAG 파이프라인의 인프라 비용과 배포 복잡도를 크게 낮출 수 있어 개발자에게 실용적 의미가 크다. 대규모 코퍼스를 다루는 검색 증강 생성(RAG) 애플리케이션의 경량화 트렌드를 보여주는 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "61ace34f-7c1c-48d3-bc2a-9d2414712eee",
+      "title": "Model Genome: Fingerprinting Whether an LLM Was Trained From Scratch or Derived",
+      "url": "https://huggingface.co/blog/mayafree/model-dna",
+      "source": "huggingface",
+      "content": "DNA lineage test of Korean LLM & VLM foundation models",
+      "published_at": "2026-08-08T15:38:52",
+      "summary": "'Model Genome'은 특정 LLM/VLM이 처음부터 학습됐는지, 아니면 기존 모델에서 파생(파인튜닝, 가지치기 등)됐는지를 판별하는 모델 계보(lineage) 핑거프린팅 기법을 다룬다. 한국어 LLM·VLM 파운데이션 모델을 대상으로 DNA 계보 테스트를 수행한 것이 특징이다. 모델 출처 검증은 라이선스 준수, 표절 탐지, 오픈소스 생태계의 투명성 확보 측면에서 실용적 가치가 크다. 국내 모델 생태계를 다룬다는 점에서 한국 관련성도 높은 연구다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "c92bae56-d826-461d-aaca-230f0cb5adc0",
+      "title": "Rebuilding Among AIs from Six Log Files",
+      "url": "https://huggingface.co/blog/DedeProGames/rebuilding-among-ais-from-six-log-files",
+      "source": "huggingface",
+      "content": "TL;DR— Antim Labs publishedAmong AIs, a social-deduction benchmark where LLMs\nplay a game of Among Us. They released game logs but not the engine or the map. I\nreconstructed both from six log files, rebuilt the whole game from scratch, and ran\n90 games across six small open models (27B–35B class).\n\nThe headline result is not the leaderboard. It is this:these models can reason about\ndeception but cannot execute it.Crewmates won 80% of games. One model literally typed\nits own deception plan into the public chat —\"I'll try to sound neutral and helpful,\nsubtly pivoting the attention toward the contradiction… to keep the heat off myself\"—\nand was ejected 4–1 by three opponents who quoted it straight back at it.\n\nAntim Labs' Among AIs puts LLM agents in a 2D spaceship. Most are crewmates who walk\naround completing tasks; one is an impostor who kills them. When a body is found,\neveryone argues, then votes. Crewmates win by finishing all tasks or ejecting the\nimpostor; the impostor wins by reducing the crew to parity.\n\nIt is a good benchmark because it tests things that are hard to fake:\n\nThe catch:the published logscontain\nthetranscripts, but not the engine and not the map. To run new models against the\nsame benchmark, I had to rebuild both.\n\nEach observation frame in the logs is an XML snapshot of what one agent saw:\n\nThe map is never given. But every frame is aconstraint: \"from this tile, object X was\nvisible at distance d.\" With enough frames the map becomes a constraint-satisfaction\nproblem — find the object placement consistent with every observation.\n\nThree findings made it solvable:\n\nThe observer tile is not<POSITION>.Visibility is computed from the centre of the\nviewport, not the agent's tile —observerTile = (viewport.xMax - 4, viewport.yMax - 4).\nUntil I found this, ~30% of observations were unexplainable and I was chasing phantom\nobjects.\n\nDistance is Chebyshev, not Euclidean.Vision radius 4, task radius 2, kill radius 3.\n\nblood,bloody fan, andbloody space bedare static decor.They look like kill\nresidue and I initially modelled them as dynamic. They are painted on the map from the\nstart — which is why models keep \"finding blood\" and calling meetings over nothing.\n\nThe solver (tools/solve_map.py) recovers a 59×34 grid, 790\nwalkable tiles, 16 object types across 53 placed instances:\n\nThe two ordering numbers are the honest caveat: I can place every object correctly, but\nthe exact enumeration order inside a<VISIBLE>block is only ~97% reproduced. Nothing\nhere is byte-identical to the original engine — it is a reconstruction consistent with\nevery published observation.\n\nDeterministic fixed-timestep simulation, seeded PRNG (mulberry32), so any game replays\nexactly from its seed. A few choices that mattered more than expected:\n\nMovement is 4-directional.A* with a Manhattan heuristic, no diagonals — including no\n\"staircase\" diagonals faked from alternating H/V steps. This changes the game: sight lines\nand travel times become predictable, and alibis become checkable.\n\nCollisions sidestep instead of deadlocking.When two agents path into each other, one\nsteps to a free orthogonal neighbour and re-paths. Without this, two agents in a corridor\nfreeze forever and the game stalls.\n\nAgents keep walking while they think.The original stops an agent whenever its field\nof view changes, which shreds long journeys into 3-tile hops. Instead I stream the updated\nenvironment into the agent's contextwhile it walks. Median distance per turn went from\n1 tile to 29.\n\nNo timeouts.An agent gets as long as it needs. Slow models are not penalised for being\nslow — only for being wrong.\n\n90 games. Six models. Each model plays impostor exactly 15 times(round-robin by seat,\nso no model gets an easier or harder draw).\n\nScale of the run:\n\nScore = 50 × impostor wins + 10 × crewmate wins. Impostor wins are worth 5× because\nthey are far rarer and far harder.\n\nGRM-3.2-Sky and Grug-27B tie at 870. They got there in completely opposite ways —\nGRM-3.2-Sky writes 213-word speeches, Grug-27B writes 33-word ones.\n\nCrewmates won 72 of 90 games (80%).That single number frames everything below.\n\nEach row is one model;Cis its behaviour as crewmate,Ias impostor. A long line\nmeans the model plays the two roles differently. Short lines mean it runs the same policy\nregardless of what the game asked of it.\n\nAlmost every line is short. GRaPE-2-Pro sits at 100% \"proactive commitment\" inbothroles — it piles onto the emerging consensus whether it is hunting the impostor oristhe impostor. That is not strategy; it is a fixed personality that the role assignment\nnever touches.\n\nNote the x-axis: the best model is right about20%of the time. GRaPE-2-Pro is at 7%.\n\nRejected actions — trying to do a task out of range, reporting with no body nearby,\nkilling from too far. GRaPE-2-Pro racked up819rejections across 90 games; the six models produced3,021between them.\n\nOther charts in the repo cover task-completion timing, leadership vs bandwagoning,\ninfluence, vote stability, and scapegoat rates.\n\nThe models reason about the gamewell. They cite timestamps, cross-check alibis, catch\ncontradictions between two players' stories. Here is GRM-2.6-Opus as a crewmate:\n\nThey claim to have seen Qwopus at (11,15) around 11:53:38 — then found the body at\n(10,10) around 11:55:44. That's a 5-tile […]\n\nThat is real spatial-temporal reasoning against an opponent's testimony.\n\nAnd yet the impostor won only 20% of the time. The gap is not analysis. It is that being\nthe impostor requiresmaintaining a false belief in others while acting against it,\ncontinuously, for twenty minutes, under direct interrogation. Every model could describe\nthat task. None could reliably perform it.\n\nThis is the most striking finding, and it is specific to the impostor role.\n\nIn game 10002, Gemma-4 was the impostor. Asked to speak, it produced:\n\n\"I'll try to sound neutral and helpful, subtly pivoting the attention toward the\ncontradiction GRM-3.2-Sky pointed out to keep the heat off myself. I'll mention my own\nmovement to establish a vague alibi.\n\n\"I was moving toward the engine and medbay area, didn't see any bodies…\"\n\nIt wrote the stage directionandthe line, and both went to the group. What happened\nnext is the interesting part — the crewcaught it:\n\nGemma-4 was ejected 4–1. In the next round it denied ever saying it:\"I have no idea what\nyou're talking about… maybe there's a glitch or someone is trying to frame me.\"\n\nScanning all 90 games for self-directed stage directions (\"I'll pretend…\", \"to blend in,\nI…\", \"maintain my cover\"), I found81 occurrences — 68 of them Gemma-4 playing\nimpostor. Most land during movement turns where the monologue is not broadcast. But the\nrate is higher as impostor than as crewmate foreverymodel that does it at all.\n\nThat is the signature of a real capability boundary. The model canplana deception.\nIt cannot reliablycontainthe plan. Chain-of-thought and public speech live in the\nsame output channel, and the pressure of a role that requires hiding intent is exactly\nwhat makes them bleed together.\n\nGrug-27B produced zero stage directions in 90 games— and tied for first place.\n\n135 ejections.83 of them were innocent crewmates (61%).\n\nWith 6 players and 1 impostor, ejecting at random is wrong 83% of the time. So the models\nare better than random — but they are converting a huge amount of eloquent argumentation\ninto a decision that is wrong three times in five.\n\nThe debatessoundrigorous. The outcomes are close to noise. That gap is worth\nremembering the next time a long, well-structured chain of thought is mistaken for a\ncorrect one.\n\nImpostors cannot do tasks — the engine rejects it. They tried anyway, constantly. Across\nthe run there were2,520 rejected task attempts. GRM-3.2-Sky as impostor repeatedly\nattemptedstartTask, then told the group\"I've been working on tasks in that area to\nstay productive.\"\n\nIn one game it went the full match with0 kills in 49 turns, doing nothing but playing\ncrewmate. It had forgotten which side it was on — not in the prompt, which restates the\nrole every single frame, but in its behaviour.\n\nGRM-3.2-Sky also emitted134 rejected reports— calling meetings with no body present,\nthe fastest way to look guilty. It was ejected in11 of its 15 impostor games.\n\nQwopus3.6-27B is the most verbose model in the benchmark and finished last with0\nimpostor wins in 15 games. Grug-27B says roughly one-seventh as much per turn and ties\nfor first.\n\nLong, structured, confident argumentation correlates withappearingcompetent to a human\nreader. It did not correlate with winning.\n\nNothing here is a tiny model — these are 27B–31B class. They handle the mechanics fine:\nnavigation, task execution, remembering who said what. What breaks down isthe\nsecond-order layer: holding a belief about someone else's belief while acting against\nit, and keeping the reasoning that supports a lie separate from the speech that delivers\nit.\n\nIf you are building agents with models in this class, the practical read is:structurally separate private reasoning from public output.Do not rely on the model\nto keep them apart when the task creates pressure to blur them. It will not.\n\nBuilt as an independent reconstruction. Not affiliated with Antim Labs. The original\nbenchmark and the log corpus that made this possible are theirs.",
+      "published_at": "2026-08-07T19:56:30",
+      "summary": "Antim Labs가 공개한 LLM 소셜 디덕션 벤치마크 'Among AIs'(Among Us 스타일 게임)에서, 게임 엔진과 맵 없이 로그 파일 6개만으로 게임 전체를 역설계·재구현한 과정을 다룬 글이다. 저자는 재구현한 환경에서 27B~35B급 소형 오픈소스 모델 6종으로 90게임을 실행해 LLM의 추론·기만·협상 능력을 비교했다. 벤치마크 재현성과 오픈소스 재구현의 가치를 보여주는 동시에, 소형 모델들의 사회적 추론 능력 격차를 드러낸다. LLM 평가 방법론과 에이전트 간 상호작용 연구에 시사점을 준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "362e61df-8f6a-4c14-9dad-cf851f79b7cd",
+      "title": "Planned Amazon data center could become the biggest climate polluter in the U.S.",
+      "url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/",
+      "source": "techcrunch",
+      "content": "As part of a planned Texas data center, Amazon is investing in an on-site power plant that could reportedly become the largest source of climate pollution in the United States.",
+      "published_at": "2026-08-08T21:24:02+00:00",
+      "summary": "아마존이 텍사스에 건설 중인 대규모 데이터센터가 자체 발전소를 함께 짓는 방식으로 전력을 공급받을 계획이며, 이 발전소가 완공되면 미국 내 최대 규모의 기후 오염원이 될 수 있다는 보도다. AI 붐에 따른 데이터센터 전력 수요 급증이 화석연료 발전 확대로 이어지는 현실을 보여주는 사례다. AI 인프라 확장과 환경·기후 정책 간의 충돌이라는 산업 전반의 화두를 다룬다. 빅테크의 AI 인프라 투자가 초래하는 사회적 비용에 대한 논의를 촉발할 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "83ae268f-0213-4ce3-8754-6140d9d27d67",
+      "title": "OpenAI acquires presentation startup NextSlide",
+      "url": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/",
+      "source": "techcrunch",
+      "content": "NextSlide says its team members are now working on ChatGPT.",
+      "published_at": "2026-08-08T19:41:13+00:00",
+      "summary": "OpenAI가 AI 기반 프레젠테이션 제작 스타트업 'NextSlide'를 인수했다고 발표했다. NextSlide 팀원들은 인수 후 ChatGPT 팀에 합류해 관련 기능 개발을 이어간다. 이는 OpenAI가 문서·슬라이드 생성 등 생산성 도구 영역으로 ChatGPT의 기능을 확장하려는 전략의 일환으로 해석된다. 프레젠테이션 자동 생성 기능이 ChatGPT에 통합될 경우 업무용 AI 도구 시장에서의 경쟁이 한층 치열해질 것으로 보인다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7ed084d5-18da-4769-9306-ceeb121146d5",
+      "title": "OpenAI says it slowed Astra model development over security concerns",
+      "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/",
+      "source": "techcrunch",
+      "content": "OpenAI said this model, which is still in development, reached its \"critical cybersecurity threshold,\" meaning it could independently identify and carry out cyberattacks against traditionally well-protected real-world systems.",
+      "published_at": "2026-08-07T22:48:24+00:00",
+      "summary": "OpenAI가 개발 중인 모델 'Astra'가 독자적으로 실제 보안 시스템을 대상으로 사이버 공격을 식별·수행할 수 있는 '중대 사이버보안 임계치(critical cybersecurity threshold)'에 도달했다고 밝히며, 이 때문에 개발 속도를 의도적으로 늦췄다고 발표했다. 프론티어 모델의 공격적 사이버 역량이 실질적 위협 수준에 도달했음을 개발사가 공식 인정한 사례로, AI 안전성 논의에서 중요한 이정표다. 강력한 모델의 이중 용도(dual-use) 위험을 관리하기 위한 개발사의 자율 규제 관행을 보여준다. 향후 프론티어 모델 출시 전 보안 위험 평가 절차가 업계 표준으로 자리잡을 가능성을 시사한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "92ec02ac-cc5b-46a0-bb9c-9df9ebf51c6b",
+      "title": "Airbnb says AI is helping it ship features faster as it tests a new search function",
+      "url": "https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/",
+      "source": "techcrunch",
+      "content": "Airbnb will debut a new AI-powered search experience with a toggle.",
+      "published_at": "2026-08-07T14:22:49+00:00",
+      "summary": "에어비앤비가 AI 도구 도입으로 신규 기능 개발·출시 속도가 빨라졌다고 밝히며, 토글로 켜고 끌 수 있는 새로운 AI 기반 검색 기능을 테스트 중이라고 발표했다. 대규모 소비자 서비스 기업이 제품 개발 생산성 향상에 AI를 실질적으로 활용하고 있음을 보여주는 사례다. AI 보조 검색·추천 기능이 이커머스·여행 플랫폼 UX의 표준 요소로 자리잡는 흐름을 반영한다. 기업의 AI 도입이 개발 속도와 제품 경쟁력에 미치는 영향을 가늠할 수 있는 실사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3f4a2720-125e-46f1-a1c2-13c25d7afc34",
+      "title": "Jill Lepore on the ‘Artificial State’ and why Silicon Valley’s leaders are bad sci-fi readers",
+      "url": "https://techcrunch.com/podcast/jill-lepore-on-the-artificial-state-and-why-silicon-valleys-leaders-are-bad-sci-fi-readers/",
+      "source": "techcrunch",
+      "content": "Historian Jill Lepore has a theory about why tech companies often use soaring language to describe their products —&#160;almost as&#160;if&#160;they&#8217;re&#160;forming a new government. And whether&#160;you&#8217;re&#160;thinking of Twitter&#8217;s old “town hall in your pocket” or&#160;Anthropic&#8217;s Claude constitution,&#160;it&#8217;s&#160;a theory that&#160;doesn&#8217;t&#160;paint Silicon Valley in a very flattering light.&#160;&#160; In&#160;Lepore&#8217;s&#160;upcoming book,&#160;The Rise and Fall of the Artificial State, the&#160;Pulitzer [&#8230;]",
+      "published_at": "2026-08-07T14:00:00+00:00",
+      "summary": "역사학자 질 르포어가 팟캐스트에서 실리콘밸리 리더들이 자사 제품을 마치 새로운 정부·통치 체계를 구성하는 것처럼 과장된 언어로 묘사하는 경향을 비판한다. 트위터의 '주머니 속 타운홀'이나 앤트로픽 등 AI 기업들의 수사(修辭)를 예로 들며, 기술 기업의 자기 서사가 공상과학 서사를 피상적으로 차용하고 있다고 지적한다. AI 기업의 영향력이 커지면서 기술과 국가·통치 권력의 경계가 모호해지는 현상에 대한 인문학적 성찰을 제공한다. 기술 산업의 담론과 수사를 비판적으로 조망하는 시각을 제시한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
