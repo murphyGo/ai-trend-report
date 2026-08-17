@@ -1,0 +1,88 @@
+{
+  "id": "b86a3718-76cb-4618-b381-27ac8936ce01",
+  "created_at": "2026-08-17T01:11:52.512020",
+  "articles": [
+    {
+      "id": "9db885f3-08b0-4719-99b0-387a650b8cf4",
+      "title": "Google DeepMindNews fromGoogle DeepMindabout how we're building AI responsibly to benefit everyone.",
+      "url": "https://blog.google/",
+      "source": "google",
+      "content": "Gemini models\n\nGemini 3.7 Flash is our most intelligent workhorse model yet for coding and agents.\n\nCollection\n\nCheck out the latest announcements about Pixel devices at Made by Google 2026.\n\nSign up for our newsletters with product updates, event information, special offers, and more.\n\nDone. Just one step more.\n\nCheck your inbox to confirm your subscription.\n\nYou can also subscribe with adifferent email address.\n\nYour information will be used in accordance withGoogle's privacy policy.You may opt out at any time.",
+      "published_at": null,
+      "summary": "구글이 코딩과 에이전트 작업에 최적화된 신규 모델 'Gemini 3.7 Flash'를 공개했다. 구글은 이를 자사 경량(Flash) 라인업 중 가장 지능적인 워크호스 모델이라고 설명하며, 실용적인 개발 생산성 향상에 초점을 맞췄다. 이번 발표는 Made by Google 2026 행사와 함께 이루어졌으며, Gemini 시리즈의 지속적인 반복 개선을 보여준다. 코딩 보조와 에이전트형 워크플로우에 특화된 경량 모델 경쟁이 계속 치열해지고 있음을 시사한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c95ee07c-d873-49cd-84f9-57964152579d",
+      "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
+      "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
+      "source": "techcrunch",
+      "content": "OpenRouter's CEO recently described the startup as Stripe for AI.",
+      "published_at": "2026-08-16T20:57:04+00:00",
+      "summary": "결제 기업 스트라이프가 AI 게이트웨이 스타트업 오픈라우터(OpenRouter)를 70억 달러 이상에 인수한다는 소식이 보도됐다. 오픈라우터는 여러 LLM 제공업체의 API를 단일 인터페이스로 통합해주는 서비스로, CEO는 스스로를 'AI판 스트라이프'라 칭해왔다. 이번 인수가 성사되면 AI 인프라 시장에서 결제·핀테크 기업이 모델 라우팅 계층까지 사업을 확장하는 대표 사례가 된다. AI 애플리케이션 개발자들이 여러 모델을 손쉽게 전환·비교하는 미들웨어 시장의 성장성을 보여주는 신호로 해석된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1029320a-033e-4a99-90a9-5e531b2342b3",
+      "title": "SBVA, 젠스파크 CTO 초청 파이어사이드 챗… AI 에이전트 미래 논의",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41473",
+      "source": "korean",
+      "content": "SBVA(에스비브이에이, 대표 이준표)가 글로벌 인공지능(AI) 워크스페이스 플랫폼 젠스파크(Genspark)의 케이 주(Kay Zhu) 공동창업자 겸 최고기술책임자(CTO)를 초청해 AI 에이전트 기술의 발전 방향과 비즈니스 활용 가능성을 논의하는 파이어사이드 챗을 개최했다고 17일 밝혔다.\n\n지난 14일 서울 서초구 SBVA 사무실에서 열린 이번 행사는 빠르게 발전하는 AI 에이전트 기술에 대한 인사이트를 공유하고, 국내 기업과 젠스파크 간 교류와 협력 기회를 확대하기 위해 마련됐다. 행사에는 주요 기업과 스타트업 관계자 60여 명이 참석했다.\n\n이날 케이 주 CTO는 ‘AI의 다음 시대’를 주제로 한 키노트를 통해 AI가 단순히 질문에 답하는 것을 넘어 스스로 계획하고 다양한 도구를 활용해 업무를 수행하는 에이전트로 진화하고 있다고 설명했다. 특히 앞으로는 사용자의 업무 맥락을 기억하고 수 시간에서 수일에 걸쳐 업무를 이어가는 ‘장기 수행형 에이전트(Long-Horizon Agent)’가 AI 발전의 핵심이 될 것으로 전망했다.\n\n이후 최지현 SBVA 상무가 모더레이터로 참여한 파이어사이드 챗에서는 젠스파크의 실제 사용자 활용 사례와 기업의 AI 에이전트 도입 전략 및 향후 제품 로드맵 등을 주제로 대화를 나눴다.\n\n특히 케이 주 CTO는 “AI가 제시하는 답변을 사람이 다시 가공하던 방식에서 벗어나, 이제는 목표 설정부터 실행까지 전체 프로세스를 능동적으로 이끌어가는 단계로 진입했다”라며 “고도화된 산업 환경을 갖춘 한국 시장에서 젠스파크의 AI 에이전트 기술이 기업들의 실제 업무 생산성을 극대화하고 실질적인 성과로 이어지도록 협력을 강화하겠다”라고 전했다.\n\n참석자들과의 Q&A에서는 한층 구체적인 논의가 이어졌다. AI 에이전트의 성능과 신뢰성, 소버린 AI 모델과의 연계 가능성, AI 도입에 따른 조직과 업무 수행 방식의 변화 등 기업 현장에서 마주하는 다양한 과제에 대한 질문이 잇따르며 호응을 얻었다.\n\n최지현 상무는 “이번 자리는 최신 기술을 소개하는 데 그치지 않고, AI 에이전트가 실제 업무를 어떻게 바꿔 나갈 수 있는지 구체적으로 살펴보는 계기가 됐다”라며 “앞으로도 글로벌 기술 기업과 국내 스타트업이 인사이트를 나누고 새로운 협력 기회를 모색할 수 있는 접점을 지속적으로 만들어가겠다”고 말했다.\n\n한편, 젠스파크는 AI 에이전트를 기반으로 다양한 업무를 수행할 수 있는 AI 워크스페이스 플랫폼을 개발하는 기업으로 지난달 한국 시장 진출을 공식화했다. 서비스 출시 12개월 만에 ARR(연간 반복 매출) 2억 5000만 달러를 달성했으며, 누적 투자액 6억 4500만 달러와 기업가치 26억 달러를 바탕으로 전 세계 7000곳 이상의 기업 고객을 확보하고 있다.",
+      "published_at": null,
+      "summary": "국내 벤처캐피털 SBVA가 AI 워크스페이스 스타트업 젠스파크(Genspark)의 케이 주 CTO를 초청해 AI 에이전트 기술의 미래를 논의하는 파이어사이드 챗을 열었다. 주 CTO는 AI가 단순 질의응답을 넘어 스스로 계획을 세우고 도구를 활용해 수 시간에서 수일간 업무를 이어가는 '장기 수행형 에이전트(Long-Horizon Agent)'로 진화하고 있다고 강조했다. 젠스파크는 한국 시장 진출 이후 서비스 출시 12개월 만에 연 반복 매출(ARR) 2억 5000만 달러를 달성하며 빠르게 성장 중이다. 이번 행사는 글로벌 AI 에이전트 기업과 국내 기업 간 협력 확대 가능성을 보여주는 사례로, 국내 AI 생태계에 시사점을 제공한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "55e43a7a-92f7-48e7-9e95-8f63b03946ce",
+      "title": "Fine-Tuning Tool-Calling LLMs: A Complete Guide Using XYZ-Aquila-SFT and Qwen3",
+      "url": "https://www.marktechpost.com/2026/08/15/fine-tuning-tool-calling-llms-a-complete-guide-using-xyz-aquila-sft-and-qwen3/",
+      "source": "marktechpost",
+      "content": "In this tutorial, we implement an end-to-end supervised fine-tuning pipeline for the XYZ-Aquila-SFT dataset, Hugging Face Transformers, PyTorch, and PEFT. We stream and inspect the dataset, parse multi-turn tool-use trajectories, extract structured tool calls, analyze corpus characteristics, and preserve embedded reasoning and observation patterns. We then convert tool schemas between message-embedded and structured formats, render Qwen-compatible ChatML with assistant-only loss masking, prepare a custom PyTorch dataset and collator, and fine-tune Qwen3-0.6B with LoRA. Finally, we evaluate tool-call prediction before and after training and export both the transformed dataset and corpus statistics for further experimentation. Copy CodeCopiedUse a different Browserimport os, sys, subprocess CFG = dict( REPO = \"XYZAILab/XYZ-Aquila-SFT\", LANG = \"en\", N_STREAM = 400, N_EVAL = 40, MODEL_ID = \"Qwen/Qwen3-0.6B\", MAX_SEQ_LEN = 2048, LENGTH_POLICY = \"truncate\", RUN_TRAINING = True, MAX_STEPS = 30, GRAD_ACCUM = 8, LR = 1e-4, LORA_R = 16, RUN_EVAL = True, N_EVAL_PROBES = 24, OUT_DIR = \"/content/aquila_out\", SEED = 0, ) os.makedirs(CFG[\"OUT_DIR\"], exist_ok=True) def pip(*pkgs): subprocess.run([sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"-U\", *pkgs], check=False) pip(\"datasets>=3.0.0\", \"transformers>=4.51.0\", \"peft>=0.13.0\", \"accelerate>=1.0.0\") import json, re, math, random, statistics as stats from collections import Counter, defaultdict from dataclasses import dataclass, field from typing import Any, Dict, List, Optional import torch import matplotlib.pyplot as plt from datasets import load_dataset from transformers import AutoTokenizer, AutoModelForCausalLM, get_cosine_schedule_with_warmup random.seed(CFG[\"SEED\"]); torch.manual_seed(CFG[\"SEED\"]) DEV = \"cuda\" if torch.cuda.is_available() else \"cpu\" BF16 = DEV == \"cuda\" and torch.cuda.is_bf16_supported() print(f\"device={DEV} bf16={BF16} torch={torch.__version__}\") print(f\"\\n[1] streaming {CFG['REPO']}:{CFG['LANG']} ...\") stream = load_dataset(CFG[\"REPO\"], CFG[\"LANG\"], split=\"train\", streaming=True) RAW: List[Dict[str, Any]] = list(stream.take(CFG[\"N_STREAM\"])) print(f\" pulled {len(RAW)} rows; keys = {list(RAW[0].keys())}\") _r = RAW[0] print(f\" question[:110] : {_r['question'][:110]}...\") print(f\" answer : {_r['answer'][:80]}\") print(f\" number of tool calls : {_r['number of tool calls']}\") print(f\" trajectory len : {len(_r['trajectory'])} msgs\") print(f\" role sequence (first8): {[m['role'] for m in _r['trajectory'][:8]]}\") We configure the dataset, model, training parameters, output directory, and reproducibility settings for the complete workflow. We install the required Hugging Face, PEFT, Accelerate, and PyTorch-related dependencies and detect whether a CUDA GPU and BF16 support are available. We then stream a limited number of XYZ-Aquila-SFT examples, inspect the dataset schema, and examine the structure of the first tool-use trajectory. Copy CodeCopiedUse a different BrowserTOOLS_BLOCK_RE = re.compile(r\"&lt;tools>\\s*(.*?)\\s*&lt;/tools>\", re.S) THINK_RE = re.compile(r\"&lt;think>(.*?)&lt;/think>\", re.S) TOOL_RESP_RE = re.compile(r\"&lt;tool_response>\\s*(.*?)\\s*&lt;/tool_response>\", re.S) TOOLS_HDR_RE = re.compile(r\"\\n\\n# Tools\\n\\n\") def iter_json_objects(text: str, limit: int = 1): \"\"\"Nesting-safe JSON scanner. Regex like r'\\\\{.*?\\\\}' breaks on nested `arguments` objects, which every real tool call has.\"\"\" dec, i, n, out = json.JSONDecoder(), 0, len(text), [] while i &lt; n and len(out) &lt; limit: while i &lt; n and text[i] not in \"{[\": i += 1 if i >= n: break try: obj, end = dec.raw_decode(text, i) except json.JSONDecodeError: i += 1 continue out.append(obj); i = end return out def parse_tool_calls(content: str) -> List[Dict[str, Any]]: calls = [] for m in re.finditer(r\"&lt;tool_call>\", content): got = iter_json_objects(content[m.end():], limit=1) if got: calls.append(got[0]) return calls @dataclass class Trajectory: question: str answer: str declared_calls: int messages: List[Dict[str, str]] system_core: str = \"\" tools: List[Dict[str, Any]] = field(default_factory=list) tools_suffix: str = \"\" calls: List[Dict[str, Any]] = field(default_factory=list) n_observations: int = 0 n_think: int = 0 @property def tool_names(self): return [c.get(\"name\", \"?\") for c in self.calls] @property def depth(self): return len(self.messages) def parse_row(row: Dict[str, Any]) -> Trajectory: msgs = [{\"role\": m[\"role\"], \"content\": m[\"content\"]} for m in row[\"trajectory\"]] t = Trajectory(row[\"question\"], row[\"answer\"], row[\"number of tool calls\"], msgs) if msgs and msgs[0][\"role\"] == \"system\": sysmsg = msgs[0][\"content\"] split = TOOLS_HDR_RE.search(sysmsg) if split: t.system_core = sysmsg[:split.start()] t.tools_suffix = sysmsg[split.start():] else: t.system_core = sysmsg blk = TOOLS_BLOCK_RE.search(sysmsg) if blk: t.tools = iter_json_objects(blk.group(1), limit=64) for m in msgs: if m[\"role\"] == \"assistant\": t.calls += parse_tool_calls(m[\"content\"]) t.n_think += len(THINK_RE.findall(m[\"content\"])) else: t.n_observations += len(TOOL_RESP_RE.findall(m[\"content\"])) return t TRAJ = [parse_row(r) for r in RAW] t0 = TRAJ[0] print(f\"\\n[2] parsed {len(TRAJ)} trajectories\") print(f\" tool schemas found : {[fn.get('function', fn).get('name') for fn in t0.tools]}\") print(f\" parsed calls : {len(t0.calls)} (declared {t0.declared_calls})\") print(f\" observations : {t0.n_observations} think blocks: {t0.n_think}\") if t0.calls: print(f\" sample call : {json.dumps(t0.calls[0], ensure_ascii=False)[:200]}\") agree = sum(len(t.calls) == t.declared_calls for t in TRAJ) print(f\" parser vs 'number of tool calls': {agree}/{len(TRAJ)} exact match\") calls_per = [len(t.calls) for t in TRAJ] depth_per = [t.depth for t in TRAJ] chars_per = [sum(len(m[\"content\"]) for m in t.messages) for t in TRAJ] name_freq = Counter(n for t in TRAJ for n in t.tool_names) argkey_freq = defaultdict(Counter) for t in TRAJ: for c in t.calls: args = c.get(\"arguments\", {}) if isinstance(args, dict): for k in args: argkey_freq[c.get(\"name\", \"?\")][k] += 1 def q(xs, p): xs = sorted(xs); return xs[min(len(xs) - 1, int(p * len(xs)))] print(\"\\n[3] corpus statistics\") print(f\" tool calls / traj : mean {stats.mean(calls_per):.1f} p50 {q(calls_per,.5)} \" f\"p90 {q(calls_per,.9)} max {max(calls_per)}\") print(f\" messages / traj : mean {stats.mean(depth_per):.1f} p90 {q(depth_per,.9)} max {max(depth_per)}\") print(f\" chars / traj : mean {stats.mean(chars_per):,.0f} p90 {q(chars_per,.9):,}\") print(f\" tool distribution : {dict(name_freq)}\") for k, v in argkey_freq.items(): print(f\" {k:&lt;24} arg keys -> {dict(v.most_common(6))}\") tot = sum(chars_per); top = sum(sorted(chars_per)[-max(1, len(chars_per)//10):]) print(f\" top-10% longest trajectories hold {100*top/tot:.1f}% of all characters\") fig, ax = plt.subplots(1, 3, figsize=(15, 3.6)) ax[0].hist(calls_per, bins=40); ax[0].set_yscale(\"log\"); ax[0].set_title(\"tool calls / trajectory\") ax[1].hist(depth_per, bins=40); ax[1].set_yscale(\"log\"); ax[1].set_title(\"messages / trajectory\") ax[2].bar(list(name_freq), list(name_freq.values())); ax[2].set_title(\"tool usage\"); ax[2].tick_params(axis=\"x\", rotation=20) plt.tight_layout(); plt.show() We define nesting-safe utilities for extracting JSON tool calls, reasoning blocks, observations, and embedded tool schemas from each conversation. We convert every raw dataset row into a structured trajectory object and verify that the parsed tool-call counts match the values declared by the dataset. We then calculate corpus-level statistics and visualize the distributions of tool calls, message depth, trajectory size, and tool usage frequency. Copy CodeCopiedUse a different BrowserQWEN3_TOOLS_TMPL = ( \"You are provided with function signatures within &lt;tools>&lt;/tools> XML tags:\\n&lt;tools>\\n\" \"{lines}\\n&lt;/tools>\\n\\nFor each function call, return a json object with function name \" \"and arguments within &lt;tool_call>&lt;/tool_call> XML tags:\\n&lt;tool_call>\\n\" '{{\"name\": &lt;function-name>, \"arguments\": &lt;args-json-object>}}\\n&lt;/tool_call>' ) def extract_tools(t: Trajectory) -> Dict[str, Any]: \"\"\"message-embedded schemas -> {'messages': [...], 'tools': [...]}\"\"\" msgs = [dict(m) for m in t.messages] if msgs and msgs[0][\"role\"] == \"system\": msgs[0][\"content\"] = t.system_core return {\"messages\": msgs, \"tools\": t.tools, \"question\": t.question, \"answer\": t.answer} def render_tools(rec: Dict[str, Any]) -> List[Dict[str, str]]: \"\"\"inverse: structured tools -> schemas re-embedded in the system message\"\"\" msgs = [dict(m) for m in rec[\"messages\"]] if rec[\"tools\"] and msgs and msgs[0][\"role\"] == \"system\": lines = \"\\n\".join(json.dumps(x, ensure_ascii=False) for x in rec[\"tools\"]) msgs[0][\"content\"] = msgs[0][\"content\"] + QWEN3_TOOLS_TMPL.format(lines=lines) return msgs _rt = render_tools(extract_tools(t0)) exact = _rt[0][\"content\"] == t0.messages[0][\"content\"] print(f\"\\n[4] extract->render byte-exact: {exact}\") if not exact: print(\" template drift detected -> using verbatim tools_suffix for render()\") a, b = t0.messages[0][\"content\"], _rt[0][\"content\"] i = next((i for i in range(min(len(a), len(b))) if a[i] != b[i]), min(len(a), len(b))) print(f\" first divergence @{i}: {a[i:i+70]!r} vs {b[i:i+70]!r}\") tok = AutoTokenizer.from_pretrained(CFG[\"MODEL_ID\"]) if tok.pad_token is None: tok.pad_token = tok.eos_token IM_START, IM_END, NL = \"&lt;|im_start|>\", \"&lt;|im_end|>\", \"\\n\" def render_and_mask(t: Trajectory, max_len: int, policy: str): \"\"\"Manual ChatML so we control masking token-exactly. WHY NOT apply_chat_template(): Qwen3's template deletes &lt;think>...&lt;/think> from every assistant turn except the last. On this dataset that silently destroys most of the reasoning supervision you are paying to train on. \"\"\" ids, labels = [], [] for m in t.messages: head = tok(f\"{IM_START}{m['role']}{NL}\", add_special_tokens=False).input_ids body = tok(m[\"content\"], add_special_tokens=False).input_ids tail = tok(f\"{IM_END}{NL}\", add_special_tokens=False).input_ids seg = head + body + tail if m",
+      "published_at": "2026-08-15T11:28:29+00:00",
+      "summary": "MarkTechPost가 도구 호출(tool-calling) 성능을 높이기 위한 LLM 파인튜닝 실전 튜토리얼을 공개했다. Hugging Face Transformers, PEFT, PyTorch를 활용해 XYZ-Aquila-SFT 데이터셋의 멀티턴 도구 사용 궤적을 파싱하고, Qwen3-0.6B 모델에 LoRA로 파인튜닝을 적용하는 전체 파이프라인을 다룬다. 도구 스키마 변환, ChatML 렌더링, 어시스턴트 전용 손실 마스킹 등 실무에 바로 적용 가능한 세부 기법을 단계별로 설명한다. 에이전트형 애플리케이션 개발이 늘어나는 가운데, 오픈소스 소형 모델로도 안정적인 도구 호출 능력을 확보할 수 있는 실용적 가이드로서 의미가 크다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "4899b183-a6c5-4a67-b678-d8af951f6734",
+      "title": "Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’",
+      "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/",
+      "source": "techcrunch",
+      "content": "Dario Amodei is pushing back against the idea that he's been painting an overly pessimistic picture of AI.",
+      "published_at": "2026-08-16T16:53:51+00:00",
+      "summary": "앤트로픽 CEO 다리오 아모데이가 최근 확산되는 AI에 대한 반발 정서를 '근본적으로 신뢰의 위기'라고 진단했다. 그는 자신이 AI의 위험성을 지나치게 비관적으로 그려왔다는 일각의 비판에 반박하며 입장을 밝혔다. 이는 프런티어 AI 랩 수장이 업계에 대한 대중의 불신과 우려에 공개적으로 대응한 사례로, AI 안전성과 커뮤니케이션 전략에 대한 업계 내 고민을 보여준다. AI 기업들이 기술 발전과 대중 신뢰 확보 사이에서 겪는 긴장을 드러내는 사례로 주목된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "81840528-7e76-4502-9e98-547bf7ef86d9",
+      "title": "Why people aren’t buying Mark Zuckerberg’s AI future",
+      "url": "https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/",
+      "source": "techcrunch",
+      "content": "On the latest episode of Equity podcast, we discuss why not everyone is buying Zuckerberg’s vision.",
+      "published_at": "2026-08-16T20:32:01+00:00",
+      "summary": "테크크런치의 팟캐스트 '에퀴티'가 마크 저커버그가 제시하는 AI 미래 비전에 대해 대중이 왜 회의적인 반응을 보이는지 다뤘다. 메타의 대규모 AI 투자와 슈퍼인텔리전스 비전에도 불구하고 소비자와 시장의 신뢰를 얻는 데 어려움을 겪고 있다는 점을 짚었다. 이는 앤트로픽 CEO의 '신뢰 위기' 발언과 맥을 같이하며, AI 업계 전반에서 대중 설득력 부족이 공통된 화두로 떠오르고 있음을 보여준다. 빅테크의 AI 비전과 일반 대중의 인식 사이 간극을 조명하는 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    }
+  ]
+}
