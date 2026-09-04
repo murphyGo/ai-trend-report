@@ -1,0 +1,279 @@
+{
+  "id": "48c71b86-3530-4e35-bdc8-106679df630e",
+  "created_at": "2026-09-04T03:08:45.728891",
+  "articles": [
+    {
+      "id": "015087a5-b765-47c7-b42e-4c70250bddbc",
+      "title": "Safety",
+      "url": "https://openai.com/index/safety-overview-gpt-6-astra/",
+      "source": "openai",
+      "content": "September 3, 2026\n\nToday, we are releasing GPT‑6 Astra, the most capable model we have ever broadly deployed. Astra is our first model to reach the Critical level of cybersecurity capability under our Preparedness Framework.\n\nThe most important things to know about the safety of this launch are as follows:\n\nFor more information, see thefull system card⁠(opens in a new window).\n\nSafetySep 1, 2026\n\nSecurityAug 26, 2026\n\nCompanyAug 19, 2026",
+      "published_at": "2026-09-03T00:00:00+00:00",
+      "summary": "OpenAI가 지금까지 공개한 모델 중 가장 강력한 'GPT-6 Astra'의 안전성 개요를 발표했다. Astra는 OpenAI의 Preparedness Framework 기준 사이버보안 능력에서 최초로 'Critical' 등급에 도달한 모델로, 이는 숙련된 공격자의 능력을 크게 증폭시킬 수 있는 수준을 의미한다. 이에 따라 OpenAI는 강화된 안전 대책과 접근 제한, 모니터링 체계를 함께 공개했다. 프론티어 모델의 이중 사용(dual-use) 위험이 실질적 임계점을 넘었음을 보여주는 사례로 업계 전반의 안전 기준 논의에 영향을 줄 전망이다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "6dc49d3a-5de8-4085-b8cc-b97ff2b8dc50",
+      "title": "Security",
+      "url": "https://openai.com/index/daybreak-for-frontline-defenders/",
+      "source": "openai",
+      "content": "September 3, 2026\n\nOpenAI is committing $1 billion in subsidized Daybreak access, training, technical support, and partnerships to help frontline defenders protect essential services.\n\nToday OpenAI is introducing Daybreak for Frontline Defenders, a new global initiative to help frontline defenders use frontier AI cyber capabilities to protect essential services in the United States and around the world. The initiative includes:\n\nEvery day, we depend on cyber defenders to protect the systems that keep communities running: the water coming from the tap, the electricity powering homes and businesses, the local government systems that deliver public services, and the financial institutions people trust with their money. Many operate with limited staff and budgets, while defending complex and aging systems.\n\nIn the coming months, AI-enabled cyber attacks will become far more widespread and sophisticated as models around the world become increasingly capable. That shift puts every organization on notice. Defenders need to act now: test systems, find weaknesses, and strengthen defenses before attackers do.\n\nFrontier AI can help defenders move faster. We have adefender’s window: a narrowing opportunity to use AI to close security gaps before attackers seize them. Our role is to help put powerful tools in defenders’ hands so they can protect the systems, and the people, they are responsible for.\n\nLast week, wecalled for collective actionto seize that window, alongside more than 150 organizations across cybersecurity, technology, critical infrastructure, finance, and AI. No single company can secure the systems we all depend on. Every organization has a role to play, and defenders need the tools to move faster.\n\nToday, OpenAI is making a major commitment to help.Daybreak for Frontline Defenders brings together $1 billion in subsidized access to frontier cyber capabilities, hands-on training and technical assistance, and new partnerships to get those capabilities to organizations that protect the services people depend on every day.We are starting where the gap is greatest: with defenders carrying enormous responsibility without the resources of the world’s largest companies. Our goal is to build a model that can protect the services Americans rely on and, with our partners, help put frontier cybersecurity in the hands of frontline defenders around the world.\n\nOpenAI is committing $1 billion in subsidized Daybreak access to help resource-constrained cyber defenders, starting with the United States, put frontier AI to work, targeting it to be consumed over the next six months.As part of our “Daybreak for America” commitment, we will prioritize operators of essential services—including water and wastewater systems and electric grid operators, alongside state and local governments, community and regional banks, nonprofits, open-source maintainers, and other organizations with limited security resources. Many of these teams defend complex and often aging systems against faster-moving threats without the budgets, tools, or specialized expertise available to large enterprises. Daybreak access can help them review legacy code, analyze suspicious activity, identify and validate vulnerabilities, prioritize the most serious risks, and develop and test fixes. In the coming weeks, we intend to expand this model to partner countries.\n\nThis commitment builds on support already provided to infrastructure defenders facing urgent threats.Following recent attacks on U.S. water systems, we offered affected states and utilities up to $1 million in no-cost API credits, Daybreak access, and technical assistance.Teams were able to use that support to review code and system configurations, validate findings, develop patches, and confirm fixes while water systems remained operational and communities continued receiving the services they depended on.\n\nEarlier this year, we launchedDaybreak, which enables verified public and private sector defenders to use advanced AI for authorized cyber defense. Daybreak Blue supports common defensive work with our mainline models; Daybreak Red gives approved organizations access to specialized cyber models for more sensitive and technically demanding work.Thousands of defenders across 2,000 approved organizations and workspaces already use Daybreak, including cybersecurity companies, defense organizations, and law enforcement organizations.\n\nAlongside broader access, we are increasing hands-on support for frontline defenders in essential sectors.We have convened an ongoing series of meetings with frontline defenders, including utilities, state and local governments, community banks, and others, to learn from their work and help them use our tools to harden their systems, and we will continue those convenings as Daybreak for Frontline Defenders expands. This week’s second gathering of utility companies brought together participants representing 40 states and the District of Columbia that collectively provide essential services to more than half of the U.S. population.\n\nAccess to capable models is only useful if frontline defenders have the training and support to use them effectively.Today, we are announcing a public sector and water-focused pilot with the Multi-State Information Sharing and Analysis Center, or MS-ISAC, to train and support state, local, tribal, and territorial cyber defenders.The pilot will pair Daybreak access with guided training and hands-on assistance for an initial group of public sector and water system defenders, helping them validate and prioritize findings, coordinate remediation, and develop a repeatable approach that can be expanded over time.\n\nMS-ISAC provides cyber-threat intelligence, incident-response support, real-time information sharing, and other shared defenses to thousands of public-sector organizations, including utilities, public hospitals, K–12 schools, and law-enforcement agencies. Its members protect many of the systems closest to Americans’ daily lives—from drinking water and public hospitals to schools, emergency services, and local governments. The pilot is intended to develop a model that could eventually benefit organizations across that broader community.\n\nSupport also needs to reach defenders through the tools and services they already use.Today, our partners across theDaybreak Defense Networkare announcing more than 35 partner products and partner-operated services that bring OpenAI’s Daybreak cyber models into the hands of the enterprise.Our goal is collective action becoming operational, with products, services, and workflows defenders can use.\n\nUltimately, the goal is not just to find more vulnerabilities, but to fix them faster.This week, we published OpenAI’s approach to building aDefense Factory⁠: a continuous, agent-first operation that builds on existing security and engineering tools to find and validate vulnerabilities and prepare tested fixes for review.We are sharing its architecture and lessons so other defenders can adapt the approach to their own environments.\n\nThe defender’s window will not stay open indefinitely. The opportunity now is to make sure the advantages frontier AI can give defenders reach beyond the largest companies and best-resourced security teams—and into the communities and institutions whose security affects millions of people.\n\nThat means more than providing access to capable models. It means helping frontline defenders—water utilities, community banks, health systems, local governments—find vulnerabilities, turn them into tested fixes, and protect those they serve. Daybreak forFrontline Defendersis our commitment to putting that capability in the hands of the frontline defenders who need it most. Our goal is to use frontier AI to make the systems Americans depend on harder to attack and easier to repair.\n\nEligible state and local governments, critical infrastructure operators, nonprofits,open-sourcemaintainers, and supporting organizations can visit theDaybreak websiteto learn more about access, technical assistance, training, and other cyber-defense support.\n\nSafetySep 1, 2026\n\nSecurityAug 26, 2026\n\nSecurityAug 17, 2026",
+      "published_at": "2026-09-03T13:15:00",
+      "summary": "OpenAI가 'Daybreak for Frontline Defenders'라는 글로벌 이니셔티브를 발표하며 프론티어 AI 사이버 방어 역량을 일선 방어 기관에 지원하기 위해 10억 달러 규모의 보조 접근권, 교육, 기술 지원, 파트너십을 제공하기로 했다. 이는 GPT-6 Astra가 Critical 수준 사이버보안 능력에 도달한 직후 나온 조치로, 공격 능력 확산에 대응해 방어 측의 역량도 동시에 끌어올리려는 전략이다. 미국과 전 세계 필수 인프라 운영 기관이 우선 지원 대상이 된다. AI 기업이 자사 모델의 위험성 증가에 맞춰 방어 생태계 투자로 균형을 맞추려는 시도로 볼 수 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "33197d7a-e7cd-4d82-a05d-79b843cde498",
+      "title": "OpenAI launches Astra, its powerful (and controversial) new model",
+      "url": "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/",
+      "source": "techcrunch",
+      "content": "OpenAI claims that Astra represents \"a new frontier on computer and browser use,\" and that it handles tasks with unmatched \"speed, accuracy, and safety.\"",
+      "published_at": "2026-09-03T18:01:45+00:00",
+      "summary": "OpenAI가 컴퓨터·브라우저 사용에 특화된 신형 에이전트 모델 'Astra'를 공개했다. OpenAI는 Astra가 웹과 컴퓨터 조작 작업에서 속도, 정확도, 안전성 면에서 이전에 없던 새로운 지평을 연다고 주장한다. 다만 동시에 발표된 안전성 개요에서 이 모델이 Critical 수준 사이버보안 능력을 갖췄다는 점이 알려지며 '논쟁적'이라는 평가를 받고 있다. 자율 에이전트가 실제 브라우저·OS 환경에서 작업을 수행하는 능력이 실용 단계에 접어들었음을 보여주는 사례다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "3f903b5c-92d6-4f52-b977-167a7b721e32",
+      "title": "구글, 역대 최고 수준의 추론 및 코딩 모델 ‘제미나이 3.8 플래시’ 공개…‘제미나이 3.8 플래시 사이버’도 출시",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41728",
+      "source": "korean",
+      "content": "구글이  2일(현지시간) 지금까지의 최고 수준의 추론 및 코딩 모델로 인공지능(AI) 에이전트와 소프트웨어 개발, 복잡한 다단계 추론에 특화된 차세대 경량 모델 ‘제미나이 3.8 플래시(Gemini 3.8 Flash)’와 사이버보안에 특화된 ‘제미나이 3.8 플래시 사이버(Gemini 3.8 Flash Cyber)’를 공개했다.\n\n이는 지난 3.7 플래시 출시 이후 불과 3주 만이며, 구글이 6주 동안 세 번째 플래시 모델을 내놓은 것이다. 이날 순다르 피차이(Sundar Pichai) 구글 CEO는 “6주 만에 세 번째 플래시 출시”라며 “3.7 플래시에서 소프트웨어 엔지니어링, 에이전트 작업, 다단계 추론 전반에서 상당한 도약을 이뤘다”고 밝혔다.\n\n장기 코딩·자율형 에이전트에 집중\n\n제미나이 3.8 플래시는 구글이 ‘가장 지능적인 워크호스(workhorse) 모델’이라고 설명하는 범용 모델이다. 핵심 특징은 복잡한 작업을 수행할 때 이전 모델보다 더 많은 추론 단계를 거치고, 필요한 도구를 반복적으로 호출하면서 결과를 평가하고 개선하는 방식이다.\n\n구글은 이를 ‘장기 실행 에이전트 루프(long-running agentic loops)’라고 설명했다. AI가 한 번의 답변을 생성하는 데 그치지 않고 작업을 수행하고 결과를 평가한 뒤 다시 작업하는 과정을 반복하도록 설계했다는 의미다.\n\n이를 통해 제미나이 3.8 플래시는 장시간 이어지는 소프트웨어 개발 작업이나 복잡한 에이전트 업무에서 성능을 높였다.\n\n대표적으로 장기 소프트웨어 엔지니어링 벤치마크인 ‘DeepSWE v1.1’에서 제미나이 3.8 플래시는 더 큰 규모의 주요 프론티어 모델 상당수를 앞서며 복잡한 엔지니어링 문제를 처음부터 끝까지 자율적으로 해결하는 능력을 보여줬다고 구글은 밝혔다.\n\n또 금융·법률 등 전문 영역에서도 성능이 향상됐다. ‘Vals Finance Agent V2’와 ‘Harvey Legal Agent Benchmark’ 등에서 제미나이 3.7 플래시 및 다른 프론티어 모델보다 높은 성능을 기록했으며, ‘HLE-Verified’에서는 54.9%의 점수를 기록했다.\n\n구글은 이 같은 성능 향상의 핵심으로 모델이 복잡한 문제에 더 많은 계산을 수행하는 구조를 꼽았다. 개발자는 작업의 중요도와 비용에 따라 추론 노력(effort) 수준을 조정해 토큰 사용량과 성능 사이의 균형을 선택할 수 있다.\n\n제미나이 3.8 플래시는 성능을 높이면서도 기존 제미나이 3.7 플래시와 동일한 도입 가격을 유지한다. API 기준 입력 토큰 100만 개당 0.75달러, 출력 토큰 100만 개당 3.75달러다. 구글은 이를 통해 높은 수준의 추론 능력을 요구하는 AI 에이전트와 개발 작업을 비교적 낮은 비용으로 운영할 수 있다고 강조했다.\n\n반면 연산 효율성이 가장 중요한 작업에서는 낮은 추론 노력 수준을 활용하거나 기존 제미나이 3.7 플래시를 계속 사용할 수 있도록 했다.\n\n사이버보안 특화 ‘제미나이 3.8 플래시 사이버’ 공개\n\n이번 발표에서 또 하나 주목되는 모델은 제미나이 3.8 플래시 사이버다. 이 모델은 사이버보안 분야에서 취약점 탐지와 자동 패치 능력을 강화한 특화 모델이다. 구글은 공격적인 익스플로잇 개발보다는 방어자의 취약점 발견과 수정 능력을 강화하는 데 초점을 맞췄다고 설명했다.\n\n업계 표준 취약점 탐지 벤치마크인 ‘CyberGym’에서 제미나이 3.8 플래시 사이버는 기존 제미나이 3.5 플래시 사이버와 더 큰 규모의 프론티어 모델을 넘어서는 성능을 보였다. 또한 C/C++ 중심의 CyberGym만으로 실제 환경을 평가하기 어렵다는 점을 고려해 20개 프로그래밍 언어로 작성된 복잡한 코드베이스를 대상으로 자체 벤치마크도 진행했다. 이 평가에서 취약점 탐지 성공률이 70%를 넘어섰다고 구글은 밝혔다.\n\n취약점 자동 패치 성능도 강화됐다. 콜리니어(Collinear)가 수행한 ‘CWE-Bench’에서 제미나이 3.8 플래시 사이버는 패스@1(pass@1) 47.2%를 기록했다. 선도 프론티어 모델의 47.8%에 근접하면서도 훨씬 낮은 비용으로 제공된다는 것이 구글의 설명이다.\n\n구글 내부 코드 보안에도 이미 활용\n\n구글은 제미나이 3.8 플래시 사이버를 자사 코드 보안에 이미 활용하고 있다고 밝혔다. 크롬 보안팀은 제미나이 3.8 플래시 사이버가 기존 상용 모델 가운데 가장 우수한 대형 모델보다 크롬 취약점에 대해 정확한 패치를 2.6배 더 많이 생성했다고 설명했다.\n\n클라우드 보안 분야에서는 위즈(Wiz)의 내부 침투 테스트 벤치마크에서 다른 주요 프론티어 모델보다 7.5~9.7% 높은 재현율(recall)을 기록하면서도 비용은 2.3~5.2배 낮았다고 밝혔다.\n\n특히 구글 클라우드 취약점 연구팀은 제미나이 3.8 플래시 사이버를 활용해 기존에는 연구와 발견에 수개월이 걸릴 수 있는 중요 기반 취약점을 2시간 이내에 찾아냈다고 강조했다.\n\n이는 생성형 AI가 단순한 보안 분석 보조 도구를 넘어 실제 소프트웨어 공급망의 취약점 탐색과 수정 과정에 직접 참여할 가능성을 보여주는 사례로 평가된다.\n\n‘페어윈드 프로그램’으로 사이버 모델 제한 제공\n\n제미나이 3.8 플래시 사이버는 일반 개발자에게 공개되는 범용 모델과 달리 구글의 새로운 ‘페어윈드 프로그램(Fairwind Program)’을 통해 신뢰할 수 있는 방어 조직에 우선 제공된다. 대상은 정부 기관과 주요 인프라 운영자, 소프트웨어 유지관리자 등이다.\n\n구글은 사이버보안 분야에서 더욱 강력한 기능을 제공하는 만큼 오용 가능성을 고려해 접근 대상을 제한했다고 설명했다.\n\n일반 제미나이 3.8 플래시 역시 화학·생물·방사선·핵(CBRN) 및 사이버 공격 영역에서 오용을 막기 위한 안전장치를 적용했다. 또한 그레이 스완(Gray Swan)의 평가에서 프롬프트 인젝션 공격에 대한 모델의 강건성도 크게 향상됐다고 밝혔다.\n\n개발자부터 일반 사용자까지 확대\n\n제미나이 3.8 플래시는 구글의 개발자 생태계 전반에 적용된다. 개발자는 구글 안티그래비티(Google Antigravity), 제미나이 API, 구글 AI 스튜디오(Google AI Studio), 안드로이드 스튜디오(Android Studio) 등을 통해 모델을 활용할 수 있으며, UI 생성 도구인 스티치(Stitch)에서도 사용할 수 있다.\n\n기업 고객은 제미나이 엔터프라이즈(Gemini Enterprise)를 통해 이용할 수 있으며, 일반 소비자는 구글 AI 프로와 울트라 가입자를 대상으로 제미나이 앱과 구글 검색의 AI 모드, 구글 스프레드시트 내 제미나이에서 사용할 수 있다.\n\n구글이 불과 3주 만에 3.7 플래시에서 3.8 플래시로 넘어간 것은 플래시 계열을 단순한 ‘저비용·고속 모델’이 아니라 에이전트 시대의 실질적인 작업 수행 모델로 발전시키려는 전략으로 풀이된다.\n\n특히 모델이 복잡한 작업일수록 더 많은 추론과 도구 호출을 수행하도록 설계한 점은 향후 AI 에이전트의 경쟁 기준이 단순한 벤치마크 점수나 응답 속도에서 얼마나 오랫동안 스스로 작업을 수행하고 결과를 개선할 수 있는가로 이동하고 있음을 보여준다.\n\n제미나이 3.8 플래시의 가장 큰 의미는 ‘플래시는 빠르고 저렴한 모델’이라는 기존 개념에서 한 단계 벗어났다는 데 있다.\n\n구글은 이번 모델에서 속도와 비용 경쟁력을 유지하면서도 복잡한 코딩과 전문 업무, 다단계 추론을 수행하는 능력을 크게 끌어올렸다. 특히 장기 실행 에이전트 루프를 통해 AI가 작업을 여러 단계로 쪼개고 도구를 반복적으로 사용하면서 스스로 결과를 개선하도록 한 것은 향후 에이전트형 AI의 핵심 경쟁력을 보여주는 부분이다.\n\n여기에 사이버보안 특화 모델까지 동시에 공개하면서 구글은 AI 모델 경쟁을 ‘더 큰 모델’ 중심에서 전문 영역에서 실제 업무를 수행하는 모델 중심으로 확장하고 있다.\n\n제미나이 3.8 플래시 사이버의 취약점 탐지와 자동 패치 성능 역시 주목할 필요가 있다. AI가 공격 코드를 생성하는 것보다 방어자의 취약점 탐지와 수정에 활용되는 방향으로 기술을 설계했다는 점에서, 향후 기업의 소프트웨어 보안 운영에도 AI 에이전트가 직접 참여하는 사례가 빠르게 늘어날 가능성이 있다.\n\n이번 제미나이 3.8의 경쟁력은 단순히 ‘더 똑똑한 플래시 모델’이라는 데 있지 않다. 저비용 추론, 장기 에이전트 작업, 전문 영역 지능, 사이버보안이라는 네 가지 축을 하나의 모델 전략으로 묶었다는 점에서 향후 구글의 에이전트 AI 전략을 가늠할 수 있는 중요한 발표로 평가된다.",
+      "published_at": null,
+      "summary": "구글이 코딩과 복잡한 다단계 추론에 특화된 경량 모델 '제미나이 3.8 플래시'와 사이버보안 특화 버전 '제미나이 3.8 플래시 사이버'를 공개했다. 3.7 플래시 출시 이후 불과 3주, 6주 만에 세 번째 플래시 모델 출시로 순다르 피차이 CEO는 소프트웨어 엔지니어링과 에이전트 작업, 다단계 추론에서 큰 도약을 이뤘다고 밝혔다. 핵심은 '장기 실행 에이전트 루프'로, 복잡한 작업 수행 시 더 많은 추론 단계를 거치며 도구를 반복 호출해 결과를 스스로 평가·개선한다. 구글의 빠른 반복 출시 주기는 장기 자율 코딩 에이전트 경쟁이 격화되고 있음을 보여준다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "32815f98-0727-428c-aa16-2c7e65e01ef2",
+      "title": "Nvidia confirms it will buy Hugging Face for $12.9 billion",
+      "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
+      "source": "techcrunch",
+      "content": "Nvidia said Hugging Face hosts over 3 million models and is used by over 18 million developers.",
+      "published_at": "2026-09-03T12:42:45+00:00",
+      "summary": "엔비디아가 허깅페이스를 약 129억 달러에 인수하기로 공식 확인했다. 허깅페이스는 300만 개 이상의 모델을 호스팅하며 1,800만 명 이상의 개발자가 이용하는 AI 모델 허브로, 사실상 오픈소스 AI 생태계의 핵심 인프라다. 엔비디아는 이번 인수로 하드웨어(GPU)부터 모델 배포·유통까지 AI 스택 전반을 수직 계열화하려는 행보를 이어간다. 오픈소스 모델 생태계의 중립성과 향후 접근성에 대한 개발자 커뮤니티의 우려도 함께 제기될 전망이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "cd794b05-4640-4c26-ba7c-f3c98affd6fd",
+      "title": "Accel reportedly in talks to lead $1B round for Thinking Machines at $40B valuation",
+      "url": "https://techcrunch.com/2026/09/03/accel-reportedly-in-talks-to-lead-1b-round-for-thinking-machines-at-40b-valuation/",
+      "source": "techcrunch",
+      "content": "The high-profile startup's annual revenue run rate stands at over $100 million.",
+      "published_at": "2026-09-03T19:36:29+00:00",
+      "summary": "벤처캐피털 액셀(Accel)이 AI 스타트업 씽킹머신즈(Thinking Machines)의 기업가치 400억 달러 규모의 10억 달러 투자 라운드를 주도하는 방안을 논의 중인 것으로 알려졌다. 씽킹머신즈의 연간 매출 실적(run rate)은 1억 달러를 넘어선 것으로 전해진다. 프론티어 모델 기업 못지않게 응용/인프라 스타트업에도 초대형 자금이 몰리고 있음을 보여주는 사례다. AI 스타트업 밸류에이션 거품 논쟁에 다시 불을 붙일 만한 소식이다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "d7b60b5f-22be-4667-bbc5-5ae2c2b54d67",
+      "title": "Crusoe reportedly raises $3B at a $30B valuation",
+      "url": "https://techcrunch.com/2026/09/03/crusoe-reportedly-raises-3b-at-a-30b-valuation/",
+      "source": "techcrunch",
+      "content": "The round came together after the data center developer reportedly secured a $13 billion contract with Jane Street.",
+      "published_at": "2026-09-04T00:48:42+00:00",
+      "summary": "AI 데이터센터 개발사 크루소(Crusoe)가 기업가치 300억 달러로 30억 달러 규모의 신규 투자를 유치한 것으로 알려졌다. 이번 라운드는 크루소가 트레이딩 회사 제인스트리트와 130억 달러 규모 계약을 체결한 이후 성사된 것으로 전해진다. AI 학습·추론 수요 급증에 따라 데이터센터·전력 인프라 기업으로 자본이 대거 유입되고 있음을 보여준다. AI 산업의 병목이 모델 자체보다 컴퓨팅 인프라 확보로 옮겨가고 있다는 신호로 해석된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "a8d2b51a-69cf-41cc-9ff0-8a42f6d7663d",
+      "title": "Meta is paying to peek at how you use their latest AI model",
+      "url": "https://techcrunch.com/2026/09/03/meta-is-paying-to-peek-at-how-you-use-their-latest-ai-model/",
+      "source": "techcrunch",
+      "content": "For its new Muse Spark model, intended for operating coding and other agents, Meta is offering an explicit discount averaging out to about 95% for users who \"contribute\" to the development of future models by sharing their prompts and model outputs.",
+      "published_at": "2026-09-03T18:19:56+00:00",
+      "summary": "메타가 코딩 등 에이전트 작업용으로 설계된 신모델 'Muse Spark' 이용자에게, 프롬프트와 모델 출력을 향후 모델 개선에 기여하는 대가로 평균 약 95%에 달하는 요금 할인을 제공한다. 이는 사실상 사용자 데이터를 학습 데이터로 확보하기 위해 금전적 인센티브를 지급하는 방식으로, 기존의 약관 동의 방식과는 결이 다르다. 코딩 에이전트 시장에서 실사용 데이터 확보 경쟁이 가격 정책까지 바꾸고 있음을 보여준다. 사용자 프라이버시와 데이터 활용 동의의 실질적 자발성에 대한 논쟁도 함께 제기될 수 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b4c87291-3f78-431d-8487-79746debb6b0",
+      "title": "Abliteration.ai is making a business out of removing AI guardrails",
+      "url": "https://techcrunch.com/2026/09/03/abliteration-ai-is-making-a-business-out-of-removing-ai-guardrails/",
+      "source": "techcrunch",
+      "content": "Abliteration.AI is making powerful AI models without guardrails easier to access, arguing that giving defenders the same tools as bad actors could ultimately improve cybersecurity.",
+      "published_at": "2026-09-03T18:37:57+00:00",
+      "summary": "스타트업 어블리터레이션에이아이(Abliteration.AI)가 안전장치(가드레일)가 제거된 강력한 AI 모델에 대한 접근을 사업화하고 있다. 이 회사는 방어자들도 공격자와 동일한 무제한 모델을 사용할 수 있게 하면 오히려 사이버보안이 강화될 수 있다고 주장한다. 그러나 가드레일 제거 모델의 상업적 유통은 오남용 위험을 크게 높일 수 있어 AI 안전 커뮤니티의 우려를 낳고 있다. '안전 제거'가 하나의 비즈니스 모델로 자리잡으면서 오픈 웨이트 모델 거버넌스 논쟁이 새로운 국면을 맞고 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "dca6c515-ad78-4802-aa0a-f3a2025ae94b",
+      "title": "Ollie is betting its focus on privacy can help it win the AI assistant race",
+      "url": "https://techcrunch.com/2026/09/03/ollie-is-betting-privacy-can-win-the-ai-assistant-race/",
+      "source": "techcrunch",
+      "content": "The family-focused AI assistant wants access to the details of your everyday life, but says it won’t use that data to train AI models or share it with others.",
+      "published_at": "2026-09-03T16:09:01+00:00",
+      "summary": "가족 중심 AI 비서 스타트업 올리(Ollie)가 프라이버시 보호를 핵심 차별점으로 내세우며 AI 어시스턴트 시장 경쟁에 뛰어들었다. 올리는 사용자의 일상 세부 정보에 접근하지만, 이 데이터를 AI 모델 학습에 사용하거나 제3자와 공유하지 않겠다고 약속한다. 개인 데이터를 다루는 AI 비서 시장에서 데이터 활용 방식이 주요 경쟁 요소로 부상하고 있음을 보여준다. 빅테크의 데이터 활용형 무료 모델과 대비되는 프라이버시 우선 전략의 시장성이 시험대에 올랐다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "a6b86bc6-f5cf-4bc2-a36f-832938f8571f",
+      "title": "Google’s latest AI weather model gives you no excuse to forget your umbrella",
+      "url": "https://techcrunch.com/2026/09/03/googles-latest-ai-weather-model-gives-you-no-excuse-to-forget-your-umbrella/",
+      "source": "techcrunch",
+      "content": "WeatherNext 3 is the latest wave of a sea change in meteorology brought out by deep learning techniques. Google says it will start feeding into weather information users see in search, Google Maps, and Gemini.",
+      "published_at": "2026-09-03T15:00:00+00:00",
+      "summary": "구글의 최신 AI 기상 예측 모델 'WeatherNext 3'가 검색, 제미나이, 지도, 구글맵 플랫폼, 클라우드 등 자사 서비스 전반에 통합됐다. 이는 딥러닝 기반 기상 예측이 전통적 수치예보 모델을 대체해가는 흐름의 최신 사례로, 더 정교하고 빠른 예보를 제공한다. 일반 사용자는 검색·지도에서 더 정확해진 날씨 정보를 체감할 수 있게 된다. AI 파운데이션 모델이 언어를 넘어 과학적 시뮬레이션 영역까지 실용화 단계로 확장되고 있음을 보여준다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "ed391e97-30ca-4858-a924-7b72e125552e",
+      "title": "“美가 선택한 AI 동맹 파트너 신세계”…정용진 회장, 미국 국무부 ‘파운드리 스쿨’ 출범식 참석",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=41760",
+      "source": "korean",
+      "content": "정용진 신세계그룹 회장이 현지시간 3일, 미국 국무부(United States Department of State)가 주최한 제조·첨단산업 인재 육성 행사에 참석해 글로벌 리더들과 인공지능(AI) 공급망 강화 방안에 대해 논의했다.\n\n신세계그룹은 美 정부의 AI공급망 재편 계획에서 주요 역할을 하고 있는 구글 딥마인드 출신 연구진이 설립한 미국의 개방형(오픈 웨이트) 인공지능 기업 리플렉션AI(Reflection AI)와 강력한 협력 체계를 맺고 있다. 이날 미 국무부는 신뢰할 수 있는 파트너와 함께 공동 창업자의 자세로 새로운 공급망을 구축하겠다는 비전을 밝혔다.\n\n정 회장은 워싱턴D.C. 트럼프평화연구소(옛 미국평화연구소)에서 3일(현지시간) 열린 ‘파운드리 스쿨(Foundry School)’ 출범식에 참석했다. 파운드리 스쿨은 산학연이 연계해 제조·첨단산업을 이끌 미래 인재를 육성하기 위한 미국 국무부 주도의 프로젝트다.\n\n정 회장의 참석은 JD 밴스(James David Vance) 미국 부통령과 미국 국무부의 초청으로 성사됐다. 이번 행사를 주관한 제이콥 헬버그(Jacob Helberg)국무부 경제 담당 차관은 이날 정 회장과 만나 “신세계그룹과 리플렉션AI의 파트너십은 첨단산업 분야에서 한미 협력의 중요한 이정표”라며 “정용진 회장은 AI 공급망 동맹의 든든한 동반자”라고 말했다.\n\n파운드리 스쿨은 지난해 12월 미국 주도로 출범한 경제안보 다자(多者) 협의체인 ‘팍스 실리카’를 위한 실천 전략 중 하나다.\n\n미국은 경제안보 협의체인 팍스 실리카를 통해 반도체·AI·첨단제조·에너지 등 기술 공급망 전 단계를 신뢰할 수 있는 동맹국 중심으로 재편하겠다는 구상이다. 한국은 일본·호주·싱가포르·네덜란드·영국 등 주요 미국의 우방과 함께 팍스 실리카에 동참하고 있다.\n\n파운드리 스쿨은 미국 국무부가 스탠포드 대학교와 함께 주도적으로 기획했다. 정부의 지원 아래 산업계와 학계가 힘을 합쳐 세계 산업을 주도했던 혁신 기업의 노하우와 전략을 미래 세대에 전수하겠다는 목표다. 이를 통해 실제로 상품과 서비스를 만들어 낼 수 있는 능력을 확보하겠다는 것이다. 더 나아가 팍스 실리카 경제권 전역에서 기업가, 엔지니어, 첨단 제조 분야 리더를 육성하겠다는 복안도 갖고 있다.\n\n이번 출범식에는 J.D. 밴스 미국 부통령, 마코 루비오(Marco Antonio Rubio) 미국 국무장관, 스티브 스컬리스(Steve Scalise) 미국 하원 공화당 원내대표, 제이콥 헬버그(Jacob Helberg) 국무부 차관 등 미국 정계 주요 인사가 참석했다. 디나 파월 맥코믹(Dina Powell McCormick) 메타 사장, 산제이 메흐로트라(Sanjay Mehrotra) 마이크론테크놀로지 CEO, 개리 디커슨(Gary E. Dickerson) 어플라이어드머티리얼즈 CEO 등 인공지능(AI)·반도체 분야 주요 기업 경영진들도 모습을 보였다.\n\n연사로 나선 밴스 부통령은 “산업안보가 곧 국가안보”라며 “파운드리 스쿨을 통해 다음 세대 기업가와 엔지니어에게도 기회를 부여하고, 그들에게 미래가 있다 사실을 알려줄 것”이라고 말했다.\n\n루비오 국무장관은 “재산업화라는 목표를 이루기 위해선 대학과 산업계, 그리고 정부라는 세 축이 함께 움직여야 한다”며 “파운드리 스쿨은 장기 프로젝트가 될 것”이라고 말했다.\n\n신세계그룹의 AI 데이터센터 파트너인 미국 리플렉션AI 창업자인 미샤 라스킨(Misha Laskin) CEO도 이날 행사의 연사로 나섰다. 리플렉션AI는 개방형 AI인 ‘오픈 웨이트 AI 모델’를 통해 업계를 선도할 기업으로 주목받고 있고, 미국이 주도하는 AI 공급망 동맹 확대에 중요한 전략 자산 중 하나라는 평가를 받고 있다.\n\n라스킨 CEO는 이날 세션 토론 도중 정용진 회장을 직접 지목해 감사의 인사를 전하면서, “정용진 회장의 리더십 아래 진행 중인 신세계그룹과의 협력은 굳건한 한미 파트너십을 보여주는 동시에 미국과 동맹국이 실제로 어떻게 함께 움직일 수 있는지 보여주는 좋은 사례”라고 강조했다.\n\n또 “이는 파운드리 스쿨과 팍스 실리카가 추구하는 정신이기도 하다”며 “동맹국과의 파트너십을 강화함으로써 기술혁신을 촉진하고, 전 세계의 경제 발전을 이끌어 낼 수 있을 것”이라고 말했다.\n\n신세계그룹은 지난 3월 리플렉션AI와 한국에서 대규모 AI 데이터센터 사업을 위한 파트너십을 체결하고 현재 JV 설립과 부지 선정 등 실무 작업을 진행 중이다. 양사의 AI 데이터센터 협업은 미국 국무부가 ‘신뢰할 만한 AI의 글로벌 확산’을 목표로 추진한 ‘AI 수출 프로그램’ 1호 프로젝트로 주목받았다. 상호 신뢰할 수 있는 국가와 기업들이 함께 AI 성장을 도모하는 것은 파운드리 스쿨과 팍스 실리카의 비전이기도하다.\n\n이날 정 회장은 라스킨 CEO를 비롯해 밴스 부통령, 루비오 국무장관, 스컬리스 공화당 원내대표, 헬버그 차관, 파월 메타 사장 등과 환담을 나누면서 팍스 실리카 프로젝트의 성공을 위해 한미 협력이 그 어느때보다 중요하다는 점을 강조했다.\n\n정 회장은 “미국을 중심으로 한 첨단산업 공급망 동맹을 성공적으로 이끄는 것은 시대의 과업”이라며 “한국과 미국이 힘을 합치면 더 큰 시너지를 낼 수 있을 것”이라고 말했다.\n\n또 정 회장은 파운드리 스쿨이 지향하는 미래 인재 육성 비전에 공감을 표하고 “신세계그룹과 리플렉션AI와의 협력은 파운드리 스쿨의 목표와 일치한다”며, “AI로 대표되는 첨단 산업이 발전하려면 우수한 인재는 필수이니만큼 신세계그룹도 쉼없는 창조적 혁신을 통해 인재를 모으고 키우겠다”고 말했다.\n\n미국 국무부가 주도하고 밴스 부통령과 루비오 국무장관이 모두 참석한 파운드리 스쿨 출범식에 정 회장이 초대된 것은 그간 구축해온 탄탄한 글로벌 네트워크를 보여주는 것이기도 하다. AI 데이터센터 건립 이외에도 신세계그룹이 미국에서 추진 중인 사업들도 한층 탄력을 받을 것으로 기대된다.",
+      "published_at": null,
+      "summary": "정용진 신세계그룹 회장이 미국 국무부가 주최한 '파운드리 스쿨' 출범식에 참석해 글로벌 리더들과 AI 공급망 강화 방안을 논의했다. 신세계그룹은 구글 딥마인드 출신 연구진이 설립한 오픈웨이트 AI 기업 리플렉션AI와 협력 관계를 맺고 있으며, 미국 정부의 AI 공급망 재편 계획에서 신뢰 파트너로 거론됐다. 이는 한국 대기업이 미국 주도의 AI·반도체 공급망 재편에 직접 참여하는 사례로, 한미 AI 협력의 새로운 축을 보여준다. 글로벌 AI 패권 경쟁 속에서 한국 기업의 전략적 포지셔닝이 강화되고 있음을 시사한다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "e892d484-8f7c-497b-981e-25c6ab2c45d8",
+      "title": "Cosmos-Reason2 on a Quest 3: Performance, Cost, and What Compression Actually Buys You",
+      "url": "https://huggingface.co/blog/ErenAta00/cosmos-reason2-quest3",
+      "source": "huggingface",
+      "content": "",
+      "published_at": "2026-09-02T20:43:53",
+      "summary": "Meta의 멀티모달 추론 모델 'Cosmos-Reason2'를 퀘스트3(Quest 3) 온디바이스 환경에서 구동한 실측 벤치마크 글이다. 저자는 모델 압축(양자화 등) 기법이 실제로 지연시간, 메모리 사용량, 정확도에 어떤 트레이드오프를 가져오는지 구체적 수치로 분석했다. 온디바이스 XR 하드웨어에서 대형 비전-언어 모델을 돌리기 위한 실용적 최적화 사례를 제공한다. 저전력·저메모리 환경에서 멀티모달 AI를 배포하려는 개발자에게 실질적인 참고 자료가 된다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "4022e090-8ab9-423d-9a0b-bb76b85b5b39",
+      "title": "NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network",
+      "url": "https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/",
+      "source": "nvidia",
+      "content": "AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents. Additionally, users are starting to run multiple agent sessions at the same time. Multi-agent workflows for accomplishing complex tasks are also becoming more common. This breadth-first approach can improve the speed of task completion… Source",
+      "published_at": "2026-09-03T16:00:00+00:00",
+      "summary": "엔비디아가 로컬 네트워크 내 유휴 컴퓨팅 자원을 멀티 에이전트 워크로드에 동적으로 배분하는 'PAIR 가상 추론 라우터'를 소개했다. 여러 AI 에이전트 세션이 동시에 실행되고 하위 작업을 서브에이전트에 분배하는 환경이 늘면서, 로컬 네트워크상의 가용 컴퓨팅을 효율적으로 라우팅할 필요성이 커지고 있다. 이 라우터는 개별 기기의 유휴 GPU/NPU 자원을 모아 추론 요청을 분산시켜 처리량을 늘린다. 멀티 에이전트 시스템이 늘어나면서 로컬·엣지 추론 인프라 최적화가 새로운 인프라 과제로 부상하고 있음을 보여준다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "575432e9-5ad4-429c-90e5-984305fa2025",
+      "title": "The Modern CUDA Toolbox in Practice: A Step-by-Step Optimization Walkthrough",
+      "url": "https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/",
+      "source": "nvidia",
+      "content": "NVIDIA CUDA remains the foundation of GPU-accelerated computing, powering everything from scientific simulations to large-scale AI training. But writing... Source",
+      "published_at": "2026-09-02T17:15:57+00:00",
+      "summary": "엔비디아가 CUDA 기반 GPU 가속 코드를 최적화하는 실전 워크플로우를 단계별로 설명하는 가이드를 공개했다. 과학 시뮬레이션부터 대규모 AI 학습까지 CUDA가 GPU 가속 컴퓨팅의 기반으로 남아있지만, 효율적인 커널 작성과 프로파일링에는 여전히 실무 노하우가 필요하다는 점을 짚는다. 실제 최적화 사례를 통해 병목 지점을 찾고 성능을 끌어올리는 구체적 도구와 기법을 다룬다. GPU 프로그래밍에 익숙한 개발자가 학습·추론 파이프라인 성능을 개선하는 데 실질적으로 활용할 수 있는 내용이다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b1d4164c-1c6c-47ca-aace-1e7c4b5e252f",
+      "title": "Scaling agentic AI pilots across the enterprise",
+      "url": "https://www.technologyreview.com/2026/09/03/1142868/scaling-agentic-ai-pilots-across-the-enterprise/",
+      "source": "mit_tech_review",
+      "content": "As agentic AI moves from experimentation toward enterprise deployment, the challenge is figuring out how agents can work together, connect to the systems and data they need, and operate safely across the workflows that run a business. Although agentic AI has been adopted by some 80% of Fortune 500 companies, progress toward meaningful scale remains uneven, with many organizations still working through isolated pilots. WATCH THE WEBCAST For Arun Chandra, chief operating officer at NiCE, the first step is moving beyond experimentation for its own sake. “Everybody&#8217;s trying to figure out what can we do with this technology?” he says. But scaling requires a clearer connection to business strategy: Organizations need to define whether they are trying to increase revenue, reduce costs, or pursue another strategic or financial objective. From there, they need to rethink the workflows where agents will operate instead of just layering AI onto existing processes. “The last thing you want to do is to apply AI on an outdated or an inefficient workflow,” Chandra says. That shift requires organizations to treat agentic AI as a cohesive system. Agents need access to the data, knowledge, and context required to make effective decisions, as well as connections to back-end systems if they are expected to take action. Fragmented information can undermine those capabilities: “The efficacy of these AI agents is purely a function of the context, the knowledge, and the data they can ingest and use,” Chandra says. The organizational implications are equally noteworthy. Scaling agents can create a new form of fragmentation if teams build isolated systems that don’t connect with one another, while governance, privacy, security, and change management become more important as agents take on more consequential work. Chandra argues that AI agents should ultimately be held to the same standards as human workers, with organizations thinking of their workforce as a combination of humans and AI agents. Looking ahead, that connected approach could enable agents to work proactively and even communicate with other agents to resolve customer needs. For organizations making the transition from pilots to scale, the priority is not to “boil the ocean,” Chandra says, but to instead build a connected strategy around high-value use cases, workflows, workforce changes, and measurable outcomes. This webcast is produced in partnership with NiCE. This content was produced by Insights, MIT Technology Review’s custom content arm, not its editorial staff. It was researched and written by humans, with any AI tools that may have been used limited to production processes under human oversight.",
+      "published_at": "2026-09-03T09:30:32+00:00",
+      "summary": "에이전틱 AI가 실험 단계를 넘어 기업 전반으로 확산되면서, 여러 에이전트가 서로 협업하고 기존 시스템·데이터에 안전하게 연결되도록 만드는 것이 핵심 과제로 떠올랐다. 포춘 500대 기업의 약 80%가 에이전틱 AI를 도입했지만, 다수 조직은 여전히 고립된 파일럿 단계에 머물러 있다는 점이 지적된다. NiCE의 COO 사례를 통해 에이전트 오케스트레이션과 거버넌스를 갖춰야 파일럿에서 실제 스케일로 전환할 수 있음을 보여준다. 에이전틱 AI 도입의 다음 관문은 기술력보다 조직·운영 체계에 있다는 점을 시사한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "e2322792-adae-4dc6-91ed-b8a0dd7b419f",
+      "title": "A Survey on Self-Improving Test-Time Intelligence: Feedback-Driven Adapting, Learning, and Scaling at Inference",
+      "url": "https://arxiv.org/abs/2609.01679",
+      "source": "arxiv",
+      "content": "arXiv:2609.01679v1 Announce Type: new \nAbstract: The ability of AI systems to improve their behavior during deployment is becoming increasingly important. As inference moves beyond the static execution of a fixed trained model, a growing body of work studies how models can refine their behavior on the fly by exploiting test-time information and additional computation. These developments have largely evolved along two directions: methods that modify the model's state using test-time signals, and methods that improve predictions through extra inference-time resources such as more sampling and tool use. However, these directions are often studied in separate communities with different terminology, making their connections harder to see. In this survey, we present feedback-driven Test-Time Intelligence (TTI) as a unified perspective for understanding such deployment-time improvement. We use this view to relate test-time adaptation, test-time learning, and test-time scaling, highlighting both their distinctions and their growing overlap in hybrid systems. This unified framework helps connect previously fragmented ideas and provides a clearer conceptual foundation for studying inference-time self-improvement. We review major methodological paradigms, representative applications, and open challenges across vision, language, multimodal learning, generative models, robotics, and healthcare. Our goal is to provide a coherent foundation and research roadmap for the study of self-improving AI systems at test time.",
+      "published_at": "2026-09-03T00:00:00-04:00",
+      "summary": "추론(inference) 시점에 추가 연산과 피드백을 활용해 모델이 배포 중에도 스스로 성능을 개선하는 '자기개선형 테스트타임 지능' 연구 흐름을 정리한 서베이 논문이다. 테스트타임 신호로 모델 상태 자체를 갱신하는 접근과, 별도 모듈이나 검색을 통해 출력을 다듬는 접근 두 갈래로 기존 연구를 체계적으로 분류한다. 고정된 학습 모델을 정적으로 실행하는 기존 패러다임을 넘어, 배포 후에도 계속 학습·적응하는 방향으로 AI 시스템이 진화하고 있음을 보여준다. 테스트타임 스케일링과 지속 학습을 연구하는 ML 연구자에게 유용한 분류 체계와 참고문헌을 제공한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "2f2f6181-93ae-45a8-86e7-6b0603671a3e",
+      "title": "Post-Training Ternarization of Qwen3-4B Capability, Effective Bit Budget, Storage Compression, and Deployment",
+      "url": "https://arxiv.org/abs/2609.01962",
+      "source": "arxiv",
+      "content": "arXiv:2609.01962v1 Announce Type: new \nAbstract: Ultra-low-bit language models can reduce storage and memory bandwidth, but a nominal \"1.58-bit\" label does not fully describe the stored representation, retained capability, or runtime behavior.\n  We study an end-to-end post-training conversion of Qwen, an instruction-tuned 4B-parameter model, using KOTMS rotation, E2M-ATQ ternarization, and GPTQ-style error compensation from TWLA. The experiment is weight-only: activations remain at 16-bit precision, so ILA-AMP is omitted. We evaluate effective bit accounting, task capability retention, perplexity, calibration sensitivity, checkpoint composition, and deployment behavior.\n  The final conversion uses 1.641 effective bits per weight for quantized linear weights, with 81.62% of model parameters targeted. Across ten scored capability comparisons, accuracy falls from 64.5% to 54.7%. Degradation is uneven: BoolQ retains 84.6% chance-corrected teacher performance, while ARC-Challenge retains 43.8%. Perplexity rises from 13.639 to 18.748 on WikiText-2, 24.700 to 31.992 on PTB, and 19.831 to 28.966 on C4.\n  A subsequent packing run preserves the ternary planes and scales, reducing reported model size from 8.29 GiB to 3.96 GiB with essentially unchanged perplexity. A separate third-party packing attempt was lossy and is excluded from the primary artifact claim. The packed artifact has not been benchmarked end-to-end for task accuracy or generation throughput. A preliminary Triton GEMV microbenchmark is 4.6x slower than FP16 cuBLAS on one tested shape. We therefore do not claim that compression alone yields faster inference.",
+      "published_at": "2026-09-03T00:00:00-04:00",
+      "summary": "40억 파라미터 규모의 지시튜닝 모델 Qwen3-4B를 KOTMS 회전, E2M-ATQ 삼진화(ternarization), TWLA 기반 GPTQ 스타일 오차 보정을 결합해 사후학습(post-training) 방식으로 초저비트(1.58비트급)로 변환하는 연구다. 가중치만 초저비트로 압축하고 활성화는 16비트를 유지하는 방식으로, 명목상 비트 수 표기만으로는 알 수 없는 실제 저장 용량·성능·배포 특성을 정량적으로 분석했다. 저장 공간과 메모리 대역폭을 크게 줄이면서도 실질적 능력 손실을 최소화할 수 있는 실용적 압축 기법을 제시한다. 온디바이스·저자원 환경에 대형 언어모델을 배포하려는 엔지니어에게 구체적인 압축 파이프라인 참고 자료가 된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "78fb8153-207a-4fc6-91f5-827221e87c30",
+      "title": "GAPS: Dimension-Level Gates for Conditional Activation Steering",
+      "url": "https://arxiv.org/abs/2609.01878",
+      "source": "arxiv",
+      "content": "arXiv:2609.01878v1 Announce Type: new \nAbstract: Activation steering suppresses undesired behaviors in language models by adding a steering vector to the hidden state during generation. Recent conditional methods such as CAST and DSAS improve the behavior-capability trade-off by deciding when to intervene, but once active, they apply the full dense vector to all hidden dimensions, regardless of whether a neuron carries concept information or already lies in the desired regime. We introduce dimension-level conditioning as a complementary axis of selectivity that also decides which neurons to intervene on. Our method, GAPS (Gated Activation steering via Posterior and Separability), combines two training-free gates: a static separability gate that restricts steering to neurons with statistically reliable concept information (via AUROC), and a dynamic posterior gate that steers a neuron only when its current activation is better explained by the undesired concept under a Gaussian model. The gates add O(D) overhead per token, and they plug into existing conditional methods. On toxicity mitigation (RealToxicityPrompts) and concept removal (OneSeC) with Gemma-3 (4B) and Qwen-3 (1.7B), GAPS consistently matches or improves the Pareto front of its token-level counterparts; under a fixed capability budget, DSAS+GAPS reduces Gemma-3's toxicity rate from 6.52% to 0.48%, versus 3.52% for DSAS alone. Ablations attribute most of the gain to the posterior gate.",
+      "published_at": "2026-09-03T00:00:00-04:00",
+      "summary": "언어모델의 원치 않는 행동을 억제하는 '활성화 스티어링(activation steering)' 기법을 차원(뉴런) 단위로 정교화한 'GAPS' 방법을 제안한 논문이다. 기존 조건부 스티어링 기법(CAST, DSAS)은 개입 시점은 조절하지만, 일단 개입하면 스티어링 벡터를 모든 은닉 차원에 균일하게 적용해 개념과 무관한 뉴런까지 건드리는 한계가 있었다. GAPS는 각 차원이 실제로 해당 개념 정보를 담고 있는지, 이미 원하는 상태에 있는지를 게이트로 판단해 선택적으로만 개입한다. 행동 억제와 모델 본연의 능력 유지 사이의 트레이드오프를 개선하는 해석가능성·안전성 연구로, 안전한 LLM 정렬(alignment) 기법 개발에 기여한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5f27b2e2-be52-4f30-b378-61fb1111405f",
+      "title": "DiDrive: A Risk-Aware Hierarchical Diffusion Framework for Safe Offline Reinforcement Learning in Autonomous Driving",
+      "url": "https://arxiv.org/abs/2609.01609",
+      "source": "arxiv",
+      "content": "arXiv:2609.01609v1 Announce Type: new \nAbstract: While diffusion models effectively capture multimodal behavioral priors for autonomous driving, offline reinforcement learning (RL) policies remain susceptible to distribution shift, heavy-tailed risk signals, out-of-distribution (OOD) action generation, and high-dimensional state redundancy. To address these challenges, we propose DiDrive, a distribution-guided offline diffusion framework featuring two synergistic components: the Risk-Aware Hierarchical Diffusion (RHDif) architecture and the 3DICE policy optimization paradigm. In the state space, RHDif utilizes a low-level risk-gated encoder and a high-level contextual modulator to filter environmental redundancy and focus on safety-critical threats. In the action space, 3DICE mitigates OOD overestimation and gradient oscillation through in-sample calibrated guidance, spatiotemporal optimization, and ensemble-based candidate ranking. Evaluations on the CARLA benchmark demonstrate DiDrive's superiority over baselines like IQL, CQL, and Diffusion-QL, particularly in complex, high-density traffic scenarios with 60 vehicles, where it achieves an 85% success rate and a 4295.68 average reward, providing a robust pathway for safe autonomous driving decision-making.",
+      "published_at": "2026-09-03T00:00:00-04:00",
+      "summary": "자율주행을 위한 오프라인 강화학습에서 분포 이동(distribution shift), 꼬리위험(heavy-tailed risk), 분포 외(OOD) 행동 생성 문제를 해결하는 'DiDrive' 프레임워크를 제안한 논문이다. 확산 모델(diffusion model)로 다중 모드의 주행 행동 사전지식을 포착하는 위험인지 계층형 확산 구조(RHDif)와 3DICE 정책 최적화 기법을 결합했다. 기존 오프라인 RL 정책이 학습 데이터 분포를 벗어난 상황에서 취약했던 문제를, 위험을 명시적으로 모델링해 더 안전한 주행 정책을 학습하도록 개선했다. 자율주행처럼 안전이 중요한 도메인에 강화학습과 생성모델을 결합하는 최신 연구 방향을 보여준다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
