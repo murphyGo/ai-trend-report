@@ -1,0 +1,273 @@
+{
+  "id": "7e49f6c0-0eff-4833-8e5c-19e5f0184c7e",
+  "created_at": "2026-09-19T03:18:56.686883",
+  "articles": [
+    {
+      "id": "bc111df8-0b29-4425-9ae5-a55b4ae3acae",
+      "title": "Anthropic is operating a lab that conducts biology experiments",
+      "url": "https://techcrunch.com/2026/09/18/anthropic-is-operating-a-lab-that-conducts-biology-experiments/",
+      "source": "techcrunch",
+      "content": "AI leaders have been promising that AI is the key to curing human disease. Anthropic researchers have also been warning that AI might kill us all.",
+      "published_at": "2026-09-18T23:13:31+00:00",
+      "summary": "앤트로픽이 인간 질병 치료를 목표로 생물학 실험을 수행하는 자체 연구소를 운영하고 있다는 사실이 알려졌다. 이는 AI가 신약 개발과 질병 정복의 열쇠가 될 것이라는 업계의 낙관론을 뒷받침하는 행보지만, 동시에 앤트로픽 스스로 AI의 생물학적 위험성(예: 병원체 설계 오남용)을 경고해온 것과 맞물려 이중적 시선을 받고 있다. AI 기업이 연구실 인프라까지 직접 운영하며 생명과학 영역에 깊이 관여하는 흐름을 보여주는 사례다. 안전성 담론과 실제 사업 확장이 동시에 이루어지는 프론티어 랩의 전략을 엿볼 수 있다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "da856b0b-ca20-4f92-a7cc-2edaab3bb2ac",
+      "title": "AI hallucination nearly triggers US military operation",
+      "url": "https://techcrunch.com/2026/09/18/ai-hallucination-nearly-triggers-us-military-operation/",
+      "source": "techcrunch",
+      "content": "“It’s important for service members to understand the uncertainty inherent to LLMs,\" a GovAI research scholar warns.",
+      "published_at": "2026-09-18T23:12:32+00:00",
+      "summary": "미군 운용 과정에서 대형언어모델의 환각(hallucination) 현상이 실제 군사 작전을 촉발할 뻔한 사건이 보고됐다. GovAI 소속 연구자는 군 장병들이 LLM이 갖는 근본적인 불확실성을 이해해야 한다고 경고했다. 이는 고위험·고신뢰 요구 환경에서 LLM을 의사결정에 사용할 때의 위험성을 보여주는 실제 사례로, AI 안전성 논의에 구체적 무게를 더한다. 국방·안보 분야로 LLM 도입이 확산되는 가운데 검증 체계와 인간 개입 절차의 중요성을 시사한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "28288ac1-db33-41ba-affc-528f091fbce4",
+      "title": "Anthropic’s first embedded evaluator is … Accenture?",
+      "url": "https://techcrunch.com/2026/09/18/anthropics-first-embedded-evaluator-is-accenture/",
+      "source": "techcrunch",
+      "content": "Accenture is about to take on its most high-risk consulting engagement ever.",
+      "published_at": "2026-09-18T21:44:33+00:00",
+      "summary": "앤트로픽이 처음으로 '임베디드 평가자(embedded evaluator)'로 컨설팅 기업 액센츄어와 협력한다. 액센츄어는 앤트로픽의 AI 시스템을 실사용 기업 환경에 배치하고 평가하는, 회사 역사상 가장 리스크가 큰 컨설팅 프로젝트를 맡게 된 것으로 평가된다. 이는 프론티어 AI 랩이 기업 배치 전 안전성·신뢰성 검증을 외부 파트너와 함께 체계화하려는 시도를 보여준다. AI 거버넌스와 기업 도입 사이의 새로운 협력 모델로 주목된다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f6227de3-3df7-4936-882d-f6ac310639b3",
+      "title": "A new kind of AI model from a ChatGPT inventor is thrilling developers",
+      "url": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/",
+      "source": "techcrunch",
+      "content": "Jev, a new kind of AI model, is showing developers a cheaper and faster path to software intelligence.",
+      "published_at": "2026-09-18T18:49:30+00:00",
+      "summary": "챗GPT 공동 개발자 출신 인물이 만든 새로운 형태의 AI 모델 'Jev'가 개발자들 사이에서 화제를 모으고 있다. Jev는 기존 대형 모델 대비 더 저렴하고 빠르게 소프트웨어 지능을 구현하는 경로를 제시하는 것이 특징이다. 프론티어 랩 출신 인재가 독립적으로 차별화된 아키텍처의 모델을 내놓았다는 점에서 기술적 신규성이 높게 평가된다. 비용 효율적인 모델 설계가 개발자 생태계에 실질적 영향을 줄 수 있을지 주목된다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "7e84d3b8-6c18-4172-a4f3-8d7030eba3aa",
+      "title": "Google’s new ‘CC’ is an AI agent that helps families run their households",
+      "url": "https://techcrunch.com/2026/09/18/googles-new-cc-is-an-ai-agent-that-helps-families-run-their-households/",
+      "source": "techcrunch",
+      "content": "Google is refocusing its CC AI agent on household coordination, letting families share emails, schedules, and tasks so the AI can manage calendars, fill out forms, make shopping lists, plan meals, and more.",
+      "published_at": "2026-09-18T17:33:50+00:00",
+      "summary": "구글이 AI 에이전트 'CC'를 가정용 업무 조율 도구로 재편해 출시했다. CC는 가족 구성원의 이메일·일정·할 일을 공유받아 캘린더 관리, 양식 작성, 장보기 목록 작성, 식단 계획 등을 자동으로 수행한다. 이는 범용 어시스턴트에서 벗어나 특정 생활 시나리오(가정 운영)에 특화된 에이전트로 포지셔닝한 사례다. 빅테크의 AI 에이전트 경쟁이 실생활 밀착형 서비스로 확장되고 있음을 보여준다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "18137402-9a86-4fca-9e06-1a1762329379",
+      "title": "Dario Amodei and other AI leaders want to ‘Pace the Frontier’ but…how?",
+      "url": "https://techcrunch.com/video/dario-amodei-and-other-ai-leaders-want-to-pace-the-frontier-buthow/",
+      "source": "techcrunch",
+      "content": "A week after an Anthropic researcher&#8217;s doomsday warning rattled the AI world, the company&#8217;s CEO Dario Amodei has&#160;outlined his plan to “pace the frontier”&#160;of AI development. The proposal leans on independent safety evaluators and coordination between AI labs in democratic countries, and&#160;it&#8217;s&#160;already picked up some&#160;industry support, along with some pointed&#160;pushback from Nvidia&#8217;s Jensen Huang.&#160; Watch [&#8230;]",
+      "published_at": "2026-09-18T17:09:56+00:00",
+      "summary": "앤트로픽 연구원의 종말론적 경고가 AI 업계를 뒤흔든 지 일주일 만에 CEO 다리오 아모데이가 'AI 개발 속도 조절(Pace the Frontier)' 구상을 제시했다. 독립적인 안전성 평가 기관과 민주주의 국가 AI 랩들 간의 협력 체계를 핵심으로 하며, 업계 일부의 지지를 얻었지만 엔비디아 젠슨 황 등으로부터는 날 선 반박을 받았다. 프론티어 모델 개발 속도와 안전성 사이의 긴장이 업계 리더십 차원의 공개 논쟁으로 번지고 있음을 보여준다. AI 안전 거버넌스에 대한 국제적 조율 논의의 방향성을 가늠할 수 있는 사례다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "21da2c11-061f-403b-8034-9272faaf0877",
+      "title": "Manus seeks $4B valuation in new $500M fundraise as it resumes independent ops",
+      "url": "https://techcrunch.com/2026/09/18/manus-seeks-4b-valuation-in-new-500m-fundraise-as-it-resumes-independent-ops/",
+      "source": "techcrunch",
+      "content": "Manus, which earlier this year had to break off a merger with Meta, is in discussions to raise $500M at a $4B valuation.",
+      "published_at": "2026-09-18T16:35:49+00:00",
+      "summary": "AI 에이전트 스타트업 마누스(Manus)가 5억 달러 규모의 신규 투자 유치를 통해 기업가치 40억 달러를 목표로 협상 중이다. 마누스는 올해 초 메타와의 합병이 무산된 뒤 독립 운영 체제로 복귀한 상태다. 대형 빅테크와의 합병 실패에도 불구하고 독자 노선을 택한 에이전트 스타트업이 대규모 자금을 유치한다는 점에서 AI 에이전트 시장에 대한 투자자 신뢰가 여전히 견조함을 시사한다. 에이전트 기업들의 독립성과 자금 조달 전략 변화를 보여주는 사례다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "ad62d3c8-8bf6-44c7-882d-0213197ffef0",
+      "title": "Meta’s Muse hits Mac, letting the AI take actions on your computer",
+      "url": "https://techcrunch.com/2026/09/18/metas-muse-hits-mac-letting-the-ai-take-actions-on-your-computer/",
+      "source": "techcrunch",
+      "content": "Muse is now available on the Mac, where it can work with your files and apps to take action on your behalf.",
+      "published_at": "2026-09-18T15:22:48+00:00",
+      "summary": "메타의 AI 에이전트 '뮤즈(Muse)'가 맥(Mac) 플랫폼에 정식 출시되어 사용자의 파일과 앱을 다루며 컴퓨터에서 직접 행동을 대신 수행할 수 있게 됐다. 이는 단순 대화형 어시스턴트를 넘어 컴퓨터 사용 자동화(computer-use) 에이전트로의 진화를 보여주는 사례다. macOS 생태계로의 확장은 데스크톱 작업 자동화 시장에서 메타의 경쟁력을 강화하려는 전략으로 해석된다. 실제 컴퓨터 조작 권한을 가진 에이전트 확산에 따른 보안·신뢰성 논의도 함께 부상할 전망이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b35c440f-07c9-433d-930f-349d8cccea50",
+      "title": "Benchmarking LLM Inference at Scale with AIPerf",
+      "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+      "source": "nvidia",
+      "content": "You’re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send...You’re deploying a model on a system. It starts up, prompts are getting responses. Now the hard question: Is this fast? Your instincts might lead you to send curl commands, hand-roll an asyncio script, or vibe code yet another one-off load generator. All of these paths have the same problem: single-process performance limits, Python’s GIL capping concurrency, or numbers measured against a… Source",
+      "published_at": "2026-09-18T19:04:41+00:00",
+      "summary": "엔비디아가 대규모 LLM 추론 성능을 정확히 측정하기 위한 벤치마킹 도구 'AIPerf'를 소개했다. curl 명령이나 직접 짠 비동기 스크립트로는 파이썬 GIL의 동시성 한계 등으로 정확한 성능 측정이 어렵다는 문제의식에서 출발했다. AIPerf는 단일 프로세스의 한계를 넘어 실제 서비스 환경과 유사한 규모로 추론 지연시간과 처리량을 측정할 수 있게 설계됐다. LLM을 상용 배포하는 개발자와 인프라 엔지니어에게 신뢰할 수 있는 성능 검증 표준을 제공한다는 점에서 실용적 가치가 크다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "a5bab39c-3015-481d-8753-db4f603cff5f",
+      "title": "Could AI really kill us all? Your questions, answered.",
+      "url": "https://www.technologyreview.com/2026/09/18/1144435/could-ai-really-kill-us-all-your-questions-answered/",
+      "source": "mit_tech_review",
+      "content": "On Wednesday, MIT Technology Review hosted a live Roundtables event for subscribers that asked the question everyone’s asking right now: Could AI really kill us all? But attendees had so many more questions than we had time to answer in the 30 minute session. So we asked our senior AI editor Will Douglas Heaven and AI reporter Grace Huckins to round up some of the best questions attendees submitted and try their best to answer them. Thanks to all who submitted questions! Am I gonna die? Yes, eventually. Unfortunately, my journalistic powers of prognostication aren’t powerful enough for me to tell you how. But it certainly could be because of AI. AI-powered drones have already killed people in Ukraine, and AI-driven cyberattacks on hospitals will surely claim victims before long.&nbsp; Could AI go even further, and kill all of us? Less likely. But some people—quirky people, but undeniably knowledgeable about AI—have been warning for years that this could happen. And while I’m not yet stockpiling canned food or trying to get in good with a bunker-owning megabillionaire, I have noticed that the doomers’ predictions about AI capabilities and alignment have, over the past couple of years, proved disconcertingly accurate. That certainly doesn’t mean that their more dire forecasts will come true, but it’s enough for me to sit up and take notice. — Grace Huckins Are you going to die because of AI? I’d say there’s a non-zero chance. Let’s say you’re unlucky enough to be the victim of a freakish near-future event or accident. Maybe it’s a cyberattack carried out by a swarm of AI agents on critical infrastructure. Sadly, a scenario like that now no longer feels as far-fetched as it once did. Or maybe a novel AI-designed pathogen cuts through the population. Or the world economy crashes, causing conflicts and famine. Both plausible, but I think less likely.&nbsp; Are we all going to die because of AI? Nope. There are no circumstances outside of apocalyptic science fiction in which AI could kill us all. You can spin up any number of scare stories, but they’re not grounded in present-day realities about what the tech can do or where it’s headed. Some people argue that there’s no harm in preparing for the worst, however wacky it might seem. Maybe. But I think such catastrophizing can make people excuse or overlook many of the more immediate problems with the existing technology and the companies building it. — Will Douglas Heaven Why would AI kill us? Someone might tell it to, and it might listen. That’s part of the reason researchers are so concerned about AI’s biological capabilities—imagine what Aum Shinrikyo, the doomsday cult behind the Tokyo subway sarin attack of 1995, would have done with a tool that could design a pathogen deadlier than Ebola and more transmissible than measles. Those of us who don’t want to die have to figure out how to defend against all plausible biological weapons, but our would-be attackers only have to manufacture one effective pathogen. Then there’s the more exotic-sounding possibility that an AI could decide to kill us itself. There are various stories about how this might happen out there, but the most widespread involve AI systems that don’t hate people, necessarily—we are just an obstacle between them and the goals that we gave them. Much as the OpenAI agents behind the Hugging Face hack compromised another site’s infrastructure to get a good score on a test, the idea is that some future, more powerful AI might get rid of us to prevent us from shutting it down—all in pursuit of some goal that we instructed it to go after.&nbsp; — Grace Huckins How can we best ensure alignment so the worst doesn’t happen, and who is doing the best work to achieve it? Alignment is a huge area of research. In simple terms, it involves building models that behave in ways we want them to and not in ways we don’t. We need to trust agents better before handing over more autonomy. Alignment is supposed to establish that trust. But it’s hard. LLMs aren’t designed in the way other software is, where dos and don’ts can be hard-coded in. Instead, aligned behavior needs to be instilled when models are trained. One approach is to reward them for doing things you want them to (a little like raising a toddler, perhaps). Another approach involves giving an LLM a written list of rules it is supposed to follow (kind of like a constitution). Anthropic and OpenAI are both leaders in this field—and yet neither has been able to develop models that are fully aligned. A big problem is that LLMs are far more inconsistent and far less predictable than people. They can behave in one way in one situation and another way in a situation that to us seems very similar. They can also be swayed by unexpected constraints. For example, faced with an impossible task (as many of the agents involved in the Hugging Face hack were), models may try to do whatever it takes to achieve their goal. As Grace mentions above, that could be an issue. The main reason top AI firms now say they want a slowdown is that they want to focus on cracking alignment. Alignment isn’t necessarily a pipe dream. But the jury’s out on whether full alignment will ever be feasible. — Will Douglas Heaven Is AI really dangerous, or is this the tech companies drumming up PR? This is always a reasonable thought when it comes to tech companies heading for an IPO—CEOs have an obvious incentive to make their products seem radical and transformative. But I’m not so sure it makes sense here. Telling the public that an already unpopular product could kill them and everyone they love is horrible corporate image management. There are other stories you can tell about the CEOs’ motivations—maybe they want to cool down the public furor over data centers by portraying themselves as responsible stewards of a world-changing technology, or maybe they want to buy time to get their ducks in a row and prevent the next PR catastrophe.&nbsp; But there’s also a simpler explanation. Thinking that AI could bring about human extinction has been pretty common in San Francisco for a while, and these men are steeped in that milieu—as are their employees, many of whom signed an open letter in July urging their companies to work to make an AI slowdown possible. — Grace Huckins Part of the concern occurs when AI agents are allowed to act autonomously and with no supervision. What’s the issue preventing more control over these agents? This question goes to the heart of what we want this technology to be able to do. The trade-off between autonomy and control is tricky to get right because, on the one hand, a lot of the power of AI agents is that they can carry out tasks and solve problems without a human having to micromanage them. On the other hand, that requires you to trust that the unsupervised agents won’t run amok.&nbsp; What we’re seeing is that AI labs haven’t yet got this trade-off quite right. Their models are not trustworthy, they are not properly monitored, and they are not always under control. Figuring out how to fix that while still allowing for useful autonomous activity is one of the big research challenges of the moment.&nbsp;&nbsp; — Will Douglas Heaven What steps can be taken now and in the near future to ensure that AI is controlled, monitored, and regulated effectively?&nbsp; That’s the million-dollar question. Whether or not you think AI could kill us, you can’t deny that it could do some real damage, because it already has—by driving people toward psychosis and by hacking websites, for example. Preventing that damage, or at least mitigating it, is hard for two reasons.&nbsp; The first is that we barely understand how AI works, and it’s quickly growing more powerful. There is lots of ongoing research about how to monitor and control misbehaving agents, but the current approaches are fragile. You can see if an agent discusses misbehaving in its “chain of thought,” the workspace where it plans its actions—but OpenAI’s newest agents don’t show their work in the same way as previous ones. And you can try to monitor agents with other agents, but that requires you to trust the monitor. The other obstacle is more familiar. There’s a huge conflict of interest when AI companies regulate themselves, but the US government has thus far failed to step in, despite some bipartisan support in Congress for efforts to do so. The executive branch, for its part, seems stringently opposed for the time being. But if the winds do shift, I for one would appreciate some strong transparency regulations, so that we can get a fuller story the next time an unreleased frontier model mounts a cyberattack. — Grace Huckins If this dialogue makes it into web discourse, will it become a self-fulfilling prediction? That’s a real concern. LLMs are influenced by what they read. One theory for why chatbots so often talk about (and role-play) apocalyptic scenarios is that they have been trained on millions of pages of science fiction stories and doomer internet forums. All the text being produced right now, including this article, could in turn influence the behavior of future models. Extremely meta. In fact, the team at METR, a third-party organization that OpenAI called in to help understand what happened in the lead-up to the Hugging Face hack, raised a related possibility in its report on the incident. METR used OpenAI’s new model Astra to help analyze the vast numbers of agent transcripts and behavior logs. But feeding all that material to the model could have unintended consequences. There’s a good chance that the agents doing the analyzing were biased by the text produced by the agents they were analyzing. There’s no such thing as a clean slate anymore. — Will Douglas Heaven With thanks to Eric, Pranab, Rafael, Kenneth, George, Chris, Yoon Jae, James, Carl, Nicole (and more!) for the fantastic questions.",
+      "published_at": "2026-09-18T11:29:22+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 'AI가 정말로 인류를 멸종시킬 수 있는가'라는 주제로 진행한 구독자 대상 라운드테이블 이후, 편집진이 못다 답한 질문들에 답하는 특집 기사를 게재했다. AI 기반 드론과 사이버 공격으로 인한 실제 사망 사례를 인정하면서도, 인류 전체를 멸종시키는 시나리오는 현재 기술 수준에서 근거가 약하다고 진단한다. 다만 생물학적 위험 설계, 에이전트의 자율성-통제 트레이드오프, 정렬(alignment) 연구의 한계 등 구체적인 위험 경로를 심층적으로 다룬다. 자기실현적 예언 가능성과 AI 기업의 자율 규제 한계 등 정책적 쟁점도 폭넓게 제시해 일반 독자의 AI 리스크 이해를 돕는다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "1eaf3b51-e5a8-4f63-93c2-1a93ca554eb9",
+      "title": "Harm Laundering in GPT Models: Evidence That Gender Discrimination Is Transformed Rather Than Reduced Across Safety-Trained Generations",
+      "url": "https://huggingface.co/papers/2609.20779",
+      "source": "hf_papers",
+      "content": "Safety evaluations for large language models rely on surface-form classifiers that report declining harm scores across model generations. We provide evidence that this methodology is systematically incomplete: explicit discriminatory content is transformed rather than removed. We call this \\emph{harm laundering}. Analysing 450,000 gender-directed completions across 15 models spanning GPT-2 through to GPT-5 (OpenAI GPT lineage; three demographic conditions), we show that sexual violence clusters prevalent in GPT-2 women-directed output disappear by GPT-4, while men-directed completions gain positive representational territory (caregiving, emotional range, ally identity) that women-directed completions do not. The pattern is most visible at GPT-5: Topic~5 (1,997~documents) frames breast cancer as a men's rights debate, while zero equivalent clusters appear in women-directed output. Three independent classifiers score this content as non-toxic. Sentiment scores invert at GPT-4: early models demean women; later models over-correct. Topic diversity in women-directed completions falls 36\\% relative to men at the GPT-4 alignment boundary (W/M~$= 0.58$, from $0.91$ at GPT-2). REGARD representational harm disparity correlates with release date ($ρ= +0.55$, $p = .034$) while Detoxify does not ($ρ= -0.23$, $p = .42$): toxicity scores fall as representational harm grows. We formalise harm laundering as a three-criteria test and provide a three-stage detection protocol applicable to any generative model. Within the OpenAI GPT lineage, toxicity score reduction is not a sufficient proxy for harm reduction.",
+      "published_at": "2026-09-17T17:49:28+00:00",
+      "summary": "GPT-2부터 GPT-5까지 15개 모델, 45만 건의 성별 관련 생성 결과를 분석한 연구가 '유해성 세탁(harm laundering)' 현상을 밝혀냈다. 안전성 학습이 진행될수록 명시적 차별 콘텐츠는 표면적으로 사라지지만, 실제로는 형태가 바뀌어 존속한다는 것이다. 예를 들어 GPT-5는 유방암을 '남성 인권 이슈'로 프레이밍하는 등 여성 대상 콘텐츠의 주제 다양성이 GPT-2 대비 36% 감소했음에도 기존 독성 분류기들은 이를 무해하다고 판정했다. 이는 표면적 독성 점수 하락을 유해성 감소의 충분한 지표로 신뢰할 수 없다는 점을 실증적으로 보여주며, AI 안전성 평가 방법론 자체의 재검토 필요성을 제기한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "be1c2249-0969-41f6-bd5d-d8c0272ab88a",
+      "title": "On-Demand Attention: Language Models Know When to Recall",
+      "url": "https://huggingface.co/papers/2609.20734",
+      "source": "hf_papers",
+      "content": "Reasoning and agentic workloads increasingly demand efficient long-context inference. Yet full-attention decoding reads the growing history at every step, regardless of its benefit to the next prediction. We show that a pretrained model's decoding states already contain information predictive of this benefit, before the global read. Building on this finding, we introduce On-Demand Attention (ODA), a local-first decoding method that uses a lightweight recall head to selectively invoke global attention as its predicted benefit changes during generation. ODA trains only the recall head, leaving pretrained weights unchanged and the complete historical KV cache available for future recall. We further implement GPU-side conditional execution in vLLM, translating reduced global reads into practical decoding speedups over full attention at long context lengths. Experiments across Qwen and Gemma models, including hybrid-attention backbones, show that selective recall recovers most of the performance lost under local attention while substantially reducing global reads. These findings support long-context inference in which pretrained models guide their own access to the information they retain.",
+      "published_at": "2026-09-17T17:24:48+00:00",
+      "summary": "긴 문맥을 다루는 추론·에이전트 워크로드에서 매 스텝마다 전체 이력을 읽는 풀 어텐션 디코딩은 비효율적이라는 문제의식에서, 연구진은 모델이 이전 문맥을 다시 참조할 필요가 있는 시점을 스스로 예측할 수 있음을 보였다. 이를 바탕으로 경량 'recall head'가 예측된 필요성에 따라 선택적으로 전역 어텐션을 호출하는 On-Demand Attention(ODA) 기법을 제안했다. 사전학습된 가중치는 그대로 두고 recall head만 학습시키며, vLLM에 GPU 조건부 실행을 구현해 실제 디코딩 속도 향상을 달성했다. Qwen, Gemma 등 하이브리드 어텐션 모델 실험에서 성능 손실을 최소화하면서 전역 읽기 횟수를 크게 줄여, 긴 문맥 추론의 실질적 비용 절감 가능성을 제시한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5cc03623-c877-46f9-bd15-97947feaec0b",
+      "title": "Rethinking Multi-Agent Collaboration: When More Is Less",
+      "url": "https://huggingface.co/papers/2609.19759",
+      "source": "hf_papers",
+      "content": "The rapid advancement of large language models and single-agent harnesses has reshaped the landscape of autonomous systems, raising a critical question of when multi-agent collaboration offers genuine value. As individual agent capabilities continue to scale, multi-agent collaboration faces diminishing returns while incurring growing context overhead. Through systematic analysis, we delineate the capability boundaries of multi-agent collaboration relative to single-agent alternatives, showing that it confers systematic benefits specifically in long-horizon tasks with sparse dependencies, while single-agent harnesses remain superior in tightly coupled, sequential workflows. Building on these insights, we propose SAIGE, a lightweight multi-agent collaboration mechanism based on Semantic-Aware Incremental Graph Evolution. SAIGE models collaboration as a dynamically evolving graph, where nodes are agent instances spawned on demand and edges encode semantic dependencies established through content-based information retrieval. Experiments on long-horizon, complex task benchmarks show that SAIGE achieves a favorable trade-off between context efficiency and task performance, and that scaling the agent pool or deepening the recursion level does not consistently improve outcomes. Our findings suggest that multi-agent superiority is bounded by task structure rather than universal, and that more agents do not necessarily make a system more intelligent.",
+      "published_at": "2026-09-17T06:29:12+00:00",
+      "summary": "단일 에이전트의 성능이 계속 향상되면서 다중 에이전트 협업이 언제 실질적 가치를 제공하는지에 대한 체계적 분석이 이루어졌다. 연구 결과 다중 에이전트 협업은 의존성이 느슨한 장기 과제에서만 이점을 보이고, 긴밀하게 결합된 순차적 워크플로우에서는 오히려 단일 에이전트가 우월했다. 이를 바탕으로 에이전트 인스턴스를 필요에 따라 생성하고 의미론적 의존성을 그래프로 표현하는 경량 협업 메커니즘 SAIGE를 제안, 에이전트 수나 재귀 깊이를 늘려도 성능이 일관되게 개선되지 않음을 확인했다. 이는 '에이전트가 많을수록 좋다'는 통념에 반박하며, 협업 구조를 과제 특성에 맞게 설계해야 함을 실증적으로 보여준다. 멀티에이전트 시스템을 설계하는 개발자와 연구자에게 실용적 지침을 제공한다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "d532eca0-1166-45d6-a5c4-bc9d3b60c3c0",
+      "title": "Learning and Transferring Closed-Loop Robot Software",
+      "url": "https://huggingface.co/papers/2609.19906",
+      "source": "hf_papers",
+      "content": "Closed-loop robot policies require observation processing, state management, and situation-dependent branching, making them costly to design and tune manually. Although coding agents increasingly support control-code generation and optimization, it remains unclear whether implementations improved on source tasks also support policy acquisition for new tasks. We study this question by treating complete closed-loop implementations as reusable execution experience. For each source task, a coding agent generates policy code from a few successful demonstrations and iteratively improves it using simulation feedback. The validation-selected implementations are retained in a software archive. For new tasks, the agent generates and improves policies using archived implementations, target demonstrations, and execution feedback. The resulting policy is then frozen and executes without further model calls. Across four source tasks in RoboCasa, iterative optimization increases mean success from 28.3% to 64.2%. Across nine target tasks and three independent runs, mean success is 45.2% without references, 41.5% with initial source code, and 57.0% with optimized source code. Optimized references outperform initial references in all three runs on the nine-task average, with a mean gain of 15.6 percentage points. These results demonstrate the value of execution-improved software as a resource for acquiring new policies in this setting, although initial references remain better on two target tasks when averaged across runs.",
+      "published_at": "2026-09-17T08:51:12+00:00",
+      "summary": "로봇의 폐루프(closed-loop) 제어 정책은 관측 처리, 상태 관리, 상황별 분기 로직이 필요해 수작업 설계 비용이 크다. 연구진은 코딩 에이전트가 소수의 성공 시연으로부터 정책 코드를 생성하고 시뮬레이션 피드백으로 반복 개선한 뒤, 이 구현체를 재사용 가능한 소프트웨어 자산으로 아카이브하는 접근을 제안했다. RoboCasa 환경에서 반복 최적화로 평균 성공률이 28.3%에서 64.2%로 향상됐고, 새로운 과제에 최적화된 참조 코드를 활용했을 때 평균 성공률이 45.2%에서 57.0%로 개선됐다. 이는 로봇 정책 개발에서 코드 자체를 전이 가능한 경험 자산으로 축적·재사용할 수 있음을 실증한 것으로, 로보틱스 소프트웨어 개발의 확장성을 높이는 실용적 방법론을 제시한다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "57962595-afdf-4e47-ab05-f47a1fbd9be5",
+      "title": "DART: Distillation-Aware Reparameterization for Training-Free LoRA Reuse in Few-Step Video Diffusion Models",
+      "url": "https://huggingface.co/papers/2609.20051",
+      "source": "hf_papers",
+      "content": "Step distillation reduces the cost of video generation, but reusing a LoRA trained for a longer trajectory can alter its functional effect or degrade target quality. Static parameter compatibility offers one perspective on this problem; our observations show that similar measured geometry can coexist with different adapter behavior under a shortened denoising schedule. We propose DART, a training-free method that combines low-rank coordinate transport with target-schedule response calibration using forward evaluations and no source training videos. On a four-step Wan2.2 target, DART-F improves the joint quality score from 0.9029 to 0.9227 and changes macro functional retention from -0.4644 to +0.1349. Component analysis shows that calibration accounts for most of the quality improvement, while coordinate transport provides complementary gains when combined with calibration. Adapter-level results reveal positive functional effects for some adapters and strong attenuation with reduced negative functional effects for others. Evaluations on two additional targets show the same aggregate trend. These results motivate evaluating distilled-model LoRA reuse jointly through functional preservation and negative-transfer avoidance, without assuming recovery for every adapter.",
+      "published_at": "2026-09-17T10:58:04+00:00",
+      "summary": "비디오 생성 모델의 스텝 증류(step distillation)는 생성 비용을 줄이지만, 긴 궤적용으로 학습된 LoRA 어댑터를 그대로 재사용하면 품질이 저하되는 문제가 있다. 연구진은 소스 학습 영상 없이 순전파 평가만으로 저랭크 좌표 변환과 목표 스케줄 응답 보정을 결합한 학습 불필요(training-free) 기법 DART를 제안했다. Wan2.2 기반 4스텝 목표 모델 실험에서 품질 점수를 0.9029에서 0.9227로, 기능 유지 지표를 음수에서 양수로 개선시켰다. 이는 소수 스텝으로 압축된 비디오 확산 모델에서도 기존에 학습된 LoRA 자산을 재학습 없이 효율적으로 재사용할 수 있는 실용적 경로를 제시한다.",
+      "category": "비디오 생성",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5e483f34-11f4-42b1-9d90-88c2a23d8254",
+      "title": "PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions",
+      "url": "https://huggingface.co/papers/2609.20623",
+      "source": "hf_papers",
+      "content": "Recent single-view feed-forward 3D Gaussian Splatting (3DGS) generation predicts a fixed number of Gaussians per camera ray, introducing severe spatial redundancy. Most existing compaction strategies target multi-view setups to exploit cross-view consistency and are incompatible with single-image models. Instead of retraining the base feed-forward network to directly output compact representations, our insight is to keep the base models frozen and apply post-hoc pruning and recurrent refinement to the generated Gaussians. Consequently, we propose a backbone-agnostic compaction pipeline for single-view feed-forward 3DGS that couples an importance-score-based pruning mechanism with a trainable, lightweight recurrent refinement module, which iteratively updates the surviving primitives to restore image quality. Our results demonstrate seamless integration with existing baselines while preserving novel-view rendering fidelity and achieving high memory reduction. Furthermore, our method supports flexible inference-time keep ratios for application needs.",
+      "published_at": "2026-09-17T16:07:03+00:00",
+      "summary": "단일 이미지로부터 3D 가우시안 스플래팅(3DGS)을 생성하는 피드포워드 방식은 카메라 광선마다 고정된 수의 가우시안을 예측해 심각한 공간적 중복을 유발한다. 연구진은 기반 네트워크를 재학습하지 않고, 중요도 점수 기반 프루닝과 경량 순환 정제 모듈을 결합한 후처리(post-hoc) 압축 파이프라인 PhGS를 제안했다. 이 방법은 기존 베이스라인에 매끄럽게 통합되면서도 새로운 시점 렌더링 품질을 유지한 채 높은 메모리 절감을 달성했다. 추론 시점에 유지 비율을 유연하게 조절할 수 있어, 단일 이미지 기반 3D 재구성 기술의 실용적 배포 가능성을 크게 높인다.",
+      "category": "로보틱스 & 3D",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "19727d28-35a6-46f9-84ec-af213f858444",
+      "title": "FCA-Guided Counterfactual Explanations for Multi-Modal Breast Cancer Diagnosis: A Framework Achieving Perfect Validity with Emergent Sparsity",
+      "url": "https://huggingface.co/papers/2609.20067",
+      "source": "hf_papers",
+      "content": "Deep learning models for multi-modal breast cancer diagnosis achieve high predictive accuracy but remain clinically unacceptable without actionable, counterfactual explanations. Attribution-based methods (LIME, SHAP) are categorically inapplicable to this purpose, as they generate no alternative instances and thus cannot be evaluated on counterfactual quality metrics. This investigation provides empirical evidence that FCA-Guided Counterfactual (FCA-CF) framework that uses a Formal Concept Analysis (FCA) concept lattice as a hard structural constraint on counterfactual search, operating over a multi-modal TCGA-BRCA dataset. We benchmark against four genuine counterfactual methods: Wachter-style CF, DiCE, FACE, and NICE, evaluated on 60 benign-predicted TCGA-BRCA instances. The FCA-CF framework achieves Validity = 1.0000 (100% of counterfactuals successfully flip the prediction), Sparsity = 2.37 features changed (best among all valid methods), and Proximity = 0.900 (normalised L2-based, matching NICE as joint best). The classifier achieves Accuracy = 0.980, F1 = 0.976, ROC-AUC = 0.9947. Ablation analysis confirms that the FCA lattice constraint is the primary sparsity driver (removing it increases sparsity by +40%, p < 0.001, Cohen's d = 0.78), while Phase C greedy refinement accounts for the largest individual contribution (+113% sparsity increase when disabled, p < 0.001, d = 5.01). FCA-guided counterfactual generation achieves a clinically important Pareto-dominant outcome; it is simultaneously the sparsest and among the most proximate of all valid methods, with perfect validity. The emergent sparsity property arising from lattice topology rather than numerical penalty terms constitutes a structurally novel contribution to the counterfactual explanation literature.",
+      "published_at": "2026-09-17T11:19:26+00:00",
+      "summary": "다중 모달 유방암 진단 딥러닝 모델은 예측 정확도는 높지만, 실행 가능한 반사실적(counterfactual) 설명 없이는 임상에서 수용되기 어렵다. 연구진은 형식 개념 분석(FCA) 개념 격자를 반사실적 탐색의 구조적 제약으로 활용하는 FCA-CF 프레임워크를 제안하고, TCGA-BRCA 데이터셋에서 기존 4개 방법론과 비교했다. FCA-CF는 유효성 100%, 평균 2.37개 특성 변경(최고 수준의 희소성), 최고 수준의 근접성을 동시에 달성하며 기존 방법들이 갖는 트레이드오프를 해소했다. 이는 격자 위상 구조 자체에서 희소성이 자연스럽게 발생한다는 구조적으로 새로운 기여로, 임상에서 신뢰할 수 있는 설명 가능 AI 진단 도구 개발에 기여할 수 있다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f9c63a44-65e7-454c-bd2b-5aadfc211edf",
+      "title": "AgriScope: Pixel-Grounded Multimodal Understanding for Agricultural Images",
+      "url": "https://huggingface.co/papers/2609.20325",
+      "source": "hf_papers",
+      "content": "Agricultural image understanding requires fine-grained recognition of plant diseases, pests, crop structures, and botanical species under complex real-world conditions. Despite recent advances in Multimodal Large Language Models (MLLMs), existing models remain limited to text-only outputs and lack pixel-level visual grounding capabilities. In this work, we introduce AgriScope, a unified pixel-grounded multimodal framework for agricultural image understanding. AgriScope jointly supports image-level, region-level, and pixel-level understanding within a unified framework, enabling tasks such as grounded caption generation, referring expression segmentation, and multi-turn multimodal interaction for agricultural imagery. AgriScope integrates biologically specialized semantic representations with dense spatial grounding through biological-semantic encoding, dense spatial representations, and pixel decoding. To support large-scale grounded learning, we introduce AgriGround, a large-scale pixel-grounded agricultural multimodal instruction-tuning dataset containing over 500K images and 11M instruction-following samples spanning plant disease analysis, crop and weed identification, insect pest recognition, and fine-grained botanical understanding. AgriGround is constructed through a multi-stage automatic annotation pipeline that integrates multimodal caption generation, phrase-level grounding, segmentation mask generation, and task-oriented instruction synthesis to produce densely grounded supervision. Extensive experiments across multiple agricultural vision-language tasks demonstrate the effectiveness of AgriScope in pixel-grounded multimodal understanding, establishing a strong benchmark for agricultural vision-language learning and visual grounding. The dataset and code will be made publicly available at (https://github.com/boudiafA/AgriScope)",
+      "published_at": "2026-09-17T12:59:11+00:00",
+      "summary": "농업 이미지 이해는 작물 병해, 병충해, 작물 구조, 식물 종을 복잡한 실제 환경에서 세밀하게 인식해야 하지만, 기존 멀티모달 대형 언어모델은 텍스트 출력에 그쳐 픽셀 단위 시각적 접지(grounding) 능력이 부족했다. 연구진은 이미지·영역·픽셀 수준 이해를 하나의 프레임워크로 통합한 AgriScope와, 50만 장 이미지·1,100만 개 지시 샘플로 구성된 대규모 데이터셋 AgriGround를 공개했다. 이를 통해 접지된 캡션 생성, 지시 표현 분할, 다중 턴 멀티모달 상호작용 등 농업 특화 작업을 지원한다. 스마트팜·정밀농업 분야에서 실제 활용 가능한 비전-언어 모델의 벤치마크를 제시했다는 점에서 응용 가치가 크다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "cccd01f6-bd8d-4117-a0ee-5aa4141d0c0a",
+      "title": "What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks",
+      "url": "https://arxiv.org/abs/2609.19182",
+      "source": "arxiv",
+      "content": "arXiv:2609.19182v1 Announce Type: new \nAbstract: Benchmarks are central to how progress in large language models (LLMs) is assessed and communicated. Yet model rankings alone reveal little about how evaluation requirements themselves are changing. The expanding variety of benchmarks offers another perspective: what researchers expect LLMs to do, and what they count as successful performance. We systematically map 14,767 papers introducing or updating evaluation resources from arXiv submissions between January 2022 and August 2026. Using staged screening and automated full-text coding, we examine changes in target systems and domains, evaluation materials and conditions, and scoring mechanisms. The collection shows growing emphasis on action, interaction, and professional applications, while established and newer design elements frequently coexist. Model participation also develops unevenly: LLM-based scoring grows within both agent and non-agent groups, whereas model-generated materials show no comparable sustained increase in recent cohorts. These findings illuminate how public research translates capability expectations into concrete tests and criteria for success. As AI participates in constructing tests, performing tasks, and judging responses, they also raise a question: does expanding evaluation provide more independent evidence, or risk reproducing the preferences and blind spots of its participating models?",
+      "published_at": "2026-09-18T00:00:00-04:00",
+      "summary": "대형언어모델(LLM) 평가 자원을 새로 제안하거나 갱신한 2022년 1월부터 2026년 8월까지의 논문 14,767건을 체계적으로 분석해, LLM 벤치마크 설계의 변화 양상을 지도화한 연구다. 분석 결과 행동·상호작용·전문 응용 영역에 대한 평가 비중이 커지는 한편, 에이전트·비에이전트 그룹 모두에서 LLM 기반 채점 방식이 확산되고 있음을 확인했다. 반면 모델이 생성한 평가 자료 자체는 뚜렷한 증가세를 보이지 않아, 평가 생태계의 변화가 균일하지 않음을 시사한다. AI가 테스트를 설계·수행·채점하는 데 모두 참여하게 되면서, 평가의 독립성이 오히려 참여 모델의 편향을 재생산할 위험이 있다는 근본적 질문을 제기한다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5627952e-463a-4692-b3cc-c1c8869054fe",
+      "title": "Advantage Scale Calibration Imbalance in Group-Relative Optimization under Low-Variance Rewards: Diagnosis and Bounded Recovery",
+      "url": "https://arxiv.org/abs/2609.19164",
+      "source": "arxiv",
+      "content": "arXiv:2609.19164v1 Announce Type: new \nAbstract: In verifier-style RLVR, group-relative optimization often treats advantage scale as an implementation detail. This paper separates two low-variance cases: sub-resolution jitter that should not become a preference signal, and credible but small cardinal gaps that should be learned without distorting KL calibration. We propose an advantage-scale three-way calibration interface: the same within-group scale denominator simultaneously determines the reward-branch strength, prompt-level batch weight, and the effective KL calibration induced when the reward branch is re-expressed on the original cardinal scale. This interface explains why RLOO / Dr.GRPO can let credible small gaps become KL dominated, whereas GRPO's standard-deviation denominator can amplify tiny gaps without bound. Based on this interface, we further introduce the Reward-Resolution Protocol and MaxNorm-AC, respectively filtering sub-resolution gaps and providing bounded cardinal recovery on credible nonzero gaps. Across dense / MoE architectures and math / code reasoning, MaxNorm-AC improves over the strongest robust-scale baseline while truncating the low-variance inverse-scale tail.",
+      "published_at": "2026-09-18T00:00:00-04:00",
+      "summary": "검증 기반 강화학습(RLVR)에서 그룹 상대 최적화(group-relative optimization)는 어드밴티지 스케일을 구현 세부사항으로 취급해왔지만, 이 연구는 저분산 보상 상황에서 두 가지 경우, 즉 학습 신호가 되면 안 되는 미세 잡음과 KL 보정을 왜곡하지 않고 학습해야 할 신뢰할 수 있는 작은 격차를 구분한다. 연구진은 동일한 그룹 내 스케일 분모가 보상 branch 강도, 프롬프트 단위 배치 가중치, KL 보정 강도를 동시에 결정한다는 3중 보정 인터페이스를 제안해, RLOO/Dr.GRPO가 KL에 지배당하거나 GRPO의 표준편차 분모가 미세 격차를 무한정 증폭시키는 이유를 설명한다. 이를 바탕으로 저해상도 격차를 걸러내는 Reward-Resolution Protocol과 유효 격차를 안정적으로 복원하는 MaxNorm-AC를 제안, 밀집/MoE 아키텍처 및 수학·코드 추론 과제에서 기존 최강 베이스라인 대비 성능을 향상시켰다. 이는 GRPO 계열 강화학습 후처리 훈련의 안정성을 높이는 실용적 진단·해법을 제공한다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
