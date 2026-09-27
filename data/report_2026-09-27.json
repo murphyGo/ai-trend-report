@@ -1,0 +1,273 @@
+{
+  "id": "14095c16-5c99-4324-8cfb-b02ef3f4d85b",
+  "created_at": "2026-09-27T03:54:11.692155",
+  "articles": [
+    {
+      "id": "ecff56db-95cd-4a64-a273-f052d05c3726",
+      "title": "Meta’s AI Tamagotchi bet is…working?",
+      "url": "https://techcrunch.com/video/will-metas-ai-tamagotchi-bet-isworking/",
+      "source": "techcrunch",
+      "content": "When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,”&#160;maybe someone&#160;should have asked: what pace?&#160;Now&#160;it’s&#160;turned into model drop week for both companies as&#160;Anthropic rolled out Opus 5.5, followed by&#160;OpenAI’s GPT-6 model updates&#160;just&#160;90 minutes&#160;later.&#160;But the company that stole the spotlight was Meta, whose&#160;personal AI agent Muse&#160;is&#160;reportedly&#160;outpacing&#160;ChatGPT’s early numbers and is headed for&#160;smart glasses&#160;and [&#8230;]",
+      "published_at": "2026-09-25T16:00:00+00:00",
+      "summary": "앤트로픽이 Opus 5.5를 출시한 지 불과 90분 만에 오픈AI가 GPT-6 업데이트를 공개하며, 프론티어 랩 간 모델 출시 경쟁이 그 어느 때보다 빨라지고 있다. 그러나 이번 주 가장 큰 화제를 모은 것은 메타의 개인용 AI 에이전트 '뮤즈(Muse)'로, 초기 챗GPT보다 빠른 성장세를 보이고 있다는 보도가 나왔다. 뮤즈는 향후 메타의 스마트 글래스 라인업과 결합될 예정이어서 AI 에이전트가 하드웨어와 결합하는 방향성을 시사한다. 이는 순수 모델 성능 경쟁을 넘어, 소비자 접점을 선점하려는 빅테크 간 경쟁 구도가 형성되고 있음을 보여준다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ae28f14d-e9fe-4632-81ec-aa39d8bd35e8",
+      "title": "Meta is putting its muscle behind Muse as the AI app takes off",
+      "url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/",
+      "source": "techcrunch",
+      "content": "Muse is topping the app store charts and adding users at a rapid clip, while Meta ramps up the personal AI agent's promotion across its own apps and beyond.",
+      "published_at": "2026-09-25T16:16:52+00:00",
+      "summary": "메타의 개인용 AI 에이전트 앱 '뮤즈(Muse)'가 앱스토어 차트 상위권에 오르며 빠르게 사용자를 확보하고 있다. 이에 메타는 자사 앱 생태계 전반과 외부 채널을 동원해 뮤즈에 대한 마케팅과 프로모션을 대폭 강화하고 있다. 이는 메타가 검색이나 소셜 미디어를 넘어 개인 비서형 AI 에이전트를 차세대 핵심 제품으로 낙점했음을 보여준다. 오픈AI의 챗GPT와의 소비자 AI 에이전트 경쟁이 본격화되는 신호로 해석된다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ed128d73-dfe0-4bd9-ab8b-2c55556eb018",
+      "title": "Pre-training a 1.11B LLM on a 6 GB Laptop GPU — Measured, Not Claimed",
+      "url": "https://huggingface.co/blog/RitishReal/1b-petrain-llm-in-4gb-vram",
+      "source": "huggingface",
+      "content": "I looked everywhere to be able topre-trainan LLM on my low-end GPU and could not find one. Everywhere I looked, the same conclusion was reached: \"You need an A100\", \"You can only train a 20M toy model on your hardware\". So being 'broke', I did the only thing I could do — subscribe to Claude and try to find a way... after much prompting and testing, I finally stitched together the stack that allowed me topre-traina 1B LLM on my laptop. After much testing, we are at100.6% of the card'smeasuredGEMM peak(I don't know how 100.6% is even possible, I'm not a scientist, just a broke guy).\n\nThough I canpre-traina 1B LLM on 6 GB VRAM, it still takes about375 daysto finishpretrainingit properly. More details below:\n\nNo new algorithms — every piece is published and attributed. The work was making them run together and measuring what that costs.\n\nTwo of these did not previously work together.Tied embeddings share one tensor between the input lookup and the output layer, and the offload system rejected that outright — it assigns every parameter to exactly one block, and this tensor belongs to two. The combination was guarded off as unsupported.\n\nThe fix (Issue #157):Pin the tied table — a parameter reachable from two modules is never evicted, because the forward pass uses it at both ends and no single block's residency window covers both uses. Cost: one vocabulary table held resident (250 MB at 1B scale).When combined with chunked cross-entropy (--chunked-loss 512), the previously OOM combination (tied embeddings + CPU offload) now works— a 5-step fp32 test at 1.11B parameters ran at79% of 6 GB = 4.85 GBwithout OOM. The pinned tied table (206 MB bf16) plus chunked loss (~1.5 GB saved) makes the four-technique stack (BCD + offload + tied + chunked) fully composable.\n\nThe model is agated DeltaNet hybrid(10 DeltaNet blocks + 2 sliding-window attention layers at layers 3 and 10). This architecture is a reimplementation of published work:\n\nConstant-memory inference — no KV cache, fixed state — is the defining property of this entire model family (Mamba, RWKV, RetNet), not something this project invented.\n\nPure recurrence (DeltaNet, Mamba, RWKV) compresses all history into a fixed state — great for throughput,but cannot recall exact tokensfrom context. The hybrid adds2 sliding-window attention layers(at layers 3 and 10, window=128) specifically to solve this.\n\nMeasured on 200-trial synthetic recall probe (invented entities, zero knowledge confound):\n\nKey insight:The attention window (128 tokens) givesexact token recall inside the window— something the recurrent state mathematically cannot provide. Beyond the window, both recurrence and windowed attention fall to noise floor (~0.5%).\n\nThis means at inference: the hybrid canread and quote exact passagesfrom the last ~128 tokens of context, while pure recurrent models can only give a lossy semantic gist. For coding agents, tool-use, and grounded QA, this is the difference between \"it hallucinates the function signature\" and \"it copies the exact signature from context.\"\n\nThe attention layers add only~13% VRAM(2 TransformerBlocks with windowed KV cache capped at 128 keys each) and~7% step timeat pretraining — a small price for exact recall where it matters most.\n\n~243M on a standard script, ~1.58B with the stack — about 6.5×.Both numbers measured on the same 6 GB card at 4,096 context, stopping at the first spill into system RAM (on Windows/WDDM, exceeding VRAM does not error — it silently gets 4–15× slower).\n\nWhat the table does not show: a transformer and the recurrent hybrid need almost identical memory at these sizes (4.80 GB vs 5.09 GB at 243M), and a plain 1.07B transformer runs under the same stack in 4.04 GB. The 6.5× comes from thepretraining stack, not from the architecture— so it applies to whatever model you are pretraining, including an ordinary transformer.\n\n⚠️ Only the 6 GB row is measured.All other rows are linear extrapolation from the 6 GB ceiling (~1.58B) assuming fixed-ratio savings. Real VRAM ceilings will vary by GPU architecture, WDDM behavior, and batch size. Treat as upper-bound estimates.\n\nThe stack scales with VRAM. On a6 GB cardwe measured ~1.58B ceiling. Here's what the same stack projects for larger cards (linear extrapolation from measured points, stopping at first WDDM spill):\n\nKey insight:The 6.5× multiplier (standard script → this stack) appliesat every VRAM tierbecause the savings are proportional:\n\nThe ceiling is linear in VRAMbecause the dominant terms (weights + optimizer state) scale with model size, and our techniques compress them by fixed ratios. A 24 GB card doesn't just fit \"a bit more\" — it fits~5× the parametersof a 6 GB card.\n\nWhat changes at larger VRAM:\n\nTwo reasons system RAM matters:\n\nCPU offload(--offload): Inactive blocks' weights are evicted tosystem RAM. At 1.11B with offload, ~3–4 GB of weights sit in system RAM. If you have 16 GB system RAM and 6 GB VRAM, you're fine. If you have 8 GB system RAM, you'll OOM on the host.\n\nWDDM silent spill (Windows): On Windows, exceeding VRAM doesnotraise OOM — the driver silently spills tosystem RAM over PCIeat4–15× slower. We measured 82 s/micro-batch when a 2.45B model spilled. If your system RAM is full, the spill has nowhere to go → hard crash.\n\nRule of thumb:System RAM ≥ 2× GPU VRAM for offload runs; ≥ 1.5× for no-offload runs. The 16 GB in my laptop was the minimum for 6 GB VRAM + offload.\n\nThe largest consumer isnot the model— it's the cross-entropy over the vocabulary (~3× the weights).Chunked loss (512 positions at a time) recomputes logits in backward instead of keeping them, saving ~1.5 GB.This is what made the previously OOM combination (tied + offload) work.\n\nA 1B model runs at ~1,100 tokens/sec here, and pretraining one properly needs roughly36 billion tokens— about375 days. The ceiling this stack raises is what you canhold; the wall it does not touch is arithmetic.\n\nThe card was first timed on the one thing it does best (GEMM) to find its real speed — not the number on the box. Then a pretraining step was broken into parts:\n\nThe maths runs at100.6%of the fastest this GPU was seen to go. Nothing left there. Every remaining improvement added up optimistically comes to20–25%, turning 375 days into about 300. The year is not bad code — it is 36 billion tokens.\n\nThe Chinchilla paper (Hoffmann et al., 2022) recommended ~20 tokens/parameter for transformers. But this architecture behaves differently:\n\nMeasured across three model sizes at constant learning rate(every checkpoint is a model trained to that many tokens, not a snapshot part-way through a decaying schedule):\n\n30 is where the trade turns.Going from 20→30 buys significant quality for 50% more compute. Going 30→40 buys marginal gains for 33% more compute.\n\nWhy this architecture needs more data:\n\nHow this moves with model size is unresolved.Fitting the standard scaling form to all measured points gives a degenerate answer — it implies a 1B model needs less data than it has parameters, contradicting every raw curve. Three model sizes are not enough to separate the terms.\n\nPractical rule:Budget for30 tokens/param minimumwith this stack. A 1.11B model needs ~33B tokens (375 days at 1,579 tok/s). At 20 tokens/param you'd stop at ~22B tokens and leave ~2-3% quality on the table.\n\nThe first two are real projects here. The third is not — code models many times larger, trained on trillions of tokens, are still weak at it.\n\nKey flags explained:\n\n2026-09-26:The previously OOM combination (tied embeddings + CPU offload + BCD) now works when combined withchunked cross-entropy (--chunked-loss 512). A 5-step fp32 test at 1.11B parameters ran at79% of 6 GB = 4.85 GBwithout OOM. The pinned tied table (206 MB bf16) plus chunked loss (1.5 GB saved) makes the four-technique stack (BCD + offload + tied + chunked) fully composable. This was the missing piece — the blog's 1.11B run used untied embeddings (3.48/4.51 GB); the tied + offload combo was previously OOM (>6 GB) without chunked loss.\n\nApache 2.0 — free to use, modify, and sell, with attribution and a patent grant. The license covers the code, not trained weights. Checkpoint files are a separate work, all rights reserved.Weights you train are yours.Products you build are yours.",
+      "published_at": "2026-09-26T14:57:52",
+      "summary": "한 개발자가 6GB급 저사양 노트북 GPU만으로 11억 파라미터 규모의 LLM을 사전학습하는 데 성공한 과정을 상세히 공개했다. 텐서 결속 임베딩과 CPU 오프로드를 함께 사용할 수 없던 기존 한계를, 청크 단위 교차 엔트로피 손실 계산 기법과 결합해 해결함으로써 4개 최적화 기법을 모두 호환 가능하게 만들었다. 실험에는 DeltaNet 기반 하이브리드 아키텍처(순환 블록 10개 + 슬라이딩 윈도우 어텐션 2개)를 사용했으며, 좁은 어텐션 윈도우만으로도 최근 컨텍스트의 정확한 토큰 복원이 가능함을 실측으로 보였다. 다만 1.11B 모델을 제대로 사전학습하려면 약 360억 토큰, 375일이 소요되는 등 소비자 GPU 학습의 현실적 한계도 함께 드러났다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ccc53935-e9d3-4a76-9849-162dd7324b9a",
+      "title": "Thinking Leakage: A Causal Audit of NoThink Post-Training in Hybrid Reasoning Models",
+      "url": "https://arxiv.org/abs/2609.28682",
+      "source": "arxiv",
+      "content": "arXiv:2609.28682v1 Announce Type: new \nAbstract: Post-training hybrid reasoning models in NoThink mode has attracted growing interest as a way to improve performance while keeping inference fast. However, these gains may draw on thinking behavior already accessible through the base model's Think mode. We formulate this thinking leakage in a causal mediation framework and audit its contribution using bidirectional interventions along a simple base-derived activation direction. Across three models and three post-training methods on competition math benchmarks, we find that leakage is real, causal, and substantial: behavioral and representational analyses reveal shifts toward Think, steering the base model along this direction reproduces most of the post-training accuracy gain, and counter-steering a checkpoint removes a substantial share of what it gains. Across nine aligned checkpoints with positive NoThink gains, the resulting leakage ratio ranges from 42% to 79%. These interventions support a substantial causal contribution of thinking leakage. Our findings show that a post-training method's apparent advantage can therefore reflect greater drift toward Think, obscuring whether it improves capability within NoThink or more effectively re-invokes existing Think behavior.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "하이브리드 추론 모델을 'NoThink' 모드로 사후학습(post-training)시키면 추론 속도는 빨라지지만, 이 성능 향상이 실제로는 베이스 모델의 'Think' 모드에서 이미 확보된 추론 능력을 암묵적으로 끌어다 쓰는 것일 수 있다는 문제를 제기한다. 연구진은 이를 '사고 유출(thinking leakage)'로 정의하고, 인과 매개(causal mediation) 프레임워크와 양방향 개입 실험을 통해 여러 모델에서 이 현상을 정량적으로 감사했다. 이는 NoThink 방식이 독자적인 효율화 기법이라기보다 기존 사고 능력을 압축·재사용하는 것에 가깝다는 것을 시사해, 하이브리드 추론 모델의 벤치마크 해석에 주의가 필요함을 보여준다. 추론형 LLM의 사후학습 설계와 평가 방법론에 중요한 시사점을 제공하는 연구다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "faff982f-877a-4262-b857-42f429a191bf",
+      "title": "RLVR landscapes for iterated multiplications can be benign: Insights from spin-glass theory",
+      "url": "https://arxiv.org/abs/2609.28625",
+      "source": "arxiv",
+      "content": "arXiv:2609.28625v1 Announce Type: new \nAbstract: Despite the importance of reinforcement learning with verifiable rewards (RLVR), the extent to which it can learn new reasoning capabilities remains debated. Here we study the optimization landscape of RLVR on algorithmic tasks, such as iterated group and quasigroup multiplication. To this end, we map entropy-regularized RLVR over myopic tabular policies onto an energy-based (spin-glass) model over deterministic policies. This mapping upper-bounds what RLVR can achieve, and lets us rigorously characterize the landscape in this tabular setting. We show, both theoretically and experimentally, that for a wide class of models and tasks with uncorrelated inputs, this landscape is benign, containing no local minima that could trap RLVR training. Rather, the practical difficulty of these tasks appears to stem, at least in part, from issues such as diffusive barriers and gradient-estimation error in traversing the landscape. These are genuine obstacles that can prevent a solution from being found, but they are distinct from the landscape itself being rugged. We show that these obstacles can often be mitigated through the choice of entropy regulator. Consistent with this theory, we find that a transformer trained from scratch, using only last-token rewards, successfully learns an algorithmic chain of thought for iterated non-Abelian group multiplications.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "검증 가능한 보상 기반 강화학습(RLVR)이 실제로 새로운 추론 능력을 학습시키는지에 대한 논쟁 속에서, 이 연구는 반복 곱셈 같은 알고리즘 과제에서 RLVR의 최적화 지형(optimization landscape)을 물리학의 스핀글래스(spin-glass) 이론을 빌려 분석했다. 엔트로피 정규화 RLVR을 결정론적 정책에 대한 에너지 기반 모델로 매핑함으로써, 특정 조건에서는 최적화 지형이 국소 최적점이 적은 '온화한(benign)' 형태를 가질 수 있음을 이론적으로 보였다. 이는 RLVR 학습이 언제 안정적으로 수렴하고 언제 실패하는지에 대한 이론적 근거를 제공해, 추론 모델 강화학습 설계에 실질적 지침이 될 수 있다. 물리학 이론을 LLM 강화학습 분석에 접목한 사례로 학계의 주목을 받을 만한 연구다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "cc80c912-7661-4be4-be75-97ea5815733e",
+      "title": "CARE: Condition-Aware Representation Regularization for Diffusion Models",
+      "url": "https://arxiv.org/abs/2609.28561",
+      "source": "arxiv",
+      "content": "arXiv:2609.28561v1 Announce Type: new \nAbstract: Recent advances in diffusion models highlight the importance of representation regularization for improving sample quality and training efficiency. However, commonly used regularization methods often overlook the built-in conditions (such as labels or texts) which directly determine the generation target. In this work, we demonstrate how conditioning signals affect the feature distribution and introduce the CARE (Condition-Aware REpresentation regularization). CARE is a lightweight plug-and-play regularization framework that dynamically modulates feature distribution based on condition similarity. CARE leverages built-in conditioning signals to judiciously guide the representation space, promoting tighter feature clusters for similar conditions without relying on explicit alignment losses or external supervision. Empirically, CARE consistently improves both visual fidelity and convergence stability across both class-to-image and text-to-image tasks. On ImageNet, CARE achieves a 19.08\\% reduction in FID in 400k training steps, leading to a 3.5$\\times$ speed-up. When applied to text-to-image generation, CARE lowers FID by 16.61\\% in 200k iterations and improves semantic alignment between generated samples and text prompts. Moreover, CARE can be seamlessly integrated with existing regularization methods, yielding additional performance gains.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "확산모델(diffusion model)의 성능과 학습 효율을 높이기 위한 표현 정규화(representation regularization) 기법들이 주목받고 있지만, 기존 방법들은 레이블이나 텍스트 같은 조건(condition) 신호가 생성 목표에 미치는 영향을 충분히 반영하지 못했다. 이 연구는 조건 신호가 특징 분포에 미치는 영향을 분석하고, 이를 명시적으로 반영하는 CARE(Condition-Aware REpresentation) 정규화 기법을 제안한다. 조건 인지형 정규화를 통해 샘플 품질과 학습 효율을 동시에 개선할 수 있음을 실험적으로 보였다. 텍스트-이미지 등 조건부 생성모델 전반에 적용 가능한 범용 개선 기법이라는 점에서 실용적 가치가 크다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3382c0d1-3b6f-4b08-a236-6bfd247d360b",
+      "title": "Auditability Is Not One Property: Rule Overlap, Behavioural Agreement, and Composition in Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2609.28581",
+      "source": "arxiv",
+      "content": "arXiv:2609.28581v1 Announce Type: new \nAbstract: Reinforcement-learning (RL) policies are often distributed as opaque neural checkpoints, while training logs show that a run occurred without explaining what the policy learned. We study whether independently trained policies can be represented and composed through auditable discrete behavioral rules. We define auditability as six separately testable predicates: trace integrity, lossless coding, rule coverage, behavioral agreement, composition quality, and value-model reliability. Our protocol uses a shared frozen symbolizer, passive rule extraction, an append-only hash-bound ledger, exact environment replay, and offline confidence-ranked arbitration with an explicit blind-spot fallback.\n  The results place strict limits on this description layer. Rule-set overlap does not imply behavioral agreement: policies may share symbolic rules while choosing near-chance-matching actions on fresh states. The fused policy therefore selects among existing rules rather than generating a new skill. On a conflict-dominated task, an apparent fusion failure is traced to an induction/deployment mismatch: rules induced from sampled actions were evaluated under argmax actions, and deployment-consistent re-induction reverses the arbitration ordering. A fitted-Q generalized-policy-improvement diagnostic also fails in both environments, limiting claims that rule fusion is superior to value-based composition. One exploratory comparison favors rule fusion, but its comparator is post hoc, the task is partly saturated, and the fused policy remains below the strongest held-out actor.\n  We contribute an evidence-bounded audit and composition protocol, not a claim of universal interpretability or autonomous skill generation. Future work must add temporally extended skills, cross-skill interfaces, composition search, and independent novelty audits.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "강화학습(RL) 정책은 대개 불투명한 신경망 체크포인트 형태로 배포되어, 학습이 이뤄졌다는 로그는 있어도 정책이 실제로 무엇을 학습했는지 설명하기 어렵다는 문제가 있다. 이 연구는 독립적으로 학습된 RL 정책들을 감사 가능한 이산적 행동 규칙으로 표현·조합할 수 있는지를 탐구하며, 감사 가능성을 추적 무결성·손실 없는 코딩·규칙 커버리지·행동 일치·조합 품질 등 6개의 독립 검증 가능한 속성으로 분해해 정의했다. 이는 '감사 가능성'을 단일 지표가 아닌 다차원 개념으로 재정의함으로써 RL 시스템의 신뢰성 평가 프레임워크에 기여한다. 자율주행·로보틱스 등 안전이 중요한 RL 응용 분야에서 정책 검증과 규제 대응에 실질적으로 활용될 수 있다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "76da259e-374c-4a29-be0f-cc9c64c3e984",
+      "title": "Beyond Static Graph World Models: Learning Stochastic Latent Dynamics over Evolving Topologies",
+      "url": "https://arxiv.org/abs/2609.28670",
+      "source": "arxiv",
+      "content": "arXiv:2609.28670v1 Announce Type: new \nAbstract: Graph-based world models have recently emerged as a means of learning transitions over relational state representations. However, existing approaches are largely limited to fixed-topology graphs or deterministic, fully observable environments. We propose the Graph Dynamics Model (GDM), a world model for graph-structured observations that is designed to handle the more general setting of evolving topologies in stochastic and partially observable environments. The GDM uses a sparse recurrent adjacency matrix to model topology updates and perform message passing, together with a recurrent state-space architecture for modelling stochastic transitions. Furthermore, we identify a gap in the evaluation of graph-based world models, as existing methods do not provide a means of comparing predicted and true distributions over the joint graph state comprising the interdependent topology, node features, and graph features. We therefore introduce the Graph Distribution Distance (GDD) metric, which uses maximum mean discrepancy with a graph kernel to comprehensively compare joint next-state distributions. We evaluate the GDM across several environments, including stochastic and partially observable settings. We demonstrate that GDM outperforms baseline models and displays zero-shot generalisation on large graphs.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "그래프 기반 월드모델(world model)은 관계형 상태 표현 위에서 전이(transition)를 학습하는 방법으로 주목받아왔지만, 기존 접근법은 대부분 고정된 토폴로지나 결정론적·완전관측 환경에 국한되어 있었다. 이 연구는 진화하는 토폴로지를 가진 확률적·부분관측 환경까지 다룰 수 있는 그래프 다이내믹스 모델(Graph Dynamics Model, GDM)을 제안한다. GDM은 그래프 구조 관측치에 대해 확률적 잠재 다이내믹스를 학습함으로써, 관계가 시간에 따라 변하는 복잡한 시스템에서도 미래 상태를 예측할 수 있게 한다. 로보틱스나 멀티에이전트 시뮬레이션처럼 개체 간 관계가 동적으로 변하는 환경에서 월드모델 기반 계획·제어의 적용 범위를 넓힐 수 있는 연구다.",
+      "category": "강화학습",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "8c755ade-e999-4e2e-9b3d-dfb1dc285bbc",
+      "title": "Time-Series Foundation Models That Understand Data Revisions",
+      "url": "https://arxiv.org/abs/2609.28576",
+      "source": "arxiv",
+      "content": "arXiv:2609.28576v1 Announce Type: new \nAbstract: Historical observations are not always fixed: statistical agencies revise previously published values as new evidence arrives. Forecasting from a contemporary download can therefore expose a model to information unavailable at the date it purportedly made a prediction. We propose VINTAGE-TS, a revision-aware adaptation of a time-series foundation model that distinguishes observation time from information-availability time. Its targets are the next period's first-published value and the value available a fixed number of days after that publication; neither is declared final truth. A joint predictive distribution preserves dependence between these targets and exposes uncertainty about their difference. We specify an ALFRED-based rolling evaluation, a matched Chronos-2 comparison, conventional and revision-aware baselines, and a separate audit of pretraining overlap. The accompanying software implements validity-interval reconstruction, delayed-label filtering, a frozen-backbone adapter interface, and reproducible diagnostics. An executed synthetic demonstration and a 25-configuration sensitivity suite verify the workflow, expose variation across seeds and revision regimes, and illustrate how hindsight contamination changes measured performance. Thirty one automated tests check temporal and integration contracts. Real ALFRED and Chronos-2 experiments have not been executed; no empirical foundation-model advantage is claimed.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "통계 기관이 발표하는 시계열 데이터는 새로운 증거가 들어오면 과거 값이 수정(revision)되는 경우가 많아, 최신 데이터를 그대로 사용해 과거 시점의 예측을 재현하면 실제로는 당시 알 수 없었던 정보를 모델에 누출시키는 문제가 생긴다. 이 연구는 관측 시점과 정보 공개 시점을 구분하는 수정 인지형(revision-aware) 시계열 파운데이션 모델 VINTAGE-TS를 제안한다. 이를 통해 모델이 실제 운영 환경에서 마주치는 것과 동일한 조건, 즉 아직 확정되지 않은 잠정치만으로 예측하도록 학습·평가할 수 있다. 경제지표나 통계 기반 의사결정처럼 데이터 수정이 빈번한 실무 영역에서 시계열 파운데이션 모델의 신뢰성을 높이는 데 기여할 수 있다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "ML_EXPERT",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "1cbc0a9d-7538-438f-92b2-0094853435a0",
+      "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+      "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+      "source": "techcrunch",
+      "content": "The limited test covers select products and users, with a broader rollout planned for later in October.",
+      "published_at": "2026-09-27T01:30:00+00:00",
+      "summary": "구글이 인도에서 자사 AI 챗봇 제미나이(Gemini)와 검색의 'AI 모드'를 통해 월마트 소유의 이커머스 플랫폼 플립카트(Flipkart) 상품을 직접 구매할 수 있는 기능을 테스트하고 있다. 이번 테스트는 일부 상품과 사용자에 한정된 제한적 시범 운영이며, 10월 중 더 넓은 범위로의 확대가 계획되어 있다. 이는 생성형 AI 인터페이스가 단순 정보 검색을 넘어 실제 결제·구매까지 이어지는 '에이전틱 커머스(agentic commerce)'로 확장되고 있음을 보여주는 사례다. 검색과 AI 어시스턴트가 전자상거래의 진입점으로 자리잡으려는 빅테크 간 경쟁이 치열해지고 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4d3ab3ec-6f9e-461d-9822-f2b0dfa27740",
+      "title": "Insurers claim AI is already increasing healthcare costs",
+      "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
+      "source": "techcrunch",
+      "content": "Blue Cross Blue Shield says hospital use of AI tools led to an additional $942M in healthcare spending over a two-year period.",
+      "published_at": "2026-09-26T21:02:06+00:00",
+      "summary": "미국 대형 보험사 블루크로스 블루실드(Blue Cross Blue Shield)는 병원들이 AI 도구를 도입하면서 지난 2년간 의료비 지출이 9억 4,200만 달러 추가로 늘었다고 주장했다. 이는 AI가 진단·문서화·청구 등 의료 업무 효율을 높일 것이라는 통념과 달리, 실제로는 검사·처치 권고를 늘려 비용 상승을 유발할 수 있다는 보험업계의 우려를 보여준다. 의료 AI 도입 효과에 대한 실증적 근거가 아직 엇갈리고 있어, 비용 효율성 측면의 검증이 추가로 필요함을 시사한다. 의료 AI 규제와 보험 수가 정책 논의에 영향을 줄 수 있는 사안이다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "11267133-f045-4593-bd91-70f7c10acd1f",
+      "title": "I created an interactive digital avatar of myself — and you can talk to it",
+      "url": "https://techcrunch.com/2026/09/26/i-created-an-interactive-digital-avatar-of-myself-and-you-can-talk-to-it/",
+      "source": "techcrunch",
+      "content": "After obtaining an interactive avatar and training it to discuss venture fraud, I have mixed feelings about making AI clones of ourselves.",
+      "published_at": "2026-09-26T14:00:00+00:00",
+      "summary": "한 저자가 자신의 인터랙티브 디지털 아바타를 만들어 벤처 사기(venture fraud) 등 특정 주제에 대해 실시간으로 대화할 수 있도록 학습시킨 경험을 소개한다. 사용자는 이 AI 클론과 대화하며 저자를 대신해 질문에 답을 받을 수 있지만, 저자 본인은 이 경험에 대해 복잡한 감정을 느꼈다고 밝힌다. 이는 개인화된 대화형 AI 아바타 제작 기술이 일반인도 접근 가능한 수준으로 성숙했음을 보여주는 동시에, 디지털 자아 복제가 일으키는 정체성·윤리적 문제를 함께 제기한다. AI 에이전트가 '나를 대신하는 존재'로 확장될 때 생기는 사회적 함의를 다룬 사례다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "d5ee3448-e713-4da6-a792-95a8a1e144d0",
+      "title": "At Meta Connect, the company’s smart glasses were everywhere",
+      "url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/",
+      "source": "techcrunch",
+      "content": "The company behind Facebook and Instagram wants to keep consumers connected to the digital world via its ever-growing line of smart glasses.",
+      "published_at": "2026-09-26T01:08:57+00:00",
+      "summary": "메타 커넥트(Meta Connect) 행사에서 메타의 스마트 글래스 제품군이 행사 전반을 압도하며 회사의 핵심 전략 제품으로 자리잡았음을 보여줬다. 페이스북과 인스타그램을 운영하는 메타는 스마트 글래스를 통해 사용자를 디지털 세계와 상시 연결하려는 하드웨어 전략을 지속적으로 확장하고 있다. 이는 메타가 AI 에이전트(뮤즈 등)와 웨어러블 하드웨어를 결합해 차세대 컴퓨팅 플랫폼을 선점하려는 움직임과 맞닿아 있다. AI 기능이 소프트웨어를 넘어 일상적 웨어러블 기기로 확산되는 산업 흐름을 보여주는 사례다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "3fb87612-7209-4972-a971-64fa1d77f788",
+      "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
+      "url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
+      "source": "techcrunch",
+      "content": "Boom Supersonic CEO Blake Scholl said the company's new stationary power plants were no longer in Crusoe's near-term plans.",
+      "published_at": "2026-09-25T23:11:10+00:00",
+      "summary": "AI 데이터센터 인프라 기업 크루소(Crusoe)가 붐 슈퍼소닉(Boom Supersonic)의 터빈을 활용해 12.5억 달러 규모로 전력을 공급하려던 계획을 철회했다. 붐 슈퍼소닉 CEO는 회사의 새로운 고정형 발전 설비가 더 이상 크루소의 단기 계획에 포함되지 않는다고 밝혔다. 이는 AI 데이터센터의 폭발적인 전력 수요를 충족시키기 위한 다양한 대안적 에너지 조달 시도들이 실제로는 계획 변경과 좌초 위험에 노출되어 있음을 보여준다. AI 인프라 확장의 최대 병목이 컴퓨팅이 아니라 전력 공급임을 다시 한번 확인시켜주는 사례다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "513ef45c-4804-474a-a505-5b3e017e9564",
+      "title": "The Pentagon wants $30 million to build an AI-powered lie detector",
+      "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
+      "source": "mit_tech_review",
+      "content": "The US government wants to spend $30.3 million over the next five years on an improved form of lie detector, according to a Department of Defense budget request. The program, called Polygraph+ or Polygraph Next, will focus on scoring algorithms that use artificial intelligence and machine learning and on a technique called “standoff sensing,” which refers to the ability to take physiological readings without attaching a device to a subject’s person. According to details of the budget document, which were first reported by Inside Defense, the project will “modernize federal polygraph and credibility assessment technologies” to improve their accuracy and reliability. But the project may be just the latest in a long line of failed attempts to use technology to detect lies. “It’s a misguided effort to reduce the complex to something that is tangible,” says Kyri Kotsoglou, a legal scholar at Northumbria University in the UK who studies the use of polygraphs in the justice system. The move comes at a time of high tension within the department. Under Defense Secretary Pete Hegseth, the Pentagon has been increasingly turning to polygraph tests in an attempt to find the sources of alleged leaks to the press. In September, the New York Times reported that around 50 officers on the Joint Staff had been given polygraph tests after news coverage reported on the depletion of US weapons stockpiles in the war with Iran.&nbsp; Polygraph+ will be run by the Defense Counterintelligence and Security Agency (DCSA), which conducts background checks for the federal government. According to the budget document, which has not yet been approved by Congress, the new technology will be used for vetting of prospective employees and “insider threat detection.” It is not yet clear which specific technologies will be used, and the DCSA did not respond to a request for more information.&nbsp; But other Pentagon efforts offer potential clues. In 2023, the department’s Defense Innovation Unit (DIU) ran an open submission process to find companies with products that could be used for deception detection. It selected two companies to build prototypes: Presage Technologies, which claims to be able to measure heart rate and breathing rate using standard cameras, and Altec Research, a medical sensor company now branching out into non-contact sensing technologies. A screenshot of Altec’s prototype technology released by the DIU shows that it tracks head movement, facial skin temperature, and pore activity. Presage Technologies and Altec Research did not respond to requests for comment. The DIU declined to comment.&nbsp; Altec Research has built a prototype that tracks head movement, facial skin temperature, and pore activity. ALTEC RESEARCH Current lie detection technology has barely changed since the polygraph was invented in the 1920s. Examiners rely on blood pressure, pulse, breathing, and sweat measurements to determine if someone is lying. They make judgments about the veracity of respondents’ replies on the basis of differences in their physiological response to baseline questions like “Is the sky blue?” and target questions like “Have you ever committed a crime?” The federal government conducts tens of thousands of the tests each year while screening employees, but the reliability of this technology has been repeatedly challenged—and its results are rarely admissible in court. In 1983, Congress’s Office of Technology Assessment concluded that there was very limited evidence supporting the polygraph’s use for screening employees, and in 2003, the US National Research Council (NRC) said evidence for its efficacy was “weak at best.”&nbsp; Research suggests humans can spot a lie just over half the time without any technical assistance. The American Polygraph Association claims the polygraph is between 80% and 94% accurate. But the 2003 NRC report pointed out that a screening test with this level of accuracy could still lead to a lot of mistakes. The DOD employs 2.8 million people; an imperfect system applied at that scale could end up falsely accusing tens of thousands. There are other issues too. Polygraph interpretations are often subjective: Different examiners get wildly different results, and people from minority groups are more likely to be judged as deceptive. What’s more, with training it’s possible for interviewees to learn a variety of countermeasures that can help beat the test; for example, they may artificially heighten their physiological response to baseline questions by stepping on a pin hidden in their shoe.&nbsp; “If you know how it works, you can beat it,” says Sophie van der Zee, an associate professor who studies deception at Erasmus University in Rotterdam. She says the machine’s biggest effect is deterrence—often, subjects confess before it even begins. “But that only works if people think a polygraph works,” she points out. Various new strategies for lie detection have been attempted over the decades, with technologies ranging from thermal cameras to pupil trackers to brain scans. None of them have yielded reliable results outside the lab. The problem is that there’s no single telltale sign of lying that’s true for everyone all the time. “There is still no Pinocchio’s nose,” says van der Zee.&nbsp; AI could theoretically improve polygraphs if it could find patterns in the data that examiners can’t. AI algorithms are also more likely to be used for “multi-modal” deception detection, which seeks to combine multiple measurements into an overall deception “score” that is harder for people to game. Three things are happening under the surface that lie detection tries to home in on, van der Zee says: physiological stress, cognitive load, and the conscious efforts people make to conceal the fact that they’re lying. Current polygraph technology tackles only one.“The more you can have combined methods that approach it from these three different angles, the more successful you will be,” van der Zee says. This isn’t a new concept—in the 2000s, researchers at Manchester Metropolitan University in the UK developed a system called Silent Talker that generated a deception score from video footage. This was later folded into iBorderCtrl, an EU-funded pilot program. In the US, a project called AVATAR incorporated eye tracking, voice analysis, and body movement detection into a tool for use at border crossings. All these projects have quietly faded away.&nbsp; Kotsoglou says combining AI and the polygraph is “the worst of both worlds” because it adds uncertainty on top of invalidity. Even if AI or machine learning can spot previously unseen patterns in physiological data, it won’t be able to reliably link them to lying because there is no real ground truth.&nbsp; “Even if you have all the records in the world from polygraph tests, you don&#8217;t know whether those polygraph tests are right or not,” says Marion Oswald, a professor of law who has written with Kotsoglou on the use of polygraphs in the justice system. She fears that new forms of lie detection will, like the polygraph, be used more as a psychological prop than a scientific tool.&nbsp; “It seems very much a response to the concern of the current administration to leaks and perceived lack of loyalty,” says Oswald. “[Lie detection is] being used as a threat, to intimidate and force people to confess to things, as opposed to anything that&#8217;s actually getting valid information.”",
+      "published_at": "2026-09-25T09:16:25+00:00",
+      "summary": "미국 국방부가 향후 5년간 3,030만 달러를 투입해 'Polygraph+' 또는 'Polygraph Next'로 불리는 차세대 AI 기반 거짓말 탐지 기술을 개발하는 예산을 요청했다. 이 프로그램은 AI·머신러닝 기반 채점 알고리즘과, 접촉 없이 생리 신호를 측정하는 '원격 감지(standoff sensing)' 기술 개발에 초점을 맞춘다. 전통적인 폴리그래프의 과학적 신뢰성 논란이 여전한 가운데, AI가 이를 보완·대체할 수 있을지에 대한 우려와 기대가 공존한다. 정부의 생체 인식·행동 분석 AI 도입이 확대되면서 프라이버시와 오남용 가능성에 대한 안전성 논의가 함께 요구된다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "87bc608e-bc84-4454-9fa5-b9015e9195d6",
+      "title": "SMILESGNN: Interpretable Clinical Toxicity Prediction via SMILES-Graph Cross-Attention Fusion",
+      "url": "https://arxiv.org/abs/2609.28553",
+      "source": "arxiv",
+      "content": "arXiv:2609.28553v1 Announce Type: new \nAbstract: Drug toxicity prediction is critical for reducing late-stage attrition in drug discovery, yet remains challenging due to severe class imbalance, scaffold-based generalization, and the clinical need for interpretable predictions. Single-modality approaches-SMILES Transformers or graph neural networks capture complementary aspects of molecular structure, while sequence-only models cannot directly provide graph-attributed explanations. We present SMILESGNN, a multimodal architecture that fuses a SMILES Transformer encoder and a GATv2 graph encoder via cross-attention, and SMILESGNN-PT, a variant using a ChemBERTa-2 pretrained backbone. The design retains an explicit graph branch within the predictive pipeline, supporting GNNExplainer-based analysis of substructures associated with toxic predictions. On ClinTox, SMILESGNN achieves AUC-ROC 0.987 and F1 0.906 with only 0.4M parameters, performing competitively with a strong SMILESTransformer and a larger ChemBERTa-2/GATv2 concat-fusion baseline. On Tox21 (12 tasks), SMILESGNN-PT obtains mean AUC-ROC 0.750, comparable to ChemBERTa-2 alone and the same-backbone concat-fusion baseline. Overall, the results suggest that cross-attention is a practical fusion alternative that preserves competitive predictive performance while enabling graph-based interpretability support.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "약물 독성 예측은 신약 개발 후반부의 실패를 줄이는 데 핵심적이지만, 클래스 불균형과 스캐폴드 기반 일반화, 임상에서 요구되는 해석 가능성 확보라는 난제가 있다. 이 연구는 SMILES 시퀀스와 분자 그래프 두 표현을 교차 어텐션(cross-attention)으로 융합한 SMILESGNN 모델을 제안해, 단일 모달리티 모델이 놓치는 상호보완적 구조 정보를 함께 활용한다. 그래프 기반 속성 설명을 함께 제공함으로써 예측 결과의 임상적 해석 가능성을 높인 것이 특징이다. 신약 후보물질의 독성 스크리닝 단계에서 예측 정확도와 설명 가능성을 동시에 개선할 수 있는 실용적 접근으로 평가된다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "db105887-396f-4e5c-8e84-799eb141d24d",
+      "title": "When Explanations Cannot Be Read: Measuring and Correcting SHAP and LIME Rendering for Right-to-Left Languages",
+      "url": "https://arxiv.org/abs/2609.28565",
+      "source": "arxiv",
+      "content": "arXiv:2609.28565v1 Announce Type: new \nAbstract: Post hoc explanation methods such as SHAP and LIME are widely used to interpret text classifiers, but their visualizations are mainly designed for left-to-right languages. When applied to right-to-left (RTL) languages such as Urdu, Arabic, Persian, and Hebrew, the attribution values remain mathematically valid, while their visual presentation fails. Tokens appear out of sequence, connected letterforms break apart, and plot layouts do not follow the natural reading direction. This study addresses this gap as a visualization problem rather than a limitation of the explanation methods themselves. We present SHAP-RTL, a rendering layer that corrects reading direction and script shaping in SHAP and LIME visualizations, with per-language font selection, while preserving the original attribution values, feature ordering, and model outputs. The approach is evaluated on Urdu, Arabic, Hebrew, and Persian hate and offensive-language datasets using TF-IDF and logistic regression classifiers. Rendering correctness is measured by an OCR round trip over 200 feature words per language. Default rendering yields character error rates of 0.820 to 0.979, meaning the label no longer carries its token; the common reshape-and-reorder workaround fails for Urdu at 0.998, worse than no correction; and the Matplotlib 3.11.0 text rewrite inverts that workaround, while SHAP-RTL remains correct under both versions. The framework also verbalizes the same attributions as short contextual explanations in the reader's language, constrained to the identified features. Evaluation in this paper concerns rendering correctness; assessment of the generated explanations is left to future work. The study highlights the importance of language-aware visualization in making post hoc explainability more accessible across different writing systems.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "SHAP·LIME 같은 사후 설명(post-hoc explanation) 기법은 텍스트 분류기 해석에 널리 쓰이지만, 시각화 방식이 좌횡서(left-to-right) 언어 위주로 설계되어 있다. 이 연구는 우르두어·아랍어·페르시아어·히브리어 같은 우횡서(right-to-left) 언어에 이 기법들을 적용할 경우, 속성값(attribution) 자체는 수학적으로 유효하지만 시각적 표현이 깨져 토큰 순서가 뒤바뀌고 글자가 분리되는 문제를 정량적으로 측정했다. 연구진은 이러한 렌더링 오류를 교정하는 방법을 함께 제시한다. 설명가능 AI(XAI) 도구가 특정 언어권 사용자에게 실질적으로 '읽을 수 없는' 결과를 제공해온 문제를 지적함으로써, 다국어·다문화 환경에서의 AI 공정성과 접근성 문제를 환기시킨다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "2fa11465-d86d-494b-be88-c36699e5b505",
+      "title": "UO-FIE: Combining Exact-Label Supervision with Graded Utility for Factivity Inference",
+      "url": "https://arxiv.org/abs/2609.28605",
+      "source": "arxiv",
+      "content": "arXiv:2609.28605v1 Announce Type: new \nAbstract: The Factivity Inference Evaluation 2026 (FIE2026) classifies Chinese context-hypothesis pairs into nine ordered factivity intervals. Its evaluation metric rewards both exact predictions and proximity to the correct interval, while 64.1% of the 566 training examples belong to a single class. In preliminary experiments, several mDeBERTa classification models predominantly predict the dominant class, whereas a Huber-regression baseline produces more predictions near the correct interval but fewer exact matches.\n  We introduce Utility-Oriented Factivity Inference (UO-FIE), a parameter-efficient system that combines exact-label supervision with graded utility. UO-FIE predicts a distribution over the nine classes and combines hard-label supervision, utility-based soft targets, scheduled class weights, and an ordinal loss. We evaluate expected-utility decoding in controlled comparisons and use ordinal calibration selected on out-of-fold predictions for the submitted system.\n  Based on Qwen3.5-9B with LoRA, UO-FIE ranks first in the fine-tuning track with a macro utility of 0.8316. A separate prompt-based ensemble ranks third in the non-fine-tuning track with a macro utility of 0.8450.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "팩티비티 추론 평가(Factivity Inference Evaluation, FIE2026)는 중국어 맥락-가설 쌍을 9단계의 순서형 팩티비티 구간으로 분류하는 과제로, 정답과의 근접성도 함께 평가하는 지표를 사용한다. 그러나 학습 데이터의 64.1%가 단일 클래스에 쏠려 있어, mDeBERTa 기반 분류 모델들이 대부분 다수 클래스만 예측하는 문제가 발견됐다. 연구진은 정확 레이블 지도학습과 등급별 효용(graded utility)을 결합한 UO-FIE 접근법을 제시해, 후버 회귀(Huber regression) 기반 방법이 더 안정적인 예측을 내놓음을 보였다. 클래스 불균형이 심한 언어 추론 과제에서의 평가·학습 방법론 설계에 참고할 만한 사례다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "2a58eeaa-7324-4b0e-acac-b5e73fe20f24",
+      "title": "Stable and Faithful Explanations for Knowledge Tracing",
+      "url": "https://arxiv.org/abs/2609.28502",
+      "source": "arxiv",
+      "content": "arXiv:2609.28502v1 Announce Type: new \nAbstract: Knowledge tracing (KT) models predict student performance opaquely, limiting pedagogical action. This study contributes a validation protocol testing predictive competitiveness (RQ1), explanation stability (RQ2) and retraining-based faithfulness (RQ3) together. Thirteen behavioral features across five pedagogical themes were engineered from ASSISTments 2009 and 2012, with history features computed from temporally preceding interactions and current response latency retained only for retrospective analysis. ASSISTments 2009 was rebuilt: the uncorrected skill-builder release duplicates each multi-skill interaction across one row per skill, and because those rows share one correctness label, they leak it into preceding-interaction features. Rebuilding lowered model AUC and reordered the explanation results. An Extreme Gradient Boosting (XGBoost) model explained with Tree SHapley Additive exPlanations (TreeSHAP) was compared against four deep baselines (DKT, SAKT, AKT and SimpleKT) under an information-matched protocol giving the deep models the same behavioral signals and restricting XGBoost to what is derivable from the identifier-and-correctness stream they consume. XGBoost reached an area under the curve (AUC) of 0.777 on 2012 and 0.786 on rebuilt 2009, with prediction-time AUCs of 0.771 and 0.775, respectively, after excluding current response latency; restricted to the baselines' information it performed as they did (0.697 against 0.700, and 0.717 against 0.720), locating the difference in information supplied, not model family. Rankings were consistent across folds, seeds and conditioning schemes (Spearman rho = 0.989-1.000), and removing top-ranked TreeSHAP features harmed AUC more than random removal, though split-gain and permutation rankings performed comparably. Student-level examples are illustrative interpretations, not validated recommendations.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "지식 추적(Knowledge Tracing, KT) 모델은 학생의 학업 성취를 예측하지만 그 판단 근거가 불투명해 실제 교육 현장에서의 활용이 제한된다. 이 연구는 예측 경쟁력, 설명의 안정성, 재학습 기반 충실도를 함께 검증하는 평가 프로토콜을 제안한다. ASSISTments 2009·2012 데이터셋에서 다섯 가지 교육학적 주제에 걸친 13개의 행동 특징을 시간 흐름을 반영해 설계하고, 이를 바탕으로 설명의 신뢰성을 체계적으로 검증했다. 교육 AI가 단순 성능을 넘어 '왜 그렇게 예측했는지'를 안정적으로 설명할 수 있어야 한다는 점에서, 에듀테크 분야의 신뢰 가능한 AI 도입에 기여하는 연구다.",
+      "category": "기타",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "3ff5c9cf-a360-4556-bf73-07675df65c11",
+      "title": "OPDiv: Optimal Selection of Top-K High-Scoring, Diverse Compounds",
+      "url": "https://arxiv.org/abs/2609.28665",
+      "source": "arxiv",
+      "content": "arXiv:2609.28665v1 Announce Type: new \nAbstract: A virtual screening campaign may produce thousands of promising candidates, but only a small number can be purchased, synthesized, or tested. The practical question is how to select a set of compounds that both rank well and are diverse enough: this poses a genuine tradeoff, where selecting the highest-scoring molecules yields limited diversity, while diversity selection sacrifices some well-scoring molecules. We introduce OPDiv, a diversity selection and evaluation algorithm solving this tradeoff by finding an optimal subset of molecules using integer optimization. We demonstrate the selection algorithm in practice with fingerprint distance, shape and electrostatic diversity and compare the resulting diversity spectra. We argue that virtual screening is not merely a ranking problem, but also an implicit constrained optimization task: when redundant chemotypes are undesirable, pipelines should be compared based on the top-k compound selections satisfying the desired diversity constraints. OPDiv makes it possible to find the optimal compound set under a given diversity threshold efficiently and serves as a fair benchmark of the best diverse selection achievable by a given structure-based or ligand-based virtual screening pipeline, molecular search or generative model.",
+      "published_at": "2026-09-26T00:00:00-04:00",
+      "summary": "가상 스크리닝(virtual screening) 캠페인은 수천 개의 유망한 신약 후보물질을 만들어내지만, 실제로 합성·검증할 수 있는 것은 소수에 불과해 순위와 다양성을 동시에 고려한 선별이 중요하다. 이 연구는 최고 점수 화합물만 선택하면 다양성이 떨어지고, 다양성만 추구하면 유망한 화합물을 놓치는 트레이드오프를 해결하기 위해 OPDiv라는 최적 선택 알고리즘을 제안한다. OPDiv는 상위 K개의 고득점이면서도 서로 구조적으로 다양한 화합물 집합을 수학적으로 최적화해 선정한다. 신약 개발 파이프라인에서 한정된 실험 자원을 효율적으로 배분하는 실무적 의사결정 도구로 활용될 수 있다.",
+      "category": "의료 & 생명과학",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
