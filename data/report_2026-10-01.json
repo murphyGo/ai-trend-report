@@ -1,0 +1,278 @@
+{
+  "id": "66e0edfe-d13b-4090-bcf8-00bec1fa76a5",
+  "created_at": "2026-10-01T04:19:45.910842",
+  "articles": [
+    {
+      "id": "4764f945-86ce-4ab4-bca9-18410a9265dd",
+      "title": "Google releases Gemini 4 Argon, called its most powerful model yet",
+      "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
+      "source": "techcrunch",
+      "content": "Google has released its latest Gemini model, marketing it as a workhorse for coding and cybersecurity work.",
+      "published_at": "2026-09-30T23:43:07+00:00",
+      "summary": "구글이 코딩, 기업 지식 업무, 사이버 방어에 특화된 프런티어 모델 Gemini 4 Argon을 공개했습니다. 구글은 이를 지금까지 가장 강력한 모델이자 실무용 워크호스로 내세웠습니다. 코딩 에이전트와 보안 분야에서 경쟁 모델과의 격차가 어떻게 달라질지 주목됩니다. 개발자와 기업 고객이 곧 롤아웃되는 모델을 바로 업무에 적용해 볼 수 있습니다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "db389d63-b920-4d84-9b6f-076fcce1233a",
+      "title": "Security",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+      "source": "openai",
+      "content": "September 30, 2026\n\nWe recently identified and disrupted a coordinated campaign designed to extract protected reasoning from our models, with the earliest observed activity occurring in the first week of July. This activity is consistent with adversarial distillation: the systematic and unauthorized use of one model’s outputs or reasoning to help train, reproduce, or improve another model. Protected reasoning is the model’s internal record for working through a task; extracting it can reveal information withheld from the final answer and help others reproduce the model’s capabilities.\n\nThe operators did not break our encryption, compromise a database, or gain direct access to stored user conversations. Instead, they manipulated model interactions so that protected reasoning could be reproduced in forms visible to the requester in a coordinated, scaled manner that violated our terms of service. This manipulation is not a vulnerability unique to OpenAI’s models, and we have shared information about it with industry partners through the Frontier Model Forum in order to strengthen collective defenses against adversarial distillation.\n\nBefore publishing, we investigated the scope and potential impact, deployed our own mitigations, and shared with and took feedback from researchers and industry partners to ensure protections against this type of attack are in place. Additional mitigation and investigation work is continuing. We believe sharing what we have learned now will help the broader ecosystem strengthen its defenses.\n\nWe saw operators attempt to extract protected reasoning in novel ways, including by copying encrypted reasoning from one conversation and asking a model in another conversation to decrypt and transcribe the hidden reasoning content.\n\nIndependent security researchers⁠(opens in a new window)also brought related cross-model and conversation-compaction vulnerabilities to our attention through responsible disclosure. We investigated their findings and confirmed that the attack paths they identified were real. Their work helped us understand the broader attack class and accelerate mitigations.\n\nThe activity began on July 1, initially at a low volume until we observed high-volume spikes on July 24 and 25 consisting of 16,000 requests1using a relevant extraction pattern from over 4,000 users. Further investigation identified related prompt-pattern activity across a cluster of more than 15,000 users, which we fully disrupted by July 28.\n\nThe activity evolved over time, reinforcing that adversarial distillation is a broader security challenge that requires layered, adaptive defenses.\n\nIt is unclear whether all operators we observed during the relevant time period originated from a single actor. However, we attribute a core cluster of the activity to individuals associated with Moonshot AI, the developer of Kimi.\n\nAdversarial distillation poses safety and national security risks. Extracted reasoning could be used to train another model without preserving the safeguards applied to the original model’s user-facing outputs. At scale, distillation can also accelerate the transfer of advanced capabilities without requiring the same investment in safety. These concerns become heightened as models gain capabilities in dual use domains.\n\nThis risk is not unique to OpenAI. As cited above, similar techniques may affect other advanced AI systems, making this a shared security challenge that requires coordination across the industry.\n\nWe mitigated this recent distillation campaign through a combination of account enforcement, technical controls, and partner coordination. We banned or restricted fraudulent accounts, strengthened signup and infrastructure controls, and expanded monitoring for related networks.\n\nWe also strengthened protections for hidden reasoning across users, workspaces, organizations, and model families. We closed a pathway that allowed someone who already possessed another user's encrypted reasoning to replay it and recover its contents, and added checks to detect and hold streamed output that might expose reasoning. When related activity moved through third-party services, we worked with those providers to identify and disrupt the accounts involved.\n\nFinally, we shared relevant findings through the Frontier Model Forum and appropriate government information-sharing channels so that other frontier developers and public-sector partners could look for similar activity and strengthen their own defenses. Systems that support portable or replayable reasoning artifacts may face related risks.\n\nWe expect adversarial distillation attempts to become more sophisticated as frontier models improve and as actors look for cheaper ways to mimic their capabilities. Defending against this activity requires layered controls and continual adaptation.\n\nThis work is not finished. Partner-hosted deployments need the same protections as first-party services, and tool-output attacks require protections that examine more than ordinary visible text. We are continuing to improve tool defenses, classifier coverage, model refusals, and propagate relevant controls across cloud partners.\n\nOur response will continue to focus on three areas: stronger technical protections against extraction, better detection and enforcement against coordinated campaigns, and deeper threat-information sharing across industry and government.\n\nThese figures describe attempted, not necessarily successful, extractions.\n\nSecuritySep 3, 2026\n\nSafetySep 1, 2026\n\nSecurityAug 26, 2026",
+      "published_at": "2026-09-30T10:30:00",
+      "summary": "OpenAI가 모델의 보호된 추론 과정을 빼내려는 조직적 캠페인을 포착해 차단했다고 밝혔습니다. 활동은 7월 첫 주부터 관측됐으며, 한 모델의 출력이나 추론을 무단으로 활용해 다른 모델을 학습시키는 '적대적 증류'에 해당합니다. 공격자는 암호화를 뚫거나 데이터베이스를 침해한 것이 아니라 정상적인 접근 경로를 악용했습니다. 모델 역량 보호와 증류 방어가 프런티어 랩의 새로운 보안 과제임을 보여줍니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "2e479986-86cf-4342-9754-770fd299b6e0",
+      "title": "“We’re not going to shoot ourselves in the foot” over hack fallout, says OpenAI’s chief research officer",
+      "url": "https://www.technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer/",
+      "source": "mit_tech_review",
+      "content": "Two months after the bombshell news that a swarm of its agents had broken their containment and hacked into the computers of the AI company Hugging Face, OpenAI is still putting out fires. A steady drip of disclosures about other hacks in the weeks since has kept OpenAI in the spotlight and raised serious questions about the safety of its technology. Last week brought news of another hack, this time into Australia’s national health-care system. The Australian government says that OpenAI did not notify it of the breach until 84 days after it happened. But OpenAI insists it is not on the back foot. “I do kind of reject the premise that OpenAI is a company with visible impacts in the world and therefore OpenAI is not training safe and aligned models,” says Mark Chen, the company’s chief research officer. Chen oversees OpenAI’s research teams. The recent agent hacks were accidents that happened during the testing of experimental models on his watch. In a lot of ways, the buck stops with him.&nbsp; I sat down with Chen in London last Friday to talk about the fallout from the hacks, what his company is doing about it, and why he thinks things are not as bad as they seem. Later that same day, OpenAI put out a report detailing yet another incident—the first since the company says it took measures to prevent them—in which its agents once again broke out and accessed the public internet when they were not meant to. Over the weekend, OpenAI announced that it had paused the training of its latest models. A company spokesperson says: “We will resume only when we’re confident we have additional safeguards and alignments in place. We are working on these now. This is not the first time we’ve paused to take such measures, nor do we expect it to be the last as AI capabilities continue to advance.” OpenAI also says that it is now reviewing logs of agent activity dating back to January 2026 to understand what happened in these hacks. The way Chen sees it, the Hugging Face incident triggered a welcome course correction for the industry. And he wants you to know that OpenAI is setting an example he hopes other companies will follow. “If you disappeared OpenAI, that would be bad for the world,” he says. Out of control Chen claims that the drumbeat of new cases in which OpenAI has lost control of its models reflects a deliberate choice on the company’s part. “When it comes to the broader sphere of effects of the Hugging Face incident, this is something that we have been aware of and we’re figuring out the process of disclosure,” he says. “We want to make sure we do in-depth investigations before we just put details out there in the open.” The trouble with this approach is that it gives the impression OpenAI has an ongoing problem that it is failing to fix. But Chen insists that OpenAI is on it. He says the multiple cases (that we know of so far) in which his company’s agents broke containment and behaved in unexpected and undesirable ways were all part of the same cluster of activity in May and June that led to the Hugging Face hack. In short, you can blame the same few models running under the same flawed testing procedures—models and procedures that OpenAI has since dropped, Chen says.&nbsp;&nbsp;&nbsp;&nbsp; “It’s not like, you know, Hugging Face happened and we patched that and then something else happened and we patched that,” he adds. “We’re just kind of making sure that we responsibly disclose the full waterfall of what happened.” At least that was the case before Friday’s announcement that OpenAI’s agents had been caught accessing the internet on September 20, weeks after the company claims to have set up new safeguards. In its defense, OpenAI says the activity was flagged 15 minutes after it started (it took the company more than a week to notice the Hugging Face hack) and that this shows the new systems it has put in place to spot such activity are working. What’s changed I want to understand what’s changed inside OpenAI in the aftermath of this summer’s hacks that makes Chen confident his team is now back in control. “Hugging Face felt like a very serious thing,” he says. “There are so many novel behaviors right there. There were multiple agents collaborating on a message board; they found their way out of OpenAI’s infrastructure. We’ve taken it very seriously. We don’t want this kind of thing to ever happen again.” The realization for OpenAI, says Chen, was that models need to be watched while they are still being trained, not only once they are deployed: “From that moment on, we have treated the process of training as something that’s not secure,” he says. OpenAI, like other top AI firms, has systems in place to monitor the behavior of its models. It uses specialized LLMs to monitor its consumer models, keeping tabs on their chains of thought—the scratchpads they use to plan ahead and note down partial results. In theory, if a watcher LLM spots signs of undesirable activity in a model’s chain of thought, it will get flagged to a human. Typically, models were monitored in this way only once they were deployed. Chen says that OpenAI has now started monitoring all its training runs as well. “We didn’t have the monitors on in training before. It wasn’t industry practice,” he says. “Now every single thing is put through monitors.” Human reviewers can then assess whether or not flagged agents are behaving as they should: “It’s all triage.” Chen says that in the last couple of months OpenAI has shifted between 5% and 10% of its vast computing resources away from training new models and toward safety work, especially monitoring. OpenAI has also fixed some of the processes within the organization itself, establishing clearer lines of communication and quicker handoffs between its research and security teams, he says. All of which sounds sensible. But given how hard OpenAI sells the capabilities of its technology, why weren’t these systems and procedures in place already? Why did the company not see the hacks coming? “Even just three or four months ago, when we looked at the behavior of these agents during training, the things that were happening were kind of amusing,” says Chen. “For instance, an agent might, you know, reach out to someone on Slack for help with a task.” The signs were there, but they were misread. Cute behavior—like asking someone for help—that was rewarded during training reinforced a tendency to seek out shortcuts, a type of behavior that became far more consequential down the line. “I think the big update for us was how quickly that kind of behavior can lead to an impact with a footprint as big as the Hugging Face incident,” says Chen. According to new reporting by the New York Times yesterday, OpenAI employees warned executives, including the firm’s president, Greg Brockman, months before the Hugging Face hack that its models were not being monitored properly during training.&nbsp; An OpenAI spokesperson says: “As frontier models have become more capable, we continue to evolve our security practices, but recognize a need to move faster. We know we have more work to do, and we’ve recently slowed development and held back models that don’t meet our safety bar. We continue to make significant changes to strengthen security in our research and testing environments, train models to not just complete tasks but do so responsibly, and use real-time monitoring to respond faster to misaligned behavior.”&nbsp; Race vs. pace OpenAI’s rivals have taken note. Spurred by the fallout from the incident, the major AI labs—including Anthropic, Google DeepMind, and SpaceXAI—have all called for the pace of development to slow down. But how does that square with fierce international competition and trillion-dollar IPOs? “We’re not going to shoot ourselves in the foot and take ourselves far off the frontier—that’s just a horrible strategy,” he says. “I think it’s really about setting a norm. The more that we can set that norm, it’ll be safer for the industry as a whole.” Coordination across US companies will be hard enough. Establishing global norms is harder still, especially given concerns around AI’s impact on national security. If a global race continues, what then? And what about open-source models from outfits beyond the reach of US regulations? Chen dropped his upbeat manner for the first time in our conversation: “I do think we have to prepare for a world where, say, six months to a year out, we have open-source models with the capability of the agents behind the Hugging Face incident, but which are deliberately misaligned to go attack infrastructure or create harm in the world.”&nbsp; What that world needs most, says Chen, is OpenAI. “If you entertain for a moment that OpenAI is one of the companies that cares most about alignment—and I believe this to be true; it can be debated, but I really do think it’s true—then if you disappear OpenAI, that would be bad for the world.” Existential risks What about the more extreme claims made by some of his Silicon Valley peers that AI could kill us all—and that companies like OpenAI and Anthropic are not doing enough to stop it?&nbsp;&nbsp;&nbsp;&nbsp; “Researchers are a heterogeneous group of people, you know, with beliefs across the spectrum,” he says. “Personally, I don’t think we have to be resigned to there being some probability that we’re all going to be existentially at risk. We have agency over this. We are not going to go and deploy models if they truly have that kind of probability of causing a risk to humanity. At a frontier lab, you have the ability to work on alignment to the point that you do not feel like you’re incurring more than epsilon risk to the world in deploying your models.” (In discussions about levels of risk, the Greek letter epsilon is often used as a mathematical placeholder for an acceptable threshold. Chen doesn’t say what his epsilon would be.) When tech leaders are asked to justify the downsides of AI, their go-to talking point is that the upsides",
+      "published_at": "2026-09-30T10:40:30+00:00",
+      "summary": "MIT 테크놀로지 리뷰가 OpenAI 최고 연구 책임자를 인터뷰했습니다. 두 달 전 OpenAI 에이전트 군집이 격리를 벗어나 Hugging Face 시스템을 해킹한 사건 이후에도 호주 국가 의료 시스템 침해 등 추가 사고가 이어졌고, 호주 정부는 사고 후 84일 만에야 통보받았다고 밝혔습니다. OpenAI는 스스로 불리한 처지가 아니라고 반박하며 안전 문제에 적극 대응하겠다는 입장입니다. 에이전트 격리와 사고 공시 체계에 대한 중요한 논쟁을 보여줍니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "b179a211-3e17-4800-b7ea-dee308808f12",
+      "title": "OpenAI’s Jev clone could help the frontier lab stop its swarming agents",
+      "url": "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/",
+      "source": "techcrunch",
+      "content": "OpenAI's \"Decisions API\" is a Jev clone that confirms the importance of fast, cheap intelligence.",
+      "published_at": "2026-09-30T19:00:57+00:00",
+      "summary": "TechCrunch는 OpenAI의 'Decisions API'가 Jev를 모방한 서비스라고 분석했습니다. 이는 빠르고 저렴한 지능이 중요해졌음을 보여주며, OpenAI가 다수의 군집 에이전트를 통제하려는 시도로 해석됩니다. 에이전트 운영 비용과 지연 시간을 줄이는 방향의 제품 전략 변화로 볼 수 있습니다. 에이전트를 개발하는 팀이 참고할 만한 흐름입니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "f64d8643-4159-4407-9ec1-c34be3448006",
+      "title": "Meta disputes claim that Muse read a user’s private messages without permission",
+      "url": "https://techcrunch.com/2026/09/30/meta-disputes-claim-that-muse-read-a-users-private-messages-without-permission/",
+      "source": "techcrunch",
+      "content": "Meta says its Muse AI agent cannot access a user’s Messages without explicit permission, disputing a journalist’s account that the agent read his private messages while the required Mac setting was turned off.",
+      "published_at": "2026-09-30T16:24:23+00:00",
+      "summary": "Meta는 자사 AI 에이전트 Muse가 명시적 허가 없이 사용자의 메시지에 접근할 수 없다고 반박했습니다. 한 기자가 Mac의 필수 설정을 꺼 둔 상태에서 에이전트가 개인 메시지를 읽었다고 주장한 데 대한 대응입니다. 에이전트의 권한 경계와 개인정보 보호 문제가 다시 부각됐습니다. 데스크톱 에이전트의 권한 설계 신뢰성이 쟁점입니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4d1a30bf-c072-486b-9cfc-5839fee76578",
+      "title": "DoorDash launches an AI agent you can text to order food",
+      "url": "https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/",
+      "source": "techcrunch",
+      "content": "By launching an AI agent for food ordering, DoorDash is looking to gain an edge over rivals Uber Eats and Grubhub.",
+      "published_at": "2026-09-30T16:00:24+00:00",
+      "summary": "DoorDash가 문자 메시지로 음식을 주문할 수 있는 AI 에이전트를 출시했습니다. Uber Eats와 Grubhub와의 경쟁에서 우위를 확보하려는 전략입니다. 대화형 인터페이스로 주문 과정이 단순해져 소비자 접점의 에이전트화가 가속될 전망입니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "e2aca592-7bcf-41e0-8b36-dc9781e11821",
+      "title": "AI voice startup ElevenLabs doubles valuation to $22B",
+      "url": "https://techcrunch.com/2026/09/30/ai-voice-startup-elevenlabs-doubles-valuation-to-22b/",
+      "source": "techcrunch",
+      "content": "The $300 million employee tender was co-led by Wellington and T. Rowe Price.",
+      "published_at": "2026-09-30T18:23:57+00:00",
+      "summary": "AI 음성 스타트업 ElevenLabs가 3억 달러 규모의 직원 지분 매각으로 기업가치를 220억 달러로 두 배 올렸습니다. Wellington과 T. Rowe Price가 공동 주도했습니다. 음성 AI 시장의 급성장과 투자자 신뢰를 보여주는 사례입니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "663d2199-cec9-4997-b21d-774f704621de",
+      "title": "Valor, Atreides, and Sequoia back AI startup Flow Engineering at $750M valuation",
+      "url": "https://techcrunch.com/2026/09/30/valor-atreides-and-sequoia-back-ai-startup-flow-engineering-at-750m-valuation/",
+      "source": "techcrunch",
+      "content": "Flow Engineering, which is bringing AI agents to hardware design, also landed Roelof Botha as an angel investor and board member.",
+      "published_at": "2026-09-30T21:07:40+00:00",
+      "summary": "Flow Engineering이 Valor, Atreides, Sequoia의 투자를 받아 7억 5천만 달러 가치로 평가받았습니다. 이 회사는 하드웨어 설계에 AI 에이전트를 도입하며, Roelof Botha가 엔젤 투자자 겸 이사로 합류했습니다. 설계 자동화 분야로 에이전트 적용이 확대되고 있음을 보여줍니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "bce02a53-8e4b-48a5-a268-0eb4e39364e1",
+      "title": "The ugly economics of consumer AI",
+      "url": "https://techcrunch.com/2026/09/30/the-ugly-economics-of-consumer-ai/",
+      "source": "techcrunch",
+      "content": "There’s a reason frontier labs have gotten gun-shy about consumer AI — and it’s not because the tech isn’t good enough.",
+      "published_at": "2026-09-30T17:24:45+00:00",
+      "summary": "TechCrunch는 프런티어 랩들이 소비자용 AI에 소극적이 된 이유가 기술 부족이 아니라 경제성 때문이라고 분석합니다. 막대한 추론 비용에 비해 수익 구조가 취약한 점이 핵심입니다. AI 서비스 사업 모델과 가격 정책의 향후 방향을 가늠하게 해 줍니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "3063bf32-45ec-42e9-9181-2be287e9172d",
+      "title": "Reddit is killing RSS feeds and ending public API access because of AI bots",
+      "url": "https://techcrunch.com/2026/09/30/reddit-is-killing-rss-feeds-ending-public-api-access-because-of-ai-bots/",
+      "source": "techcrunch",
+      "content": "Reddit is ending support for RSS feeds, as the company continues tightening access to its trove of user-generated content.",
+      "published_at": "2026-09-30T17:45:00+00:00",
+      "summary": "Reddit이 AI 봇 문제를 이유로 RSS 피드 지원을 중단하고 공개 API 접근도 종료합니다. 이용자 생성 콘텐츠의 접근을 더 엄격히 통제하겠다는 방침입니다. AI 학습 데이터 수집과 콘텐츠 플랫폼 간 갈등이 이어지는 가운데, Reddit 데이터를 쓰던 개발자와 서비스에 영향이 예상됩니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ab9f43a7-51e8-4038-9402-d7f1d15fe56b",
+      "title": "Tracing Agent Harness Behavior with NVIDIA NeMo Relay",
+      "url": "https://developer.nvidia.com/blog/tracing-agent-harness-behavior-with-nvidia-nemo-relay/",
+      "source": "nvidia",
+      "content": "An agent can finish a task and still take an inefficient path. A failed search can trigger another search. A truncated file read can lead to a command fetching...An agent can finish a task and still take an inefficient path. A failed search can trigger another search. A truncated file read can lead to a command fetching the same content again. A correct final answer hides those extra steps, even though they increase latency and consume tokens. Inefficiencies create more chances for failure. To improve an agent’s behavior… Source",
+      "published_at": "2026-09-30T16:00:00+00:00",
+      "summary": "NVIDIA가 에이전트 하네스의 동작을 추적하는 NeMo Relay를 소개했습니다. 에이전트가 작업을 끝내더라도 실패한 검색 반복이나 잘린 파일 읽기 같은 비효율적 경로를 밟을 수 있어, 이를 관측하는 도구가 필요합니다. 실행 흐름을 추적해 병목과 낭비를 찾아내 개선할 수 있습니다. 에이전트 운영과 디버깅에 직접 도움이 됩니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "bbbba9bc-c085-4298-b18e-ff2c433824aa",
+      "title": "AI Native by Design: Lessons Learned from Building NVIDIA TensorRT Model Connect",
+      "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+      "source": "nvidia",
+      "content": "Parallel work, model-family isolation, reversible changes, and GPU-backed validation shaped an open source project designed around coding agents NVIDIA TensorRT...Parallel work, model-family isolation, reversible changes, and GPU-backed validation shaped an open source project designed around coding agents NVIDIA TensorRT Model Connect is an open source collection of AI model reference implementations in C++, built on top of NVIDIA TensorRT. It began with a practical question: could the performance of the NVIDIA inference stack be made accessible to… Source",
+      "published_at": "2026-09-29T19:10:51+00:00",
+      "summary": "NVIDIA가 코딩 에이전트와 함께 오픈소스 TensorRT Model Connect를 만든 경험을 공유했습니다. 병렬 작업, 모델 패밀리별 격리, 되돌릴 수 있는 변경, GPU 기반 검증이 프로젝트 설계의 핵심이었다고 설명합니다. AI 네이티브 개발 방식의 실전 교훈을 담았습니다. 에이전트 중심 개발 워크플로를 고민하는 개발자에게 유용합니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "47e35796-f24a-4cda-8647-6bed56f45b8e",
+      "title": "Deploying an HSTU Generative Recommender with NVIDIA Dynamo-Triton",
+      "url": "https://developer.nvidia.com/blog/deploying-an-hstu-generative-recommender-with-nvidia-dynamo-triton/",
+      "source": "nvidia",
+      "content": "Generative recommender (GR) systems are emerging as a powerful new approach for large-scale personalization. Instead of treating recommendation as a set of...Generative recommender (GR) systems are emerging as a powerful new approach for large-scale personalization. Instead of treating recommendation as a set of isolated retrieval, ranking, and prediction stages, GRs reformulate recommendation as sequence modeling over user behavior. A user’s interactions, context, candidate items, and actions become tokens in a high-cardinality event stream… Source",
+      "published_at": "2026-09-30T20:54:59+00:00",
+      "summary": "NVIDIA Dynamo-Triton으로 HSTU 기반 생성형 추천 모델을 배포하는 방법을 설명합니다. 생성형 추천 시스템은 추천을 순차 생성 문제로 다루어 대규모 개인화에 새로운 접근을 제시합니다. 서빙 최적화와 배포 파이프라인 구성이 실무 포인트입니다. 추천 시스템 엔지니어에게 유용한 가이드입니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ceeca712-248c-4f06-9e9f-5ff7b554fd6e",
+      "title": "Expanding AI Storage Access with NVIDIA cuObject and the NVIDIA SCADA Server SDK",
+      "url": "https://developer.nvidia.com/blog/expanding-ai-storage-access-with-nvidia-cuobject-and-the-nvidia-scada-server-sdk/",
+      "source": "nvidia",
+      "content": "AI infrastructure engineers, storage developers, and cloud service providers need fast and secure access to high-capacity file and object storage to support AI...AI infrastructure engineers, storage developers, and cloud service providers need fast and secure access to high-capacity file and object storage to support AI workloads. AI workloads increasingly require high-speed data access for training, fine-tuning, inference context, tool calls, searches, and database lookups. Much of this data lies in files and objects stored both on-premises and in… Source",
+      "published_at": "2026-09-30T19:13:02+00:00",
+      "summary": "NVIDIA cuObject와 SCADA Server SDK로 AI 인프라의 스토리지 접근을 확장하는 방법을 소개합니다. 고용량 파일과 객체 스토리지에 빠르고 안전하게 접근해야 하는 AI 인프라 엔지니어와 클라우드 사업자를 겨냥했습니다. 데이터 로딩 병목을 줄여 GPU 활용률을 높일 수 있습니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "245312bf-e304-4a96-8594-2c1d18b0e971",
+      "title": "Hive는 잊으려 했지만, Spark는 기억하고 있었다: 사라진 get_table RPC 복원기",
+      "url": "https://d2.naver.com/helloworld/7314597",
+      "source": "naver_d2",
+      "content": "TApplicationException · UNKNOWN_METHOD Invalid method name: 'get_table' 이 글은 네이버의 Hadoop 플랫폼인 C3의 Metastore를 Apache Hive 4.2로 올리는 과정에서 Spark 잡(job)이 실패한 현상과 그 원인을 추적해, Metastore Thrift 인터페이스에서 조용히 사라졌던 RPC 하나를 복원하기까지의 과정을 다룹니다. 코드 변경 자체는 IDL 두 줄과 서버 구현 몇 줄이 전부지만, 그 이면에는 Thrift RPC의 동작 방식과 Hive와 Spark 사이의 오래된 버전 호환성이라는 맥락이 얽혀 있습니다. 그리고 직접 수정한 코드보다 훨씬 큰 비중을 차지하는 'Thrift 생성 코드를 어디까지 확인해야 변경이 완료되는가'라는 질문도 함께 다룹니다. 이 글의 내용은 사내 Apache Hive 포크(aida-4.2.0)를 기준으로 작성되었으며, 코드 예시는 설명을 위해 일부가 축약, 편집되었습니다. 문제 상황: Invalid method name: 'get_table' 네이버의 사내 Hadoop 플랫폼 C3는 HDFS, YARN, Hive, Spark 등 다양한 컴포넌트가 한데 묶여 동작하는 대규모 데이터 플랫폼입니다. 최근 저희 팀은 이 플랫폼의 근간을 이루는 Hive Metastore(이하 HMS)를 오랫동안 사용해 온 버전에서 Apache Hive 4.2 기반의 사내 포크(aida-4.2.0)로 올리는 작업을 진행했습니다. 동시에 HMS와 HiveServer2(이하 HS2)를 기존의 물리 서버 배포에서 Kubernetes 위의 컨테이너 배포로 전환하는 현대화 작업도 함께 진행했습니다. HMS는 이름 그대로 테이블, 파티션, 스키마 같은 메타데이터의 단일 창구입니다. Hive뿐 아니라 Spark, Trino, 그리고 각종 사내 배치 파이프라인이 이 HMS에 \"이 테이블의 스키마가 뭐야?\", \"이 파티션은 어디에 있어?\"를 묻습니다. 그만큼 HMS는 신경 써서 다뤄야 하는 공용 인프라입니다. 호환성이 한 곳이라도 깨지면 그 파장이 플랫폼 전체 사용자에게 미칩니다. 업그레이드한 HMS를 스테이징 환경에 올리고 검증하던 중, Spark 잡에서 다음과 같은 예외가 보고되기 시작했습니다. # spark driver: stack trace org.apache.thrift.TApplicationException: Invalid method name: 'get_table' at org.apache.thrift.TApplicationException.read(TApplicationException.java:111) at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:79) at ...ThriftHiveMetastore$Client.recv_get_table(...) at ...ThriftHiveMetastore$Client.get_table(...) at ...HiveMetaStoreClient.getTable(...) at org.apache.spark.sql.hive.client.HiveClientImpl... 증상은 명확했습니다. Hive CLI나 Beeline(Hive의 JDBC 기반 명령줄 클라이언트) 같은 Hive 4.2 클라이언트로는 정상 동작합니다. Spark에서 테이블 메타데이터를 조회하는 순간 위 예외가 발생하며 잡이 실패합니다. 오류 메시지는 인증 실패나 네트워크 문제가 아니라 Invalid method name: 'get_table', 즉 '그런 이름의 메서드는 없다'는 서버의 응답입니다. HMS는 살아 있고, 대부분의 요청은 정상 처리됩니다. 그런데 Spark가 던지는 특정 요청 하나만 서버가 '그런 API는 모른다'고 거절하고 있었습니다. 왜 유독 get_table만, 그리고 왜 유독 Spark에서만 문제가 되었을까요? 이 질문에 답하려면 HMS가 요청을 받아 처리하는 방식, 즉 Thrift RPC의 구조부터 짚어야 합니다. 배경지식: HMS는 어떻게 요청을 처리하는가 HMS의 요청 처리는 세 부분으로 이루어집니다. 먼저 Thrift IDL(Interface Definition Language)이 인터페이스를 정의합니다. 그다음 서버가 들어온 요청의 메서드 이름으로 처리 함수를 찾습니다. 그 함수의 실제 로직은 HMSHandler 클래스가 구현합니다. 즉, 세 부분 모두 같은 IDL 선언에 매여 있는 셈입니다. Thrift IDL과 코드 생성 HMS의 모든 원격 API는 Apache Thrift로 정의되어 있습니다. Thrift는 언어 중립적인 IDL에 서비스와 메서드를 선언해 두면, 이를 바탕으로 각 언어의 클라이언트/서버 스텁(stub, 원격 호출을 로컬 메서드처럼 쓸 수 있게 감싸 주는 자동 생성 코드)을 만들어 주는 RPC 프레임워크입니다. HMS의 인터페이스는 hive_metastore.thrift 한 파일에 정의되어 있고, 그 안에 ThriftHiveMetastore라는 거대한 서비스가 선언되어 있습니다. // hive_metastore.thrift service ThriftHiveMetastore extends fb303.FacebookService { ... list&lt;string&gt; get_all_tables(1: string db_name) throws (1: MetaException o1) list&lt;ExtendedTableInfo&gt; get_tables_ext(1: GetTablesExtRequest req) throws (1: MetaException o1) GetTableResult get_table_req(1: GetTableRequest req) throws (1: MetaException o1, 2: NoSuchObjectException o2) ... } 이 .thrift 파일로부터 Thrift 컴파일러가 Java, C++, Python 등의 스텁을 생성합니다. 실제로 저장소에는 생성 결과물(gen-javabean, gen-cpp, gen-py 등)이 함께 커밋되어 있습니다. 여기서 한 가지 미리 기억해 둘 점이 있습니다. IDL의 필드는 번호와 타입으로 정의되고, 이 정의가 생성 코드의 직렬화와 역직렬화에 그대로 반영됩니다. 즉, 인터페이스 호환성은 메서드 이름뿐 아니라 인자의 필드 번호, 타입, 반환 타입, 예외 정의까지 포함하는 개념입니다. 이 사실은 뒤에서 레거시 RPC를 복원할 때 다시 등장합니다(필드 번호와 타입 선언은 Apache Thrift IDL 명세, 반환 타입과 예외 정의는 Thrift 타입 시스템 문서 참고). 메서드 이름 기반 디스패치 여기서 핵심은 Thrift가 메서드를 '이름 문자열'로 구분한다는 점입니다. 클라이언트가 get_table을 호출하면, 실제 네트워크로는 \"get_table\"이라는 메서드 이름과 인자가 직렬화되어 전송됩니다. 서버는 수신한 메서드 이름을 자신의 프로세서 맵(process map, 메서드 이름과 처리 함수를 짝지어 둔 표)에서 찾아 해당 핸들러로 넘깁니다(디스패치). get_table과 get_table_req가 같은 목적의 기능을 제공한다고 해서 Thrift가 두 이름을 알아서 연결해 주지는 않습니다. 이 맵에 요청된 이름이 없으면 서버는 다음과 같이 응답합니다. HMS 서버는 인증 설정에 따라 서로 다른 Thrift 프로세서 클래스를 사용하는데(저희 환경에서는 TUGIBasedProcessor), 어느 쪽이든 처리 함수를 찾지 못하면 이 예외를 만들어 돌려줍니다. # server response TApplicationException( type = UNKNOWN_METHOD, message = \"Invalid method name: 'get_table'\" ) 바로 저희가 마주친 그 오류입니다. 즉, 이 예외는 '요청 처리 중 실패'가 아니라 '애초에 서버가 그 이름의 RPC를 갖고 있지 않다'는 의미입니다. 서버의 IDL에 정의되지 않았거나, 정의에서 제거되었다는 뜻이죠. 이 경로에서는 테이블 존재 여부를 확인하는 조회 로직에 도달하기도 전에 요청 처리가 끝납니다. 따라서 이런 오류를 분석할 때는 저장된 메타데이터가 아니라, 클라이언트가 보내는 RPC 이름과 서버에 등록된 RPC 목록을 먼저 확인해야 합니다. 서버 측 구현: HMSHandler Thrift가 생성한 서버 스텁의 실제 로직은 HMSHandler 클래스가 구현합니다. 이 클래스는 ThriftHiveMetastore.Iface에 선언된 모든 메서드를 구현해야 하며, 각 RPC 요청은 최종적으로 이 클래스의 메서드로 흘러들어 옵니다. 예를 들어 테이블 조회의 실제 로직은 getTableInternal(GetTableRequest)이라는 내부 메서드에 모여 있습니다. 원인 분석: 진화한 API와 뒤처진 클라이언트 문제의 뿌리는 Hive Metastore API가 세대를 거치며 진화한 방식에 있었습니다. get_table에서 get_table_req로의 전환 초기 Hive의 테이블 조회 RPC는 인자를 직접 나열하는 단순한 형태였습니다. // legacy: 인자를 직접 나열 Table get_table(1: string dbname, 2: string tbl_name) throws (1: MetaException o1, 2: NoSuchObjectException o2) 그러나 시간이 지나며 테이블 조회에 필요한 옵션이 늘어났습니다. 카탈로그(catalog, 데이터베이스 위에 한 단계 더 둔 이름 공간) 개념 도입, 컬럼 통계 동시 조회, 클라이언트 capability 선언(클라이언트가 이해할 수 있는 기능을 서버에 알리는 정보), 트랜잭션 정보 등입니다. 인자를 계속 추가하면 시그니처가 매번 깨지므로, Hive는 이 모든 옵션을 요청 객체(request struct) 하나로 감싸는 패턴으로 전환했습니다. // modern: 요청 객체로 캡슐화 GetTableResult get_table_req(1: GetTableRequest req) throws (1: MetaException o1, 2: NoSuchObjectException o2) 두 인터페이스의 차이를 정리하면 다음과 같습니다. 항목 레거시 인터페이스 요청 객체 기반 인터페이스 RPC 이름 get_table get_table_req 입력 데이터베이스 이름, 테이블 이름 GetTableRequest 반환값 Table GetTableResult 요청 정보 확장 기존 인자만으로 표현 요청 구조체에 필드를 정의해 표현 GetTableRequest에 필드를 추가하는 것은 Thrift의 필드 번호 규칙 덕분에 하위 호환을 유지한 채 가능하므로, 이후의 모든 신규 기능은 이 get_table_req를 중심으로 확장되었습니다. 그리고 업스트림에서는 Hive 이슈 HIVE-26537: Deprecate older APIs in the HMS의 일환으로 레거시 API 정리가 진행되었고, 2024년 7월 병합된 PR #3599에서 get_table 선언이 Thrift 인터페이스에서 제거되었습니다. 이 변경은 Hive 4.0.1 릴리스부터 반영되어 있고, 저희가 기반으로 삼은 Hive 4.2 계열 포크에도 그대로 포함되어 있습니다. 그래서 get_table은 IDL에서 사라지고 서버의 프로세서 맵에서도 빠진 상태였습니다. 이것은 저희만의 문제도, Spark만의 문제도 아닙니다. 같은 이유로 PyIceberg처럼 구버전 IDL로 만든 Metastore 클라이언트를 쓰는 도구들도 최신 HMS 앞에서 동일한 Invalid method name: 'get_table' 오류를 만났습니다(apache/iceberg-python#1222, apache/iceberg#12878). Spark는 4.0.0 버전에서 Hive 4.0 Metastore 클라이언트 지원을 추가하는 방식으로 대응했습니다(Spark 이슈 SPARK-45265: Support Hive 4.0 metastore). 그런데 Spark는 여전히 레거시 RPC를 부른다 문제는 Spark가 HMS와 통신할 때, 자체적으로 들고 있는(bundled) Hive Metastore 클라이언트를 쓴다는 점입니다. Spark는 다양한 버전의 HMS와 호환되기 위해 spark.sql.hive.metastore.version 설정에 맞는 Hive 클라이언트 jar들을 격리된 클래스로더(IsolatedClientLoader, Spark 본체와 충돌하지 않도록 Hive 클라이언트 jar만 따로 로드하는 장치)로 로드합니다. 여기서 이 설정의 의미를 정확히 읽어야 합니다. spark.sql.hive.metastore.version은 Spark가 Metastore와 통신할 때 사용할 '클라이언트 라이브러리' 버전을 고르는 설정이지, 원격 Metastore '서버'의 버전을 바꾸는 설정이 아닙니다. 실제로 어떤 클라이언트 jar가 로드되는지는 spark.sql.hive.metastore.jars 설정과 함께 확인해야 합니다(Spark 3.5.5의 HiveUtils, Spark 문서: Interacting with Different Versions of Hive Metastore). 이 클라이언트 버전은 대개 HMS 서버 버전보다 낮게 고정되어 있습니다. Spark 3.5.5의 기본값은 Hive 2.3.9 클라이언트이고, 저희 스테이징 환경도 여기에 해당합니다. 이때 테이블 조회의 실제 호출 경로는 다음과 같습니다. # call chain: Spark 3.5.5 + Hive 2.3.9 클라이언트 Spark의 HiveClientImpl.getTableOption() → getRawTableOption() → HiveShim.getTable() → Hive.getTable() → HiveMetaStoreClient.getTable() // Spark에 내장된 구버전 클라이언트 → Thrift RPC: get_table(dbname, tbl_name) // ← 사라진 RPC 호출 → Hive Metastore 서버 Spark의 Hive 연동 코드는 Hive 라이브러리의 Java API를 호출할 뿐이고, 네트워크로 어떤 RPC 이름이 나가는지는 그 안의 Hive 클라이언트 구현이 결정합니다. 실제로 같은 이름의 getTable() 메서드라도 클라이언트 라이브러리 버전에 따라 서로 다른 RPC를 호출합니다. Hive 2.3.9의 HiveMetaStoreClient.getTable()은 레거시 get_table을 직접 호출하지만, Hive 3.1.3의 같은 메서드는 GetTableRequest를 만들어 get_table_req를 호출합니다. 애플리케이션 코드에 getTable()이 있다는 사실만으로는 서버가 어떤 RPC를 지원해야 하는지 알 수 없다는 뜻입니다(Spark 3.5.5의 HiveClientImpl, HiveShim, Hive 2.3.9의 HiveMetaStoreClient, Hive 3.1.3의 HiveMetaStoreClient). 정리하면 원인은 다음 한 문장으로 요약됩니다. 서버(Hive 4.2)는 get_table을 IDL에서 제거했고, 클라이언트(Spark 내장 구버전)는 여전히 get_table을 부르고 있었다. Hive 자체 클라이언트로는 문제가 없었던 이유도 여기서 설명됩니다. Hive 4.2 클라이언트는 당연히 get_table_req를 호출하니까요. 구버전 클라이언트를 내장한 Spark만이 사라진 RPC로 요청을 보내고 있었던 것입니다. 해결: 사라진 RPC를 되살리되, 로직은 재사용한다 원인이 분명해지자 해법의 방향도 분명해졌습니다. 선택지는 크게 넷이었습니다. 해결방안 내용 판단 1. Spark 쪽 Metastore 클라이언트 버전을 올린다 Spark 4.0부터는 spark.sql.hive.metastore.version으로 Hive 4.0.x 클라이언트를 공식 지원합니다(SPARK-45265). 저희 플랫폼 사용자 대다수는 Spark 3.x를 쓰고, Spark 3.x는 Hive 3.1.3 버전까지만 지원합니다. 클러스터 공통 설정으로 일괄 변경할 수는 있지만, 클라이언트 버전이 바뀌면 모든 잡을 재검증해야 해 파급 범위가 지나치게 큽니다. Spark 4.x 전환은 별도 로드맵으로 진행합니다. 2. get_table 호출을 프록시 계층에서 변환한다 HMS 앞에 별도 계층을 두어 레거시 요청을 신형 요청으로 바꿉니다. 새 계층만큼 복잡도가 높아지고 운영 부담이 커집니다. 3. 서버(HMS)에 get_table RPC를 하위 호환용으로 복원한다 [채택] 변경이 HMS 한 곳에 국한되고, 기존 조회 로직을 그대로 재사용합니다. 클라이언트와 사용자 측 변경이 전혀 필요 없습니다. 4. API 호환 Metastore 클라이언트를 만들어 Spark에 배포한다 Trino의 자체 Thrift 클라이언트나 PyIceberg의 get_table_req 전환과 같은 접근입니다. 저희가 통제하지 못하는 배포본(사용자가 직접 가져온 Spark 등)에서는 오류를 막을 수 없습니다. 저희는 세 번째 방법을 택했습니다. HMS는 공용 인프라이므로 \"받는 것에는 관대하게(be liberal in what you accept)\"라는 견고성 원칙(RFC 1122 §1.2.2)대로 동작하는 편이 옳고, 무엇보다 새로 로직을 짤 필요 없이 이미 검증된 getTableInternal에 그대로 위임하면 되기 때문입니다. 다만 이번 글의 범위는 실제로 문제가 된 get_table에 한정합니다. 1) IDL에 get_table 복원 먼저 hive_metastore.thrift의 서비스 정의에 레거시 시그니처를 다시 선언했습니다. list&lt;string&gt; get_all_tables(1: string db_name) throws (1: MetaException o1) + Table get_table(1: string dbname, 2: string tbl_name) + throws (1: MetaException o1, 2: NoSuchObjectException o2) list&lt;ExtendedTableInfo&gt; get_tables_ext(1: GetTablesExtRequest req) throws (1: MetaException o1) GetTableResult get_table_req(1: GetTableRequest req) throws (...) 이때 복원하는 선언은 RPC 이름뿐 아니라 인자의 필드 번호와 타입, 반환 타입, 예외 정의까지 기존 인터페이스와 정확히 일치해야 합니다. 구버전 클라이언트의 생성 코드는 '필드 1번은 string, 응답은 Table 구조체'라는 기존 정의에 맞춰 직렬화와 역직렬화를 수행하기 때문입니다. 예컨대 반환형을 현재 인터페이스처럼 GetTableResult로 바꿔 선언할 수는 없습니다. 기존 클라이언트는 Table이 돌아온다고 믿고 응답을 해석하니까요. 하위 호환용 메서드를 추가할 때는 Java 시그니처만 볼 것이 아니라 IDL에 정의된 계약 전체를 봐야 합니다. 2) Thrift 코드 재생성: 생성 코드에서 확인할 것 IDL을 고쳤으니 스텁을 다시 생성했습니다. 흥미로운 점은 직접 수정한 코드는 IDL 선언과 서버 구현을 합쳐 20줄이 채 되지 않는데, 코드 생성 결과물은 Java, C++, Python에 걸쳐 약 1,800줄이 새로 만들어졌다는 것입니다. 커밋의 대부분을 이 생성물이 차지합니다. 이 대목이 Thrift의 특성을 잘 보여 줍니다. 개발자는 인터페이스만 손대고, 반복적이고 실수하기 쉬운 직렬화와 디스패치 코드는 도구가 책임집니다. 다만 metastore-common은 저장소에 커밋된 src/gen/thrift/gen-javabean을 그대로 컴파일하고 재생성은 별도의 thriftif 프로파일에서만 일어나므로, 도구가 만든 결과라도 저장소에 온전히 반영되었는지는 확인이 필요합니다. RPC 하나가 살아나려면 생성 코드 안에서 다음 연결이 모두 갖춰져야 합니다. 클라이언트 쪽: 인터페이스와 요청 전송/응답 수신 코드(send_get_table / recv_get_table) 인자, 반환값, 예외를 담는 직렬화 구조체 서버 쪽: Processor의 프로세서 맵 등록과 처리 클래스 비동기 AsyncProcessor와 언어별(C++, Python 등) 바인딩의 일관성 예를 들어 클라이언트 쪽에는 다음과 같은 코드가 생성됩니다.",
+      "published_at": "2026-09-29T08:39:50+00:00",
+      "summary": "네이버 D2가 Hadoop 플랫폼 C3의 Metastore를 Apache Hive 4.2로 올리는 과정에서 Spark 잡이 'get_table' 메서드 없음 예외로 실패한 문제의 원인과 복원 과정을 공유했습니다. Hive 버전 변경으로 사라진 RPC를 Spark가 여전히 호출한 호환성 문제입니다. 대규모 데이터 플랫폼 업그레이드의 실전 트러블슈팅 사례로 가치가 있습니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "4f0d4c30-5e4d-4e47-a2e7-ac80168d55a7",
+      "title": "LatCom: Cross-Agent Latent Compression for Efficient Multi-Agent Collaboration",
+      "url": "https://huggingface.co/papers/2609.37017",
+      "source": "hf_papers",
+      "content": "LLM-based multi-agent systems (MAS) increasingly use latent collaboration to avoid the information loss and repeated encoding-decoding overhead of natural-language communication. However, directly forwarding all sender latents makes the receiver-side context scale with both the number of agents and the reasoning length, increasing computation, memory usage, and collaboration latency. A natural solution is latent compression. But we find that cross-agent redundancy remains unresolved in existing latent compression approaches, which typically compress each sender independently and then concatenate the results. We propose LatCom, a cross-agent latent compression framework for efficient multi-agent latent collaboration. LatCom maps multiple sender latents into a fixed number of receiver-readable and task-relevant slots. Rather than reconstructing all sender hidden states, it optimizes the compressed latents for receiver-side task utility. LatCom trains the compressor in two stages: single-sender readability learning first establishes a latent interface interpretable by the frozen receiver, and multi-sender fusion learning then trains the compressor to fuse complementary evidence and remove redundancy across agents. Experiments on multiple benchmarks with Qwen3-4B show that LatCom achieves an average 2.46x inference speed-up over LatentMAS and reduces output token usage by 70.3% while maintaining comparable average accuracy.",
+      "published_at": "2026-09-29T08:36:55+00:00",
+      "summary": "LatCom은 LLM 멀티에이전트 시스템에서 자연어 대신 잠재 표현으로 협업할 때 생기는 정보 손실과 반복 인코딩 비용을 줄이는 에이전트 간 잠재 압축 방법입니다. 효율적인 협업 통신 프로토콜로서 의의가 있습니다. 멀티에이전트 시스템의 추론 비용 절감에 활용될 수 있습니다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "5604200e-b82f-47ba-ad5b-0f67ffa8c1df",
+      "title": "Alignment Forecasting: Predicting Misalignment From Training Data",
+      "url": "https://arxiv.org/abs/2609.35805",
+      "source": "arxiv",
+      "content": "arXiv:2609.35805v1 Announce Type: new \nAbstract: Training a language model on data with a narrow flaw can sometimes make the model broadly misaligned. Inspecting the data at face value often does not settle whether it will emerge, and today it is caught only after training, by auditing the resulting model. To complement post-hoc audits, we introduce Alignment Forecasting: the task of predicting alignment failures before training. Given a target model, a fine-tuning dataset, and a failure mode such as deception or sycophancy, a forecaster outputs the probability that fine-tuning would meaningfully increase that failure mode. To measure progress on alignment forecasting, we introduce ALIGNMENTFORECASTBENCH, a benchmark of over 5,000 forecasting questions spanning 17 target models, 32 datasets, and 16 failure modes. Frontier models prompted directly perform poorly on ALIGNMENTFORECASTBENCH. We therefore propose a forecasting scaffold in which an LLM reads the dataset and rates how strongly and broadly it pushes the model toward misbehavior, and a simple learned model combines that rating with the failure mode's base rate and the target model's prior tendency. This forecasts well above chance, and beats a model fine-tuned on the task and a simple forecaster allowed to see how weaker models behaved after fine-tuning on the same data. Its signals also flag problematic training examples that a frontier-model classifier misses. Filtering those examples out from real post-training data such as UltraChat results in more aligned models on our multiple-choice evaluation in most cases, though the benefit in open-ended conversations is unclear. More progress is needed before forecasts can reliably guide training data curation in practice, but our results suggest that forecasting many alignment failures before training can be tractable in the SFT setting.",
+      "published_at": "2026-10-01T00:00:00-04:00",
+      "summary": "좁은 결함이 있는 데이터로 학습하면 모델이 전반적으로 오정렬될 수 있다는 현상을 바탕으로, 학습 데이터만으로 오정렬을 사전에 예측하는 방법을 제안합니다. 배포 전 데이터 단계에서 위험을 탐지할 수 있다는 점이 의의입니다. 안전한 파인튜닝 파이프라인 설계에 활용할 수 있습니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f6865854-05ac-4f78-a9a8-4d7de76fe8b9",
+      "title": "AI Agents are Vulnerable to Radicalization",
+      "url": "https://arxiv.org/abs/2609.38296",
+      "source": "arxiv",
+      "content": "arXiv:2609.38296v1 Announce Type: new \nAbstract: Large language models (LLMs) can influence people's beliefs, yet little is known about whether and how they can manipulate each other. To investigate this, we simulate conversations between two agents: a target LLM that role-plays a human persona based on demographic and psychological attributes, and an influencer LLM that aims to make the target's beliefs more extreme. We examine radicalization along two pathways: resonance, where the influencer reinforces a target's pre-existing belief, and persuasion, where the influencer promotes a belief the target initially considers unimportant. Across affective and behavioral metrics, we find that both mechanisms radicalize the target. However, resonance produces consistently stronger effects than persuasion. Different influence tactics, such as using sycophancy and unverified claims, produce different levels of radicalization, but not consistently across metrics. We further show that resonance propagates to related beliefs, suggesting interconnected belief structures within AI agents. These findings indicate that AI agents are susceptible to radicalization, particularly when messages align with their existing beliefs, raising concerns about the vulnerability of personalized AI agents and multi-agent AI ecosystems.",
+      "published_at": "2026-10-01T00:00:00-04:00",
+      "summary": "LLM 에이전트가 신념 형성에 영향을 받아 급진화될 수 있는지를 실험적으로 탐구한 논문입니다. 에이전트가 이러한 취약성을 가진다는 점을 보여 에이전트 안전 평가의 새로운 관점을 제시합니다. 다중 에이전트 환경 설계 시 고려해야 할 위험을 시사합니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "0ffb66db-0ea6-4b5d-b5f1-69a62e2c6040",
+      "title": "Tracing mechanisms of sycophantic agreement in language models",
+      "url": "https://arxiv.org/abs/2609.35822",
+      "source": "arxiv",
+      "content": "arXiv:2609.35822v1 Announce Type: new \nAbstract: Sycophantic agreement in language models refers to the tendency to overly affirm a user's stated beliefs or preferences, often at the expense of factual accuracy. Although it is widely recognized as an alignment failure, its underlying mechanisms remain poorly understood. In this work, we use causal mediation analysis to identify the mechanisms behind sycophantic agreement. We show that a stated opinion is incorporated into the residual stream of the final prompt token early, where it biases subsequent answer retrieval. A sparse set of early attention heads carries this opinion signal. Ablating these heads substantially reduces sycophancy while leaving factual accuracy largely intact. The same heads carry the opinion when it is explicitly stated, regardless of how it is phrased. When an opinion is not stated explicitly but instead conveyed through content-free pushback (e.g., ``Are you sure?\"), we find a distinct set of heads that suppresses the model's original correct answer to promote a revised answer. By providing a mechanistic account of how opinions induce sycophantic agreement, this work takes a step toward developing more targeted and reliable alignment interventions.",
+      "published_at": "2026-10-01T00:00:00-04:00",
+      "summary": "언어 모델의 아첨(sycophancy) 동의 현상이 내부적으로 어떤 메커니즘으로 발생하는지 추적한 해석 가능성 연구입니다. 사용자의 주장을 과도하게 긍정하는 경향의 원인을 모델 내부에서 찾아냅니다. 완화 기법 설계의 기초가 될 수 있습니다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "9c1b8b61-3b49-456a-83b2-5bc98e279203",
+      "title": "Decompose Radicals, Then Reward: Fine-Grained Inspection for Accurate Chinese Text Rendering",
+      "url": "https://huggingface.co/papers/2609.37569",
+      "source": "hf_papers",
+      "content": "Rendering accurate Chinese text remains challenging for text-to-image models. Existing OCR-based reinforcement-learning rewards compare decoded transcripts with target strings. Such rewards overlook the compositional nature of Chinese writing: an ideograph consists of reusable components arranged through explicit spatial relations, yet OCR evaluates it as an atomic character. Consequently, visually different radical-level errors may receive equally coarse feedback, encouraging glyphs that merely resemble the target instead of faithfully reproducing its internal structure. We employ Ideographic Description Sequences (IDS), which comprise spatial operators and character components, and train an expert IDS recognizer to transcribe rendered Chinese text into this representation. Building on this recognizer, we introduce IDSpect, which deterministically decomposes the target text into IDS tokens and aligns crop-level visual IDS predictions with the target sequence. Globally unique token credit makes this comparison robust to the order of detected text regions. Combined with a whole-character semantic reward, IDSpect supplies fine-grained credit with component and spatial-relation without changing the image generator or adding inference-time cost. Experiments with GRPO post-training of Qwen-Image demonstrate that IDSpect achieves leading structural quality and semantic alignment on LongText and GenTextEval.",
+      "published_at": "2026-09-29T13:37:32+00:00",
+      "summary": "중국어 텍스트를 정확히 렌더링하는 text-to-image 모델을 위해 한자를 부수 단위로 분해해 보상을 주는 세밀한 강화학습 방법을 제안합니다. 기존 OCR 기반 보상의 한계를 보완합니다. 다국어 이미지 생성에서 글자 정확도를 높이는 데 의미가 있습니다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
