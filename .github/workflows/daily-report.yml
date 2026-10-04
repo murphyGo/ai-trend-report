@@ -1,296 +1,42 @@
-name: Daily AI Report
-
+# One-use branch only. Never merge this workflow into main.
+name: Transfer existing AI report Email Secrets
 on:
-  schedule:
-    # 매일 UTC 00:00 (KST 09:00) 실행
-    - cron: '0 0 * * *'
   workflow_dispatch:
-    # 수동 실행 가능
-    inputs:
-      dry_run:
-        description: 'Dry run (no Slack notification)'
-        required: false
-        default: 'false'
-        type: boolean
-      limit:
-        description: 'Limit number of articles'
-        required: false
-        default: ''
-        type: string
-      use_api:
-        description: 'Use Anthropic API directly (instead of Claude Code CLI)'
-        required: false
-        default: 'false'
-        type: boolean
-      model:
-        description: 'Claude model to use (for CLI mode)'
-        required: false
-        default: 'sonnet'
-        type: choice
-        options:
-          - sonnet
-          - haiku
-          - opus
-
-env:
-  # 기본값: Claude Code CLI 모드 (스케줄 실행 시)
-  USE_API: ${{ github.event.inputs.use_api || 'false' }}
-  # Node.js 24 사용 (deprecation 경고 해결)
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 permissions:
-  contents: write  # 리포트 데이터 커밋용
-
+  contents: read
 jobs:
-  generate-report:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-
+  seal:
+    if: >-
+      github.repository == 'murphyGo/ai-trend-report' &&
+      github.ref == 'refs/heads/codex/ai-report-key-reuse-20261005'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
-
-      - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
+      - name: Checkout reviewed one-use encryption code
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Set up Node.js (for Claude Code CLI)
-        if: env.USE_API != 'true'
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4
-        with:
-          node-version: '20'
-
-      - name: Install Claude Code CLI
-        if: env.USE_API != 'true'
-        run: npm install -g @anthropic-ai/claude-code@latest
-
-      # Step 1: 기사 수집 (Phase 8 recency + dedup 적용)
-      - name: Collect articles
-        run: |
-          CMD="python -m src.main --collect-only --days 2 --dedup-days 7"
-          if [ -n "${{ github.event.inputs.limit }}" ]; then
-            CMD="$CMD --limit ${{ github.event.inputs.limit }}"
-          fi
-          echo "Running: $CMD"
-          $CMD
-
-      # Step 2a: Claude Code CLI로 요약 (기본 모드 - Pro/Max 구독 사용)
-      - name: Summarize with Claude Code CLI
-        if: env.USE_API != 'true'
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install encryption dependency before any Secret is exposed
+        run: python3 -m pip install pynacl==1.6.2
+      - name: Encrypt existing email settings to destination Environment
         env:
-          # OAuth 토큰 인증 (Pro/Max 구독 사용) - 우선순위 1
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          # API 키 폴백 (유료 API) - 우선순위 2
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          set -e
-
-          # 오늘 날짜
-          TODAY=$(date +%Y-%m-%d)
-
-          # 최신 articles 파일 찾기
-          ARTICLES_FILE=$(ls -t data/articles_*.json 2>/dev/null | head -1)
-          if [ -z "$ARTICLES_FILE" ]; then
-            echo "Error: No articles file found"
-            exit 1
-          fi
-          echo "Processing: $ARTICLES_FILE"
-
-          # 모델 선택
-          MODEL="${{ github.event.inputs.model || 'sonnet' }}"
-          echo "Using model: $MODEL"
-
-          # 인증 방식 확인
-          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
-            echo "🔐 Using OAuth token authentication (Pro/Max subscription)"
-          elif [ -n "$ANTHROPIC_API_KEY" ]; then
-            echo "🔑 Using API key authentication (pay-per-use)"
-          else
-            echo "❌ No authentication configured"
-            exit 1
-          fi
-
-          # Claude Code CLI 실행
-          # --model: 사용할 모델
-          # -p: print 모드 (non-interactive)
-          # --allowedTools: 허용할 도구 제한
-          claude --model "$MODEL" -p "
-          You are an expert AI news curator and Korean tech editor for a daily AI newsletter.
-
-          ## Input
-          Read articles from: $ARTICLES_FILE
-
-          ## Task — Two stages: RANK then SUMMARIZE
-
-          ### Stage 1: Rank and select the top 20 most important articles
-
-          Evaluate EVERY article and select the 20 most important based on these criteria
-          (in rough priority order):
-
-          1. **Technical novelty** — new models, benchmarks, techniques, notable research findings
-          2. **Impact** — frontier labs (OpenAI, Anthropic, Google DeepMind, Meta AI), major
-             model releases, real-world product launches, widely applicable tools
-          3. **Source credibility** — frontier lab blogs > curated sources (HF Papers, MarkTechPost,
-             BAIR, Stanford AI) > general tech news (TechCrunch, VentureBeat)
-          4. **Category diversity** — avoid concentration; aim for balance across LLM, agents,
-             vision, video, robotics, safety, infra, etc. Do not fill the 20 slots with arxiv papers only.
-          5. **Korean relevance bonus** — modest priority boost for content touching Korean
-             companies (Naver, Kakao, LG, Samsung) or the Korean AI ecosystem.
-
-          Skim titles, sources, and content snippets to judge. If there are fewer than 20
-          articles total, select all of them. Skip articles that are clearly off-topic,
-          broken, or duplicates.
-
-          ### Stage 2: Summarize ONLY the selected 20
-
-          For each SELECTED article (not the full pool), create:
-          - Korean summary (3-5 sentences) covering 핵심 기술/발견, 기술적 의의, 실용적 영향
-          - A category from this enum: LLM, AGENT, VISION, VIDEO, ROBOTICS, SAFETY, RL, INFRA,
-            MEDICAL, FINANCE, INDUSTRY, OTHER
-          - **Audience tags** from: GENERAL, DEVELOPER, ML_EXPERT (multi-select, at least 1)
-
-          #### Audience tagging criteria
-
-          Judge which reader levels would find this article useful. Multiple tags allowed —
-          a flagship model release may be tagged all three. Err on the side of inclusive
-          tagging; too narrow hides content from users who would want it.
-
-          - **GENERAL (일반인)**: Product/industry news, policy, ethics, business impact,
-            'how AI changes X' explainers, AI usage tips. No technical prerequisites.
-          - **DEVELOPER (개발자)**: API updates, library releases, coding tutorials, system
-            architecture, framework comparisons, AI-assisted dev tools (Cursor, Copilot, etc.),
-            integration guides. Assumes programming background but not ML expertise.
-          - **ML_EXPERT (ML 전문가)**: Research papers, novel model architectures, training
-            methodology, benchmarks, mathematical/statistical heavy content, model release
-            technical details (parameters, datasets, scaling laws). Assumes ML background.
-
-          ## Output
-
-          Save a Report containing ONLY the 20 selected (and summarized) articles to:
-            data/report_${TODAY}.json
-
-          ## Implementation
-
-          Use the project's Python modules directly:
-
-          \`\`\`python
-          from src.data_io import load_articles, save_report
-          from src.models import Report, Category, Audience
-
-          all_articles = load_articles('$ARTICLES_FILE')
-
-          # Stage 1: pick the top 20 most important using the criteria above
-          # (your judgment, not a heuristic — consider title + source + content)
-          selected = [...]  # list of 20 Article objects from all_articles
-
-          # Stage 2: summarize + categorize + audience tag the selected ones
-          for article in selected:
-              article.summary = '...'            # 3-5 문장 한국어 요약
-              article.category = Category.LLM    # 적절한 카테고리
-              article.audience = [               # 독자 레벨 (1~3개, multi-tag)
-                  Audience.GENERAL,
-                  Audience.DEVELOPER,
-              ]
-
-          # Save ONLY the selected 20 as the report
-          report = Report(articles=selected)
-          save_report(report)
-          \`\`\`
-
-          Execute this task now.
-          " --allowedTools "Bash,Read,Write,Edit"
-
-          # 결과 확인
-          if [ -f "data/report_${TODAY}.json" ]; then
-            echo "✅ Report generated: data/report_${TODAY}.json"
-            ARTICLE_COUNT=$(python -c "import json; print(len(json.load(open('data/report_${TODAY}.json'))['articles']))")
-            echo "📊 Articles summarized: $ARTICLE_COUNT"
-          else
-            echo "❌ Report file not found"
-            exit 1
-          fi
-
-      # Step 2b: Anthropic API로 요약 (대안 모드)
-      - name: Summarize with Anthropic API
-        if: env.USE_API == 'true'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          CMD="python -m src.main --use-api"
-          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
-            CMD="$CMD --dry-run"
-          fi
-          if [ -n "${{ github.event.inputs.limit }}" ]; then
-            CMD="$CMD --limit ${{ github.event.inputs.limit }}"
-          fi
-          echo "Running: $CMD"
-          $CMD
-
-      # Step 3: Slack/Discord/Email 전송 (CLI 모드 전용)
-      - name: Send notifications
-        if: env.USE_API != 'true' && github.event.inputs.dry_run != 'true'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
-        run: |
-          CMD="python -m src.main --send-only"
-          # 이메일 설정이 있으면 이메일도 전송
-          if [ -n "$EMAIL_USERNAME" ] && [ -n "$EMAIL_PASSWORD" ]; then
-            CMD="$CMD --email"
-          fi
-          $CMD
-
-      # Step 4: 리포트 데이터 커밋 (GitHub Pages용)
-      - name: Commit report data
-        if: env.USE_API != 'true' && github.event.inputs.dry_run != 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add data/report_*.json data/articles_*.json || true
-          git diff --staged --quiet || git commit -m "chore: add daily report $(date +%Y-%m-%d)"
-          git push || echo "Nothing to push"
-
-      - name: Upload report artifact
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
+        run: python3 -I scripts/seal_email_secrets.py
+      - name: Upload only destination-encrypted values
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: ai-report-${{ github.run_id }}
-          path: data/
-          retention-days: 30
-
-  notify-on-failure:
-    needs: generate-report
-    runs-on: ubuntu-latest
-    if: failure()
-
-    steps:
-      - name: Send failure notification to Slack
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          name: ai-report-email-secrets-sealed-${{ github.run_id }}
+          path: ${{ runner.temp }}/ai-report-email-secrets.sealed.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Remove encrypted scratch file
+        if: always()
         run: |
-          if [ -n "$SLACK_WEBHOOK_URL" ]; then
-            curl -X POST -H 'Content-type: application/json' \
-              --data '{
-                "text": "⚠️ AI Report 생성 실패",
-                "blocks": [
-                  {
-                    "type": "section",
-                    "text": {
-                      "type": "mrkdwn",
-                      "text": "⚠️ *AI Report 생성 실패*\n\n워크플로우 실행 중 오류가 발생했습니다.\n\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|GitHub Actions에서 확인>"
-                    }
-                  }
-                ]
-              }' \
-              "$SLACK_WEBHOOK_URL"
-          fi
+          python3 -I - <<'PYCODE'
+          import os
+          from pathlib import Path
+          (Path(os.environ["RUNNER_TEMP"]) / "ai-report-email-secrets.sealed.json").unlink(missing_ok=True)
+          PYCODE
