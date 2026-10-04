@@ -10,7 +10,6 @@ from fastapi.responses import HTMLResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from . import service
-from ..data_io import DEFAULT_DATA_DIR
 
 
 logger = logging.getLogger(__name__)
@@ -60,8 +59,9 @@ async def index(
     if q:
         search_results = service.search_articles(q, category=category)
         return templates.TemplateResponse(
-            "index.html",
-            {
+            request=request,
+            name="index.html",
+            context={
                 "request": request,
                 "query": q,
                 "category": category,
@@ -75,8 +75,9 @@ async def index(
     total_articles = sum(r["article_count"] for r in reports)
 
     return templates.TemplateResponse(
-        "index.html",
-        {
+        request=request,
+        name="index.html",
+        context={
             "request": request,
             "reports": reports,
             "total_articles": total_articles,
@@ -100,8 +101,9 @@ async def report_detail(request: Request, report_id: str):
     report_date = report.created_at.strftime("%Y-%m-%d")
 
     return templates.TemplateResponse(
-        "report.html",
-        {
+        request=request,
+        name="report.html",
+        context={
             "request": request,
             "report": report,
             "report_date": report_date,
