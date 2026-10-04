@@ -27,9 +27,9 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
-| FR-004 | Claude Code CLI(기본, Pro/Max OAuth) 또는 Anthropic API(`--use-api`)로 한국어 요약 | High | Done |
+| FR-004 | Codex CLI(비공개 Actions, ChatGPT 인증) 한국어 요약 지원; 기존 Claude CLI/API 호환 유지 | High | Done |
 | FR-005 | 12개 카테고리 자동 분류 | High | Done |
-| FR-016 | Claude가 중요도 기준으로 상위 20개 기사 선별 (rank-then-summarize 2단계 프롬프트) | High | Done |
+| FR-016 | LLM이 중요도 기준으로 상위 20개 기사 선별 (rank-then-summarize 2단계 프롬프트) | High | Done |
 
 > FR-016 판단 기준: 기술 신규성, 영향력(frontier lab/주요 모델 발표), 소스 신뢰도,
 > 카테고리 다양성, 한국 관련성 보너스.
@@ -61,7 +61,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
 | FR-027 | GitHub Actions 매일 KST 09:00 스케줄 실행 (`daily-report.yml`) | High | Done |
-| FR-028 | Claude Code CLI + OAuth 토큰으로 Pro/Max 구독 기반 무료 요약 | High | Done |
+| FR-028 | Codex CLI + ChatGPT 인증 기반 요약 (코드·실계정 검증 완료, 운영 활성화는 게시 PAT 대기) | High | Done |
 | FR-029 | 수동 실행 지원 (`workflow_dispatch`) — dry_run / limit / model 옵션 | Medium | Done |
 | FR-030 | 실패 시 Slack 에러 알림 (`notify-on-failure` job) | High | Done |
 
@@ -83,7 +83,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
 | FR-036 | 기사마다 독자 레벨 태그 — GENERAL / DEVELOPER / ML_EXPERT (multi-tag) | High | Done |
-| FR-037 | 하이브리드 태깅 — Claude 판단 우선, 미설정 시 소스 기반 fallback | High | Done |
+| FR-037 | 하이브리드 태깅 — LLM 판단 우선, 미설정 시 소스 기반 fallback | High | Done |
 | FR-038 | 전역 필터 바 — 모든 페이지에 노출, `localStorage`로 페이지 간 지속 | High | Done |
 | FR-039 | 카테고리/소스 인덱스 카드에 audience 미니 통계 (일반 N · 개발 N · ML N) | Medium | Done |
 | FR-040 | 레거시 리포트(태그 없음)도 소스 fallback으로 즉시 분류됨 | High | Done |

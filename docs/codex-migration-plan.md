@@ -7,12 +7,12 @@ available; scheduled generation has no automatic paid API fallback.
 
 - [x] Implement tool-free rank/summarize with strict source-ID validation.
 - [x] Install reviewed application code separately from current public data.
-- [ ] Use the existing private `investo-runtime` Environment and shared
+- [x] Use the existing private `investo-runtime` Environment and shared
   `investo-codex-auth-v1` concurrency group; persist refreshed auth before
   publication. Never copy the same refresh stream to another repository.
-- [ ] Reuse existing notification Secrets by encrypted transfer, with
-  `AI_REPORT_` names; verify a publisher PAT scoped to this public repository.
-- [ ] Qualify a real Codex dry-run without notifications or public writes.
+- [x] Reuse existing notification Secrets by encrypted transfer with `AI_REPORT_` names.
+- [ ] Verify a publisher PAT scoped to this public repository (existing PAT returned 403).
+- [x] Qualify a real Codex dry-run without notifications or public writes.
 - [ ] Stop/drain the old public daily workflow, then enable only the private
   daily owner at the existing 09:00 KST schedule.
 - [ ] Verify publishing, Pages and existing notification wiring; document

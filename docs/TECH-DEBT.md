@@ -11,9 +11,9 @@ AI Report Service의 기술 부채를 추적하고 관리합니다.
 | Critical | 0 | - |
 | High | 0 | - |
 | Medium | 2 | 2026-04-10 |
-| Low | 0 | - |
+| Low | 1 | 2026-10-05 |
 
-**Total Active Items**: 2 (DEBT-001, DEBT-002 — Playwright 필요, deferred)
+**Total Active Items**: 3 (DEBT-001/002 deferred; DEBT-006 existing lint baseline)
 
 ---
 
@@ -86,7 +86,19 @@ EXAONE 시리즈 등 LG AI연구원의 주요 발표 누락. 한국 Frontier AI 
 
 ### Low Priority
 
-_No low priority items._
+### DEBT-006: 기존 전체 저장소 lint 실패
+
+**Priority**: Low
+**Category**: Maintainability
+**Added**: 2026-10-05
+**Location**: `src/`, `tests/`, `.github/workflows/ci.yml`
+
+Codex 전환 전 CI `24962842522`와 전환 후 `37213491855` 모두 lint가
+실패한다. 기존 미사용 import, 줄 끝 개행, 긴 줄과 인라인 주석 서식이
+원인이다. 변경한 Python 파일은 flake8을 통과하며 Python 3.9~3.12의
+전체 테스트는 전환 후 모두 성공한다. 모델 전환과 무관한 전역 정리는
+범위를 분리해 수정하고 CI lint를 복구한다. 상세 실행 근거는
+`docs/sessions/2026-10-05-codex-actions-migration.md`에 기록했다.
 
 ---
 
