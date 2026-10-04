@@ -18,13 +18,15 @@ jobs:
           ref: ${{ github.sha }}
           persist-credentials: false
       - name: Install encryption dependency before any Secret is exposed
-        run: python3 -m pip install pynacl==1.6.2
+        run: |
+          python3 -m venv "$RUNNER_TEMP/encryption-venv"
+          "$RUNNER_TEMP/encryption-venv/bin/python" -m pip install pynacl==1.6.2
       - name: Encrypt existing email settings to destination Environment
         env:
           EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECIPIENTS: ${{ secrets.EMAIL_RECIPIENTS }}
-        run: python3 -I scripts/seal_email_secrets.py
+        run: '"$RUNNER_TEMP/encryption-venv/bin/python" -I scripts/seal_email_secrets.py'
       - name: Upload only destination-encrypted values
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
