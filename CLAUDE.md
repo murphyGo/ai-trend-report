@@ -177,7 +177,7 @@ python -m src.main --parallel            # 병렬 수집 (빠름)
 python -m src.main --limit 5             # 5개만 테스트
 ```
 
-운영 요약은 비공개 `murphyGo/investo-runtime`의 `ai-report.yml`에서 Codex CLI가 처리합니다.
+운영 요약은 비공개 `murphyGo/automation-runtime`의 `ai-report.yml`에서 Codex CLI가 처리합니다.
 검증된 코드를 설치하고 기사 데이터를 stdin으로 전달하며, 모델에는 도구를 제공하지 않습니다.
 `src.codex_report`가 JSON 응답을 검증한 뒤 원본 기사 ID와 연결합니다.
 
@@ -216,7 +216,7 @@ SITE_BASE_URL=/ai-trend-report python -m src.main --generate-static
 
 ## 자동 실행 (GitHub Actions)
 
-프로덕션 파이프라인은 비공개 `murphyGo/investo-runtime`에서 실행합니다.
+프로덕션 파이프라인은 비공개 `murphyGo/automation-runtime`에서 실행합니다.
 이 공개 저장소의 `daily-report.yml`은 2026-10-09에 비활성화했습니다.
 실행 근거는 [운영 전환 기록](docs/sessions/2026-10-09-codex-activation.md)을 참조하세요.
 
@@ -247,7 +247,7 @@ Investo와 같은 인증 스트림을 공유 큐에서 직렬로 사용합니다
 ## Environment Variables
 
 ### GitHub Actions Secrets (프로덕션)
-비공개 `murphyGo/investo-runtime`의 Settings → Environments → `codex-runtime`에서 관리합니다.
+비공개 `murphyGo/automation-runtime`의 Settings → Environments → `codex-runtime`에서 관리합니다.
 
 | 변수 | 설명 | 필수 |
 |---|---|---|

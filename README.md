@@ -8,7 +8,7 @@
 
 ## Codex 전환 상태 (2026-10-09)
 
-비공개 `murphyGo/investo-runtime`의 `ai-report.yml`을 활성화하고,
+비공개 `murphyGo/automation-runtime`의 `ai-report.yml`을 활성화하고,
 이 저장소의 기존 Claude `daily-report.yml`은 비활성화했습니다.
 모델은 `gpt-6-astra`, 예약은 매일 UTC 00:00 (KST 09:00)이며
 기존 이메일 설정을 사용합니다. 실제 실행 시각은 GitHub Actions 대기열에 따라 지연될 수 있습니다.
@@ -88,7 +88,7 @@ cp config.example.yaml config.yaml
 ## 환경 변수
 
 ### GitHub Actions Secrets (프로덕션)
-비공개 `murphyGo/investo-runtime`의 Settings → Environments → `codex-runtime`에 등록.
+비공개 `murphyGo/automation-runtime`의 Settings → Environments → `codex-runtime`에 등록.
 
 | 변수 | 설명 | 필수 |
 |---|---|---|

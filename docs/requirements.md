@@ -60,7 +60,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Codex가 **�
 
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
-| FR-027 | 비공개 `investo-runtime/ai-report.yml`에서 매일 KST 09:00 예약, 공개 Claude workflow 비활성화 | High | Done |
+| FR-027 | 비공개 `automation-runtime/ai-report.yml`에서 매일 KST 09:00 예약, 공개 Claude workflow 비활성화 | High | Done |
 | FR-028 | Codex CLI + ChatGPT 인증 기반 요약, `AI_REPORT_CODEX_ENABLED=1` 운영 활성화 | High | Done |
 | FR-029 | 비공개 workflow 수동 실행 — dry_run / limit 옵션, 모델은 검증된 `gpt-6-astra`로 고정 | Medium | Done |
 | FR-030 | 실제 운영 실패 시 설정된 Slack 웹훅으로 에러 알림 (dry-run 제외) | High | Done |
@@ -219,7 +219,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Codex가 **�
 ## 환경 변수
 
 ### GitHub Actions Secrets (프로덕션)
-비공개 `murphyGo/investo-runtime`의 `codex-runtime` Environment에서 관리합니다.
+비공개 `murphyGo/automation-runtime`의 `codex-runtime` Environment에서 관리합니다.
 
 | 변수 | 설명 | 필수 |
 |------|------|------|

@@ -7,7 +7,7 @@ available; scheduled generation has no automatic paid API fallback.
 
 - [x] Implement tool-free rank/summarize with strict source-ID validation.
 - [x] Install reviewed application code separately from current public data.
-- [x] Use the existing private `investo-runtime` Environment and shared
+- [x] Use the existing private `automation-runtime` Environment and shared
   `investo-codex-auth-v1` concurrency group; persist refreshed auth before
   publication. Never copy the same refresh stream to another repository.
 - [x] Reuse existing notification Secrets by encrypted transfer with `AI_REPORT_` names.
