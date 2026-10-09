@@ -1,5 +1,9 @@
 # Codex Actions migration — 2026-10-05 KST
 
+This is the qualification checkpoint. The publisher prerequisite was resolved
+and the production owner switched on 2026-10-09; see
+[activation evidence](2026-10-09-codex-activation.md).
+
 The operator requested the same Claude-to-Codex migration already completed
 for Investo. Work preserves unrelated local `.claude/settings.local.json`.
 
@@ -50,7 +54,7 @@ user-site dependency; an explicit temporary venv fixed it before any transfer.
 Consumer review covered 14 synthetic branches including optimized Python,
 registration failure cleanup, existing-secret collision and invalid payloads.
 
-## Activation prerequisites and current ownership
+## Activation prerequisites and ownership at this checkpoint
 
 `AI_REPORT_REVIEWED_CODE_SHA=53037fc...` is registered. Real full dry-run
 [37213542160](https://github.com/murphyGo/investo-runtime/actions/runs/37213542160)
@@ -70,10 +74,10 @@ The operator was asked to register `AI_REPORT_PUBLISH_TOKEN` in the private
 also reuse the existing publisher PAT if the operator adds that repository.
 Neither personal GitHub CLI auth nor managed Codex auth is used for publishing.
 
-Until that capability and actual generation are verified, the public
-`daily-report.yml` remains the active 09:00 KST owner and
-`AI_REPORT_CODEX_ENABLED` remains unset. The new private dry-run cannot publish
-or notify. Do not claim the operational switch has completed from code alone.
+At the 2026-10-05 checkpoint, the public `daily-report.yml` remained the active
+09:00 KST owner and `AI_REPORT_CODEX_ENABLED` remained unset pending publisher
+verification. The private dry-run cannot publish or notify; code qualification
+alone did not complete the operational switch.
 
 After prerequisites pass: disable/drain the public daily workflow, set
 `AI_REPORT_CODEX_ENABLED=1`, and verify actual report commit, Pages and

@@ -11,11 +11,11 @@ available; scheduled generation has no automatic paid API fallback.
   `investo-codex-auth-v1` concurrency group; persist refreshed auth before
   publication. Never copy the same refresh stream to another repository.
 - [x] Reuse existing notification Secrets by encrypted transfer with `AI_REPORT_` names.
-- [ ] Verify a publisher PAT scoped to this public repository (existing PAT returned 403).
+- [x] Verify the dedicated publisher PAT scoped to this public repository (preflight `37910592891`).
 - [x] Qualify a real Codex dry-run without notifications or public writes.
-- [ ] Stop/drain the old public daily workflow, then enable only the private
+- [x] Stop/drain the old public daily workflow, then enable only the private
   daily owner at the existing 09:00 KST schedule.
-- [ ] Verify publishing, Pages and existing notification wiring; document
+- [x] Verify publishing, Pages and existing notification wiring; document
   exact revisions, results and rollback, preserving unrelated local changes.
 
 Model/policy: same qualified `gpt-6-astra` / native CLI 0.153.4 as Investo.
@@ -42,3 +42,11 @@ credentials; shared concurrency; and dry-run notification isolation. Fresh
 review found one missing failure alert, which was restored.
 
 Official compatibility reference: https://fastapi.tiangolo.com/advanced/templates/
+
+## Production activation (2026-10-09 KST)
+
+Run `37910674025` generated 20 articles, published `44c11d75...` and submitted
+email to 2 existing recipients. Pages `37910995388` succeeded at that exact
+report commit. The public Claude workflow is disabled and private
+`AI_REPORT_CODEX_ENABLED=1`. See
+[activation evidence and rollback](sessions/2026-10-09-codex-activation.md).

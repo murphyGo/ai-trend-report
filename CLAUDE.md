@@ -3,20 +3,20 @@
 일일 AI 뉴스/논문 자동 수집 및 요약 리포트 서비스
 
 ## Purpose
-최신 AI 관련 기술 동향을 자동 수집 → Claude가 중요도 기준 상위 20개를 선별해
+최신 AI 관련 기술 동향을 자동 수집 → Codex가 중요도 기준 최대 20개를 선별해
 한국어로 요약한 데일리 리포트를 Slack/Discord/이메일로 발송하고
 GitHub Pages 정적 사이트로 공개합니다.
 
 ## What to do
 1. 17개 소스에서 AI 관련 기사/논문 수집
-2. Claude Code CLI(또는 `--use-api`)로 상위 20개 랭킹 → 한국어 요약 + 카테고리 분류
+2. 비공개 Actions에서 Codex CLI로 최대 20개 선별 → 한국어 요약 + 카테고리 분류
 3. Slack/Discord/이메일 알림 + GitHub Pages 배포
 
 ## Features
  - **17개 소스** 자동 수집 (arXiv, 주요 AI 랩 블로그, 미디어, 한국 소스)
  - **Recency + 크로스 리포트 중복 제거** (Phase 8) — 2일 시간창, 최근 7개 리포트 URL 차단
- - **Claude가 중요도 기준 상위 20개 선별** — 기술 신규성·영향력·소스 신뢰도·카테고리 다양성·한국 관련성
- - **Claude Code CLI 기본 지원** (Pro/Max 구독 사용, `ANTHROPIC_API_KEY` 불필요)
+ - **Codex가 중요도 기준 최대 20개 선별** — 기술 신규성·영향력·소스 신뢰도·카테고리 다양성·한국 관련성
+ - **Codex CLI + 자동화 전용 ChatGPT 인증** (비공개 런타임, `gpt-6-astra`)
  - 12개 카테고리 자동 분류 + 카테고리별 브라우징 페이지
  - **독자 레벨 필터** (Phase 7) — GENERAL / DEVELOPER / ML_EXPERT, 전역 필터 바로 실시간 토글
  - 다채널 알림: **Slack + Discord + 이메일(SMTP)** + Quiet-day 배너
@@ -77,7 +77,7 @@ GitHub Pages 정적 사이트로 공개합니다.
 ## Tech Stack
 - **Python 3.9+**
 - **수집**: `requests`, `beautifulsoup4`, `lxml`, `feedparser` (RSS/Atom)
-- **요약**: Claude Code CLI (기본 모드, Pro/Max OAuth), `anthropic` SDK (`--use-api` 모드)
+- **운영 요약**: Codex CLI (`gpt-6-astra`); `anthropic` SDK는 선택적인 로컬 `--use-api` 모드
 - **알림**: `slack-sdk`, `smtplib`(이메일), Discord Webhook(`requests`)
 - **정적 사이트**: `jinja2` 템플릿 → `_site/` 디렉토리
 - **웹 대시보드**: `fastapi`, `uvicorn` (`--serve` 로컬 미리보기)
@@ -92,8 +92,8 @@ ai-report/
 ├── config.example.yaml         # 설정 예시 (실제는 config.yaml, gitignore)
 ├── data/                       # 리포트 JSON (report_*.json만 git 추적, articles_*.json은 ignore)
 ├── .github/workflows/
-│   ├── daily-report.yml        # 매일 KST 09:00 자동 실행 (수집 → Claude 랭킹+요약 → 알림 → 커밋)
-│   ├── deploy-pages.yml        # daily-report 성공 후 GitHub Pages 배포
+│   ├── daily-report.yml        # 레거시 Claude workflow (운영 비활성화)
+│   ├── deploy-pages.yml        # 비공개 런타임 게시 후 실행 요청으로 GitHub Pages 배포
 │   └── ci.yml                  # 테스트/린트
 ├── src/
 │   ├── main.py                 # CLI 진입점
@@ -101,6 +101,7 @@ ai-report/
 │   ├── models.py               # Article / Report / Category / Source / Audience
 │   ├── data_io.py              # JSON 읽기/쓰기
 │   ├── filters.py              # Recency + 크로스 리포트 중복 제거 (Phase 8)
+│   ├── codex_report.py         # Codex JSON 응답 검증, 원본 기사 ID 매핑
 │   ├── constants.py            # 공유 상수 (Phase 9.1)
 │   ├── summarizer.py           # Anthropic API 요약 (--use-api 모드)
 │   ├── notifier_base.py        # BaseNotifier ABC (Phase 9.1)
@@ -176,8 +177,9 @@ python -m src.main --parallel            # 병렬 수집 (빠름)
 python -m src.main --limit 5             # 5개만 테스트
 ```
 
-요약 단계는 GitHub Actions에서 Claude Code CLI가 `daily-report.yml`의 2단계 프롬프트
-(랭킹 → 상위 20 → 요약)로 처리합니다. 로컬에서 같은 프롬프트를 돌리려면 `claude -p`로 직접 실행하세요.
+운영 요약은 비공개 `murphyGo/investo-runtime`의 `ai-report.yml`에서 Codex CLI가 처리합니다.
+검증된 코드를 설치하고 기사 데이터를 stdin으로 전달하며, 모델에는 도구를 제공하지 않습니다.
+`src.codex_report`가 JSON 응답을 검증한 뒤 원본 기사 ID와 연결합니다.
 
 ### API 모드 (ANTHROPIC_API_KEY 필요)
 
@@ -214,21 +216,28 @@ SITE_BASE_URL=/ai-trend-report python -m src.main --generate-static
 
 ## 자동 실행 (GitHub Actions)
 
-프로덕션 파이프라인은 GitHub Actions가 스케줄로 실행합니다.
+프로덕션 파이프라인은 비공개 `murphyGo/investo-runtime`에서 실행합니다.
+이 공개 저장소의 `daily-report.yml`은 2026-10-09에 비활성화했습니다.
+실행 근거는 [운영 전환 기록](docs/sessions/2026-10-09-codex-activation.md)을 참조하세요.
 
-### `daily-report.yml` — 매일 UTC 00:00 (KST 09:00)
+### 비공개 `ai-report.yml` — 매일 UTC 00:00 (KST 09:00) 예약
 1. 17개 소스에서 기사 수집
-2. Claude Code CLI가 **중요도 기준 상위 20개 선별** (OAuth 토큰으로 인증, Pro/Max 구독 사용)
-3. 선별된 20개만 한국어 요약 + 카테고리 분류
-4. Slack / Discord / 이메일 알림 전송 (설정된 채널만)
-5. `data/report_*.json` 커밋 & push
+2. Codex CLI (`gpt-6-astra`)가 **중요도 기준 최대 20개 선별·한국어 요약·분류**
+3. 응답 검증과 갱신된 인증 보존
+4. 해당 날짜의 `data/report_*.json` 커밋 & push, Pages 실행 요청
+5. 기존 이메일 설정으로 보고서 전송
 
-### `deploy-pages.yml` — daily-report 성공 후 자동 트리거
+GitHub Actions 대기열에 따라 실제 시작은 지연될 수 있습니다.
+`AI_REPORT_CODEX_ENABLED=1`이 운영 게이트이며 `AI_REPORT_REVIEWED_CODE_SHA`가 실행 코드를 고정합니다.
+Investo와 같은 인증 스트림을 공유 큐에서 직렬로 사용합니다. 인증을 다른 저장소에 복제하지 마세요.
+
+### `deploy-pages.yml` — 비공개 런타임 게시 후 명시적으로 실행 요청
 - `report_*.json`들을 Jinja2 템플릿으로 정적 HTML 변환
 - `SITE_BASE_URL=/${{ github.event.repository.name }}`이 자동 주입되어 GitHub Pages 프로젝트 사이트 서브패스 지원
 - 홈, 개별 리포트, 카테고리 브라우징(12개), 검색 페이지 생성
 
-**수동 실행**: Actions 탭 → *Daily AI Report* → *Run workflow*
+**수동 실행**: 비공개 런타임 Actions → *Codex AI trend report* → *Run workflow*.
+`dry_run=true`는 생성/인증 보존만 검증하고, `false`는 실제 게시/이메일 전송까지 수행합니다.
 
 **로컬 cron (대안)**:
 ```cron
@@ -238,17 +247,21 @@ SITE_BASE_URL=/ai-trend-report python -m src.main --generate-static
 ## Environment Variables
 
 ### GitHub Actions Secrets (프로덕션)
-Settings → Secrets and variables → Actions 에서 등록.
+비공개 `murphyGo/investo-runtime`의 Settings → Environments → `codex-runtime`에서 관리합니다.
 
 | 변수 | 설명 | 필수 |
 |---|---|---|
-| `CLAUDE_CODE_OAUTH_TOKEN` | Claude Pro/Max OAuth 토큰 (랭킹+요약용, 우선순위 1) | 권장 |
-| `ANTHROPIC_API_KEY` | Claude API 키 (OAuth 없을 때 fallback, `--use-api` 모드 전용) | 선택 |
-| `SLACK_WEBHOOK_URL` | Slack Incoming Webhook | Slack 사용 시 |
-| `DISCORD_WEBHOOK_URL` | Discord Webhook | Discord 사용 시 |
-| `EMAIL_USERNAME` | SMTP 사용자 (Gmail 주소 등) | 이메일 사용 시 |
-| `EMAIL_PASSWORD` | SMTP 비밀번호 / Gmail 앱 비밀번호 | 이메일 사용 시 |
-| `EMAIL_RECIPIENTS` | 수신자 목록 (콤마 구분) | 이메일 사용 시 |
+| `CODEX_AUTH_JSON` | 공용 런타임의 자동화 전용 ChatGPT 인증 | 필수 |
+| `CODEX_SECRET_WRITE_TOKEN` | 런타임 저장소 Environments 읽기/쓰기 PAT | 필수 |
+| `AI_REPORT_PUBLISH_TOKEN` | 이 공개 저장소만 선택한 Contents/Actions 읽기/쓰기 PAT | 필수 |
+| `AI_REPORT_EMAIL_USERNAME` | 기존 SMTP 사용자 | 이메일 사용 시 |
+| `AI_REPORT_EMAIL_PASSWORD` | 기존 SMTP 비밀번호 / 앱 비밀번호 | 이메일 사용 시 |
+| `AI_REPORT_EMAIL_RECIPIENTS` | 기존 수신자 목록 | 이메일 사용 시 |
+| `AI_REPORT_SLACK_WEBHOOK_URL` | 실제 운영 실패 알림용 웹훅 | 선택 |
+
+현재 운영 알림은 이메일입니다. 유료 API 자동 fallback은 없습니다.
+레거시 Claude workflow는 복구용으로 남아 있으며, 활성화하기 전에 비공개 일일 실행을
+중단하고 진행 중인 작업 및 해당 날짜의 게시/이메일 이력을 확인해야 합니다.
 
 > `SITE_BASE_URL`은 `deploy-pages.yml`에서 `github.event.repository.name`으로
 > 자동 주입되므로 Secret 등록 불필요.

@@ -2,7 +2,7 @@
 
 ## 개요
 
-AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **중요도 기준 상위 20개**를
+AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Codex가 **중요도 기준 최대 20개**를
 선별·한국어 요약한 데일리 리포트를 **Slack / Discord / 이메일**로 발송하며,
 **GitHub Pages** 정적 사이트로 공개하는 서비스의 요구사항을 정의합니다.
 
@@ -29,7 +29,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 |----|---------|---------|------|
 | FR-004 | Codex CLI(비공개 Actions, ChatGPT 인증) 한국어 요약 지원; 기존 Claude CLI/API 호환 유지 | High | Done |
 | FR-005 | 12개 카테고리 자동 분류 | High | Done |
-| FR-016 | LLM이 중요도 기준으로 상위 20개 기사 선별 (rank-then-summarize 2단계 프롬프트) | High | Done |
+| FR-016 | LLM이 중요도 기준으로 최대 20개 기사 선별·요약 (Codex 단일 JSON 응답, 원본 기사 ID 검증) | High | Done |
 
 > FR-016 판단 기준: 기술 신규성, 영향력(frontier lab/주요 모델 발표), 소스 신뢰도,
 > 카테고리 다양성, 한국 관련성 보너스.
@@ -48,7 +48,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
 | FR-019 | Jinja2 기반 정적 사이트 생성 (`--generate-static`) | High | Done |
-| FR-020 | GitHub Pages 자동 배포 (`deploy-pages.yml`, daily-report 완료 후 트리거) | High | Done |
+| FR-020 | GitHub Pages 자동 배포 (`deploy-pages.yml`, 비공개 런타임에서 보고서 게시 후 명시적으로 실행 요청) | High | Done |
 | FR-021 | 홈 대시보드 — 히어로 CTA + 통계 + 카테고리/소스 미리보기 + 최근 리포트 | High | Done |
 | FR-022 | 개별 리포트 페이지 (`/reports/{date}.html`) — 카테고리별 그룹, 풀 요약 | High | Done |
 | FR-023 | 카테고리별 브라우징 — `/categories/` 인덱스 + 12개 카테고리 페이지 (전 리포트 누적) | High | Done |
@@ -60,10 +60,10 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
-| FR-027 | GitHub Actions 매일 KST 09:00 스케줄 실행 (`daily-report.yml`) | High | Done |
-| FR-028 | Codex CLI + ChatGPT 인증 기반 요약 (코드·실계정 검증 완료, 운영 활성화는 게시 PAT 대기) | High | Done |
-| FR-029 | 수동 실행 지원 (`workflow_dispatch`) — dry_run / limit / model 옵션 | Medium | Done |
-| FR-030 | 실패 시 Slack 에러 알림 (`notify-on-failure` job) | High | Done |
+| FR-027 | 비공개 `investo-runtime/ai-report.yml`에서 매일 KST 09:00 예약, 공개 Claude workflow 비활성화 | High | Done |
+| FR-028 | Codex CLI + ChatGPT 인증 기반 요약, `AI_REPORT_CODEX_ENABLED=1` 운영 활성화 | High | Done |
+| FR-029 | 비공개 workflow 수동 실행 — dry_run / limit 옵션, 모델은 검증된 `gpt-6-astra`로 고정 | Medium | Done |
+| FR-030 | 실제 운영 실패 시 설정된 Slack 웹훅으로 에러 알림 (dry-run 제외) | High | Done |
 
 ### CLI
 
@@ -115,8 +115,8 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 | ID | 요구사항 | 우선순위 | 상태 |
 |----|---------|---------|------|
 | NFR-001 | 개별 소스 수집 실패 시 다른 소스 계속 진행 | High | Done |
-| NFR-002 | 개별 기사 요약 실패 시 해당 기사 스킵 | High | Done |
-| NFR-003 | 전체 실패 시 에러 알림 전송 (GitHub Actions `notify-on-failure` job) | Medium | Done |
+| NFR-002 | Codex 응답 검증 실패 시 게시 중단; 레거시 API 모드는 개별 실패 기사 스킵 | High | Done |
+| NFR-003 | 실제 운영 전체 실패 시 설정된 Slack 웹훅으로 에러 알림 | Medium | Done |
 | NFR-011 | 네트워크 오류에 대한 재시도 로직 (`utils/retry.py`, 최대 3회 backoff) | High | Done |
 
 ### 보안
@@ -125,7 +125,7 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 |----|---------|---------|------|
 | NFR-004 | 환경 변수 / GitHub Secrets로 API 키·웹훅 관리 | High | Done |
 | NFR-005 | config.yaml에 민감 정보 미포함 (gitignore) | High | Done |
-| NFR-012 | OAuth 토큰 기반 인증 우선 (Pro/Max 구독), API 키는 폴백 | Medium | Done |
+| NFR-012 | 운영은 자동화 전용 ChatGPT 인증을 공유 큐에서 사용하고 갱신 보존 후 게시, 유료 API 자동 fallback 없음 | Medium | Done |
 
 ### 운영
 
@@ -142,8 +142,8 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 |----|---------|---------|------|
 | NFR-009 | 병렬 수집으로 성능 최적화 (`--parallel`, `ThreadPoolExecutor`) | Low | Done |
 | NFR-010 | 기사 캐싱으로 중복 처리 방지 (`cache.py`, URL 기반) | Low | Done |
-| NFR-014 | arXiv 수집 상한 (카테고리당 20개) — 수집 시간 및 Claude 입력 토큰 절감 | Medium | Done |
-| NFR-015 | Claude는 기사별 1회 호출 대신 랭킹 1회 + 요약 N회로 API 사용 최적화 | Medium | Done |
+| NFR-014 | arXiv 수집 상한 (카테고리당 20개) — 수집 시간 및 LLM 입력 토큰 절감 | Medium | Done |
+| NFR-015 | Codex는 한 번의 호출로 최대 20개를 선별·요약, 빈 후보 풀은 모델 호출 없이 quiet-day 보고서 생성 | Medium | Done |
 | NFR-016 | 필터링은 client-side JS — 정적 HTML 배포 구조 유지, graceful degradation | High | Done |
 | NFR-017 | 상태 영속성은 git-tracked 리포트 파일만 사용 — 별도 캐시 파일 불필요 | High | Done |
 | NFR-018 | 필터 파이프라인 순수 함수형 — `filter_by_recency`/`filter_already_seen` 테스트 용이 | Medium | Done |
@@ -219,15 +219,19 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 ## 환경 변수
 
 ### GitHub Actions Secrets (프로덕션)
+비공개 `murphyGo/investo-runtime`의 `codex-runtime` Environment에서 관리합니다.
+
 | 변수 | 설명 | 필수 |
 |------|------|------|
-| `CLAUDE_CODE_OAUTH_TOKEN` | Claude Pro/Max OAuth 토큰 | 권장 (우선) |
-| `ANTHROPIC_API_KEY` | Claude API 키 (OAuth 없을 때 fallback 또는 `--use-api`) | 선택 |
-| `SLACK_WEBHOOK_URL` | Slack Incoming Webhook | Slack 사용 시 |
-| `DISCORD_WEBHOOK_URL` | Discord Webhook | Discord 사용 시 |
-| `EMAIL_USERNAME` | SMTP 사용자 (Gmail 주소 등) | 이메일 사용 시 |
-| `EMAIL_PASSWORD` | SMTP 비밀번호 / Gmail 앱 비밀번호 | 이메일 사용 시 |
-| `EMAIL_RECIPIENTS` | 수신자 목록 (콤마 구분) | 이메일 사용 시 |
+| `CODEX_AUTH_JSON` | 공용 런타임의 자동화 전용 ChatGPT 인증 | 필수 |
+| `CODEX_SECRET_WRITE_TOKEN` | 런타임 저장소 Environments 읽기/쓰기 PAT, 갱신된 인증 보존 | 필수 |
+| `AI_REPORT_PUBLISH_TOKEN` | 이 공개 저장소만 선택한 Contents/Actions 읽기/쓰기 PAT | 필수 |
+| `AI_REPORT_EMAIL_USERNAME` | 기존 SMTP 사용자 | 이메일 사용 시 |
+| `AI_REPORT_EMAIL_PASSWORD` | 기존 SMTP 비밀번호 / 앱 비밀번호 | 이메일 사용 시 |
+| `AI_REPORT_EMAIL_RECIPIENTS` | 기존 수신자 목록 | 이메일 사용 시 |
+| `AI_REPORT_SLACK_WEBHOOK_URL` | 운영 실패 알림용 Slack 웹훅 | 선택 |
+
+현재 운영 알림은 이메일입니다. Slack/Discord 개별 전송은 기존 로컬 CLI로도 지원합니다.
 
 > `SITE_BASE_URL`은 `deploy-pages.yml`에서 `github.event.repository.name`으로 자동 주입.
 > Secret 등록 불필요.
@@ -251,3 +255,4 @@ AI 관련 기술 동향을 17개 소스에서 자동 수집하고, Claude가 **�
 | 2026-04-11 | 2.0 | 17개 소스 확장, 다채널 알림, GitHub Pages, 카테고리/소스 브라우징, Claude 상위 20 랭킹, 홈 대시보드, GitHub Actions 자동화 반영. FR 및 NFR 일괄 갱신 |
 | 2026-04-11 | 2.1 | Phase 7 독자 레벨 필터 — FR-036~040, NFR-016 추가 |
 | 2026-04-12 | 2.2 | Phase 8 Recency + 중복 제거 — FR-041~045, NFR-017~018 추가, DEBT-003/005 resolved |
+| 2026-10-09 | 2.3 | 비공개 Codex 운영 활성화, 공개 Claude 예약 실행 중단, 게시/인증/알림 계약 갱신 |
