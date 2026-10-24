@@ -8,7 +8,8 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:grafana.com)",
       "Skill(ai-report)",
-      "WebFetch(domain:gist.github.com)"
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:api.github.com)"
     ]
   },
   "enabledMcpjsonServers": [
