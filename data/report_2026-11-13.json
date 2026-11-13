@@ -1,0 +1,278 @@
+{
+  "id": "0d4cb244-6e33-45c9-bbec-d74432fb1ec7",
+  "created_at": "2026-11-13T03:47:36.007980",
+  "articles": [
+    {
+      "id": "05e741e0-2aa2-4010-9379-4e45bd87bb27",
+      "title": "Google DeepMind",
+      "url": "https://blog.google/",
+      "source": "google",
+      "content": "Gemini models\n\nGemini 4 Hydrogen brings cutting-edge intelligence to everyone — with speed and efficiency for everyday coding and agentic workflows.\n\nXR and AR\n\nDesigned by Warby Parker and Gentle Monster and engineered by Samsung, Google's intelligent eyewear is now available for pre-order.\n\nPixel\n\nExplore the latest updates in our November Pixel Drop, including Pixel 10 with Gemini Intelligence, custom widgets, and more.\n\nGlobal Network\n\nWe’ve expanded our eighth generation TPU portfolio with TPU 8tx and TPU 8i Max, marking four new TPU systems in a single year.\n\nShopping\n\nGoogle’s Holiday 100 is here. Shop the gifts that are most popular this year and see the Search trends behind them.\n\nArts & Culture\n\nA new Google Arts & Culture collaboration with the James Beard Foundation brings 10,000 menus to life.\n\nSign up for our newsletters with product updates, event information, special offers, and more.\n\nDone. Just one step more.\n\nCheck your inbox to confirm your subscription.\n\nYou can also subscribe with adifferent email address.\n\nYour information will be used in accordance withGoogle's privacy policy.You may opt out at any time.\n\nUse Gemini in Chrome to get the answers you need without opening another tab. Here's how.\n\nMeet TPU 8tx and TPU 8i Max.Our newest TPU systems are built specifically for the agentic era. Amin Vahdat, SVP and Chief Technologist, AI and Infrastructure, explains everything you need to know about our latest TPU systems, and why they can help existing developer workloads get much faster and much more efficient.\n\nGreat app ideas often start on paper. Turn them into interactive tools with Gemini. Here’s how.\n\nNext time inspiration strikes, bring it to life with Gemini.\n\nSusan Wojcicki, former CEO of YouTube, passed away from lung cancer in 2024. She was diagnosed as a healthy mom of five with no known risk factors. Anyone with lungs can get lung cancer, and no one deserves it.\n\nNow the Susan Wojcicki Foundation, led by her family and leaders across science, tech and philanthropy, is launchinga YouTube channelto change the conversation around lung cancer. The channel brings creators together with leading experts, scientists, and the lung cancer community to help raise awareness and make the science clear, approachable, and part of everyday conversation.\n\nWatch the trailer on YouTube.\n\nOur latest fitness tracker,Google Fitbit Edge, is designed to fit your lifestyle from workday to workout:\n\nOn shelves now!\n\nWhen’s the last time you checked who (or what) has access to your Gmail inbox? Run a quickGoogle Security Checkupand protect your email with three quick and easy steps:\n\nFor more ways to keep your inbox safe from phishing and unwanted senders, check out theGmail Help Centerguide on protecting your account.\n\nIn four simple steps:\n\n1. Open Gemini and ramble at it about all your past roles.2. Add this prompt: “Act as a professional resume writer. Use my raw, unedited notes about my past work and turn it into four high-impact resume bullets for a _______ role. Start each bullet with a strong action verb. Keep the tone executive, clear, and ATS-friendly.”3. Chat back and forth to adjust details, tone, and focus.4. Copy and paste it into your resume when it’s done.\n\nGoogle Cloud and NASA are collaborating to test proof-of-concept robotic assistants for future missions to the Moon and Mars.\n\nThese robotic assistants are powered by models fine-tuned on Google Cloud edge computing and trained in Google DeepMind’s MuJoCo physics engine, and are built to assist astronauts with daily logistics and critical tasks, like retrieving and preparing medical tools during an emergency.\n\nLearn more about how Google Cloud edge computing issupporting the future of space exploration.\n\nShop smarter this holiday season with ourWhen to Buy Guide, based on historical data showing when holiday discounts may hit their peak. Mark your calendars:\n\n👃 Shop early for fragrances for the best deals and inventory.\n\n🎮 Promotions for video games and consoles peak during Black Friday weekend.\n\n🧳 For travel gear, shop Black Friday for accessories and late December for suitcases.\n\n🤖 If electronic toys are on your kids’ wish lists, you’ll find the steepest markdowns in the final shopping stretch.\n\nClick through to see thefull guide.\n\nGoogle Frightgeist is our annual interactive website highlighting the top trending searches for Halloween costumes, movies, and more. Here’s a peek at what’s trending in 2026:\n\nExplore thefull list of Halloween trends here.\n\nPSA: Skills are one of the best ways to automate tasks and save yourself time in Gemini.\n\n✅ With skills, you can save your most-used instructions once and run them endlessly — so you can skip the repetitive prompting and jump straight to the results.\n\n💻 Once you create a skill, just type the @ symbol and the skill’s name directly in the prompt bar.\n\n➕ For bigger tasks, you can stack multiple skills together at the same time.",
+      "published_at": null,
+      "summary": "구글은 공식 페이지에서 일상적인 코딩과 에이전트 워크플로의 속도·효율을 강조한 Gemini 4 Hydrogen을 소개했다. 인프라 부문에서는 TPU 8tx와 TPU 8i Max를 추가해 한 해에 네 가지 신규 TPU 시스템을 선보였다고 밝혔다. 모델과 연산 인프라를 함께 확장하는 움직임이지만, 제공된 자료에는 성능 비교 수치나 구체적인 이용 조건이 없다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "f089b45f-eb24-4e67-b150-b1f8848bf3b7",
+      "title": "AWS Releases AWS Emulator: A Local Copy of 200+ AWS Services Built by AI Agents",
+      "url": "https://www.marktechpost.com/2026/11/12/aws-emulator-local-aws-api-emulator-ai-agents/",
+      "source": "marktechpost",
+      "content": "AWS has released AWS Emulator, a local emulator of the AWS APIs. You run it on a laptop, a dev server or in CI. The AWS CLI and SDKs talk to it instead of AWS. No AWS account is needed, and there is no service fee. The unusual part: autonomous agents wrote and reviewed all of its code. For developers and coding agents, AWS Emulator gives a fast, free test loop against AWS-shaped APIs. TL;DR Size: Built from 438 AWS API models, covering 200+ services. One Rust crate per service. Runs on: Linux x86_64/aarch64 (RPM or Debian), or Docker on macOS/Windows with a 2 GiB memory limit. Source builds need 100 GB of free disk. Performance: Passes 24,243 of 42,857 scored fidelity tests (56.6%) in release v1.0.322. Best: AWS KMS at 93.9% (291 of 310 tests); Amazon SQS at 89.8%. Worst: AWS CloudFormation at 15.8% (414 of 2,612 tests). What is AWS Emulator? AWS Emulator is a headless local program from AWS that serves an AWS API endpoint. You point the CLI or an SDK at it with environment variables. Your code does not change. Resources live in memory and vanish when it stops. The docs show a DynamoDB example. A CreateTable call with a 2-character name fails with the same ValidationException text AWS returns. How did AI agents build AWS Emulator? The project began with a prompt to Kiro. It returned a passable Amazon SQS emulator in about 15 minutes. AWS then split the work across 3 teams of agents: Test writers derive scenarios from the public Smithy API models and verify each against real AWS. Issue finders replay those tests against the emulator and file failures. Fixers take 1 issue each and submit a patch. Every patch passes a merge gate covering build, code review, security and fidelity. Several security agents run adversarial reviews. Matthew Goldberg reports hundreds of concurrent agents fixing thousands of issues a day. The release pipeline runs on AWS Developer Tools, with CodeCommit as the agents&#8217; repository. Code reaches GitHub last. &amp;&amp;&amp; How accurate is AWS Emulator? AWS publishes a scores.json file with each release. We tallied the v1.0.322 file, scored on November 11, 2026. Overall: 24,243 of 42,857 scored tests pass (56.6%); 80 were skipped. Step level: 49,810 of 68,007 individual steps pass (73.2%). Cross-service workflows: 2,752 of 6,569 pass (41.9%). Core services: S3 79.1%, DynamoDB 77.3%, SNS 73.9%, Lambda 46.4%, EC2 41.5%. Per the fidelity docs, control-plane APIs match AWS best. Data-plane, CloudFormation, Terraform and CDK support varies by service. Unimplemented operations return HTTP 501 NotImplemented. The tests live in aws-emulator-evaluation-suite, including failing ones. How do you run AWS Emulator? There are 4 paths, per the README: Linux: install the RPM or Debian package and run aws-emulator. macOS/Windows: build a container from AWS&#8217;s Dockerfile, capped at 2 GiB memory. Rust embedded mode: add it as a dev-dependency for 1 isolated instance per test. Coding agents: aws agent-toolkit add-skill --skill-name aws-emulator, with AWS CLI 2.35.0 or later. A source build serves HTTPS on 127.0.0.1:9297 with a self-signed certificate. It needs a Rust toolchain, a C compiler and at least 100 GB of disk. Embedded mode carries the same build cost on the first cargo test. How does it compare with LocalStack, Moto and Floci? FeatureAWS EmulatorLocalStackMotoFlociLicenseCC0 1.0 (vendor/ Apache 2.0)Commercial plansApache-2.0MITPriceFreeHobby $0 (non-commercial); Base $39; Ultimate $89 per license/month (annual)FreeFreeService coverage200+ services, 438 API models30+ / 55+ / 110+ by planNot disclosed in READMENot totaled in READMEVendor token neededNoYes (auth token)NoNot disclosedDefault endpointHTTPS 127.0.0.1:9297Port 4566Port 5000Port 4566In-process test modeRust dev-dependencyNot disclosedPython @mock_aws decoratorNot disclosedFootprint2 GiB Docker limit in AWS guideNot disclosedNot disclosed~13 MiB idle, ~24 ms start (self-reported)Published fidelity scoresYes, per releaseNot disclosedNot disclosedNot disclosed What are AWS Emulator&#8217;s limitations? AWS lists them plainly: No IAM evaluation. Identity and resource policies are not evaluated like AWS. Do not use it for security tests. 1 Region, 1 account. It accepts any IDs but does not isolate resources by them. Verified in us-west-2 only, with global services checked in us-east-1. In-memory and short-lived. It is not tested for long runs or load tests. Use --idle-timeout to stop it. Telemetry is on by default. Turn it off with --telemetry off, EMULATOR_TELEMETRY=off, config.toml or the embedded API. The release pace is fast. Versions v1.0.265 to v1.0.322 shipped between November 8 and 11. Key Takeaways AWS Emulator is a free, CC0 local copy of 200+ AWS services. Agents wrote all the code; humans built the tests and merge gates. It passes 56.6% of 42,857 published fidelity tests at launch. SQS, KMS and S3 are strong; CloudFormation and IoT lag. Use it for fast local and CI loops, not security or load testing. Check out the GitHub repo, the user guide, the fidelity tests and the engineering post. Also, feel free to follow us on Twitter and don’t forget to join our 150k+ML SubReddit and Subscribe to our Newsletter. Wait! are you on telegram? now you can join us on telegram as well. Need to partner with us for promoting your GitHub Repo OR Hugging Face Page OR Product Release OR Webinar etc.?&nbsp;Connect with us The post AWS Releases AWS Emulator: A Local Copy of 200+ AWS Services Built by AI Agents appeared first on MarkTechPost.",
+      "published_at": "2026-11-12T17:26:08+00:00",
+      "summary": "보도에 따르면 AWS는 200개 이상의 서비스 API를 로컬에서 실행하는 AWS Emulator를 공개했으며, 자율 에이전트들이 코드 작성과 검토를 수행했다. 공개 API 모델에서 테스트를 만들고 실제 AWS와 대조한 뒤 오류 탐지·수정을 분담하는 방식으로 개발했으며, AWS 계정이나 서비스 요금 없이 CLI와 SDK를 연결할 수 있다. 다만 해당 버전의 동작 충실도 테스트 통과율은 56.6%이고 서비스별 편차가 커, 빠른 개발·CI 테스트에는 유용하더라도 실제 AWS 환경 검증을 대체한다고 보기는 어렵다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "5f1b8dc5-0154-427c-b254-dd67d93941a2",
+      "title": "Liquid AI Releases LiquidCodec, a 74M-Parameter Streaming Audio Codec",
+      "url": "https://www.marktechpost.com/2026/11/12/liquid-ai-liquidcodec-streaming-audio-codec/",
+      "source": "marktechpost",
+      "content": "Liquid AI has released LiquidCodec, the audio codec behind its LFM3-Audio-2B and LFM3-Omni-2B models. The LiquidCodec audio codec is a ~74M-parameter streaming speech tokenizer. It turns speech into tokens a language model can predict, then converts those tokens back into audio. Liquid AI had 2 goals: easy-to-predict tokens and fast conversion back to speech. The weights are on Hugging Face. TL;DR Size: ~74M parameters (73.6M on the model card); 24 kHz audio, 12.5 Hz frames, 12 codebooks. Runs on: a single CPU thread (tested on an Apple M4 Max laptop, FP32); CUDA GPUs via Transformers; Q4_0, Q4_K_M and Q8_0 GGUF builds for llama.cpp. Performance: best ViSQOL and lowest mel distance on all 8 test sets versus X-Codec 2, NanoCodec and Mimi. Best: ~361x real-time encoding on 1 CPU thread (encode RTF 0.0028 vs Mimi&#8217;s 0.0361). What is LiquidCodec? LiquidCodec is a Liquid AI speech codec that compresses 24 kHz audio into 12 token streams. Each 80 ms frame becomes 12 discrete tokens, per the LFM3-Audio-2B model card. It replaces Kyutai&#8217;s Mimi, which Liquid AI used in LFM2-Audio-1.5B. Mimi has 96.2M parameters. How does LiquidCodec work? The pipeline is encode, quantize, decode. Liquid AI uses blocks from its LFM3 architecture in both the encoder and decoder. The 2 halves are symmetric, and the encoder is fully causal, which suits streaming. Quantization uses grouped finite scalar quantization (GFSQ) instead of residual vector quantization (RVQ). In RVQ, each codebook encodes what the previous one missed. GFSQ groups are independent, so all 12 codebooks can be predicted in parallel by MaskGIT-style transformers. The decoder predicts spectral coefficients directly. This avoids learned transposed-convolution upsampling, a common cost in waveform decoders. How was it trained? Training ran in 2 stages. Stage 1 used 264,000 hours of speech across 107 languages. It applied waveform and spectral losses, without adversarial losses. Stage 2 fine-tuned on 55,000 hours of full-band speech (24 kHz or higher) with adversarial critics. Liquid AI says this removed metallic artifacts left after stage 1. A final decoder-only quantization-aware training (QAT) step targets edge inference. How fast is LiquidCodec? Liquid AI measured speed in FP32 on 1 CPU thread of an Apple M4 Max MacBook Pro. LiquidCodec ran at ~361x real time for encoding and ~87x for decoding. These are self-reported figures. Real-time factor (RTF) is processing time divided by audio length, so lower is better. LiquidCodec&#8217;s encode RTF is 0.0028, against 0.0361 for Mimi, 0.2145 for NanoCodec and 0.7359 for X-Codec 2. Decode RTF is 0.0115, against 0.0329, 0.2543 and 0.0379. That is about 13x lower encode RTF and 2.9x lower decode RTF than Mimi. How does LiquidCodec compare on quality benchmarks? Liquid AI used 8 test sets. These were LibriSpeech test-clean, Seed-TTS English and Mandarin, and 5 FLEURS languages (German, French, Mandarin, Japanese, Korean). Baselines were X-Codec 2, NanoCodec and Mimi at 12 codebooks. Reconstruction: LiquidCodec had the best ViSQOL and lowest mel distance on all 8 sets. On LibriSpeech, ViSQOL was 4.319 versus 4.219 (NanoCodec), 4.119 (X-Codec 2) and 4.031 (Mimi). Text-to-speech: Liquid AI trained identical TTS models on each codec&#8217;s tokens. Data (101,000 hours, 6 languages), architecture, compute and batch order were fixed. LiquidCodec scored the highest UTMOSv2 on all 8 sets and the best WER/CER on 4 of 8. LibriSpeech WER was 3.15%, against 6.27% for Mimi. Results held with a Qwen3-1.7B backbone as well as LFM3-1.7B. Where it trails: NanoCodec scored higher PESQ (WB) on 7 of 8 sets. It also led on LibriSpeech speaker similarity (SECS 0.836 vs 0.785). &amp;&amp; LiquidCodec vs Mimi vs NanoCodec vs X-Codec 2 FeatureLiquidCodecMimiNanoCodec 1.78 kbpsX-Codec 2DeveloperLiquid AIKyutaiNVIDIAHKUST AudioParameters73.6M96.2M62M0.8BSample rate24 kHz24 kHz (repo)22.05 kHz16 kHzFrame rate12.5 Hz12.5 Hz12.5 fps50 tokens/sCodebooks128 at 1.1 kbps (blog)131 (docs)QuantizerGFSQRVQ (docs)FSQSingle-layer FSQ (docs)BitrateNot disclosed1.1 kbps1.78 kbpsNot disclosedCausalityCausal encoder; decoder not disclosedFully causal (Kyutai)Non-causal encoder, causal decoderNot disclosedLicense&#8220;other&#8221; on HF; blog links LFM LicenseCC-BY 4.0NVIDIA Open Model LicenseCC-BY-NC 4.0Encode / decode RTF, M4 Max CPU*0.0028 / 0.01150.0361 / 0.03290.2145 / 0.25430.7359 / 0.0379LibriSpeech mel distance* (lower is better)0.1200.1600.1220.123LibriSpeech PESQ (WB)*2.6402.6152.9422.434LibriSpeech TTS UTMOSv2*3.312.893.193.27 *Measured by Liquid AI in its LiquidCodec blog. Mimi measured at 12 codebooks. How can developers deploy LiquidCodec? The codec loads through Hugging Face Transformers with trust_remote_code=True. Call encode() to get audio codes and decode() to get a waveform. A native LiquidCodecStreamingCache supports chunk-by-chunk decoding, per the model card. The card&#8217;s examples use CUDA with bfloat16. For edge use, Liquid AI lists Q4_0, Q4_K_M and Q8_0 GGUF builds for llama.cpp. GGUF repos ship with LFM3-Audio-2B and LFM3-Omni-2B. Q4_0 with decoder-only QAT shrinks the decoder footprint by 3.5x. LibriSpeech ViSQOL dips only from 4.319 to 4.292. Key Takeaways ~74M-parameter streaming codec, 12.5 Hz, 12 codebooks, 24 kHz. ~361x real-time encode, ~87x decode on 1 CPU thread. Best ViSQOL, mel distance and TTS UTMOSv2 on all 8 test sets. NanoCodec still wins PESQ (WB) on 7 of 8 sets. Q4_0 decoder is 3.5x smaller with minimal quality loss. Check out the technical blog, the model weights on Hugging Face, and LFM3-Audio-2B and LFM3-Omni-2B. Also, feel free to follow us on Twitter and don’t forget to join our 150k+ML SubReddit and Subscribe to our Newsletter. Wait! are you on telegram? now you can join us on telegram as well. Need to partner with us for promoting your GitHub Repo OR Hugging Face Page OR Product Release OR Webinar etc.?&nbsp;Connect with us The post Liquid AI Releases LiquidCodec, a 74M-Parameter Streaming Audio Codec appeared first on MarkTechPost.",
+      "published_at": "2026-11-12T22:43:26+00:00",
+      "summary": "Liquid AI가 약 7,400만 매개변수의 스트리밍 음성 코덱 LiquidCodec과 가중치를 공개했다고 보도됐다. 24kHz 음성을 12개 토큰 스트림으로 변환하며, 독립적인 그룹형 유한 스칼라 양자화로 코드북 병렬 예측을 지원하고 디코더는 스펙트럼 계수를 직접 예측한다. 기사에 제시된 평가에서는 비교 코덱보다 우수한 음질 지표와 단일 CPU 스레드에서 최대 약 361배 실시간 인코딩 속도를 기록했다. CPU·CUDA·llama.cpp 지원은 음성 모델 배포에 유용하지만, 성능 수치는 제시된 시험 환경과 데이터에 한정해 해석해야 한다.",
+      "category": "기타",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "ff4ed5b6-ab0b-4351-8523-cb1ead98f288",
+      "title": "CopilotKit Releases OpenBot 1.0: An MIT-Licensed, Self-Hostable AI Coworker With Built-In Governance",
+      "url": "https://www.marktechpost.com/2026/11/12/copilotkit-openbot-1-0-open-source-ai-coworker/",
+      "source": "marktechpost",
+      "content": "Most AI coworker products are vendor locked. They pick the model, host the data, and write the rules. CopilotKit is taking the opposite route. OpenBot 1.0, was released November 9th, an MIT-licensed, self-hostable agent workspace. What sets it apart is, a company brings their own models, agents and infrastructure. Governance is fully baked in, and every Bot action is checked against a policy before it runs. What is OpenBot? OpenBot is a modular agent workspace from CopilotKit, the team behind the AG-UI protocol. You give a Bot a task and watch it work. You review findings, interact with results and approve next steps in the same conversation. Each Bot gets a computer of its own. That is a container with its own Chromium browser, logins and files. It reaches only the tools you grant. Answers can come back as charts, checklists, tables and cards. In the new v1.0, Bots now reply in Markdown by default and draw components when they help. How does the governance gateway work? Every browser click, file write, MCP tool call and component goes through one gateway. It evaluates a CEL policy, writes the audit row first, then acts. Deny rules run before allow rules, and a broken rule refuses rather than opens. On top of that, the business tier adds: Single sign-on and SCIM sync for users and groups. The README documents Google, Microsoft (Entra) and Okta, plus SAML and OIDC. On-behalf-of tokens, usually scoped to a subset of the person&#8217;s permissions. Tool grants per Bot, per role or per person, with access requests to an admin. Policies that block actions or route sensitive work to a human for approval. Spend visibility per Bot, role, team or person, plus daily, weekly or monthly token limits. A full audit trail with SIEM export, multi-tenancy and an admin plane. EU AI Act content labeling, retention controls and deletion on request. CopilotKit itself holds SOC 2 Type II. Which agents and models can you bring? Any agent that speaks AG-UI plugs in. The site lists 8 frameworks: Claude Agent SDK, OpenAI Agents SDK, LangChain, Google ADK, Mastra, AWS Strands, Microsoft Agent Framework, CrewAI. The repo also ships Agno, AG2, LlamaIndex and Pydantic AI examples. For models, teams can use OpenAI, Claude, Gemini or Grok through existing subscriptions or API keys. Open models such as Kimi, DeepSeek, Qwen, Nemotron and Mistral are also supported. Sandboxes, MCP hubs and browsers are swappable lanes. What is new in OpenBot 1.0? Desktop app for Mac (Apple Silicon and Intel) and Windows, with signed updates and backup before upgrade. Teach a Bot: record a task once, and Learning turns the recording into a reusable skill you review. Multiple accounts per app through Composio and Arcade, with approval rules saved per account. Composio alone brokers a few hundred apps. Orchestration: one Bot can hand work to specialist Bots, within admin-granted pairs and depth limits. Early access for iOS, Android, Slack (through OpenTag) and Microsoft Teams. How do you deploy it? Personal use runs locally, with workspace data and API keys stored on your machine. For companies, 1 Helm chart deploys into AWS (EKS), Azure (AKS), Google Cloud (GKE) or any Kubernetes cluster. Pricing is free for personal projects. OpenBot for Business costs up to $29 per active user per month. A 5% charge applies only to model spend above $5,000 per month. The Annual plan adds air-gapped deployment and 24/7 support. Forward-deployed engineers help teams roll it out. Example use cases Ticket triage: route new support tickets, then post to Slack after a person approves. Expense review: check each claim line against policy and flag overages. Ops workflows: find problems and draft fixes for a human to approve. How does OpenBot compare? FeatureOpenBot 1.0OpenAI dots&nbsp;OpenClaw&nbsp;Code licenseMITClosedMIT&nbsp;Where it runsLaptop, your VPC, any KubernetesOpenAI cloud computer per dotYour machine, VPS or serverModelsOpenAI, Claude, Gemini, Grok, Kimi, DeepSeek, Qwen, Nemotron, MistralGPT-6 AstraModel-agnosticBring your own agentAny AG-UI agent, 8+ frameworksNot disclosedBuilt around its own agentPolicy before each actionYes, CEL gateway, fail closedUser-set approval rulesNot disclosedSSO / SCIMYes (business tier)Enterprise admin controls, betaNot disclosedApps / toolsComposio, Arcade, MCP4,000+ appsPlugins and skillsPriceFree personal; up to $29/user/monthFirst dot included in ChatGPT Pro and Business PremiumFree; you pay for models and hosting Key Takeaways OpenBot 1.0 is MIT-licensed and self-hostable, from laptop to Kubernetes. Any AG-UI agent and 9 model families plug in. Every Bot action passes a policy check before it runs. Business tier: up to $29 per active user per month. Check out the GitHub repo, v1.0.0 release notes and open.bot. Thanks to the Copilotkit team for the thought leadership / resources for this article. This article is sponsored by Copilokit. The post CopilotKit Releases OpenBot 1.0: An MIT-Licensed, Self-Hostable AI Coworker With Built-In Governance appeared first on MarkTechPost.",
+      "published_at": "2026-11-12T21:45:36+00:00",
+      "summary": "CopilotKit이 MIT 라이선스로 자체 호스팅할 수 있는 에이전트 작업 공간 OpenBot 1.0을 공개했다. 각 봇은 브라우저·파일을 갖춘 컨테이너에서 작동하며, 브라우저 클릭과 파일 쓰기, MCP 호출 등을 실행하기 전에 공통 게이트웨이가 CEL 정책을 평가하고 감사 기록을 남긴다. 기업은 자체 모델과 AG-UI 호환 에이전트를 연결할 수 있으며, SSO·사용 한도·SIEM 내보내기 등 추가 관리 기능은 비즈니스 등급으로 구분된다. 모델 선택권과 실행 통제를 함께 제공한다는 점에서 기업용 에이전트 도입에 실용적 의미가 있다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "0808c602-d671-41b6-88ec-9719a8325ac1",
+      "title": "Google’s latest Search upgrade promises better answers to your most complicated questions",
+      "url": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/",
+      "source": "techcrunch",
+      "content": "Powered by Gemini 4 Hydrogen, Google's AI Mode is getting better at understanding complex queries, surfacing relevant links, and delivering richer visual responses.",
+      "published_at": "2026-11-12T19:27:45+00:00",
+      "summary": "구글 검색의 AI Mode가 Gemini 4 Hydrogen을 기반으로 개선된다고 TechCrunch가 전했다. 복잡한 질문 이해, 관련 링크 제시, 풍부한 시각적 응답이 주요 개선 방향이다. 검색 과정에서 복합적인 정보 요구를 처리하는 데 도움이 될 수 있지만, 제공된 자료에는 정확도 평가나 적용 범위가 제시되지 않았다.",
+      "category": "LLM (대규모 언어 모델)",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "88d0140b-e106-49c9-bdcb-9a32a6b34829",
+      "title": "Nebius tests the neocloud playbook with $40 billion in planned spending",
+      "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
+      "source": "techcrunch",
+      "content": "Nebius plans to fund its $40 billion AI infrastructure expansion through customer prepayments and loans, even as delays at a Microsoft data center raise questions about its financing model.",
+      "published_at": "2026-11-12T21:27:10+00:00",
+      "summary": "Nebius가 고객 선불금과 대출로 400억 달러 규모의 AI 인프라 확장을 추진한다고 보도됐다. 대규모 연산 인프라 투자에 고객의 선지급 자금과 차입을 활용하는 자금조달 방식이 핵심이다. 다만 마이크로소프트 데이터센터의 지연으로 이 금융 모델의 실행 가능성에 의문이 제기되고 있어, 계획된 지출을 이미 확보된 공급 능력으로 해석해서는 안 된다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "d687ea02-3003-47fe-8904-4662c7c75368",
+      "title": "Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility",
+      "url": "https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/",
+      "source": "mit_tech_review",
+      "content": "Representatives from Nvidia told Illinois representative Bill Foster that it would be technically possible to implement the anti-smuggling measures called for in the Chip Security Act, Foster told MIT Technology Review in an interview on Thursday, even while an industry group claimed they were “potentially infeasible.” Foster, a Democrat who serves on the Committee on Science, Space, and Technology, is a cosponsor of the act, which would introduce geotracking requirements to verify the location of advanced AI chips in order to prevent their smuggling to China. It is one of three chip-security bills under consideration for inclusion in the Senate’s National Defense Authorization Act, each of which is drawing renewed attention after Nvidia CEO Jensen Huang’s resignation and reported affair with an alleged Chinese spy. When the Chip Security Act was introduced, in May 2025, lawmakers said the technology to implement it existed, something Nvidia has not publicly confirmed. In March 2026, the Semiconductor Industry Association, of which Nvidia is a member, explicitly opposed the bill and wrote that its mandates for chip tracking were “new, untested, and potentially infeasible.” But privately, Nvidia representatives working with Foster told the lawmaker that the company could implement them. “They never put anything in writing,” Foster says, but during technical discussions on the possibility of such safeguards, their reaction was “yeah, of course we can do this.” This private acknowledgment to Foster goes further than anything Nvidia has previously made public. Other technology Nvidia has built for its customers suggests that the company can indeed offer accurate tracking of its chips’ locations. In December 2025, for example, it announced a new tool called Fleet Intelligence that would allow customers to monitor how its advanced chips were performing across different data center locations. In doing so, the tool could indicate which country chips were in, Nvidia confirmed to Reuters, but the company would not elaborate on whether this technology could be used to prevent smuggling. Nvidia did not respond to requests for comment or confirmation of Foster’s characterization. In early October, when lawmakers were reportedly increasingly concerned about Nvidia’s role in smuggling, MIT Technology Review asked the company if Fleet Intelligence could be used to prevent the practice. It declined to answer directly, instead sending a statement: “Governments and media have found insignificant diversion of controlled US products—a drop in the bucket compared to the ocean of domestic compute China already has.” The recent fallout at Nvidia involves a number of people and companies alleged to be involved in chip smuggling. Alice Huang, with whom Jensen Huang reportedly had an affair, runs Megaspeed, a Singaporean firm now under investigation for smuggling advanced GPUs to China. A US Commerce Department inquiry into the company was reportedly halted after invention by Nvidia. Megaspeed reportedly bought chips from Supermicro, a company that packages Nvidia’s chips onto servers.&nbsp; The Chip Security Act as drafted would require a mechanism to track the locations of chips, either by inspections of facilities, attestations by companies, or ping-based location mechanisms. The ping-based technique, the hardest option to circumvent, would require the GPU to send a signal of its location when it comes online. In September, the Center for Security and Emerging Technology found it would be the most cost-effective option. Foster said he did not ask Nvidia’s representatives why they weren’t voluntarily adopting such chip-tracking tools if they could technically do so. But if the requirements of the bill pass as part of the Senate’s National Defense Authorization Act, the new tracking mechanisms would only tell investigators where the chips are, not offer a way to disconnect them if it’s revealed they have been smuggled. Foster told MIT Technology Review he intends to introduce new, stricter legislation in the new year that would offer a workaround. The new rule would require licenses to operate advanced GPUs, and before a GPU could connect, its valid license would need to be verified.&nbsp;&nbsp; In the meantime, the controversy at Nvidia, Foster says, has fueled support among his colleagues for the rules in the bill: “There will be a lot of political pressure, in the wake of everything that’s happened, on the companies to actually do a very good job of the geographic validation of where the chip actually is.”",
+      "published_at": "2026-11-12T20:16:24+00:00",
+      "summary": "MIT Technology Review는 빌 포스터 미국 하원의원의 인터뷰를 인용해 엔비디아 관계자들이 AI 칩 밀수 방지용 위치 확인 조치의 기술적 구현 가능성을 비공개 논의에서 인정했다고 보도했다. 이는 Chip Security Act의 추적 의무가 검증되지 않았고 실현 불가능할 수도 있다는 반도체산업협회의 공개 입장과 대비된다. 기사에는 데이터센터별 칩 성능을 모니터링하는 Fleet Intelligence가 국가 단위 위치를 표시할 수 있다는 사례도 제시됐다. 다만 비공개 발언은 서면 확인이 없는 의원의 설명이며, 기술적 가능성과 법적 의무화·실제 도입은 구분해야 한다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "7ebe19a9-1a6e-4cfb-add5-86b5daae3834",
+      "title": "한일경제연대, AI·반도체 공동개발부터 경제공동체까지…2045년 목표 3단계 로드맵 제시",
+      "url": "https://www.aitimes.kr/news/articleView.html?idxno=42725",
+      "source": "korean",
+      "content": "한국과 일본이 인공지능(AI)과 반도체, 핵심광물 등 첨단산업 협력을 확대하고 2045년까지 단계적으로 경제연대를 제도화하는 중장기 로드맵을 제시했다. 양국의 기술적 강점을 결합해 글로벌 공급망 경쟁에 대응하고, 피지컬 AI와 디지털 무역 등 새로운 산업 분야에서 공동 성장 기반을 마련하자는 구상이다.\n\n최종현학술원(이사장 최태원)과 동아시아연구원(EAI)은 12일 서울 강남구 한국고등교육재단에서 '한일경제연대 로드맵 구상 컨퍼런스: 비전에서 실행으로'를 공동 개최했다고 13일 밝혔다. 현대일본학회와 일본 나카소네 평화연구소(Nakasone Peace Institute, NPI)가 참여한 행사에서는 양국 전문가들이 경제안보와 첨단기술, 문화·인적 교류를 아우르는 협력 방안을 논의했다.\n\n최태원 회장, “3년·5년·10년 뒤 성과 구체화해야”\n\n이날 최태원 SK그룹 회장은 영상 기조연설에서 한일경제연대를 선언적 구상에서 실질적인 실행 전략으로 발전시켜야 한다고 강조했다.\n\n최 회장은 3년 뒤 달성할 경제협력 수준과 5년 뒤 공동 성과를 창출할 산업, 10년 뒤 기업과 국민이 체감할 경제연대의 모습을 구체화하자고 제안했다. 양국 경제계와 학계, 연구기관이 공동 과제를 발굴하는 상설 협력 플랫폼 '빅텐트(Big Tent)'도 준비하고 있다고 밝혔다.\n\n손열 연세대학교 교수는 2026~2031년 사안별 협력, 2032~2036년 통합의 구조화, 2037~2045년 통합의 제도화로 이어지는 3단계 로드맵을 발표했다.\n\n초기에는 한국의 포괄적·점진적 환태평양경제동반자협정(CPTPP) 가입을 추진하고, 중기에는 한일 포괄적 경제파트너십 선언, 장기적으로는 한일경제공동체협정 체결을 목표로 제시했다. 유럽연합(EU)식 정치적 통합보다 양국의 주권을 유지하면서 경제협력을 단계적으로 확대하는 방식이다.\n\nAI 반도체·피지컬 AI 공동개발...한일 기술 강점 결합\n\n첨단산업 분야에서는 한국의 반도체 양산 역량과 일본의 소재·장비 기술을 결합한 공동개발 방안이 제안됐다.\n\n치시마 토모노부 일본 한난대학교 교수는 전력 효율이 높은 AI 반도체를 공동 개발하고, 데이터센터와 차세대 통신 인프라에 적용하는 협력 모델을 제시했다. 전력 소비와 발열 관리에 관한 공동 시험·평가 기준을 마련해 기술 표준화와 사업화를 촉진하자는 구상이다.\n\n이지평 한국외국어대학교 특임교수는 범용 휴머노이드의 대규모 보급을 기다리기보다 기존 산업용 로봇에 AI를 적용하는 실용적 협력부터 추진할 필요가 있다고 강조했다.\n\n최정환 산업연구원 연구위원은 일본의 센서·로봇 구동장치 기술과 한국의 제조 데이터 생산·실증 역량을 결합해 피지컬 AI 학습 데이터를 공동 구축하자고 제안했다. 연구용 클라우드와 데이터 팩토리 조성, 한일 디지털 무역협정 체결, 스테이블코인 기반 결제 협력도 주요 과제로 제시했다.\n\n디지털 안보·데이터센터 협력 확대...제3국 AI 개발협력 추진\n\n김상배 서울대학교 교수는 사이버·데이터·AI 안보가 결합한 '삼중 넥서스(Triple Nexus)'에 대응하기 위해 양국 경제안보 협력의 범위를 확대해야 한다고 강조했다.\n\n후카가와 유키코 일본 와세다대학교 교수는 재난 발생 시 한일 데이터센터가 상호 백업 기능을 제공하는 협력 모델을 제안했다. 국경 간 데이터 이동과 개인정보 보호에 관한 제도적 합의가 선행돼야 한다는 설명이다.\n\n테라다 다카시 일본 도시샤대학교 교수는 양국 외교·산업통상·재무 당국이 참여하는 '한일 경제 3+3 협의체' 구성을 제안하며 정치적 환경 변화에도 지속될 수 있는 협력체계의 필요성을 강조했다.\n\n지역 소멸 문제에 공동 대응하는 방안도 논의됐다. 김항 연세대학교 교수는 한일 지방도시가 국제 예술제와 문화관광 프로그램을 공동 운영하는 '아트 투어리즘(Art Tourism)'을 제안했다.\n\n이정환 서울대학교 교수는 한국과 일본이 공동 기금과 사업 프로그램을 마련해 제3국의 AI 기술 보급과 사업화를 지원하는 국제개발협력 모델을 제시했다.\n\n행사에서는 에너지·핵심광물 공동조달을 중심으로 한 '생존의 연대', AI·반도체 등 첨단산업 협력의 '혁신의 연대', 문화·인적 교류를 통한 '매력의 연대'가 3대 협력 축으로 제시됐다.\n\n한일경제연대 구상이 실질적인 산업협력으로 발전하려면 공동 연구개발과 투자 재원 확보, 데이터·기술 표준 조정, 정부 간 제도적 합의가 뒷받침돼야 할 것으로 전망된다.",
+      "published_at": null,
+      "summary": "한일 전문가들이 2026년부터 2045년까지 사안별 협력, 통합 구조화, 통합 제도화로 이어지는 경제연대 로드맵을 제안했다. AI 분야에서는 한국의 반도체 양산 역량과 일본의 소재·장비 기술을 결합한 저전력 AI 반도체 공동개발, 산업용 로봇의 AI 적용, 피지컬 AI 학습 데이터 공동 구축이 논의됐다. 데이터센터 상호 백업과 전력·발열 공동 평가 기준도 제안돼 인프라 회복력과 기술 표준화까지 협력 범위를 넓혔다. 다만 이는 학술·경제계 행사에서 제시된 구상으로, 정부 간 확정된 협정이나 집행 사업은 아니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "73219768-8c72-42df-87e0-9220217314c5",
+      "title": "컨테이너처럼 쓰고, VM처럼 격리하기",
+      "url": "https://d2.naver.com/helloworld/2265641",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. ​ ​ 발표 내용 Kubernetes GPU 노드를 VM으로 격리해 나눠 쓰면서, 호스트 수준의 성능까지 최적화한 방법을 소개합니다. ​ 발표 대상 여러 사용자가 GPU node를 함께 쓰는 환경에서 격리를 강화하려는 플랫폼 개발자 Kubernetes에서 kata-containers나 VM 기반 runtime 도입을 검토하는 개발자 DRA로 GPU·NIC 같은 device 할당을 직접 구현하려는 개발자 VM 환경에서 GPU·IB·storage 성능을 bare metal 수준으로 맞추려는 개발자 ​ 발표자료 국문 영문 ​ 목차 도입 배경과 kata-containers의 구조 GPU와 NIC를 VM에 함께 할당하기 VM 부팅 시간과 성능 개선하기 마무리: 사용자가 작성하는 Pod spec과 bare metal 대비 성능 ​ ◎ NAVER Engineering Day란? ​ NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다. ​ [동영상 제공 채널 안내] 네이버 TV 서비스 종료로 인해 기존 네이버 TV 채널을 클립(@devrel_d2)으로 이동하였습니다. 앞으로도 많은 관심과 팔로우 부탁드리겠습니다. ​ ​",
+      "published_at": "2026-11-11T08:21:15+00:00",
+      "summary": "네이버는 Kubernetes GPU 노드를 VM으로 격리해 여러 사용자가 공유하면서 호스트 수준 성능을 목표로 최적화한 경험을 공개했다. 발표는 kata-containers 구조, GPU와 NIC의 VM 동시 할당, VM 부팅 시간과 성능 개선을 다룬다. DRA 기반 장치 할당과 VM 환경의 GPU·네트워크·스토리지 성능을 고민하는 플랫폼 개발자에게 유용한 사례지만, 제공된 소개문에는 베어메탈 대비 성능 수치가 없다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "c8cf27df-003d-48f7-8f09-8658e406d7b1",
+      "title": "Validating GPU Platforms with Runtime AI Inventory via the NVIDIA DSX AI Factory",
+      "url": "https://developer.nvidia.com/blog/validating-gpu-platforms-with-runtime-ai-inventory-via-the-nvidia-dsx-ai-factory/",
+      "source": "nvidia",
+      "content": "As teams deploy and scale AI workloads using NVIDIA Dynamo, Kubeflow, or Slurm, tracking what actually runs requires visibility beyond the platform...As teams deploy and scale AI workloads using NVIDIA Dynamo, Kubeflow, or Slurm, tracking what actually runs requires visibility beyond the platform configuration captured in a recipe. Application teams define and update these workloads independently of the platform recipe, so a reproducible deployment bundle alone cannot establish which workload artifacts are running on each node. Source",
+      "published_at": "2026-11-11T17:00:00+00:00",
+      "summary": "엔비디아는 DSX AI Factory를 통한 GPU 플랫폼 검증에서 실제 실행 중인 AI 워크로드 목록을 파악하는 런타임 가시성의 필요성을 설명했다. Dynamo·Kubeflow·Slurm 환경에서 애플리케이션 팀은 플랫폼 배포 구성과 별도로 워크로드를 변경하므로, 재현 가능한 배포 묶음만으로는 각 노드에서 어떤 산출물이 실행되는지 확인할 수 없다는 지적이다. 대규모 AI 운영에서는 설정의 재현성뿐 아니라 실행 상태를 검증해야 한다는 의미가 있으며, 제공된 발췌문에는 구체적인 구현 절차가 포함되지 않았다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "082fb8e3-9592-43f9-a271-dc25a5f7ff03",
+      "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+      "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+      "source": "techcrunch",
+      "content": "The airline said it will not allow customers to use AI agents to book flights and manage reservations.",
+      "published_at": "2026-11-12T17:17:58+00:00",
+      "summary": "유나이티드항공이 사이버보안 위험을 이유로 AI 에이전트를 통한 항공권 예약과 예약 관리를 허용하지 않겠다고 밝혔다. 소비자 대신 거래를 수행하는 에이전트의 활용이 서비스 제공자의 보안 정책에 의해 제한되는 사례다. 여행 자동화 도구를 개발하거나 이용할 때 실제 서비스의 허용 범위를 확인할 필요가 있으며, 제공된 자료에는 차단 방식이나 예외 조건이 없다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "2da6813b-d302-41da-8c85-423752e37798",
+      "title": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions",
+      "url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+      "source": "techcrunch",
+      "content": "SoftBank lost over $3 billion preordering natural gas turbines to power AI data centers. Here's what the loss means to power markets.",
+      "published_at": "2026-11-12T17:00:52+00:00",
+      "summary": "TechCrunch는 소프트뱅크가 AI 데이터센터에 전력을 공급할 천연가스 터빈을 선주문했다가 30억 달러 이상의 손실을 봤다고 보도했다. AI 인프라 확대가 연산 장비뿐 아니라 발전 설비 조달과 에너지 투자 위험에도 연결된다는 사례다. 다만 제공된 발췌문에는 손실 발생 원인과 산정 방식이 없어, 이를 천연가스 기반 AI 전력 사업 전반의 실패로 일반화하기는 어렵다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "4860bb02-c1ec-4d50-8ebe-1979e21dbf54",
+      "title": "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
+      "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
+      "source": "techcrunch",
+      "content": "This Congressional investigation into Nvidia's China sales and its dealings with Trump is the second one, so far, since news of the alleged spy affair broke.",
+      "published_at": "2026-11-12T22:42:51+00:00",
+      "summary": "TechCrunch는 미국 민주당 측이 엔비디아의 중국 판매와 트럼프와의 거래 관계를 대상으로 의회 조사에 나섰다고 보도했다. 첨단 AI 반도체 공급과 정치권의 관계가 조사 대상이 됐다는 점에서 산업·규제상 중요성이 있다. 다만 제공된 자료는 조사 착수 사실을 전하는 수준으로, 위법 행위가 확인됐거나 제재가 결정됐다는 의미는 아니다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "39905ae9-fc34-41b7-b987-3da4843a6830",
+      "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+      "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+      "source": "techcrunch",
+      "content": "Jensen Huang’s resignation raises questions about Nvidia’s commitment to open source AI, including its Hugging Face acquisition, open-weight models, and advocacy against restrictions, as the company navigates a leadership transition.",
+      "published_at": "2026-11-12T18:39:23+00:00",
+      "summary": "TechCrunch는 젠슨 황의 사임 이후 엔비디아의 오픈소스 AI 지원 방향에 불확실성이 생겼다고 보도했다. 기사는 허깅페이스 인수, 오픈웨이트 모델, 규제 제한에 반대해 온 활동을 리더십 전환의 영향을 받을 수 있는 영역으로 제시한다. 개발자 생태계와 모델 공개 전략에 중요한 사안이지만, 제공된 자료에는 지원 축소나 정책 변경이 확정됐다는 내용은 없다.",
+      "category": "산업 동향 & 한국 소식",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "66d6a538-e5e8-4e5f-9cad-36cf00116972",
+      "title": "Marktechpost AI Launches GPU Leaderboard and the Deploy It Chrome Extension",
+      "url": "https://www.marktechpost.com/2026/11/11/marktechpost-gpu-leaderboard-chrome-extension-launch/",
+      "source": "marktechpost",
+      "content": "Marktechpost has launched GPU Leaderboard, a free cloud GPU price comparison for AI inference. It also shipped GPU Leaderboard: Deploy It, a Chrome extension for the same data. The site reads on-demand and spot prices from each provider&#8217;s own pricing page. The goal is simple: answer &#8220;what GPU do I need, and where is it cheapest?&#8221; in one place. What is GPU Leaderboard? GPU Leaderboard is a pricing dashboard that ranks rentable cloud GPUs by price per GPU-hour. It is built for teams running inference. The v1 application has 4 views: Inference pricing: a cost calculator for a full run, not a single hourly rate. Leaderboard: every offer ranked by $/GPU-hr, filterable by GPU, tier, region and availability. Cheapest Inference: the lowest on-demand floor for each tracked GPU. Providers: a directory with instance counts, regions, status-page incidents and price-check history. How does the GPU inference cost calculator work? You pick an accelerator, GPU count, duration and utilization. The calculator then prices that exact run at every provider. An optional model field narrows the list. The default example is 8×H100 for 72 hours at 90% utilization. That bills 576 GPU-hours. The cheapest result is $967.68 at Latitude, at $1.68 per GPU-hour. The median across 15 providers is $1,716.48. The most expensive is $3,545.28 at CoreWeave. The calculator also shows a &#8220;real&#8221; cost per used GPU-hour. Idle time is still billed, so $1.68 at 90% utilization becomes $1.87. This is the number most budget sheets miss. &amp;&amp; What does the Deploy It Chrome extension do? GPU Leaderboard: Deploy It brings the price data to where developers pick models. Per its store listing, it works in 3 places: Hugging Face model pages: detects model size and estimates VRAM at FP16, INT8 and INT4. It then shows the cheapest hourly GPUs that fit. GitHub repos: detects model references and gives a hardware estimate in place. Toolbar lookup: search any model or GPU from the browser toolbar. Key Takeaways GPU Leaderboard ranks 201 live GPU offers from 24 providers by $/GPU-hr. Its calculator prices a full run, including idle time at your utilization. Deploy It shows VRAM needs and cheapest GPUs on Hugging Face and GitHub. An 8×H100, 72-hour run spans $967.68 to $3,545.28 across multiple providers. Coverage and daily refresh are the main gaps versus older trackers. Try it at gpuleaderboard.com and install the Deploy It extension from the Chrome Web Store. The post Marktechpost AI Launches GPU Leaderboard and the Deploy It Chrome Extension appeared first on MarkTechPost.",
+      "published_at": "2026-11-11T15:51:14+00:00",
+      "summary": "Marktechpost가 AI 추론용 클라우드 GPU 가격 비교 서비스 GPU Leaderboard와 Chrome 확장 프로그램 Deploy It을 출시했다. 공급사 가격 페이지의 온디맨드·스폿 요금을 비교하고, GPU 수·사용 시간·활용률을 반영해 전체 실행 비용과 실제 사용 GPU 시간당 비용을 계산한다. 확장 프로그램은 허깅페이스 모델 페이지 등에서 모델 규모와 정밀도별 VRAM 요구량을 추정해 적합한 GPU 가격을 보여준다. 추론 비용과 하드웨어 선택을 함께 검토하는 데 유용하지만, 메모리 추정치나 최저 시간당 가격이 실제 처리 성능을 보장하는 것은 아니다.",
+      "category": "ML 인프라 & 최적화",
+      "audience": [
+        "DEVELOPER",
+        "ML_EXPERT"
+      ]
+    },
+    {
+      "id": "89846ed1-365a-407f-b4d4-5b35661c47a8",
+      "title": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
+      "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/",
+      "source": "techcrunch",
+      "content": "Nectar's new AI agent automates influencer marketing, helping brands discover creators, manage outreach and partnerships, and track campaign results.",
+      "published_at": "2026-11-12T19:11:00+00:00",
+      "summary": "Nectar가 브랜드의 인플루언서 마케팅 업무를 자동화하는 AI 에이전트를 출시했다. 크리에이터 발굴, 연락과 파트너십 관리, 캠페인 결과 추적을 지원하는 것이 주요 기능이다. 마케팅 업무의 여러 단계를 연결하는 용도지만, 제공된 자료에는 자동화 수준이나 성과 개선을 입증할 수치가 없다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "fc54a67f-994f-4bee-b28d-797492823643",
+      "title": "Phota Labs uses AI to turn everyday photos into professional-looking shots",
+      "url": "https://techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots/",
+      "source": "techcrunch",
+      "content": "Rather than giving consumers yet another photo-editing tool, Phota Labs aims to use advances in AI to automate the editing process so it’s easier for anyone to turn everyday moments into better photos.",
+      "published_at": "2026-11-12T17:00:00+00:00",
+      "summary": "Phota Labs는 AI로 사진 편집 과정을 자동화해 일상 사진을 더 전문적으로 보이게 만드는 접근을 제시했다. 사용자가 별도의 편집 도구를 조작하도록 하기보다 보정 과정 자체를 간소화하는 것이 핵심이다. 비전문가의 사진 편집 부담을 낮추려는 제품 방향이지만, 제공된 자료에는 사용 모델이나 품질 평가 결과가 없다.",
+      "category": "컴퓨터 비전 & 멀티모달",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "300f5e8f-cd31-4d2f-a091-573d87a4a092",
+      "title": "Muse can now place calls to US businesses — if you pay",
+      "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+      "source": "techcrunch",
+      "content": "Muse's AI can now place outbound calls to U.S. businesses — but it's not free.",
+      "published_at": "2026-11-12T22:22:28+00:00",
+      "summary": "Muse의 AI가 미국 내 사업체에 발신 전화를 걸 수 있게 됐다고 보도됐다. 유료로 제공되는 기능으로, AI의 사용자 대행 기능이 텍스트 상호작용을 넘어 실제 전화 채널로 확장된 사례다. 다만 제공된 자료에는 요금, 지원 업무 범위, 통화 성공률이 없어 구체적인 활용 가능성을 판단하기에는 정보가 제한적이다.",
+      "category": "AI 에이전트 & 자동화",
+      "audience": [
+        "GENERAL"
+      ]
+    },
+    {
+      "id": "d871422d-32cc-4ed0-a546-b400272d58b1",
+      "title": "worklog-system 주간보고 자동화 구축 경험기",
+      "url": "https://d2.naver.com/helloworld/5037598",
+      "source": "naver_d2",
+      "content": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. ​ 발표 내용 대 AI 시대에 본인의 업무 기록을 수집하고 TODO 및 회의록을 기록하는 시스템을 소개합니다. ​ 이 도구를 만들며 부딪힌 세 가지 문제를 차례로 다룹니다. 기억이 아니라 기록에서 주간보고를 모으는 방법 재택과 사무실을 오가며 여러 기기와 VPN 환경에서 기록을 빠짐없이 모으는 구조 주간보고 화면에 노트·TODO·일정을 더해 업무 도구로 키우면서 중앙 서버 없이 해결한 과정 ​ &lt;참고&gt; 영상속 사내용어 OSS &#x3d; 네이버 사내 GitHub Enterprise 인스턴스 ​ 발표 대상 주간보고를 쓰는 모든 직군 반복되는 업무 기록과 보고를 자동화하고 싶은 분 AI 도구와 사내 협업 도구(Slack, Jira, Confluence, GitHub)를 엮어 개인 생산성 도구를 만들어 보고 싶은 분 ​ 목차 데모: 하루 끝, 주간보고 끝 Episode 1. 주간보고 수집의 불편과 누락 Episode 2. 재택과 사무실 Episode 3. 업무 도구 하나로 지금의 형태와 앞으로 ​ ​ ◎ NAVER Engineering Day란? ​ NAVER에서는 사내 개발 경험과 기술 트렌드를 교류를 할 수 있는 프로그램이 많이 있습니다. 그중 이제는 매회 평균 100개 이상의 발표가 이루어지는 NAVER Engineering Day를 빼놓을 수 없는데요. 2016년부터 시작된 ENGINEERING DAY는 실무에서의 기술 개발 경험과 새로운 기술과 플랫폼 도입 시 유용하게 활용될 수 있는 팁 등을 공유하며 서로 배우고 성장하는 네이버의 대표적인 사내 개발자 행사입니다.(관련 포스팅 보기) 올해 진행된 NAVER Engineering Day의 일부 세션을 공개합니다. ​ [동영상 제공 채널 안내] 네이버 TV 서비스 종료로 인해 기존 네이버 TV 채널을 클립(@devrel_d2)으로 이동하였습니다. 앞으로도 많은 관심과 팔로우 부탁드리겠습니다.",
+      "published_at": "2026-11-11T08:17:53+00:00",
+      "summary": "네이버는 업무 기록을 수집하고 TODO·회의록을 관리해 주간보고를 자동화하는 worklog-system 구축 경험을 공개했다. 여러 기기와 VPN 환경에서 기록 누락을 줄이고, 중앙 서버 없이 노트·일정까지 통합하는 과정이 주요 내용이다. AI 도구와 Slack·Jira·Confluence·GitHub 같은 협업 도구를 연결하려는 개발자에게 참고가 되지만, 제공된 소개문에는 구체적인 AI 모델이나 자동화 성과 수치가 없다.",
+      "category": "기타",
+      "audience": [
+        "GENERAL",
+        "DEVELOPER"
+      ]
+    },
+    {
+      "id": "ba753ce0-a247-4d1e-a7ed-cc2f46933b9c",
+      "title": "The Download: preserving minds and weighing open AI risks",
+      "url": "https://www.technologyreview.com/2026/11/11/1148424/the-download-preserving-minds-open-ai-risks/",
+      "source": "mit_tech_review",
+      "content": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Six wild ideas for perpetuating your mind As we age, we forget most of what we’ve experienced, yet there’s still undeniable continuity: At 30, or 50, or 70, you will still be you.&nbsp; To preserve that elusive continuity of self, some far-thinking technologists are exploring ways to keep the brain going, even beyond death. Their ideas range from freezing brains in liquid nitrogen to augmenting living ones and uploading our memories to the cloud. Here are six possible paths for keeping your mind going, and how feasible they might be. —Antonio Regalado This story is from the Impossible edition of our print magazine. Subscribe now to get every issue as soon as it lands. MIT Technology Review Narrated: Open models have real benefits. Do they outweigh the risks? Anthropic recently released a report arguing that a powerful new model released by the Chinese company Z.ai, poses a major cyberattack risk. Its core concern was that it is freely available for anyone to download and modify. The warning was the latest flashpoint in the debate over open frontier AI models. Critics warn that bad actors can misuse them, while supporters argue they prevent a handful of companies from controlling the technology. The debate, however, is more complicated than it seems. This is our latest story to become an MIT Technology Review Narrated podcast, which we publish each week on Spotify and Apple Podcasts. Just navigate to MIT Technology Review Narrated on either platform, and follow us to get all our new content as it’s released. The must-reads I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology. 1 COP31’s flagship pledge to electrify 35% of energy use is sinkingOnly around a dozen nations are reportedly ready to sign it. (Politico)+ It requires quadrupling the pace of electrification. (New Scientist $)+ John Kerry says the US must follow China on clean energy. (Guardian)+ But the US skipped the talks entirely for a second year. (NYT $)+ What’s the future of electricity? (MIT Technology Review) 2 The Nvidia spy scandal reportedly involves $7.5 billion of chipsAlice Huang allegedly obtained 240,000 restricted chips. (Information $)+ Trump was told of Huang’s spy link on Air Force One. (NYT $)+ Experts warn the scandal could erode America’s AI lead. (Verge)+ Nvidia’s slide has let Microsoft overtake it in value. (Reuters $) 3 Studies found AI agents go rogue because they’re “incorrigible”Their training rewards them for finishing tasks at any cost. (NYT $)+ This is why AI agents lie and cheat to reach their goals. (MIT Technology Review) 4 Anthropic has scaled back its IPO valuation to $1.4 trillionIt aimed for $2 trillion before the recent AI jitters. (Guardian) 5 Drone strikes have wiped out 3% of Yandex’s cloud customer dataUkraine hit three of its data centers in October. (Reuters $)+ Ukraine’s drones are fighting data centers for fiber. (Ars Technica) 6 Moderna says its new vaccine could prevent cancer in high-risk peopleThe company’s CEO calls it the “holy grail” of cancer prevention. (FT $)+ Hong Kong is testing a next-gen ultrasound cancer treatment. (SCMP) 7 Scientists have slowly reversed human cells’ ages by decadesOne age marker was set back as far as 60 years. (Wired $)+ “Reprogramming” is the buzziest de-aging idea. (MIT Technology Review) 8 Robot vessels are hunting for mines in the Strait of HormuzAI helps them spot mines camouflaged on the seabed. (BBC) 9 Life may have started inside a tiny bubbleThat’s the idea behind the “lipid first” origin theory. (Quanta) 10 As Voyager 1 reaches a light day from Earth, here&#8217;s what it&#8217;s taught usIts discoveries rewrote textbooks in real time. (New Scientist $) Quote of the day “What a dereliction of duty. He&#8217;s supposed to protect America, not China, not his friends.” —Chuck Schumer, the Senate minority leader, accuses President Donald Trump of ignoring warnings about the alleged relationship between Nvidia CEO Jensen Huang and a Chinese spy. One more thing How refrigeration ruined fresh food Bananas may not be chilled in the grocery store, but they’re the ultimate refrigerated fruit. It’s only thanks to a network of thermal control that they’ve become a global commodity. And that salad bag on the shelf? It’s not just a bag but a highly engineered respiratory apparatus. According to Nicola Twilley—a contributor to The New Yorker and cohost of the podcast Gastropod—refrigeration has wrecked our food system. Thankfully, there are promising alternative preservation methods.&nbsp; Read the full story on her research. —Allison Arieff We can still have nice things A place for comfort, fun, and distraction to brighten up your day. (Got any ideas? Drop me a line.) + A whisky made like wine is wowing the spirits world.+ Britain lost in the fog makes for hauntingly beautiful photos.+ Chronophoto is a fiendishly addictive game that challenges you to date old photos to the year.+ Dozens of saxophonists met up in New York to play the gloriously cheesy riff from George Michael&#8217;s “Careless Whisper.”",
+      "published_at": "2026-11-11T13:10:00+00:00",
+      "summary": "MIT Technology Review 뉴스레터는 공개형 최첨단 AI 모델의 편익과 위험을 둘러싼 논쟁을 소개했다. Anthropic은 누구나 다운로드하고 수정할 수 있는 Z.ai의 새 모델이 중대한 사이버공격 위험을 제기한다고 주장했으며, 공개 모델 지지자들은 기술 통제력이 소수 기업에 집중되는 것을 막는다는 점을 강조한다. 모델 접근성과 악용 위험의 균형이 핵심 쟁점이지만, 제공된 발췌문에는 해당 위험을 독립적으로 판단할 상세 실험이나 평가 결과가 없다.",
+      "category": "AI 안전성 & 윤리",
+      "audience": [
+        "GENERAL",
+        "ML_EXPERT"
+      ]
+    }
+  ]
+}
